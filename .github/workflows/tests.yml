@@ -70,6 +70,9 @@ jobs:
           tools/catalogue_enrichment_parallel.py
           tools/photo_batch_enrichment.py
           tools/gbif_photo_enrichment.py
+          tools/fix_catalogue_anomalies.py
+      - name: Corriger les anomalies certaines
+        run: python tools/fix_catalogue_anomalies.py
       - name: Produire ou compléter l'audit
         shell: bash
         run: |
@@ -98,7 +101,16 @@ jobs:
           fi
           git config user.name "assistant-botanique-catalogue-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add catalogue_metadata/taxonomy_audit.json catalogue_metadata/photos.json catalogue_metadata/catalogue_audit_report.md
+          git add \
+            catalogue_metadata/taxonomy_audit.json \
+            catalogue_metadata/photos.json \
+            catalogue_metadata/catalogue_audit_report.md \
+            familles_plantes/bromeliaceae.json \
+            familles_plantes/liliaceae.json \
+            familles_plantes/tiliaceae.json \
+            familles_plantes/aizoaceae_portulacaceae.json \
+            familles_plantes/cycadaceae_zamiaceae.json \
+            familles_plantes/polygonaceae.json
           if git diff --cached --quiet; then
             echo "Aucune modification à enregistrer."
             exit 0
