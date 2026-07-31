@@ -51,10 +51,15 @@ jobs:
 
   catalogue-enrichment:
     if: github.event_name == 'pull_request' && github.head_ref == 'catalogue/full-audit-photos'
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
@@ -71,3 +76,19 @@ jobs:
             catalogue_metadata/catalogue_audit_report.md
           if-no-files-found: error
           retention-days: 7
+      - name: Enregistrer les résultats dans la branche
+        shell: bash
+        run: |
+          if git log -1 --pretty=%B | grep -q '\[catalogue-bot\]'; then
+            echo "Résultats déjà produits par le robot."
+            exit 0
+          fi
+          git config user.name "assistant-botanique-catalogue-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add catalogue_metadata/taxonomy_audit.json catalogue_metadata/photos.json catalogue_metadata/catalogue_audit_report.md
+          if git diff --cached --quiet; then
+            echo "Aucune modification à enregistrer."
+            exit 0
+          fi
+          git commit -m "data: audit exhaustif et photos [catalogue-bot]"
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
