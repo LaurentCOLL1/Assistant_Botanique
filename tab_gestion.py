@@ -1,745 +1,529 @@
+"""Onglet de gestion de la collection personnelle."""
+from __future__ import annotations
+
+import csv
+import logging
 import tkinter as tk
-from tkinter import ttk, messagebox
-from datetime import datetime, timedelta
-import json
-import os
-import re
-import copy
-from data import DATABASE_PLANTES, COLLECTION_INITIALE_DEFAUT, FILE_JSON
+from copy import deepcopy
+from datetime import date, timedelta
+from pathlib import Path
+from tkinter import filedialog, messagebox, simpledialog, ttk
+from uuid import uuid4
 
-def parse_date(date_str):
-    """Convertit n'importe quelle date (FR ou ISO) en objet date."""
-    if not date_str:
-        return datetime.now().date()
-    for fmt in ("%d/%m/%Y", "%Y-%m-%d"):
-        try:
-            return datetime.strptime(date_str, fmt).date()
-        except ValueError:
-            pass
-    return datetime.now().date()
+from app_data import COLLECTION_INITIALE_DEFAUT, DATABASE_BY_ID, DATABASE_BY_SCIENTIFIC_NAME, DATABASE_PLANTES
+from core import (
+    ValidationError,
+    family_name,
+    format_date_fr,
+    normalize_text,
+    parse_date,
+    profile_id,
+    scientific_name,
+    vernacular_names,
+    watering_status,
+)
+from storage import CollectionRepository
 
-def format_date_fr(date_obj):
-    """Formate un objet date au format français JJ/MM/AAAA."""
-    return date_obj.strftime("%d/%m/%Y")
+LOGGER = logging.getLogger(__name__)
+
 
 class TabGestion(ttk.Frame):
-    MOIS_KEYS = {
-        1: "janvier", 2: "fevrier", 3: "mars", 4: "avril",
-        5: "mai", 6: "juin", 7: "juillet", 8: "aout",
-        9: "septembre", 10: "octobre", 11: "novembre", 12: "decembre"
-    }
-
     def __init__(self, parent, on_collection_changed_callback=None, voir_catalogue_callback=None):
         super().__init__(parent)
         self.on_collection_changed_callback = on_collection_changed_callback
         self.voir_catalogue_callback = voir_catalogue_callback
-        self.mes_plantes = []
-        self.historique = []  # Pile d'historique pour le Ctrl+Z
-
-        self.creer_interface()
-        self.charger_depuis_json()
-
-        # Bind du raccourci Ctrl+Z sur la fenêtre globale
+        self.repository = CollectionRepository()
+        self.mes_plantes: list[dict] = []
+        self.historique: list[list[dict]] = []
+        self.search_results: list[dict] = []
+        self._build_ui()
+        self._load_collection()
         self.winfo_toplevel().bind("<Control-z>", self.annuler_action)
         self.winfo_toplevel().bind("<Control-Z>", self.annuler_action)
 
-    def enregistrer_historique(self):
-        """Conserve un instantané de la collection avant une modification."""
-        self.historique.append(copy.deepcopy(self.mes_plantes))
-        if len(self.historique) > 20:
-            self.historique.pop(0)
+    def _build_ui(self) -> None:
+        form = ttk.LabelFrame(self, text=" Ajouter ou modifier une plante ")
+        form.pack(fill="x", padx=10, pady=(8, 4))
+        form.columnconfigure(1, weight=1)
+        form.columnconfigure(3, weight=1)
 
-    def annuler_action(self, event=None):
-        """Annule la dernière action (Ctrl+Z)."""
-        widget_actif = self.focus_get()
-        if isinstance(widget_actif, (tk.Entry, ttk.Entry, tk.Text)):
-            try:
-                if widget_actif.cget("state") != "readonly" and widget_actif.cget("state") != "disabled":
-                    return
-            except tk.TclError:
-                pass
+        ttk.Label(form, text="Surnom").grid(row=0, column=0, sticky="w", padx=5, pady=4)
+        self.entry_surnom = ttk.Entry(form)
+        self.entry_surnom.grid(row=0, column=1, sticky="ew", padx=5, pady=4)
+        self.entry_surnom.insert(0, "Ma nouvelle plante")
 
-        if not self.historique:
-            messagebox.showinfo("Annulation", "Aucune action à annuler.")
-            return
-
-        self.mes_plantes = self.historique.pop()
-        self.sauvegarder_dans_json()
-        self.rafraichir_tableau_collection()
-        self.afficher_details_plante()
-        messagebox.showinfo("Annulation réussie", "↩️ Action annulée avec succès (Ctrl+Z) !")
-
-    def creer_interface(self):
-        # --- STYLES PERSONNALISÉS DE BOUTONS ---
-        style = ttk.Style()
-        
-        style.configure("Danger.TButton", background="#e74c3c", foreground="white", font=("Arial", 9, "bold"))
-        style.map("Danger.TButton",
-                  background=[("active", "#c0392b"), ("disabled", "#f2f3f4")],
-                  foreground=[("active", "white")])
-
-        style.configure("Water.TButton", background="#85c1e9", foreground="#1b4f72", font=("Arial", 9, "bold"))
-        style.map("Water.TButton",
-                  background=[("active", "#3498db"), ("disabled", "#f2f3f4")],
-                  foreground=[("active", "white")])
-
-        # 1. Zone d'ajout et recherche
-        frame_add = ttk.LabelFrame(self, text=" Ajouter / Rechercher une plante ")
-        frame_add.pack(fill="x", padx=10, pady=5)
-
-        frame_top_add = ttk.Frame(frame_add)
-        frame_top_add.pack(fill="x", padx=5, pady=2)
-
-        ttk.Label(frame_top_add, text="Surnom :").grid(row=0, column=0, padx=5, pady=2, sticky="w")
-        self.entry_surnom = ttk.Entry(frame_top_add, width=50)
-        self.entry_surnom.insert(0, "Ma Nouvelle Plante")
-        self.entry_surnom.grid(row=0, column=1, padx=5, pady=2)
-
-        ttk.Label(frame_top_add, text="Volume Pot (L) :").grid(row=0, column=2, padx=5, pady=2, sticky="w")
-        self.entry_pot = ttk.Entry(frame_top_add, width=10)
+        ttk.Label(form, text="Volume du pot (L)").grid(row=0, column=2, sticky="w", padx=5, pady=4)
+        self.entry_pot = ttk.Entry(form, width=12)
+        self.entry_pot.grid(row=0, column=3, sticky="w", padx=5, pady=4)
         self.entry_pot.insert(0, "1.5")
-        self.entry_pot.grid(row=0, column=3, padx=5, pady=2)
 
-        frame_search = ttk.Frame(frame_add)
-        frame_search.pack(fill="x", padx=5, pady=2)
+        ttk.Label(form, text="Emplacement").grid(row=1, column=0, sticky="w", padx=5, pady=4)
+        self.combo_emplacement = ttk.Combobox(form, state="readonly", values=("interieur", "exterieur", "serre"))
+        self.combo_emplacement.grid(row=1, column=1, sticky="ew", padx=5, pady=4)
+        self.combo_emplacement.set("interieur")
 
-        ttk.Label(frame_search, text="🔍 Recherche orthographique (Sci / Vernaculaire) :", font=("Arial", 9, "bold")).pack(anchor="w", padx=5)
-        
-        self.entry_search = ttk.Entry(frame_search)
-        self.entry_search.pack(fill="x", padx=5, pady=2)
+        ttk.Label(form, text="Exposition").grid(row=1, column=2, sticky="w", padx=5, pady=4)
+        self.combo_exposition = ttk.Combobox(
+            form,
+            state="readonly",
+            values=("non_renseignee", "ombre", "mi_ombre", "lumiere_vive", "soleil_direct"),
+        )
+        self.combo_exposition.grid(row=1, column=3, sticky="ew", padx=5, pady=4)
+        self.combo_exposition.set("non_renseignee")
+
+        ttk.Label(form, text="Recherche espèce, famille ou origine").grid(row=2, column=0, columnspan=4, sticky="w", padx=5)
+        self.entry_search = ttk.Entry(form)
+        self.entry_search.grid(row=3, column=0, columnspan=4, sticky="ew", padx=5, pady=3)
         self.entry_search.bind("<KeyRelease>", self.filtrer_recherche)
 
-        self.listbox_plantes = tk.Listbox(frame_search, height=5, font=("Arial", 9))
-        self.listbox_plantes.pack(fill="x", padx=5, pady=2)
+        self.listbox_plantes = tk.Listbox(form, height=4, exportselection=False)
+        self.listbox_plantes.grid(row=4, column=0, columnspan=4, sticky="ew", padx=5, pady=3)
+        self.listbox_plantes.bind("<Double-Button-1>", lambda _event: self.ajouter_plante())
 
-        btn_add = ttk.Button(frame_add, text="➕ Enregistrer dans ma collection JSON", command=self.ajouter_plante)
-        btn_add.pack(pady=4, anchor="e", padx=10)
+        buttons = ttk.Frame(form)
+        buttons.grid(row=5, column=0, columnspan=4, sticky="e", padx=5, pady=5)
+        ttk.Button(buttons, text="➕ Ajouter", command=self.ajouter_plante, style="Accent.TButton").pack(side="left", padx=3)
+        ttk.Button(buttons, text="✏️ Appliquer aux données sélectionnées", command=self.modifier_plante).pack(side="left", padx=3)
+        ttk.Button(buttons, text="Réinitialiser le formulaire", command=self.reset_form).pack(side="left", padx=3)
 
-        # 2. Tableau de la collection
-        frame_list = ttk.LabelFrame(self, text=" Ma Collection (Sauvegardée dans 'mes_plantes.json') ")
-        frame_list.pack(fill="both", expand=True, padx=10, pady=5)
-
-        columns = ("Surnom", "Nom Scientifique", "Nom Vernaculaire", "Pot (L)", "Dernier Arrosage", "Prochain Arrosage", "Statut")
-        self.tree = ttk.Treeview(frame_list, columns=columns, show="headings", height=6)
-
-        self.tree.heading("Surnom", text="Surnom")
-        self.tree.heading("Nom Scientifique", text="Nom Scientifique")
-        self.tree.heading("Nom Vernaculaire", text="Nom Vernaculaire")
-        self.tree.heading("Pot (L)", text="Pot (L)")
-        self.tree.heading("Dernier Arrosage", text="Dernier Arrosage")
-        self.tree.heading("Prochain Arrosage", text="Prochain Arrosage")
-        self.tree.heading("Statut", text="Statut Arrosage")
-
-        self.tree.column("Surnom", width=110, anchor="center")
-        self.tree.column("Nom Scientifique", width=150, anchor="w")
-        self.tree.column("Nom Vernaculaire", width=140, anchor="w")
-        self.tree.column("Pot (L)", width=55, anchor="center")
-        self.tree.column("Dernier Arrosage", width=100, anchor="center")
-        self.tree.column("Prochain Arrosage", width=100, anchor="center")
-        self.tree.column("Statut", width=120, anchor="center")
-
-        self.tree.tag_configure("OK", foreground="#1e8449", font=("Arial", 9, "bold"))
-        self.tree.tag_configure("TODAY", foreground="#d35400", font=("Arial", 9, "bold"))
-        self.tree.tag_configure("LATE", foreground="#c0392b", font=("Arial", 9, "bold"))
-        self.tree.tag_configure("REST", foreground="#2980b9", font=("Arial", 9, "bold"))
-
-        self.tree.pack(fill="both", expand=True, padx=5, pady=5)
+        collection = ttk.LabelFrame(self, text=" Ma collection — rappel de contrôle du substrat ")
+        collection.pack(fill="both", expand=True, padx=10, pady=4)
+        columns = ("nickname", "scientific", "family", "pot", "last", "next", "status")
+        self.tree = ttk.Treeview(collection, columns=columns, show="headings", selectmode="extended")
+        headings = {
+            "nickname": "Surnom", "scientific": "Nom scientifique", "family": "Famille",
+            "pot": "Pot (L)", "last": "Dernier arrosage", "next": "Prochain contrôle", "status": "Statut",
+        }
+        widths = {"nickname": 150, "scientific": 190, "family": 130, "pot": 65, "last": 105, "next": 110, "status": 180}
+        for column in columns:
+            self.tree.heading(column, text=headings[column], command=lambda c=column: self.sort_tree(c, False))
+            self.tree.column(column, width=widths[column], anchor="w" if column not in {"pot", "last", "next"} else "center")
+        scrollbar = ttk.Scrollbar(collection, orient="vertical", command=self.tree.yview)
+        self.tree.configure(yscrollcommand=scrollbar.set)
+        self.tree.pack(side="left", fill="both", expand=True, padx=(5, 0), pady=5)
+        scrollbar.pack(side="right", fill="y", padx=(0, 5), pady=5)
         self.tree.bind("<<TreeviewSelect>>", self.afficher_details_plante)
+        self.tree.bind("<Double-Button-1>", lambda _event: self.modifier_plante())
+        self.tree.tag_configure("OK", foreground="#287848")
+        self.tree.tag_configure("TODAY", foreground="#b45f06")
+        self.tree.tag_configure("LATE", foreground="#b00020")
+        self.tree.tag_configure("REST", foreground="#1b6ca8")
+        self.tree.tag_configure("MISSING", foreground="#777777")
 
-        frame_btns_list = ttk.Frame(frame_list)
-        frame_btns_list.pack(fill="x", padx=5, pady=3)
+        actions = ttk.Frame(self)
+        actions.pack(fill="x", padx=10, pady=4)
+        ttk.Button(actions, text="💧 Enregistrer un arrosage", command=self.marquer_arrosee_aujourdhui, style="Accent.TButton").pack(side="left", padx=3)
+        ttk.Button(actions, text="📝 Ajouter un soin", command=self.ajouter_soin).pack(side="left", padx=3)
+        ttk.Button(actions, text="📅 Calendrier", command=self.ouvrir_fenetre_calendrier).pack(side="left", padx=3)
+        ttk.Button(actions, text="CSV", command=self.exporter_csv).pack(side="left", padx=3)
+        ttk.Button(actions, text="iCalendar", command=self.exporter_ics).pack(side="left", padx=3)
+        ttk.Button(actions, text="📖 Voir la fiche", command=self.aller_au_catalogue).pack(side="right", padx=3)
+        ttk.Button(actions, text="🗑️ Supprimer", command=self.supprimer_plante, style="Danger.TButton").pack(side="right", padx=3)
 
-        btn_cal = ttk.Button(frame_btns_list, text="📅 Générer le calendrier d'arrosage", command=self.ouvrir_fenetre_calendrier)
-        btn_cal.pack(side="left", padx=5)
-
-        btn_del = ttk.Button(
-            frame_btns_list, 
-            text="🗑️ Supprimer la plante sélectionnée", 
-            command=self.supprimer_plante,
-            style="Danger.TButton"
-        )
-        btn_del.pack(side="right", padx=5)
-
-        # 3. Panneau de détails
-        self.frame_detail = ttk.LabelFrame(self, text=" 📋 Fiche de détails & Consignes de soins ")
-        self.frame_detail.pack(fill="x", padx=10, pady=5)
-
-        grid_detail = ttk.Frame(self.frame_detail)
-        grid_detail.pack(fill="x", padx=10, pady=5)
-
-        ttk.Label(grid_detail, text="🔬 Nom Scientifique :", font=("Arial", 9, "bold")).grid(row=0, column=0, sticky="w", pady=2)
-        self.entry_nom_sci = tk.Entry(grid_detail, width=155, state="readonly", font=("Arial", 9, "italic"), bd=1, relief="solid")
-        self.entry_nom_sci.grid(row=0, column=1, sticky="w", padx=10, pady=2)
-
-        ttk.Label(grid_detail, text="🌿 Nom Vernaculaire :", font=("Arial", 9, "bold")).grid(row=1, column=0, sticky="w", pady=2)
-        self.entry_nom_vern = tk.Entry(grid_detail, width=155, state="readonly", font=("Arial", 9), bd=1, relief="solid")
-        self.entry_nom_vern.grid(row=1, column=1, sticky="w", padx=10, pady=2)
-
-        ttk.Label(grid_detail, text="🔔 Statut Arrosage :", font=("Arial", 9, "bold")).grid(row=2, column=0, sticky="w", pady=2)
-        self.entry_statut = tk.Entry(grid_detail, width=155, state="readonly", font=("Arial", 9, "bold"), bd=1, relief="solid")
-        self.entry_statut.grid(row=2, column=1, sticky="w", padx=10, pady=2)
-
-        ttk.Label(grid_detail, text="💧 Fréquence & Saison :", font=("Arial", 9, "bold")).grid(row=3, column=0, sticky="w", pady=2)
-        self.entry_freq = tk.Entry(grid_detail, width=155, state="readonly", font=("Arial", 9), bd=1, relief="solid")
-        self.entry_freq.grid(row=3, column=1, sticky="w", padx=10, pady=2)
-
-        ttk.Label(grid_detail, text="🚰 Type d'eau conseillé :", font=("Arial", 9, "bold")).grid(row=4, column=0, sticky="w", pady=2)
-        
-        self.entry_eau = tk.Text(grid_detail, width=99, height=1, font=("Arial", 14), bd=1, relief="solid", pady=4)
-        self.entry_eau.grid(row=4, column=1, sticky="w", padx=10, pady=4)
-
-        self.entry_eau.tag_configure("best_green", foreground="#27ae60", font=("Arial", 13, "bold"))
-        self.entry_eau.tag_configure("best_blue", foreground="#2980b9", font=("Arial", 13, "bold"))
-        self.entry_eau.tag_configure("best_darkblue", foreground="#1f618d", font=("Arial", 13, "bold"))
-        self.entry_eau.tag_configure("neutral", foreground="#000000", font=("Arial", 11))
-
-        ttk.Label(grid_detail, text="💡 Notes & Consignes :", font=("Arial", 9, "bold")).grid(row=5, column=0, sticky="nw", pady=2)
-        self.txt_notes = tk.Text(grid_detail, height=4, width=155, font=("Arial", 9), wrap="word", bd=1, relief="solid")
-        self.txt_notes.grid(row=5, column=1, sticky="w", padx=10, pady=2)
-
-        # BOUTON VERTICAL "+ d'infos"
-        self.btn_plus_infos = tk.Button(
-            grid_detail, 
-            text="+ \n d '\n i \n n \n f \n o \n s", 
-            command=self.aller_au_catalogue,
-            bg="#f1c40f", 
-            fg="#7d6608", 
-            font=("Arial", 10, "bold"),
-            relief="raised",
-            bd=2,
-            cursor="hand2"
-        )
-        self.btn_plus_infos.grid(row=0, column=2, rowspan=6, sticky="ns", padx=(10, 2), pady=2)
-
-        # Ligne bas avec Alerte générale + Bouton Arrosage
-        frame_action_bas = ttk.Frame(self.frame_detail)
-        frame_action_bas.pack(fill="x", padx=10, pady=5)
-        
-        lbl_avertissement_eau_pan = ttk.Label(
-            frame_action_bas, 
-            text="🛑", 
-            font=("Arial", 16, "bold"),
-            foreground="#c0392b"
-        )
-        lbl_avertissement_eau_pan.pack(side="left", padx=5)
-        
-        lbl_avertissement_eau = ttk.Label(
-            frame_action_bas, 
-            text="Danger : Ne jamais utiliser d'eau provenant d'un adoucisseur à sel (trop riche en sodium).", 
-            font=("Arial", 10, "italic bold"),
-            foreground="#c0392b"
-        )
-        lbl_avertissement_eau.pack(side="left", padx=0)
-
-        self.btn_arrosage = ttk.Button(
-            frame_action_bas, 
-            text="💧 Marquer comme arrosée aujourd'hui", 
-            command=self.marquer_arrosee_aujourdhui,
-            style="Water.TButton"
-        )
-        self.btn_arrosage.pack(side="right", padx=5)
+        details = ttk.LabelFrame(self, text=" Détails, contexte et historique ")
+        details.pack(fill="both", padx=10, pady=(4, 8))
+        self.txt_details = tk.Text(details, height=9, wrap="word", state="disabled")
+        self.txt_details.pack(fill="both", expand=True, padx=6, pady=6)
 
         self.filtrer_recherche()
 
-    def aller_au_catalogue(self):
-        """Action déclenchée par le bouton '+ d'infos' : bascule sur l'onglet catalogue et cible la plante."""
-        selected = self.tree.selection()
-        if not selected:
-            messagebox.showwarning("Attention", "Veuillez d'abord sélectionner une plante dans votre collection.")
-            return
-        values = self.tree.item(selected[0], "values")
-        surnom = values[0]
-        plante = next((p for p in self.mes_plantes if p["surnom"] == surnom), None)
-        if plante and self.voir_catalogue_callback:
-            nom_sci = plante["profil"].get("nom_sci") or plante["profil"].get("taxonomie", {}).get("nom_scientifique", "")
-            self.voir_catalogue_callback(nom_sci)
-
-    def get_delai_actuel(self, profil, date_ref):
-        mois_num = date_ref.month
-        est_saison_chaude = 4 <= mois_num <= 9  # Avril à Septembre
-
-        gestion_eau = profil.get("gestion_eau", {}) if isinstance(profil.get("gestion_eau"), dict) else {}
-        freq_data = gestion_eau.get("frequence_arrosage") or profil.get("frequence_arrosage")
-
-        # 1. Priorité à la structure en dictionnaire mensuel
-        if isinstance(freq_data, dict):
-            mois_key = self.MOIS_KEYS.get(mois_num, "janvier")
-            delai_actuel = freq_data.get(mois_key, 7)
-            
-            # Détermination indicative des délais Été (ex. Juillet) et Hiver (ex. Janvier)
-            delai_ete = freq_data.get("juillet", freq_data.get("juin", 7))
-            delai_hiver = freq_data.get("janvier", freq_data.get("decembre", 14))
-
-            return delai_actuel, delai_ete, delai_hiver, est_saison_chaude
-
-        # 2. Algorithme de fallback pour chaînes textuelles
-        delai_ete = profil.get("delai_ete") or gestion_eau.get("delai_ete")
-        delai_hiver = profil.get("delai_hiver") or gestion_eau.get("delai_hiver")
-
-        freq_str = str(freq_data or gestion_eau.get("frequence_mode") or "").lower()
-        var_str = str(gestion_eau.get("variation_saisonniere") or "").lower()
-        texte_global = f"{freq_str} {var_str}".lower()
-
-        if delai_ete is None:
-            nums = re.findall(r'\d+', freq_str)
-            if nums:
-                delai_ete = int(nums[0])
-            elif "semaine" in freq_str:
-                delai_ete = 7
-            elif "10 jours" in freq_str or "10j" in freq_str:
-                delai_ete = 10
-            elif "mois" in freq_str:
-                delai_ete = 30
-            else:
-                delai_ete = 7
-
-        if delai_hiver is None:
-            if any(kw in texte_global for kw in ["2 mois", "deux mois", "8 semaines", "60 jours"]):
-                delai_hiver = 60
-            elif any(kw in texte_global for kw in ["1 mois", "un mois", "4 semaines", "mensuel", "30 jours"]):
-                delai_hiver = 30
-            elif any(kw in texte_global for kw in ["3 semaines", "21 jours"]):
-                delai_hiver = 21
-            elif any(kw in texte_global for kw in ["15 jours", "2 semaines", "bimensuel"]):
-                delai_hiver = 15
-            elif any(kw in texte_global for kw in ["stopper", "suspendre", "aucun arrosage", "pas d'arrosage"]):
-                delai_hiver = 90
-            else:
-                est_succulente = any(kw in str(profil).lower() for kw in [
-                    "succulente", "cactus", "cactaceae", "crassulaceae", 
-                    "sansevieria", "zz plant", "aloe", "agave", "euphorbia"
-                ])
-                multiplier = 4 if est_succulente else 2
-                delai_hiver = delai_ete * multiplier
-
-        delai_actuel = delai_ete if est_saison_chaude else delai_hiver
-        return delai_actuel, delai_ete, delai_hiver, est_saison_chaude
-
-    def calculer_statut_arrosage(self, date_dernier_str, profil):
-        date_dernier = parse_date(date_dernier_str)
-        aujourdhui = datetime.now().date()
-
-        delai_actuel, delai_ete, delai_hiver, est_saison_chaude = self.get_delai_actuel(profil, aujourdhui)
-        date_dernier_fr = format_date_fr(date_dernier)
-
-        # Prise en charge du repos hivernal (intervalle == 0)
-        if delai_actuel == 0:
-            code_statut = "REST"
-            statut_court = "❄️ REPOS (0 j)"
-            detail_statut = "❄️ Repos hivernal complet : Aucun arrosage ce mois-ci."
-            date_prochain_fr = "Au sec (0 j)"
-            couleur = "#2980b9"
-        else:
-            date_prochain = date_dernier + timedelta(days=delai_actuel)
-            jours_restants = (date_prochain - aujourdhui).days
-            date_prochain_fr = format_date_fr(date_prochain)
-
-            if jours_restants > 0:
-                code_statut = "OK"
-                statut_court = f"🟢 OK ({jours_restants} j)"
-                detail_statut = f"Prochain arrosage prévu le {date_prochain_fr} (dans {jours_restants} jour(s))"
-                couleur = "#1e8449"
-            elif jours_restants == 0:
-                code_statut = "TODAY"
-                statut_court = "🟠 AUJOURD'HUI"
-                detail_statut = "⚠️ Plante à arroser aujourd'hui !"
-                couleur = "#d35400"
-            else:
-                code_statut = "LATE"
-                retard = abs(jours_restants)
-                statut_court = f"🔴 RETARD ({retard} j)"
-                detail_statut = f"🚨 En retard de {retard} jour(s) ! (Prévu le {date_prochain_fr})"
-                couleur = "#c0392b"
-
-        return {
-            "code_statut": code_statut,
-            "statut_court": statut_court,
-            "detail_statut": detail_statut,
-            "date_dernier": date_dernier_fr,
-            "date_prochain": date_prochain_fr,
-            "delai_actuel": delai_actuel,
-            "delai_ete": delai_ete,
-            "delai_hiver": delai_hiver,
-            "est_saison_chaude": est_saison_chaude,
-            "couleur": couleur
-        }
-
-    def set_entry_text(self, entry_widget, text, color="black"):
-        entry_widget.config(state="normal", fg=color)
-        entry_widget.delete(0, tk.END)
-        entry_widget.insert(0, text)
-        entry_widget.config(state="readonly")
-
-    def charger_depuis_json(self):
-        date_du_jour_fr = format_date_fr(datetime.now().date())
-        if not os.path.exists(FILE_JSON):
+    def _load_collection(self) -> None:
+        try:
+            self.mes_plantes = self.repository.load(COLLECTION_INITIALE_DEFAUT)
+            changed = False
+            for plant in self.mes_plantes:
+                profile = self.resolve_profile(plant.get("species_id", ""))
+                if profile and plant.get("species_id") != profile_id(profile):
+                    plant["species_id"] = profile_id(profile)
+                    changed = True
+            if changed:
+                self.repository.save(self.mes_plantes)
+        except (OSError, ValidationError) as exc:
+            LOGGER.exception("Impossible de charger la collection")
+            messagebox.showerror("Collection", str(exc))
             self.mes_plantes = []
-            for item in COLLECTION_INITIALE_DEFAUT:
-                profil = next((p for p in DATABASE_PLANTES if p.get("nom_sci") == item["nom_sci"] or p.get("taxonomie", {}).get("nom_scientifique") == item["nom_sci"]), None)
-                if profil:
-                    self.mes_plantes.append({
-                        "surnom": item["surnom"],
-                        "profil": profil,
-                        "pot": item["pot"],
-                        "date_arrosage": date_du_jour_fr
-                    })
-            self.sauvegarder_dans_json()
-        else:
-            try:
-                with open(FILE_JSON, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-                    self.mes_plantes = []
-                    for item in data:
-                        profil = next((p for p in DATABASE_PLANTES if p.get("nom_sci") == item["nom_sci"] or p.get("taxonomie", {}).get("nom_scientifique") == item["nom_sci"]), None)
-                        if profil:
-                            raw_date = item.get("date_arrosage", date_du_jour_fr)
-                            date_obj = parse_date(raw_date)
-                            self.mes_plantes.append({
-                                "surnom": item["surnom"],
-                                "profil": profil,
-                                "pot": item["pot"],
-                                "date_arrosage": format_date_fr(date_obj)
-                            })
-            except Exception as e:
-                messagebox.showerror("Erreur JSON", f"Impossible de lire le fichier JSON : {e}")
-
         self.rafraichir_tableau_collection()
 
-    def sauvegarder_dans_json(self):
-        data_to_save = []
-        for p in self.mes_plantes:
-            nom_sci = p["profil"].get("nom_sci") or p["profil"].get("taxonomie", {}).get("nom_scientifique", "")
-            data_to_save.append({
-                "surnom": p["surnom"],
-                "nom_sci": nom_sci,
-                "pot": p["pot"],
-                "date_arrosage": p["date_arrosage"]
-            })
+    @staticmethod
+    def resolve_profile(identifier: str) -> dict | None:
+        return DATABASE_BY_ID.get(identifier) or DATABASE_BY_SCIENTIFIC_NAME.get(identifier)
 
+    def save_collection(self) -> bool:
         try:
-            with open(FILE_JSON, "w", encoding="utf-8") as f:
-                json.dump(data_to_save, f, ensure_ascii=False, indent=4)
-        except Exception as e:
-            messagebox.showerror("Erreur Sauvegarde", f"Erreur lors de la sauvegarde JSON : {e}")
-
+            self.repository.save(self.mes_plantes)
+        except (OSError, ValidationError) as exc:
+            LOGGER.exception("Échec de sauvegarde")
+            messagebox.showerror("Sauvegarde", str(exc))
+            return False
         if self.on_collection_changed_callback:
             self.on_collection_changed_callback(self.mes_plantes)
+        return True
 
-    def filtrer_recherche(self, event=None):
-        query = self.entry_search.get().lower().strip()
+    def enregistrer_historique(self) -> None:
+        self.historique.append(deepcopy(self.mes_plantes))
+        self.historique = self.historique[-20:]
+
+    def annuler_action(self, event=None):
+        focused = self.focus_get()
+        if isinstance(focused, (tk.Entry, ttk.Entry, tk.Text)):
+            return
+        if not self.historique:
+            messagebox.showinfo("Annulation", "Aucune action à annuler.")
+            return
+        previous = self.historique.pop()
+        current = self.mes_plantes
+        self.mes_plantes = previous
+        if not self.save_collection():
+            self.mes_plantes = current
+            return
+        self.rafraichir_tableau_collection()
+
+    def filtrer_recherche(self, event=None) -> None:
+        query = normalize_text(self.entry_search.get())
         self.listbox_plantes.delete(0, tk.END)
+        self.search_results = []
+        for profile in DATABASE_PLANTES:
+            tax = profile.get("taxonomie", {})
+            haystack = " ".join(
+                [scientific_name(profile), ", ".join(vernacular_names(profile)), family_name(profile), str(tax.get("origine_geographique", ""))]
+            )
+            if query and query not in normalize_text(haystack):
+                continue
+            self.search_results.append(profile)
+            vernacular = ", ".join(vernacular_names(profile))
+            self.listbox_plantes.insert(tk.END, f"{scientific_name(profile)} — {vernacular or 'sans nom vernaculaire'}")
+        if self.search_results:
+            self.listbox_plantes.selection_set(0)
 
-        for p in DATABASE_PLANTES:
-            nom_sci = p.get("nom_sci") or p.get("taxonomie", {}).get("nom_scientifique", "Inconnu")
-            nom_vern = p.get("nom_vern") or p.get("taxonomie", {}).get("noms_vernaculaires", "N/A")
-            if isinstance(nom_vern, list):
-                nom_vern = ", ".join(nom_vern)
+    def _validated_form(self) -> tuple[str, float, dict]:
+        nickname = self.entry_surnom.get().strip()
+        if not nickname:
+            raise ValidationError("Le surnom ne peut pas être vide.")
+        try:
+            pot_l = float(self.entry_pot.get().strip().replace(",", "."))
+        except ValueError as exc:
+            raise ValidationError("Le volume du pot doit être un nombre.") from exc
+        if pot_l <= 0 or pot_l > 100000:
+            raise ValidationError("Le volume du pot doit être positif et réaliste.")
+        context = {
+            "emplacement": self.combo_emplacement.get() or "interieur",
+            "exposition": self.combo_exposition.get() or "non_renseignee",
+            "matiere_pot": "non_renseignee",
+            "substrat": "non_renseigne",
+        }
+        return nickname, pot_l, context
 
-            label = f"{nom_sci}  —  [{nom_vern}]"
-            if query in nom_sci.lower() or query in nom_vern.lower():
-                self.listbox_plantes.insert(tk.END, label)
+    def ajouter_plante(self) -> None:
+        selection = self.listbox_plantes.curselection()
+        if not selection:
+            messagebox.showwarning("Ajout", "Sélectionnez une espèce dans les résultats.")
+            return
+        try:
+            nickname, pot_l, context = self._validated_form()
+            profile = self.search_results[selection[0]]
+        except (ValidationError, IndexError) as exc:
+            messagebox.showerror("Ajout", str(exc))
+            return
+        self.enregistrer_historique()
+        today = format_date_fr(date.today())
+        plant = {
+            "id": str(uuid4()),
+            "species_id": profile_id(profile),
+            "surnom": nickname,
+            "pot_l": pot_l,
+            "date_arrosage": today,
+            "historique_soins": [{"type": "arrosage", "date": today, "note": "Création dans la collection"}],
+            "contexte": context,
+        }
+        self.mes_plantes.append(plant)
+        if not self.save_collection():
+            self.mes_plantes.pop()
+            self.historique.pop()
+            return
+        self.rafraichir_tableau_collection(select_id=plant["id"])
 
-        if self.listbox_plantes.size() > 0:
-            self.listbox_plantes.select_set(0)
+    def modifier_plante(self) -> None:
+        selected = self.tree.selection()
+        if len(selected) != 1:
+            messagebox.showwarning("Modification", "Sélectionnez exactement une plante.")
+            return
+        try:
+            nickname, pot_l, context = self._validated_form()
+        except ValidationError as exc:
+            messagebox.showerror("Modification", str(exc))
+            return
+        plant = self.find_instance(selected[0])
+        if not plant:
+            return
+        self.enregistrer_historique()
+        old = deepcopy(plant)
+        plant.update({"surnom": nickname, "pot_l": pot_l, "contexte": context})
+        if not self.save_collection():
+            plant.clear()
+            plant.update(old)
+            self.historique.pop()
+            return
+        self.rafraichir_tableau_collection(select_id=plant["id"])
 
-    def rafraichir_tableau_collection(self):
+    def reset_form(self) -> None:
+        self.entry_surnom.delete(0, tk.END)
+        self.entry_surnom.insert(0, "Ma nouvelle plante")
+        self.entry_pot.delete(0, tk.END)
+        self.entry_pot.insert(0, "1.5")
+        self.combo_emplacement.set("interieur")
+        self.combo_exposition.set("non_renseignee")
+
+    def find_instance(self, instance_id: str) -> dict | None:
+        return next((plant for plant in self.mes_plantes if plant.get("id") == instance_id), None)
+
+    def rafraichir_tableau_collection(self, select_id: str | None = None) -> None:
         for item in self.tree.get_children():
             self.tree.delete(item)
-
-        for p in self.mes_plantes:
-            calc = self.calculer_statut_arrosage(p["date_arrosage"], p["profil"])
-            nom_sci = p["profil"].get("nom_sci") or p["profil"].get("taxonomie", {}).get("nom_scientifique", "Inconnu")
-            nom_vern = p["profil"].get("nom_vern") or p["profil"].get("taxonomie", {}).get("noms_vernaculaires", "N/A")
-            if isinstance(nom_vern, list):
-                nom_vern = ", ".join(nom_vern)
-
-            self.tree.insert("", "end", values=(
-                p["surnom"],
-                nom_sci,
-                nom_vern,
-                p["pot"],
-                calc["date_dernier"],
-                calc["date_prochain"],
-                calc["statut_court"]
-            ), tags=(calc["code_statut"],))
-
-    def afficher_details_plante(self, event=None):
-        selected = self.tree.selection()
-        if not selected:
-            self.set_entry_text(self.entry_nom_sci, "-")
-            self.set_entry_text(self.entry_nom_vern, "-")
-            self.set_entry_text(self.entry_statut, "-")
-            self.set_entry_text(self.entry_freq, "Sélectionnez une plante ci-dessus")
-            
-            self.entry_eau.config(state="normal")
-            self.entry_eau.delete("1.0", tk.END)
-            self.entry_eau.insert(tk.END, "-")
-            self.entry_eau.config(state="disabled")
-
-            self.txt_notes.delete("1.0", tk.END)
-            return
-
-        values = self.tree.item(selected[0], "values")
-        surnom = values[0]
-        plante = next((p for p in self.mes_plantes if p["surnom"] == surnom), None)
-
-        if plante:
-            profil = plante["profil"]
-            calc = self.calculer_statut_arrosage(plante["date_arrosage"], profil)
-            
-            gestion_eau = profil.get("gestion_eau", {}) if isinstance(profil.get("gestion_eau"), dict) else {}
-            entretien = profil.get("entretien", {}) if isinstance(profil.get("entretien"), dict) else {}
-            sante = profil.get("sante_securite", {}) if isinstance(profil.get("sante_securite"), dict) else {}
-
-            nom_sci = profil.get("nom_sci") or profil.get("taxonomie", {}).get("nom_scientifique", "Inconnu")
-            nom_vern = profil.get("nom_vern") or profil.get("taxonomie", {}).get("noms_vernaculaires", "N/A")
-            if isinstance(nom_vern, list):
-                nom_vern = ", ".join(nom_vern)
-
-            self.set_entry_text(self.entry_nom_sci, nom_sci)
-            self.set_entry_text(self.entry_nom_vern, nom_vern)
-            self.set_entry_text(self.entry_statut, calc["detail_statut"], color=calc["couleur"])
-
-            # 1. Affichage propre de la fréquence
-            saison_nom = "Été" if calc["est_saison_chaude"] else "Hiver"
-            if calc["delai_actuel"] == 0:
-                txt_actuel = "Actuel : REPOS AU SEC"
-            else:
-                txt_actuel = f"Actuel : tous les {calc['delai_actuel']}j"
-
-            txt_freq_court = (
-                f"{txt_actuel} ({saison_nom})  |  "
-                f"☀️ Été : tous les {calc['delai_ete']}j  |  "
-                f"❄️ Hiver : tous les {calc['delai_hiver']}j"
+        for plant in self.mes_plantes:
+            profile = self.resolve_profile(plant.get("species_id", ""))
+            if not profile:
+                self.tree.insert(
+                    "", "end", iid=plant["id"],
+                    values=(plant["surnom"], plant.get("species_id", "Espèce inconnue"), "—", plant["pot_l"], plant["date_arrosage"], "—", "⚠️ Fiche introuvable"),
+                    tags=("MISSING",),
+                )
+                continue
+            try:
+                status = watering_status(plant["date_arrosage"], profile)
+                next_check = format_date_fr(status.next_check) if status.next_check else "Repos"
+                tag = status.code
+                label = status.short_label
+            except ValidationError as exc:
+                next_check, tag, label = "Erreur", "MISSING", str(exc)
+            self.tree.insert(
+                "", "end", iid=plant["id"],
+                values=(
+                    plant["surnom"], scientific_name(profile), family_name(profile), f"{float(plant['pot_l']):g}",
+                    plant["date_arrosage"], next_check, label,
+                ),
+                tags=(tag,),
             )
-            self.set_entry_text(self.entry_freq, txt_freq_court)
+        if select_id and self.tree.exists(select_id):
+            self.tree.selection_set(select_id)
+            self.tree.see(select_id)
+        self.afficher_details_plante()
 
-            # 2. Traitement du type d'eau
-            eau_brute = str(gestion_eau.get("qualite_eau") or profil.get("type_eau", "Eau claire")).strip()
-            nom_complet = (str(nom_vern) + " " + str(nom_sci)).lower()
+    def sort_tree(self, column: str, reverse: bool) -> None:
+        rows = [(self.tree.set(item, column), item) for item in self.tree.get_children("")]
+        if column == "pot":
+            rows.sort(key=lambda pair: float(pair[0] or 0), reverse=reverse)
+        else:
+            rows.sort(key=lambda pair: normalize_text(pair[0]), reverse=reverse)
+        for index, (_, item) in enumerate(rows):
+            self.tree.move(item, "", index)
+        self.tree.heading(column, command=lambda: self.sort_tree(column, not reverse))
 
-            est_tres_sensible = any(term in nom_complet or term in eau_brute.lower() 
-                                    for term in ["orchidée", "orchid", "calathea", "carnivore", "dionée", 
-                                                 "nepenthes", "maranta", "fougère", "anthurium", "tillandsia", 
-                                                 "bromelia", "azalée", "camélia", "hydrangea", "alocasia"])
+    def afficher_details_plante(self, event=None) -> None:
+        selected = self.tree.selection()
+        text = "Sélectionnez une plante."
+        if len(selected) == 1:
+            plant = self.find_instance(selected[0])
+            if plant:
+                profile = self.resolve_profile(plant.get("species_id", ""))
+                context = plant.get("contexte", {})
+                lines = [f"Identifiant : {plant['id']}", f"Surnom : {plant['surnom']}"]
+                if profile:
+                    lines.extend([
+                        f"Espèce : {scientific_name(profile)} ({', '.join(vernacular_names(profile))})",
+                        f"Famille : {family_name(profile)}",
+                    ])
+                    try:
+                        status = watering_status(plant["date_arrosage"], profile)
+                        lines.append(f"Rappel : {status.detail}")
+                    except ValidationError as exc:
+                        lines.append(f"Erreur de calendrier : {exc}")
+                else:
+                    lines.append("⚠️ La fiche de cette espèce n'existe plus dans le catalogue ; l'exemplaire est conservé.")
+                lines.append(f"Contexte : {context.get('emplacement')} — {context.get('exposition')} — pot {plant['pot_l']} L")
+                history = plant.get("historique_soins", [])
+                lines.append("\nHistorique récent :")
+                for event_item in history[-8:][::-1]:
+                    lines.append(f"• {event_item.get('date', '?')} — {event_item.get('type', 'soin')} : {event_item.get('note', '')}")
+                text = "\n".join(lines)
+                self.entry_surnom.delete(0, tk.END)
+                self.entry_surnom.insert(0, plant["surnom"])
+                self.entry_pot.delete(0, tk.END)
+                self.entry_pot.insert(0, f"{float(plant['pot_l']):g}")
+                self.combo_emplacement.set(context.get("emplacement", "interieur"))
+                self.combo_exposition.set(context.get("exposition", "non_renseignee"))
+        self.txt_details.config(state="normal")
+        self.txt_details.delete("1.0", tk.END)
+        self.txt_details.insert("1.0", text)
+        self.txt_details.config(state="disabled")
 
-            self.entry_eau.config(state="normal")
-            self.entry_eau.delete("1.0", tk.END)
-
-            if est_tres_sensible:
-                self.entry_eau.insert(tk.END, "⭐ MEILLEURS CHOIX : 🧪 Eau Osmosée | 🌧 Eau de Pluie | 🧊 Eau Déminéralisée ", "best_green")
-                self.entry_eau.insert(tk.END, f"({eau_brute})", "neutral")
-            elif any(k in eau_brute.lower() for k in ["osmosée", "pluie", "déminéralisée"]):
-                self.entry_eau.insert(tk.END, "⭐ MEILLEURS CHOIX : 🧪 Eau Osmosée | 🌧 Eau de Pluie ", "best_blue")
-                self.entry_eau.insert(tk.END, f"({eau_brute})", "neutral")
-            else:
-                self.entry_eau.insert(tk.END, "⭐ MEILLEURS CHOIX : 🚰 Eau du robinet reposée 24h | 🍾 Eau de source ", "best_darkblue")
-                self.entry_eau.insert(tk.END, f"({eau_brute})", "neutral")
-
-            self.entry_eau.config(state="disabled")
-
-            # 3. Formattage du pavé "Notes & Consignes"
-            consignes_list = []
-
-            if profil.get("conseil"):
-                consignes_list.append(f"💡 Conseil Général : {profil['conseil']}")
-
-            if entretien.get("rempotage"):
-                consignes_list.append(f"🪴 Rempotage : {entretien['rempotage']}")
-            if entretien.get("fertilisation"):
-                consignes_list.append(f"🧪 Engrais : {entretien['fertilisation']}")
-            if entretien.get("taille"):
-                consignes_list.append(f"✂️ Taille : {entretien['taille']}")
-
-            if sante.get("toxicite"):
-                consignes_list.append(f"⚠️ Toxicité : {sante['toxicite']}")
-            if sante.get("maladies"):
-                mal = sante["maladies"]
-                m_str = ", ".join(mal) if isinstance(mal, list) else mal
-                consignes_list.append(f"🦠 Sensibilité maladies : {m_str}")
-            if sante.get("proprietes_particulieres"):
-                consignes_list.append(f"⭐ Remarques : {sante['proprietes_particulieres']}")
-
-            if est_tres_sensible and "osmosée" not in str(consignes_list).lower():
-                consignes_list.append("💧 Sensibilité Eau : Espèce calcifuge. Éviter absolument l'eau du robinet dure.")
-
-            self.txt_notes.delete("1.0", tk.END)
-            if consignes_list:
-                self.txt_notes.insert(tk.END, "\n".join(consignes_list))
-            else:
-                self.txt_notes.insert(tk.END, "Aucune consigne ou note particulière.")
-
-    def marquer_arrosee_aujourdhui(self):
+    def marquer_arrosee_aujourdhui(self) -> None:
         selected = self.tree.selection()
         if not selected:
-            messagebox.showwarning("Attention", "Veuillez d'abord sélectionner une plante dans le tableau.")
+            messagebox.showwarning("Arrosage", "Sélectionnez au moins une plante.")
             return
-
         self.enregistrer_historique()
+        today = format_date_fr(date.today())
+        for instance_id in selected:
+            plant = self.find_instance(instance_id)
+            if not plant:
+                continue
+            plant["date_arrosage"] = today
+            plant.setdefault("historique_soins", []).append({"type": "arrosage", "date": today, "note": "Arrosage enregistré"})
+        if not self.save_collection():
+            self.mes_plantes = self.historique.pop()
+            return
+        self.rafraichir_tableau_collection(select_id=selected[0])
 
-        values = self.tree.item(selected[0], "values")
-        surnom = values[0]
-        date_aujourdhui_fr = format_date_fr(datetime.now().date())
-
-        for p in self.mes_plantes:
-            if p["surnom"] == surnom:
-                p["date_arrosage"] = date_aujourdhui_fr
-                break
-
-        self.sauvegarder_dans_json()
-        self.rafraichir_tableau_collection()
+    def ajouter_soin(self) -> None:
+        selected = self.tree.selection()
+        if len(selected) != 1:
+            messagebox.showwarning("Soin", "Sélectionnez exactement une plante.")
+            return
+        care_type = simpledialog.askstring("Type de soin", "Type : rempotage, engrais, taille, observation…", parent=self)
+        if not care_type:
+            return
+        note = simpledialog.askstring("Note", "Détail du soin ou de l'observation :", parent=self) or ""
+        date_text = simpledialog.askstring("Date", "Date au format JJ/MM/AAAA :", initialvalue=format_date_fr(date.today()), parent=self)
+        if not date_text:
+            return
+        try:
+            care_date = parse_date(date_text)
+            if care_date > date.today():
+                raise ValidationError("La date du soin ne peut pas être dans le futur.")
+        except ValidationError as exc:
+            messagebox.showerror("Soin", str(exc))
+            return
+        plant = self.find_instance(selected[0])
+        if not plant:
+            return
+        self.enregistrer_historique()
+        plant.setdefault("historique_soins", []).append({"type": care_type.strip(), "date": format_date_fr(care_date), "note": note.strip()})
+        if not self.save_collection():
+            self.mes_plantes = self.historique.pop()
+            return
         self.afficher_details_plante()
-        messagebox.showinfo("Arrosage enregistré", f"'{surnom}' a été marquée comme arrosée aujourd'hui ({date_aujourdhui_fr}) !")
 
-    def ajouter_plante(self):
-        surnom = self.entry_surnom.get().strip()
-        pot = self.entry_pot.get().strip()
-        sel = self.listbox_plantes.curselection()
-
-        if not sel:
-            messagebox.showwarning("Attention", "Veuillez sélectionner une espèce.")
-            return
-
-        texte_selectionne = self.listbox_plantes.get(sel[0])
-        nom_sci = texte_selectionne.split("  —  ")[0].strip()
-
-        profil = next((p for p in DATABASE_PLANTES if p.get("nom_sci") == nom_sci or p.get("taxonomie", {}).get("nom_scientifique") == nom_sci), None)
-        if not profil: return
-
-        self.enregistrer_historique()
-
-        nouvelle = {
-            "surnom": surnom,
-            "profil": profil,
-            "pot": pot,
-            "date_arrosage": format_date_fr(datetime.now().date())
-        }
-
-        self.mes_plantes.append(nouvelle)
-        self.sauvegarder_dans_json()
-        self.rafraichir_tableau_collection()
-        messagebox.showinfo("Succès", f"'{surnom}' a bien été enregistré !")
-
-    def supprimer_plante(self):
+    def supprimer_plante(self) -> None:
         selected = self.tree.selection()
         if not selected:
-            messagebox.showinfo("Info", "Sélectionnez une plante à supprimer.")
+            messagebox.showwarning("Suppression", "Sélectionnez au moins une plante.")
             return
-
-        surnoms_a_supprimer = [self.tree.item(item, "values")[0] for item in selected]
-        liste_surnoms_str = ", ".join([f"'{s}'" for s in surnoms_a_supprimer])
-
-        confirmation = messagebox.askyesno(
-            "Confirmation de suppression",
-            f"Êtes-vous sûr de vouloir supprimer {liste_surnoms_str} de votre collection ?"
-        )
-
-        if not confirmation:
+        if not messagebox.askyesno("Suppression", f"Supprimer {len(selected)} exemplaire(s) ?"):
             return
-
         self.enregistrer_historique()
-
-        for item in selected:
-            values = self.tree.item(item, "values")
-            surnom = values[0]
-            self.mes_plantes = [p for p in self.mes_plantes if p["surnom"] != surnom]
-
-        self.sauvegarder_dans_json()
+        selected_ids = set(selected)
+        old = self.mes_plantes
+        self.mes_plantes = [plant for plant in self.mes_plantes if plant.get("id") not in selected_ids]
+        if not self.save_collection():
+            self.mes_plantes = old
+            self.historique.pop()
+            return
         self.rafraichir_tableau_collection()
-        self.afficher_details_plante()
-        messagebox.showinfo("Suppression effectuée", f"Plante(s) supprimée(s). Vous pouvez faire Ctrl+Z pour annuler.")
 
-    def ouvrir_fenetre_calendrier(self):
-        win_cal = tk.Toplevel(self)
-        win_cal.title("📅 Calendrier d'Arrosage Sur-Mesure")
-        win_cal.geometry("700x520")
+    def aller_au_catalogue(self) -> None:
+        selected = self.tree.selection()
+        if len(selected) != 1:
+            messagebox.showwarning("Catalogue", "Sélectionnez exactement une plante.")
+            return
+        plant = self.find_instance(selected[0])
+        if plant and self.voir_catalogue_callback:
+            self.voir_catalogue_callback(plant.get("species_id", ""))
 
-        frame_top = ttk.LabelFrame(win_cal, text=" Options du calendrier ")
-        frame_top.pack(fill="x", padx=10, pady=5)
+    def _planning(self, start: date, end: date) -> dict[date, list[str]]:
+        planning: dict[date, list[str]] = {}
+        for plant in self.mes_plantes:
+            profile = self.resolve_profile(plant.get("species_id", ""))
+            if not profile:
+                continue
+            current = parse_date(plant["date_arrosage"])
+            safety = 0
+            while current <= end and safety < 1000:
+                safety += 1
+                status = watering_status(current, profile, today=current)
+                interval = status.interval_days
+                if interval == 0:
+                    current = date(current.year + (current.month == 12), 1 if current.month == 12 else current.month + 1, 1)
+                    continue
+                current += timedelta(days=interval)
+                if start <= current <= end:
+                    planning.setdefault(current, []).append(plant["surnom"])
+        return planning
 
-        aujourdhui = datetime.now().date()
-        date_fin_defaut = aujourdhui + timedelta(days=7)
+    def ouvrir_fenetre_calendrier(self) -> None:
+        window = tk.Toplevel(self)
+        window.title("Calendrier indicatif de contrôle")
+        window.geometry("760x560")
+        controls = ttk.Frame(window)
+        controls.pack(fill="x", padx=8, pady=8)
+        ttk.Label(controls, text="Début").pack(side="left")
+        start_entry = ttk.Entry(controls, width=12)
+        start_entry.insert(0, format_date_fr(date.today()))
+        start_entry.pack(side="left", padx=4)
+        ttk.Label(controls, text="Fin").pack(side="left")
+        end_entry = ttk.Entry(controls, width=12)
+        end_entry.insert(0, format_date_fr(date.today() + timedelta(days=30)))
+        end_entry.pack(side="left", padx=4)
+        result = tk.Text(window, wrap="word")
+        result.pack(fill="both", expand=True, padx=8, pady=(0, 8))
 
-        ttk.Label(frame_top, text="Début (JJ/MM/AAAA) :").grid(row=0, column=0, padx=5, pady=5, sticky="w")
-        entry_debut = ttk.Entry(frame_top, width=12)
-        entry_debut.insert(0, format_date_fr(aujourdhui))
-        entry_debut.grid(row=0, column=1, padx=5, pady=5)
-
-        ttk.Label(frame_top, text="Fin (JJ/MM/AAAA) :").grid(row=0, column=2, padx=5, pady=5, sticky="w")
-        entry_fin = ttk.Entry(frame_top, width=12)
-        entry_fin.insert(0, format_date_fr(date_fin_defaut))
-        entry_fin.grid(row=0, column=3, padx=5, pady=5)
-
-        txt_result = tk.Text(win_cal, font=("Consolas", 9), wrap="word", bd=1, relief="solid")
-        txt_result.pack(fill="both", expand=True, padx=10, pady=5)
-
-        def generer():
-            d_debut = parse_date(entry_debut.get())
-            d_fin = parse_date(entry_fin.get())
-
-            if d_fin < d_debut + timedelta(days=6):
-                messagebox.showwarning("Durée minimale", "Le calendrier doit s'étendre sur 1 semaine minimum (7 jours).")
+        def generate() -> None:
+            try:
+                start = parse_date(start_entry.get())
+                end = parse_date(end_entry.get())
+                if end < start:
+                    raise ValidationError("La date de fin doit être postérieure à la date de début.")
+                if (end - start).days > 730:
+                    raise ValidationError("La période est limitée à deux ans.")
+                planning = self._planning(start, end)
+            except ValidationError as exc:
+                messagebox.showerror("Calendrier", str(exc), parent=window)
                 return
-
-            planning = {}
-
-            for p in self.mes_plantes:
-                date_dernier = parse_date(p["date_arrosage"])
-                curr_date = date_dernier
-                
-                nom_vern = p["profil"].get("nom_vern") or p["profil"].get("taxonomie", {}).get("noms_vernaculaires", "N/A")
-                if isinstance(nom_vern, list):
-                    nom_vern = nom_vern[0]
-
-                safety_limit = 0
-                while curr_date <= d_fin and safety_limit < 1000:
-                    safety_limit += 1
-                    delai, _, _, _ = self.get_delai_actuel(p["profil"], curr_date)
-                    
-                    if delai == 0:
-                        # En cas de repos (delai = 0), passer directement au 1er du mois suivant
-                        if curr_date.month == 12:
-                            curr_date = datetime(curr_date.year + 1, 1, 1).date()
-                        else:
-                            curr_date = datetime(curr_date.year, curr_date.month + 1, 1).date()
-                        continue
-
-                    curr_date += timedelta(days=delai)
-
-                    if d_debut <= curr_date <= d_fin:
-                        if curr_date not in planning:
-                            planning[curr_date] = []
-                        planning[curr_date].append(f"• {p['surnom']} ({nom_vern})")
-
-            res = f"=================================================================\n"
-            res += f" 📅 CALENDRIER D'ARROSAGE DU {format_date_fr(d_debut)} AU {format_date_fr(d_fin)}\n"
-            res += f"=================================================================\n\n"
-
+            lines = ["RAPPELS DE CONTRÔLE DU SUBSTRAT", "Arroser uniquement après vérification de l'humidité et de l'état de la plante.", ""]
+            for day, names in sorted(planning.items()):
+                lines.append(f"{format_date_fr(day)} : {', '.join(names)}")
             if not planning:
-                res += "🟢 Aucun arrosage prévu sur cette période !\n"
-            else:
-                for date_arr in sorted(planning.keys()):
-                    res += f"📍 {format_date_fr(date_arr)} :\n"
-                    for item in planning[date_arr]:
-                        res += f"   {item}\n"
-                    res += "\n"
+                lines.append("Aucun contrôle prévu sur cette période.")
+            result.delete("1.0", tk.END)
+            result.insert("1.0", "\n".join(lines))
 
-            txt_result.config(state="normal")
-            txt_result.delete("1.0", tk.END)
-            txt_result.insert(tk.END, res)
+        ttk.Button(controls, text="Générer", command=generate).pack(side="left", padx=6)
+        generate()
 
-        def copier_presse_papier():
-            contenu = txt_result.get("1.0", tk.END).strip()
-            if contenu:
-                win_cal.clipboard_clear()
-                win_cal.clipboard_append(contenu)
-                win_cal.update()
-                messagebox.showinfo("Presse-papier", "📋 Le calendrier a bien été copié dans le presse-papier !")
+    def exporter_csv(self) -> None:
+        path = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=[("CSV", "*.csv")], initialfile="collection_botanique.csv")
+        if not path:
+            return
+        try:
+            with Path(path).open("w", encoding="utf-8-sig", newline="") as handle:
+                writer = csv.writer(handle, delimiter=";")
+                writer.writerow(["id", "surnom", "nom_scientifique", "famille", "pot_l", "dernier_arrosage", "emplacement", "exposition"])
+                for plant in self.mes_plantes:
+                    profile = self.resolve_profile(plant.get("species_id", ""))
+                    context = plant.get("contexte", {})
+                    writer.writerow([
+                        plant["id"], plant["surnom"], scientific_name(profile or {"nom_sci": plant.get("species_id")}),
+                        family_name(profile or {}), plant["pot_l"], plant["date_arrosage"],
+                        context.get("emplacement", ""), context.get("exposition", ""),
+                    ])
+        except OSError as exc:
+            messagebox.showerror("Export CSV", str(exc))
 
-        btn_gen = ttk.Button(frame_top, text="⚡ Générer", command=generer)
-        btn_gen.grid(row=0, column=4, padx=5, pady=5)
-
-        btn_copy = ttk.Button(frame_top, text="📋 Copier le calendrier", command=copier_presse_papier)
-        btn_copy.grid(row=0, column=5, padx=5, pady=5)
-
-        generer()
+    def exporter_ics(self) -> None:
+        path = filedialog.asksaveasfilename(defaultextension=".ics", filetypes=[("iCalendar", "*.ics")], initialfile="controles_plantes.ics")
+        if not path:
+            return
+        planning = self._planning(date.today(), date.today() + timedelta(days=365))
+        lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Assistant Botanique//FR"]
+        for day, names in sorted(planning.items()):
+            uid = f"{day.isoformat()}-{'-'.join(normalize_text(name).replace(' ', '-') for name in names)}@assistant-botanique"
+            lines.extend([
+                "BEGIN:VEVENT", f"UID:{uid}", f"DTSTART;VALUE=DATE:{day.strftime('%Y%m%d')}",
+                f"SUMMARY:Contrôler le substrat — {', '.join(names)}",
+                "DESCRIPTION:Vérifier l'humidité du substrat et l'état de la plante avant tout arrosage.",
+                "END:VEVENT",
+            ])
+        lines.append("END:VCALENDAR")
+        try:
+            Path(path).write_text("\r\n".join(lines) + "\r\n", encoding="utf-8")
+        except OSError as exc:
+            messagebox.showerror("Export iCalendar", str(exc))

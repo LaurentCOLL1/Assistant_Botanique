@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "assistant-botanique"
+version = "2.0.0"
+description = "Application de bureau pour gérer une collection de plantes et préparer des substrats."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Laurent COLL1"}]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+assistant-botanique = "main:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+exclude = ["familles_plantes", "data.py"]
+
+[tool.ruff.lint]
+select = ["E", "F"]
+ignore = ["E501"]
