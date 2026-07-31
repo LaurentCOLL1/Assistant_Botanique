@@ -1,6 +1,6 @@
 # Audit exhaustif du catalogue botanique
 
-Généré le 2026-07-31T22:56:07+00:00.
+Généré le 2026-07-31T22:59:33+00:00.
 
 ## Portée et limites
 
@@ -12,9 +12,9 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - Fiches parcourues : **2204**
 - Familles représentées : **143**
 - Fiches structurellement complètes : **2201**
-- Photos exactes trouvées : **1775**
+- Photos exactes trouvées : **1814**
 - Photos représentatives de genre/groupe : **270**
-- Photos non trouvées : **159**
+- Photos non trouvées : **120**
 
 ## Résultats taxonomiques
 
@@ -687,24 +687,16 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Byblis guehoi**
 - **Chimonanthus campanulatus**
 - **Chimonanthus zhejiangensis**
-- **Chimonanthus salicifolius**
 - **Chimonanthus grammatus**
 - **Chimonanthus zhejiangensis 'Qianjiang'**
-- **Calycanthus floridus var. oblongifolius**
 - **Celtis australis**
 - **Canna x generalis**
-- **Canna liliiflora**
 - **Capparis spinosa**
 - **Capparis zeylanica**
 - **Crateva unilocularis**
 - **Capparis aegyptia**
-- **Lonicera pileata**
-- **Lonicera alseuosmoides**
-- **Patrinia villosa**
 - **Vasconcellea x heilbornii**
-- **Vasconcellea sphaerocarpa**
 - **Jarilla caudata**
-- **Cylicomorpha parviflora**
 - **Jacaratia corumbensis**
 - **Vasconcellea x heilbornii 'Pentagon'**
 - **Vasconcellea Weberbaueri**
@@ -714,7 +706,6 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Vasconcellea horovitziana**
 - **Vasconcellea omnilingua**
 - **Vasconcellea x heilbornii 'Leighton Green'**
-- **Vasconcellea sphaerocarpa 'Gigantea'**
 - **Maytenus boaria**
 - **Cistus x hybridus**
 - **Terminalia ivorensis**
@@ -723,16 +714,10 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Cornus controversa**
 - **Cornus eydeana**
 - **Sechium edule**
-- **Momordica charantia**
-- **Carludovica drudei**
 - **Asplundia rigida**
 - **Asplundia utilis**
-- **Eleocharis dulcis**
 - **Carex comans**
 - **Carex vulpina**
-- **Habropetalum dawei**
-- **Dioscorea sansibarensis**
-- **Pterocephalus pinaceus**
 - **Cephalaria transylvanica**
 - **Scabiosa vestina**
 - **Knautia dipsacifolia**
@@ -744,14 +729,11 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Gentiana asclepiadea**
 - **Gentiana dahurica**
 - **Gentiana utriculosa**
-- **Gentiana nipponica**
 - **Pelargonium echinatum**
 - **Nematanthus wettsteinii**
 - **Ribes laciniatum**
 - **Ribes punctatum**
 - **Heliconia rostrata**
-- **Heliconia bihai**
-- **Heliconia psittacorum**
 - **Heliconia stricta**
 - **Heliconia caribaea**
 - **Heliconia chartacea**
@@ -761,44 +743,33 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Heliconia bourgaeana**
 - **Heliconia collinsiana**
 - **Heliconia champneyna**
-- **Heliconia x rauliniana**
 - **Heliconia densiflora**
 - **Heliconia vellerigera**
-- **Juncus patens**
-- **Holboellia angustifolia**
 - **Stauntonia hexaphylla**
 - **Akebia x pentaphylla**
 - **Stauntonia yaoshanensis**
 - **Stauntonia oligophylla**
 - **Fritillaria davisii**
 - **Linum usitatissimum**
-- **Linum macrorhizum**
-- **Linum salsoloides**
 - **Rotala macrandra**
 - **Cuphea llavea**
 - **Ibicella parodii**
 - **Martynia palmeri**
 - **Proboscidea spicata**
 - **Martynia fragrans**
-- **Proboscidea sinaloensis**
-- **Monolena primuliflora**
 - **Heterocentron elegans**
 - **Moringa stenopetala**
 - **Moringa concanensis**
 - **Moringa pygmaea**
-- **Moringa rivae**
 - **Moringa ruspoliana**
 - **Moringa stenopetala 'Konso'**
 - **Musa sikkimensis**
 - **Ensete perrieri**
-- **Myrica pensylvanica**
 - **Myrica californica**
-- **Morella quercifolia**
 - **Morella salicifolia**
 - **Pisonia alba**
 - **Bougainvillea x buttiana**
 - **Fuchsia x hybrida**
-- **Circaea lutetiana**
 - **Phalaenopsis hybrids**
 - **Pandanus edulis**
 - **Sararanga sinuosa**
@@ -807,25 +778,15 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Pterodiscus speciosus**
 - **Pterodiscus ngamicus**
 - **Dicerocaryum eriocarpum**
-- **Rogeria adenophylla**
-- **Josephinia imperatricis**
 - **Holubia tetracarpa**
 - **Ceratostigma griffithii**
 - **Phlox stolonifera**
-- **Allophyllum divaricatum**
-- **Dayia multicaulis**
-- **Cyclamen hederifolium**
 - **Hottonia palustris**
 - **Reseda media**
 - **Reseda scoparia**
 - **Reseda arabica**
-- **Reseda decursiva**
 - **Reseda lanceolata**
 - **Reseda stenostachya**
-- **Reseda orientalis**
-- **Prunus persica**
-- **Heliamphora huberi**
-- **Sarracenia x wrigleyana**
 - **Kadsura japonica**
 - **Kadsura angustifolia**
 - **Strelitzia x guernseyensis**
