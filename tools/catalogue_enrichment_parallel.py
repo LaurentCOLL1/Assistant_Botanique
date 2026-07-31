@@ -2,14 +2,21 @@
 from __future__ import annotations
 
 import json
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date, datetime, timezone
+from typing import Any
 
+import catalogue_enrichment as base
 from catalogue_enrichment import (
     PHOTOS_OUTPUT,
     REPORT_OUTPUT,
     TAXONOMY_OUTPUT,
+    USER_AGENT,
     build_report,
     family_name,
     find_photo,
@@ -20,7 +27,44 @@ from catalogue_enrichment import (
     taxonomic_match,
 )
 
-MAX_WORKERS = 6
+MAX_WORKERS = 12
+REQUEST_TIMEOUT = 10
+REQUEST_RETRIES = 2
+
+
+def fast_request_json(
+    url: str,
+    *,
+    params: dict[str, Any] | None = None,
+    retries: int = REQUEST_RETRIES,
+) -> Any:
+    """Version bornée du client HTTP utilisé par toutes les tâches d'audit."""
+    if params:
+        url += ("&" if "?" in url else "?") + urllib.parse.urlencode(params)
+    request = urllib.request.Request(
+        url,
+        headers={"User-Agent": USER_AGENT, "Accept": "application/json"},
+    )
+    attempts = min(max(1, retries), REQUEST_RETRIES)
+    for attempt in range(attempts):
+        try:
+            with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT) as response:
+                return json.load(response)
+        except urllib.error.HTTPError as exc:
+            if exc.code == 404:
+                return None
+            if (exc.code == 429 or 500 <= exc.code < 600) and attempt + 1 < attempts:
+                time.sleep(1.0)
+                continue
+            raise
+        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError):
+            if attempt + 1 >= attempts:
+                raise
+            time.sleep(1.0)
+    return None
+
+
+base.request_json = fast_request_json
 
 
 def audit_one(position: int, output_identifier: str, profile: dict) -> tuple[int, str, dict, dict]:
@@ -61,7 +105,7 @@ def main() -> int:
             for position, identifier, profile in work
         }
         for future in as_completed(futures):
-            position, profile = futures[future]
+            _position, profile = futures[future]
             result = future.result()
             completed.append(result)
             taxonomy_item = result[2]
