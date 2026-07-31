@@ -69,6 +69,7 @@ jobs:
           tools/catalogue_enrichment.py
           tools/catalogue_enrichment_parallel.py
           tools/photo_batch_enrichment.py
+          tools/gbif_photo_enrichment.py
       - name: Produire ou compléter l'audit
         shell: bash
         run: |
@@ -76,7 +77,9 @@ jobs:
             python tools/photo_batch_enrichment.py
           else
             python tools/catalogue_enrichment_parallel.py
+            python tools/photo_batch_enrichment.py
           fi
+          python tools/gbif_photo_enrichment.py
       - uses: actions/upload-artifact@v4
         with:
           name: catalogue-audit-results
