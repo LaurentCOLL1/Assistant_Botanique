@@ -48,3 +48,47 @@ jobs:
         run: ruff check .
       - if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
         run: python validate_data.py --strict --baseline data_quality_baseline.json
+
+  family-reclassification:
+    if: github.event_name == 'pull_request' && github.head_ref == 'catalogue/gbif-family-reclassification'
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Vérifier la syntaxe
+        run: python -m py_compile tools/reclassify_and_expand_families.py
+      - name: Reclasser et enrichir
+        shell: bash
+        run: |
+          if git log -1 --pretty=%B | grep -q '\[family-bot\]'; then
+            echo "Résultats déjà générés."
+            exit 0
+          fi
+          python tools/reclassify_and_expand_families.py
+          python tools/catalogue_enrichment_parallel.py
+          python tools/photo_batch_enrichment.py
+          python tools/gbif_photo_enrichment.py
+          python tools/commons_targeted_enrichment.py
+      - name: Enregistrer les résultats
+        shell: bash
+        run: |
+          if git log -1 --pretty=%B | grep -q '\[family-bot\]'; then
+            exit 0
+          fi
+          git config user.name "assistant-botanique-family-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A familles_plantes catalogue_metadata
+          if git diff --cached --quiet; then
+            echo "Aucune modification."
+            exit 0
+          fi
+          git commit -m "data: reclasser et enrichir les familles [family-bot]"
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
