@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/assistant-botanique/collection.schema.json",
+  "title": "Collection Assistant Botanique",
+  "type": "object",
+  "required": ["schema_version", "plantes"],
+  "properties": {
+    "schema_version": {"const": 2},
+    "plantes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "species_id", "surnom", "pot_l", "date_arrosage", "historique_soins", "contexte"],
+        "properties": {
+          "id": {"type": "string", "format": "uuid"},
+          "species_id": {"type": "string", "minLength": 1},
+          "surnom": {"type": "string", "minLength": 1},
+          "pot_l": {"type": "number", "exclusiveMinimum": 0},
+          "date_arrosage": {"type": "string", "pattern": "^\\d{2}/\\d{2}/\\d{4}$"},
+          "historique_soins": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["type", "date"],
+              "properties": {
+                "type": {"type": "string", "minLength": 1},
+                "date": {"type": "string", "pattern": "^\\d{2}/\\d{2}/\\d{4}$"},
+                "note": {"type": "string"}
+              }
+            }
+          },
+          "contexte": {
+            "type": "object",
+            "properties": {
+              "emplacement": {"enum": ["interieur", "exterieur", "serre"]},
+              "exposition": {"type": "string"},
+              "matiere_pot": {"type": "string"},
+              "substrat": {"type": "string"}
+            }
+          }
+        }
+      }
+    }
+  }
+}
