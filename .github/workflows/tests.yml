@@ -64,9 +64,19 @@ jobs:
         with:
           python-version: "3.13"
       - name: Vérifier la syntaxe
-        run: python -m py_compile tools/catalogue_enrichment.py tools/catalogue_enrichment_parallel.py
-      - name: Auditer toutes les fiches et rechercher les photos
-        run: python tools/catalogue_enrichment_parallel.py
+        run: >-
+          python -m py_compile
+          tools/catalogue_enrichment.py
+          tools/catalogue_enrichment_parallel.py
+          tools/photo_batch_enrichment.py
+      - name: Produire ou compléter l'audit
+        shell: bash
+        run: |
+          if [[ -f catalogue_metadata/taxonomy_audit.json && -f catalogue_metadata/photos.json ]]; then
+            python tools/photo_batch_enrichment.py
+          else
+            python tools/catalogue_enrichment_parallel.py
+          fi
       - uses: actions/upload-artifact@v4
         with:
           name: catalogue-audit-results
