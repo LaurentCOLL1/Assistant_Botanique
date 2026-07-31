@@ -1,0 +1,54 @@
+name: Maintenance du catalogue
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit-and-enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Vérifier les scripts
+        run: >-
+          python -m py_compile
+          tools/catalogue_enrichment.py
+          tools/catalogue_enrichment_parallel.py
+          tools/photo_batch_enrichment.py
+          tools/gbif_photo_enrichment.py
+          tools/commons_targeted_enrichment.py
+          tools/fix_catalogue_anomalies.py
+      - name: Corriger les anomalies certaines
+        run: python tools/fix_catalogue_anomalies.py
+      - name: Auditer et compléter les photos
+        shell: bash
+        run: |
+          if [[ -f catalogue_metadata/taxonomy_audit.json && -f catalogue_metadata/photos.json ]]; then
+            python tools/photo_batch_enrichment.py
+          else
+            python tools/catalogue_enrichment_parallel.py
+            python tools/photo_batch_enrichment.py
+          fi
+          python tools/gbif_photo_enrichment.py
+          python tools/commons_targeted_enrichment.py
+      - name: Enregistrer les résultats
+        shell: bash
+        run: |
+          git config user.name "assistant-botanique-catalogue-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add catalogue_metadata familles_plantes
+          if git diff --cached --quiet; then
+            echo "Aucune modification à enregistrer."
+            exit 0
+          fi
+          git commit -m "data: actualiser l'audit et les photos du catalogue"
+          git push origin HEAD:main
