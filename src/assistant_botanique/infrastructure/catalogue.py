@@ -14,6 +14,8 @@ from core import family_name, profile_id, scientific_name, toxicity_level, verna
 
 from assistant_botanique.paths import FAMILIES_DIR, OVERRIDES_DIR, RESOURCE_DIR
 
+CATALOGUE_METADATA_DIR = RESOURCE_DIR / "catalogue_metadata"
+
 
 def _load_legacy_module():
     path = RESOURCE_DIR / "data.py"
@@ -75,6 +77,41 @@ def validate_profile(profile: dict[str, Any]) -> tuple[list[str], list[str]]:
     return errors, warnings
 
 
+def load_curated_metadata(directory: Path = CATALOGUE_METADATA_DIR) -> dict[str, dict[str, Any]]:
+    """Charge les métadonnées éditoriales séparées des grosses fiches historiques."""
+    result: dict[str, dict[str, Any]] = {}
+    if not directory.exists():
+        return result
+    for path in sorted(directory.glob("*.json")):
+        if path.name == "notable_species.json":
+            continue
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if not isinstance(payload, dict):
+            continue
+        for identifier, metadata in payload.items():
+            if isinstance(metadata, dict):
+                result[str(identifier)] = deepcopy(metadata)
+    return result
+
+
+def merge_curated_metadata(
+    profile: dict[str, Any],
+    curated_metadata: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
+    """Fusionne une métadonnée éditoriale; la fiche explicite reste prioritaire."""
+    enriched = deepcopy(profile)
+    identifier = profile_id(enriched)
+    curated = curated_metadata.get(identifier)
+    if not curated:
+        return enriched
+    explicit = enriched.get("metadata") if isinstance(enriched.get("metadata"), dict) else {}
+    enriched["metadata"] = {**curated, **explicit}
+    return enriched
+
+
 def _load_overrides() -> dict[str, dict[str, Any]]:
     result: dict[str, dict[str, Any]] = {}
     for path in sorted(OVERRIDES_DIR.glob("*.json")):
@@ -87,10 +124,14 @@ def _load_overrides() -> dict[str, dict[str, Any]]:
     return result
 
 
-def load_catalogue(directory: Path = FAMILIES_DIR) -> tuple[list[dict[str, Any]], list[str]]:
+def load_catalogue(
+    directory: Path = FAMILIES_DIR,
+    metadata_directory: Path = CATALOGUE_METADATA_DIR,
+) -> tuple[list[dict[str, Any]], list[str]]:
     catalogue: list[dict[str, Any]] = []
     errors: list[str] = []
     overrides = _load_overrides()
+    curated_metadata = load_curated_metadata(metadata_directory)
     if not directory.exists():
         return [], [f"Dossier catalogue introuvable : {directory}"]
     for path in sorted(directory.glob("*.json")):
@@ -106,7 +147,8 @@ def load_catalogue(directory: Path = FAMILIES_DIR) -> tuple[list[dict[str, Any]]
             if not isinstance(raw, dict):
                 errors.append(f"{path.name}[{index}]: entrée non objet")
                 continue
-            base = normalize_profile(raw, path.name)
+            enriched = merge_curated_metadata(raw, curated_metadata)
+            base = normalize_profile(enriched, path.name)
             override = overrides.get(base["id"])
             profile = normalize_profile(override, path.name) if override else base
             profile_errors, _warnings = validate_profile(profile)
