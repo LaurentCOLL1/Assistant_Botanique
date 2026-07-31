@@ -14,6 +14,7 @@ from app_data import (
 from app_paths import LOG_FILE
 from assistant_botanique.infrastructure.settings import SettingsRepository
 from assistant_botanique.services.notifications import NotificationService
+from assistant_botanique.ui.collection_editor_tab import CollectionEditorTab
 from assistant_botanique.ui.v3_tabs import AdaptiveCareTab, CatalogueReviewTab, MaintenanceTab, PhotoTimelineTab
 from storage import CollectionRepository
 from tab_catalogue import TabCatalogue
@@ -53,6 +54,12 @@ class PlantCareApp:
             on_collection_changed_callback=self.on_collection_updated,
             voir_catalogue_callback=self.navigate_to_catalogue,
         )
+        self.tab_editor = CollectionEditorTab(
+            self.notebook,
+            self.database,
+            DATABASE_PLANTES,
+            on_collection_refresh=self.refresh_legacy_collection,
+        )
         self.tab_catalogue = TabCatalogue(self.notebook)
         self.tab_substrat = TabSubstrat(self.notebook, settings=self.settings, on_settings_changed=self.save_settings)
         self.tab_diagnostic = TabDiagnostic(self.notebook, collection_provider=lambda: self.tab_gestion.mes_plantes)
@@ -73,6 +80,7 @@ class PlantCareApp:
 
         tabs = (
             (self.tab_gestion, "🪴 Collection"),
+            (self.tab_editor, "✏️ Modifier collection"),
             (self.tab_adaptive, "🌦️ Soins adaptatifs"),
             (self.tab_photos, "📷 Journal & photos"),
             (self.tab_catalogue, "📖 Catalogue"),
@@ -125,6 +133,8 @@ class PlantCareApp:
     def on_collection_updated(self, plants: list[dict]) -> None:
         self.tab_substrat.actualiser_combo_substrat(plants)
         self.tab_diagnostic.refresh_plants()
+        if hasattr(self, "tab_editor"):
+            self.tab_editor.refresh()
         if hasattr(self, "tab_adaptive"):
             self.tab_adaptive.refresh()
         if hasattr(self, "tab_photos"):
@@ -134,7 +144,14 @@ class PlantCareApp:
 
     def refresh_legacy_collection(self) -> None:
         self.tab_gestion._load_collection()
-        self.on_collection_updated(self.tab_gestion.mes_plantes)
+        self.tab_substrat.actualiser_combo_substrat(self.tab_gestion.mes_plantes)
+        self.tab_diagnostic.refresh_plants()
+        if hasattr(self, "tab_adaptive"):
+            self.tab_adaptive.refresh()
+        if hasattr(self, "tab_photos"):
+            self.tab_photos.refresh_plants()
+        if hasattr(self, "tab_maintenance"):
+            self.tab_maintenance.refresh_stats()
 
     def navigate_to_catalogue(self, species_id: str) -> None:
         self.notebook.select(self.tab_catalogue)
@@ -151,7 +168,9 @@ class PlantCareApp:
 
     def _tab_changed(self, _event=None) -> None:
         selected = self.notebook.nametowidget(self.notebook.select())
-        if selected is self.tab_adaptive:
+        if selected is self.tab_editor:
+            self.tab_editor.refresh()
+        elif selected is self.tab_adaptive:
             self.tab_adaptive.refresh()
         elif selected is self.tab_photos:
             self.tab_photos.refresh_plants()
