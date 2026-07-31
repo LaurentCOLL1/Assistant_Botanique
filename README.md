@@ -9,13 +9,19 @@ Cette procédure fonctionne sous **Windows 10 ou Windows 11** avec une connexion
 1. Fermez Assistant Botanique s'il est déjà ouvert.
 2. Ouvrez le menu **Démarrer**, recherchez **PowerShell**, puis lancez-le normalement. Les droits administrateur ne sont pas nécessaires.
 3. Copiez la totalité du bloc ci-dessous, collez-le dans PowerShell et appuyez sur **Entrée**.
+4. Choisissez ensuite :
+   - **1 — Installation standard** : `%LOCALAPPDATA%\Programs\AssistantBotanique` ;
+   - **2 — Installation personnalisée** : par exemple `E:\AssistantBotanique`.
+
+Appuyer simplement sur **Entrée** sélectionne l'installation standard.
 
 ```powershell
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 
 $RepositoryArchive = "https://github.com/LaurentCOLL1/Assistant_Botanique/archive/refs/heads/main.zip"
-$InstallDirectory = Join-Path $env:LOCALAPPDATA "Programs\AssistantBotanique"
+$DefaultInstallDirectory = Join-Path $env:LOCALAPPDATA "Programs\AssistantBotanique"
+$DataDirectory = Join-Path $env:APPDATA "AssistantBotanique"
 $TemporaryDirectory = Join-Path $env:TEMP ("AssistantBotanique-" + [guid]::NewGuid().ToString("N"))
 $ArchiveFile = "$TemporaryDirectory.zip"
 $PythonVersion = $null
@@ -28,7 +34,90 @@ function Test-PythonLauncherVersion {
     return $LASTEXITCODE -eq 0
 }
 
+function Select-InstallDirectory {
+    param(
+        [Parameter(Mandatory = $true)][string]$DefaultPath,
+        [Parameter(Mandatory = $true)][string]$ProtectedDataPath
+    )
+
+    Write-Host ""
+    Write-Host "Choisissez le mode d'installation :" -ForegroundColor Cyan
+    Write-Host "  1 - Installation standard" -ForegroundColor White
+    Write-Host "      $DefaultPath" -ForegroundColor DarkGray
+    Write-Host "  2 - Emplacement personnalisé" -ForegroundColor White
+    Write-Host "      Exemple : E:\AssistantBotanique" -ForegroundColor DarkGray
+
+    $Choice = Read-Host "Votre choix [1]"
+    if ([string]::IsNullOrWhiteSpace($Choice)) {
+        $Choice = "1"
+    }
+
+    switch ($Choice.Trim()) {
+        "1" {
+            return [System.IO.Path]::GetFullPath($DefaultPath)
+        }
+        "2" {
+            while ($true) {
+                $CustomPath = Read-Host "Saisissez le chemin complet d'installation"
+                if ([string]::IsNullOrWhiteSpace($CustomPath)) {
+                    Write-Warning "Le chemin ne peut pas être vide."
+                    continue
+                }
+
+                $ExpandedPath = [Environment]::ExpandEnvironmentVariables(
+                    $CustomPath.Trim().Trim('"')
+                )
+
+                if (-not [System.IO.Path]::IsPathRooted($ExpandedPath)) {
+                    Write-Warning "Utilisez un chemin absolu, par exemple E:\AssistantBotanique."
+                    continue
+                }
+
+                try {
+                    $FullPath = [System.IO.Path]::GetFullPath($ExpandedPath)
+                    $DriveRoot = [System.IO.Path]::GetPathRoot($FullPath)
+                }
+                catch {
+                    Write-Warning "Ce chemin n'est pas valide."
+                    continue
+                }
+
+                if (-not $DriveRoot -or -not (Test-Path -LiteralPath $DriveRoot)) {
+                    Write-Warning "Le lecteur choisi n'est pas disponible : $DriveRoot"
+                    continue
+                }
+
+                if ($FullPath -eq [System.IO.Path]::GetFullPath($DriveRoot)) {
+                    Write-Warning "Choisissez un dossier sur le lecteur, pas la racine elle-même. Exemple : $DriveRoot`AssistantBotanique"
+                    continue
+                }
+
+                $NormalizedInstall = $FullPath.TrimEnd('\')
+                $NormalizedData = [System.IO.Path]::GetFullPath($ProtectedDataPath).TrimEnd('\')
+                $DataPrefix = $NormalizedData + [System.IO.Path]::DirectorySeparatorChar
+
+                if (
+                    $NormalizedInstall.Equals($NormalizedData, [System.StringComparison]::OrdinalIgnoreCase) -or
+                    $NormalizedInstall.StartsWith($DataPrefix, [System.StringComparison]::OrdinalIgnoreCase)
+                ) {
+                    Write-Warning "Ce dossier contient les données personnelles de l'application. Choisissez un autre emplacement."
+                    continue
+                }
+
+                return $FullPath
+            }
+        }
+        default {
+            throw "Choix invalide. Relancez le bloc et sélectionnez 1 ou 2."
+        }
+    }
+}
+
 Write-Host "Installation d'Assistant Botanique..." -ForegroundColor Cyan
+$InstallDirectory = Select-InstallDirectory `
+    -DefaultPath $DefaultInstallDirectory `
+    -ProtectedDataPath $DataDirectory
+Write-Host "Installation choisie : $InstallDirectory" -ForegroundColor Green
 
 # Recherche d'une installation Python compatible.
 if (Get-Command py -ErrorAction SilentlyContinue) {
@@ -136,21 +225,27 @@ Remove-Item -Path $TemporaryDirectory -Recurse -Force -ErrorAction SilentlyConti
 Remove-Item -Path $ArchiveFile -Force -ErrorAction SilentlyContinue
 
 Write-Host ""
-Write-Host "Installation terminée." -ForegroundColor Green
+Write-Host "Installation terminée dans : $InstallDirectory" -ForegroundColor Green
 Write-Host "Un raccourci « Assistant Botanique » a été ajouté au Bureau et au menu Démarrer."
-Write-Host "Pour mettre le programme à jour plus tard, fermez-le puis réexécutez exactement ce même bloc."
+Write-Host "Pour mettre le programme à jour, fermez-le puis réexécutez ce bloc en choisissant le même emplacement."
 Start-Process -FilePath $ApplicationPythonW -ArgumentList "-m assistant_botanique" -WorkingDirectory $InstallDirectory
 ```
 
-Le programme est installé dans :
+Avec le choix **1**, le programme est installé dans :
 
 `%LOCALAPPDATA%\Programs\AssistantBotanique`
 
-Les données personnelles restent séparées dans :
+Avec le choix **2**, il est installé dans le dossier indiqué, par exemple :
+
+`E:\AssistantBotanique`
+
+Pour une mise à jour, réexécutez le même bloc et sélectionnez le **même choix et le même dossier**. Le lecteur personnalisé doit être connecté et conserver la même lettre.
+
+Les données personnelles restent toujours séparées dans :
 
 `%APPDATA%\AssistantBotanique`
 
-Réexécuter le même bloc met à jour le programme sans supprimer la collection, les photos, les sauvegardes ou les réglages.
+La mise à jour du programme ne supprime donc pas la collection, les photos, les sauvegardes ou les réglages.
 
 ## Nouveautés de la version 3
 
