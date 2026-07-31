@@ -65,6 +65,7 @@ def fast_request_json(
 
 
 base.request_json = fast_request_json
+base.gbif_photo = lambda _taxon: None
 
 
 def audit_one(position: int, output_identifier: str, profile: dict) -> tuple[int, str, dict, dict]:
@@ -138,7 +139,7 @@ def main() -> int:
             {
                 "schema_version": 1,
                 "generated_at": generated_at,
-                "license_policy": "Photos GBIF ou Wikimedia Commons avec licence ouverte et attribution conservée.",
+                "license_policy": "Photographies Wikimedia Commons avec licence ouverte et attribution conservée.",
                 "profiles": photos_output,
             },
             ensure_ascii=False,
