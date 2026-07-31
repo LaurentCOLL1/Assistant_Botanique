@@ -1,8 +1,9 @@
 """Audit des fiches botaniques JSON.
 
-Usage : python validate_data.py [--strict]
-Le mode normal signale les avertissements sans bloquer. Le mode strict renvoie
-un code d'erreur dès qu'une anomalie structurelle est détectée.
+Usage : python validate_data.py [--strict] [--baseline fichier.json]
+Le mode normal signale les anomalies sans bloquer. Avec une baseline, le mode
+strict échoue uniquement lorsqu'une nouvelle erreur structurelle apparaît :
+les défauts historiques restent visibles et doivent être résorbés progressivement.
 """
 from __future__ import annotations
 
@@ -101,17 +102,43 @@ def audit_directory(directory: Path = FAMILIES_DIR) -> tuple[list[str], list[str
     return errors, warnings
 
 
+def load_baseline(path: Path) -> set[str]:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    values = payload.get("errors") if isinstance(payload, dict) else payload
+    if not isinstance(values, list) or not all(isinstance(item, str) for item in values):
+        raise ValueError("La baseline doit contenir une liste de chaînes sous la clé 'errors'.")
+    return set(values)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--strict", action="store_true", help="Échouer en présence d'erreurs structurelles")
+    parser.add_argument("--strict", action="store_true", help="Échouer en présence de nouvelles erreurs structurelles")
+    parser.add_argument("--baseline", type=Path, help="Fichier recensant les erreurs historiques tolérées temporairement")
     args = parser.parse_args()
     errors, warnings = audit_directory()
-    print(f"Audit catalogue: {len(errors)} erreur(s), {len(warnings)} avertissement(s)")
-    for item in errors:
-        print(f"ERREUR: {item}")
+    baseline: set[str] = set()
+    if args.baseline:
+        try:
+            baseline = load_baseline(args.baseline)
+        except (OSError, json.JSONDecodeError, ValueError) as exc:
+            print(f"BASELINE INVALIDE: {exc}")
+            return 2
+    new_errors = [item for item in errors if item not in baseline]
+    known_errors = [item for item in errors if item in baseline]
+    resolved_errors = sorted(baseline.difference(errors))
+    print(
+        f"Audit catalogue: {len(errors)} erreur(s), {len(warnings)} avertissement(s), "
+        f"{len(new_errors)} nouvelle(s), {len(resolved_errors)} résolue(s) depuis la baseline"
+    )
+    for item in new_errors:
+        print(f"NOUVELLE ERREUR: {item}")
+    for item in known_errors:
+        print(f"ERREUR HISTORIQUE: {item}")
+    for item in resolved_errors:
+        print(f"RÉSOLUE DEPUIS LA BASELINE: {item}")
     for item in warnings[:200]:
         print(f"AVERTISSEMENT: {item}")
-    return 1 if args.strict and errors else 0
+    return 1 if args.strict and new_errors else 0
 
 
 if __name__ == "__main__":
