@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import json
-import re
 import time
 import urllib.error
 import urllib.parse
@@ -166,7 +165,7 @@ def main() -> int:
             for identifier, key, name in jobs
         }
         for completed, future in enumerate(as_completed(futures), start=1):
-            identifier, name = futures[future]
+            identifier, _name = futures[future]
             candidate = future.result()
             if candidate:
                 photos[identifier] = candidate
