@@ -48,3 +48,26 @@ jobs:
         run: ruff check .
       - if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
         run: python validate_data.py --strict --baseline data_quality_baseline.json
+
+  catalogue-enrichment:
+    if: github.event_name == 'pull_request' && github.head_ref == 'catalogue/full-audit-photos'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Vérifier la syntaxe
+        run: python -m py_compile tools/catalogue_enrichment.py
+      - name: Auditer toutes les fiches et rechercher les photos
+        run: python tools/catalogue_enrichment.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: catalogue-audit-results
+          path: |
+            catalogue_metadata/taxonomy_audit.json
+            catalogue_metadata/photos.json
+            catalogue_metadata/catalogue_audit_report.md
+          if-no-files-found: error
+          retention-days: 7
