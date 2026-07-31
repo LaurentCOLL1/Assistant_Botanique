@@ -40,6 +40,10 @@ jobs:
             $errors | ForEach-Object { Write-Error $_.Message }
             exit 1
           }
+      - name: Test Windows Python detection
+        if: matrix.os == 'windows-latest' && matrix.python-version == '3.11'
+        shell: powershell
+        run: powershell.exe -NoProfile -ExecutionPolicy Bypass -File install-windows.ps1 -SelfTest
       - if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
         run: ruff check .
       - if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
