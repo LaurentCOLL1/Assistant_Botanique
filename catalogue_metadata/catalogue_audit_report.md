@@ -1,6 +1,6 @@
 # Audit exhaustif du catalogue botanique
 
-Généré le 2026-07-31T22:59:33+00:00.
+Généré le 2026-07-31T23:00:07+00:00.
 
 ## Portée et limites
 
@@ -10,18 +10,18 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 
 - Fichiers de familles : **138**
 - Fiches parcourues : **2204**
-- Familles représentées : **143**
-- Fiches structurellement complètes : **2201**
-- Photos exactes trouvées : **1814**
+- Familles représentées : **141**
+- Fiches structurellement complètes : **2204**
+- Photos exactes trouvées : **1852**
 - Photos représentatives de genre/groupe : **270**
-- Photos non trouvées : **120**
+- Photos non trouvées : **82**
 
 ## Résultats taxonomiques
 
-- `accepted_exact` : 1703
+- `accepted_exact` : 1707
 - `api_error` : 91
 - `approximate` : 108
-- `family_mismatch` : 119
+- `family_mismatch` : 115
 - `generic_match` : 10
 - `matched_review` : 1
 - `synonym` : 172
@@ -35,7 +35,7 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - Rosaceae : 26
 - Sarraceniaceae : 26
 - Apiaceae : 25
-- Asparagaceae : 24
+- Asparagaceae : 25
 - Balsaminaceae : 23
 - Salicaceae : 23
 - Actinidiaceae : 22
@@ -161,16 +161,14 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - Nepenthaceae : 2
 - Oxalidaceae : 2
 - Polypodiaceae : 2
-- Anacampserotaceae (ex-Portulacaceae) : 1
+- Zamiaceae : 2
+- Anacampserotaceae : 1
 - Annonaceae : 1
-- Asparagaceae (anciennement classé parfois proche ou confondu, mais ici mentionné comme alternative de sous-bois, attention aux confusions de noms vernaculaires, restons sur une vraie Polygonacée de sous-bois si possible : Polygonatum est Asparagacée, remplaçons par Rumex thyrsiflorus ou Oxyria digyna pour rester strictement dans les Polygonaceae) : 1
 - Aspleniaceae : 1
 - Cephalotaceae : 1
 - Costaceae : 1
+- Didiereaceae : 1
 - Nephrolepidaceae : 1
-- Portulacariaceae (ex-Portulacaceae) : 1
-- Zamiaceae : 1
-- Zamiaceae (ex-Cycadales) : 1
 
 ## Noms synonymes à envisager de mettre à jour
 
@@ -370,8 +368,6 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Viburnum utile** : fiche `Adoxaceae`, GBIF `Viburnaceae`
 - **Viburnum acerifolium** : fiche `Adoxaceae`, GBIF `Viburnaceae`
 - **Viburnum farreri** : fiche `Adoxaceae`, GBIF `Viburnaceae`
-- **Portulacaria afra** : fiche `Portulacariaceae (ex-Portulacaceae)`, GBIF `Didiereaceae`
-- **Anacampseros rufescens** : fiche `Anacampserotaceae (ex-Portulacaceae)`, GBIF `Anacampserotaceae`
 - **Annona muricata** : fiche `Anacardiaceae`, GBIF `Annonaceae`
 - **Annona squamosa** : fiche `Anacardiaceae`, GBIF `Annonaceae`
 - **Annona reticulata** : fiche `Anacardiaceae`, GBIF `Annonaceae`
@@ -412,7 +408,6 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Carpinus turczaninowii** : fiche `Corylaceae`, GBIF `Betulaceae`
 - **Corylus chinensis** : fiche `Corylaceae`, GBIF `Betulaceae`
 - **Corylus ferox** : fiche `Corylaceae`, GBIF `Betulaceae`
-- **Zamia furfuracea** : fiche `Zamiaceae (ex-Cycadales)`, GBIF `Zamiaceae`
 - **Scabiosa caucasica** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
 - **Scabiosa atropurpurea** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
 - **Scabiosa columbaria** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
@@ -454,7 +449,6 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Acacia iteaphylla** : fiche `Mimosaceae`, GBIF `Fabaceae`
 - **Acacia cardiophylla** : fiche `Mimosaceae`, GBIF `Fabaceae`
 - **Acacia vestita** : fiche `Mimosaceae`, GBIF `Fabaceae`
-- **Polygonatum multiflorum** : fiche `Asparagaceae (anciennement classé parfois proche ou confondu, mais ici mentionné comme alternative de sous-bois, attention aux confusions de noms vernaculaires, restons sur une vraie Polygonacée de sous-bois si possible : Polygonatum est Asparagacée, remplaçons par Rumex thyrsiflorus ou Oxyria digyna pour rester strictement dans les Polygonaceae)`, GBIF `Asparagaceae`
 - **Digitalis purpurea** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
 - **Antirrhinum majus** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
 - **Linaria vulgaris** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
@@ -674,9 +668,7 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 
 ## Fiches incomplètes
 
-- **Ananas comosus 'Variegatus'** — sections: aucune; champs: aucun; mois: avril
-- **Lilium martagon** — sections: aucune; champs: aucun; mois: juillet
-- **Tilia tuan** — sections: aucune; champs: aucun; mois: avril
+Aucune.
 
 ## Photos restant à trouver
 
@@ -696,45 +688,22 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Crateva unilocularis**
 - **Capparis aegyptia**
 - **Vasconcellea x heilbornii**
-- **Jarilla caudata**
-- **Jacaratia corumbensis**
 - **Vasconcellea x heilbornii 'Pentagon'**
-- **Vasconcellea Weberbaueri**
 - **Vasconcellea palandensis**
-- **Vasconcellea pulchra**
-- **Jacaratia chocoensis**
-- **Vasconcellea horovitziana**
-- **Vasconcellea omnilingua**
 - **Vasconcellea x heilbornii 'Leighton Green'**
-- **Maytenus boaria**
-- **Cistus x hybridus**
-- **Terminalia ivorensis**
-- **Convolvulus sabatius subsp. mauritanicus**
-- **Cornus officinalis**
-- **Cornus controversa**
 - **Cornus eydeana**
-- **Sechium edule**
-- **Asplundia rigida**
-- **Asplundia utilis**
-- **Carex comans**
 - **Carex vulpina**
 - **Cephalaria transylvanica**
-- **Scabiosa vestina**
 - **Knautia dipsacifolia**
 - **Pterocephalus spathulatus**
 - **Diospyros nigra**
-- **Eriocaulon buergerianum**
-- **Eriocaulon setaceum**
 - **Quercus rubra**
 - **Gentiana asclepiadea**
 - **Gentiana dahurica**
 - **Gentiana utriculosa**
 - **Pelargonium echinatum**
 - **Nematanthus wettsteinii**
-- **Ribes laciniatum**
-- **Ribes punctatum**
 - **Heliconia rostrata**
-- **Heliconia stricta**
 - **Heliconia caribaea**
 - **Heliconia chartacea**
 - **Heliconia aurantiaca**
@@ -745,18 +714,12 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Heliconia champneyna**
 - **Heliconia densiflora**
 - **Heliconia vellerigera**
-- **Stauntonia hexaphylla**
-- **Akebia x pentaphylla**
 - **Stauntonia yaoshanensis**
 - **Stauntonia oligophylla**
-- **Fritillaria davisii**
 - **Linum usitatissimum**
-- **Rotala macrandra**
 - **Cuphea llavea**
 - **Ibicella parodii**
-- **Martynia palmeri**
 - **Proboscidea spicata**
-- **Martynia fragrans**
 - **Heterocentron elegans**
 - **Moringa stenopetala**
 - **Moringa concanensis**
@@ -764,7 +727,6 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Moringa ruspoliana**
 - **Moringa stenopetala 'Konso'**
 - **Musa sikkimensis**
-- **Ensete perrieri**
 - **Myrica californica**
 - **Morella salicifolia**
 - **Pisonia alba**
@@ -772,19 +734,11 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Fuchsia x hybrida**
 - **Phalaenopsis hybrids**
 - **Pandanus edulis**
-- **Sararanga sinuosa**
-- **Sesamum indicum**
-- **Uncarina stellulifera**
-- **Pterodiscus speciosus**
-- **Pterodiscus ngamicus**
 - **Dicerocaryum eriocarpum**
 - **Holubia tetracarpa**
 - **Ceratostigma griffithii**
 - **Phlox stolonifera**
-- **Hottonia palustris**
-- **Reseda media**
 - **Reseda scoparia**
-- **Reseda arabica**
 - **Reseda lanceolata**
 - **Reseda stenostachya**
 - **Kadsura japonica**
