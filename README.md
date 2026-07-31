@@ -4,248 +4,55 @@ Application de bureau Python/Tkinter pour gérer une collection de plantes, appr
 
 ## Installation Windows en un seul copier-coller
 
-Cette procédure fonctionne sous **Windows 10 ou Windows 11** avec une connexion Internet. Elle ne nécessite ni Git ni téléchargement manuel du dépôt.
+Cette procédure fonctionne sous **Windows 10 ou Windows 11** avec une connexion Internet. Elle ne nécessite ni Git, ni téléchargement manuel du dépôt, ni droits administrateur.
 
 1. Fermez Assistant Botanique s'il est déjà ouvert.
-2. Ouvrez le menu **Démarrer**, recherchez **PowerShell**, puis lancez-le normalement. Les droits administrateur ne sont pas nécessaires.
-3. Copiez la totalité du bloc ci-dessous, collez-le dans PowerShell et appuyez sur **Entrée**.
-4. Choisissez ensuite :
-   - **1 — Installation standard** : `%LOCALAPPDATA%\Programs\AssistantBotanique` ;
-   - **2 — Installation personnalisée** : par exemple `E:\AssistantBotanique`.
+2. Ouvrez le menu **Démarrer**, recherchez **PowerShell**, puis lancez-le normalement.
+3. Copiez la ligne complète ci-dessous, collez-la dans PowerShell et appuyez sur **Entrée**.
+
+```powershell
+[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12; $f=Join-Path $env:TEMP "AssistantBotanique-install.ps1"; Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/LaurentCOLL1/Assistant_Botanique/main/install-windows.ps1" -OutFile $f -ErrorAction Stop; & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $f; $c=$LASTEXITCODE; Remove-Item -LiteralPath $f -Force -ErrorAction SilentlyContinue; if($c -ne 0){throw "L'installation a échoué (code $c). Consultez le message rouge affiché au-dessus."}
+```
+
+Le programme propose ensuite deux choix :
+
+- **1 — Installation standard** : `%LOCALAPPDATA%\Programs\AssistantBotanique` ;
+- **2 — Installation personnalisée** : par exemple `E:\AssistantBotanique`.
 
 Appuyer simplement sur **Entrée** sélectionne l'installation standard.
 
-```powershell
-$ErrorActionPreference = "Stop"
-Set-StrictMode -Version Latest
+Le script :
 
-$RepositoryArchive = "https://github.com/LaurentCOLL1/Assistant_Botanique/archive/refs/heads/main.zip"
-$DefaultInstallDirectory = Join-Path $env:LOCALAPPDATA "Programs\AssistantBotanique"
-$DataDirectory = Join-Path $env:APPDATA "AssistantBotanique"
-$TemporaryDirectory = Join-Path $env:TEMP ("AssistantBotanique-" + [guid]::NewGuid().ToString("N"))
-$ArchiveFile = "$TemporaryDirectory.zip"
-$PythonVersion = $null
-$PythonExecutable = $null
+- sélectionne correctement Python 3.11, 3.12 ou 3.13 déjà installé ;
+- installe Python 3.11 avec Winget si aucune version compatible n'est disponible ;
+- télécharge la version actuelle du projet ;
+- crée un environnement Python isolé ;
+- installe et vérifie l'application avant de créer les raccourcis ;
+- crée les raccourcis Bureau et menu Démarrer ;
+- tente d'activer le rappel quotidien à 09:00 ;
+- restaure automatiquement l'installation précédente si une étape critique échoue.
 
-function Test-PythonLauncherVersion {
-    param([Parameter(Mandatory = $true)][string]$Version)
+### Après une installation interrompue
 
-    & py "-$Version" -c "import sys; raise SystemExit(0 if sys.version_info >= (3, 11) else 1)" 2>$null
-    return $LASTEXITCODE -eq 0
-}
-
-function Select-InstallDirectory {
-    param(
-        [Parameter(Mandatory = $true)][string]$DefaultPath,
-        [Parameter(Mandatory = $true)][string]$ProtectedDataPath
-    )
-
-    Write-Host ""
-    Write-Host "Choisissez le mode d'installation :" -ForegroundColor Cyan
-    Write-Host "  1 - Installation standard" -ForegroundColor White
-    Write-Host "      $DefaultPath" -ForegroundColor DarkGray
-    Write-Host "  2 - Emplacement personnalisé" -ForegroundColor White
-    Write-Host "      Exemple : E:\AssistantBotanique" -ForegroundColor DarkGray
-
-    $Choice = Read-Host "Votre choix [1]"
-    if ([string]::IsNullOrWhiteSpace($Choice)) {
-        $Choice = "1"
-    }
-
-    switch ($Choice.Trim()) {
-        "1" {
-            return [System.IO.Path]::GetFullPath($DefaultPath)
-        }
-        "2" {
-            while ($true) {
-                $CustomPath = Read-Host "Saisissez le chemin complet d'installation"
-                if ([string]::IsNullOrWhiteSpace($CustomPath)) {
-                    Write-Warning "Le chemin ne peut pas être vide."
-                    continue
-                }
-
-                $ExpandedPath = [Environment]::ExpandEnvironmentVariables(
-                    $CustomPath.Trim().Trim('"')
-                )
-
-                if (-not [System.IO.Path]::IsPathRooted($ExpandedPath)) {
-                    Write-Warning "Utilisez un chemin absolu, par exemple E:\AssistantBotanique."
-                    continue
-                }
-
-                try {
-                    $FullPath = [System.IO.Path]::GetFullPath($ExpandedPath)
-                    $DriveRoot = [System.IO.Path]::GetPathRoot($FullPath)
-                }
-                catch {
-                    Write-Warning "Ce chemin n'est pas valide."
-                    continue
-                }
-
-                if (-not $DriveRoot -or -not (Test-Path -LiteralPath $DriveRoot)) {
-                    Write-Warning "Le lecteur choisi n'est pas disponible : $DriveRoot"
-                    continue
-                }
-
-                if ($FullPath -eq [System.IO.Path]::GetFullPath($DriveRoot)) {
-                    Write-Warning "Choisissez un dossier sur le lecteur, pas la racine elle-même. Exemple : $DriveRoot`AssistantBotanique"
-                    continue
-                }
-
-                $NormalizedInstall = $FullPath.TrimEnd('\')
-                $NormalizedData = [System.IO.Path]::GetFullPath($ProtectedDataPath).TrimEnd('\')
-                $DataPrefix = $NormalizedData + [System.IO.Path]::DirectorySeparatorChar
-
-                if (
-                    $NormalizedInstall.Equals($NormalizedData, [System.StringComparison]::OrdinalIgnoreCase) -or
-                    $NormalizedInstall.StartsWith($DataPrefix, [System.StringComparison]::OrdinalIgnoreCase)
-                ) {
-                    Write-Warning "Ce dossier contient les données personnelles de l'application. Choisissez un autre emplacement."
-                    continue
-                }
-
-                return $FullPath
-            }
-        }
-        default {
-            throw "Choix invalide. Relancez le bloc et sélectionnez 1 ou 2."
-        }
-    }
-}
-
-Write-Host "Installation d'Assistant Botanique..." -ForegroundColor Cyan
-$InstallDirectory = Select-InstallDirectory `
-    -DefaultPath $DefaultInstallDirectory `
-    -ProtectedDataPath $DataDirectory
-Write-Host "Installation choisie : $InstallDirectory" -ForegroundColor Green
-
-# Recherche d'une installation Python compatible.
-if (Get-Command py -ErrorAction SilentlyContinue) {
-    foreach ($Candidate in @("3.14", "3.13", "3.12", "3.11")) {
-        if (Test-PythonLauncherVersion -Version $Candidate) {
-            $PythonVersion = $Candidate
-            break
-        }
-    }
-}
-
-# Installation automatique de Python 3.11 si nécessaire.
-if (-not $PythonVersion) {
-    if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
-        throw "Python 3.11 ou plus récent est absent et Winget est indisponible. Installez d'abord « App Installer » depuis le Microsoft Store, puis relancez ce bloc."
-    }
-
-    Write-Host "Installation de Python 3.11..." -ForegroundColor Yellow
-    winget install --exact --id Python.Python.3.11 --scope user `
-        --accept-package-agreements --accept-source-agreements `
-        --silent --disable-interactivity
-
-    if ($LASTEXITCODE -ne 0) {
-        throw "L'installation automatique de Python a échoué."
-    }
-
-    $PythonExecutable = Join-Path $env:LOCALAPPDATA "Programs\Python\Python311\python.exe"
-    if (-not (Test-Path $PythonExecutable)) {
-        $PythonExecutable = Get-ChildItem `
-            -Path (Join-Path $env:LOCALAPPDATA "Programs\Python") `
-            -Filter "python.exe" -Recurse -ErrorAction SilentlyContinue |
-            Sort-Object LastWriteTime -Descending |
-            Select-Object -First 1 -ExpandProperty FullName
-    }
-
-    if (-not $PythonExecutable -or -not (Test-Path $PythonExecutable)) {
-        throw "Python a été installé, mais son exécutable est introuvable. Fermez PowerShell, rouvrez-le et relancez ce bloc."
-    }
-}
-
-# Téléchargement propre de la version actuelle.
-New-Item -ItemType Directory -Path $TemporaryDirectory -Force | Out-Null
-Write-Host "Téléchargement du programme..." -ForegroundColor Yellow
-Invoke-WebRequest -Uri $RepositoryArchive -OutFile $ArchiveFile
-Expand-Archive -Path $ArchiveFile -DestinationPath $TemporaryDirectory -Force
-
-$ExtractedDirectory = Join-Path $TemporaryDirectory "Assistant_Botanique-main"
-if (-not (Test-Path $ExtractedDirectory)) {
-    throw "Le contenu téléchargé est incomplet."
-}
-
-# Remplacement du programme uniquement. Les données personnelles restent dans
-# %APPDATA%\AssistantBotanique et ne sont donc pas supprimées lors d'une mise à jour.
-if (Test-Path $InstallDirectory) {
-    Remove-Item -Path $InstallDirectory -Recurse -Force
-}
-New-Item -ItemType Directory -Path (Split-Path $InstallDirectory -Parent) -Force | Out-Null
-Move-Item -Path $ExtractedDirectory -Destination $InstallDirectory
-
-# Création d'un environnement Python isolé.
-$VirtualEnvironment = Join-Path $InstallDirectory ".venv"
-if ($PythonVersion) {
-    & py "-$PythonVersion" -m venv $VirtualEnvironment
-}
-else {
-    & $PythonExecutable -m venv $VirtualEnvironment
-}
-
-$ApplicationPython = Join-Path $VirtualEnvironment "Scripts\python.exe"
-$ApplicationPythonW = Join-Path $VirtualEnvironment "Scripts\pythonw.exe"
-
-Write-Host "Installation des composants..." -ForegroundColor Yellow
-& $ApplicationPython -m pip install --upgrade pip
-& $ApplicationPython -m pip install -e $InstallDirectory
-
-if ($LASTEXITCODE -ne 0) {
-    throw "L'installation des composants Python a échoué."
-}
-
-# Création des raccourcis Bureau et menu Démarrer.
-$Shell = New-Object -ComObject WScript.Shell
-$ShortcutPaths = @(
-    (Join-Path ([Environment]::GetFolderPath("Desktop")) "Assistant Botanique.lnk"),
-    (Join-Path $env:APPDATA "Microsoft\Windows\Start Menu\Programs\Assistant Botanique.lnk")
-)
-
-foreach ($ShortcutPath in $ShortcutPaths) {
-    $Shortcut = $Shell.CreateShortcut($ShortcutPath)
-    $Shortcut.TargetPath = $ApplicationPythonW
-    $Shortcut.Arguments = "-m assistant_botanique"
-    $Shortcut.WorkingDirectory = $InstallDirectory
-    $Shortcut.Description = "Assistant Botanique"
-    $Shortcut.Save()
-}
-
-# Activation du contrôle quotidien à 09:00. Cette étape n'empêche pas
-# l'installation de réussir si le Planificateur de tâches est indisponible.
-& $ApplicationPython -m assistant_botanique --install-notifications "09:00"
-if ($LASTEXITCODE -ne 0) {
-    Write-Warning "Le programme est installé, mais le rappel quotidien n'a pas pu être créé."
-}
-
-# Nettoyage et premier lancement.
-Remove-Item -Path $TemporaryDirectory -Recurse -Force -ErrorAction SilentlyContinue
-Remove-Item -Path $ArchiveFile -Force -ErrorAction SilentlyContinue
-
-Write-Host ""
-Write-Host "Installation terminée dans : $InstallDirectory" -ForegroundColor Green
-Write-Host "Un raccourci « Assistant Botanique » a été ajouté au Bureau et au menu Démarrer."
-Write-Host "Pour mettre le programme à jour, fermez-le puis réexécutez ce bloc en choisissant le même emplacement."
-Start-Process -FilePath $ApplicationPythonW -ArgumentList "-m assistant_botanique" -WorkingDirectory $InstallDirectory
-```
-
-Avec le choix **1**, le programme est installé dans :
-
-`%LOCALAPPDATA%\Programs\AssistantBotanique`
-
-Avec le choix **2**, il est installé dans le dossier indiqué, par exemple :
+Il suffit de relancer la commande ci-dessus. Pour reprendre l'installation décrite dans l'exemple, choisissez **2**, puis saisissez de nouveau :
 
 `E:\AssistantBotanique`
 
-Pour une mise à jour, réexécutez le même bloc et sélectionnez le **même choix et le même dossier**. Le lecteur personnalisé doit être connecté et conserver la même lettre.
+Le dossier incomplet sera remplacé uniquement après sa mise en sécurité. Le message **« Installation terminée »** n'est désormais affiché qu'après la création et la vérification effectives de l'environnement Python.
 
-Les données personnelles restent toujours séparées dans :
+### Emplacement des données
+
+Le programme peut être installé sur `C:`, `E:` ou un autre lecteur, mais les données personnelles restent séparées dans :
 
 `%APPDATA%\AssistantBotanique`
 
-La mise à jour du programme ne supprime donc pas la collection, les photos, les sauvegardes ou les réglages.
+Ce dossier contient la collection, les photos, les sauvegardes et les réglages. Une mise à jour du programme ne le supprime pas.
+
+Pour une installation personnalisée, le lecteur choisi doit rester connecté et conserver la même lettre afin que les raccourcis et les notifications continuent de fonctionner.
+
+### Mise à jour
+
+Fermez l'application, relancez exactement la même commande PowerShell, puis choisissez le **même emplacement**. L'installation existante est conservée temporairement et restaurée automatiquement si la mise à jour échoue.
 
 ## Nouveautés de la version 3
 
@@ -295,7 +102,7 @@ Les modules historiques à la racine restent disponibles comme façades de compa
 
 Prérequis :
 
-- Python 3.11 ou plus récent ;
+- Python 3.11, 3.12 ou 3.13 ;
 - Tkinter ;
 - Pillow et Plyer, installés automatiquement avec le projet.
 
