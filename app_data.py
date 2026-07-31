@@ -15,9 +15,13 @@ from core import profile_id, scientific_name, vernacular_names
 _previous_cwd = Path.cwd()
 try:
     os.chdir(RESOURCE_DIR)
-    from data import COLLECTION_INITIALE_DEFAUT, DIAGNOSTICS_DATA, PROFILS_GENERIQUES
+    import data as legacy_data
 finally:
     os.chdir(_previous_cwd)
+
+COLLECTION_INITIALE_DEFAUT = legacy_data.COLLECTION_INITIALE_DEFAUT
+DIAGNOSTICS_DATA = legacy_data.DIAGNOSTICS_DATA
+PROFILS_GENERIQUES = legacy_data.PROFILS_GENERIQUES
 
 LOGGER = logging.getLogger(__name__)
 
