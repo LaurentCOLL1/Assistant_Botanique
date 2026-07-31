@@ -27,6 +27,7 @@ jobs:
           pyinstaller --noconfirm --clean --windowed --name AssistantBotanique
           --collect-all plyer --collect-all PIL
           --add-data "familles_plantes;familles_plantes"
+          --add-data "catalogue_metadata;catalogue_metadata"
           --add-data "data.py;."
           --add-data "schemas;schemas"
           main.py
