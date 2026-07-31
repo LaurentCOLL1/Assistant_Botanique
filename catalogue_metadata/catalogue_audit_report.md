@@ -1,6 +1,6 @@
 # Audit exhaustif du catalogue botanique
 
-Généré le 2026-07-31T23:00:07+00:00.
+Généré le 2026-07-31T23:02:08+00:00.
 
 ## Portée et limites
 
@@ -12,9 +12,9 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - Fiches parcourues : **2204**
 - Familles représentées : **141**
 - Fiches structurellement complètes : **2204**
-- Photos exactes trouvées : **1852**
+- Photos exactes trouvées : **1865**
 - Photos représentatives de genre/groupe : **270**
-- Photos non trouvées : **82**
+- Photos non trouvées : **69**
 
 ## Résultats taxonomiques
 
@@ -693,21 +693,13 @@ Aucune.
 - **Vasconcellea x heilbornii 'Leighton Green'**
 - **Cornus eydeana**
 - **Carex vulpina**
-- **Cephalaria transylvanica**
 - **Knautia dipsacifolia**
-- **Pterocephalus spathulatus**
-- **Diospyros nigra**
 - **Quercus rubra**
-- **Gentiana asclepiadea**
 - **Gentiana dahurica**
-- **Gentiana utriculosa**
 - **Pelargonium echinatum**
 - **Nematanthus wettsteinii**
-- **Heliconia rostrata**
-- **Heliconia caribaea**
 - **Heliconia chartacea**
 - **Heliconia aurantiaca**
-- **Heliconia indica**
 - **Heliconia pogonantha**
 - **Heliconia bourgaeana**
 - **Heliconia collinsiana**
@@ -728,21 +720,16 @@ Aucune.
 - **Moringa stenopetala 'Konso'**
 - **Musa sikkimensis**
 - **Myrica californica**
-- **Morella salicifolia**
 - **Pisonia alba**
 - **Bougainvillea x buttiana**
 - **Fuchsia x hybrida**
 - **Phalaenopsis hybrids**
 - **Pandanus edulis**
 - **Dicerocaryum eriocarpum**
-- **Holubia tetracarpa**
 - **Ceratostigma griffithii**
 - **Phlox stolonifera**
-- **Reseda scoparia**
 - **Reseda lanceolata**
 - **Reseda stenostachya**
-- **Kadsura japonica**
-- **Kadsura angustifolia**
 - **Strelitzia x guernseyensis**
 - **Ravenala guineensis**
 - **Strelitzia parvifolia**
