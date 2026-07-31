@@ -27,9 +27,9 @@ from catalogue_enrichment import (
     taxonomic_match,
 )
 
-MAX_WORKERS = 12
-REQUEST_TIMEOUT = 10
-REQUEST_RETRIES = 2
+MAX_WORKERS = 20
+REQUEST_TIMEOUT = 6
+REQUEST_RETRIES = 1
 
 
 def fast_request_json(
@@ -38,7 +38,7 @@ def fast_request_json(
     params: dict[str, Any] | None = None,
     retries: int = REQUEST_RETRIES,
 ) -> Any:
-    """Version bornée du client HTTP utilisé par toutes les tâches d'audit."""
+    """Version strictement bornée du client HTTP utilisé par l'audit."""
     if params:
         url += ("&" if "?" in url else "?") + urllib.parse.urlencode(params)
     request = urllib.request.Request(
@@ -54,13 +54,13 @@ def fast_request_json(
             if exc.code == 404:
                 return None
             if (exc.code == 429 or 500 <= exc.code < 600) and attempt + 1 < attempts:
-                time.sleep(1.0)
+                time.sleep(0.5)
                 continue
             raise
         except (urllib.error.URLError, TimeoutError, json.JSONDecodeError):
             if attempt + 1 >= attempts:
                 raise
-            time.sleep(1.0)
+            time.sleep(0.5)
     return None
 
 
