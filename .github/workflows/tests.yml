@@ -28,4 +28,4 @@ jobs:
       - if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
         run: ruff check .
       - if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
-        run: python validate_data.py --strict
+        run: python validate_data.py --strict --baseline data_quality_baseline.json
