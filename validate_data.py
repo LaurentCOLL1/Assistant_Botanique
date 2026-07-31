@@ -11,13 +11,22 @@ import argparse
 import json
 import re
 from collections import Counter, defaultdict
+from datetime import date
 from pathlib import Path
 from typing import Any
 
 from app_paths import FAMILIES_DIR
-from core import MONTH_KEYS, profile_id, scientific_name, toxicity_level
+from core import MONTH_KEYS, family_name, profile_id, scientific_name, toxicity_level
+from assistant_botanique.infrastructure.catalogue import (
+    CATALOGUE_METADATA_DIR,
+    load_curated_metadata,
+    merge_curated_metadata,
+)
 
 MONTHS = tuple(MONTH_KEYS.values())
+NOTABLE_SPECIES_FILE = CATALOGUE_METADATA_DIR / "notable_species.json"
+CONFIDENCE_VALUES = {"non_renseignee", "faible", "moyenne", "elevee"}
+REVIEW_STATUS_VALUES = {"brouillon", "a_verifier", "valide", "rejete"}
 
 
 def audit_profile(profile: dict[str, Any], location: str) -> tuple[list[str], list[str]]:
@@ -52,9 +61,29 @@ def audit_profile(profile: dict[str, Any], location: str) -> tuple[list[str], li
         toxicity = health.get("toxicite")
         if toxicity_level(toxicity) == "inconnue" and toxicity not in (None, "", "Variable / Se renseigner avant ingestion"):
             warnings.append(f"{location}: toxicité difficile à normaliser: {toxicity!r}")
+
     metadata = profile.get("metadata", {})
-    if not isinstance(metadata, dict) or not metadata.get("sources"):
-        warnings.append(f"{location}: sources botaniques à compléter")
+    if not isinstance(metadata, dict):
+        warnings.append(f"{location}: bloc metadata absent")
+    else:
+        sources = metadata.get("sources")
+        if not isinstance(sources, list) or not any(str(item).strip() for item in sources):
+            warnings.append(f"{location}: sources botaniques à compléter")
+        reviewed = metadata.get("last_reviewed")
+        if not reviewed:
+            warnings.append(f"{location}: date de révision botanique absente")
+        else:
+            try:
+                date.fromisoformat(str(reviewed))
+            except ValueError:
+                warnings.append(f"{location}: date de révision invalide {reviewed!r}")
+        confidence = metadata.get("confidence", "non_renseignee")
+        if confidence not in CONFIDENCE_VALUES:
+            warnings.append(f"{location}: niveau de confiance inconnu {confidence!r}")
+        status = metadata.get("review_status", "a_verifier")
+        if status not in REVIEW_STATUS_VALUES:
+            warnings.append(f"{location}: statut de révision inconnu {status!r}")
+
     text = json.dumps(profile, ensure_ascii=False).lower()
     for typo in ("llegume", "étiollement"):
         if typo in text:
@@ -62,11 +91,34 @@ def audit_profile(profile: dict[str, Any], location: str) -> tuple[list[str], li
     return errors, warnings
 
 
-def audit_directory(directory: Path = FAMILIES_DIR) -> tuple[list[str], list[str]]:
+def load_notable_species(path: Path = NOTABLE_SPECIES_FILE) -> dict[str, set[str]]:
+    if not path.exists():
+        return {}
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    families = payload.get("families") if isinstance(payload, dict) else None
+    if not isinstance(families, dict):
+        raise ValueError("Le registre des espèces notables doit contenir un objet 'families'.")
+    result: dict[str, set[str]] = {}
+    for family, details in families.items():
+        species = details.get("species") if isinstance(details, dict) else None
+        if not isinstance(species, list) or not all(isinstance(item, str) and item.strip() for item in species):
+            raise ValueError(f"Liste d'espèces notables invalide pour {family}.")
+        result[str(family)] = {item.strip() for item in species}
+    return result
+
+
+def audit_directory(
+    directory: Path = FAMILIES_DIR,
+    metadata_directory: Path = CATALOGUE_METADATA_DIR,
+    notable_species_path: Path = NOTABLE_SPECIES_FILE,
+) -> tuple[list[str], list[str]]:
     errors: list[str] = []
     warnings: list[str] = []
     identifiers: list[tuple[str, str]] = []
     fingerprints: defaultdict[str, list[str]] = defaultdict(list)
+    names_by_family: defaultdict[str, set[str]] = defaultdict(set)
+    curated_metadata = load_curated_metadata(metadata_directory)
+
     for path in sorted(directory.glob("*.json")):
         try:
             payload = json.loads(path.read_text(encoding="utf-8"))
@@ -76,12 +128,14 @@ def audit_directory(directory: Path = FAMILIES_DIR) -> tuple[list[str], list[str
         if not isinstance(payload, list):
             errors.append(f"{path.name}: la racine doit être une liste")
             continue
-        for index, profile in enumerate(payload, start=1):
+        for index, raw_profile in enumerate(payload, start=1):
             location = f"{path.name}[{index}]"
-            if not isinstance(profile, dict):
+            if not isinstance(raw_profile, dict):
                 errors.append(f"{location}: entrée non objet")
                 continue
+            profile = merge_curated_metadata(raw_profile, curated_metadata)
             identifiers.append((profile_id(profile), location))
+            names_by_family[family_name(profile)].add(scientific_name(profile))
             profile_errors, profile_warnings = audit_profile(profile, location)
             errors.extend(profile_errors)
             warnings.extend(profile_warnings)
@@ -91,6 +145,7 @@ def audit_directory(directory: Path = FAMILIES_DIR) -> tuple[list[str], list[str
             signature = re.sub(r"\s+", " ", signature_text)
             if len(signature) > 120:
                 fingerprints[signature].append(location)
+
     counts = Counter(identifier for identifier, _ in identifiers)
     for identifier, count in counts.items():
         if count > 1:
@@ -99,6 +154,16 @@ def audit_directory(directory: Path = FAMILIES_DIR) -> tuple[list[str], list[str
     for locations in fingerprints.values():
         if len(locations) >= 4:
             warnings.append(f"Contenu morphologie/arrosage identique dans {len(locations)} fiches: {', '.join(locations[:6])}")
+
+    try:
+        notable_species = load_notable_species(notable_species_path)
+    except (OSError, json.JSONDecodeError, ValueError) as exc:
+        errors.append(f"{notable_species_path.name}: registre notable invalide: {exc}")
+    else:
+        for family, expected_names in sorted(notable_species.items()):
+            missing = sorted(expected_names.difference(names_by_family.get(family, set())))
+            if missing:
+                warnings.append(f"{family}: espèces notables absentes: {', '.join(missing)}")
     return errors, warnings
 
 
@@ -114,8 +179,13 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--strict", action="store_true", help="Échouer en présence de nouvelles erreurs structurelles")
     parser.add_argument("--baseline", type=Path, help="Fichier recensant les erreurs historiques tolérées temporairement")
+    parser.add_argument("--metadata-directory", type=Path, default=CATALOGUE_METADATA_DIR)
+    parser.add_argument("--notable-species", type=Path, default=NOTABLE_SPECIES_FILE)
     args = parser.parse_args()
-    errors, warnings = audit_directory()
+    errors, warnings = audit_directory(
+        metadata_directory=args.metadata_directory,
+        notable_species_path=args.notable_species,
+    )
     baseline: set[str] = set()
     if args.baseline:
         try:
@@ -136,7 +206,7 @@ def main() -> int:
         print(f"ERREUR HISTORIQUE: {item}")
     for item in resolved_errors:
         print(f"RÉSOLUE DEPUIS LA BASELINE: {item}")
-    for item in warnings[:200]:
+    for item in warnings[:400]:
         print(f"AVERTISSEMENT: {item}")
     return 1 if args.strict and new_errors else 0
 
