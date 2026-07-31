@@ -74,9 +74,6 @@ jobs:
           fi
           python tools/reclassify_and_expand_families.py
           python tools/catalogue_enrichment_parallel.py
-          python tools/photo_batch_enrichment.py
-          python tools/gbif_photo_enrichment.py
-          python tools/commons_targeted_enrichment.py
       - name: Enregistrer les résultats
         shell: bash
         run: |
