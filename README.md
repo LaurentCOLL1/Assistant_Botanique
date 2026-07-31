@@ -1,47 +1,91 @@
-# Assistant Botanique
+# Assistant Botanique 3
 
-Application de bureau Python/Tkinter pour gérer une collection de plantes, consulter un catalogue botanique, préparer des recettes de substrat et enregistrer les soins.
+Application de bureau Python/Tkinter pour gérer une collection de plantes, apprendre leur rythme réel de soins, documenter leur évolution par des photos et réviser un catalogue botanique sourcé.
 
-## Nouveautés de la version 2
+## Nouveautés de la version 3
 
-- chaque exemplaire de plante possède un UUID indépendant de son surnom ;
-- les données personnelles sont enregistrées hors du dépôt, dans le dossier utilisateur du système ;
-- les sauvegardes JSON sont atomiques et une copie `.backup` est conservée ;
-- l'ancien `mes_plantes.json` est migré automatiquement au premier lancement ;
-- les dates et volumes sont validés explicitement ;
-- les rappels indiquent de **contrôler le substrat**, plutôt que d'ordonner un arrosage automatique ;
-- chaque plante conserve un historique d'arrosages, rempotages, tailles, engrais et observations ;
-- le catalogue dispose d'une recherche sans accents, de filtres famille/toxicité et d'une traçabilité des données ;
-- « Non toxique » n'est plus interprété comme toxique ;
-- le générateur de substrat répartit clairement les volumes et normalise les ratios ;
-- export de la collection en CSV et des contrôles en iCalendar ;
-- thèmes clair et sombre, fenêtre responsive et géométrie mémorisée ;
-- schémas JSON, audit du catalogue, tests automatisés et GitHub Actions.
+### Soins adaptatifs
 
-## Prérequis
+Le calendrier combine désormais la fréquence saisonnière de l'espèce avec l'exposition, l'emplacement, la matière et le volume du pot, puis apprend à partir des contrôles « substrat sec », « encore humide » et des intervalles réellement observés. Il propose toujours un **contrôle**, jamais un arrosage automatique.
 
-- Python 3.11 ou plus récent ;
-- Tkinter, généralement inclus avec Python sous Windows et macOS.
+### Validation botanique
 
-Sous Debian/Ubuntu :
+Un onglet de révision permet de modifier une fiche, associer plusieurs sources, choisir un niveau de confiance et suivre les statuts `brouillon`, `à vérifier`, `validé` ou `rejeté`. Les révisions locales surchargent le catalogue sans modifier les fichiers historiques.
 
-```bash
-sudo apt install python3-tk
+### Installation Windows et mises à jour
+
+Le workflow `Release Windows` construit un exécutable PyInstaller puis un installateur Inno Setup. Une release GitHub créée avec un tag `v*` reçoit automatiquement l'installateur. L'application peut vérifier volontairement la dernière release publiée.
+
+### Notifications natives
+
+Les contrôles arrivés à échéance peuvent être affichés via les notifications du système. Sous Windows, l'application peut installer une tâche planifiée quotidienne, ou l'installateur peut l'activer à 09:00.
+
+### Photos et chronologie
+
+Chaque plante peut recevoir des photos et des légendes. La chronologie réunit soins, observations et images. Les photos restent dans le dossier de données local et ne sont jamais envoyées automatiquement.
+
+### SQLite
+
+La collection, les événements, les photos et les révisions sont stockés dans SQLite avec transactions, clés étrangères, index, mode WAL et migration automatique depuis l'ancien JSON.
+
+### Sauvegarde complète
+
+Une archive `.botanique` contient la base, les réglages, les photos et les révisions. Chaque fichier est contrôlé avec SHA-256 avant restauration. Une copie de sécurité des données existantes est conservée.
+
+### Architecture
+
+Le nouveau code métier est organisé dans `src/assistant_botanique/` :
+
+```text
+src/assistant_botanique/
+├── domain/          moteur adaptatif et modèles
+├── infrastructure/ SQLite, catalogue, réglages
+├── services/        photos, sauvegardes, notifications, mises à jour
+└── ui/              fenêtre et onglets version 3
 ```
 
-## Lancement
+Les modules historiques à la racine restent disponibles comme façades de compatibilité pendant la migration progressive.
+
+## Prérequis et lancement
+
+- Python 3.11 ou plus récent ;
+- Tkinter ;
+- Pillow et Plyer, installés automatiquement avec le projet.
+
+```bash
+python -m pip install -e .
+assistant-botanique
+```
+
+Le lancement historique reste disponible :
 
 ```bash
 python main.py
 ```
 
-Le catalogue est lu depuis `familles_plantes/`. La collection et les réglages sont enregistrés dans :
+Afficher uniquement les notifications arrivées à échéance :
+
+```bash
+assistant-botanique --notify
+```
+
+## Données locales
 
 - Windows : `%APPDATA%/AssistantBotanique/`
 - macOS : `~/Library/Application Support/AssistantBotanique/`
 - Linux : `$XDG_DATA_HOME/AssistantBotanique/` ou `~/.local/share/AssistantBotanique/`
 
-Pour les tests, il est possible d'isoler les données :
+Le dossier contient notamment :
+
+```text
+assistant_botanique.sqlite3
+settings.json
+photos/
+catalogue_overrides/
+backups/
+```
+
+Pour isoler les données pendant les tests :
 
 ```bash
 ASSISTANT_BOTANIQUE_DATA_DIR=/chemin/temporaire python main.py
@@ -53,46 +97,27 @@ ASSISTANT_BOTANIQUE_DATA_DIR=/chemin/temporaire python main.py
 python -m pip install -e ".[dev]"
 pytest -q
 ruff check .
-python validate_data.py
-```
-
-Le mode strict de l'audit échoue en cas d'anomalie structurelle :
-
-```bash
 python validate_data.py --strict
 ```
 
-## Structure
+La CI exécute les tests sous Windows et Linux avec Python 3.11 et 3.13.
 
-```text
-app_paths.py          chemins portables
-app_data.py           chargement et normalisation du catalogue
-core.py               logique métier pure
-storage.py            migration et sauvegarde atomique
-recipe_engine.py      calcul des recettes de substrat
-main.py               fenêtre principale
-tab_*.py              onglets Tkinter
-schemas/              schémas JSON
-validate_data.py      audit des fiches botaniques
-tests/                tests unitaires
+## Construire l'installateur Windows
+
+Le plus simple est de déclencher le workflow `Release Windows`. Localement, avec PyInstaller et Inno Setup :
+
+```powershell
+pyinstaller --noconfirm --clean --windowed --name AssistantBotanique `
+  --collect-all plyer --collect-all PIL `
+  --add-data "familles_plantes;familles_plantes" `
+  --add-data "data.py;." --add-data "schemas;schemas" main.py
+iscc installer/AssistantBotanique.iss
 ```
 
-## Qualité des données botaniques
+## Avertissement horticole
 
-Les fiches historiques restent compatibles. Le nouveau format accepte également :
-
-- `id` stable par espèce ;
-- `metadata.sources`, `metadata.last_reviewed` et `metadata.confidence` ;
-- une toxicité structurée avec un niveau normalisé ;
-- des rôles de substrat structurés avec ratios et ingrédients ;
-- une séparation entre ingrédients interdits et conditions de culture à éviter.
-
-L'audit signale les mois manquants, fréquences invalides, identifiants dupliqués, ratios incohérents, sources absentes, coquilles probables et blocs de contenu répétés.
-
-## Avertissement
-
-Les calendriers d'arrosage sont des rappels indicatifs. La décision d'arroser doit tenir compte de l'humidité réelle du substrat, du pot, de la température, de la lumière, de l'hygrométrie et de l'état de la plante. Les diagnostics sont des orientations et ne remplacent pas une expertise phytosanitaire.
+Les recommandations dépendent de données génériques et d'observations personnelles. Vérifiez toujours l'humidité réelle du substrat, l'état des racines et les conditions locales avant d'arroser ou de traiter une plante.
 
 ## Licence
 
-MIT — voir [LICENSE](LICENSE).
+MIT.

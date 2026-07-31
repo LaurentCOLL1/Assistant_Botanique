@@ -4,23 +4,52 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "assistant-botanique"
-version = "2.0.0"
-description = "Application de bureau pour gérer une collection de plantes et préparer des substrats."
+version = "3.0.0"
+description = "Application de bureau pour gérer une collection de plantes, apprendre leur rythme de soins et documenter leur évolution."
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}
 authors = [{name = "Laurent COLL1"}]
-dependencies = []
+dependencies = [
+  "Pillow>=10.4",
+  "plyer>=2.1",
+]
 
 [project.optional-dependencies]
-dev = ["pytest>=8", "ruff>=0.6"]
+dev = [
+  "pytest>=8",
+  "pytest-cov>=5",
+  "ruff>=0.6",
+  "pyinstaller>=6.10",
+]
 
 [project.scripts]
-assistant-botanique = "main:main"
+assistant-botanique = "assistant_botanique.__main__:main"
+
+[tool.setuptools]
+package-dir = {assistant_botanique = "src/assistant_botanique"}
+packages = ["assistant_botanique", "assistant_botanique.domain", "assistant_botanique.infrastructure", "assistant_botanique.services", "assistant_botanique.ui"]
+py-modules = [
+  "app_data",
+  "app_paths",
+  "core",
+  "data",
+  "main",
+  "recipe_engine",
+  "storage",
+  "tab_catalogue",
+  "tab_diagnostic",
+  "tab_gestion",
+  "tab_substrat",
+  "ui_theme",
+  "validate_data",
+]
+
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["."]
+pythonpath = [".", "src"]
+addopts = "--strict-markers"
 
 [tool.ruff]
 target-version = "py311"

@@ -1,0 +1,47 @@
+name: Release Windows
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  build-installer:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e ".[dev]"
+      - name: Tests avant packaging
+        run: pytest -q
+      - name: Construire l'exécutable
+        shell: pwsh
+        run: >-
+          pyinstaller --noconfirm --clean --windowed --name AssistantBotanique
+          --collect-all plyer --collect-all PIL
+          --add-data "familles_plantes;familles_plantes"
+          --add-data "data.py;."
+          --add-data "schemas;schemas"
+          main.py
+      - name: Installer Inno Setup
+        run: choco install innosetup --no-progress -y
+      - name: Construire l'installateur
+        shell: pwsh
+        run: iscc installer/AssistantBotanique.iss
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Assistant-Botanique-Windows
+          path: installer/output/AssistantBotanique-Setup.exe
+      - name: Publier dans GitHub Releases
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: installer/output/AssistantBotanique-Setup.exe
+          generate_release_notes: true
