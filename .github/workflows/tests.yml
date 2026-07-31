@@ -70,6 +70,7 @@ jobs:
           tools/catalogue_enrichment_parallel.py
           tools/photo_batch_enrichment.py
           tools/gbif_photo_enrichment.py
+          tools/commons_targeted_enrichment.py
           tools/fix_catalogue_anomalies.py
       - name: Corriger les anomalies certaines
         run: python tools/fix_catalogue_anomalies.py
@@ -83,6 +84,7 @@ jobs:
             python tools/photo_batch_enrichment.py
           fi
           python tools/gbif_photo_enrichment.py
+          python tools/commons_targeted_enrichment.py
       - uses: actions/upload-artifact@v4
         with:
           name: catalogue-audit-results
