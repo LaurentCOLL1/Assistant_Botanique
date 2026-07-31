@@ -1,7 +1,12 @@
 import json
 from pathlib import Path
 
-from assistant_botanique.infrastructure.catalogue import load_curated_metadata, merge_curated_metadata
+from assistant_botanique.infrastructure.catalogue import (
+    load_catalogue,
+    load_curated_metadata,
+    load_generated_profile_map,
+    merge_curated_metadata,
+)
 from validate_data import audit_directory, load_notable_species
 
 MONTHS = {
@@ -36,6 +41,75 @@ def test_curated_metadata_is_merged_without_overwriting_explicit_values(tmp_path
     assert merged["metadata"]["sources"] == ["https://example.org/taxonomy"]
     assert merged["metadata"]["confidence"] == "elevee"
     assert "metadata" not in profile or profile["metadata"] == {"confidence": "elevee"}
+
+
+def test_generated_files_are_not_mistaken_for_curated_metadata(tmp_path: Path):
+    metadata_dir = tmp_path / "metadata"
+    metadata_dir.mkdir()
+    payload = {"schema_version": 1, "profiles": {"arum-creticum": {"status": "found"}}}
+    (metadata_dir / "photos.json").write_text(json.dumps(payload), encoding="utf-8")
+    (metadata_dir / "taxonomy_audit.json").write_text(json.dumps(payload), encoding="utf-8")
+
+    assert load_curated_metadata(metadata_dir) == {}
+    assert load_generated_profile_map(metadata_dir / "photos.json") == {
+        "arum-creticum": {"status": "found"}
+    }
+
+
+def test_generated_photo_and_taxonomy_audit_are_attached(tmp_path: Path):
+    families = tmp_path / "families"
+    metadata = tmp_path / "metadata"
+    families.mkdir()
+    metadata.mkdir()
+    profile = {
+        "taxonomie": {
+            "nom_scientifique": "Arum creticum",
+            "noms_vernaculaires": ["Arum de Crète"],
+            "famille": "Araceae",
+            "origine_geographique": "Crète",
+        },
+        "morphologie": {},
+        "exigences_climatiques": {},
+        "gestion_eau": {"frequence_arrosage": {month: 0 for month in MONTHS}},
+        "substrat": {},
+        "entretien": {},
+        "sante_securite": {"toxicite": "Toxique"},
+    }
+    (families / "araceae.json").write_text(json.dumps([profile]), encoding="utf-8")
+    (metadata / "photos.json").write_text(
+        json.dumps(
+            {
+                "schema_version": 1,
+                "profiles": {
+                    "arum-creticum": {
+                        "status": "found",
+                        "page_url": "https://commons.wikimedia.org/wiki/File:Arum.jpg",
+                        "license": "CC BY-SA 4.0",
+                    }
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+    (metadata / "taxonomy_audit.json").write_text(
+        json.dumps(
+            {
+                "schema_version": 1,
+                "profiles": {
+                    "arum-creticum": {
+                        "taxonomic": {"status": "accepted_exact", "family": "Araceae"},
+                    }
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    catalogue, errors = load_catalogue(families, metadata)
+
+    assert not errors
+    assert catalogue[0]["photo"]["status"] == "found"
+    assert catalogue[0]["catalogue_audit"]["taxonomic"]["status"] == "accepted_exact"
 
 
 def test_notable_species_registry_reports_missing_species(tmp_path: Path):

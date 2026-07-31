@@ -59,3 +59,7 @@ exclude = ["familles_plantes", "data.py"]
 [tool.ruff.lint]
 select = ["E", "F"]
 ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tools/catalogue_enrichment.py" = ["F401"]
+"tools/photo_batch_enrichment.py" = ["F401"]

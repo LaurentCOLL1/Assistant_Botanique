@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import tkinter as tk
+import webbrowser
 from tkinter import ttk
 from typing import Any, Mapping
 
@@ -13,6 +14,7 @@ class TabCatalogue(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
         self.filtered_profiles: list[dict[str, Any]] = []
+        self.current_photo_url = ""
         self._build_ui()
         self._load_filters()
         self.filtrer_catalogue()
@@ -31,7 +33,12 @@ class TabCatalogue(ttk.Frame):
         self.combo_family.grid(row=0, column=3, sticky="ew", padx=5, pady=4)
         self.combo_family.bind("<<ComboboxSelected>>", self.filtrer_catalogue)
         ttk.Label(toolbar, text="Toxicité").grid(row=0, column=4, sticky="w", padx=5, pady=4)
-        self.combo_toxicity = ttk.Combobox(toolbar, state="readonly", width=15, values=("Toutes", "aucune", "faible", "moderee", "elevee", "inconnue"))
+        self.combo_toxicity = ttk.Combobox(
+            toolbar,
+            state="readonly",
+            width=15,
+            values=("Toutes", "aucune", "faible", "moderee", "elevee", "inconnue"),
+        )
         self.combo_toxicity.grid(row=0, column=5, sticky="ew", padx=5, pady=4)
         self.combo_toxicity.set("Toutes")
         self.combo_toxicity.bind("<<ComboboxSelected>>", self.filtrer_catalogue)
@@ -54,10 +61,34 @@ class TabCatalogue(ttk.Frame):
         self.counter = ttk.Label(left, text="0 espèce", style="Muted.TLabel")
         self.counter.pack(anchor="e", padx=6, pady=(0, 5))
 
+        photo_bar = ttk.Frame(right)
+        photo_bar.pack(fill="x", padx=8, pady=(6, 0))
+        self.photo_label = ttk.Label(
+            photo_bar,
+            text="Photo : non renseignée",
+            style="Muted.TLabel",
+            wraplength=760,
+        )
+        self.photo_label.pack(side="left", fill="x", expand=True)
+        self.photo_button = ttk.Button(
+            photo_bar,
+            text="Ouvrir la photo source",
+            command=self._open_photo_source,
+            state="disabled",
+        )
+        self.photo_button.pack(side="right", padx=(8, 0))
+
         text_frame = ttk.Frame(right)
         text_frame.pack(fill="both", expand=True, padx=5, pady=5)
         text_scroll = ttk.Scrollbar(text_frame, orient="vertical")
-        self.text = tk.Text(text_frame, wrap="word", state="disabled", padx=12, pady=10, yscrollcommand=text_scroll.set)
+        self.text = tk.Text(
+            text_frame,
+            wrap="word",
+            state="disabled",
+            padx=12,
+            pady=10,
+            yscrollcommand=text_scroll.set,
+        )
         text_scroll.configure(command=self.text.yview)
         self.text.pack(side="left", fill="both", expand=True)
         text_scroll.pack(side="right", fill="y")
@@ -81,10 +112,15 @@ class TabCatalogue(ttk.Frame):
             tax = profile.get("taxonomie", {})
             health = profile.get("sante_securite", {})
             toxicity = toxicity_level(health.get("toxicite") if isinstance(health, Mapping) else None)
-            haystack = " ".join([
-                scientific_name(profile), ", ".join(vernacular_names(profile)), family_name(profile),
-                str(tax.get("origine_geographique", "")), str(profile.get("conseil", "")),
-            ])
+            haystack = " ".join(
+                [
+                    scientific_name(profile),
+                    ", ".join(vernacular_names(profile)),
+                    family_name(profile),
+                    str(tax.get("origine_geographique", "")),
+                    str(profile.get("conseil", "")),
+                ]
+            )
             if query and query not in normalize_text(haystack):
                 continue
             if family_filter != "Toutes" and family_name(profile) != family_filter:
@@ -96,12 +132,16 @@ class TabCatalogue(ttk.Frame):
         self.listbox.delete(0, tk.END)
         for profile in result:
             vernacular = ", ".join(vernacular_names(profile))
-            self.listbox.insert(tk.END, f"{scientific_name(profile)}" + (f" — {vernacular}" if vernacular else ""))
+            self.listbox.insert(
+                tk.END,
+                f"{scientific_name(profile)}" + (f" — {vernacular}" if vernacular else ""),
+            )
         self.counter.configure(text=f"{len(result)} espèce(s)")
         if result:
             self.listbox.selection_set(0)
             self._on_selection()
         else:
+            self._set_photo(None)
             self._write_text("Aucune espèce ne correspond aux filtres.")
 
     def _on_selection(self, event=None) -> None:
@@ -116,7 +156,14 @@ class TabCatalogue(ttk.Frame):
         profile = DATABASE_BY_ID.get(species_identifier)
         if not profile:
             normalized_target = normalize_text(species_identifier)
-            profile = next((item for item in DATABASE_PLANTES if normalize_text(scientific_name(item)) == normalized_target), None)
+            profile = next(
+                (
+                    item
+                    for item in DATABASE_PLANTES
+                    if normalize_text(scientific_name(item)) == normalized_target
+                ),
+                None,
+            )
         if not profile:
             return
         self.entry_search.delete(0, tk.END)
@@ -156,7 +203,29 @@ class TabCatalogue(ttk.Frame):
     def _insert_section(self, title: str) -> None:
         self.text.insert(tk.END, f"\n{title}\n", "section")
 
+    def _set_photo(self, photo: Mapping[str, Any] | None) -> None:
+        self.current_photo_url = ""
+        self.photo_button.configure(state="disabled")
+        if not photo or photo.get("status") == "not_found":
+            self.photo_label.configure(text="Photo : aucune image traçable trouvée")
+            return
+        source = str(photo.get("source") or "source inconnue")
+        license_name = str(photo.get("license") or "licence à vérifier")
+        representative = photo.get("status") == "representative" or photo.get("representative") is True
+        prefix = "Photo représentative" if representative else "Photo identifiée"
+        self.photo_label.configure(text=f"{prefix} — {source} — {license_name}")
+        page_url = str(photo.get("page_url") or "").strip()
+        if page_url:
+            self.current_photo_url = page_url
+            self.photo_button.configure(state="normal")
+
+    def _open_photo_source(self) -> None:
+        if self.current_photo_url:
+            webbrowser.open(self.current_photo_url)
+
     def afficher_fiche_botanique(self, profile: Mapping[str, Any]) -> None:
+        photo = profile.get("photo") if isinstance(profile.get("photo"), Mapping) else None
+        self._set_photo(photo)
         self.text.configure(state="normal")
         self.text.delete("1.0", tk.END)
         vernacular = ", ".join(vernacular_names(profile))
@@ -188,10 +257,20 @@ class TabCatalogue(ttk.Frame):
         self._insert_field("Consigne générale", self._nested(profile, "gestion_eau", "frequence_mode"))
         frequency = self._nested(profile, "gestion_eau", "frequence_arrosage", default={})
         if isinstance(frequency, Mapping):
-            months = ["janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre"]
-            self._insert_field("Calendrier", " | ".join(f"{month[:3]}. {frequency.get(month, '?')} j" for month in months))
+            months = [
+                "janvier", "fevrier", "mars", "avril", "mai", "juin",
+                "juillet", "aout", "septembre", "octobre", "novembre", "decembre",
+            ]
+            self._insert_field(
+                "Calendrier",
+                " | ".join(f"{month[:3]}. {frequency.get(month, '?')} j" for month in months),
+            )
         self._insert_field("Qualité d'eau", self._nested(profile, "gestion_eau", "qualite_eau"))
-        self.text.insert(tk.END, "Ces intervalles sont des rappels de contrôle : vérifier le substrat avant d'arroser.\n", "muted")
+        self.text.insert(
+            tk.END,
+            "Ces intervalles sont des rappels de contrôle : vérifier le substrat avant d'arroser.\n",
+            "muted",
+        )
 
         self._insert_section("5. Substrat")
         self._insert_field("Composition", self._nested(profile, "substrat", "composition_ideale"))
@@ -200,28 +279,61 @@ class TabCatalogue(ttk.Frame):
         self._insert_field("À éviter", self._nested(profile, "substrat", "elements_interdits"))
 
         self._insert_section("6. Entretien")
-        for key, label in (("rempotage", "Rempotage"), ("fertilisation", "Fertilisation"), ("taille", "Taille"), ("multiplication", "Multiplication")):
+        for key, label in (
+            ("rempotage", "Rempotage"),
+            ("fertilisation", "Fertilisation"),
+            ("taille", "Taille"),
+            ("multiplication", "Multiplication"),
+        ):
             self._insert_field(label, self._nested(profile, "entretien", key))
 
         self._insert_section("7. Santé et sécurité")
         toxicity = self._nested(profile, "sante_securite", "toxicite")
         level = toxicity_level(toxicity)
-        self._insert_field("Toxicité", f"{toxicity} — niveau normalisé : {level}", danger=level in {"moderee", "elevee"})
+        self._insert_field(
+            "Toxicité",
+            f"{toxicity} — niveau normalisé : {level}",
+            danger=level in {"moderee", "elevee"},
+        )
         self._insert_field("Maladies", self._nested(profile, "sante_securite", "maladies"))
         self._insert_field("Ravageurs", self._nested(profile, "sante_securite", "ravageurs"))
-        self._insert_field("Propriétés particulières", self._nested(profile, "sante_securite", "proprietes_particulieres"), hide_empty=True)
+        self._insert_field(
+            "Propriétés particulières",
+            self._nested(profile, "sante_securite", "proprietes_particulieres"),
+            hide_empty=True,
+        )
 
         advice = profile.get("conseil")
         if advice:
             self._insert_section("8. Conseil")
             self.text.insert(tk.END, str(advice) + "\n")
 
+        self._insert_section("9. Photographie")
+        if photo and photo.get("status") != "not_found":
+            self._insert_field("Statut", "Représentative" if photo.get("status") == "representative" else "Taxon identifié")
+            self._insert_field("Source", photo.get("source") or "Non renseignée")
+            self._insert_field("Auteur", photo.get("author") or "Non renseigné")
+            self._insert_field("Licence", photo.get("license") or "À vérifier")
+            self._insert_field("Attribution", photo.get("attribution") or "Non renseignée")
+        else:
+            self.text.insert(tk.END, "Aucune photo avec provenance et licence exploitables n'a été trouvée.\n", "muted")
+
         metadata = profile.get("metadata", {})
-        self._insert_section("9. Traçabilité")
+        self._insert_section("10. Traçabilité")
         self._insert_field("Fichier source", metadata.get("source_file", "Non renseigné"))
         self._insert_field("Niveau de confiance", metadata.get("confidence", "non_renseignee"))
         self._insert_field("Dernière révision", metadata.get("last_reviewed") or "Non renseignée")
         self._insert_field("Sources", metadata.get("sources") or "À compléter")
+
+        audit = profile.get("catalogue_audit")
+        if isinstance(audit, Mapping):
+            taxonomic = audit.get("taxonomic") if isinstance(audit.get("taxonomic"), Mapping) else {}
+            structure = audit.get("structure") if isinstance(audit.get("structure"), Mapping) else {}
+            self._insert_field("Contrôle taxonomique", taxonomic.get("status") or "Non renseigné")
+            self._insert_field("Nom accepté", taxonomic.get("accepted_scientific_name") or taxonomic.get("canonical_name") or "Non renseigné")
+            self._insert_field("Famille concordante", "Oui" if taxonomic.get("family_consistent") is True else "À vérifier")
+            self._insert_field("Structure complète", "Oui" if structure.get("complete") is True else "Non")
+            self._insert_field("Audit effectué le", audit.get("reviewed_at") or "Non renseigné")
         self.text.configure(state="disabled")
 
     def _write_text(self, value: str) -> None:

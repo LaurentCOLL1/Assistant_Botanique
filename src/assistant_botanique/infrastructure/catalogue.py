@@ -15,6 +15,11 @@ from core import family_name, profile_id, scientific_name, toxicity_level, verna
 from assistant_botanique.paths import FAMILIES_DIR, OVERRIDES_DIR, RESOURCE_DIR
 
 CATALOGUE_METADATA_DIR = RESOURCE_DIR / "catalogue_metadata"
+GENERATED_METADATA_FILES = {
+    "notable_species.json",
+    "photos.json",
+    "taxonomy_audit.json",
+}
 
 
 def _load_legacy_module():
@@ -83,7 +88,7 @@ def load_curated_metadata(directory: Path = CATALOGUE_METADATA_DIR) -> dict[str,
     if not directory.exists():
         return result
     for path in sorted(directory.glob("*.json")):
-        if path.name == "notable_species.json":
+        if path.name in GENERATED_METADATA_FILES:
             continue
         try:
             payload = json.loads(path.read_text(encoding="utf-8"))
@@ -95,6 +100,24 @@ def load_curated_metadata(directory: Path = CATALOGUE_METADATA_DIR) -> dict[str,
             if isinstance(metadata, dict):
                 result[str(identifier)] = deepcopy(metadata)
     return result
+
+
+def load_generated_profile_map(path: Path) -> dict[str, dict[str, Any]]:
+    """Charge un fichier généré contenant une table ``profiles`` indexée par ID."""
+    if not path.exists():
+        return {}
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    profiles = payload.get("profiles") if isinstance(payload, dict) else None
+    if not isinstance(profiles, dict):
+        return {}
+    return {
+        str(identifier): deepcopy(value)
+        for identifier, value in profiles.items()
+        if isinstance(value, dict)
+    }
 
 
 def merge_curated_metadata(
@@ -132,6 +155,8 @@ def load_catalogue(
     errors: list[str] = []
     overrides = _load_overrides()
     curated_metadata = load_curated_metadata(metadata_directory)
+    photos = load_generated_profile_map(metadata_directory / "photos.json")
+    taxonomy_audit = load_generated_profile_map(metadata_directory / "taxonomy_audit.json")
     if not directory.exists():
         return [], [f"Dossier catalogue introuvable : {directory}"]
     for path in sorted(directory.glob("*.json")):
@@ -151,6 +176,10 @@ def load_catalogue(
             base = normalize_profile(enriched, path.name)
             override = overrides.get(base["id"])
             profile = normalize_profile(override, path.name) if override else base
+            if photo := photos.get(profile["id"]):
+                profile["photo"] = deepcopy(photo)
+            if audit := taxonomy_audit.get(profile["id"]):
+                profile["catalogue_audit"] = deepcopy(audit)
             profile_errors, _warnings = validate_profile(profile)
             if profile_errors:
                 errors.extend(f"{path.name}[{index}]: {item}" for item in profile_errors)
