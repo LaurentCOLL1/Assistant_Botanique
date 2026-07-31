@@ -64,9 +64,9 @@ jobs:
         with:
           python-version: "3.13"
       - name: Vérifier la syntaxe
-        run: python -m py_compile tools/catalogue_enrichment.py
+        run: python -m py_compile tools/catalogue_enrichment.py tools/catalogue_enrichment_parallel.py
       - name: Auditer toutes les fiches et rechercher les photos
-        run: python tools/catalogue_enrichment.py
+        run: python tools/catalogue_enrichment_parallel.py
       - uses: actions/upload-artifact@v4
         with:
           name: catalogue-audit-results
