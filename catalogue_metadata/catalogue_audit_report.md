@@ -1,0 +1,2930 @@
+# Audit exhaustif du catalogue botanique
+
+Généré le 2026-07-31T22:38:55+00:00.
+
+## Portée et limites
+
+Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le rapprochement taxonomique est effectué avec le référentiel GBIF. Les contrôles horticoles automatisés vérifient la présence et la cohérence formelle des rubriques, mais ne remplacent pas une revue humaine de chaque recommandation de culture.
+
+## Résumé
+
+- Fichiers de familles : **138**
+- Fiches parcourues : **2204**
+- Familles représentées : **143**
+- Fiches structurellement complètes : **2201**
+- Photos exactes trouvées : **392**
+- Photos représentatives de genre/groupe : **35**
+- Photos non trouvées : **1777**
+
+## Résultats taxonomiques
+
+- `accepted_exact` : 1238
+- `api_error` : 618
+- `approximate` : 88
+- `family_mismatch` : 126
+- `generic_match` : 8
+- `synonym` : 126
+
+## Répartition par famille
+
+- Caricaceae : 40
+- Anacardiaceae : 36
+- Rutaceae : 33
+- Cucurbitaceae : 30
+- Rosaceae : 26
+- Sarraceniaceae : 26
+- Apiaceae : 25
+- Asparagaceae : 24
+- Balsaminaceae : 23
+- Salicaceae : 23
+- Actinidiaceae : 22
+- Amaryllidaceae : 22
+- Boraginaceae : 22
+- Buxaceae : 22
+- Eriocaulaceae : 22
+- Gentianaceae : 22
+- Juncaceae : 22
+- Lythraceae : 22
+- Nyctaginaceae : 22
+- Onagraceae : 22
+- Pedaliaceae : 22
+- Plumbaginaceae : 22
+- Poaceae : 22
+- Polemoniaceae : 22
+- Adoxaceae : 21
+- Alismataceae : 21
+- Aquifoliaceae : 21
+- Aristolochiaceae : 21
+- Balanophoraceae : 21
+- Berberidaceae : 21
+- Burseraceae : 21
+- Calycanthaceae : 21
+- Cannabaceae : 21
+- Caprifoliaceae : 21
+- Caryophyllaceae : 21
+- Celastraceae : 21
+- Combretaceae : 21
+- Corylaceae : 21
+- Cyperaceae : 21
+- Dipsacaceae : 21
+- Ebenaceae : 21
+- Ericaceae : 21
+- Linaceae : 21
+- Papaveraceae : 21
+- Plantaginaceae : 21
+- Polygonaceae : 21
+- Proteaceae : 21
+- Scrophulariaceae : 21
+- Basellaceae : 20
+- Brassicaceae : 20
+- Byblidaceae : 20
+- Cannaceae : 20
+- Capparaceae : 20
+- Cistaceae : 20
+- Convolvulaceae : 20
+- Cornaceae : 20
+- Cyclanthaceae : 20
+- Dioscoreaceae : 20
+- Drosophyllaceae : 20
+- Grossulariaceae : 20
+- Heliconiaceae : 20
+- Hypericaceae : 20
+- Iridaceae : 20
+- Juglandaceae : 20
+- Lardizabalaceae : 20
+- Lauraceae : 20
+- Liliaceae : 20
+- Mimosaceae : 20
+- Moringaceae : 20
+- Musaceae : 20
+- Myricaceae : 20
+- Myrtaceae : 20
+- Nelumbonaceae : 20
+- Oleaceae : 20
+- Pandanaceae : 20
+- Primulaceae : 20
+- Resedaceae : 20
+- Roridulaceae : 20
+- Sapotaceae : 20
+- Schisandraceae : 20
+- Strelitziaceae : 20
+- Tiliaceae : 20
+- Tropaeolaceae : 20
+- Martyniaceae : 19
+- Araceae : 16
+- Amaranthaceae : 15
+- Betulaceae : 15
+- Bignoniaceae : 15
+- Fabaceae : 15
+- Fagaceae : 15
+- Hydrangeaceae : 15
+- Magnoliaceae : 15
+- Pinaceae : 15
+- Ranunculaceae : 15
+- Sapindaceae : 15
+- Violaceae : 15
+- Cactaceae : 12
+- Asphodelaceae : 8
+- Asteraceae : 8
+- Bromeliaceae : 8
+- Droseraceae : 8
+- Geraniaceae : 8
+- Gesneriaceae : 8
+- Lentibulariaceae : 8
+- Malvaceae : 8
+- Melastomataceae : 8
+- Rubiaceae : 8
+- Solanaceae : 8
+- Verbenaceae : 8
+- Campanulaceae : 6
+- Passifloraceae : 6
+- Acanthaceae : 4
+- Apocynaceae : 4
+- Araliaceae : 4
+- Arecaceae : 4
+- Begoniaceae : 4
+- Commelinaceae : 4
+- Crassulaceae : 4
+- Euphorbiaceae : 4
+- Lamiaceae : 4
+- Marantaceae : 4
+- Moraceae : 4
+- Orchidaceae : 4
+- Piperaceae : 4
+- Urticaceae : 4
+- Vitaceae : 4
+- Dioncophyllaceae : 3
+- Zingiberaceae : 3
+- Aizoaceae : 2
+- Cycadaceae : 2
+- Nepenthaceae : 2
+- Oxalidaceae : 2
+- Polypodiaceae : 2
+- Anacampserotaceae (ex-Portulacaceae) : 1
+- Annonaceae : 1
+- Asparagaceae (anciennement classé parfois proche ou confondu, mais ici mentionné comme alternative de sous-bois, attention aux confusions de noms vernaculaires, restons sur une vraie Polygonacée de sous-bois si possible : Polygonatum est Asparagacée, remplaçons par Rumex thyrsiflorus ou Oxyria digyna pour rester strictement dans les Polygonaceae) : 1
+- Aspleniaceae : 1
+- Cephalotaceae : 1
+- Costaceae : 1
+- Nephrolepidaceae : 1
+- Portulacariaceae (ex-Portulacaceae) : 1
+- Zamiaceae : 1
+- Zamiaceae (ex-Cycadales) : 1
+
+## Noms synonymes à envisager de mettre à jour
+
+- **Actinidia deliciosa** → Actinidia deliciosa
+- **Actinidia melanocarpa** → Actinidia megalocarpa
+- **Actinidia coriacea** → Actinidia coriacea
+- **Actinidia purpurea** → Actinidia purpurea
+- **Actinidia glaucophylla** → Actinidia glaucophylla
+- **Echinodorus cordifolius** → Echinodorus cordifolius
+- **Echinodorus bleheri** → Echinodorus bleherae
+- **Echinodorus amazonicus** → Echinodorus amazonicus
+- **Echinodorus osiris** → Echinodorus osiris
+- **Celosia argentea var. cristata** → Celosia argentea cristata
+- **Celosia argentea var. plumosa** → Celosia argentea plumosa
+- **Allium cepa var. aggregatum** → Allium cepa aggregatum
+- **Aristolochia elegans** → Aristolochia elegans
+- **Aristolochia tricaudata** → Aristolochia tricaudata
+- **Aristolochia salvadorensis** → Aristolochia salvadorensis
+- **Aristolochia tagala** → Aristolochia tagala
+- **Yucca elephantipes** → Yucca elephantipes
+- **Sansevieria masoniana** → Sansevieria masoniana
+- **Sansevieria cylindrica** → Sansevieria cylindrica
+- **Sansevieria patens** → Sansevieria patens
+- **Sansevieria trifasciata 'Hahnii'** → Sansevieria trifasciata
+- **Chlorophytum amaniense 'Fire Flash'** → Chlorophytum amaniense
+- **Haworthia fasciata** → Haworthia fasciata
+- **Gasteria bicolor** → Gasteria bicolor
+- **Senecio radicans** → Senecio radicans
+- **Othonna capensis** → Othonna capensis
+- **Exorhopala ruficeps** → Exorhopala ruficeps
+- **Basella rubra** → Basella rubra
+- **Basella rubra 'Rosebud'** → Basella rubra
+- **Basella rubra 'Red Stem'** → Basella rubra
+- **Mahonia x media** → Mahonia media
+- **Berberis buxifolia** → Berberis buxifolia
+- **Podophyllum hexandrum** → Podophyllum hexandrum
+- **Tecoma capensis** → Tecoma capensis
+- **Lithodora diffusa** → Lithodora diffusa
+- **Trachystemon orientalis** → Trachystemon orientalis
+- **Vriesea splendens** → Vriesea splendens
+- **Ananas comosus 'Variegatus'** → Ananas comosus
+- **Boswellia carterii** → Boswellia carteri
+- **Dacryodes edulis** → Dacryodes edulis
+- **Buxus colchica** → Buxus colchica
+- **Buxus hyrcana** → Buxus hyrcana
+- **Buxus intermedia** → Buxus intermedia
+- **Echinocactus grusonii** → Echinocactus grusonii
+- **Echinopsis pachanoi** → Echinopsis pachanoi
+- **Cleistocactus strausii** → Cleistocactus strausii
+- **Chimonanthus salicifolius** → Chimonanthus salicifolius
+- **Calycanthus floridus var. oblongifolius** → Calycanthus floridus oblongifolius
+- **Trema orientalis** → Trema orientalis
+- **Celtis ehrenbergiana** → Celtis ehrenbergiana
+- **Humulus japonicus** → Humulus japonicus
+- **Canna edulis** → Canna edulis
+- **Capparis sandwichiana** → Capparis sandwichiana
+- **Capparis cynophallophora** → Capparis cynophallophora
+- **Capparis ovata** → Capparis ovata
+- **Capparis aegyptia** → Capparis aegyptia
+- **Capparis herbacea** → Capparis herbacea
+- **Capparis spinosa var. inermis** → Capparis spinosa inermis
+- **Lonicera nitida** → Lonicera nitida
+- **Lonicera alseuosmoides** → Lonicera alseuosmoides
+- **Valeriana rubra** → Valeriana rubra
+- **Centranthus calcitrapa** → Centranthus calcitrapa
+- **Vasconcellea x heilbornii** → Vasconcellea heilbornii
+- **Vasconcellea x heilbornii 'Pentagon'** → Vasconcellea heilbornii
+- **Vasconcellea Weberbaueri** → Vasconcellia
+- **Vasconcellea x heilbornii 'Leighton Green'** → Vasconcellea heilbornii
+- **Lychnis coronaria** → Lychnis coronaria
+- **Lychnis chalcedonica** → Lychnis chalcedonica
+- **Euonymus bungeanus** → Euonymus bungeanus
+- **Euonymus planipes** → Euonymus planipes
+- **Euonymus yedoensis** → Euonymus yedoensis
+- **Terminalia mantaly** → Terminalia mantaly
+- **Quisqualis grandiflora** → Quisqualis grandiflora
+- **Convolvulus mauritanicus** → Convolvulus mauritanicus
+- **Jacquemontia pentantha** → Jacquemontia pentantha
+- **Merremia tuberosa** → Merremia tuberosa
+- **Ipomoea bona-nox** → Ipomoea bona-nox
+- **Cornus stolonifera** → Cornus stolonifera
+- **Cornus paucinervis** → Cornus paucinervis
+- **Praecitrullus fistulosus** → Praecitrullus fistulosus
+- **Carludovica incisa** → Carludovica incisa
+- **Cyclanthus cristatus** → Cyclanthus cristatus
+- **Scirpus cernuus** → Scirpus cernuus
+- **Dioscorea rotundata** → Dioscorea rotundata
+- **Tonina fluviatilis** → Tonina fluviatilis
+- **Eriocaulon sieboldianum** → Eriocaulon sieboldianum
+- **Actinocephalus polyanthus** → Actinocephalus polyanthus
+- **Actinocephalus cundinamarcae** → Actinocephalus
+- **Pisum sativum** → Pisum sativum
+- **Heliconia champneyna** → Heliconia champneiana
+- **Juncus trifidus** → Juncus trifidus
+- **Plectranthus scutellarioides** → Plectranthus scutellarioides
+- **Plectranthus amboinicus** → Plectranthus amboinicus
+- **Meconopsis cambrica** → Meconopsis cambrica
+- **Fallopia aubertii** → Fallopia aubertii
+- **Persicaria amplexicaulis** → Persicaria amplexicaulis
+- **Persicaria bistorta** → Persicaria bistorta
+- **Persicaria bistorta 'Superba'** → Persicaria bistorta
+- **Persicaria affinis** → Persicaria affinis
+- **Persicaria campanulata** → Persicaria campanulata
+- **Primula acaulis** → Primula acaulis
+- **Anagallis arvensis** → Anagallis arvensis
+- **Glaux maritima** → Glaux maritima
+- **Reseda paui** → Reseda paui
+- **Eriobotrya japonica** → Eriobotrya japonica
+- **Serissa foetida** → Serissa foetida
+- **Psychotria elata** → Psychotria elata
+- **Citrus sinensis** → Citrus sinensis
+- **Citrus × paradisi** → Citrus paradisi
+- **Citrus clementina** → Citrus clementina
+- **Citrus × bergamia** → Citrus bergamia
+- **Citrus australasica** → Citrus australasica
+- **Citrus × meyeri** → Citrus meyeri
+- **Citrus glauca** → Citrus glauca
+- **Poncirus trifoliata** → Poncirus trifoliata
+- **Salix elaeagnos** → Salix elaeagnos
+- **Argania spinosa** → Argania spinosa
+- **Pouteria dulcificus** → Pouteria dulcifica
+- **Chrysophyllum albidum** → Chrysophyllum albidum
+- **Illicium mexicanum** → Illicium mexicanum
+- **Petunia x hybrida** → Petunia hybrida
+- **Solanum jasminoides** → Solanum jasminoides
+- **Ravenala guineensis** → Ravenala guyannensis
+- **Strelitzia parvifolia** → Strelitzia parvifolia
+- **Strelitzia augusta** → Strelitzia augusta
+- **Strelitzia x parvifolia 'Glauca'** → Strelitzia parvifolia
+
+## Incohérences de famille
+
+- **Sambucus nigra** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Sambucus nigra 'Black Lace'** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Sambucus racemosa** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Sambucus ebulus** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Sambucus canadensis** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Viburnum opulus** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Viburnum plicatum** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Viburnum tinus** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Viburnum odoratissimum** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Viburnum macrocephalum** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Viburnum davidii** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Viburnum x burkwoodii** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Viburnum lantana** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Viburnum carlesii** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Viburnum rhytidophyllum** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Viburnum x bodnantense** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Adoxa moschatellina** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Sambucus racemosa 'Plumosa Aurea'** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Viburnum utile** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Viburnum acerifolium** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Viburnum farreri** : fiche `Adoxaceae`, GBIF `Viburnaceae`
+- **Portulacaria afra** : fiche `Portulacariaceae (ex-Portulacaceae)`, GBIF `Didiereaceae`
+- **Anacampseros rufescens** : fiche `Anacampserotaceae (ex-Portulacaceae)`, GBIF `Anacampserotaceae`
+- **Annona muricata** : fiche `Anacardiaceae`, GBIF `Annonaceae`
+- **Annona squamosa** : fiche `Anacardiaceae`, GBIF `Annonaceae`
+- **Annona reticulata** : fiche `Anacardiaceae`, GBIF `Annonaceae`
+- **Annona glabra** : fiche `Anacardiaceae`, GBIF `Annonaceae`
+- **Asimina triloba** : fiche `Anacardiaceae`, GBIF `Annonaceae`
+- **Cananga odorata** : fiche `Anacardiaceae`, GBIF `Annonaceae`
+- **Polyalthia longifolia** : fiche `Anacardiaceae`, GBIF `Annonaceae`
+- **Rollinia deliciosa** : fiche `Anacardiaceae`, GBIF `Annonaceae`
+- **Duguetia lanceolata** : fiche `Anacardiaceae`, GBIF `Annonaceae`
+- **Goniothalamus thwaitesii** : fiche `Anacardiaceae`, GBIF `Annonaceae`
+- **Uvaria chamae** : fiche `Anacardiaceae`, GBIF `Annonaceae`
+- **Xylopia aethiopica** : fiche `Anacardiaceae`, GBIF `Annonaceae`
+- **Monodora myristica** : fiche `Anacardiaceae`, GBIF `Annonaceae`
+- **Annona purpurea** : fiche `Anacardiaceae`, GBIF `Annonaceae`
+- **Annona scleroderma** : fiche `Anacardiaceae`, GBIF `Annonaceae`
+- **Asimina parviflora** : fiche `Anacardiaceae`, GBIF `Annonaceae`
+- **Rollinia mucosa** : fiche `Anacardiaceae`, GBIF `Annonaceae`
+- **Dactylanthus taylorii** : fiche `Balanophoraceae`, GBIF `Mystropetalaceae`
+- **Mystropetalon capense** : fiche `Balanophoraceae`, GBIF `Mystropetalaceae`
+- **Corylus avellana** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Corylus maxima** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Corylus colurna** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Corylus americana** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Corylus cornuta** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Carpinus betulus** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Carpinus orientalis** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Carpinus caroliniana** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Carpinus japonica** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Carpinus laxiflora** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Ostrya carpinifolia** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Ostrya virginiana** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Ostrya japonica** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Ostryopsis davidiana** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Corylus heterophylla** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Corylus sieboldiana** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Carpinus cordata** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Carpinus tschonoskii** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Carpinus turczaninowii** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Corylus chinensis** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Corylus ferox** : fiche `Corylaceae`, GBIF `Betulaceae`
+- **Zamia furfuracea** : fiche `Zamiaceae (ex-Cycadales)`, GBIF `Zamiaceae`
+- **Scabiosa caucasica** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Scabiosa atropurpurea** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Scabiosa columbaria** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Scabiosa ochroleuca** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Cephalaria gigantea** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Knautia arvensis** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Knautia macedonica** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Dipsacus fullonum** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Succisa pratensis** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Pterocephalus pinaceus** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Cephalaria alpina** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Cephalaria transylvanica** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Scabiosa gramuntia** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Scabiosa vestina** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Scabiosa lucida** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Knautia dipsacifolia** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Dipsacus pilosus** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Pterocephalus spathulatus** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Scabiosa silenifolia** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Scabiosa triandra** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Scabiosa graminea** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Acacia farnesiana** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Albizia julibrissin** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Albizia lebbeck** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Acacia verticillata** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Polygonatum multiflorum** : fiche `Asparagaceae (anciennement classé parfois proche ou confondu, mais ici mentionné comme alternative de sous-bois, attention aux confusions de noms vernaculaires, restons sur une vraie Polygonacée de sous-bois si possible : Polygonatum est Asparagacée, remplaçons par Rumex thyrsiflorus ou Oxyria digyna pour rester strictement dans les Polygonaceae)`, GBIF `Asparagaceae`
+- **Digitalis purpurea** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
+- **Antirrhinum majus** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
+- **Linaria vulgaris** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
+- **Gratiola officinalis** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
+- **Digitalis grandiflora** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
+- **Linaria purpurea** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
+- **Digitalis x mertonensis** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
+- **Linaria alpina** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
+- **Digitalis lutea** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
+- **Antirrhinum ramosissimum** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
+- **Linaria triornithophora** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
+- **Digitalis purpurea 'Alba'** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
+- **Tilia cordata** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia platyphyllos** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia x europaea** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia americana** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia tomentosa** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia mongolica** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia euchlora** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia henryana** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia amurensis** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia miqueliana** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia insularis** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia kiusiana** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia oliveri** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia japonica** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia tuan** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia maximowicziana** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia begoniifolia** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia tomentosa 'Petiolaris'** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia mandschurica** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Tilia x moltkei** : fiche `Tiliaceae`, GBIF `Malvaceae`
+- **Clerodendrum thomsoniae** : fiche `Verbenaceae`, GBIF `Lamiaceae`
+- **Clerodendrum ugandense** : fiche `Verbenaceae`, GBIF `Lamiaceae`
+- **Holmskioldia sanguinea** : fiche `Verbenaceae`, GBIF `Lamiaceae`
+- **Vitex agnus-castus** : fiche `Verbenaceae`, GBIF `Lamiaceae`
+
+## Correspondances taxonomiques à revoir manuellement
+
+- **Echinodorus 'Ozelot'** — `approximate` (alismataceae.json[16])
+- **Allium porrum** — `approximate` (amaryllidaceae.json[3])
+- **Hannez trijugum** — `approximate` (anacardiaceae.json[16])
+- **Campylosperma auriculata** — `approximate` (anacardiaceae.json[20])
+- **Aristolochia macrophylla** — `approximate` (aristolochiaceae.json[2])
+- **Aristolochia durissima** — `approximate` (aristolochiaceae.json[6])
+- **Aristolochia salvatrix** — `approximate` (aristolochiaceae.json[17])
+- **Ditepalanthus andamanicus** — `approximate` (balanophoraceae.json[17])
+- **Impatiens omeiensis** — `approximate` (balsaminaceae.json[11])
+- **Impatiens flanaganii** — `approximate` (balsaminaceae.json[14])
+- **Impatiens omeiensis 'Darjeeling Blue'** — `approximate` (balsaminaceae.json[16])
+- **Impatiens flanaganii var. alba** — `approximate` (balsaminaceae.json[19])
+- **Basella leonis** — `approximate` (basellaceae.json[17])
+- **Gymnospermium darwinii** — `approximate` (berberidaceae.json[21])
+- **Betula utilissima var. jacquemontii** — `approximate` (betulaceae.json[5])
+- **Handroanthus impetiginosus** — `approximate` (bignoniaceae.json[11])
+- **Nonea lurida** — `approximate` (boraginaceae.json[15])
+- **Lithodora 'Grace Ward'** — `approximate` (boraginaceae.json[16])
+- **Buxus pumila** — `approximate` (buxaceae.json[10])
+- **Buxusodomensis** — `approximate` (buxaceae.json[14])
+- **Buxuseboracensis** — `approximate` (buxaceae.json[20])
+- **Byblis 'Cataby'** — `approximate` (byblidaceae.json[10])
+- **Byblis 'Enneabba'** — `approximate` (byblidaceae.json[11])
+- **Byblis 'Darwin Red'** — `approximate` (byblidaceae.json[12])
+- **Byblis 'David'** — `approximate` (byblidaceae.json[13])
+- **Byblis 'Goliath'** — `approximate` (byblidaceae.json[14])
+- **Byblis aff. gigantea (Forme naine)** — `approximate` (byblidaceae.json[19])
+- **Calycanthus 'Hartlage Wine'** — `approximate` (calycanthaceae.json[7])
+- **Calycanthus 'Aphrodite'** — `approximate` (calycanthaceae.json[8])
+- **Calycanthus 'Venus'** — `approximate` (calycanthaceae.json[9])
+- **Trema micrantha** — `approximate` (cannabaceae.json[10])
+- **Canna 'Wyoming'** — `approximate` (cannaceae.json[6])
+- **Canna 'Stuttgart'** — `approximate` (cannaceae.json[7])
+- **Canna 'Tropicanna' (Phasion)** — `approximate` (cannaceae.json[8])
+- **Canna 'Cleopatra'** — `approximate` (cannaceae.json[14])
+- **Canna 'Pretoria' (Bengal Tiger)** — `approximate` (cannaceae.json[15])
+- **Canna 'Ra' (Sunburst)** — `approximate` (cannaceae.json[18])
+- **Canna 'Ermine'** — `approximate` (cannaceae.json[19])
+- **Capparis flexuosa** — `approximate` (capparaceae.json[11])
+- **Capparis baducca** — `approximate` (capparaceae.json[17])
+- **Vasconcellea goudotiana var. canamariensis** — `approximate` (caricaceae_complement.json[13])
+- **Silene armeria** — `approximate` (caryophyllaceae.json[18])
+- **Cistus x 'Skanbergii'** — `approximate` (cistaceae.json[8])
+- **Cistus psilosepalus** — `approximate` (cistaceae.json[11])
+- **Asplundia ludwigii** — `approximate` (cyclanthaceae.json[2])
+- **Sphaeradenia laevis** — `approximate` (cyclanthaceae.json[9])
+- **Dicranopygium yacuense** — `approximate` (cyclanthaceae.json[17])
+- **Carludovica angustifolia** — `approximate` (cyclanthaceae.json[19])
+- **Cyperus involucratus** — `approximate` (cyperaceae.json[21])
+- **Dioscorea opposition** — `approximate` (dioscoreaceae.json[6])
+- **Drosera capensis var. alba** — `approximate` (droseraceae.json[7])
+- **Drosophyllum lusitanicum (Forme portugaise de la Serra de Sintra)** — `approximate` (drosophyllaceae.json[3])
+- **Drosophyllum lusitanicum (Forme espagnole d'Andalousie)** — `approximate` (drosophyllaceae.json[4])
+- **Drosophyllum lusitanicum (Forme marocaine de la région de Tanger)** — `approximate` (drosophyllaceae.json[5])
+- **Drosophyllum lusitanicum (Forme de l'Atlas marocain)** — `approximate` (drosophyllaceae.json[20])
+- **Diospyros digyna** — `approximate` (ebenaceae.json[4])
+- **Eriocaulon hainanense** — `approximate` (eriocaulaceae.json[14])
+- **Eriocaulon 'Polaris'** — `approximate` (eriocaulaceae.json[16])
+- **Eriocaulon 'Vietnam'** — `approximate` (eriocaulaceae.json[17])
+- **Eriocaulon 'Ratnagiricum'** — `approximate` (eriocaulaceae.json[18])
+- **Gentiana acaulis** — `api_error` (gentianaceae.json[2])
+- **Gentiana septemfida** — `api_error` (gentianaceae.json[4])
+- **Gentiana sino-ornata** — `api_error` (gentianaceae.json[5])
+- **Gentiana cruciata** — `api_error` (gentianaceae.json[6])
+- **Gentiana asclepiadea** — `api_error` (gentianaceae.json[7])
+- **Gentiana punctata** — `api_error` (gentianaceae.json[8])
+- **Gentiana pannonica** — `api_error` (gentianaceae.json[9])
+- **Gentiana purpurea** — `api_error` (gentianaceae.json[10])
+- **Gentiana bavarica** — `api_error` (gentianaceae.json[11])
+- **Gentiana dahurica** — `api_error` (gentianaceae.json[12])
+- **Gentiana paradoxa** — `api_error` (gentianaceae.json[13])
+- **Gentiana utriculosa** — `api_error` (gentianaceae.json[14])
+- **Gentiana froelichii** — `api_error` (gentianaceae.json[17])
+- **Gentiana luteola** — `api_error` (gentianaceae.json[18])
+- **Gentiana pneumaticus** — `approximate` (gentianaceae.json[19])
+- **Gentiana burseri** — `api_error` (gentianaceae.json[20])
+- **Gentiana amarella** — `api_error` (gentianaceae.json[21])
+- **Gentiana campestris** — `api_error` (gentianaceae.json[22])
+- **Pelargonium graveolens** — `api_error` (geraniaceae.json[1])
+- **Pelargonium grandiflorum** — `api_error` (geraniaceae.json[3])
+- **Pelargonium sidoides** — `api_error` (geraniaceae.json[4])
+- **Geranium macrorrhizum** — `api_error` (geraniaceae.json[5])
+- **Geranium sanguineum** — `api_error` (geraniaceae.json[6])
+- **Pelargonium echinatum** — `api_error` (geraniaceae.json[7])
+- **Erodium cicutarium** — `api_error` (geraniaceae.json[8])
+- **Saintpaulia ionantha** — `api_error` (gesneriaceae.json[1])
+- **Aeschynanthus radicans** — `api_error` (gesneriaceae.json[2])
+- **Streptocarpus x hybridus** — `api_error` (gesneriaceae.json[3])
+- **Columnea gloriosa** — `api_error` (gesneriaceae.json[5])
+- **Nematanthus wettsteinii** — `api_error` (gesneriaceae.json[6])
+- **Episcia cupreata** — `api_error` (gesneriaceae.json[7])
+- **Achimenes grandiflora** — `api_error` (gesneriaceae.json[8])
+- **Ribes uva-crispa** — `api_error` (grossulariaceae.json[1])
+- **Ribes nigrum** — `api_error` (grossulariaceae.json[3])
+- **Ribes sativum** — `api_error` (grossulariaceae.json[4])
+- **Ribes sanguineum** — `api_error` (grossulariaceae.json[5])
+- **Ribes odoratum** — `api_error` (grossulariaceae.json[7])
+- **Ribes nigrum 'Borealis'** — `api_error` (grossulariaceae.json[8])
+- **Ribes divaricatum** — `api_error` (grossulariaceae.json[9])
+- **Ribes americanum** — `api_error` (grossulariaceae.json[10])
+- **Ribes lacustre** — `api_error` (grossulariaceae.json[11])
+- **Ribes aureum** — `api_error` (grossulariaceae.json[13])
+- **Ribes magellanicum** — `api_error` (grossulariaceae.json[14])
+- **Ribes cynanchii** — `approximate` (grossulariaceae.json[15])
+- **Ribes laciniatum** — `api_error` (grossulariaceae.json[16])
+- **Ribes petraeum** — `api_error` (grossulariaceae.json[17])
+- **Ribes dikusha** — `api_error` (grossulariaceae.json[18])
+- **Ribes laxiflorum** — `api_error` (grossulariaceae.json[19])
+- **Ribes punctatum** — `api_error` (grossulariaceae.json[20])
+- **Heliconia rostrata** — `api_error` (heliconiaceae.json[1])
+- **Heliconia bihai** — `api_error` (heliconiaceae.json[2])
+- **Heliconia psittacorum** — `api_error` (heliconiaceae.json[3])
+- **Heliconia caribaea** — `api_error` (heliconiaceae.json[5])
+- **Heliconia Wagneriana** — `api_error` (heliconiaceae.json[6])
+- **Heliconia chartacea** — `api_error` (heliconiaceae.json[7])
+- **Heliconia aurantiaca** — `api_error` (heliconiaceae.json[9])
+- **Heliconia metallica** — `api_error` (heliconiaceae.json[10])
+- **Heliconia pendula** — `api_error` (heliconiaceae.json[11])
+- **Heliconia indica** — `api_error` (heliconiaceae.json[12])
+- **Heliconia episcopalis** — `api_error` (heliconiaceae.json[13])
+- **Heliconia pogonantha** — `api_error` (heliconiaceae.json[14])
+- **Heliconia bourgaeana** — `api_error` (heliconiaceae.json[15])
+- **Heliconia collinsiana** — `api_error` (heliconiaceae.json[16])
+- **Heliconia x rauliniana** — `api_error` (heliconiaceae.json[18])
+- **Heliconia vellerigera** — `api_error` (heliconiaceae.json[20])
+- **Hydrangea macrophylla** — `api_error` (hydrangeaceae.json[1])
+- **Hydrangea paniculata** — `api_error` (hydrangeaceae.json[2])
+- **Hydrangea arborescens** — `api_error` (hydrangeaceae.json[3])
+- **Hydrangea quercifolia** — `api_error` (hydrangeaceae.json[4])
+- **Philadelphus coronarius** — `api_error` (hydrangeaceae.json[6])
+- **Deutzia gracilis** — `api_error` (hydrangeaceae.json[7])
+- **Hydrangea serrata** — `api_error` (hydrangeaceae.json[8])
+- **Hydrangea aspera** — `api_error` (hydrangeaceae.json[10])
+- **Kirengeshoma palmata** — `api_error` (hydrangeaceae.json[12])
+- **Schizophragma hydrangeoides** — `api_error` (hydrangeaceae.json[13])
+- **Hydrangea involucrata** — `api_error` (hydrangeaceae.json[14])
+- **Hydrangea anomala** — `api_error` (hydrangeaceae.json[15])
+- **Hypericum perforatum** — `api_error` (hypericaceae.json[1])
+- **Hypericum calycinum** — `api_error` (hypericaceae.json[2])
+- **Hypericum 'Hidcote'** — `api_error` (hypericaceae.json[3])
+- **Hypericum androsaemum** — `api_error` (hypericaceae.json[4])
+- **Hypericum patulum** — `api_error` (hypericaceae.json[5])
+- **Hypericum moserianum** — `api_error` (hypericaceae.json[7])
+- **Hypericum kouytchense** — `api_error` (hypericaceae.json[8])
+- **Hypericum hircinum** — `api_error` (hypericaceae.json[9])
+- **Hypericum elodes** — `api_error` (hypericaceae.json[10])
+- **Hypericum pulchrum** — `api_error` (hypericaceae.json[11])
+- **Hypericum maculatum** — `api_error` (hypericaceae.json[12])
+- **Hypericum coris** — `api_error` (hypericaceae.json[16])
+- **Hypericum reptans** — `api_error` (hypericaceae.json[17])
+- **Hypericum inodorum** — `api_error` (hypericaceae.json[18])
+- **Hypericum hunsanense** — `api_error` (hypericaceae.json[19])
+- **Iris germanica** — `api_error` (iridaceae.json[1])
+- **Crocus sativus** — `api_error` (iridaceae.json[2])
+- **Freesia alba** — `api_error` (iridaceae.json[3])
+- **Gladiolus x hortulanus** — `api_error` (iridaceae.json[4])
+- **Crocosmia x crocosmiiflora** — `api_error` (iridaceae.json[5])
+- **Iris sibirica** — `api_error` (iridaceae.json[6])
+- **Iris pseudacorus** — `api_error` (iridaceae.json[7])
+- **Iris reticulata** — `api_error` (iridaceae.json[8])
+- **Ixia dubia** — `api_error` (iridaceae.json[9])
+- **Sparaxis tricolor** — `api_error` (iridaceae.json[10])
+- **Sisyrinchium angustifolium** — `api_error` (iridaceae.json[11])
+- **Watsonia meriana** — `api_error` (iridaceae.json[12])
+- **Iris foetidissima** — `api_error` (iridaceae.json[13])
+- **Tritonia crocata** — `api_error` (iridaceae.json[14])
+- **Romulea bulbocodium** — `api_error` (iridaceae.json[15])
+- **Iris ensata** — `api_error` (iridaceae.json[16])
+- **Chasmanthe floribunda** — `api_error` (iridaceae.json[17])
+- **Babiana stricta** — `api_error` (iridaceae.json[18])
+- **Iris x hollandica** — `api_error` (iridaceae.json[19])
+- **Neomarica gracilis** — `api_error` (iridaceae.json[20])
+- **Juglans regia** — `api_error` (juglandaceae.json[1])
+- **Juglans nigra** — `api_error` (juglandaceae.json[2])
+- **Carya illinoinensis** — `api_error` (juglandaceae.json[3])
+- **Juglans cinerea** — `api_error` (juglandaceae.json[4])
+- **Juglans cordiformis** — `approximate` (juglandaceae.json[5])
+- **Carya ovata** — `api_error` (juglandaceae.json[7])
+- **Carya tomentosa** — `api_error` (juglandaceae.json[9])
+- **Carya glabra** — `api_error` (juglandaceae.json[10])
+- **Pterocarya stenoptera** — `api_error` (juglandaceae.json[12])
+- **Juglans microcarpa** — `api_error` (juglandaceae.json[14])
+- **Carya ovata var. nuttallii** — `api_error` (juglandaceae.json[15])
+- **Juglans regia 'Mayette'** — `api_error` (juglandaceae.json[18])
+- **Juglans regia 'Fernor'** — `api_error` (juglandaceae.json[19])
+- **Juglans regia 'Chandler'** — `api_error` (juglandaceae.json[20])
+- **Juncus effusus** — `api_error` (juncaceae.json[1])
+- **Juncus effusus 'Spiralis'** — `api_error` (juncaceae.json[2])
+- **Juncus inflexus** — `api_error` (juncaceae.json[3])
+- **Juncus gerardii** — `api_error` (juncaceae.json[6])
+- **Juncus acutiflorus** — `api_error` (juncaceae.json[8])
+- **Juncus conglomeratus** — `api_error` (juncaceae.json[9])
+- **Juncus bulbosus** — `api_error` (juncaceae.json[10])
+- **Juncus articulatus** — `api_error` (juncaceae.json[12])
+- **Juncus tenuis** — `api_error` (juncaceae.json[13])
+- **Juncus alpinoarticulatus** — `api_error` (juncaceae.json[14])
+- **Juncus filiformis** — `api_error` (juncaceae.json[15])
+- **Juncus compressus** — `api_error` (juncaceae.json[18])
+- **Juncus militaris** — `api_error` (juncaceae.json[19])
+- **Juncus dudleyi** — `api_error` (juncaceae.json[20])
+- **Juncus patens** — `api_error` (juncaceae.json[21])
+- **Juncus ensifolius 'Finest'** — `api_error` (juncaceae.json[22])
+- **Plectranthus verticillatus** — `api_error` (lamiaceae.json[2])
+- **Plectranthus argentatus** — `api_error` (lamiaceae.json[4])
+- **Akebia quinata** — `api_error` (lardizabalaceae.json[1])
+- **Akebia trifoliata** — `api_error` (lardizabalaceae.json[2])
+- **Decaisnea fargesii** — `api_error` (lardizabalaceae.json[3])
+- **Holboellia latifolia** — `api_error` (lardizabalaceae.json[4])
+- **Holboellia angustifolia** — `api_error` (lardizabalaceae.json[5])
+- **Lardizabala biternata** — `api_error` (lardizabalaceae.json[6])
+- **Stauntonia hexaphylla** — `api_error` (lardizabalaceae.json[7])
+- **Stauntonia chinensis** — `api_error` (lardizabalaceae.json[8])
+- **Akebia x pentaphylla** — `api_error` (lardizabalaceae.json[9])
+- **Sinofranchetia chinensis** — `api_error` (lardizabalaceae.json[10])
+- **Holboellia coriacea** — `api_error` (lardizabalaceae.json[11])
+- **Stauntonia purpurea** — `api_error` (lardizabalaceae.json[12])
+- **Decaisnea insignis** — `api_error` (lardizabalaceae.json[13])
+- **Holboellia grandiflora** — `api_error` (lardizabalaceae.json[14])
+- **Stauntonia yaoshanensis** — `api_error` (lardizabalaceae.json[15])
+- **Akebia x 'Silver Bells'** — `api_error` (lardizabalaceae.json[16])
+- **Holboellia brachyandra** — `api_error` (lardizabalaceae.json[17])
+- **Stauntonia oligophylla** — `api_error` (lardizabalaceae.json[18])
+- **Lardizabala funaria** — `api_error` (lardizabalaceae.json[19])
+- **Akebia quinata 'White Chocolate'** — `api_error` (lardizabalaceae.json[20])
+- **Persea americana** — `api_error` (lauraceae.json[1])
+- **Laurus nobilis** — `api_error` (lauraceae.json[2])
+- **Cinnamomum verum** — `api_error` (lauraceae.json[3])
+- **Cinnamomum cassia** — `api_error` (lauraceae.json[4])
+- **Cinnamomum camphora** — `api_error` (lauraceae.json[5])
+- **Umbellularia californica** — `api_error` (lauraceae.json[6])
+- **Litsea cubeba** — `api_error` (lauraceae.json[7])
+- **Sassafras albidum** — `api_error` (lauraceae.json[8])
+- **Cinnamomum burmannii** — `api_error` (lauraceae.json[9])
+- **Laurus azorica** — `api_error` (lauraceae.json[10])
+- **Lindera benzoin** — `api_error` (lauraceae.json[11])
+- **Cryptocarya alba** — `api_error` (lauraceae.json[12])
+- **Persea borbonia** — `api_error` (lauraceae.json[13])
+- **Ocotea foetens** — `api_error` (lauraceae.json[14])
+- **Beilschmiedia tawa** — `api_error` (lauraceae.json[15])
+- **Aniba rosaeodora** — `api_error` (lauraceae.json[16])
+- **Cinnamomum loureiroi** — `api_error` (lauraceae.json[19])
+- **Nectandra megapotamica** — `api_error` (lauraceae.json[20])
+- **Pinguicula agnata** — `api_error` (lentibulariaceae.json[2])
+- **Pinguicula grandiflora** — `api_error` (lentibulariaceae.json[3])
+- **Utricularia gibba** — `api_error` (lentibulariaceae.json[6])
+- **Pinguicula guatemalensis** — `approximate` (lentibulariaceae.json[7])
+- **Pinguicula 'Anna'** — `approximate` (lentibulariaceae.json[8])
+- **Lilium candidum** — `api_error` (liliaceae.json[1])
+- **Fritillaria imperialis** — `api_error` (liliaceae.json[3])
+- **Lilium regale** — `api_error` (liliaceae.json[5])
+- **Tulipa sylvestris** — `api_error` (liliaceae.json[6])
+- **Lilium martagon** — `api_error` (liliaceae.json[7])
+- **Fritillaria meleagris** — `api_error` (liliaceae.json[8])
+- **Tulipa humilis** — `api_error` (liliaceae.json[9])
+- **Tulipa clusiana** — `api_error` (liliaceae.json[11])
+- **Lilium longiflorum** — `api_error` (liliaceae.json[12])
+- **Tulipa turkestanica** — `api_error` (liliaceae.json[13])
+- **Fritillaria persica** — `api_error` (liliaceae.json[14])
+- **Tulipa sylvestris subsp. australis** — `api_error` (liliaceae.json[15])
+- **Lilium pumilum** — `api_error` (liliaceae.json[16])
+- **Tulipa sprengeri** — `api_error` (liliaceae.json[17])
+- **Fritillaria davisii** — `api_error` (liliaceae.json[18])
+- **Lilium hansonii** — `api_error` (liliaceae.json[19])
+- **Tulipa tarda** — `api_error` (liliaceae.json[20])
+- **Linum usitatissimum** — `api_error` (linaceae.json[1])
+- **Linum perenne** — `api_error` (linaceae.json[2])
+- **Linum grandiflorum** — `api_error` (linaceae.json[3])
+- **Linum narbonense** — `api_error` (linaceae.json[4])
+- **Linum flavum** — `api_error` (linaceae.json[5])
+- **Linum campanulatum** — `api_error` (linaceae.json[6])
+- **Linum catharticum** — `api_error` (linaceae.json[7])
+- **Linum austriacum** — `api_error` (linaceae.json[8])
+- **Linum suffruticosum** — `api_error` (linaceae.json[9])
+- **Linum bienne** — `api_error` (linaceae.json[10])
+- **Linum arboreum** — `api_error` (linaceae.json[11])
+- **Linum macrorhizum** — `api_error` (linaceae.json[12])
+- **Linum salsoloides** — `api_error` (linaceae.json[13])
+- **Linum strictum** — `api_error` (linaceae.json[14])
+- **Linum gallicum** — `api_error` (linaceae.json[15])
+- **Linum maritimum** — `api_error` (linaceae.json[16])
+- **Linum corsicum** — `api_error` (linaceae.json[17])
+- **Linum quadrifolium** — `api_error` (linaceae.json[18])
+- **Linum lewisii** — `api_error` (linaceae.json[19])
+- **Linum monogynum** — `api_error` (linaceae.json[20])
+- **Linum olchense** — `api_error` (linaceae.json[21])
+- **Punica granatum** — `api_error` (lythraceae.json[1])
+- **Lagerstroemia indica** — `api_error` (lythraceae.json[2])
+- **Lythrum salicaria** — `api_error` (lythraceae.json[3])
+- **Cuphea ignea** — `api_error` (lythraceae.json[5])
+- **Rotala rotundifolia** — `api_error` (lythraceae.json[6])
+- **Lawsonia inermis** — `api_error` (lythraceae.json[7])
+- **Ammannia coccinea** — `api_error` (lythraceae.json[8])
+- **Lythrum hyssopifolia** — `api_error` (lythraceae.json[9])
+- **Cuphea micropetala** — `api_error` (lythraceae.json[10])
+- **Lagerstroemia fauriei** — `api_error` (lythraceae.json[11])
+- **Lythrum virgatum** — `api_error` (lythraceae.json[12])
+- **Rotala macrandra** — `api_error` (lythraceae.json[14])
+- **Punica granatum 'Nana'** — `api_error` (lythraceae.json[15])
+- **Lagerstroemia indica x fauriei 'Natchez'** — `api_error` (lythraceae.json[16])
+- **Ammannia ramosior** — `api_error` (lythraceae.json[17])
+- **Cuphea ignea 'David Verity'** — `api_error` (lythraceae.json[18])
+- **Lythrum alatum** — `api_error` (lythraceae.json[19])
+- **Lagerstroemia indica 'Pink Velour'** — `api_error` (lythraceae.json[20])
+- **Cuphea llavea** — `api_error` (lythraceae.json[21])
+- **Lagerstroemia indica 'Catawba'** — `api_error` (lythraceae.json[22])
+- **Magnolia x soulangeana** — `api_error` (magnoliaceae.json[1])
+- **Magnolia grandiflora** — `api_error` (magnoliaceae.json[2])
+- **Liriodendron tulipifera** — `api_error` (magnoliaceae.json[3])
+- **Magnolia stellata** — `api_error` (magnoliaceae.json[4])
+- **Magnolia liliiflora** — `api_error` (magnoliaceae.json[5])
+- **Magnolia denudata** — `api_error` (magnoliaceae.json[6])
+- **Magnolia kobus** — `api_error` (magnoliaceae.json[7])
+- **Magnolia sieboldii** — `api_error` (magnoliaceae.json[8])
+- **Magnolia x loebneri** — `api_error` (magnoliaceae.json[9])
+- **Magnolia virginiana** — `api_error` (magnoliaceae.json[10])
+- **Magnolia macrophylla** — `api_error` (magnoliaceae.json[11])
+- **Magnolia acuminata** — `api_error` (magnoliaceae.json[12])
+- **Liriodendron chinense** — `api_error` (magnoliaceae.json[13])
+- **Magnolia figo** — `api_error` (magnoliaceae.json[14])
+- **Magnolia obovata** — `api_error` (magnoliaceae.json[15])
+- **Hibiscus rosa-sinensis** — `api_error` (malvaceae.json[1])
+- **Abutilon x hybridum** — `api_error` (malvaceae.json[2])
+- **Pachira aquatica** — `api_error` (malvaceae.json[3])
+- **Sparrmannia africana** — `api_error` (malvaceae.json[4])
+- **Pavonia multiflora** — `api_error` (malvaceae.json[5])
+- **Malvaviscus arboreus** — `api_error` (malvaceae.json[6])
+- **Hibiscus schizopetalus** — `api_error` (malvaceae.json[7])
+- **Brachychiton rupestris** — `api_error` (malvaceae.json[8])
+- **Goeppertia orbifolia** — `api_error` (marantaceae.json[1])
+- **Maranta leuconeura** — `api_error` (marantaceae.json[2])
+- **Stromanthe thalia** — `api_error` (marantaceae.json[3])
+- **Goeppertia makoyana** — `api_error` (marantaceae.json[4])
+- **Proboscidea louisianica** — `api_error` (martyniaceae.json[1])
+- **Martynia annua** — `api_error` (martyniaceae.json[2])
+- **Proboscidea althaeifolia** — `api_error` (martyniaceae.json[3])
+- **Proboscidea parviflora** — `api_error` (martyniaceae.json[4])
+- **Ibicella lutea** — `api_error` (martyniaceae.json[5])
+- **Ibicella parodii** — `api_error` (martyniaceae.json[6])
+- **Craniolaria annua** — `api_error` (martyniaceae.json[7])
+- **Craniolaria integrifolia** — `api_error` (martyniaceae.json[8])
+- **Martynia palmeri** — `api_error` (martyniaceae.json[9])
+- **Proboscidea sabulosa** — `api_error` (martyniaceae.json[10])
+- **Proboscidea spicata** — `api_error` (martyniaceae.json[11])
+- **Holorectis spp.** — `api_error` (martyniaceae.json[12])
+- **Martynia fragrans** — `api_error` (martyniaceae.json[13])
+- **Proboscidea sinaloensis** — `api_error` (martyniaceae.json[14])
+- **Proboscidea arenaria** — `api_error` (martyniaceae.json[15])
+- **Martynia diandra** — `api_error` (martyniaceae.json[16])
+- **Proboscidea alata** — `api_error` (martyniaceae.json[17])
+- **Craniolaria dentata** — `api_error` (martyniaceae.json[18])
+- **Ibicella atro-purpurea** — `api_error` (martyniaceae.json[19])
+- **Medinilla magnifica** — `api_error` (melastomataceae.json[1])
+- **Bertolonia marmorata** — `api_error` (melastomataceae.json[2])
+- **Sonerila margaritacea** — `api_error` (melastomataceae.json[3])
+- **Monolena primuliflora** — `api_error` (melastomataceae.json[4])
+- **Tibouchina urvilleana** — `api_error` (melastomataceae.json[5])
+- **Heterocentron elegans** — `api_error` (melastomataceae.json[6])
+- **Dissotis rotundifolia** — `api_error` (melastomataceae.json[7])
+- **Medinilla speciosa** — `api_error` (melastomataceae.json[8])
+- **Acacia dealbata** — `api_error` (mimosaceae.json[1])
+- **Acacia baileyana** — `api_error` (mimosaceae.json[2])
+- **Acacia longifolia** — `api_error` (mimosaceae.json[3])
+- **Acacia cultriformis** — `api_error` (mimosaceae.json[4])
+- **Acacia podalyriifolia** — `api_error` (mimosaceae.json[5])
+- **Acacia retinodes** — `api_error` (mimosaceae.json[6])
+- **Acacia pravissima** — `api_error` (mimosaceae.json[7])
+- **Mimosa pudica** — `api_error` (mimosaceae.json[10])
+- **Calliandra haematocephala** — `api_error` (mimosaceae.json[11])
+- **Acacia melanoxylon** — `api_error` (mimosaceae.json[13])
+- **Acacia pycnantha** — `api_error` (mimosaceae.json[14])
+- **Acacia cyanophylla** — `api_error` (mimosaceae.json[15])
+- **Parkia speciosa** — `api_error` (mimosaceae.json[17])
+- **Acacia iteaphylla** — `api_error` (mimosaceae.json[18])
+- **Acacia cardiophylla** — `api_error` (mimosaceae.json[19])
+- **Acacia vestita** — `api_error` (mimosaceae.json[20])
+- **Ficus elastica** — `api_error` (moraceae.json[1])
+- **Ficus lyrata** — `api_error` (moraceae.json[2])
+- **Ficus benjamina** — `api_error` (moraceae.json[3])
+- **Ficus microcarpa 'Ginseng'** — `api_error` (moraceae.json[4])
+- **Moringa oleifera** — `api_error` (moringaceae.json[1])
+- **Moringa stenopetala** — `api_error` (moringaceae.json[2])
+- **Moringa drouhardii** — `api_error` (moringaceae.json[3])
+- **Moringa hildebrandtii** — `api_error` (moringaceae.json[4])
+- **Moringa peregrina** — `api_error` (moringaceae.json[5])
+- **Moringa ovalifolia** — `api_error` (moringaceae.json[6])
+- **Moringa concanensis** — `api_error` (moringaceae.json[7])
+- **Moringa borziana** — `api_error` (moringaceae.json[8])
+- **Moringa longituba** — `api_error` (moringaceae.json[9])
+- **Moringa pygmaea** — `api_error` (moringaceae.json[10])
+- **Moringa rivae** — `api_error` (moringaceae.json[11])
+- **Moringa arborea** — `api_error` (moringaceae.json[12])
+- **Moringa ruspoliana** — `api_error` (moringaceae.json[13])
+- **Moringa oleifera 'PKM-1'** — `api_error` (moringaceae.json[14])
+- **Moringa oleifera 'PKM-2'** — `api_error` (moringaceae.json[15])
+- **Moringa stenopetala 'Konso'** — `api_error` (moringaceae.json[16])
+- **Moringa peregrina 'Oman'** — `api_error` (moringaceae.json[17])
+- **Moringa oleifera 'Super-genius'** — `api_error` (moringaceae.json[18])
+- **Moringa drouhardii 'Arid'** — `api_error` (moringaceae.json[19])
+- **Moringa oleifera 'Dwarf'** — `api_error` (moringaceae.json[20])
+- **Musa acuminata** — `api_error` (musaceae.json[1])
+- **Musa balbisiana** — `api_error` (musaceae.json[2])
+- **Musa x paradisiaca** — `api_error` (musaceae.json[3])
+- **Musa basjoo** — `api_error` (musaceae.json[4])
+- **Ensete ventricosum** — `api_error` (musaceae.json[5])
+- **Musa coccinea** — `api_error` (musaceae.json[6])
+- **Musa velutina** — `api_error` (musaceae.json[7])
+- **Musa ornata** — `api_error` (musaceae.json[8])
+- **Musa lasiocarpa** — `api_error` (musaceae.json[9])
+- **Musa textilis** — `api_error` (musaceae.json[10])
+- **Ensete glaucum** — `api_error` (musaceae.json[11])
+- **Ensete superbum** — `api_error` (musaceae.json[12])
+- **Musa fehi** — `api_error` (musaceae.json[13])
+- **Musa itinerans** — `api_error` (musaceae.json[14])
+- **Musa sikkimensis** — `api_error` (musaceae.json[15])
+- **Musa troglodytarum** — `api_error` (musaceae.json[16])
+- **Musa uranoscopos** — `api_error` (musaceae.json[17])
+- **Ensete perrieri** — `api_error` (musaceae.json[19])
+- **Musa ingens** — `api_error` (musaceae.json[20])
+- **Myrica gale** — `api_error` (myricaceae.json[1])
+- **Morella cerifera** — `api_error` (myricaceae.json[2])
+- **Myrica pensylvanica** — `api_error` (myricaceae.json[3])
+- **Morella faya** — `api_error` (myricaceae.json[5])
+- **Myrica californica** — `api_error` (myricaceae.json[6])
+- **Myrica heterophylla** — `api_error` (myricaceae.json[7])
+- **Myrica asplenifolia** — `api_error` (myricaceae.json[8])
+- **Myrica javanica** — `api_error` (myricaceae.json[9])
+- **Myrica esculenta** — `api_error` (myricaceae.json[10])
+- **Myrica caroliniensis** — `api_error` (myricaceae.json[11])
+- **Morella caroliniensis** — `api_error` (myricaceae.json[12])
+- **Morella inodora** — `api_error` (myricaceae.json[13])
+- **Morella salicifolia** — `api_error` (myricaceae.json[16])
+- **Morella spathulata** — `api_error` (myricaceae.json[17])
+- **Morella serrata** — `api_error` (myricaceae.json[18])
+- **Morella holdridgeana** — `api_error` (myricaceae.json[19])
+- **Morella kraussiana** — `api_error` (myricaceae.json[20])
+- **Eucalyptus globulus** — `api_error` (myrtaceae.json[1])
+- **Psidium guajava** — `api_error` (myrtaceae.json[2])
+- **Syzygium aromaticum** — `api_error` (myrtaceae.json[3])
+- **Myrtus communis** — `api_error` (myrtaceae.json[4])
+- **Acca sellowiana** — `api_error` (myrtaceae.json[5])
+- **Melaleuca alternifolia** — `api_error` (myrtaceae.json[6])
+- **Callistemon citrinus** — `api_error` (myrtaceae.json[7])
+- **Eucalyptus gunnii** — `api_error` (myrtaceae.json[8])
+- **Eugenia uniflora** — `api_error` (myrtaceae.json[9])
+- **Plinia cauliflora** — `api_error` (myrtaceae.json[10])
+- **Leptospermum scoparium** — `api_error` (myrtaceae.json[11])
+- **Pimenta dioica** — `api_error` (myrtaceae.json[12])
+- **Corymbia citriodora** — `api_error` (myrtaceae.json[13])
+- **Syzygium cumini** — `api_error` (myrtaceae.json[14])
+- **Callistemon viminalis** — `api_error` (myrtaceae.json[15])
+- **Luma apiculata** — `api_error` (myrtaceae.json[16])
+- **Eucalyptus deglupta** — `api_error` (myrtaceae.json[17])
+- **Backhousia citriodora** — `api_error` (myrtaceae.json[18])
+- **Syzygium paniculatum** — `api_error` (myrtaceae.json[19])
+- **Pimenta racemosa** — `api_error` (myrtaceae.json[20])
+- **Nelumbo nucifera** — `api_error` (nelumbonaceae.json[1])
+- **Nelumbo lutea** — `api_error` (nelumbonaceae.json[2])
+- **Nelumbo nucifera 'Komaki'** — `api_error` (nelumbonaceae.json[3])
+- **Nelumbo nucifera 'Mrs. Perry D. Slocum'** — `api_error` (nelumbonaceae.json[4])
+- **Nelumbo nucifera 'Momo Botan'** — `api_error` (nelumbonaceae.json[5])
+- **Nelumbo nucifera 'Alba Grandiflora'** — `api_error` (nelumbonaceae.json[6])
+- **Nelumbo nucifera 'Rosea Plena'** — `api_error` (nelumbonaceae.json[7])
+- **Nelumbo nucifera 'Speciosum'** — `api_error` (nelumbonaceae.json[8])
+- **Nelumbo nucifera 'Shirokunshi'** — `api_error` (nelumbonaceae.json[9])
+- **Nelumbo nucifera 'Peaches and Cream'** — `api_error` (nelumbonaceae.json[10])
+- **Nelumbo lutea 'Flavescens'** — `api_error` (nelumbonaceae.json[11])
+- **Nelumbo 'Green Maiden'** — `api_error` (nelumbonaceae.json[12])
+- **Nelumbo nucifera 'Chawan Basu'** — `api_error` (nelumbonaceae.json[13])
+- **Nelumbo nucifera 'Red Kapok'** — `api_error` (nelumbonaceae.json[14])
+- **Nelumbo nucifera 'Tianjin Pink'** — `api_error` (nelumbonaceae.json[15])
+- **Nelumbo nucifera 'Empress'** — `api_error` (nelumbonaceae.json[16])
+- **Nelumbo nucifera 'Baby Doll'** — `api_error` (nelumbonaceae.json[17])
+- **Nelumbo nucifera 'Kinshen'** — `api_error` (nelumbonaceae.json[18])
+- **Nelumbo nucifera 'Charles Thomas'** — `api_error` (nelumbonaceae.json[19])
+- **Nelumbo nucifera 'Gansu Red'** — `api_error` (nelumbonaceae.json[20])
+- **Nepenthes spp.** — `api_error` (nepenthaceae.json[1])
+- **Nepenthes alata** — `api_error` (nepenthaceae.json[2])
+- **Bougainvillea glabra** — `api_error` (nyctaginaceae.json[1])
+- **Bougainvillea spectabilis** — `api_error` (nyctaginaceae.json[2])
+- **Mirabilis jalapa** — `api_error` (nyctaginaceae.json[3])
+- **Mirabilis expansa** — `api_error` (nyctaginaceae.json[4])
+- **Pisonia alba** — `api_error` (nyctaginaceae.json[5])
+- **Boerhavia diffusa** — `api_error` (nyctaginaceae.json[6])
+- **Bougainvillea peruviana** — `api_error` (nyctaginaceae.json[7])
+- **Bougainvillea x buttiana** — `api_error` (nyctaginaceae.json[8])
+- **Mirabilis multiflora** — `api_error` (nyctaginaceae.json[9])
+- **Mirabilis longiflora** — `api_error` (nyctaginaceae.json[10])
+- **Mirabilis nyctaginea** — `api_error` (nyctaginaceae.json[11])
+- **Pisonia grandis** — `api_error` (nyctaginaceae.json[12])
+- **Pisonia umbellifera** — `api_error` (nyctaginaceae.json[13])
+- **Pisonia aculeata** — `api_error` (nyctaginaceae.json[14])
+- **Boerhavia coccinea** — `api_error` (nyctaginaceae.json[15])
+- **Boerhavia erecta** — `api_error` (nyctaginaceae.json[16])
+- **Abronia latifolia** — `api_error` (nyctaginaceae.json[17])
+- **Abronia umbellata** — `api_error` (nyctaginaceae.json[18])
+- **Abronia fragrans** — `api_error` (nyctaginaceae.json[19])
+- **Abronia villosa** — `api_error` (nyctaginaceae.json[20])
+- **Allionia incarnata** — `api_error` (nyctaginaceae.json[21])
+- **Guapira opposita** — `api_error` (nyctaginaceae.json[22])
+- **Olea europaea** — `api_error` (oleaceae.json[1])
+- **Jasminum officinale** — `api_error` (oleaceae.json[2])
+- **Syringa vulgaris** — `api_error` (oleaceae.json[3])
+- **Fraxinus excelsior** — `api_error` (oleaceae.json[4])
+- **Forsythia × intermedia** — `api_error` (oleaceae.json[5])
+- **Ligustrum vulgare** — `api_error` (oleaceae.json[6])
+- **Osmanthus fragrans** — `api_error` (oleaceae.json[7])
+- **Jasminum sambac** — `api_error` (oleaceae.json[9])
+- **Jasminum polyanthum** — `api_error` (oleaceae.json[11])
+- **Osmanthus heterophyllus** — `api_error` (oleaceae.json[12])
+- **Syringa persica** — `api_error` (oleaceae.json[13])
+- **Fraxinus angustifolia** — `api_error` (oleaceae.json[14])
+- **Ligustrum japonicum** — `api_error` (oleaceae.json[15])
+- **Abeliophyllum distichum** — `api_error` (oleaceae.json[17])
+- **Phillyrea angustifolia** — `api_error` (oleaceae.json[18])
+- **Phillyrea latifolia** — `api_error` (oleaceae.json[19])
+- **Fontanesia phillyreoides** — `api_error` (oleaceae.json[20])
+- **Oenothera biennis** — `api_error` (onagraceae.json[1])
+- **Epilobium angustifolium** — `api_error` (onagraceae.json[3])
+- **Oenothera speciosa** — `api_error` (onagraceae.json[4])
+- **Fuchsia magellanica** — `api_error` (onagraceae.json[5])
+- **Ludwigia repens** — `api_error` (onagraceae.json[6])
+- **Oenothera fruticosa** — `api_error` (onagraceae.json[7])
+- **Epilobium hirsutum** — `api_error` (onagraceae.json[8])
+- **Oenothera macrocarpa** — `api_error` (onagraceae.json[9])
+- **Gaura lindheimeri** — `api_error` (onagraceae.json[10])
+- **Epilobium montanum** — `api_error` (onagraceae.json[11])
+- **Ludwigia palustris** — `api_error` (onagraceae.json[12])
+- **Oenothera glazioviana** — `api_error` (onagraceae.json[13])
+- **Fuchsia 'Genii'** — `api_error` (onagraceae.json[14])
+- **Epilobium parviflorum** — `api_error` (onagraceae.json[15])
+- **Oenothera missouriensis** — `api_error` (onagraceae.json[16])
+- **Fuchsia 'Thalia'** — `api_error` (onagraceae.json[17])
+- **Epilobium epilobium (Epilobium palustre)** — `approximate` (onagraceae.json[18])
+- **Oenothera pallida** — `api_error` (onagraceae.json[19])
+- **Fuchsia boliviana** — `api_error` (onagraceae.json[20])
+- **Circaea lutetiana** — `api_error` (onagraceae.json[21])
+- **Oenothera villosa** — `api_error` (onagraceae.json[22])
+- **Phalaenopsis hybrids** — `api_error` (orchidaceae.json[1])
+- **Dendrobium nobile** — `api_error` (orchidaceae.json[2])
+- **Cymbidium hybrids** — `approximate` (orchidaceae.json[3])
+- **Oncidium flexuosum** — `approximate` (orchidaceae.json[4])
+- **Oxalis triangularis** — `api_error` (oxalidaceae_balsaminaceae.json[1])
+- **Oxalis tetraphylla** — `api_error` (oxalidaceae_balsaminaceae.json[2])
+- **Impatiens walleriana** — `api_error` (oxalidaceae_balsaminaceae.json[3])
+- **Pandanus amaryllifolius** — `api_error` (pandanaceae.json[1])
+- **Pandanus tectorius** — `api_error` (pandanaceae.json[2])
+- **Pandanus utile** — `api_error` (pandanaceae.json[3])
+- **Freycinetia banksii** — `api_error` (pandanaceae.json[5])
+- **Pandanus veitchii** — `api_error` (pandanaceae.json[6])
+- **Pandanus sanderi** — `api_error` (pandanaceae.json[7])
+- **Freycinetia multiflora** — `api_error` (pandanaceae.json[8])
+- **Pandanus edulis** — `api_error` (pandanaceae.json[9])
+- **Pandanus baptistii** — `api_error` (pandanaceae.json[11])
+- **Freycinetia insignis** — `api_error` (pandanaceae.json[13])
+- **Pandanus conoideus** — `api_error` (pandanaceae.json[14])
+- **Pandanus spathulatus** — `api_error` (pandanaceae.json[15])
+- **Pandanus pygmaeus** — `api_error` (pandanaceae.json[16])
+- **Freycinetia arborea** — `api_error` (pandanaceae.json[18])
+- **Pandanus boninensis** — `api_error` (pandanaceae.json[19])
+- **Pandanus montanus** — `api_error` (pandanaceae.json[20])
+- **Papaver somniferum** — `api_error` (papaveraceae.json[1])
+- **Eschscholzia californica** — `api_error` (papaveraceae.json[3])
+- **Chelidonium majus** — `api_error` (papaveraceae.json[5])
+- **Dicentra spectabilis (Lamprocapnos spectabilis)** — `api_error` (papaveraceae.json[6])
+- **Sanguinaria canadensis** — `api_error` (papaveraceae.json[8])
+- **Meconopsis betonicifolia** — `api_error` (papaveraceae.json[10])
+- **Corydalis lutea** — `api_error` (papaveraceae.json[11])
+- **Stylophorum diphyllum** — `api_error` (papaveraceae.json[13])
+- **Hunnemannia fumariifolia** — `api_error` (papaveraceae.json[14])
+- **Papaver nudicaule** — `api_error` (papaveraceae.json[16])
+- **Adlumia fungosa** — `api_error` (papaveraceae.json[17])
+- **Dicentra eximia** — `api_error` (papaveraceae.json[18])
+- **Passiflora caerulea** — `api_error` (passifloraceae.json[1])
+- **Passiflora incarnata** — `api_error` (passifloraceae.json[2])
+- **Passiflora edulis** — `api_error` (passifloraceae.json[3])
+- **Passiflora vitifolia** — `api_error` (passifloraceae.json[5])
+- **Ceratotheca sesamoides** — `api_error` (pedaliaceae.json[3])
+- **Harpagophytum procumbens** — `api_error` (pedaliaceae.json[4])
+- **Harpagophytum zeyheri** — `api_error` (pedaliaceae.json[5])
+- **Ceratotheca triloba** — `api_error` (pedaliaceae.json[6])
+- **Uncarina grandidieri** — `api_error` (pedaliaceae.json[7])
+- **Uncarina roeoesliana** — `api_error` (pedaliaceae.json[8])
+- **Uncarina decaryi** — `api_error` (pedaliaceae.json[9])
+- **Uncarina peltata** — `api_error` (pedaliaceae.json[10])
+- **Uncarina stellulifera** — `api_error` (pedaliaceae.json[11])
+- **Pterodiscus speciosus** — `api_error` (pedaliaceae.json[12])
+- **Pterodiscus ngamicus** — `api_error` (pedaliaceae.json[13])
+- **Pterodiscus luridus** — `api_error` (pedaliaceae.json[14])
+- **Sesamothamnus lugardii** — `api_error` (pedaliaceae.json[15])
+- **Sesamothamnus guerichii** — `api_error` (pedaliaceae.json[16])
+- **Pedalium murex** — `api_error` (pedaliaceae.json[17])
+- **Dicerocaryum eriocarpum** — `api_error` (pedaliaceae.json[18])
+- **Sesamum alatum** — `api_error` (pedaliaceae.json[19])
+- **Rogeria adenophylla** — `api_error` (pedaliaceae.json[20])
+- **Josephinia imperatricis** — `api_error` (pedaliaceae.json[21])
+- **Holubia tetracarpa** — `api_error` (pedaliaceae.json[22])
+- **Pinus sylvestris** — `api_error` (pinaceae.json[1])
+- **Pinus mugo** — `api_error` (pinaceae.json[2])
+- **Pinus pinea** — `api_error` (pinaceae.json[3])
+- **Pinus thunbergii** — `api_error` (pinaceae.json[4])
+- **Pinus nigra** — `api_error` (pinaceae.json[5])
+- **Picea abies** — `api_error` (pinaceae.json[6])
+- **Picea pungens** — `api_error` (pinaceae.json[7])
+- **Picea glauca** — `api_error` (pinaceae.json[8])
+- **Abies nordmanniana** — `api_error` (pinaceae.json[9])
+- **Abies koreana** — `api_error` (pinaceae.json[10])
+- **Abies alba** — `api_error` (pinaceae.json[11])
+- **Cedrus atlantica** — `api_error` (pinaceae.json[12])
+- **Cedrus deodara** — `api_error` (pinaceae.json[13])
+- **Cedrus libani** — `api_error` (pinaceae.json[14])
+- **Larix decidua** — `api_error` (pinaceae.json[15])
+- **Peperomia caperata** — `api_error` (piperaceae.json[1])
+- **Peperomia obtusifolia** — `api_error` (piperaceae.json[2])
+- **Peperomia argyreia** — `api_error` (piperaceae.json[3])
+- **Peperomia prostrata** — `api_error` (piperaceae.json[4])
+- **Plantago lanceolata** — `api_error` (plantaginaceae.json[1])
+- **Plantago major** — `api_error` (plantaginaceae.json[2])
+- **Plantago coronopus** — `api_error` (plantaginaceae.json[3])
+- **Antirrhinum majus** — `api_error` (plantaginaceae.json[4])
+- **Veronica spicata** — `api_error` (plantaginaceae.json[5])
+- **Digitalis purpurea** — `api_error` (plantaginaceae.json[6])
+- **Veronica persica** — `api_error` (plantaginaceae.json[7])
+- **Veronica beccabunga** — `api_error` (plantaginaceae.json[8])
+- **Linaria vulgaris** — `api_error` (plantaginaceae.json[9])
+- **Veronica officinalis** — `api_error` (plantaginaceae.json[10])
+- **Globularia cordifolia** — `api_error` (plantaginaceae.json[11])
+- **Hebe speciosa** — `api_error` (plantaginaceae.json[12])
+- **Plantago psyllium** — `api_error` (plantaginaceae.json[13])
+- **Cymbalaria muralis** — `api_error` (plantaginaceae.json[14])
+- **Veronica gentianoides** — `api_error` (plantaginaceae.json[15])
+- **Penstemon digitalis** — `api_error` (plantaginaceae.json[16])
+- **Veronica spicata 'Roszkilde'** — `api_error` (plantaginaceae.json[17])
+- **Hebe 'Addington'** — `api_error` (plantaginaceae.json[18])
+- **Digitalis grandiflora** — `api_error` (plantaginaceae.json[19])
+- **Plantago coronopus 'Minima'** — `api_error` (plantaginaceae.json[20])
+- **Linaria purpurea** — `api_error` (plantaginaceae.json[21])
+- **Plumbago auriculata** — `api_error` (plumbaginaceae.json[1])
+- **Armeria maritima** — `api_error` (plumbaginaceae.json[2])
+- **Ceratostigma plumbaginoides** — `api_error` (plumbaginaceae.json[3])
+- **Limonium sinuatum** — `api_error` (plumbaginaceae.json[4])
+- **Plumbago indica** — `api_error` (plumbaginaceae.json[5])
+- **Ceratostigma willmottianum** — `api_error` (plumbaginaceae.json[6])
+- **Limonium latifolium** — `approximate` (plumbaginaceae.json[7])
+- **Armeria pseudarmeria** — `api_error` (plumbaginaceae.json[8])
+- **Plumbago zeylanica** — `api_error` (plumbaginaceae.json[9])
+- **Limonium vulgare** — `api_error` (plumbaginaceae.json[10])
+- **Limonium perezii** — `api_error` (plumbaginaceae.json[11])
+- **Plumbago europaea** — `api_error` (plumbaginaceae.json[12])
+- **Goniolimon tataricum** — `api_error` (plumbaginaceae.json[14])
+- **Acantholimon olivieri** — `api_error` (plumbaginaceae.json[15])
+- **Armeria alpina** — `api_error` (plumbaginaceae.json[16])
+- **Limonium gmelinii** — `api_error` (plumbaginaceae.json[17])
+- **Limonium bellidifolium** — `api_error` (plumbaginaceae.json[18])
+- **Armeria girardii** — `api_error` (plumbaginaceae.json[21])
+- **Limonium carolinianum** — `api_error` (plumbaginaceae.json[22])
+- **Zea mays** — `api_error` (poaceae.json[1])
+- **Oryza sativa** — `api_error` (poaceae.json[2])
+- **Hordeum vulgare** — `api_error` (poaceae.json[4])
+- **Avena sativa** — `api_error` (poaceae.json[5])
+- **Secale cereale** — `api_error` (poaceae.json[6])
+- **Panicum miliaceum** — `api_error` (poaceae.json[8])
+- **Eleusine coracana** — `api_error` (poaceae.json[10])
+- **Echinochloa esculenta** — `api_error` (poaceae.json[11])
+- **Phyllostachys edulis** — `api_error` (poaceae.json[12])
+- **Fargesia murielae** — `api_error` (poaceae.json[13])
+- **Cymbopogon citratus** — `api_error` (poaceae.json[14])
+- **Saccharum officinarum** — `api_error` (poaceae.json[15])
+- **Dactylis glomerata** — `api_error` (poaceae.json[19])
+- **Lolium perenne** — `api_error` (poaceae.json[20])
+- **Bromus inermis** — `api_error` (poaceae.json[21])
+- **Eragrostis tef** — `api_error` (poaceae.json[22])
+- **Phlox paniculata** — `api_error` (polemoniaceae.json[1])
+- **Phlox subulata** — `api_error` (polemoniaceae.json[2])
+- **Polemonium caeruleum** — `api_error` (polemoniaceae.json[3])
+- **Cobaea scandens** — `api_error` (polemoniaceae.json[4])
+- **Phlox drummondii** — `api_error` (polemoniaceae.json[5])
+- **Phlox divaricata** — `api_error` (polemoniaceae.json[6])
+- **Phlox stolonifera** — `api_error` (polemoniaceae.json[7])
+- **Polemonium reptans** — `api_error` (polemoniaceae.json[8])
+- **Ipomopsis aggregata** — `api_error` (polemoniaceae.json[9])
+- **Gilia capitata** — `api_error` (polemoniaceae.json[10])
+- **Leptosiphon bicolor** — `api_error` (polemoniaceae.json[11])
+- **Phlox maculata** — `api_error` (polemoniaceae.json[12])
+- **Phlox pilosa** — `api_error` (polemoniaceae.json[13])
+- **Phlox ovata** — `api_error` (polemoniaceae.json[14])
+- **Collomia grandiflora** — `api_error` (polemoniaceae.json[15])
+- **Linanthus pungens** — `api_error` (polemoniaceae.json[16])
+- **Loeseliastrum pungens** — `approximate` (polemoniaceae.json[21])
+- **Dayia multicaulis** — `approximate` (polemoniaceae.json[22])
+- **Reseda phyteuma subsp. granatensis** — `approximate` (resedaceae.json[8])
+- **Reseda phyteuma subsp. fruticulosa** — `approximate` (resedaceae.json[11])
+- **Roridula gorgonias x dentata** — `approximate` (roridulaceae.json[5])
+- **Prunus dulcis** — `approximate` (rosaceae.json[9])
+- **Citrus unshiu** — `approximate` (rutaceae.json[15])
+- **Citrus deliciosa** — `approximate` (rutaceae.json[33])
+- **Sarracenia 'Judith Hindle'** — `approximate` (sarraceniaceae.json[25])
+- **Sarracenia 'Farnhamii'** — `approximate` (sarraceniaceae.json[26])
+- **Illicium litorale** — `approximate` (schisandraceae.json[19])
+- **Strelitzia x guernseyensis** — `approximate` (strelitziaceae.json[8])
+- **Strelitzia reginae 'Mandela's Gold'** — `approximate` (strelitziaceae.json[9])
+- **Phenakospermum venezuelicum** — `approximate` (strelitziaceae.json[15])
+- **Ravenala madagascariensis var. bemavo** — `approximate` (strelitziaceae.json[17])
+- **Ravenala madagascariensis var. chilandra** — `approximate` (strelitziaceae.json[18])
+- **Ravenala madagascariensis var. guenzleriana** — `approximate` (strelitziaceae.json[19])
+- **Strelitzia 'Janice'** — `approximate` (strelitziaceae.json[20])
+- **Tropaeolum 'Hermine Grashoff'** — `approximate` (tropaeolaceae.json[18])
+
+## Fiches incomplètes
+
+- **Ananas comosus 'Variegatus'** — sections: aucune; champs: aucun; mois: avril
+- **Lilium martagon** — sections: aucune; champs: aucun; mois: juillet
+- **Tilia tuan** — sections: aucune; champs: aucun; mois: avril
+
+## Photos restant à trouver
+
+- **Hippeastrum spp.**
+- **Clivia miniata**
+- **Agapanthus praecox**
+- **Nerine bowdenii**
+- **Zephyranthes candida**
+- **Pancratium maritimum**
+- **Brunsvigia josephinae**
+- **Scadoxus multiflorus**
+- **Crinum asiaticum**
+- **Mangifera indica**
+- **Anacardium occidentale**
+- **Pistacia vera**
+- **Pistacia lentiscus**
+- **Spondias dulcis**
+- **Spondias mombin**
+- **Spondias purpurea**
+- **Cotoneaster simonsii**
+- **Cotoneaster horizontalis**
+- **Schinus molle**
+- **Schinus terebinthifolia**
+- **Toxicodendron radicans**
+- **Toxicodendron vernicifluum**
+- **Cotinus coggygria**
+- **Hannez trijugum**
+- **Harpephyllum caffrum**
+- **Pleiogynium timoriense**
+- **Lithraea caustica**
+- **Campylosperma auriculata**
+- **Annona cherimola**
+- **Annona muricata**
+- **Annona squamosa**
+- **Annona reticulata**
+- **Annona glabra**
+- **Asimina triloba**
+- **Cananga odorata**
+- **Polyalthia longifolia**
+- **Rollinia deliciosa**
+- **Monstera deliciosa**
+- **Duguetia lanceolata**
+- **Deeringiopsis spp.**
+- **Goniothalamus thwaitesii**
+- **Uvaria chamae**
+- **Xylopia aethiopica**
+- **Monodora myristica**
+- **Annona purpurea**
+- **Annona scleroderma**
+- **Asimina parviflora**
+- **Rollinia mucosa**
+- **Petroselinum crispum**
+- **Foeniculum vulgare**
+- **Coriandrum sativum**
+- **Apium graveolens**
+- **Pastinaca sativa**
+- **Anthriscus cerefolium**
+- **Pimpinella anisum**
+- **Conium maculatum**
+- **Anethum graveolens**
+- **Cuminum cyminum**
+- **Carum carvi**
+- **Levisticum officinale**
+- **Chaerophyllum bulbosum**
+- **Angelica archangelica**
+- **Centella asiatica**
+- **Myrrhis odorata**
+- **Sium sisarum**
+- **Astrantia major**
+- **Eryngium planum**
+- **Crithmum maritimum**
+- **Bunium bulbocastanum**
+- **Ferula communis**
+- **Hoya carnosa**
+- **Mandevilla sanderi**
+- **Pachypodium lamerei**
+- **Adenium obesum**
+- **Ilex paraguariensis**
+- **Ilex crenata**
+- **Ilex vomitoria**
+- **Ilex altaclerensis**
+- **Ilex cornuta**
+- **Ilex glabra**
+- **Ilex opaca**
+- **Ilex verticillata**
+- **Ilex mitis**
+- **Ilex perado**
+- **Ilex latifolia**
+- **Ilex rotunda**
+- **Ilex pedunculosa**
+- **Ilex vomitoria 'Nana'**
+- **Ilex crenata 'Convexa'**
+- **Ilex × meserveae**
+- **Monstera deliciosa**
+- **Epipremnum aureum**
+- **Spathiphyllum wallisii**
+- **Zamioculcas zamiifolia**
+- **Philodendron hederaceum**
+- **Aglaonema commutatum**
+- **Anthurium andraeanum**
+- **Syngonium podophyllum**
+- **Dieffenbachia seguine**
+- **Arum creticum**
+- **Alocasia macrorrhizos**
+- **Colocasia esculenta**
+- **Scindapsus pictus**
+- **Schefflera arboricola**
+- **Fatsia japonica**
+- **Polyscias fruticosa**
+- **Chamaedorea elegans**
+- **Dypsis lutescens**
+- **Howea forsteriana**
+- **Rhapis excelsa**
+- **Asarum europaeum**
+- **Aristolochia macrophylla**
+- **Aristolochia clematitis**
+- **Aristolochia elegans**
+- **Aristolochia grandiflora**
+- **Aristolochia durissima**
+- **Aristolochia littoralis**
+- **Aristolochia rotunda**
+- **Aristolochia pallida**
+- **Aristolochia sempervirens**
+- **Aristolochia baetica**
+- **Aristolochia fimbriata**
+- **Aristolochia ringens**
+- **Aristolochia debilis**
+- **Aristolochia manshuriensis**
+- **Aristolochia paucinervis**
+- **Aristolochia salvatrix**
+- **Aristolochia tricaudata**
+- **Aristolochia salvadorensis**
+- **Aristolochia tagala**
+- **Aristolochia cauliflora**
+- **Dracaena trifasciata**
+- **Dracaena reflexa var. angustifolia**
+- **Chlorophytum comosum**
+- **Asparagus setaceus**
+- **Dracaena fragrans**
+- **Beaucarnea recurvata**
+- **Yucca elephantipes**
+- **Asparagus densiflorus 'Myersii'**
+- **Agave americana**
+- **Agave attenuata**
+- **Yucca aloifolia**
+- **Dracaena surculosa**
+- **Sansevieria masoniana**
+- **Nolina hibernica**
+- **Dracaena draco**
+- **Sansevieria cylindrica**
+- **Ornithogalum thyrsoides**
+- **Muscari armeniacum**
+- **Hyacinthus orientalis**
+- **Asparagus falcatus**
+- **Sansevieria patens**
+- **Dracaena braunii**
+- **Sansevieria trifasciata 'Hahnii'**
+- **Chlorophytum amaniense 'Fire Flash'**
+- **Aloe vera**
+- **Haworthia fasciata**
+- **Gasteria bicolor**
+- **Kniphofia uvaria**
+- **Asphodelus ramosus**
+- **Bulbine frutescens**
+- **Aloe arborescens**
+- **Haworthiopsis attenuata**
+- **Senecio rowleyanus**
+- **Senecio radicans**
+- **Curio repens**
+- **Othonna capensis**
+- **Kleinia neriifolia**
+- **Helichrysum italicum**
+- **Euryops pectinatus**
+- **Argyranthemum frutescens**
+- **Balanophora fungosa**
+- **Balanophora abbreviata**
+- **Balanophora involucrata**
+- **Balanophora dioica**
+- **Balanophora polyandra**
+- **Langsdorffia hypogaea**
+- **Corynaea crassa**
+- **Ombrophytum subterraneum**
+- **Helosis cayennensis**
+- **Thonningia sanguinea**
+- **Sarcophyte sanguinea**
+- **Lophophytum mirabile**
+- **Dactylanthus taylorii**
+- **Rhopalocnemis phalloides**
+- **Scybalium fungiforme**
+- **Chlamydophytum aphyllum**
+- **Ditepalanthus andamanicus**
+- **Exorhopala ruficeps**
+- **Lathrophytum peckoltii**
+- **Mystropetalon capense**
+- **Balanophora elongata**
+- **Impatiens walleriana**
+- **Impatiens hawkeri**
+- **Impatiens balsamina**
+- **Impatiens pallida**
+- **Impatiens balfourii**
+- **Impatiens niamniamensis**
+- **Impatiens auricoma**
+- **Impatiens sodenii**
+- **Impatiens omeiensis**
+- **Impatiens tinctoria**
+- **Impatiens mirabilis**
+- **Impatiens flanaganii**
+- **Impatiens arguta**
+- **Impatiens omeiensis 'Darjeeling Blue'**
+- **Impatiens grandis**
+- **Impatiens pseudoviola**
+- **Impatiens flanaganii var. alba**
+- **Impatiens sodenii 'Apple Blossom'**
+- **Impatiens hawkeri 'Jungle Leader'**
+- **Basella alba**
+- **Basella rubra**
+- **Anredera cordifolia**
+- **Ullucus tuberosus**
+- **Anredera vesicaria**
+- **Basella excavata**
+- **Anredera baselloides**
+- **Anredera ramosa**
+- **Tournonia hookeriana**
+- **Ullucus tuberosus 'Puca-Ulluco'**
+- **Ullucus tuberosus 'Chaucha'**
+- **Basella alba 'Select'**
+- **Anredera cordifolia 'Variegata'**
+- **Basella rubra 'Rosebud'**
+- **Anredera densiflora**
+- **Ullucus tuberosus 'Puka Pishccu'**
+- **Basella leonis**
+- **Anredera diffusa**
+- **Ullucus tuberosus 'Amarillo'**
+- **Basella rubra 'Red Stem'**
+- **Begonia maculata**
+- **Begonia rex**
+- **Begonia masoniana**
+- **Begonia x hiemalis**
+- **Berberis thunbergii**
+- **Mahonia aquifolium**
+- **Berberis darwinii**
+- **Epimedium grandiflorum**
+- **Podophyllum peltatum**
+- **Nandina domestica**
+- **Berberis x media**
+- **Mahonia x media**
+- **Epimedium x rubrum**
+- **Berberis buxifolia**
+- **Jeffersonia diphylla**
+- **Caulophyllum thalictroides**
+- **Achlys triphylla**
+- **Berberis stenophylla**
+- **Berberis candidula**
+- **Berberis verruculosa**
+- **Podophyllum hexandrum**
+- **Bongardia chrysogonum**
+- **Leontice leontopetalum**
+- **Gymnospermium darwinii**
+- **Alnus glutinosa**
+- **Betula utilissima var. jacquemontii**
+- **Corylus maxima**
+- **Betula nigra**
+- **Corylus colurna**
+- **Alnus incana**
+- **Alnus cordata**
+- **Carpinus japonica**
+- **Ostrya carpinifolia**
+- **Betula lenta**
+- **Betula papyrifera**
+- **Campsis radicans**
+- **Bignonia capreolata**
+- **Jacaranda mimosifolia**
+- **Catalpa bignonioides**
+- **Campsis × tagliabuana**
+- **Tecoma stans**
+- **Podranea ricasoliana**
+- **Incarvillea delavayi**
+- **Pandorea jasminoides**
+- **Spathodea campanulata**
+- **Handroanthus impetiginosus**
+- **Tecoma capensis**
+- **Crescentia cujete**
+- **Catalpa speciosa**
+- **Eccremocarpus scaber**
+- **Pulmonaria officinalis**
+- **Brunnera macrophylla**
+- **Anchusa azurea**
+- **Lithodora diffusa**
+- **Pulmonaria saccharata**
+- **Cerinthe major 'Purpurascens'**
+- **Myosotidium hortensia**
+- **Lithospermum officinale**
+- **Omphalodes verna**
+- **Nonea lurida**
+- **Lithodora 'Grace Ward'**
+- **Pulmonaria longifolia**
+- **Trachystemon orientalis**
+- **Onosma alborosea**
+- **Echium candicans**
+- **Symphytum grandiflorum**
+- **Alkanna tinctoria**
+- **Brassica oleracea**
+- **Brassica rapa**
+- **Brassica napus**
+- **Raphanus sativus**
+- **Brassica juncea**
+- **Eruca vesicaria**
+- **Sinapis alba**
+- **Armoracia rusticana**
+- **Nasturtium officinale**
+- **Lepidium sativum**
+- **Eutrema japonicum**
+- **Brassica nigra**
+- **Lobularia maritima**
+- **Isatis tinctoria**
+- **Barbarea vulgaris**
+- **Tillandsia ionantha**
+- **Aechmea fasciata**
+- **Guzmania lingulata**
+- **Neoregelia carolinae**
+- **Vriesea splendens**
+- **Billbergia nutans**
+- **Cryptanthus bivittatus**
+- **Ananas comosus 'Variegatus'**
+- **Boswellia sacra**
+- **Boswellia carterii**
+- **Boswellia frereana**
+- **Commiphora myrrha**
+- **Commiphora wightii**
+- **Canarium indicum**
+- **Canarium luzonicum**
+- **Canarium schweinfurthii**
+- **Canarium album**
+- **Bursera simaruba**
+- **Bursera microphylla**
+- **Bursera graveolens**
+- **Bursera fagaroides**
+- **Protium heptaphyllum**
+- **Protium copal**
+- **Garuga pinnata**
+- **Aucoumea klaineana**
+- **Dacryodes edulis**
+- **Trattinnickia aspera**
+- **Crepidospermum rhoifolium**
+- **Tetragastris panamensis**
+- **Buxus sempervirens**
+- **Buxus microphylla**
+- **Buxus balearica**
+- **Buxus harlandii**
+- **Buxus colchica**
+- **Buxus hyrcana**
+- **Buxus macowanii**
+- **Buxus wallichiana**
+- **Buxus glomerata**
+- **Buxus pumila**
+- **Buxus vahlii**
+- **Buxus sinica**
+- **Buxus intermedia**
+- **Buxusodomensis**
+- **Buxus madagascarica**
+- **Buxus hildebrandtii**
+- **Buxus papillosa**
+- **Buxus bodinieri**
+- **Buxus rivularis**
+- **Buxuseboracensis**
+- **Buxus megistophylla**
+- **Buxus portoricensis**
+- **Byblis spp.**
+- **Byblis liniflora**
+- **Byblis gigantea**
+- **Byblis filifolia**
+- **Byblis aquatica**
+- **Byblis rorida**
+- **Byblis guehoi**
+- **Byblis lamellata**
+- **Byblis pilbarana**
+- **Byblis 'Cataby'**
+- **Byblis 'Enneabba'**
+- **Byblis 'Darwin Red'**
+- **Byblis 'David'**
+- **Byblis 'Goliath'**
+- **Byblis aff. liniflora (Forme du Queensland)**
+- **Byblis aff. filifolia (Forme de Phillips Range)**
+- **Byblis sp. 'Northern Territory'**
+- **Byblis sp. 'Kimberley'**
+- **Byblis aff. gigantea (Forme naine)**
+- **Byblis sp. 'Compact form'**
+- **Mammillaria spp.**
+- **Selenicereus undatus**
+- **Echinocactus grusonii**
+- **Opuntia ficus-indica**
+- **Schlumbergera truncata**
+- **Echinopsis pachanoi**
+- **Carnegiea gigantea**
+- **Cleistocactus strausii**
+- **Astrophytum asterias**
+- **Gymnocalycium mihanovichii**
+- **Cephalocereus senilis**
+- **Hatiora gaertneri**
+- **Calycanthus floridus**
+- **Calycanthus occidentalis**
+- **Chimonanthus praecox**
+- **Chimonanthus praecox 'Luteus'**
+- **Chimonanthus praecox 'Grandiflorus'**
+- **Calycanthus chinensis**
+- **Calycanthus 'Hartlage Wine'**
+- **Calycanthus 'Aphrodite'**
+- **Calycanthus 'Venus'**
+- **Chimonanthus campanulatus**
+- **Idiospermum australiense**
+- **Chimonanthus zhejiangensis**
+- **Chimonanthus salicifolius**
+- **Chimonanthus grammatus**
+- **Chimonanthus nitens**
+- **Chimonanthus zhejiangensis 'Qianjiang'**
+- **Calycanthus floridus var. oblongifolius**
+- **Calycanthus floridus 'Purpureus'**
+- **Chimonanthus praecox 'Concolor'**
+- **Chimonanthus praecox 'Grandiflorus Variegatus'**
+- **Calycanthus floridus 'Athens'**
+- **Campanula carpatica**
+- **Campanula portenschlagiana**
+- **Campanula medium**
+- **Campanula glomerata**
+- **Cannabis sativa**
+- **Humulus lupulus**
+- **Celtis australis**
+- **Celtis occidentalis**
+- **Trema orientalis**
+- **Celtis sinensis**
+- **Aphananthe aspera**
+- **Celtis laevigata**
+- **Celtis reticulata**
+- **Trema micrantha**
+- **Celtis africana**
+- **Celtis biondii**
+- **Celtis caucasica**
+- **Celtis ehrenbergiana**
+- **Celtis occidentalis 'Chicagoland'**
+- **Humulus lupulus 'Aureus'**
+- **Humulus japonicus**
+- **Trema cannabina**
+- **Celtis julianae**
+- **Celtis tournefortii**
+- **Humulus lupulus 'Cascade'**
+- **Canna indica**
+- **Canna edulis**
+- **Canna glauca**
+- **Canna flaccida**
+- **Canna x generalis**
+- **Canna 'Wyoming'**
+- **Canna 'Stuttgart'**
+- **Canna 'Tropicanna' (Phasion)**
+- **Canna iridiflora**
+- **Canna jaegeriana**
+- **Canna paniculata**
+- **Canna tuerckheimii**
+- **Canna liliiflora**
+- **Canna 'Cleopatra'**
+- **Canna 'Pretoria' (Bengal Tiger)**
+- **Canna coccinea**
+- **Canna pedunculata**
+- **Canna 'Ra' (Sunburst)**
+- **Canna 'Ermine'**
+- **Canna indica 'Purpurea'**
+- **Capparis spinosa**
+- **Capparis decidua**
+- **Capparis zeylanica**
+- **Capparis mitchellii**
+- **Crateva religiosa**
+- **Crateva tapia**
+- **Capparis sandwichiana**
+- **Capparis sepiaria**
+- **Capparis tomentosa**
+- **Crateva unilocularis**
+- **Capparis flexuosa**
+- **Capparis cynophallophora**
+- **Capparis ovata**
+- **Capparis aegyptia**
+- **Capparis herbacea**
+- **Crateva adansonii**
+- **Capparis baducca**
+- **Capparis spinosa var. inermis**
+- **Capparis cartilaginea**
+- **Crateva excelsa**
+- **Lonicera periclymenum**
+- **Lonicera japonica**
+- **Lonicera caerulea**
+- **Lonicera xylosteum**
+- **Lonicera nitida**
+- **Lonicera pileata**
+- **Lonicera alseuosmoides**
+- **Valeriana officinalis**
+- **Valeriana dioica**
+- **Valeriana rubra**
+- **Scabiosa columbaria**
+- **Cephalaria gigantea**
+- **Patrinia scabiosifolia**
+- **Valeriana phu**
+- **Patrinia villosa**
+- **Lonicera etrusca**
+- **Lonicera tragophylla**
+- **Centranthus calcitrapa**
+- **Carica papaya**
+- **Vasconcellea pubescens**
+- **Vasconcellea x heilbornii**
+- **Vasconcellea quercifolia**
+- **Jacaratia spinosa**
+- **Vasconcellea chilensis**
+- **Jacaratia mexicana**
+- **Vasconcellea candicans**
+- **Vasconcellea goudotiana**
+- **Vasconcellea microcarpa**
+- **Jarilla heterophylla**
+- **Cylicomorpha solmsii**
+- **Jacaratia digitata**
+- **Vasconcellea monoica**
+- **Vasconcellea sphaerocarpa**
+- **Vasconcellea stipulata**
+- **Jarilla caudata**
+- **Cylicomorpha parviflora**
+- **Jacaratia corumbensis**
+- **Carica papaya 'Solo'**
+- **Carica papaya 'Red Lady'**
+- **Carica papaya 'Tainung'**
+- **Vasconcellea x heilbornii 'Pentagon'**
+- **Vasconcellea Weberbaueri**
+- **Vasconcellea crassipetala**
+- **Vasconcellea longiflora**
+- **Jacaratia heptaphylla**
+- **Vasconcellea palandensis**
+- **Vasconcellea parviflora**
+- **Vasconcellea pulchra**
+- **Jacaratia chocoensis**
+- **Jarilla chocola**
+- **Vasconcellea goudotiana var. canamariensis**
+- **Vasconcellea horovitziana**
+- **Vasconcellea omnilingua**
+- **Carica papaya 'Maradol'**
+- **Carica papaya 'Royal Star'**
+- **Vasconcellea x heilbornii 'Leighton Green'**
+- **Jacaratia dolichaula**
+- **Vasconcellea sphaerocarpa 'Gigantea'**
+- **Dianthus caryophyllus**
+- **Gypsophila paniculata**
+- **Dianthus barbatus**
+- **Silene latifolia**
+- **Lychnis coronaria**
+- **Cerastium tomentosum**
+- **Dianthus alpinus**
+- **Dianthus gratianopolitanus**
+- **Lychnis chalcedonica**
+- **Dianthus plumarius**
+- **Gypsophila repens**
+- **Silene armeria**
+- **Stellaria media**
+- **Petrorhagia saxifraga**
+- **Saponaria ocymoides**
+- **Euonymus fortunei**
+- **Euonymus japonicus**
+- **Euonymus alatus**
+- **Celastrus scandens**
+- **Celastrus orbiculatus**
+- **Euonymus grandiflorus**
+- **Euonymus americanus**
+- **Euonymus bungeanus**
+- **Euonymus phellomanus**
+- **Euonymus planipes**
+- **Euonymus hamiltonianus**
+- **Euonymus verrucosus**
+- **Euonymus nanus**
+- **Euonymus japonicus 'Microphyllus'**
+- **Maytenus boaria**
+- **Euonymus yedoensis**
+- **Euonymus sanguineus**
+- **Euonymus alatus 'Compactus'**
+- **Euonymus fortunei 'Emerald 'n' Gold'**
+- **Euonymus japonicus 'Aureomarginatus'**
+- **Cephalotus follicularis**
+- **Cistus albidus**
+- **Cistus monspeliensis**
+- **Cistus ladanifer**
+- **Cistus salviifolius**
+- **Cistus creticus**
+- **Cistus x purpureus**
+- **Cistus laurifolius**
+- **Cistus x 'Skanbergii'**
+- **Helianthemum nummularium**
+- **Halimium halimifolium**
+- **Cistus psilosepalus**
+- **Cistus populifolius**
+- **Cistus parviflorus**
+- **Cistus crispus**
+- **Halimium ocymoides**
+- **Helianthemum apenninum**
+- **Tuberaria guttata**
+- **Fumana ericoides**
+- **Cistus x hybridus**
+- **Helianthemum oelandicum**
+- **Terminalia catappa**
+- **Terminalia chebula**
+- **Terminalia bellirica**
+- **Terminalia arjuna**
+- **Terminalia mantaly**
+- **Terminalia ivorensis**
+- **Terminalia superba**
+- **Terminalia myriocarpa**
+- **Terminalia muelleri**
+- **Terminalia prunioides**
+- **Terminalia sericea**
+- **Combretum erythrophyllum**
+- **Combretum indicum**
+- **Combretum molle**
+- **Combretum apiculatum**
+- **Conocarpus erectus**
+- **Terminalia catappa 'Nana'**
+- **Quisqualis grandiflora**
+- **Terminalia grandiflora**
+- **Terminalia ferdinandiana**
+- **Terminalia elliptica**
+- **Tradescantia zebrina**
+- **Tradescantia pallida**
+- **Callisia repens**
+- **Tradescantia spathacea**
+- **Ipomoea batatas**
+- **Ipomoea tricolor**
+- **Ipomoea purpurea**
+- **Ipomoea alba**
+- **Ipomoea quamoclit**
+- **Ipomoea lobata**
+- **Ipomoea purpurea 'Grandiflora'**
+- **Convolvulus mauritanicus**
+- **Convolvulus cneorum**
+- **Calystegia sepium**
+- **Calystegia soldanella**
+- **Evolvulus glomeratus**
+- **Jacquemontia pentantha**
+- **Merremia tuberosa**
+- **Ipomoea bona-nox**
+- **Ipomoea cairica**
+- **Ipomoea indica**
+- **Convolvulus sabatius subsp. mauritanicus**
+- **Ipomoea aquatica**
+- **Cornus florida**
+- **Cornus kousa**
+- **Cornus mas**
+- **Cornus sanguinea**
+- **Cornus alba**
+- **Cornus officinalis**
+- **Cornus controversa**
+- **Cornus alternifolia**
+- **Cornus capitata**
+- **Cornus hongkongensis**
+- **Cornus macrophylla**
+- **Cornus nuttallii**
+- **Cornus racemosa**
+- **Cornus amomum**
+- **Cornus unalaschkensis**
+- **Cornus suecica**
+- **Cornus eydeana**
+- **Cornus paucinervis**
+- **Corylus maxima**
+- **Corylus colurna**
+- **Corylus americana**
+- **Corylus cornuta**
+- **Carpinus orientalis**
+- **Carpinus caroliniana**
+- **Carpinus japonica**
+- **Carpinus laxiflora**
+- **Ostrya carpinifolia**
+- **Ostrya virginiana**
+- **Ostrya japonica**
+- **Ostryopsis davidiana**
+- **Corylus heterophylla**
+- **Corylus sieboldiana**
+- **Carpinus cordata**
+- **Carpinus tschonoskii**
+- **Carpinus turczaninowii**
+- **Corylus chinensis**
+- **Corylus ferox**
+- **Crassula ovata**
+- **Echeveria elegans**
+- **Kalanchoe blossfeldiana**
+- **Sedum morganianum**
+- **Cucurbita pepo**
+- **Cucurbita moschata**
+- **Cucurbita maxima**
+- **Citrullus lanatus**
+- **Cucumis sativus**
+- **Cucumis melo**
+- **Cucurbita ficifolia**
+- **Cucumis metuliferus**
+- **Cucumis anguria**
+- **Lagenaria siceraria**
+- **Luffa aegyptiaca**
+- **Luffa acutangula**
+- **Sechium edule**
+- **Momordica charantia**
+- **Momordica balsamina**
+- **Trichosanthes cucumerina**
+- **Trichosanthes kirilowii**
+- **Benincasa hispida**
+- **Coccinia grandis**
+- **Cyclanthera pedata**
+- **Praecitrullus fistulosus**
+- **Thladiantha dubia**
+- **Citrullus colocynthis**
+- **Sicyos angulatus**
+- **Bryonia dioica**
+- **Ecballium elaterium**
+- **Acanthosicyos horridus**
+- **Telfairia occidentalis**
+- **Telfairia pedata**
+- **Siraitia grosvenorii**
+- **Cycas revoluta**
+- **Zamia furfuracea**
+- **Cycas circinalis**
+- **Zamia pumila**
+- **Carludovica palmata**
+- **Asplundia ludwigii**
+- **Cyclanthus bipartitus**
+- **Asplundia insignis**
+- **Carludovica drudei**
+- **Dicranopygium atrovirens**
+- **Evodianthus funifer**
+- **Thoracocarpus bissectus**
+- **Sphaeradenia laevis**
+- **Asplundia rigida**
+- **Carludovica incisa**
+- **Dicranopygium microcephalum**
+- **Asplundia divergens**
+- **Cyclanthus cristatus**
+- **Stelestylis stylaris**
+- **Asplundia peruviana**
+- **Dicranopygium yacuense**
+- **Sphaeradenia amazonica**
+- **Carludovica angustifolia**
+- **Asplundia utilis**
+- **Cyperus esculentus**
+- **Cyperus papyrus**
+- **Cyperus alternifolius**
+- **Eleocharis dulcis**
+- **Carex oshimensis**
+- **Carex comans**
+- **Carex morrowii**
+- **Carex elata**
+- **Scirpus cernuus**
+- **Schoenoplectus lacustris**
+- **Carex flacca**
+- **Carex divulsa**
+- **Carex buchananii**
+- **Carex testacea**
+- **Carex vulpina**
+- **Scirpus holoschoenus**
+- **Carex siderosticta**
+- **Eleocharis acicularis**
+- **Carex grayi**
+- **Cyperus involucratus**
+- **Triphyophyllum peltatum**
+- **Habropetalum dawei**
+- **Dioncophyllum thollonii**
+- **Dioscorea alata**
+- **Dioscorea cayenensis**
+- **Dioscorea rotundata**
+- **Dioscorea esculenta**
+- **Dioscorea bulbifera**
+- **Dioscorea opposition**
+- **Dioscorea japonica**
+- **Dioscorea elephantipes**
+- **Dioscorea villosa**
+- **Dioscorea communis**
+- **Dioscorea pentaphylla**
+- **Dioscorea sansibarensis**
+- **Dioscorea pyrenaica**
+- **Dioscorea balcanica**
+- **Dioscorea sylvatica**
+- **Dioscorea polystachya**
+- **Dioscorea trifida**
+- **Dioscorea hispida**
+- **Dioscorea caucasica**
+- **Dioscorea mexicana**
+- **Scabiosa caucasica**
+- **Scabiosa atropurpurea**
+- **Scabiosa columbaria**
+- **Cephalaria gigantea**
+- **Knautia macedonica**
+- **Pterocephalus pinaceus**
+- **Cephalaria alpina**
+- **Cephalaria transylvanica**
+- **Scabiosa gramuntia**
+- **Scabiosa vestina**
+- **Scabiosa lucida**
+- **Knautia dipsacifolia**
+- **Pterocephalus spathulatus**
+- **Scabiosa silenifolia**
+- **Scabiosa triandra**
+- **Scabiosa graminea**
+- **Dionaea muscipula**
+- **Drosera capensis**
+- **Drosera aliciae**
+- **Drosera spatulata**
+- **Drosera binata**
+- **Drosera regia**
+- **Drosera capensis var. alba**
+- **Drosera paradoxa**
+- **Drosophyllum lusitanicum**
+- **Drosophyllum lusitanicum 'Alba'**
+- **Drosophyllum lusitanicum (Forme portugaise de la Serra de Sintra)**
+- **Drosophyllum lusitanicum (Forme espagnole d'Andalousie)**
+- **Drosophyllum lusitanicum (Forme marocaine de la région de Tanger)**
+- **Drosophyllum lusitanicum 'Giant Form'**
+- **Drosophyllum lusitanicum 'Compact Form'**
+- **Drosophyllum lusitanicum (Forme de l'Algarve)**
+- **Drosophyllum lusitanicum (Forme de l'Estrémadure)**
+- **Drosophyllum lusitanicum (Forme de l'Alentejo)**
+- **Drosophyllum lusitanicum (Forme de Huelva)**
+- **Drosophyllum lusitanicum (Forme de Gibraltar)**
+- **Drosophyllum lusitanicum (Forme de Badajoz)**
+- **Drosophyllum lusitanicum (Forme de Coimbra)**
+- **Drosophyllum lusitanicum (Forme de l'Arrábida)**
+- **Drosophyllum lusitanicum (Forme de Cadix)**
+- **Drosophyllum lusitanicum (Forme de Badajoz-Nord)**
+- **Drosophyllum lusitanicum (Forme de Leiria)**
+- **Drosophyllum lusitanicum (Forme de Setúbal)**
+- **Drosophyllum lusitanicum (Forme de l'Atlas marocain)**
+- **Diospyros kaki**
+- **Diospyros lotus**
+- **Diospyros virginiana**
+- **Diospyros digyna**
+- **Diospyros melanoxylon**
+- **Diospyros ebenum**
+- **Diospyros mespiliformis**
+- **Diospyros blancoi**
+- **Diospyros texana**
+- **Diospyros pyrrhocarpa**
+- **Diospyros cathayensis**
+- **Diospyros rhombifolia**
+- **Diospyros decandra**
+- **Diospyros nigra**
+- **Diospyros insularis**
+- **Diospyros sandwicensis**
+- **Diospyros montana**
+- **Diospyros kaki 'Fuyu'**
+- **Diospyros kaki 'Hachiya'**
+- **Diospyros kaki 'Tipo'**
+- **Diospyros kaki 'Rojo Brillante'**
+- **Vaccinium corymbosum**
+- **Vaccinium myrtillus**
+- **Vaccinium vitis-idaea**
+- **Vaccinium macrocarpon**
+- **Rhododendron simsii**
+- **Rhododendron ponticum**
+- **Rhododendron catawbiense**
+- **Rhododendron indicum**
+- **Erica carnea**
+- **Erica cinerea**
+- **Arbutus unedo**
+- **Gaultheria procumbens**
+- **Pieris japonica**
+- **Kalmia latifolia**
+- **Enkianthus campanulatus**
+- **Leucothoe fontanesiana**
+- **Oxydendrum arboreum**
+- **Zenobia pulverulenta**
+- **Cassiope tetragona**
+- **Syngonanthus chrysanthus 'Mikado'**
+- **Paepalanthus bromelioides**
+- **Eriocaulon buergerianum**
+- **Eriocaulon cinereum**
+- **Syngonanthus nitens**
+- **Eriocaulon aquaticum**
+- **Eriocaulon setaceum**
+- **Tonina fluviatilis**
+- **Eriocaulon decangulare**
+- **Eriocaulon compressum**
+- **Eriocaulon parkeri**
+- **Eriocaulon sexangulare**
+- **Eriocaulon microcephalum**
+- **Eriocaulon hainanense**
+- **Eriocaulon sieboldianum**
+- **Eriocaulon 'Polaris'**
+- **Eriocaulon 'Vietnam'**
+- **Eriocaulon 'Ratnagiricum'**
+- **Actinocephalus polyanthus**
+- **Paepalanthus spathulatus**
+- **Syngonanthus anomalus**
+- **Actinocephalus cundinamarcae**
+- **Euphorbia trigona**
+- **Euphorbia pulcherrima**
+- **Euphorbia milii**
+- **Codiaeum variegatum**
+- **Wisteria sinensis**
+- **Lathyrus odoratus**
+- **Cercis siliquastrum**
+- **Phaseolus vulgaris**
+- **Pisum sativum**
+- **Robinia pseudoacacia**
+- **Mimosa pudica**
+- **Acacia dealbata**
+- **Laburnum anagyroides**
+- **Lupinus polyphyllus**
+- **Arachis hypogaea**
+- **Ceratonia siliqua**
+- **Spartium junceum**
+- **Quercus petraea**
+- **Quercus ilex**
+- **Quercus suber**
+- **Quercus palustris**
+- **Quercus coccinea**
+- **Quercus cerris**
+- **Fagus grandifolia**
+- **Fagus crenata**
+- **Castanea mollissima**
+- **Castanea dentata**
+- **Notholithocarpus densiflorus**
+- **Nephrolepis exaltata**
+- **Asplenium nidus**
+- **Platycerium bifurcatum**
+- **Phlebodium aureum**
+- **Gentiana lutea**
+- **Gentiana acaulis**
+- **Gentiana verna**
+- **Gentiana septemfida**
+- **Gentiana sino-ornata**
+- **Gentiana cruciata**
+- **Gentiana asclepiadea**
+- **Gentiana punctata**
+- **Gentiana pannonica**
+- **Gentiana purpurea**
+- **Gentiana bavarica**
+- **Gentiana dahurica**
+- **Gentiana nipponica**
+- **Heliconia champneyna**
+- **Heliconia x rauliniana**
+- **Heliconia densiflora**
+- **Heliconia vellerigera**
+- **Hydrangea macrophylla**
+- **Hydrangea paniculata**
+- **Hydrangea arborescens**
+- **Hydrangea quercifolia**
+- **Philadelphus coronarius**
+- **Deutzia gracilis**
+- **Hydrangea serrata**
+- **Deutzia scabra**
+- **Hydrangea aspera**
+- **Philadelphus x virginalis**
+- **Kirengeshoma palmata**
+- **Schizophragma hydrangeoides**
+- **Hydrangea involucrata**
+- **Hydrangea anomala**
+- **Hypericum perforatum**
+- **Hypericum calycinum**
+- **Hypericum 'Hidcote'**
+- **Hypericum androsaemum**
+- **Hypericum patulum**
+- **Hypericum olympicum**
+- **Hypericum moserianum**
+- **Hypericum kouytchense**
+- **Hypericum hircinum**
+- **Hypericum elodes**
+- **Hypericum pulchrum**
+- **Hypericum maculatum**
+- **Hypericum tetrapterum**
+- **Hypericum nummularium**
+- **Hypericum balearicum**
+- **Hypericum coris**
+- **Hypericum reptans**
+- **Hypericum inodorum**
+- **Hypericum hunsanense**
+- **Hypericum tomentosum**
+- **Iris germanica**
+- **Crocus sativus**
+- **Freesia alba**
+- **Gladiolus x hortulanus**
+- **Crocosmia x crocosmiiflora**
+- **Iris sibirica**
+- **Iris pseudacorus**
+- **Iris reticulata**
+- **Ixia dubia**
+- **Sparaxis tricolor**
+- **Sisyrinchium angustifolium**
+- **Watsonia meriana**
+- **Iris foetidissima**
+- **Tritonia crocata**
+- **Romulea bulbocodium**
+- **Iris ensata**
+- **Chasmanthe floribunda**
+- **Babiana stricta**
+- **Iris x hollandica**
+- **Neomarica gracilis**
+- **Juglans regia**
+- **Juglans nigra**
+- **Carya illinoinensis**
+- **Juglans cinerea**
+- **Juglans cordiformis**
+- **Juglans mandshurica**
+- **Carya ovata**
+- **Carya laciniosa**
+- **Carya tomentosa**
+- **Carya glabra**
+- **Pterocarya fraxinifolia**
+- **Pterocarya stenoptera**
+- **Juglans ailantifolia**
+- **Juglans microcarpa**
+- **Carya ovata var. nuttallii**
+- **Juglans regia 'Lara'**
+- **Juglans regia 'Franquette'**
+- **Juglans regia 'Mayette'**
+- **Juglans regia 'Fernor'**
+- **Juglans regia 'Chandler'**
+- **Juncus effusus**
+- **Juncus effusus 'Spiralis'**
+- **Juncus inflexus**
+- **Juncus ensifolius**
+- **Juncus ensifolius 'Ludwigii'**
+- **Juncus gerardii**
+- **Juncus bufonius**
+- **Juncus acutiflorus**
+- **Juncus conglomeratus**
+- **Juncus bulbosus**
+- **Juncus squarrosus**
+- **Juncus articulatus**
+- **Juncus tenuis**
+- **Juncus alpinoarticulatus**
+- **Juncus filiformis**
+- **Juncus trifidus**
+- **Juncus stygius**
+- **Juncus compressus**
+- **Juncus militaris**
+- **Juncus dudleyi**
+- **Juncus patens**
+- **Juncus ensifolius 'Finest'**
+- **Plectranthus scutellarioides**
+- **Plectranthus verticillatus**
+- **Plectranthus amboinicus**
+- **Plectranthus argentatus**
+- **Akebia quinata**
+- **Akebia trifoliata**
+- **Decaisnea fargesii**
+- **Holboellia latifolia**
+- **Holboellia angustifolia**
+- **Lardizabala biternata**
+- **Stauntonia hexaphylla**
+- **Stauntonia chinensis**
+- **Akebia x pentaphylla**
+- **Sinofranchetia chinensis**
+- **Holboellia coriacea**
+- **Stauntonia purpurea**
+- **Decaisnea insignis**
+- **Holboellia grandiflora**
+- **Stauntonia yaoshanensis**
+- **Akebia x 'Silver Bells'**
+- **Holboellia brachyandra**
+- **Stauntonia oligophylla**
+- **Lardizabala funaria**
+- **Akebia quinata 'White Chocolate'**
+- **Linum gallicum**
+- **Linum maritimum**
+- **Linum corsicum**
+- **Linum quadrifolium**
+- **Linum lewisii**
+- **Linum monogynum**
+- **Linum olchense**
+- **Punica granatum**
+- **Lagerstroemia indica**
+- **Lythrum salicaria**
+- **Cuphea hyssopifolia**
+- **Cuphea ignea**
+- **Rotala rotundifolia**
+- **Lawsonia inermis**
+- **Ammannia coccinea**
+- **Lythrum hyssopifolia**
+- **Cuphea micropetala**
+- **Lagerstroemia fauriei**
+- **Lythrum virgatum**
+- **Cuphea procumbens**
+- **Rotala macrandra**
+- **Punica granatum 'Nana'**
+- **Lagerstroemia indica x fauriei 'Natchez'**
+- **Ammannia ramosior**
+- **Cuphea ignea 'David Verity'**
+- **Lythrum alatum**
+- **Lagerstroemia indica 'Pink Velour'**
+- **Cuphea llavea**
+- **Lagerstroemia indica 'Catawba'**
+- **Magnolia x soulangeana**
+- **Magnolia grandiflora**
+- **Liriodendron tulipifera**
+- **Magnolia stellata**
+- **Magnolia liliiflora**
+- **Magnolia denudata**
+- **Magnolia kobus**
+- **Magnolia sieboldii**
+- **Magnolia x loebneri**
+- **Magnolia virginiana**
+- **Magnolia macrophylla**
+- **Magnolia acuminata**
+- **Liriodendron chinense**
+- **Magnolia figo**
+- **Magnolia obovata**
+- **Hibiscus rosa-sinensis**
+- **Abutilon x hybridum**
+- **Pachira aquatica**
+- **Sparrmannia africana**
+- **Pavonia multiflora**
+- **Malvaviscus arboreus**
+- **Hibiscus schizopetalus**
+- **Brachychiton rupestris**
+- **Goeppertia orbifolia**
+- **Maranta leuconeura**
+- **Stromanthe thalia**
+- **Goeppertia makoyana**
+- **Proboscidea louisianica**
+- **Martynia annua**
+- **Proboscidea althaeifolia**
+- **Proboscidea parviflora**
+- **Ibicella lutea**
+- **Ibicella parodii**
+- **Craniolaria annua**
+- **Craniolaria integrifolia**
+- **Martynia palmeri**
+- **Proboscidea sabulosa**
+- **Proboscidea spicata**
+- **Holorectis spp.**
+- **Martynia fragrans**
+- **Proboscidea sinaloensis**
+- **Proboscidea arenaria**
+- **Martynia diandra**
+- **Proboscidea alata**
+- **Craniolaria dentata**
+- **Ibicella atro-purpurea**
+- **Medinilla magnifica**
+- **Bertolonia marmorata**
+- **Sonerila margaritacea**
+- **Monolena primuliflora**
+- **Tibouchina urvilleana**
+- **Heterocentron elegans**
+- **Dissotis rotundifolia**
+- **Medinilla speciosa**
+- **Acacia dealbata**
+- **Acacia baileyana**
+- **Acacia longifolia**
+- **Acacia cultriformis**
+- **Acacia podalyriifolia**
+- **Acacia retinodes**
+- **Acacia pravissima**
+- **Acacia farnesiana**
+- **Albizia julibrissin**
+- **Mimosa pudica**
+- **Calliandra haematocephala**
+- **Albizia lebbeck**
+- **Acacia melanoxylon**
+- **Acacia pycnantha**
+- **Acacia cyanophylla**
+- **Acacia verticillata**
+- **Parkia speciosa**
+- **Acacia iteaphylla**
+- **Acacia cardiophylla**
+- **Acacia vestita**
+- **Ficus elastica**
+- **Ficus lyrata**
+- **Ficus benjamina**
+- **Ficus microcarpa 'Ginseng'**
+- **Moringa oleifera**
+- **Moringa stenopetala**
+- **Moringa drouhardii**
+- **Moringa hildebrandtii**
+- **Moringa peregrina**
+- **Moringa ovalifolia**
+- **Moringa concanensis**
+- **Moringa borziana**
+- **Moringa longituba**
+- **Moringa pygmaea**
+- **Moringa rivae**
+- **Moringa arborea**
+- **Moringa ruspoliana**
+- **Moringa oleifera 'PKM-1'**
+- **Moringa oleifera 'PKM-2'**
+- **Moringa stenopetala 'Konso'**
+- **Moringa peregrina 'Oman'**
+- **Moringa oleifera 'Super-genius'**
+- **Moringa drouhardii 'Arid'**
+- **Moringa oleifera 'Dwarf'**
+- **Musa acuminata**
+- **Musa balbisiana**
+- **Musa x paradisiaca**
+- **Musa basjoo**
+- **Ensete ventricosum**
+- **Musa coccinea**
+- **Musa velutina**
+- **Musa beccarii**
+- **Nelumbo nucifera 'Rosea Plena'**
+- **Nelumbo nucifera 'Speciosum'**
+- **Nelumbo nucifera 'Shirokunshi'**
+- **Nelumbo nucifera 'Peaches and Cream'**
+- **Nelumbo lutea 'Flavescens'**
+- **Nelumbo 'Green Maiden'**
+- **Nelumbo nucifera 'Chawan Basu'**
+- **Nelumbo nucifera 'Red Kapok'**
+- **Nelumbo nucifera 'Tianjin Pink'**
+- **Nelumbo nucifera 'Empress'**
+- **Nelumbo nucifera 'Baby Doll'**
+- **Nelumbo nucifera 'Kinshen'**
+- **Nelumbo nucifera 'Charles Thomas'**
+- **Nelumbo nucifera 'Gansu Red'**
+- **Nepenthes spp.**
+- **Nepenthes alata**
+- **Bougainvillea glabra**
+- **Bougainvillea spectabilis**
+- **Mirabilis jalapa**
+- **Mirabilis expansa**
+- **Pisonia alba**
+- **Boerhavia diffusa**
+- **Bougainvillea peruviana**
+- **Bougainvillea x buttiana**
+- **Mirabilis multiflora**
+- **Mirabilis longiflora**
+- **Mirabilis nyctaginea**
+- **Pisonia grandis**
+- **Pisonia umbellifera**
+- **Pisonia aculeata**
+- **Boerhavia coccinea**
+- **Boerhavia erecta**
+- **Abronia latifolia**
+- **Abronia umbellata**
+- **Abronia fragrans**
+- **Abronia villosa**
+- **Allionia incarnata**
+- **Guapira opposita**
+- **Olea europaea**
+- **Jasminum officinale**
+- **Syringa vulgaris**
+- **Fraxinus excelsior**
+- **Forsythia × intermedia**
+- **Ligustrum vulgare**
+- **Osmanthus fragrans**
+- **Chionanthus virginicus**
+- **Jasminum sambac**
+- **Jasminum nudiflorum**
+- **Jasminum polyanthum**
+- **Osmanthus heterophyllus**
+- **Syringa persica**
+- **Fraxinus angustifolia**
+- **Ligustrum japonicum**
+- **Ligustrum ovalifolium**
+- **Abeliophyllum distichum**
+- **Phillyrea angustifolia**
+- **Phillyrea latifolia**
+- **Fontanesia phillyreoides**
+- **Oenothera biennis**
+- **Fuchsia x hybrida**
+- **Epilobium angustifolium**
+- **Oenothera speciosa**
+- **Fuchsia magellanica**
+- **Ludwigia repens**
+- **Oenothera fruticosa**
+- **Epilobium hirsutum**
+- **Oenothera macrocarpa**
+- **Gaura lindheimeri**
+- **Epilobium montanum**
+- **Ludwigia palustris**
+- **Oenothera glazioviana**
+- **Fuchsia 'Genii'**
+- **Epilobium parviflorum**
+- **Oenothera missouriensis**
+- **Fuchsia 'Thalia'**
+- **Epilobium epilobium (Epilobium palustre)**
+- **Oenothera pallida**
+- **Fuchsia boliviana**
+- **Circaea lutetiana**
+- **Oenothera villosa**
+- **Phalaenopsis hybrids**
+- **Dendrobium nobile**
+- **Cymbidium hybrids**
+- **Oncidium flexuosum**
+- **Oxalis triangularis**
+- **Oxalis tetraphylla**
+- **Impatiens walleriana**
+- **Impatiens hawkeri**
+- **Pandanus amaryllifolius**
+- **Pandanus tectorius**
+- **Pandanus utile**
+- **Pandanus odorifer**
+- **Freycinetia banksii**
+- **Pandanus veitchii**
+- **Pandanus sanderi**
+- **Freycinetia multiflora**
+- **Pandanus edulis**
+- **Pandanus leram**
+- **Pandanus baptistii**
+- **Pandanus sechellarum**
+- **Freycinetia insignis**
+- **Pandanus conoideus**
+- **Pandanus spathulatus**
+- **Pandanus pygmaeus**
+- **Sararanga sinuosa**
+- **Freycinetia arborea**
+- **Pandanus boninensis**
+- **Pandanus montanus**
+- **Papaver somniferum**
+- **Papaver rhoeas**
+- **Eschscholzia californica**
+- **Papaver orientale**
+- **Chelidonium majus**
+- **Dicentra spectabilis (Lamprocapnos spectabilis)**
+- **Argemone mexicana**
+- **Sanguinaria canadensis**
+- **Meconopsis betonicifolia**
+- **Corydalis lutea**
+- **Fumaria officinalis**
+- **Stylophorum diphyllum**
+- **Hunnemannia fumariifolia**
+- **Romneya coulteri**
+- **Papaver nudicaule**
+- **Adlumia fungosa**
+- **Dicentra eximia**
+- **Papaver atlanticum**
+- **Meconopsis cambrica**
+- **Ceratocapnos claviculata (Corydalis claviculata)**
+- **Passiflora caerulea**
+- **Passiflora incarnata**
+- **Passiflora edulis**
+- **Passiflora quadrangularis**
+- **Passiflora vitifolia**
+- **Passiflora alata**
+- **Sesamum indicum**
+- **Sesamum radiatum**
+- **Linaria purpurea**
+- **Plumbago auriculata**
+- **Armeria maritima**
+- **Ceratostigma plumbaginoides**
+- **Limonium sinuatum**
+- **Plumbago indica**
+- **Ceratostigma willmottianum**
+- **Limonium latifolium**
+- **Armeria pseudarmeria**
+- **Plumbago zeylanica**
+- **Limonium vulgare**
+- **Limonium perezii**
+- **Plumbago europaea**
+- **Ceratostigma griffithii**
+- **Goniolimon tataricum**
+- **Acantholimon olivieri**
+- **Armeria alpina**
+- **Limonium gmelinii**
+- **Limonium bellidifolium**
+- **Psylliostachys suworowii**
+- **Limonium lobatum**
+- **Armeria girardii**
+- **Limonium carolinianum**
+- **Zea mays**
+- **Oryza sativa**
+- **Triticum aestivum**
+- **Hordeum vulgare**
+- **Avena sativa**
+- **Secale cereale**
+- **Sorghum bicolor**
+- **Panicum miliaceum**
+- **Setaria italica**
+- **Eleusine coracana**
+- **Echinochloa esculenta**
+- **Phyllostachys edulis**
+- **Fargesia murielae**
+- **Cymbopogon citratus**
+- **Saccharum officinarum**
+- **Zizania latifolia**
+- **Hordeum distichon**
+- **Phleum pratense**
+- **Dactylis glomerata**
+- **Lolium perenne**
+- **Bromus inermis**
+- **Eragrostis tef**
+- **Phlox paniculata**
+- **Phlox subulata**
+- **Polemonium caeruleum**
+- **Cobaea scandens**
+- **Phlox drummondii**
+- **Phlox divaricata**
+- **Phlox stolonifera**
+- **Polemonium reptans**
+- **Ipomopsis aggregata**
+- **Gilia capitata**
+- **Leptosiphon bicolor**
+- **Phlox maculata**
+- **Phlox pilosa**
+- **Phlox ovata**
+- **Collomia grandiflora**
+- **Linanthus pungens**
+- **Allophyllum divaricatum**
+- **Eriastrum densifolium**
+- **Gilia tricolor**
+- **Navarretia squarrosa**
+- **Loeseliastrum pungens**
+- **Dayia multicaulis**
+- **Fagopyrum esculentum**
+- **Rheum rhabarbarum**
+- **Persicaria maculosa**
+- **Persicaria odorata**
+- **Muehlenbeckia complexa**
+- **Fallopia aubertii**
+- **Persicaria amplexicaulis**
+- **Persicaria bistorta**
+- **Rumex scutatus**
+- **Fagopyrum tataricum**
+- **Rumex patientia**
+- **Rumex crispus**
+- **Persicaria bistorta 'Superba'**
+- **Persicaria affinis**
+- **Polygonatum multiflorum**
+- **Oxyria digyna**
+- **Rumex thyrsiflorus**
+- **Persicaria orientalis**
+- **Persicaria campanulata**
+- **Rumex acetosella**
+- **Primula acaulis**
+- **Primula veris**
+- **Cyclamen persicum**
+- **Anagallis arvensis**
+- **Primula elatior**
+- **Primula denticulata**
+- **Primula japonica**
+- **Primula malacoides**
+- **Primula obconica**
+- **Primula vialii**
+- **Primula auricula**
+- **Cyclamen hederifolium**
+- **Lysimachia punctata**
+- **Lysimachia ciliata 'Firecracker'**
+- **Androsace chamaejasme**
+- **Dodecatheon meadia**
+- **Soldanella alpina**
+- **Hottonia palustris**
+- **Glaux maritima**
+- **Macadamia integrifolia**
+- **Macadamia tetraphylla**
+- **Protea cynaroides**
+- **Protea neriifolia**
+- **Leucadendron argenteum**
+- **Leucospermum cordifolium**
+- **Grevillea robusta**
+- **Grevillea juniperina**
+- **Telopea speciosissima**
+- **Embothrium coccineum**
+- **Hakea laurina**
+- **Stenocarpus sinuatus**
+- **Banksia integrifolia**
+- **Banksia grandis**
+- **Persoonia pinifolia**
+- **Lambertia formosa**
+- **Leucadendron laureolum**
+- **Isopogon anemonifolius**
+- **Petrophile sessilis**
+- **Stenocarpus salignus**
+- **Hakea salicifolia**
+- **Ranunculus asiaticus**
+- **Clematis × jackmanii**
+- **Anemone coronaria**
+- **Aquilegia vulgaris**
+- **Helleborus niger**
+- **Helleborus × hybridus**
+- **Delphinium elatum**
+- **Anemone × hybrida**
+- **Nigella damascena**
+- **Caltha palustris**
+- **Aconitum napellus**
+- **Actaea racemosa**
+- **Pulsatilla vulgaris**
+- **Thalictrum aquilegiifolium**
+- **Reseda odorata**
+- **Reseda luteola**
+- **Reseda phyteuma**
+- **Reseda glauca**
+- **Reseda undata**
+- **Reseda phyteuma subsp. granatensis**
+- **Reseda suffruticosa**
+- **Reseda media**
+- **Reseda phyteuma subsp. fruticulosa**
+- **Reseda scoparia**
+- **Reseda arabica**
+- **Reseda decursiva**
+- **Reseda lanceolata**
+- **Reseda paui**
+- **Reseda barrelieri**
+- **Reseda stenostachya**
+- **Reseda complicata**
+- **Reseda orientalis**
+- **Roridula gorgonias**
+- **Roridula dentata**
+- **Roridula gorgonias 'Red Form'**
+- **Roridula gorgonias 'White Flower'**
+- **Roridula gorgonias x dentata**
+- **Roridula gorgonias 'Dwarf Form'**
+- **Roridula dentata 'Mountain Form'**
+- **Roridula gorgonias 'Silver Leaf'**
+- **Roridula dentata 'Giant Form'**
+- **Roridula gorgonias 'Pink Delight'**
+- **Roridula dentata 'Narrow Leaf'**
+- **Roridula gorgonias 'Compact Form'**
+- **Roridula dentata 'Dark Flower'**
+- **Roridula gorgonias 'Pale Pink'**
+- **Roridula dentata 'Broad Leaf'**
+- **Roridula gorgonias 'Stoloniferous'**
+- **Roridula dentata 'Robust Form'**
+- **Roridula gorgonias 'Tall Form'**
+- **Roridula dentata 'Pale Flower'**
+- **Roridula gorgonias 'Variegated'**
+- **Malus domestica**
+- **Prunus persica**
+- **Prunus avium**
+- **Prunus armeniaca**
+- **Prunus domestica**
+- **Pyrus communis**
+- **Fragaria x ananassa**
+- **Prunus dulcis**
+- **Cydonia oblonga**
+- **Rubus fruticosus**
+- **Rosa canina**
+- **Eriobotrya japonica**
+- **Prunus cerasus**
+- **Crataegus monogyna**
+- **Pyracantha coccinea**
+- **Spiraea japonica**
+- **Rosa gallica**
+- **Rosa x damascena**
+- **Rosa chinensis**
+- **Coffea arabica**
+- **Gardenia jasminoides**
+- **Pentas lanceolata**
+- **Ixora coccinea**
+- **Nertera granadensis**
+- **Serissa foetida**
+- **Psychotria elata**
+- **Mussaenda erythrophylla**
+- **Citrus sinensis**
+- **Citrus limon**
+- **Citrus reticulata**
+- **Citrus × aurantiifolia**
+- **Citrus × paradisi**
+- **Citrus maxima**
+- **Citrus × aurantium**
+- **Citrus japonica**
+- **Citrus clementina**
+- **Citrus × latifolia**
+- **Citrus medica**
+- **Citrus × bergamia**
+- **Citrus australasica**
+- **Citrus hystrix**
+- **Citrus unshiu**
+- **Citrus × meyeri**
+- **Citrus × microcarpa**
+- **Citrus glauca**
+- **Murraya koenigii**
+- **Murraya paniculata**
+- **Zanthoxylum piperitum**
+- **Zanthoxylum bungeanum**
+- **Zanthoxylum armatum**
+- **Ruta graveolens**
+- **Choisya ternata**
+- **Casimiroa edulis**
+- **Skimmia japonica**
+- **Ptelea trifoliata**
+- **Tetradium daniellii**
+- **Correa reflexa**
+- **Poncirus trifoliata**
+- **Agathosma betulina**
+- **Citrus deliciosa**
+- **Salix babylonica**
+- **Salix alba**
+- **Salix caprea**
+- **Salix viminalis**
+- **Salix purpurea**
+- **Salix fragilis**
+- **Salix triandra**
+- **Salix repens**
+- **Salix daphnoides**
+- **Salix integra 'Hakuro Nishiki'**
+- **Salix pentandra**
+- **Salix elaeagnos**
+- **Salix herbacea**
+- **Salix reticulata**
+- **Salix hastata 'Wehrhahnii'**
+- **Populus nigra**
+- **Populus alba**
+- **Populus x canadensis**
+- **Populus simonii**
+- **Populus deltoides**
+- **Populus balsamifera**
+- **Acer palmatum**
+- **Acer pseudoplatanus**
+- **Aesculus hippocastanum**
+- **Litchi chinensis**
+- **Acer rubrum**
+- **Koelreuteria paniculata**
+- **Nephelium lappaceum**
+- **Acer saccharum**
+- **Sapindus saponaria**
+- **Aesculus x carnea**
+- **Acer japonicum**
+- **Melicoccus bijugatus**
+- **Blighia sapida**
+- **Manilkara zapota**
+- **Pouteria campechiana**
+- **Pouteria sapota**
+- **Pouteria caimito**
+- **Chrysophyllum cainito**
+- **Synsepalum dulcificum**
+- **Sideroxylon inerme**
+- **Argania spinosa**
+- **Vitellaria paradoxa**
+- **Pouteria dulcificus**
+- **Manilkara bidentata**
+- **Chrysophyllum oliviforme**
+- **Pouteria viridis**
+- **Englerophytum magalismontanum**
+- **Planchonella australis**
+- **Madhuca longifolia**
+- **Palaquium gutta**
+- **Pouteria lucuma**
+- **Mimusops elengi**
+- **Chrysophyllum albidum**
+- **Sarracenia purpurea subsp. purpurea**
+- **Sarracenia purpurea subsp. venosa**
+- **Sarracenia flava**
+- **Sarracenia leucophylla**
+- **Sarracenia psittacina**
+- **Sarracenia alata**
+- **Sarracenia minor**
+- **Sarracenia rubra**
+- **Sarracenia oreophila**
+- **Sarracenia jonesii**
+- **Darlingtonia californica**
+- **Heliamphora nutans**
+- **Heliamphora heterodoxa**
+- **Heliamphora minor**
+- **Heliamphora ionasi**
+- **Heliamphora tatei**
+- **Heliamphora pulchella**
+- **Heliamphora chimantensis**
+- **Heliamphora huberi**
+- **Heliamphora ciliata**
+- **Heliamphora folliculata**
+- **Sarracenia x catesbaei**
+- **Sarracenia x mitchelliana**
+- **Sarracenia x wrigleyana**
+- **Sarracenia 'Judith Hindle'**
+- **Sarracenia 'Farnhamii'**
+- **Schisandra chinensis**
+- **Illicium verum**
+- **Illicium anisatum**
+- **Schisandra sphenanthera**
+- **Illicium floridanum**
+- **Illicium parviflorum**
+- **Schisandra rubriflora**
+- **Kadsura japonica**
+- **Kadsura coccinea**
+- **Schisandra grandiflora**
+- **Illicium henryi**
+- **Schisandra henryi**
+- **Kadsura heteroclita**
+- **Illicium mexicanum**
+- **Schisandra propinqua**
+- **Illicium dunnianum**
+- **Kadsura angustifolia**
+- **Schisandra glabra**
+- **Illicium litorale**
+- **Schisandra chinensis 'Eastern Prince'**
+- **Verbascum thapsus**
+- **Antirrhinum majus**
+- **Gratiola officinalis**
+- **Verbascum nigrum**
+- **Digitalis grandiflora**
+- **Verbascum blattaria**
+- **Scrophularia auriculata**
+- **Digitalis x mertonensis**
+- **Verbascum phoeniceum**
+- **Linaria alpina**
+- **Scrophularia peregrina**
+- **Verbascum bombyciferum**
+- **Digitalis lutea**
+- **Antirrhinum ramosissimum**
+- **Verbascum olympicum**
+- **Linaria triornithophora**
+- **Capsicum annuum**
+- **Brugmansia suaveolens**
+- **Petunia x hybrida**
+- **Solanum jasminoides**
+- **Atropa belladonna**
+- **Solanum muricatum**
+- **Cestrum nocturnum**
+- **Strelitzia reginae**
+- **Strelitzia nicolai**
+- **Strelitzia alba**
+- **Strelitzia caudata**
+- **Strelitzia juncea**
+- **Ravenala madagascariensis**
+- **Phenakospermum guyannense**
+- **Strelitzia x guernseyensis**
+- **Strelitzia reginae 'Mandela's Gold'**
+- **Strelitzia reginae 'Humilis'**
+- **Strelitzia reginae 'Kirstenbosch Gold'**
+- **Ravenala guineensis**
+- **Strelitzia parvifolia**
+- **Strelitzia augusta**
+- **Phenakospermum venezuelicum**
+- **Strelitzia x parvifolia 'Glauca'**
+- **Ravenala madagascariensis var. bemavo**
+- **Ravenala madagascariensis var. chilandra**
+- **Ravenala madagascariensis var. guenzleriana**
+- **Strelitzia 'Janice'**
+- **Tilia cordata**
+- **Tilia platyphyllos**
+- **Tilia x europaea**
+- **Tilia americana**
+- **Tilia tomentosa**
+- **Tilia mongolica**
+- **Tilia euchlora**
+- **Tilia henryana**
+- **Tilia amurensis**
+- **Tilia miqueliana**
+- **Tilia insularis**
+- **Tilia kiusiana**
+- **Tilia oliveri**
+- **Tilia japonica**
+- **Tilia tuan**
+- **Tilia maximowicziana**
+- **Tilia begoniifolia**
+- **Tilia tomentosa 'Petiolaris'**
+- **Tilia mandschurica**
+- **Tilia x moltkei**
+- **Tropaeolum majus**
+- **Tropaeolum tuberosum**
+- **Tropaeolum peregrinum**
+- **Tropaeolum speciosum**
+- **Tropaeolum tricolor**
+- **Tropaeolum minus**
+- **Tropaeolum azureum**
+- **Tropaeolum polyphyllum**
+- **Tropaeolum pentaphyllum**
+- **Tropaeolum hookerianum**
+- **Tropaeolum incisum**
+- **Tropaeolum brachyceras**
+- **Tropaeolum ciliatum**
+- **Tropaeolum sessilifolium**
+- **Tropaeolum argentinum**
+- **Tropaeolum tuberosum 'Ken Aslet'**
+- **Tropaeolum majus 'Empress of India'**
+- **Tropaeolum 'Hermine Grashoff'**
+- **Tropaeolum majus 'Alaska'**
+- **Tropaeolum tuberosum 'Puissegure'**
+- **Pilea peperomioides**
+- **Pilea cadierei**
+- **Soleirolia soleirolii**
+- **Pilea microphylla**
+- **Clerodendrum thomsoniae**
+- **Clerodendrum ugandense**
+- **Holmskioldia sanguinea**
+- **Petrea volubilis**
+- **Duranta erecta**
+- **Lantana camara**
+- **Aloysia citrodora**
+- **Vitex agnus-castus**
+- **Viola × wittrockiana**
+- **Viola cornuta**
+- **Viola tricolor**
+- **Viola banksii**
+- **Viola hederacea**
+- **Viola pedata**
+- **Viola pubescens**
+- **Viola reichenbachiana**
+- **Viola alba**
+- **Viola biflora**
+- **Viola calcarata**
+- **Cissus alata**
+- **Cissus antarctica**
+- **Cissus discolor**
+- **Tetrastigma voinierianum**
+- **Alpinia zerumbet**
+- **Costus woodsonii**
+- **Elettaria cardamomum**
+- **Hedychium coronarium**
+
+## Sources techniques
+
+- GBIF Species API : https://techdocs.gbif.org/en/openapi/v1/species
+- Wikimedia Commons API : https://commons.wikimedia.org/wiki/Commons:API
