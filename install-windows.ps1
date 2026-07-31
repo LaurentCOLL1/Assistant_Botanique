@@ -16,8 +16,9 @@ $ArchiveFile = "$TemporaryDirectory.zip"
 
 $InstallDirectory = $null
 $BackupDirectory = $null
-$NewInstallPlaced = $false
+$InstallContentTouched = $false
 $ExitCode = 0
+$Stage = "initialisation"
 
 function Quote-NativeArgument {
     param([Parameter(Mandatory = $true)][string]$Value)
@@ -289,13 +290,19 @@ if ($SelfTest) {
         throw "Auto-test en echec : aucun Python 3.11, 3.12 ou 3.13 detecte."
     }
 
-    Write-Host "Auto-test reussi. Python detecte : $DetectedPython" -ForegroundColor Green
+    $Tar = Get-Command tar.exe -ErrorAction SilentlyContinue
+    if ($null -eq $Tar) {
+        throw "Auto-test en echec : tar.exe est introuvable."
+    }
+
+    Write-Host "Auto-test reussi. Python : $DetectedPython ; extraction : $($Tar.Source)" -ForegroundColor Green
     exit 0
 }
 
 try {
     Write-Host "Installation d'Assistant Botanique..." -ForegroundColor Cyan
 
+    $Stage = "choix du dossier"
     $InstallDirectory = Select-InstallDirectory `
         -DefaultPath $DefaultInstallDirectory `
         -ProtectedDataPath $DataDirectory
@@ -303,6 +310,7 @@ try {
     Confirm-ExistingDirectoryReplacement -Path $InstallDirectory
     Write-Host "Installation choisie : $InstallDirectory" -ForegroundColor Green
 
+    $Stage = "detection de Python"
     $PythonExecutable = Find-SupportedPython
     if ([string]::IsNullOrWhiteSpace($PythonExecutable)) {
         $Winget = Get-Command winget.exe -ErrorAction SilentlyContinue
@@ -336,17 +344,46 @@ try {
     $PythonDescription = $VersionResult.StdOut.Trim()
     Write-Host "Python detecte : $PythonDescription" -ForegroundColor Green
 
+    $Stage = "telechargement"
     New-Item -ItemType Directory -Path $TemporaryDirectory -Force | Out-Null
     Write-Host "Telechargement du programme..." -ForegroundColor Yellow
     Invoke-WebRequest -UseBasicParsing -Uri $RepositoryArchive -OutFile $ArchiveFile
-    Expand-Archive -Path $ArchiveFile -DestinationPath $TemporaryDirectory -Force
+
+    if (-not (Test-Path -LiteralPath $ArchiveFile -PathType Leaf)) {
+        throw "L'archive telechargee est introuvable."
+    }
+
+    $Stage = "extraction de l'archive"
+    $Tar = Get-Command tar.exe -ErrorAction SilentlyContinue
+    if ($null -eq $Tar) {
+        throw "tar.exe est introuvable. Windows 10 ou Windows 11 est requis pour l'extraction automatique."
+    }
+
+    Write-Host "Extraction du programme..." -ForegroundColor Yellow
+    $TarArguments = "-xf $(Quote-NativeArgument -Value $ArchiveFile) -C $(Quote-NativeArgument -Value $TemporaryDirectory)"
+    Invoke-NativeChecked `
+        -FilePath $Tar.Source `
+        -Arguments $TarArguments `
+        -FailureMessage "L'extraction de l'archive a echoue" `
+        -ShowOutput | Out-Null
 
     $ExtractedDirectory = Join-Path $TemporaryDirectory "Assistant_Botanique-main"
     if (-not (Test-Path -LiteralPath $ExtractedDirectory -PathType Container)) {
-        throw "Le contenu telecharge est incomplet."
+        $ExtractedDirectory = Get-ChildItem -LiteralPath $TemporaryDirectory -Directory -ErrorAction SilentlyContinue |
+            Where-Object { Test-Path -LiteralPath (Join-Path $_.FullName "pyproject.toml") -PathType Leaf } |
+            Select-Object -First 1 -ExpandProperty FullName
     }
 
-    $InstallParent = Split-Path $InstallDirectory -Parent
+    if ([string]::IsNullOrWhiteSpace($ExtractedDirectory) -or -not (Test-Path -LiteralPath $ExtractedDirectory -PathType Container)) {
+        throw "Le contenu extrait est incomplet."
+    }
+
+    $Stage = "remplacement du programme"
+    $InstallParent = Split-Path -Path $InstallDirectory -Parent
+    if ([string]::IsNullOrWhiteSpace($InstallParent)) {
+        throw "Le dossier parent de l'installation est invalide : $InstallDirectory"
+    }
+
     New-Item -ItemType Directory -Path $InstallParent -Force | Out-Null
 
     if (Test-Path -LiteralPath $InstallDirectory) {
@@ -355,13 +392,14 @@ try {
         Move-Item -LiteralPath $InstallDirectory -Destination $BackupDirectory
     }
 
+    $InstallContentTouched = $true
     Move-Item -LiteralPath $ExtractedDirectory -Destination $InstallDirectory
-    $NewInstallPlaced = $true
 
     $VirtualEnvironment = Join-Path $InstallDirectory ".venv"
     $ApplicationPython = Join-Path $VirtualEnvironment "Scripts\python.exe"
     $ApplicationPythonW = Join-Path $VirtualEnvironment "Scripts\pythonw.exe"
 
+    $Stage = "creation de l'environnement Python"
     Write-Host "Creation de l'environnement Python isole..." -ForegroundColor Yellow
     $VenvArguments = "-m venv $(Quote-NativeArgument -Value $VirtualEnvironment)"
     Invoke-NativeChecked `
@@ -374,25 +412,28 @@ try {
         throw "La creation de l'environnement Python n'a pas produit python.exe."
     }
 
+    $Stage = "installation des composants"
     Write-Host "Installation des composants..." -ForegroundColor Yellow
     Invoke-NativeChecked `
         -FilePath $ApplicationPython `
-        -Arguments "-m pip install --upgrade pip" `
+        -Arguments "-m pip install --upgrade pip --disable-pip-version-check" `
         -FailureMessage "La mise a jour de pip a echoue" `
         -ShowOutput | Out-Null
 
-    $InstallArguments = "-m pip install -e $(Quote-NativeArgument -Value $InstallDirectory)"
+    $InstallArguments = "-m pip install --disable-pip-version-check -e $(Quote-NativeArgument -Value $InstallDirectory)"
     Invoke-NativeChecked `
         -FilePath $ApplicationPython `
         -Arguments $InstallArguments `
         -FailureMessage "L'installation des composants Python a echoue" `
         -ShowOutput | Out-Null
 
+    $Stage = "verification de l'application"
     Invoke-NativeChecked `
         -FilePath $ApplicationPython `
         -Arguments '-c "import assistant_botanique, tkinter, PIL, plyer"' `
         -FailureMessage "La verification finale de l'application a echoue" | Out-Null
 
+    $Stage = "creation des raccourcis"
     $Shell = New-Object -ComObject WScript.Shell
     $StartMenuDirectory = Join-Path $env:APPDATA "Microsoft\Windows\Start Menu\Programs"
     New-Item -ItemType Directory -Path $StartMenuDirectory -Force | Out-Null
@@ -411,6 +452,7 @@ try {
         $Shortcut.Save()
     }
 
+    $Stage = "activation des notifications"
     $NotificationResult = Invoke-NativeCommand `
         -FilePath $ApplicationPython `
         -Arguments '-m assistant_botanique --install-notifications "09:00"'
@@ -434,6 +476,7 @@ try {
     Write-Host "Les raccourcis Bureau et menu Demarrer ont ete crees."
     Write-Host "Pour mettre a jour le programme, relancez la commande du README et choisissez le meme dossier."
 
+    $Stage = "premier lancement"
     try {
         Start-Process -FilePath $ApplicationPythonW `
             -ArgumentList "-m assistant_botanique" `
@@ -446,13 +489,13 @@ try {
 catch {
     $ExitCode = 1
     Write-Host ""
-    Write-Host "ECHEC DE L'INSTALLATION : $($_.Exception.Message)" -ForegroundColor Red
-
-    if ($NewInstallPlaced -and $null -ne $InstallDirectory -and (Test-Path -LiteralPath $InstallDirectory)) {
-        Remove-Item -LiteralPath $InstallDirectory -Recurse -Force -ErrorAction SilentlyContinue
-    }
+    Write-Host "ECHEC DE L'INSTALLATION pendant l'etape '$Stage' : $($_.Exception.Message)" -ForegroundColor Red
 
     if ($null -ne $BackupDirectory -and (Test-Path -LiteralPath $BackupDirectory)) {
+        if ($null -ne $InstallDirectory -and (Test-Path -LiteralPath $InstallDirectory)) {
+            Remove-Item -LiteralPath $InstallDirectory -Recurse -Force -ErrorAction SilentlyContinue
+        }
+
         try {
             Move-Item -LiteralPath $BackupDirectory -Destination $InstallDirectory
             Write-Host "L'installation precedente a ete restauree." -ForegroundColor Yellow
@@ -460,6 +503,9 @@ catch {
         catch {
             Write-Warning "La restauration automatique a echoue. Copie de securite : $BackupDirectory"
         }
+    }
+    elseif ($InstallContentTouched -and $null -ne $InstallDirectory -and (Test-Path -LiteralPath $InstallDirectory)) {
+        Remove-Item -LiteralPath $InstallDirectory -Recurse -Force -ErrorAction SilentlyContinue
     }
 }
 finally {
