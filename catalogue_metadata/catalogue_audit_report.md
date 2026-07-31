@@ -1,6 +1,6 @@
 # Audit exhaustif du catalogue botanique
 
-Généré le 2026-07-31T23:02:08+00:00.
+Généré le 2026-07-31T23:02:40+00:00.
 
 ## Portée et limites
 
@@ -12,9 +12,9 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - Fiches parcourues : **2204**
 - Familles représentées : **141**
 - Fiches structurellement complètes : **2204**
-- Photos exactes trouvées : **1865**
-- Photos représentatives de genre/groupe : **270**
-- Photos non trouvées : **69**
+- Photos exactes trouvées : **1904**
+- Photos représentatives de genre/groupe : **277**
+- Photos non trouvées : **23**
 
 ## Résultats taxonomiques
 
@@ -673,74 +673,28 @@ Aucune.
 ## Photos restant à trouver
 
 - **Nolina hibernica**
-- **Argyranthemum frutescens**
 - **Anredera densiflora**
-- **Gymnospermium darwinii**
 - **Byblis guehoi**
 - **Chimonanthus campanulatus**
 - **Chimonanthus zhejiangensis**
 - **Chimonanthus grammatus**
 - **Chimonanthus zhejiangensis 'Qianjiang'**
-- **Celtis australis**
-- **Canna x generalis**
-- **Capparis spinosa**
-- **Capparis zeylanica**
-- **Crateva unilocularis**
-- **Capparis aegyptia**
-- **Vasconcellea x heilbornii**
-- **Vasconcellea x heilbornii 'Pentagon'**
 - **Vasconcellea palandensis**
-- **Vasconcellea x heilbornii 'Leighton Green'**
 - **Cornus eydeana**
-- **Carex vulpina**
-- **Knautia dipsacifolia**
-- **Quercus rubra**
-- **Gentiana dahurica**
-- **Pelargonium echinatum**
-- **Nematanthus wettsteinii**
-- **Heliconia chartacea**
-- **Heliconia aurantiaca**
-- **Heliconia pogonantha**
-- **Heliconia bourgaeana**
-- **Heliconia collinsiana**
 - **Heliconia champneyna**
-- **Heliconia densiflora**
-- **Heliconia vellerigera**
 - **Stauntonia yaoshanensis**
 - **Stauntonia oligophylla**
-- **Linum usitatissimum**
-- **Cuphea llavea**
-- **Ibicella parodii**
 - **Proboscidea spicata**
-- **Heterocentron elegans**
-- **Moringa stenopetala**
-- **Moringa concanensis**
-- **Moringa pygmaea**
-- **Moringa ruspoliana**
-- **Moringa stenopetala 'Konso'**
-- **Musa sikkimensis**
-- **Myrica californica**
-- **Pisonia alba**
-- **Bougainvillea x buttiana**
-- **Fuchsia x hybrida**
-- **Phalaenopsis hybrids**
 - **Pandanus edulis**
 - **Dicerocaryum eriocarpum**
-- **Ceratostigma griffithii**
-- **Phlox stolonifera**
-- **Reseda lanceolata**
 - **Reseda stenostachya**
 - **Strelitzia x guernseyensis**
 - **Ravenala guineensis**
-- **Strelitzia parvifolia**
-- **Strelitzia augusta**
 - **Phenakospermum venezuelicum**
 - **Strelitzia x parvifolia 'Glauca'**
 - **Ravenala madagascariensis var. bemavo**
 - **Ravenala madagascariensis var. chilandra**
 - **Ravenala madagascariensis var. guenzleriana**
-- **Tilia euchlora**
-- **Tilia insularis**
 
 ## Sources techniques
 
