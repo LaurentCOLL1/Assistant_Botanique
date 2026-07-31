@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/assistant-botanique/plant.schema.json",
+  "title": "Fiche botanique",
+  "type": "object",
+  "required": ["taxonomie", "gestion_eau", "substrat", "sante_securite"],
+  "properties": {
+    "id": {"type": "string"},
+    "taxonomie": {
+      "type": "object",
+      "required": ["nom_scientifique", "famille"],
+      "properties": {
+        "nom_scientifique": {"type": "string", "minLength": 1},
+        "noms_vernaculaires": {"type": "array", "items": {"type": "string"}},
+        "famille": {"type": "string", "minLength": 1},
+        "origine_geographique": {"type": "string"}
+      }
+    },
+    "gestion_eau": {
+      "type": "object",
+      "properties": {
+        "frequence_arrosage": {
+          "type": "object",
+          "required": ["janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre"],
+          "additionalProperties": {"type": "integer", "minimum": 0}
+        }
+      }
+    },
+    "substrat": {
+      "type": "object",
+      "properties": {
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["role", "ratio", "ingredients"],
+            "properties": {
+              "role": {"type": "string"},
+              "ratio": {"type": "number", "minimum": 0, "maximum": 1},
+              "ingredients": {"type": "array", "items": {"type": "string"}}
+            }
+          }
+        },
+        "ingredients_interdits": {"type": "array", "items": {"type": "string"}},
+        "conditions_a_eviter": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "sante_securite": {
+      "type": "object",
+      "properties": {
+        "toxicite": {
+          "oneOf": [
+            {"type": "string"},
+            {
+              "type": "object",
+              "required": ["niveau"],
+              "properties": {
+                "niveau": {"enum": ["aucune", "faible", "moderee", "elevee", "inconnue"]},
+                "humains": {"type": "string"},
+                "animaux": {"type": "string"}
+              }
+            }
+          ]
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "schema_version": {"type": "integer", "minimum": 1},
+        "sources": {"type": "array", "items": {"type": "string"}},
+        "last_reviewed": {"type": ["string", "null"], "format": "date"},
+        "confidence": {"enum": ["faible", "moyenne", "elevee", "non_renseignee"]}
+      }
+    }
+  }
+}
