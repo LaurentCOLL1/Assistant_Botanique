@@ -160,7 +160,13 @@ class MaintenanceTab(ttk.Frame):
         except Exception as exc:
             messagebox.showerror("Mise à jour", f"Vérification impossible : {exc}")
             return
-        if info.available:
+        if not info.published:
+            messagebox.showinfo(
+                "Mise à jour",
+                "La vérification fonctionne, mais aucune version n'a encore été publiée dans GitHub Releases.\n\n"
+                f"Version installée : {info.current}",
+            )
+        elif info.available:
             if messagebox.askyesno("Mise à jour", f"Version {info.latest} disponible (version actuelle {info.current}). Ouvrir la page de téléchargement ?"):
                 webbrowser.open(info.release_url)
         else:
