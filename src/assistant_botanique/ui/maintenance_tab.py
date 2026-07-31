@@ -1,6 +1,8 @@
 """Onglet de sauvegarde, notifications et mises à jour."""
 from __future__ import annotations
 
+import os
+import subprocess
 import sys
 import tkinter as tk
 import webbrowser
@@ -8,9 +10,9 @@ from datetime import date
 from tkinter import filedialog, messagebox, ttk
 from typing import Any
 
+from assistant_botanique.infrastructure.backup_config import BackupConfigRepository
 from assistant_botanique.infrastructure.database import Database
 from assistant_botanique.infrastructure.settings import SettingsRepository
-from assistant_botanique.paths import BACKUPS_DIR
 from assistant_botanique.services.backup import BackupService
 from assistant_botanique.services.notifications import NotificationService
 from assistant_botanique.services.updater import check_for_update
@@ -23,6 +25,8 @@ class MaintenanceTab(ttk.Frame):
         self.settings_repo = settings_repo
         self.settings = settings
         self.backups = BackupService(database)
+        self.backup_config = BackupConfigRepository()
+        self.backup_config.ensure_exists()
         self.notifications = NotificationService()
         self._build_ui()
         self.refresh_stats()
@@ -34,11 +38,17 @@ class MaintenanceTab(ttk.Frame):
             backup,
             text="Une archive .botanique contient la base SQLite, les photos, les réglages et les révisions du catalogue.",
             wraplength=900,
-        ).pack(anchor="w", padx=8, pady=6)
+        ).pack(anchor="w", padx=8, pady=(6, 2))
+        ttk.Label(
+            backup,
+            text=f"Fichier modifiable : {self.backup_config.path}",
+            wraplength=900,
+        ).pack(anchor="w", padx=8, pady=(0, 6))
         row = ttk.Frame(backup)
         row.pack(fill="x", padx=8, pady=(0, 8))
         ttk.Button(row, text="Créer une sauvegarde complète", command=self.create_backup, style="Accent.TButton").pack(side="left", padx=3)
         ttk.Button(row, text="Restaurer une sauvegarde", command=self.restore_backup).pack(side="left", padx=3)
+        ttk.Button(row, text="Ouvrir sauvegarde.ini", command=self.open_backup_config).pack(side="left", padx=3)
 
         notify = ttk.LabelFrame(self, text=" Notifications natives ")
         notify.pack(fill="x", padx=12, pady=5)
@@ -70,8 +80,30 @@ class MaintenanceTab(ttk.Frame):
             justify="left",
         ).pack(anchor="nw", padx=8, pady=8)
 
+    def _configured_backup_directory(self):
+        try:
+            return self.backup_config.load_directory()
+        except ValueError as exc:
+            messagebox.showerror("Configuration des sauvegardes", str(exc))
+            return None
+
+    def open_backup_config(self) -> None:
+        path = self.backup_config.ensure_exists()
+        try:
+            if sys.platform == "win32":
+                os.startfile(path)  # type: ignore[attr-defined]
+            elif sys.platform == "darwin":
+                subprocess.Popen(["open", str(path)])
+            else:
+                subprocess.Popen(["xdg-open", str(path)])
+        except OSError as exc:
+            messagebox.showerror("Configuration des sauvegardes", f"Impossible d'ouvrir le fichier :\n{path}\n\n{exc}")
+
     def create_backup(self) -> None:
-        suggested = BACKUPS_DIR / f"assistant-botanique-{date.today():%Y%m%d}.botanique"
+        directory = self._configured_backup_directory()
+        if directory is None:
+            return
+        suggested = directory / f"assistant-botanique-{date.today():%Y%m%d}.botanique"
         destination = filedialog.asksaveasfilename(
             title="Créer une sauvegarde",
             initialdir=suggested.parent,
@@ -89,7 +121,14 @@ class MaintenanceTab(ttk.Frame):
         messagebox.showinfo("Sauvegarde", f"Archive créée :\n{path}")
 
     def restore_backup(self) -> None:
-        source = filedialog.askopenfilename(filetypes=(("Sauvegarde Assistant Botanique", "*.botanique"),))
+        directory = self._configured_backup_directory()
+        if directory is None:
+            return
+        source = filedialog.askopenfilename(
+            title="Restaurer une sauvegarde",
+            initialdir=directory,
+            filetypes=(("Sauvegarde Assistant Botanique", "*.botanique"),),
+        )
         if not source:
             return
         if not messagebox.askyesno("Restauration", "Restaurer cette archive ? Une copie de sécurité des données actuelles sera conservée."):
