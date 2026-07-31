@@ -1,6 +1,6 @@
 # Audit exhaustif du catalogue botanique
 
-Généré le 2026-07-31T22:38:55+00:00.
+Généré le 2026-07-31T22:41:17+00:00.
 
 ## Portée et limites
 
@@ -12,18 +12,19 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - Fiches parcourues : **2204**
 - Familles représentées : **143**
 - Fiches structurellement complètes : **2201**
-- Photos exactes trouvées : **392**
-- Photos représentatives de genre/groupe : **35**
-- Photos non trouvées : **1777**
+- Photos exactes trouvées : **135**
+- Photos représentatives de genre/groupe : **17**
+- Photos non trouvées : **2052**
 
 ## Résultats taxonomiques
 
-- `accepted_exact` : 1238
-- `api_error` : 618
-- `approximate` : 88
-- `family_mismatch` : 126
-- `generic_match` : 8
-- `synonym` : 126
+- `accepted_exact` : 1703
+- `api_error` : 91
+- `approximate` : 108
+- `family_mismatch` : 119
+- `generic_match` : 10
+- `matched_review` : 1
+- `synonym` : 172
 
 ## Répartition par famille
 
@@ -262,11 +263,61 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Actinocephalus polyanthus** → Actinocephalus polyanthus
 - **Actinocephalus cundinamarcae** → Actinocephalus
 - **Pisum sativum** → Pisum sativum
+- **Saintpaulia ionantha** → Saintpaulia ionantha
+- **Columnea gloriosa** → Columnea gloriosa
+- **Ribes sativum** → Ribes sativum
 - **Heliconia champneyna** → Heliconia champneiana
+- **Schizophragma hydrangeoides** → Schizophragma hydrangeoides
+- **Babiana stricta** → Babiana stricta
+- **Neomarica gracilis** → Neomarica gracilis
+- **Carya tomentosa** → Carya tomentosa
+- **Carya ovata var. nuttallii** → Carya ovata nuttallii
 - **Juncus trifidus** → Juncus trifidus
 - **Plectranthus scutellarioides** → Plectranthus scutellarioides
 - **Plectranthus amboinicus** → Plectranthus amboinicus
+- **Plectranthus argentatus** → Plectranthus argentatus
+- **Decaisnea fargesii** → Decaisnea fargesii
+- **Holboellia angustifolia** → Holboellia angustifolia
+- **Lardizabala biternata** → Lardizabala biternata
+- **Holboellia coriacea** → Holboellia coriacea
+- **Holboellia grandiflora** → Holboellia grandiflora
+- **Holboellia brachyandra** → Holboellia brachyandra
+- **Ocotea foetens** → Ocotea foetens
+- **Tulipa tarda** → Tulipa tarda
+- **Lagerstroemia fauriei** → Lagerstroemia fauriei
+- **Ammannia ramosior** → Ammannia ramosior
+- **Martynia fragrans** → Martynia fragrans
+- **Proboscidea sinaloensis** → Proboscidea sinaloensis
+- **Proboscidea arenaria** → Proboscidea arenaria
+- **Martynia diandra** → Martynia diandra
+- **Tibouchina urvilleana** → Tibouchina urvilleana
+- **Dissotis rotundifolia** → Dissotis rotundifolia
+- **Musa lasiocarpa** → Musa lasiocarpa
+- **Musa fehi** → Musa fehi
+- **Musa uranoscopos** → Musa uranoscopos
+- **Myrica californica** → Myrica californica
+- **Myrica heterophylla** → Myrica heterophylla
+- **Myrica asplenifolia** → Myrica aspleniifolia
+- **Myrica javanica** → Myrica javanica
+- **Myrica esculenta** → Myrica esculenta
+- **Myrica caroliniensis** → Myrica caroliniensis
+- **Acca sellowiana** → Acca sellowiana
+- **Pisonia alba** → Pisonia alba
+- **Pisonia umbellifera** → Pisonia umbellifera
+- **Gaura lindheimeri** → Gaura lindheimeri
+- **Oenothera missouriensis** → Oenothera missouriensis
+- **Pandanus baptistii** → Pandanus baptistii
+- **Dicentra spectabilis (Lamprocapnos spectabilis)** → Dicentra spectabilis
+- **Meconopsis betonicifolia** → Meconopsis betonicifolia
+- **Corydalis lutea** → Corydalis lutea
 - **Meconopsis cambrica** → Meconopsis cambrica
+- **Ceratotheca sesamoides** → Ceratotheca sesamoides
+- **Ceratotheca triloba** → Ceratotheca triloba
+- **Josephinia imperatricis** → Josephinia imperatricis
+- **Hebe speciosa** → Hebe speciosa
+- **Hebe 'Addington'** → Hebe
+- **Acantholimon olivieri** → Acantholimon olivieri
+- **Echinochloa esculenta** → Echinochloa esculenta
 - **Fallopia aubertii** → Fallopia aubertii
 - **Persicaria amplexicaulis** → Persicaria amplexicaulis
 - **Persicaria bistorta** → Persicaria bistorta
@@ -295,10 +346,6 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Illicium mexicanum** → Illicium mexicanum
 - **Petunia x hybrida** → Petunia hybrida
 - **Solanum jasminoides** → Solanum jasminoides
-- **Ravenala guineensis** → Ravenala guyannensis
-- **Strelitzia parvifolia** → Strelitzia parvifolia
-- **Strelitzia augusta** → Strelitzia augusta
-- **Strelitzia x parvifolia 'Glauca'** → Strelitzia parvifolia
 
 ## Incohérences de famille
 
@@ -387,10 +434,26 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Scabiosa silenifolia** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
 - **Scabiosa triandra** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
 - **Scabiosa graminea** : fiche `Dipsacaceae`, GBIF `Caprifoliaceae`
+- **Acacia dealbata** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Acacia baileyana** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Acacia longifolia** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Acacia cultriformis** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Acacia podalyriifolia** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Acacia retinodes** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Acacia pravissima** : fiche `Mimosaceae`, GBIF `Fabaceae`
 - **Acacia farnesiana** : fiche `Mimosaceae`, GBIF `Fabaceae`
 - **Albizia julibrissin** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Mimosa pudica** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Calliandra haematocephala** : fiche `Mimosaceae`, GBIF `Fabaceae`
 - **Albizia lebbeck** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Acacia melanoxylon** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Acacia pycnantha** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Acacia cyanophylla** : fiche `Mimosaceae`, GBIF `Fabaceae`
 - **Acacia verticillata** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Parkia speciosa** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Acacia iteaphylla** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Acacia cardiophylla** : fiche `Mimosaceae`, GBIF `Fabaceae`
+- **Acacia vestita** : fiche `Mimosaceae`, GBIF `Fabaceae`
 - **Polygonatum multiflorum** : fiche `Asparagaceae (anciennement classé parfois proche ou confondu, mais ici mentionné comme alternative de sous-bois, attention aux confusions de noms vernaculaires, restons sur une vraie Polygonacée de sous-bois si possible : Polygonatum est Asparagacée, remplaçons par Rumex thyrsiflorus ou Oxyria digyna pour rester strictement dans les Polygonaceae)`, GBIF `Asparagaceae`
 - **Digitalis purpurea** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
 - **Antirrhinum majus** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
@@ -404,30 +467,7 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Antirrhinum ramosissimum** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
 - **Linaria triornithophora** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
 - **Digitalis purpurea 'Alba'** : fiche `Scrophulariaceae`, GBIF `Plantaginaceae`
-- **Tilia cordata** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia platyphyllos** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia x europaea** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia americana** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia tomentosa** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia mongolica** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia euchlora** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia henryana** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia amurensis** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia miqueliana** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia insularis** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia kiusiana** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia oliveri** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia japonica** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia tuan** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia maximowicziana** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia begoniifolia** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia tomentosa 'Petiolaris'** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia mandschurica** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Tilia x moltkei** : fiche `Tiliaceae`, GBIF `Malvaceae`
-- **Clerodendrum thomsoniae** : fiche `Verbenaceae`, GBIF `Lamiaceae`
 - **Clerodendrum ugandense** : fiche `Verbenaceae`, GBIF `Lamiaceae`
-- **Holmskioldia sanguinea** : fiche `Verbenaceae`, GBIF `Lamiaceae`
-- **Vitex agnus-castus** : fiche `Verbenaceae`, GBIF `Lamiaceae`
 
 ## Correspondances taxonomiques à revoir manuellement
 
@@ -491,633 +531,44 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Eriocaulon 'Polaris'** — `approximate` (eriocaulaceae.json[16])
 - **Eriocaulon 'Vietnam'** — `approximate` (eriocaulaceae.json[17])
 - **Eriocaulon 'Ratnagiricum'** — `approximate` (eriocaulaceae.json[18])
-- **Gentiana acaulis** — `api_error` (gentianaceae.json[2])
-- **Gentiana septemfida** — `api_error` (gentianaceae.json[4])
-- **Gentiana sino-ornata** — `api_error` (gentianaceae.json[5])
-- **Gentiana cruciata** — `api_error` (gentianaceae.json[6])
-- **Gentiana asclepiadea** — `api_error` (gentianaceae.json[7])
-- **Gentiana punctata** — `api_error` (gentianaceae.json[8])
-- **Gentiana pannonica** — `api_error` (gentianaceae.json[9])
-- **Gentiana purpurea** — `api_error` (gentianaceae.json[10])
-- **Gentiana bavarica** — `api_error` (gentianaceae.json[11])
-- **Gentiana dahurica** — `api_error` (gentianaceae.json[12])
-- **Gentiana paradoxa** — `api_error` (gentianaceae.json[13])
-- **Gentiana utriculosa** — `api_error` (gentianaceae.json[14])
-- **Gentiana froelichii** — `api_error` (gentianaceae.json[17])
-- **Gentiana luteola** — `api_error` (gentianaceae.json[18])
+- **Gentiana luteola** — `approximate` (gentianaceae.json[18])
 - **Gentiana pneumaticus** — `approximate` (gentianaceae.json[19])
-- **Gentiana burseri** — `api_error` (gentianaceae.json[20])
-- **Gentiana amarella** — `api_error` (gentianaceae.json[21])
-- **Gentiana campestris** — `api_error` (gentianaceae.json[22])
-- **Pelargonium graveolens** — `api_error` (geraniaceae.json[1])
-- **Pelargonium grandiflorum** — `api_error` (geraniaceae.json[3])
-- **Pelargonium sidoides** — `api_error` (geraniaceae.json[4])
-- **Geranium macrorrhizum** — `api_error` (geraniaceae.json[5])
-- **Geranium sanguineum** — `api_error` (geraniaceae.json[6])
-- **Pelargonium echinatum** — `api_error` (geraniaceae.json[7])
-- **Erodium cicutarium** — `api_error` (geraniaceae.json[8])
-- **Saintpaulia ionantha** — `api_error` (gesneriaceae.json[1])
-- **Aeschynanthus radicans** — `api_error` (gesneriaceae.json[2])
-- **Streptocarpus x hybridus** — `api_error` (gesneriaceae.json[3])
-- **Columnea gloriosa** — `api_error` (gesneriaceae.json[5])
-- **Nematanthus wettsteinii** — `api_error` (gesneriaceae.json[6])
-- **Episcia cupreata** — `api_error` (gesneriaceae.json[7])
-- **Achimenes grandiflora** — `api_error` (gesneriaceae.json[8])
-- **Ribes uva-crispa** — `api_error` (grossulariaceae.json[1])
-- **Ribes nigrum** — `api_error` (grossulariaceae.json[3])
-- **Ribes sativum** — `api_error` (grossulariaceae.json[4])
-- **Ribes sanguineum** — `api_error` (grossulariaceae.json[5])
-- **Ribes odoratum** — `api_error` (grossulariaceae.json[7])
-- **Ribes nigrum 'Borealis'** — `api_error` (grossulariaceae.json[8])
-- **Ribes divaricatum** — `api_error` (grossulariaceae.json[9])
-- **Ribes americanum** — `api_error` (grossulariaceae.json[10])
-- **Ribes lacustre** — `api_error` (grossulariaceae.json[11])
-- **Ribes aureum** — `api_error` (grossulariaceae.json[13])
-- **Ribes magellanicum** — `api_error` (grossulariaceae.json[14])
+- **Gentiana amarella** — `approximate` (gentianaceae.json[21])
+- **Gentiana campestris** — `approximate` (gentianaceae.json[22])
 - **Ribes cynanchii** — `approximate` (grossulariaceae.json[15])
-- **Ribes laciniatum** — `api_error` (grossulariaceae.json[16])
-- **Ribes petraeum** — `api_error` (grossulariaceae.json[17])
-- **Ribes dikusha** — `api_error` (grossulariaceae.json[18])
-- **Ribes laxiflorum** — `api_error` (grossulariaceae.json[19])
-- **Ribes punctatum** — `api_error` (grossulariaceae.json[20])
-- **Heliconia rostrata** — `api_error` (heliconiaceae.json[1])
-- **Heliconia bihai** — `api_error` (heliconiaceae.json[2])
-- **Heliconia psittacorum** — `api_error` (heliconiaceae.json[3])
-- **Heliconia caribaea** — `api_error` (heliconiaceae.json[5])
-- **Heliconia Wagneriana** — `api_error` (heliconiaceae.json[6])
-- **Heliconia chartacea** — `api_error` (heliconiaceae.json[7])
-- **Heliconia aurantiaca** — `api_error` (heliconiaceae.json[9])
-- **Heliconia metallica** — `api_error` (heliconiaceae.json[10])
-- **Heliconia pendula** — `api_error` (heliconiaceae.json[11])
-- **Heliconia indica** — `api_error` (heliconiaceae.json[12])
-- **Heliconia episcopalis** — `api_error` (heliconiaceae.json[13])
-- **Heliconia pogonantha** — `api_error` (heliconiaceae.json[14])
-- **Heliconia bourgaeana** — `api_error` (heliconiaceae.json[15])
-- **Heliconia collinsiana** — `api_error` (heliconiaceae.json[16])
-- **Heliconia x rauliniana** — `api_error` (heliconiaceae.json[18])
-- **Heliconia vellerigera** — `api_error` (heliconiaceae.json[20])
-- **Hydrangea macrophylla** — `api_error` (hydrangeaceae.json[1])
-- **Hydrangea paniculata** — `api_error` (hydrangeaceae.json[2])
-- **Hydrangea arborescens** — `api_error` (hydrangeaceae.json[3])
-- **Hydrangea quercifolia** — `api_error` (hydrangeaceae.json[4])
-- **Philadelphus coronarius** — `api_error` (hydrangeaceae.json[6])
-- **Deutzia gracilis** — `api_error` (hydrangeaceae.json[7])
-- **Hydrangea serrata** — `api_error` (hydrangeaceae.json[8])
-- **Hydrangea aspera** — `api_error` (hydrangeaceae.json[10])
-- **Kirengeshoma palmata** — `api_error` (hydrangeaceae.json[12])
-- **Schizophragma hydrangeoides** — `api_error` (hydrangeaceae.json[13])
-- **Hydrangea involucrata** — `api_error` (hydrangeaceae.json[14])
-- **Hydrangea anomala** — `api_error` (hydrangeaceae.json[15])
-- **Hypericum perforatum** — `api_error` (hypericaceae.json[1])
-- **Hypericum calycinum** — `api_error` (hypericaceae.json[2])
-- **Hypericum 'Hidcote'** — `api_error` (hypericaceae.json[3])
-- **Hypericum androsaemum** — `api_error` (hypericaceae.json[4])
-- **Hypericum patulum** — `api_error` (hypericaceae.json[5])
-- **Hypericum moserianum** — `api_error` (hypericaceae.json[7])
-- **Hypericum kouytchense** — `api_error` (hypericaceae.json[8])
-- **Hypericum hircinum** — `api_error` (hypericaceae.json[9])
-- **Hypericum elodes** — `api_error` (hypericaceae.json[10])
-- **Hypericum pulchrum** — `api_error` (hypericaceae.json[11])
-- **Hypericum maculatum** — `api_error` (hypericaceae.json[12])
-- **Hypericum coris** — `api_error` (hypericaceae.json[16])
-- **Hypericum reptans** — `api_error` (hypericaceae.json[17])
-- **Hypericum inodorum** — `api_error` (hypericaceae.json[18])
-- **Hypericum hunsanense** — `api_error` (hypericaceae.json[19])
-- **Iris germanica** — `api_error` (iridaceae.json[1])
-- **Crocus sativus** — `api_error` (iridaceae.json[2])
-- **Freesia alba** — `api_error` (iridaceae.json[3])
-- **Gladiolus x hortulanus** — `api_error` (iridaceae.json[4])
-- **Crocosmia x crocosmiiflora** — `api_error` (iridaceae.json[5])
-- **Iris sibirica** — `api_error` (iridaceae.json[6])
-- **Iris pseudacorus** — `api_error` (iridaceae.json[7])
-- **Iris reticulata** — `api_error` (iridaceae.json[8])
-- **Ixia dubia** — `api_error` (iridaceae.json[9])
-- **Sparaxis tricolor** — `api_error` (iridaceae.json[10])
-- **Sisyrinchium angustifolium** — `api_error` (iridaceae.json[11])
-- **Watsonia meriana** — `api_error` (iridaceae.json[12])
-- **Iris foetidissima** — `api_error` (iridaceae.json[13])
-- **Tritonia crocata** — `api_error` (iridaceae.json[14])
-- **Romulea bulbocodium** — `api_error` (iridaceae.json[15])
-- **Iris ensata** — `api_error` (iridaceae.json[16])
-- **Chasmanthe floribunda** — `api_error` (iridaceae.json[17])
-- **Babiana stricta** — `api_error` (iridaceae.json[18])
-- **Iris x hollandica** — `api_error` (iridaceae.json[19])
-- **Neomarica gracilis** — `api_error` (iridaceae.json[20])
-- **Juglans regia** — `api_error` (juglandaceae.json[1])
-- **Juglans nigra** — `api_error` (juglandaceae.json[2])
-- **Carya illinoinensis** — `api_error` (juglandaceae.json[3])
-- **Juglans cinerea** — `api_error` (juglandaceae.json[4])
+- **Ribes dikusha** — `approximate` (grossulariaceae.json[18])
+- **Hypericum 'Hidcote'** — `approximate` (hypericaceae.json[3])
+- **Hypericum hunsanense** — `approximate` (hypericaceae.json[19])
 - **Juglans cordiformis** — `approximate` (juglandaceae.json[5])
-- **Carya ovata** — `api_error` (juglandaceae.json[7])
-- **Carya tomentosa** — `api_error` (juglandaceae.json[9])
-- **Carya glabra** — `api_error` (juglandaceae.json[10])
-- **Pterocarya stenoptera** — `api_error` (juglandaceae.json[12])
-- **Juglans microcarpa** — `api_error` (juglandaceae.json[14])
-- **Carya ovata var. nuttallii** — `api_error` (juglandaceae.json[15])
-- **Juglans regia 'Mayette'** — `api_error` (juglandaceae.json[18])
-- **Juglans regia 'Fernor'** — `api_error` (juglandaceae.json[19])
-- **Juglans regia 'Chandler'** — `api_error` (juglandaceae.json[20])
-- **Juncus effusus** — `api_error` (juncaceae.json[1])
-- **Juncus effusus 'Spiralis'** — `api_error` (juncaceae.json[2])
-- **Juncus inflexus** — `api_error` (juncaceae.json[3])
-- **Juncus gerardii** — `api_error` (juncaceae.json[6])
-- **Juncus acutiflorus** — `api_error` (juncaceae.json[8])
-- **Juncus conglomeratus** — `api_error` (juncaceae.json[9])
-- **Juncus bulbosus** — `api_error` (juncaceae.json[10])
-- **Juncus articulatus** — `api_error` (juncaceae.json[12])
-- **Juncus tenuis** — `api_error` (juncaceae.json[13])
-- **Juncus alpinoarticulatus** — `api_error` (juncaceae.json[14])
-- **Juncus filiformis** — `api_error` (juncaceae.json[15])
-- **Juncus compressus** — `api_error` (juncaceae.json[18])
-- **Juncus militaris** — `api_error` (juncaceae.json[19])
-- **Juncus dudleyi** — `api_error` (juncaceae.json[20])
-- **Juncus patens** — `api_error` (juncaceae.json[21])
-- **Juncus ensifolius 'Finest'** — `api_error` (juncaceae.json[22])
-- **Plectranthus verticillatus** — `api_error` (lamiaceae.json[2])
-- **Plectranthus argentatus** — `api_error` (lamiaceae.json[4])
-- **Akebia quinata** — `api_error` (lardizabalaceae.json[1])
-- **Akebia trifoliata** — `api_error` (lardizabalaceae.json[2])
-- **Decaisnea fargesii** — `api_error` (lardizabalaceae.json[3])
-- **Holboellia latifolia** — `api_error` (lardizabalaceae.json[4])
-- **Holboellia angustifolia** — `api_error` (lardizabalaceae.json[5])
-- **Lardizabala biternata** — `api_error` (lardizabalaceae.json[6])
-- **Stauntonia hexaphylla** — `api_error` (lardizabalaceae.json[7])
-- **Stauntonia chinensis** — `api_error` (lardizabalaceae.json[8])
-- **Akebia x pentaphylla** — `api_error` (lardizabalaceae.json[9])
-- **Sinofranchetia chinensis** — `api_error` (lardizabalaceae.json[10])
-- **Holboellia coriacea** — `api_error` (lardizabalaceae.json[11])
-- **Stauntonia purpurea** — `api_error` (lardizabalaceae.json[12])
-- **Decaisnea insignis** — `api_error` (lardizabalaceae.json[13])
-- **Holboellia grandiflora** — `api_error` (lardizabalaceae.json[14])
-- **Stauntonia yaoshanensis** — `api_error` (lardizabalaceae.json[15])
-- **Akebia x 'Silver Bells'** — `api_error` (lardizabalaceae.json[16])
-- **Holboellia brachyandra** — `api_error` (lardizabalaceae.json[17])
-- **Stauntonia oligophylla** — `api_error` (lardizabalaceae.json[18])
-- **Lardizabala funaria** — `api_error` (lardizabalaceae.json[19])
-- **Akebia quinata 'White Chocolate'** — `api_error` (lardizabalaceae.json[20])
-- **Persea americana** — `api_error` (lauraceae.json[1])
-- **Laurus nobilis** — `api_error` (lauraceae.json[2])
-- **Cinnamomum verum** — `api_error` (lauraceae.json[3])
-- **Cinnamomum cassia** — `api_error` (lauraceae.json[4])
-- **Cinnamomum camphora** — `api_error` (lauraceae.json[5])
-- **Umbellularia californica** — `api_error` (lauraceae.json[6])
-- **Litsea cubeba** — `api_error` (lauraceae.json[7])
-- **Sassafras albidum** — `api_error` (lauraceae.json[8])
-- **Cinnamomum burmannii** — `api_error` (lauraceae.json[9])
-- **Laurus azorica** — `api_error` (lauraceae.json[10])
-- **Lindera benzoin** — `api_error` (lauraceae.json[11])
-- **Cryptocarya alba** — `api_error` (lauraceae.json[12])
-- **Persea borbonia** — `api_error` (lauraceae.json[13])
-- **Ocotea foetens** — `api_error` (lauraceae.json[14])
-- **Beilschmiedia tawa** — `api_error` (lauraceae.json[15])
-- **Aniba rosaeodora** — `api_error` (lauraceae.json[16])
-- **Cinnamomum loureiroi** — `api_error` (lauraceae.json[19])
-- **Nectandra megapotamica** — `api_error` (lauraceae.json[20])
-- **Pinguicula agnata** — `api_error` (lentibulariaceae.json[2])
-- **Pinguicula grandiflora** — `api_error` (lentibulariaceae.json[3])
-- **Utricularia gibba** — `api_error` (lentibulariaceae.json[6])
+- **Juncus gerardii** — `approximate` (juncaceae.json[6])
+- **Holboellia latifolia** — `approximate` (lardizabalaceae.json[4])
+- **Akebia x 'Silver Bells'** — `approximate` (lardizabalaceae.json[16])
+- **Cinnamomum cassia** — `approximate` (lauraceae.json[4])
+- **Cinnamomum burmannii** — `approximate` (lauraceae.json[9])
 - **Pinguicula guatemalensis** — `approximate` (lentibulariaceae.json[7])
 - **Pinguicula 'Anna'** — `approximate` (lentibulariaceae.json[8])
-- **Lilium candidum** — `api_error` (liliaceae.json[1])
-- **Fritillaria imperialis** — `api_error` (liliaceae.json[3])
-- **Lilium regale** — `api_error` (liliaceae.json[5])
-- **Tulipa sylvestris** — `api_error` (liliaceae.json[6])
-- **Lilium martagon** — `api_error` (liliaceae.json[7])
-- **Fritillaria meleagris** — `api_error` (liliaceae.json[8])
-- **Tulipa humilis** — `api_error` (liliaceae.json[9])
-- **Tulipa clusiana** — `api_error` (liliaceae.json[11])
-- **Lilium longiflorum** — `api_error` (liliaceae.json[12])
-- **Tulipa turkestanica** — `api_error` (liliaceae.json[13])
-- **Fritillaria persica** — `api_error` (liliaceae.json[14])
-- **Tulipa sylvestris subsp. australis** — `api_error` (liliaceae.json[15])
-- **Lilium pumilum** — `api_error` (liliaceae.json[16])
-- **Tulipa sprengeri** — `api_error` (liliaceae.json[17])
-- **Fritillaria davisii** — `api_error` (liliaceae.json[18])
-- **Lilium hansonii** — `api_error` (liliaceae.json[19])
-- **Tulipa tarda** — `api_error` (liliaceae.json[20])
-- **Linum usitatissimum** — `api_error` (linaceae.json[1])
-- **Linum perenne** — `api_error` (linaceae.json[2])
-- **Linum grandiflorum** — `api_error` (linaceae.json[3])
-- **Linum narbonense** — `api_error` (linaceae.json[4])
-- **Linum flavum** — `api_error` (linaceae.json[5])
-- **Linum campanulatum** — `api_error` (linaceae.json[6])
-- **Linum catharticum** — `api_error` (linaceae.json[7])
-- **Linum austriacum** — `api_error` (linaceae.json[8])
-- **Linum suffruticosum** — `api_error` (linaceae.json[9])
-- **Linum bienne** — `api_error` (linaceae.json[10])
-- **Linum arboreum** — `api_error` (linaceae.json[11])
-- **Linum macrorhizum** — `api_error` (linaceae.json[12])
-- **Linum salsoloides** — `api_error` (linaceae.json[13])
-- **Linum strictum** — `api_error` (linaceae.json[14])
-- **Linum gallicum** — `api_error` (linaceae.json[15])
-- **Linum maritimum** — `api_error` (linaceae.json[16])
-- **Linum corsicum** — `api_error` (linaceae.json[17])
-- **Linum quadrifolium** — `api_error` (linaceae.json[18])
-- **Linum lewisii** — `api_error` (linaceae.json[19])
-- **Linum monogynum** — `api_error` (linaceae.json[20])
-- **Linum olchense** — `api_error` (linaceae.json[21])
-- **Punica granatum** — `api_error` (lythraceae.json[1])
-- **Lagerstroemia indica** — `api_error` (lythraceae.json[2])
-- **Lythrum salicaria** — `api_error` (lythraceae.json[3])
-- **Cuphea ignea** — `api_error` (lythraceae.json[5])
-- **Rotala rotundifolia** — `api_error` (lythraceae.json[6])
-- **Lawsonia inermis** — `api_error` (lythraceae.json[7])
-- **Ammannia coccinea** — `api_error` (lythraceae.json[8])
-- **Lythrum hyssopifolia** — `api_error` (lythraceae.json[9])
-- **Cuphea micropetala** — `api_error` (lythraceae.json[10])
-- **Lagerstroemia fauriei** — `api_error` (lythraceae.json[11])
-- **Lythrum virgatum** — `api_error` (lythraceae.json[12])
-- **Rotala macrandra** — `api_error` (lythraceae.json[14])
-- **Punica granatum 'Nana'** — `api_error` (lythraceae.json[15])
-- **Lagerstroemia indica x fauriei 'Natchez'** — `api_error` (lythraceae.json[16])
-- **Ammannia ramosior** — `api_error` (lythraceae.json[17])
-- **Cuphea ignea 'David Verity'** — `api_error` (lythraceae.json[18])
-- **Lythrum alatum** — `api_error` (lythraceae.json[19])
-- **Lagerstroemia indica 'Pink Velour'** — `api_error` (lythraceae.json[20])
-- **Cuphea llavea** — `api_error` (lythraceae.json[21])
-- **Lagerstroemia indica 'Catawba'** — `api_error` (lythraceae.json[22])
-- **Magnolia x soulangeana** — `api_error` (magnoliaceae.json[1])
-- **Magnolia grandiflora** — `api_error` (magnoliaceae.json[2])
-- **Liriodendron tulipifera** — `api_error` (magnoliaceae.json[3])
-- **Magnolia stellata** — `api_error` (magnoliaceae.json[4])
-- **Magnolia liliiflora** — `api_error` (magnoliaceae.json[5])
-- **Magnolia denudata** — `api_error` (magnoliaceae.json[6])
-- **Magnolia kobus** — `api_error` (magnoliaceae.json[7])
-- **Magnolia sieboldii** — `api_error` (magnoliaceae.json[8])
-- **Magnolia x loebneri** — `api_error` (magnoliaceae.json[9])
-- **Magnolia virginiana** — `api_error` (magnoliaceae.json[10])
-- **Magnolia macrophylla** — `api_error` (magnoliaceae.json[11])
-- **Magnolia acuminata** — `api_error` (magnoliaceae.json[12])
-- **Liriodendron chinense** — `api_error` (magnoliaceae.json[13])
-- **Magnolia figo** — `api_error` (magnoliaceae.json[14])
-- **Magnolia obovata** — `api_error` (magnoliaceae.json[15])
-- **Hibiscus rosa-sinensis** — `api_error` (malvaceae.json[1])
-- **Abutilon x hybridum** — `api_error` (malvaceae.json[2])
-- **Pachira aquatica** — `api_error` (malvaceae.json[3])
-- **Sparrmannia africana** — `api_error` (malvaceae.json[4])
-- **Pavonia multiflora** — `api_error` (malvaceae.json[5])
-- **Malvaviscus arboreus** — `api_error` (malvaceae.json[6])
-- **Hibiscus schizopetalus** — `api_error` (malvaceae.json[7])
-- **Brachychiton rupestris** — `api_error` (malvaceae.json[8])
-- **Goeppertia orbifolia** — `api_error` (marantaceae.json[1])
-- **Maranta leuconeura** — `api_error` (marantaceae.json[2])
-- **Stromanthe thalia** — `api_error` (marantaceae.json[3])
-- **Goeppertia makoyana** — `api_error` (marantaceae.json[4])
-- **Proboscidea louisianica** — `api_error` (martyniaceae.json[1])
-- **Martynia annua** — `api_error` (martyniaceae.json[2])
-- **Proboscidea althaeifolia** — `api_error` (martyniaceae.json[3])
-- **Proboscidea parviflora** — `api_error` (martyniaceae.json[4])
-- **Ibicella lutea** — `api_error` (martyniaceae.json[5])
-- **Ibicella parodii** — `api_error` (martyniaceae.json[6])
-- **Craniolaria annua** — `api_error` (martyniaceae.json[7])
-- **Craniolaria integrifolia** — `api_error` (martyniaceae.json[8])
-- **Martynia palmeri** — `api_error` (martyniaceae.json[9])
-- **Proboscidea sabulosa** — `api_error` (martyniaceae.json[10])
-- **Proboscidea spicata** — `api_error` (martyniaceae.json[11])
-- **Holorectis spp.** — `api_error` (martyniaceae.json[12])
-- **Martynia fragrans** — `api_error` (martyniaceae.json[13])
-- **Proboscidea sinaloensis** — `api_error` (martyniaceae.json[14])
-- **Proboscidea arenaria** — `api_error` (martyniaceae.json[15])
-- **Martynia diandra** — `api_error` (martyniaceae.json[16])
-- **Proboscidea alata** — `api_error` (martyniaceae.json[17])
-- **Craniolaria dentata** — `api_error` (martyniaceae.json[18])
-- **Ibicella atro-purpurea** — `api_error` (martyniaceae.json[19])
-- **Medinilla magnifica** — `api_error` (melastomataceae.json[1])
-- **Bertolonia marmorata** — `api_error` (melastomataceae.json[2])
-- **Sonerila margaritacea** — `api_error` (melastomataceae.json[3])
-- **Monolena primuliflora** — `api_error` (melastomataceae.json[4])
-- **Tibouchina urvilleana** — `api_error` (melastomataceae.json[5])
-- **Heterocentron elegans** — `api_error` (melastomataceae.json[6])
-- **Dissotis rotundifolia** — `api_error` (melastomataceae.json[7])
-- **Medinilla speciosa** — `api_error` (melastomataceae.json[8])
-- **Acacia dealbata** — `api_error` (mimosaceae.json[1])
-- **Acacia baileyana** — `api_error` (mimosaceae.json[2])
-- **Acacia longifolia** — `api_error` (mimosaceae.json[3])
-- **Acacia cultriformis** — `api_error` (mimosaceae.json[4])
-- **Acacia podalyriifolia** — `api_error` (mimosaceae.json[5])
-- **Acacia retinodes** — `api_error` (mimosaceae.json[6])
-- **Acacia pravissima** — `api_error` (mimosaceae.json[7])
-- **Mimosa pudica** — `api_error` (mimosaceae.json[10])
-- **Calliandra haematocephala** — `api_error` (mimosaceae.json[11])
-- **Acacia melanoxylon** — `api_error` (mimosaceae.json[13])
-- **Acacia pycnantha** — `api_error` (mimosaceae.json[14])
-- **Acacia cyanophylla** — `api_error` (mimosaceae.json[15])
-- **Parkia speciosa** — `api_error` (mimosaceae.json[17])
-- **Acacia iteaphylla** — `api_error` (mimosaceae.json[18])
-- **Acacia cardiophylla** — `api_error` (mimosaceae.json[19])
-- **Acacia vestita** — `api_error` (mimosaceae.json[20])
-- **Ficus elastica** — `api_error` (moraceae.json[1])
-- **Ficus lyrata** — `api_error` (moraceae.json[2])
-- **Ficus benjamina** — `api_error` (moraceae.json[3])
-- **Ficus microcarpa 'Ginseng'** — `api_error` (moraceae.json[4])
-- **Moringa oleifera** — `api_error` (moringaceae.json[1])
-- **Moringa stenopetala** — `api_error` (moringaceae.json[2])
-- **Moringa drouhardii** — `api_error` (moringaceae.json[3])
-- **Moringa hildebrandtii** — `api_error` (moringaceae.json[4])
-- **Moringa peregrina** — `api_error` (moringaceae.json[5])
-- **Moringa ovalifolia** — `api_error` (moringaceae.json[6])
-- **Moringa concanensis** — `api_error` (moringaceae.json[7])
-- **Moringa borziana** — `api_error` (moringaceae.json[8])
-- **Moringa longituba** — `api_error` (moringaceae.json[9])
-- **Moringa pygmaea** — `api_error` (moringaceae.json[10])
-- **Moringa rivae** — `api_error` (moringaceae.json[11])
-- **Moringa arborea** — `api_error` (moringaceae.json[12])
-- **Moringa ruspoliana** — `api_error` (moringaceae.json[13])
-- **Moringa oleifera 'PKM-1'** — `api_error` (moringaceae.json[14])
-- **Moringa oleifera 'PKM-2'** — `api_error` (moringaceae.json[15])
-- **Moringa stenopetala 'Konso'** — `api_error` (moringaceae.json[16])
-- **Moringa peregrina 'Oman'** — `api_error` (moringaceae.json[17])
-- **Moringa oleifera 'Super-genius'** — `api_error` (moringaceae.json[18])
-- **Moringa drouhardii 'Arid'** — `api_error` (moringaceae.json[19])
-- **Moringa oleifera 'Dwarf'** — `api_error` (moringaceae.json[20])
-- **Musa acuminata** — `api_error` (musaceae.json[1])
-- **Musa balbisiana** — `api_error` (musaceae.json[2])
-- **Musa x paradisiaca** — `api_error` (musaceae.json[3])
-- **Musa basjoo** — `api_error` (musaceae.json[4])
-- **Ensete ventricosum** — `api_error` (musaceae.json[5])
-- **Musa coccinea** — `api_error` (musaceae.json[6])
-- **Musa velutina** — `api_error` (musaceae.json[7])
-- **Musa ornata** — `api_error` (musaceae.json[8])
-- **Musa lasiocarpa** — `api_error` (musaceae.json[9])
-- **Musa textilis** — `api_error` (musaceae.json[10])
-- **Ensete glaucum** — `api_error` (musaceae.json[11])
-- **Ensete superbum** — `api_error` (musaceae.json[12])
-- **Musa fehi** — `api_error` (musaceae.json[13])
-- **Musa itinerans** — `api_error` (musaceae.json[14])
-- **Musa sikkimensis** — `api_error` (musaceae.json[15])
-- **Musa troglodytarum** — `api_error` (musaceae.json[16])
-- **Musa uranoscopos** — `api_error` (musaceae.json[17])
-- **Ensete perrieri** — `api_error` (musaceae.json[19])
-- **Musa ingens** — `api_error` (musaceae.json[20])
-- **Myrica gale** — `api_error` (myricaceae.json[1])
-- **Morella cerifera** — `api_error` (myricaceae.json[2])
-- **Myrica pensylvanica** — `api_error` (myricaceae.json[3])
-- **Morella faya** — `api_error` (myricaceae.json[5])
-- **Myrica californica** — `api_error` (myricaceae.json[6])
-- **Myrica heterophylla** — `api_error` (myricaceae.json[7])
-- **Myrica asplenifolia** — `api_error` (myricaceae.json[8])
-- **Myrica javanica** — `api_error` (myricaceae.json[9])
-- **Myrica esculenta** — `api_error` (myricaceae.json[10])
-- **Myrica caroliniensis** — `api_error` (myricaceae.json[11])
-- **Morella caroliniensis** — `api_error` (myricaceae.json[12])
-- **Morella inodora** — `api_error` (myricaceae.json[13])
-- **Morella salicifolia** — `api_error` (myricaceae.json[16])
-- **Morella spathulata** — `api_error` (myricaceae.json[17])
-- **Morella serrata** — `api_error` (myricaceae.json[18])
-- **Morella holdridgeana** — `api_error` (myricaceae.json[19])
-- **Morella kraussiana** — `api_error` (myricaceae.json[20])
-- **Eucalyptus globulus** — `api_error` (myrtaceae.json[1])
-- **Psidium guajava** — `api_error` (myrtaceae.json[2])
-- **Syzygium aromaticum** — `api_error` (myrtaceae.json[3])
-- **Myrtus communis** — `api_error` (myrtaceae.json[4])
-- **Acca sellowiana** — `api_error` (myrtaceae.json[5])
-- **Melaleuca alternifolia** — `api_error` (myrtaceae.json[6])
-- **Callistemon citrinus** — `api_error` (myrtaceae.json[7])
-- **Eucalyptus gunnii** — `api_error` (myrtaceae.json[8])
-- **Eugenia uniflora** — `api_error` (myrtaceae.json[9])
-- **Plinia cauliflora** — `api_error` (myrtaceae.json[10])
-- **Leptospermum scoparium** — `api_error` (myrtaceae.json[11])
-- **Pimenta dioica** — `api_error` (myrtaceae.json[12])
-- **Corymbia citriodora** — `api_error` (myrtaceae.json[13])
-- **Syzygium cumini** — `api_error` (myrtaceae.json[14])
-- **Callistemon viminalis** — `api_error` (myrtaceae.json[15])
-- **Luma apiculata** — `api_error` (myrtaceae.json[16])
-- **Eucalyptus deglupta** — `api_error` (myrtaceae.json[17])
-- **Backhousia citriodora** — `api_error` (myrtaceae.json[18])
-- **Syzygium paniculatum** — `api_error` (myrtaceae.json[19])
-- **Pimenta racemosa** — `api_error` (myrtaceae.json[20])
-- **Nelumbo nucifera** — `api_error` (nelumbonaceae.json[1])
-- **Nelumbo lutea** — `api_error` (nelumbonaceae.json[2])
-- **Nelumbo nucifera 'Komaki'** — `api_error` (nelumbonaceae.json[3])
-- **Nelumbo nucifera 'Mrs. Perry D. Slocum'** — `api_error` (nelumbonaceae.json[4])
-- **Nelumbo nucifera 'Momo Botan'** — `api_error` (nelumbonaceae.json[5])
-- **Nelumbo nucifera 'Alba Grandiflora'** — `api_error` (nelumbonaceae.json[6])
-- **Nelumbo nucifera 'Rosea Plena'** — `api_error` (nelumbonaceae.json[7])
-- **Nelumbo nucifera 'Speciosum'** — `api_error` (nelumbonaceae.json[8])
-- **Nelumbo nucifera 'Shirokunshi'** — `api_error` (nelumbonaceae.json[9])
-- **Nelumbo nucifera 'Peaches and Cream'** — `api_error` (nelumbonaceae.json[10])
-- **Nelumbo lutea 'Flavescens'** — `api_error` (nelumbonaceae.json[11])
-- **Nelumbo 'Green Maiden'** — `api_error` (nelumbonaceae.json[12])
-- **Nelumbo nucifera 'Chawan Basu'** — `api_error` (nelumbonaceae.json[13])
-- **Nelumbo nucifera 'Red Kapok'** — `api_error` (nelumbonaceae.json[14])
-- **Nelumbo nucifera 'Tianjin Pink'** — `api_error` (nelumbonaceae.json[15])
-- **Nelumbo nucifera 'Empress'** — `api_error` (nelumbonaceae.json[16])
-- **Nelumbo nucifera 'Baby Doll'** — `api_error` (nelumbonaceae.json[17])
-- **Nelumbo nucifera 'Kinshen'** — `api_error` (nelumbonaceae.json[18])
-- **Nelumbo nucifera 'Charles Thomas'** — `api_error` (nelumbonaceae.json[19])
-- **Nelumbo nucifera 'Gansu Red'** — `api_error` (nelumbonaceae.json[20])
-- **Nepenthes spp.** — `api_error` (nepenthaceae.json[1])
-- **Nepenthes alata** — `api_error` (nepenthaceae.json[2])
-- **Bougainvillea glabra** — `api_error` (nyctaginaceae.json[1])
-- **Bougainvillea spectabilis** — `api_error` (nyctaginaceae.json[2])
-- **Mirabilis jalapa** — `api_error` (nyctaginaceae.json[3])
-- **Mirabilis expansa** — `api_error` (nyctaginaceae.json[4])
-- **Pisonia alba** — `api_error` (nyctaginaceae.json[5])
-- **Boerhavia diffusa** — `api_error` (nyctaginaceae.json[6])
-- **Bougainvillea peruviana** — `api_error` (nyctaginaceae.json[7])
-- **Bougainvillea x buttiana** — `api_error` (nyctaginaceae.json[8])
-- **Mirabilis multiflora** — `api_error` (nyctaginaceae.json[9])
-- **Mirabilis longiflora** — `api_error` (nyctaginaceae.json[10])
-- **Mirabilis nyctaginea** — `api_error` (nyctaginaceae.json[11])
-- **Pisonia grandis** — `api_error` (nyctaginaceae.json[12])
-- **Pisonia umbellifera** — `api_error` (nyctaginaceae.json[13])
-- **Pisonia aculeata** — `api_error` (nyctaginaceae.json[14])
-- **Boerhavia coccinea** — `api_error` (nyctaginaceae.json[15])
-- **Boerhavia erecta** — `api_error` (nyctaginaceae.json[16])
-- **Abronia latifolia** — `api_error` (nyctaginaceae.json[17])
-- **Abronia umbellata** — `api_error` (nyctaginaceae.json[18])
-- **Abronia fragrans** — `api_error` (nyctaginaceae.json[19])
-- **Abronia villosa** — `api_error` (nyctaginaceae.json[20])
-- **Allionia incarnata** — `api_error` (nyctaginaceae.json[21])
-- **Guapira opposita** — `api_error` (nyctaginaceae.json[22])
-- **Olea europaea** — `api_error` (oleaceae.json[1])
-- **Jasminum officinale** — `api_error` (oleaceae.json[2])
-- **Syringa vulgaris** — `api_error` (oleaceae.json[3])
-- **Fraxinus excelsior** — `api_error` (oleaceae.json[4])
-- **Forsythia × intermedia** — `api_error` (oleaceae.json[5])
-- **Ligustrum vulgare** — `api_error` (oleaceae.json[6])
-- **Osmanthus fragrans** — `api_error` (oleaceae.json[7])
-- **Jasminum sambac** — `api_error` (oleaceae.json[9])
-- **Jasminum polyanthum** — `api_error` (oleaceae.json[11])
-- **Osmanthus heterophyllus** — `api_error` (oleaceae.json[12])
-- **Syringa persica** — `api_error` (oleaceae.json[13])
-- **Fraxinus angustifolia** — `api_error` (oleaceae.json[14])
-- **Ligustrum japonicum** — `api_error` (oleaceae.json[15])
-- **Abeliophyllum distichum** — `api_error` (oleaceae.json[17])
-- **Phillyrea angustifolia** — `api_error` (oleaceae.json[18])
-- **Phillyrea latifolia** — `api_error` (oleaceae.json[19])
-- **Fontanesia phillyreoides** — `api_error` (oleaceae.json[20])
-- **Oenothera biennis** — `api_error` (onagraceae.json[1])
-- **Epilobium angustifolium** — `api_error` (onagraceae.json[3])
-- **Oenothera speciosa** — `api_error` (onagraceae.json[4])
-- **Fuchsia magellanica** — `api_error` (onagraceae.json[5])
-- **Ludwigia repens** — `api_error` (onagraceae.json[6])
-- **Oenothera fruticosa** — `api_error` (onagraceae.json[7])
-- **Epilobium hirsutum** — `api_error` (onagraceae.json[8])
-- **Oenothera macrocarpa** — `api_error` (onagraceae.json[9])
-- **Gaura lindheimeri** — `api_error` (onagraceae.json[10])
-- **Epilobium montanum** — `api_error` (onagraceae.json[11])
-- **Ludwigia palustris** — `api_error` (onagraceae.json[12])
-- **Oenothera glazioviana** — `api_error` (onagraceae.json[13])
-- **Fuchsia 'Genii'** — `api_error` (onagraceae.json[14])
-- **Epilobium parviflorum** — `api_error` (onagraceae.json[15])
-- **Oenothera missouriensis** — `api_error` (onagraceae.json[16])
-- **Fuchsia 'Thalia'** — `api_error` (onagraceae.json[17])
+- **Linum gallicum** — `approximate` (linaceae.json[15])
+- **Linum corsicum** — `approximate` (linaceae.json[17])
+- **Linum olchense** — `approximate` (linaceae.json[21])
+- **Lagerstroemia indica x fauriei 'Natchez'** — `approximate` (lythraceae.json[16])
+- **Abutilon x hybridum** — `matched_review` (malvaceae.json[2])
+- **Proboscidea alata** — `approximate` (martyniaceae.json[17])
+- **Craniolaria dentata** — `approximate` (martyniaceae.json[18])
+- **Ibicella atro-purpurea** — `approximate` (martyniaceae.json[19])
+- **Myrica pensylvanica** — `approximate` (myricaceae.json[3])
+- **Nelumbo 'Green Maiden'** — `approximate` (nelumbonaceae.json[12])
+- **Pisonia grandis** — `approximate` (nyctaginaceae.json[12])
+- **Epilobium angustifolium** — `approximate` (onagraceae.json[3])
+- **Fuchsia 'Genii'** — `approximate` (onagraceae.json[14])
+- **Fuchsia 'Thalia'** — `approximate` (onagraceae.json[17])
 - **Epilobium epilobium (Epilobium palustre)** — `approximate` (onagraceae.json[18])
-- **Oenothera pallida** — `api_error` (onagraceae.json[19])
-- **Fuchsia boliviana** — `api_error` (onagraceae.json[20])
-- **Circaea lutetiana** — `api_error` (onagraceae.json[21])
-- **Oenothera villosa** — `api_error` (onagraceae.json[22])
-- **Phalaenopsis hybrids** — `api_error` (orchidaceae.json[1])
-- **Dendrobium nobile** — `api_error` (orchidaceae.json[2])
+- **Phalaenopsis hybrids** — `approximate` (orchidaceae.json[1])
 - **Cymbidium hybrids** — `approximate` (orchidaceae.json[3])
 - **Oncidium flexuosum** — `approximate` (orchidaceae.json[4])
-- **Oxalis triangularis** — `api_error` (oxalidaceae_balsaminaceae.json[1])
-- **Oxalis tetraphylla** — `api_error` (oxalidaceae_balsaminaceae.json[2])
-- **Impatiens walleriana** — `api_error` (oxalidaceae_balsaminaceae.json[3])
-- **Pandanus amaryllifolius** — `api_error` (pandanaceae.json[1])
-- **Pandanus tectorius** — `api_error` (pandanaceae.json[2])
-- **Pandanus utile** — `api_error` (pandanaceae.json[3])
-- **Freycinetia banksii** — `api_error` (pandanaceae.json[5])
-- **Pandanus veitchii** — `api_error` (pandanaceae.json[6])
-- **Pandanus sanderi** — `api_error` (pandanaceae.json[7])
-- **Freycinetia multiflora** — `api_error` (pandanaceae.json[8])
-- **Pandanus edulis** — `api_error` (pandanaceae.json[9])
-- **Pandanus baptistii** — `api_error` (pandanaceae.json[11])
-- **Freycinetia insignis** — `api_error` (pandanaceae.json[13])
-- **Pandanus conoideus** — `api_error` (pandanaceae.json[14])
-- **Pandanus spathulatus** — `api_error` (pandanaceae.json[15])
-- **Pandanus pygmaeus** — `api_error` (pandanaceae.json[16])
-- **Freycinetia arborea** — `api_error` (pandanaceae.json[18])
-- **Pandanus boninensis** — `api_error` (pandanaceae.json[19])
-- **Pandanus montanus** — `api_error` (pandanaceae.json[20])
-- **Papaver somniferum** — `api_error` (papaveraceae.json[1])
-- **Eschscholzia californica** — `api_error` (papaveraceae.json[3])
-- **Chelidonium majus** — `api_error` (papaveraceae.json[5])
-- **Dicentra spectabilis (Lamprocapnos spectabilis)** — `api_error` (papaveraceae.json[6])
-- **Sanguinaria canadensis** — `api_error` (papaveraceae.json[8])
-- **Meconopsis betonicifolia** — `api_error` (papaveraceae.json[10])
-- **Corydalis lutea** — `api_error` (papaveraceae.json[11])
-- **Stylophorum diphyllum** — `api_error` (papaveraceae.json[13])
-- **Hunnemannia fumariifolia** — `api_error` (papaveraceae.json[14])
-- **Papaver nudicaule** — `api_error` (papaveraceae.json[16])
-- **Adlumia fungosa** — `api_error` (papaveraceae.json[17])
-- **Dicentra eximia** — `api_error` (papaveraceae.json[18])
-- **Passiflora caerulea** — `api_error` (passifloraceae.json[1])
-- **Passiflora incarnata** — `api_error` (passifloraceae.json[2])
-- **Passiflora edulis** — `api_error` (passifloraceae.json[3])
-- **Passiflora vitifolia** — `api_error` (passifloraceae.json[5])
-- **Ceratotheca sesamoides** — `api_error` (pedaliaceae.json[3])
-- **Harpagophytum procumbens** — `api_error` (pedaliaceae.json[4])
-- **Harpagophytum zeyheri** — `api_error` (pedaliaceae.json[5])
-- **Ceratotheca triloba** — `api_error` (pedaliaceae.json[6])
-- **Uncarina grandidieri** — `api_error` (pedaliaceae.json[7])
-- **Uncarina roeoesliana** — `api_error` (pedaliaceae.json[8])
-- **Uncarina decaryi** — `api_error` (pedaliaceae.json[9])
-- **Uncarina peltata** — `api_error` (pedaliaceae.json[10])
-- **Uncarina stellulifera** — `api_error` (pedaliaceae.json[11])
-- **Pterodiscus speciosus** — `api_error` (pedaliaceae.json[12])
-- **Pterodiscus ngamicus** — `api_error` (pedaliaceae.json[13])
-- **Pterodiscus luridus** — `api_error` (pedaliaceae.json[14])
-- **Sesamothamnus lugardii** — `api_error` (pedaliaceae.json[15])
-- **Sesamothamnus guerichii** — `api_error` (pedaliaceae.json[16])
-- **Pedalium murex** — `api_error` (pedaliaceae.json[17])
-- **Dicerocaryum eriocarpum** — `api_error` (pedaliaceae.json[18])
-- **Sesamum alatum** — `api_error` (pedaliaceae.json[19])
-- **Rogeria adenophylla** — `api_error` (pedaliaceae.json[20])
-- **Josephinia imperatricis** — `api_error` (pedaliaceae.json[21])
-- **Holubia tetracarpa** — `api_error` (pedaliaceae.json[22])
-- **Pinus sylvestris** — `api_error` (pinaceae.json[1])
-- **Pinus mugo** — `api_error` (pinaceae.json[2])
-- **Pinus pinea** — `api_error` (pinaceae.json[3])
-- **Pinus thunbergii** — `api_error` (pinaceae.json[4])
-- **Pinus nigra** — `api_error` (pinaceae.json[5])
-- **Picea abies** — `api_error` (pinaceae.json[6])
-- **Picea pungens** — `api_error` (pinaceae.json[7])
-- **Picea glauca** — `api_error` (pinaceae.json[8])
-- **Abies nordmanniana** — `api_error` (pinaceae.json[9])
-- **Abies koreana** — `api_error` (pinaceae.json[10])
-- **Abies alba** — `api_error` (pinaceae.json[11])
-- **Cedrus atlantica** — `api_error` (pinaceae.json[12])
-- **Cedrus deodara** — `api_error` (pinaceae.json[13])
-- **Cedrus libani** — `api_error` (pinaceae.json[14])
-- **Larix decidua** — `api_error` (pinaceae.json[15])
-- **Peperomia caperata** — `api_error` (piperaceae.json[1])
-- **Peperomia obtusifolia** — `api_error` (piperaceae.json[2])
-- **Peperomia argyreia** — `api_error` (piperaceae.json[3])
-- **Peperomia prostrata** — `api_error` (piperaceae.json[4])
-- **Plantago lanceolata** — `api_error` (plantaginaceae.json[1])
-- **Plantago major** — `api_error` (plantaginaceae.json[2])
-- **Plantago coronopus** — `api_error` (plantaginaceae.json[3])
-- **Antirrhinum majus** — `api_error` (plantaginaceae.json[4])
-- **Veronica spicata** — `api_error` (plantaginaceae.json[5])
-- **Digitalis purpurea** — `api_error` (plantaginaceae.json[6])
-- **Veronica persica** — `api_error` (plantaginaceae.json[7])
-- **Veronica beccabunga** — `api_error` (plantaginaceae.json[8])
-- **Linaria vulgaris** — `api_error` (plantaginaceae.json[9])
-- **Veronica officinalis** — `api_error` (plantaginaceae.json[10])
-- **Globularia cordifolia** — `api_error` (plantaginaceae.json[11])
-- **Hebe speciosa** — `api_error` (plantaginaceae.json[12])
-- **Plantago psyllium** — `api_error` (plantaginaceae.json[13])
-- **Cymbalaria muralis** — `api_error` (plantaginaceae.json[14])
-- **Veronica gentianoides** — `api_error` (plantaginaceae.json[15])
-- **Penstemon digitalis** — `api_error` (plantaginaceae.json[16])
-- **Veronica spicata 'Roszkilde'** — `api_error` (plantaginaceae.json[17])
-- **Hebe 'Addington'** — `api_error` (plantaginaceae.json[18])
-- **Digitalis grandiflora** — `api_error` (plantaginaceae.json[19])
-- **Plantago coronopus 'Minima'** — `api_error` (plantaginaceae.json[20])
-- **Linaria purpurea** — `api_error` (plantaginaceae.json[21])
-- **Plumbago auriculata** — `api_error` (plumbaginaceae.json[1])
-- **Armeria maritima** — `api_error` (plumbaginaceae.json[2])
-- **Ceratostigma plumbaginoides** — `api_error` (plumbaginaceae.json[3])
-- **Limonium sinuatum** — `api_error` (plumbaginaceae.json[4])
-- **Plumbago indica** — `api_error` (plumbaginaceae.json[5])
-- **Ceratostigma willmottianum** — `api_error` (plumbaginaceae.json[6])
+- **Pandanus utile** — `approximate` (pandanaceae.json[3])
+- **Holubia tetracarpa** — `approximate` (pedaliaceae.json[22])
 - **Limonium latifolium** — `approximate` (plumbaginaceae.json[7])
-- **Armeria pseudarmeria** — `api_error` (plumbaginaceae.json[8])
-- **Plumbago zeylanica** — `api_error` (plumbaginaceae.json[9])
-- **Limonium vulgare** — `api_error` (plumbaginaceae.json[10])
-- **Limonium perezii** — `api_error` (plumbaginaceae.json[11])
-- **Plumbago europaea** — `api_error` (plumbaginaceae.json[12])
-- **Goniolimon tataricum** — `api_error` (plumbaginaceae.json[14])
-- **Acantholimon olivieri** — `api_error` (plumbaginaceae.json[15])
-- **Armeria alpina** — `api_error` (plumbaginaceae.json[16])
-- **Limonium gmelinii** — `api_error` (plumbaginaceae.json[17])
-- **Limonium bellidifolium** — `api_error` (plumbaginaceae.json[18])
-- **Armeria girardii** — `api_error` (plumbaginaceae.json[21])
-- **Limonium carolinianum** — `api_error` (plumbaginaceae.json[22])
-- **Zea mays** — `api_error` (poaceae.json[1])
-- **Oryza sativa** — `api_error` (poaceae.json[2])
-- **Hordeum vulgare** — `api_error` (poaceae.json[4])
-- **Avena sativa** — `api_error` (poaceae.json[5])
-- **Secale cereale** — `api_error` (poaceae.json[6])
-- **Panicum miliaceum** — `api_error` (poaceae.json[8])
-- **Eleusine coracana** — `api_error` (poaceae.json[10])
-- **Echinochloa esculenta** — `api_error` (poaceae.json[11])
-- **Phyllostachys edulis** — `api_error` (poaceae.json[12])
-- **Fargesia murielae** — `api_error` (poaceae.json[13])
-- **Cymbopogon citratus** — `api_error` (poaceae.json[14])
-- **Saccharum officinarum** — `api_error` (poaceae.json[15])
-- **Dactylis glomerata** — `api_error` (poaceae.json[19])
-- **Lolium perenne** — `api_error` (poaceae.json[20])
-- **Bromus inermis** — `api_error` (poaceae.json[21])
-- **Eragrostis tef** — `api_error` (poaceae.json[22])
-- **Phlox paniculata** — `api_error` (polemoniaceae.json[1])
-- **Phlox subulata** — `api_error` (polemoniaceae.json[2])
-- **Polemonium caeruleum** — `api_error` (polemoniaceae.json[3])
-- **Cobaea scandens** — `api_error` (polemoniaceae.json[4])
-- **Phlox drummondii** — `api_error` (polemoniaceae.json[5])
-- **Phlox divaricata** — `api_error` (polemoniaceae.json[6])
-- **Phlox stolonifera** — `api_error` (polemoniaceae.json[7])
-- **Polemonium reptans** — `api_error` (polemoniaceae.json[8])
-- **Ipomopsis aggregata** — `api_error` (polemoniaceae.json[9])
-- **Gilia capitata** — `api_error` (polemoniaceae.json[10])
-- **Leptosiphon bicolor** — `api_error` (polemoniaceae.json[11])
-- **Phlox maculata** — `api_error` (polemoniaceae.json[12])
-- **Phlox pilosa** — `api_error` (polemoniaceae.json[13])
-- **Phlox ovata** — `api_error` (polemoniaceae.json[14])
-- **Collomia grandiflora** — `api_error` (polemoniaceae.json[15])
-- **Linanthus pungens** — `api_error` (polemoniaceae.json[16])
+- **Limonium gmelinii** — `approximate` (plumbaginaceae.json[17])
 - **Loeseliastrum pungens** — `approximate` (polemoniaceae.json[21])
 - **Dayia multicaulis** — `approximate` (polemoniaceae.json[22])
 - **Reseda phyteuma subsp. granatensis** — `approximate` (resedaceae.json[8])
@@ -1129,14 +580,97 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Sarracenia 'Judith Hindle'** — `approximate` (sarraceniaceae.json[25])
 - **Sarracenia 'Farnhamii'** — `approximate` (sarraceniaceae.json[26])
 - **Illicium litorale** — `approximate` (schisandraceae.json[19])
-- **Strelitzia x guernseyensis** — `approximate` (strelitziaceae.json[8])
-- **Strelitzia reginae 'Mandela's Gold'** — `approximate` (strelitziaceae.json[9])
-- **Phenakospermum venezuelicum** — `approximate` (strelitziaceae.json[15])
-- **Ravenala madagascariensis var. bemavo** — `approximate` (strelitziaceae.json[17])
-- **Ravenala madagascariensis var. chilandra** — `approximate` (strelitziaceae.json[18])
-- **Ravenala madagascariensis var. guenzleriana** — `approximate` (strelitziaceae.json[19])
-- **Strelitzia 'Janice'** — `approximate` (strelitziaceae.json[20])
-- **Tropaeolum 'Hermine Grashoff'** — `approximate` (tropaeolaceae.json[18])
+- **Atropa belladonna** — `api_error` (solanaceae.json[6])
+- **Solanum muricatum** — `api_error` (solanaceae.json[7])
+- **Cestrum nocturnum** — `api_error` (solanaceae.json[8])
+- **Strelitzia reginae** — `api_error` (strelitziaceae.json[1])
+- **Strelitzia nicolai** — `api_error` (strelitziaceae.json[2])
+- **Strelitzia alba** — `api_error` (strelitziaceae.json[3])
+- **Strelitzia caudata** — `api_error` (strelitziaceae.json[4])
+- **Strelitzia juncea** — `api_error` (strelitziaceae.json[5])
+- **Ravenala madagascariensis** — `api_error` (strelitziaceae.json[6])
+- **Phenakospermum guyannense** — `api_error` (strelitziaceae.json[7])
+- **Strelitzia x guernseyensis** — `api_error` (strelitziaceae.json[8])
+- **Strelitzia reginae 'Mandela's Gold'** — `api_error` (strelitziaceae.json[9])
+- **Strelitzia reginae 'Humilis'** — `api_error` (strelitziaceae.json[10])
+- **Strelitzia reginae 'Kirstenbosch Gold'** — `api_error` (strelitziaceae.json[11])
+- **Ravenala guineensis** — `api_error` (strelitziaceae.json[12])
+- **Strelitzia parvifolia** — `api_error` (strelitziaceae.json[13])
+- **Strelitzia augusta** — `api_error` (strelitziaceae.json[14])
+- **Phenakospermum venezuelicum** — `api_error` (strelitziaceae.json[15])
+- **Strelitzia x parvifolia 'Glauca'** — `api_error` (strelitziaceae.json[16])
+- **Ravenala madagascariensis var. bemavo** — `api_error` (strelitziaceae.json[17])
+- **Ravenala madagascariensis var. chilandra** — `api_error` (strelitziaceae.json[18])
+- **Ravenala madagascariensis var. guenzleriana** — `api_error` (strelitziaceae.json[19])
+- **Strelitzia 'Janice'** — `api_error` (strelitziaceae.json[20])
+- **Tilia cordata** — `api_error` (tiliaceae.json[1])
+- **Tilia platyphyllos** — `api_error` (tiliaceae.json[2])
+- **Tilia x europaea** — `api_error` (tiliaceae.json[3])
+- **Tilia americana** — `api_error` (tiliaceae.json[4])
+- **Tilia tomentosa** — `api_error` (tiliaceae.json[5])
+- **Tilia mongolica** — `api_error` (tiliaceae.json[6])
+- **Tilia euchlora** — `api_error` (tiliaceae.json[7])
+- **Tilia henryana** — `api_error` (tiliaceae.json[8])
+- **Tilia amurensis** — `api_error` (tiliaceae.json[9])
+- **Tilia miqueliana** — `api_error` (tiliaceae.json[10])
+- **Tilia insularis** — `api_error` (tiliaceae.json[11])
+- **Tilia kiusiana** — `api_error` (tiliaceae.json[12])
+- **Tilia oliveri** — `api_error` (tiliaceae.json[13])
+- **Tilia japonica** — `api_error` (tiliaceae.json[14])
+- **Tilia tuan** — `api_error` (tiliaceae.json[15])
+- **Tilia maximowicziana** — `api_error` (tiliaceae.json[16])
+- **Tilia begoniifolia** — `api_error` (tiliaceae.json[17])
+- **Tilia tomentosa 'Petiolaris'** — `api_error` (tiliaceae.json[18])
+- **Tilia mandschurica** — `api_error` (tiliaceae.json[19])
+- **Tilia x moltkei** — `api_error` (tiliaceae.json[20])
+- **Tropaeolum majus** — `api_error` (tropaeolaceae.json[1])
+- **Tropaeolum tuberosum** — `api_error` (tropaeolaceae.json[2])
+- **Tropaeolum peregrinum** — `api_error` (tropaeolaceae.json[3])
+- **Tropaeolum speciosum** — `api_error` (tropaeolaceae.json[4])
+- **Tropaeolum tricolor** — `api_error` (tropaeolaceae.json[5])
+- **Tropaeolum minus** — `api_error` (tropaeolaceae.json[6])
+- **Tropaeolum azureum** — `api_error` (tropaeolaceae.json[7])
+- **Tropaeolum polyphyllum** — `api_error` (tropaeolaceae.json[8])
+- **Tropaeolum pentaphyllum** — `api_error` (tropaeolaceae.json[9])
+- **Tropaeolum hookerianum** — `api_error` (tropaeolaceae.json[10])
+- **Tropaeolum incisum** — `api_error` (tropaeolaceae.json[11])
+- **Tropaeolum brachyceras** — `api_error` (tropaeolaceae.json[12])
+- **Tropaeolum ciliatum** — `api_error` (tropaeolaceae.json[13])
+- **Tropaeolum sessilifolium** — `api_error` (tropaeolaceae.json[14])
+- **Tropaeolum argentinum** — `api_error` (tropaeolaceae.json[15])
+- **Tropaeolum tuberosum 'Ken Aslet'** — `api_error` (tropaeolaceae.json[16])
+- **Tropaeolum majus 'Empress of India'** — `api_error` (tropaeolaceae.json[17])
+- **Tropaeolum 'Hermine Grashoff'** — `api_error` (tropaeolaceae.json[18])
+- **Tropaeolum majus 'Alaska'** — `api_error` (tropaeolaceae.json[19])
+- **Tropaeolum tuberosum 'Puissegure'** — `api_error` (tropaeolaceae.json[20])
+- **Pilea peperomioides** — `api_error` (urticaceae_cannabaceae.json[1])
+- **Soleirolia soleirolii** — `api_error` (urticaceae_cannabaceae.json[3])
+- **Pilea microphylla** — `api_error` (urticaceae_cannabaceae.json[4])
+- **Clerodendrum thomsoniae** — `api_error` (verbenaceae.json[1])
+- **Holmskioldia sanguinea** — `api_error` (verbenaceae.json[3])
+- **Petrea volubilis** — `api_error` (verbenaceae.json[4])
+- **Duranta erecta** — `api_error` (verbenaceae.json[5])
+- **Lantana camara** — `api_error` (verbenaceae.json[6])
+- **Aloysia citrodora** — `api_error` (verbenaceae.json[7])
+- **Vitex agnus-castus** — `api_error` (verbenaceae.json[8])
+- **Viola × wittrockiana** — `api_error` (violaceae.json[1])
+- **Viola cornuta** — `api_error` (violaceae.json[2])
+- **Viola odorata** — `api_error` (violaceae.json[3])
+- **Viola sororia** — `api_error` (violaceae.json[5])
+- **Viola banksii** — `api_error` (violaceae.json[6])
+- **Viola hederacea** — `api_error` (violaceae.json[7])
+- **Viola arvensis** — `api_error` (violaceae.json[8])
+- **Viola pedata** — `api_error` (violaceae.json[9])
+- **Viola pubescens** — `api_error` (violaceae.json[10])
+- **Viola riviniana** — `api_error` (violaceae.json[11])
+- **Viola reichenbachiana** — `api_error` (violaceae.json[12])
+- **Viola alba** — `api_error` (violaceae.json[13])
+- **Cissus alata** — `api_error` (vitaceae.json[1])
+- **Cissus antarctica** — `api_error` (vitaceae.json[2])
+- **Tetrastigma voinierianum** — `api_error` (vitaceae.json[4])
+- **Costus woodsonii** — `api_error` (zingiberaceae_costaceae.json[2])
+- **Elettaria cardamomum** — `api_error` (zingiberaceae_costaceae.json[3])
+- **Hedychium coronarium** — `api_error` (zingiberaceae_costaceae.json[4])
 
 ## Fiches incomplètes
 
@@ -1146,6 +680,12 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 
 ## Photos restant à trouver
 
+- **Allium ursinum**
+- **Allium ampeloprasum var. porrum / ampeloprasum**
+- **Narcissus pseudonarcissus**
+- **Narcissus tazetta**
+- **Galanthus nivalis**
+- **Leucojum aestivum**
 - **Hippeastrum spp.**
 - **Clivia miniata**
 - **Agapanthus praecox**
@@ -1168,6 +708,7 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Schinus terebinthifolia**
 - **Toxicodendron radicans**
 - **Toxicodendron vernicifluum**
+- **Rhus typhina**
 - **Cotinus coggygria**
 - **Hannez trijugum**
 - **Harpephyllum caffrum**
@@ -1194,6 +735,7 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Annona scleroderma**
 - **Asimina parviflora**
 - **Rollinia mucosa**
+- **Daucus carota**
 - **Petroselinum crispum**
 - **Foeniculum vulgare**
 - **Coriandrum sativum**
@@ -1201,6 +743,7 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Pastinaca sativa**
 - **Anthriscus cerefolium**
 - **Pimpinella anisum**
+- **Eryngium maritimum**
 - **Conium maculatum**
 - **Anethum graveolens**
 - **Cuminum cyminum**
@@ -1215,11 +758,13 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Eryngium planum**
 - **Crithmum maritimum**
 - **Bunium bulbocastanum**
+- **Aegopodium podagraria**
 - **Ferula communis**
 - **Hoya carnosa**
 - **Mandevilla sanderi**
 - **Pachypodium lamerei**
 - **Adenium obesum**
+- **Ilex aquifolium**
 - **Ilex paraguariensis**
 - **Ilex crenata**
 - **Ilex vomitoria**
@@ -1234,8 +779,12 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Ilex rotunda**
 - **Ilex pedunculosa**
 - **Ilex vomitoria 'Nana'**
+- **Ilex aquifolium 'Argentea Marginata'**
+- **Ilex aquifolium 'Bacciflera Aurea'**
 - **Ilex crenata 'Convexa'**
+- **Ilex aquifolium 'J.C. van Tol'**
 - **Ilex × meserveae**
+- **Ilex aquifolium 'Golden Milkmaid'**
 - **Monstera deliciosa**
 - **Epipremnum aureum**
 - **Spathiphyllum wallisii**
@@ -1246,12 +795,15 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Syngonium podophyllum**
 - **Dieffenbachia seguine**
 - **Arum creticum**
+- **Arum italicum**
+- **Arum maculatum**
 - **Alocasia macrorrhizos**
 - **Colocasia esculenta**
 - **Scindapsus pictus**
 - **Schefflera arboricola**
 - **Fatsia japonica**
 - **Polyscias fruticosa**
+- **Hedera helix**
 - **Chamaedorea elegans**
 - **Dypsis lutescens**
 - **Howea forsteriana**
@@ -1340,7 +892,9 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Balanophora elongata**
 - **Impatiens walleriana**
 - **Impatiens hawkeri**
+- **Impatiens glandulifera**
 - **Impatiens balsamina**
+- **Impatiens capensis**
 - **Impatiens pallida**
 - **Impatiens balfourii**
 - **Impatiens niamniamensis**
@@ -1382,6 +936,7 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Begonia masoniana**
 - **Begonia x hiemalis**
 - **Berberis thunbergii**
+- **Berberis vulgaris**
 - **Mahonia aquifolium**
 - **Berberis darwinii**
 - **Epimedium grandiflorum**
@@ -1401,9 +956,13 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Bongardia chrysogonum**
 - **Leontice leontopetalum**
 - **Gymnospermium darwinii**
+- **Betula pendula**
+- **Corylus avellana**
+- **Carpinus betulus**
 - **Alnus glutinosa**
 - **Betula utilissima var. jacquemontii**
 - **Corylus maxima**
+- **Betula pubescens**
 - **Betula nigra**
 - **Corylus colurna**
 - **Alnus incana**
@@ -1427,7 +986,12 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Crescentia cujete**
 - **Catalpa speciosa**
 - **Eccremocarpus scaber**
+- **Borago officinalis**
+- **Symphytum officinale**
 - **Pulmonaria officinalis**
+- **Myosotis sylvatica**
+- **Echium vulgare**
+- **Cynoglossum officinale**
 - **Brunnera macrophylla**
 - **Anchusa azurea**
 - **Lithodora diffusa**
@@ -1457,8 +1021,13 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Eutrema japonicum**
 - **Brassica nigra**
 - **Lobularia maritima**
+- **Erysimum cheiri**
+- **Lunaria annua**
+- **Iberis sempervirens**
+- **Crambe maritima**
 - **Isatis tinctoria**
 - **Barbarea vulgaris**
+- **Arabidopsis thaliana**
 - **Tillandsia ionantha**
 - **Aechmea fasciata**
 - **Guzmania lingulata**
@@ -1565,8 +1134,10 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Calycanthus floridus 'Athens'**
 - **Campanula carpatica**
 - **Campanula portenschlagiana**
+- **Campanula persicifolia**
 - **Campanula medium**
 - **Campanula glomerata**
+- **Campanula trachelium**
 - **Cannabis sativa**
 - **Humulus lupulus**
 - **Celtis australis**
@@ -1632,12 +1203,15 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Lonicera japonica**
 - **Lonicera caerulea**
 - **Lonicera xylosteum**
+- **Lonicera tatarica**
 - **Lonicera nitida**
 - **Lonicera pileata**
 - **Lonicera alseuosmoides**
 - **Valeriana officinalis**
 - **Valeriana dioica**
 - **Valeriana rubra**
+- **Valerianella locusta**
+- **Knautia arvensis**
 - **Scabiosa columbaria**
 - **Cephalaria gigantea**
 - **Patrinia scabiosifolia**
@@ -1688,13 +1262,19 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Vasconcellea sphaerocarpa 'Gigantea'**
 - **Dianthus caryophyllus**
 - **Gypsophila paniculata**
+- **Silene vulgaris**
 - **Dianthus barbatus**
+- **Dianthus deltoides**
+- **Silene dioica**
 - **Silene latifolia**
 - **Lychnis coronaria**
+- **Saponaria officinalis**
 - **Cerastium tomentosum**
+- **Agrostemma githago**
 - **Dianthus alpinus**
 - **Dianthus gratianopolitanus**
 - **Lychnis chalcedonica**
+- **Silene flos-cuculi**
 - **Dianthus plumarius**
 - **Gypsophila repens**
 - **Silene armeria**
@@ -1703,6 +1283,7 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Saponaria ocymoides**
 - **Euonymus fortunei**
 - **Euonymus japonicus**
+- **Euonymus europaeus**
 - **Euonymus alatus**
 - **Celastrus scandens**
 - **Celastrus orbiculatus**
@@ -1774,6 +1355,7 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Ipomoea quamoclit**
 - **Ipomoea lobata**
 - **Ipomoea purpurea 'Grandiflora'**
+- **Convolvulus arvensis**
 - **Convolvulus mauritanicus**
 - **Convolvulus cneorum**
 - **Calystegia sepium**
@@ -1791,9 +1373,11 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Cornus mas**
 - **Cornus sanguinea**
 - **Cornus alba**
+- **Cornus stolonifera**
 - **Cornus officinalis**
 - **Cornus controversa**
 - **Cornus alternifolia**
+- **Cornus sericea 'Flaviramea'**
 - **Cornus capitata**
 - **Cornus hongkongensis**
 - **Cornus macrophylla**
@@ -1804,10 +1388,12 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Cornus suecica**
 - **Cornus eydeana**
 - **Cornus paucinervis**
+- **Corylus avellana**
 - **Corylus maxima**
 - **Corylus colurna**
 - **Corylus americana**
 - **Corylus cornuta**
+- **Carpinus betulus**
 - **Carpinus orientalis**
 - **Carpinus caroliniana**
 - **Carpinus japonica**
@@ -1887,6 +1473,7 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Eleocharis dulcis**
 - **Carex oshimensis**
 - **Carex comans**
+- **Carex pendula**
 - **Carex morrowii**
 - **Carex elata**
 - **Scirpus cernuus**
@@ -1927,8 +1514,12 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Scabiosa caucasica**
 - **Scabiosa atropurpurea**
 - **Scabiosa columbaria**
+- **Scabiosa ochroleuca**
 - **Cephalaria gigantea**
+- **Knautia arvensis**
 - **Knautia macedonica**
+- **Dipsacus fullonum**
+- **Succisa pratensis**
 - **Pterocephalus pinaceus**
 - **Cephalaria alpina**
 - **Cephalaria transylvanica**
@@ -1936,6 +1527,7 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Scabiosa vestina**
 - **Scabiosa lucida**
 - **Knautia dipsacifolia**
+- **Dipsacus pilosus**
 - **Pterocephalus spathulatus**
 - **Scabiosa silenifolia**
 - **Scabiosa triandra**
@@ -1999,6 +1591,8 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Rhododendron indicum**
 - **Erica carnea**
 - **Erica cinerea**
+- **Calluna vulgaris**
+- **Erica tetralix**
 - **Arbutus unedo**
 - **Gaultheria procumbens**
 - **Pieris japonica**
@@ -2044,12 +1638,18 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Acacia dealbata**
 - **Laburnum anagyroides**
 - **Lupinus polyphyllus**
+- **Trifolium pratense**
+- **Medicago sativa**
 - **Arachis hypogaea**
 - **Ceratonia siliqua**
 - **Spartium junceum**
+- **Fagus sylvatica**
+- **Quercus robur**
 - **Quercus petraea**
+- **Castanea sativa**
 - **Quercus ilex**
 - **Quercus suber**
+- **Quercus rubra**
 - **Quercus palustris**
 - **Quercus coccinea**
 - **Quercus cerris**
@@ -2074,7 +1674,68 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Gentiana purpurea**
 - **Gentiana bavarica**
 - **Gentiana dahurica**
+- **Gentiana paradoxa**
+- **Gentiana utriculosa**
+- **Gentiana nivalis**
 - **Gentiana nipponica**
+- **Gentiana froelichii**
+- **Gentiana luteola**
+- **Gentiana pneumaticus**
+- **Gentiana burseri**
+- **Gentiana amarella**
+- **Gentiana campestris**
+- **Pelargonium graveolens**
+- **Pelargonium peltatum**
+- **Pelargonium grandiflorum**
+- **Pelargonium sidoides**
+- **Geranium macrorrhizum**
+- **Geranium sanguineum**
+- **Pelargonium echinatum**
+- **Erodium cicutarium**
+- **Saintpaulia ionantha**
+- **Aeschynanthus radicans**
+- **Streptocarpus x hybridus**
+- **Sinningia speciosa**
+- **Columnea gloriosa**
+- **Nematanthus wettsteinii**
+- **Episcia cupreata**
+- **Achimenes grandiflora**
+- **Ribes uva-crispa**
+- **Ribes rubrum**
+- **Ribes nigrum**
+- **Ribes sativum**
+- **Ribes sanguineum**
+- **Ribes alpinum**
+- **Ribes odoratum**
+- **Ribes nigrum 'Borealis'**
+- **Ribes divaricatum**
+- **Ribes americanum**
+- **Ribes lacustre**
+- **Ribes triste**
+- **Ribes aureum**
+- **Ribes magellanicum**
+- **Ribes cynanchii**
+- **Ribes laciniatum**
+- **Ribes petraeum**
+- **Ribes dikusha**
+- **Ribes laxiflorum**
+- **Ribes punctatum**
+- **Heliconia rostrata**
+- **Heliconia bihai**
+- **Heliconia psittacorum**
+- **Heliconia stricta**
+- **Heliconia caribaea**
+- **Heliconia Wagneriana**
+- **Heliconia chartacea**
+- **Heliconia latispatha**
+- **Heliconia aurantiaca**
+- **Heliconia metallica**
+- **Heliconia pendula**
+- **Heliconia indica**
+- **Heliconia episcopalis**
+- **Heliconia pogonantha**
+- **Heliconia bourgaeana**
+- **Heliconia collinsiana**
 - **Heliconia champneyna**
 - **Heliconia x rauliniana**
 - **Heliconia densiflora**
@@ -2083,6 +1744,7 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Hydrangea paniculata**
 - **Hydrangea arborescens**
 - **Hydrangea quercifolia**
+- **Hydrangea petiolaris**
 - **Philadelphus coronarius**
 - **Deutzia gracilis**
 - **Hydrangea serrata**
@@ -2199,6 +1861,68 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Stauntonia oligophylla**
 - **Lardizabala funaria**
 - **Akebia quinata 'White Chocolate'**
+- **Persea americana**
+- **Laurus nobilis**
+- **Cinnamomum verum**
+- **Cinnamomum cassia**
+- **Cinnamomum camphora**
+- **Umbellularia californica**
+- **Litsea cubeba**
+- **Sassafras albidum**
+- **Cinnamomum burmannii**
+- **Laurus azorica**
+- **Lindera benzoin**
+- **Cryptocarya alba**
+- **Persea borbonia**
+- **Ocotea foetens**
+- **Beilschmiedia tawa**
+- **Aniba rosaeodora**
+- **Cinnamomum tamala**
+- **Litsea glutinosa**
+- **Cinnamomum loureiroi**
+- **Nectandra megapotamica**
+- **Pinguicula moranensis**
+- **Pinguicula agnata**
+- **Pinguicula grandiflora**
+- **Pinguicula vulgaris**
+- **Utricularia vulgaris**
+- **Utricularia gibba**
+- **Pinguicula guatemalensis**
+- **Pinguicula 'Anna'**
+- **Lilium candidum**
+- **Tulipa gesneriana**
+- **Fritillaria imperialis**
+- **Erythronium dens-canis**
+- **Lilium regale**
+- **Tulipa sylvestris**
+- **Lilium martagon**
+- **Fritillaria meleagris**
+- **Tulipa humilis**
+- **Lilium lancifolium**
+- **Tulipa clusiana**
+- **Lilium longiflorum**
+- **Tulipa turkestanica**
+- **Fritillaria persica**
+- **Tulipa sylvestris subsp. australis**
+- **Lilium pumilum**
+- **Tulipa sprengeri**
+- **Fritillaria davisii**
+- **Lilium hansonii**
+- **Tulipa tarda**
+- **Linum usitatissimum**
+- **Linum perenne**
+- **Linum grandiflorum**
+- **Linum narbonense**
+- **Linum flavum**
+- **Linum campanulatum**
+- **Linum catharticum**
+- **Linum austriacum**
+- **Linum suffruticosum**
+- **Linum bienne**
+- **Linum arboreum**
+- **Linum macrorhizum**
+- **Linum salsoloides**
+- **Linum strictum**
 - **Linum gallicum**
 - **Linum maritimum**
 - **Linum corsicum**
@@ -2333,7 +2057,65 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Ensete ventricosum**
 - **Musa coccinea**
 - **Musa velutina**
+- **Musa ornata**
+- **Musa lasiocarpa**
+- **Musa textilis**
+- **Ensete glaucum**
+- **Ensete superbum**
+- **Musa fehi**
+- **Musa itinerans**
+- **Musa sikkimensis**
+- **Musa troglodytarum**
+- **Musa uranoscopos**
 - **Musa beccarii**
+- **Ensete perrieri**
+- **Musa ingens**
+- **Myrica gale**
+- **Morella cerifera**
+- **Myrica pensylvanica**
+- **Myrica rubra**
+- **Morella faya**
+- **Myrica californica**
+- **Myrica heterophylla**
+- **Myrica asplenifolia**
+- **Myrica javanica**
+- **Myrica esculenta**
+- **Myrica caroliniensis**
+- **Morella caroliniensis**
+- **Morella inodora**
+- **Morella nana**
+- **Morella quercifolia**
+- **Morella salicifolia**
+- **Morella spathulata**
+- **Morella serrata**
+- **Morella holdridgeana**
+- **Morella kraussiana**
+- **Eucalyptus globulus**
+- **Psidium guajava**
+- **Syzygium aromaticum**
+- **Myrtus communis**
+- **Acca sellowiana**
+- **Melaleuca alternifolia**
+- **Callistemon citrinus**
+- **Eucalyptus gunnii**
+- **Eugenia uniflora**
+- **Plinia cauliflora**
+- **Leptospermum scoparium**
+- **Pimenta dioica**
+- **Corymbia citriodora**
+- **Syzygium cumini**
+- **Callistemon viminalis**
+- **Luma apiculata**
+- **Eucalyptus deglupta**
+- **Backhousia citriodora**
+- **Syzygium paniculatum**
+- **Pimenta racemosa**
+- **Nelumbo nucifera**
+- **Nelumbo lutea**
+- **Nelumbo nucifera 'Komaki'**
+- **Nelumbo nucifera 'Mrs. Perry D. Slocum'**
+- **Nelumbo nucifera 'Momo Botan'**
+- **Nelumbo nucifera 'Alba Grandiflora'**
 - **Nelumbo nucifera 'Rosea Plena'**
 - **Nelumbo nucifera 'Speciosum'**
 - **Nelumbo nucifera 'Shirokunshi'**
@@ -2450,6 +2232,7 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Dicentra spectabilis (Lamprocapnos spectabilis)**
 - **Argemone mexicana**
 - **Sanguinaria canadensis**
+- **Glaucium flavum**
 - **Meconopsis betonicifolia**
 - **Corydalis lutea**
 - **Fumaria officinalis**
@@ -2470,6 +2253,65 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Passiflora alata**
 - **Sesamum indicum**
 - **Sesamum radiatum**
+- **Ceratotheca sesamoides**
+- **Harpagophytum procumbens**
+- **Harpagophytum zeyheri**
+- **Ceratotheca triloba**
+- **Uncarina grandidieri**
+- **Uncarina roeoesliana**
+- **Uncarina decaryi**
+- **Uncarina peltata**
+- **Uncarina stellulifera**
+- **Pterodiscus speciosus**
+- **Pterodiscus ngamicus**
+- **Pterodiscus luridus**
+- **Sesamothamnus lugardii**
+- **Sesamothamnus guerichii**
+- **Pedalium murex**
+- **Dicerocaryum eriocarpum**
+- **Sesamum alatum**
+- **Rogeria adenophylla**
+- **Josephinia imperatricis**
+- **Holubia tetracarpa**
+- **Pinus sylvestris**
+- **Pinus mugo**
+- **Pinus pinea**
+- **Pinus thunbergii**
+- **Pinus nigra**
+- **Picea abies**
+- **Picea pungens**
+- **Picea glauca**
+- **Abies nordmanniana**
+- **Abies koreana**
+- **Abies alba**
+- **Cedrus atlantica**
+- **Cedrus deodara**
+- **Cedrus libani**
+- **Larix decidua**
+- **Peperomia caperata**
+- **Peperomia obtusifolia**
+- **Peperomia argyreia**
+- **Peperomia prostrata**
+- **Plantago lanceolata**
+- **Plantago major**
+- **Plantago coronopus**
+- **Antirrhinum majus**
+- **Veronica spicata**
+- **Digitalis purpurea**
+- **Veronica persica**
+- **Veronica beccabunga**
+- **Linaria vulgaris**
+- **Veronica officinalis**
+- **Globularia cordifolia**
+- **Hebe speciosa**
+- **Plantago psyllium**
+- **Cymbalaria muralis**
+- **Veronica gentianoides**
+- **Penstemon digitalis**
+- **Veronica spicata 'Roszkilde'**
+- **Hebe 'Addington'**
+- **Digitalis grandiflora**
+- **Plantago coronopus 'Minima'**
 - **Linaria purpurea**
 - **Plumbago auriculata**
 - **Armeria maritima**
@@ -2539,6 +2381,7 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Dayia multicaulis**
 - **Fagopyrum esculentum**
 - **Rheum rhabarbarum**
+- **Rumex acetosa**
 - **Persicaria maculosa**
 - **Persicaria odorata**
 - **Muehlenbeckia complexa**
@@ -2546,6 +2389,7 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Persicaria amplexicaulis**
 - **Persicaria bistorta**
 - **Rumex scutatus**
+- **Polygonum aviculare**
 - **Fagopyrum tataricum**
 - **Rumex patientia**
 - **Rumex crispus**
@@ -2560,6 +2404,7 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Primula acaulis**
 - **Primula veris**
 - **Cyclamen persicum**
+- **Lysimachia nummularia**
 - **Anagallis arvensis**
 - **Primula elatior**
 - **Primula denticulata**
@@ -2607,13 +2452,16 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Anemone × hybrida**
 - **Nigella damascena**
 - **Caltha palustris**
+- **Eranthis hyemalis**
 - **Aconitum napellus**
 - **Actaea racemosa**
 - **Pulsatilla vulgaris**
 - **Thalictrum aquilegiifolium**
 - **Reseda odorata**
 - **Reseda luteola**
+- **Reseda lutea**
 - **Reseda phyteuma**
+- **Reseda alba**
 - **Reseda glauca**
 - **Reseda undata**
 - **Reseda phyteuma subsp. granatensis**
@@ -2656,6 +2504,7 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Prunus domestica**
 - **Pyrus communis**
 - **Fragaria x ananassa**
+- **Rubus idaeus**
 - **Prunus dulcis**
 - **Cydonia oblonga**
 - **Rubus fruticosus**
@@ -2663,8 +2512,12 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Eriobotrya japonica**
 - **Prunus cerasus**
 - **Crataegus monogyna**
+- **Sorbus aucuparia**
+- **Aronia melanocarpa**
+- **Amelanchier lamarckii**
 - **Pyracantha coccinea**
 - **Spiraea japonica**
+- **Rosa rugosa**
 - **Rosa gallica**
 - **Rosa x damascena**
 - **Rosa chinensis**
@@ -2715,6 +2568,7 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Salix viminalis**
 - **Salix purpurea**
 - **Salix fragilis**
+- **Salix cinerea**
 - **Salix triandra**
 - **Salix repens**
 - **Salix daphnoides**
@@ -2726,16 +2580,19 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Salix hastata 'Wehrhahnii'**
 - **Populus nigra**
 - **Populus alba**
+- **Populus tremula**
 - **Populus x canadensis**
 - **Populus simonii**
 - **Populus deltoides**
 - **Populus balsamifera**
 - **Acer palmatum**
 - **Acer pseudoplatanus**
+- **Acer platanoides**
 - **Aesculus hippocastanum**
 - **Litchi chinensis**
 - **Acer rubrum**
 - **Koelreuteria paniculata**
+- **Acer campestre**
 - **Nephelium lappaceum**
 - **Acer saccharum**
 - **Sapindus saponaria**
@@ -2810,10 +2667,14 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Illicium litorale**
 - **Schisandra chinensis 'Eastern Prince'**
 - **Verbascum thapsus**
+- **Digitalis purpurea**
 - **Antirrhinum majus**
+- **Linaria vulgaris**
 - **Gratiola officinalis**
+- **Scrophularia nodosa**
 - **Verbascum nigrum**
 - **Digitalis grandiflora**
+- **Linaria purpurea**
 - **Verbascum blattaria**
 - **Scrophularia auriculata**
 - **Digitalis x mertonensis**
@@ -2825,6 +2686,8 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Antirrhinum ramosissimum**
 - **Verbascum olympicum**
 - **Linaria triornithophora**
+- **Digitalis purpurea 'Alba'**
+- **Solanum lycopersicum**
 - **Capsicum annuum**
 - **Brugmansia suaveolens**
 - **Petunia x hybrida**
@@ -2869,60 +2732,6 @@ Toutes les entrées JSON du dossier `familles_plantes` ont été parcourues. Le 
 - **Tilia tuan**
 - **Tilia maximowicziana**
 - **Tilia begoniifolia**
-- **Tilia tomentosa 'Petiolaris'**
-- **Tilia mandschurica**
-- **Tilia x moltkei**
-- **Tropaeolum majus**
-- **Tropaeolum tuberosum**
-- **Tropaeolum peregrinum**
-- **Tropaeolum speciosum**
-- **Tropaeolum tricolor**
-- **Tropaeolum minus**
-- **Tropaeolum azureum**
-- **Tropaeolum polyphyllum**
-- **Tropaeolum pentaphyllum**
-- **Tropaeolum hookerianum**
-- **Tropaeolum incisum**
-- **Tropaeolum brachyceras**
-- **Tropaeolum ciliatum**
-- **Tropaeolum sessilifolium**
-- **Tropaeolum argentinum**
-- **Tropaeolum tuberosum 'Ken Aslet'**
-- **Tropaeolum majus 'Empress of India'**
-- **Tropaeolum 'Hermine Grashoff'**
-- **Tropaeolum majus 'Alaska'**
-- **Tropaeolum tuberosum 'Puissegure'**
-- **Pilea peperomioides**
-- **Pilea cadierei**
-- **Soleirolia soleirolii**
-- **Pilea microphylla**
-- **Clerodendrum thomsoniae**
-- **Clerodendrum ugandense**
-- **Holmskioldia sanguinea**
-- **Petrea volubilis**
-- **Duranta erecta**
-- **Lantana camara**
-- **Aloysia citrodora**
-- **Vitex agnus-castus**
-- **Viola × wittrockiana**
-- **Viola cornuta**
-- **Viola tricolor**
-- **Viola banksii**
-- **Viola hederacea**
-- **Viola pedata**
-- **Viola pubescens**
-- **Viola reichenbachiana**
-- **Viola alba**
-- **Viola biflora**
-- **Viola calcarata**
-- **Cissus alata**
-- **Cissus antarctica**
-- **Cissus discolor**
-- **Tetrastigma voinierianum**
-- **Alpinia zerumbet**
-- **Costus woodsonii**
-- **Elettaria cardamomum**
-- **Hedychium coronarium**
 
 ## Sources techniques
 
