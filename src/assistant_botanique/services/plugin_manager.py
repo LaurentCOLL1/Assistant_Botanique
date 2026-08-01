@@ -62,7 +62,6 @@ class PluginManager:
     def discover(self) -> list[PluginDescriptor]:
         descriptors = []
         for manifest_path in sorted(self.root.glob("*/plugin.json")):
-            error = ""
             compatible = False
             try:
                 payload = json.loads(manifest_path.read_text(encoding="utf-8"))
