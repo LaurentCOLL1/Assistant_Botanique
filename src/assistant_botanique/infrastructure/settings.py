@@ -14,7 +14,27 @@ DEFAULT_SETTINGS = {
     "geometry": "1200x800",
     "ui_mode": "advanced",
     "ingredient_stock": {},
-    "notifications": {"enabled": True, "time": "09:00"},
+    "notifications": {
+        "enabled": True,
+        "time": "09:00",
+        "times": ["09:00"],
+        "quiet_start": "22:00",
+        "quiet_end": "07:00",
+        "group_by_location": True,
+        "max_items": 8,
+    },
+    "weather": {
+        "enabled": False,
+        "location_name": "",
+        "latitude": None,
+        "longitude": None,
+        "timezone": "auto",
+    },
+    "companion": {
+        "lan": False,
+        "port": 8765,
+        "token": "",
+    },
     "update_checks": True,
 }
 
@@ -35,23 +55,28 @@ def atomic_write_json(path: Path, payload: Any) -> None:
         raise
 
 
+def _merge(defaults: dict[str, Any], raw: dict[str, Any]) -> dict[str, Any]:
+    result = json.loads(json.dumps(defaults))
+    for key, value in raw.items():
+        if isinstance(value, dict) and isinstance(result.get(key), dict):
+            result[key] = _merge(result[key], value)
+        else:
+            result[key] = value
+    return result
+
+
 class SettingsRepository:
     def __init__(self, path: Path = SETTINGS_FILE):
         self.path = path
 
     def load(self) -> dict[str, Any]:
-        settings = json.loads(json.dumps(DEFAULT_SETTINGS))
         if not self.path.exists():
-            return settings
+            return json.loads(json.dumps(DEFAULT_SETTINGS))
         try:
             raw = json.loads(self.path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError):
-            return settings
-        if isinstance(raw, dict):
-            settings.update(raw)
-            if isinstance(raw.get("notifications"), dict):
-                settings["notifications"].update(raw["notifications"])
-        return settings
+            return json.loads(json.dumps(DEFAULT_SETTINGS))
+        return _merge(DEFAULT_SETTINGS, raw) if isinstance(raw, dict) else json.loads(json.dumps(DEFAULT_SETTINGS))
 
     def save(self, settings: dict[str, Any]) -> None:
         atomic_write_json(self.path, settings)

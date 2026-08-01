@@ -6,6 +6,7 @@ import argparse
 from app_data import DATABASE_BY_ID
 from storage import CollectionRepository
 
+from assistant_botanique.infrastructure.settings import SettingsRepository
 from assistant_botanique.services.notifications import NotificationService
 
 
@@ -15,7 +16,11 @@ def main() -> None:
     parser.add_argument("--install-notifications", metavar="HH:MM", help="Installer la tâche planifiée Windows")
     args = parser.parse_args()
     if args.notify:
-        NotificationService().notify_due(CollectionRepository().database, DATABASE_BY_ID)
+        NotificationService().notify_due(
+            CollectionRepository().database,
+            DATABASE_BY_ID,
+            SettingsRepository().load(),
+        )
         return
     if args.install_notifications:
         NotificationService().install_windows_task(args.install_notifications)

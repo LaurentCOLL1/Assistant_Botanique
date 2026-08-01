@@ -13,6 +13,7 @@ from assistant_botanique.services.notifications import NotificationService
 from assistant_botanique.ui.collection_editor_tab import CollectionEditorTab
 from assistant_botanique.ui.v3_tabs import (
     AdaptiveCareTab,
+    AdvancedEcosystemTab,
     CareCalendarTab,
     CatalogueReviewTab,
     GlobalSearchTab,
@@ -163,6 +164,15 @@ class PlantCareApp:
             self.notebook,
             collection_provider=lambda: self.tab_gestion.mes_plantes,
         )
+        self.tab_ecosystem = AdvancedEcosystemTab(
+            self.notebook,
+            self.database,
+            DATABASE_BY_ID,
+            self.settings,
+            self.settings_repo,
+            on_collection_refresh=self.refresh_legacy_collection,
+            reload_catalogue=self.reload_catalogue_views,
+        )
         self.tab_maintenance = MaintenanceTab(
             self.notebook,
             self.database,
@@ -183,6 +193,7 @@ class PlantCareApp:
             "review": (self.tab_review, "✅ Révision botanique"),
             "substrate": (self.tab_substrat, "🧪 Substrats"),
             "diagnostic": (self.tab_diagnostic, "🩺 Diagnostic guidé"),
+            "ecosystem": (self.tab_ecosystem, "🧰 Atelier avancé"),
             "maintenance": (self.tab_maintenance, "🛠️ Données & système"),
         }
 
@@ -231,6 +242,7 @@ class PlantCareApp:
         self.tab_search.reload_filters()
         self.tab_search.refresh()
         self.tab_calendar.refresh()
+        self.tab_ecosystem.refresh()
         self.tab_maintenance.refresh_stats()
 
     def refresh_legacy_collection(self) -> None:
@@ -256,7 +268,9 @@ class PlantCareApp:
         self.tab_today.profiles_by_id = DATABASE_BY_ID
         self.tab_calendar.update_profiles(DATABASE_BY_ID)
         self.tab_search.reload_catalogue(DATABASE_PLANTES, DATABASE_BY_ID)
+        self.tab_ecosystem.profiles_by_id = DATABASE_BY_ID
         self.tab_adaptive.refresh()
+        self.tab_ecosystem.refresh()
         try:
             self.tab_catalogue.filtrer_catalogue()
         except AttributeError:
@@ -284,6 +298,8 @@ class PlantCareApp:
             self.tab_photos.refresh_plants()
         elif selected is self.tab_diagnostic:
             self.tab_diagnostic.refresh_plants()
+        elif selected is self.tab_ecosystem:
+            self.tab_ecosystem.refresh()
         elif selected is self.tab_maintenance:
             self.tab_maintenance.refresh_stats()
 
@@ -291,7 +307,11 @@ class PlantCareApp:
         if not self.settings.get("notifications", {}).get("enabled", True):
             return
         try:
-            self.notifications.notify_due(self.database, DATABASE_BY_ID)
+            self.notifications.notify_due(
+                self.database,
+                DATABASE_BY_ID,
+                self.settings,
+            )
         except Exception:
             LOGGER.exception("Impossible d'afficher les notifications")
 
