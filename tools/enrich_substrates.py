@@ -2,12 +2,16 @@
 from __future__ import annotations
 
 import json
+import sys
 from collections import Counter
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from substrate_knowledge import enrich_profile, validate_resolved_profile
 
-ROOT = Path(__file__).resolve().parents[1]
 FAMILY_DIR = ROOT / "familles_plantes"
 REPORT_PATH = ROOT / "catalogue_metadata" / "substrate_audit.json"
 
