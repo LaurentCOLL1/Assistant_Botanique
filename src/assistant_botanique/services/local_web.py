@@ -1,4 +1,4 @@
-"""Compagnon web local avec authentification par jeton et écriture limitée."""
+"""Compagnon web local avec authentification, photos et écriture limitée."""
 from __future__ import annotations
 
 import html
@@ -7,12 +7,15 @@ import secrets
 import socket
 import threading
 import urllib.parse
+from email import policy
+from email.parser import BytesParser
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any, Mapping
 
 from assistant_botanique.infrastructure.advanced_repository import AdvancedRepository
 from assistant_botanique.infrastructure.database import Database
+from assistant_botanique.services.photos import MAX_UPLOAD_BYTES, PhotoService
 
 ALLOWED_QUICK_ACTIONS = {
     "substrat_sec",
@@ -41,6 +44,29 @@ def _local_ip() -> str:
             return "127.0.0.1"
 
 
+def _multipart_fields(content_type: str, body: bytes) -> tuple[dict[str, str], dict[str, tuple[str, bytes]]]:
+    if "multipart/form-data" not in content_type.casefold():
+        raise ValueError("Formulaire photo invalide.")
+    message = BytesParser(policy=policy.default).parsebytes(
+        b"Content-Type: " + content_type.encode("ascii", "ignore") + b"\r\nMIME-Version: 1.0\r\n\r\n" + body
+    )
+    fields: dict[str, str] = {}
+    files: dict[str, tuple[str, bytes]] = {}
+    if not message.is_multipart():
+        raise ValueError("Formulaire photo incomplet.")
+    for part in message.iter_parts():
+        name = part.get_param("name", header="content-disposition")
+        if not name:
+            continue
+        payload = part.get_payload(decode=True) or b""
+        filename = part.get_filename()
+        if filename:
+            files[str(name)] = (str(filename), payload)
+        else:
+            fields[str(name)] = payload.decode(part.get_content_charset() or "utf-8", "replace")
+    return fields, files
+
+
 class LocalCompanionServer:
     """Serveur HTTP local. L'accès LAN doit être explicitement activé."""
 
@@ -54,6 +80,7 @@ class LocalCompanionServer:
         self.database = database
         self.profiles_by_id = profiles_by_id
         self.advanced = AdvancedRepository(database)
+        self.photos = PhotoService(database)
         self.token = token or secrets.token_urlsafe(24)
         self.server: ThreadingHTTPServer | None = None
         self.thread: threading.Thread | None = None
@@ -80,7 +107,7 @@ class LocalCompanionServer:
         service = self
 
         class Handler(BaseHTTPRequestHandler):
-            server_version = "AssistantBotaniqueLocal/1.0"
+            server_version = "AssistantBotaniqueLocal/1.1"
 
             def log_message(self, _format: str, *_args) -> None:
                 return
@@ -111,6 +138,7 @@ class LocalCompanionServer:
                 self.send_header("Content-Length", str(len(raw)))
                 self.send_header("Cache-Control", "no-store")
                 self.send_header("X-Content-Type-Options", "nosniff")
+                self.send_header("Referrer-Policy", "no-referrer")
                 self.end_headers()
                 self.wfile.write(raw)
 
@@ -120,6 +148,12 @@ class LocalCompanionServer:
                     status=status,
                     content_type="application/json; charset=utf-8",
                 )
+
+            def _redirect(self, path: str) -> None:
+                self.send_response(HTTPStatus.SEE_OTHER)
+                self.send_header("Location", path)
+                self.send_header("Cache-Control", "no-store")
+                self.end_headers()
 
             def _forbidden(self) -> None:
                 self._send(
@@ -138,6 +172,10 @@ class LocalCompanionServer:
                     return
                 if path == "/api/sensors":
                     self._json(service.advanced.latest_sensor_readings())
+                    return
+                if path == "/api/photos":
+                    plant_id = (self._params().get("plant_id") or [""])[0]
+                    self._json(service.database.list_photos(plant_id or None))
                     return
                 if path.startswith("/plant/"):
                     plant_id = urllib.parse.unquote(path.removeprefix("/plant/"))
@@ -171,6 +209,28 @@ class LocalCompanionServer:
                 if not self._authorized():
                     self._forbidden()
                     return
+                if parsed.path == "/api/photo":
+                    declared = int(self.headers.get("Content-Length", "0") or 0)
+                    if declared <= 0 or declared > MAX_UPLOAD_BYTES + 1_000_000:
+                        self._json({"ok": False, "error": "Taille de formulaire invalide."}, HTTPStatus.REQUEST_ENTITY_TOO_LARGE)
+                        return
+                    try:
+                        fields, files = _multipart_fields(self.headers.get("Content-Type", ""), self.rfile.read(declared))
+                        filename, photo = files["photo"]
+                        plant_id = str(fields.get("plant_id") or "")
+                        service.photos.add_photo_bytes(
+                            plant_id,
+                            photo,
+                            filename=filename,
+                            caption=str(fields.get("caption") or ""),
+                        )
+                    except Exception as exc:  # noqa: BLE001
+                        self._send(service._message_page("Photo refusée", str(exc), plant_id=fields.get("plant_id") if 'fields' in locals() else ""), status=HTTPStatus.BAD_REQUEST)
+                        return
+                    target = f"/plant/{urllib.parse.quote(plant_id)}?token={urllib.parse.quote(service.token)}&photo=added"
+                    self._redirect(target)
+                    return
+
                 length = min(int(self.headers.get("Content-Length", "0") or 0), 1_000_000)
                 content_type = self.headers.get("Content-Type", "")
                 raw = self.rfile.read(length)
@@ -191,7 +251,11 @@ class LocalCompanionServer:
                     except Exception as exc:  # noqa: BLE001
                         self._json({"ok": False, "error": str(exc)}, HTTPStatus.BAD_REQUEST)
                         return
-                    self._json({"ok": True}, HTTPStatus.CREATED)
+                    target = f"/plant/{urllib.parse.quote(plant_id)}?token={urllib.parse.quote(service.token)}"
+                    if "application/json" in content_type:
+                        self._json({"ok": True}, HTTPStatus.CREATED)
+                    else:
+                        self._redirect(target)
                     return
                 self._json({"ok": False, "error": "Route inconnue."}, HTTPStatus.NOT_FOUND)
 
@@ -233,7 +297,8 @@ class LocalCompanionServer:
             "Assistant Botanique",
             f"""
             <h1>Assistant Botanique</h1>
-            <p>Compagnon local. Les données restent sur cet ordinateur.</p>
+            <p>Compagnon local. Les données et photos restent sur cet ordinateur.</p>
+            <p>Ouvrez une plante pour la photographier avec l'appareil photo du téléphone.</p>
             <h2>Collection</h2><ul>{''.join(cards) or '<li>Aucune plante</li>'}</ul>
             <h2>Capteurs</h2><ul>{sensor_html or '<li>Aucune mesure</li>'}</ul>
             """,
@@ -244,9 +309,7 @@ class LocalCompanionServer:
         if not plant:
             return self._page("Plante introuvable", "<h1>Plante introuvable</h1>")
         buttons = "".join(
-            f"""
-            <button name="action" value="{html.escape(action)}">{html.escape(label)}</button>
-            """
+            f'<button name="action" value="{html.escape(action)}">{html.escape(label)}</button>'
             for action, label in (
                 ("substrat_sec", "Substrat sec"),
                 ("encore_humide", "Encore humide"),
@@ -255,34 +318,48 @@ class LocalCompanionServer:
                 ("observation", "Observation"),
             )
         )
+        photo_count = len(self.database.list_photos(plant_id))
+        notice = "<p class='success'>Photo ajoutée et intégrée au journal de l'ordinateur.</p>" if "photo=added" in urllib.parse.urlsplit("?" + urllib.parse.urlencode({})).query else ""
         return self._page(
             str(plant["surnom"]),
             f"""
             <h1>{html.escape(str(plant["surnom"]))}</h1>
             <p>{html.escape(str(plant["species_id"]))}</p>
-            <p>Dernier arrosage : {html.escape(str(plant["date_arrosage"]))}</p>
+            <p>Dernier arrosage : {html.escape(str(plant["date_arrosage"]))} · {photo_count} photo(s)</p>
+            {notice}
+            <section><h2>Prendre une photo</h2>
+            <form method="post" action="/api/photo?token={urllib.parse.quote(self.token)}" enctype="multipart/form-data">
+              <input type="hidden" name="plant_id" value="{html.escape(plant_id)}">
+              <label>Photo <input type="file" name="photo" accept="image/jpeg,image/png,image/webp" capture="environment" required></label>
+              <label>Légende <input type="text" name="caption" placeholder="Nouvelle pousse, symptôme…"></label>
+              <button type="submit">Envoyer vers l'ordinateur</button>
+            </form></section>
+            <section><h2>Action rapide</h2>
             <form method="post" action="/api/care?token={urllib.parse.quote(self.token)}">
               <input type="hidden" name="plant_id" value="{html.escape(plant_id)}">
               <input type="text" name="note" placeholder="Note facultative">
               <div class="actions">{buttons}</div>
-            </form>
+            </form></section>
             <p><a href="/?token={urllib.parse.quote(self.token)}">Retour</a></p>
             """,
         )
 
+    def _message_page(self, title: str, message: str, *, plant_id: str = "") -> str:
+        back = (
+            f'/plant/{urllib.parse.quote(plant_id)}?token={urllib.parse.quote(self.token)}'
+            if plant_id else f'/?token={urllib.parse.quote(self.token)}'
+        )
+        return self._page(title, f"<h1>{html.escape(title)}</h1><p>{html.escape(message)}</p><p><a href='{back}'>Retour</a></p>")
+
     @staticmethod
     def _page(title: str, body: str) -> str:
         return f"""<!doctype html>
-<html lang="fr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title>
 <style>
-body {{ font-family: system-ui, sans-serif; max-width: 760px; margin: auto; padding: 20px; }}
-li {{ margin: 10px 0; }}
-button {{ padding: 12px; margin: 6px 4px; }}
-input {{ padding: 10px; width: min(90%, 420px); }}
-.actions {{ margin-top: 10px; }}
-</style>
-</head><body>{body}</body></html>"""
+body {{ font-family:system-ui,sans-serif; max-width:760px; margin:auto; padding:20px; line-height:1.45; }}
+li {{ margin:10px 0; }} section {{ border:1px solid #aaa; border-radius:10px; padding:14px; margin:18px 0; }}
+button {{ padding:12px; margin:8px 4px; min-height:44px; }}
+input {{ display:block; box-sizing:border-box; padding:10px; margin:8px 0 14px; width:min(100%,520px); }}
+.actions {{ margin-top:10px; }} .success {{ padding:10px; background:#d9f8df; color:#123d1d; }}
+</style></head><body>{body}</body></html>"""

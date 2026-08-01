@@ -9,6 +9,7 @@ from app_data import CATALOGUE_ERRORS, DATABASE_BY_ID, DATABASE_PLANTES, reload_
 from app_paths import LOG_FILE
 from assistant_botanique.domain.ui_mode import normalized_ui_mode, visible_tab_keys
 from assistant_botanique.infrastructure.settings import SettingsRepository
+from assistant_botanique.services.accessibility import AccessibilityManager
 from assistant_botanique.services.notifications import NotificationService
 from assistant_botanique.ui.collection_editor_tab import CollectionEditorTab
 from assistant_botanique.ui.v3_tabs import (
@@ -16,6 +17,7 @@ from assistant_botanique.ui.v3_tabs import (
     AdvancedEcosystemTab,
     CareCalendarTab,
     CatalogueReviewTab,
+    CollectionIntelligenceTab,
     GlobalSearchTab,
     MaintenanceTab,
     PhotoTimelineTab,
@@ -47,9 +49,10 @@ class PlantCareApp:
         self.database = CollectionRepository().database
         self.notifications = NotificationService()
 
-        self.root.title("Assistant Botanique 3 — Tableau de bord et soins")
+        self.root.title("Assistant Botanique 3.2 — Tableau de bord et soins")
         self._configure_window()
         apply_theme(self.root, self.theme)
+        AccessibilityManager.apply(self.root, self.settings)
         self._build_menu()
 
         self.notebook = ttk.Notebook(self.root)
@@ -99,7 +102,7 @@ class PlantCareApp:
 
         tools = tk.Menu(menu, tearoff=False)
         tools.add_command(label="Recherche globale (Ctrl+K)", command=self.open_global_search)
-        tools.add_command(label="Afficher les contrôles du jour", command=self.notify_due_items)
+        tools.add_command(label="Afficher les contrôles du jour", command=self.show_due_items)
         tools.add_command(label="Recharger les données botaniques", command=self.reload_catalogue_views)
         menu.add_cascade(label="Outils", menu=tools)
 
@@ -173,6 +176,16 @@ class PlantCareApp:
             on_collection_refresh=self.refresh_legacy_collection,
             reload_catalogue=self.reload_catalogue_views,
         )
+        self.tab_intelligence = CollectionIntelligenceTab(
+            self.notebook,
+            self.root,
+            self.database,
+            DATABASE_BY_ID,
+            self.settings,
+            self.settings_repo,
+            on_collection_refresh=self.refresh_legacy_collection,
+            on_accessibility_changed=self.reapply_accessibility,
+        )
         self.tab_maintenance = MaintenanceTab(
             self.notebook,
             self.database,
@@ -194,6 +207,7 @@ class PlantCareApp:
             "substrate": (self.tab_substrat, "🧪 Substrats"),
             "diagnostic": (self.tab_diagnostic, "🩺 Diagnostic guidé"),
             "ecosystem": (self.tab_ecosystem, "🧰 Atelier avancé"),
+            "intelligence": (self.tab_intelligence, "🧠 Collection & analyse"),
             "maintenance": (self.tab_maintenance, "🛠️ Données & système"),
         }
 
@@ -217,7 +231,7 @@ class PlantCareApp:
         else:
             self.notebook.select(self.tab_today)
         suffix = "Mode simple" if self.ui_mode == "simple" else "Mode avancé"
-        self.root.title(f"Assistant Botanique 3 — {suffix}")
+        self.root.title(f"Assistant Botanique 3.2 — {suffix}")
 
     def set_ui_mode(self, mode: str) -> None:
         self.ui_mode = normalized_ui_mode(mode)
@@ -230,7 +244,11 @@ class PlantCareApp:
         self.theme = "dark" if self.theme == "light" else "light"
         self.settings["theme"] = self.theme
         apply_theme(self.root, self.theme)
+        self.reapply_accessibility()
         self.save_settings()
+
+    def reapply_accessibility(self) -> None:
+        AccessibilityManager.apply(self.root, self.settings)
 
     def on_collection_updated(self, plants: list[dict]) -> None:
         self.tab_substrat.actualiser_combo_substrat(plants)
@@ -243,6 +261,7 @@ class PlantCareApp:
         self.tab_search.refresh()
         self.tab_calendar.refresh()
         self.tab_ecosystem.refresh()
+        self.tab_intelligence.refresh()
         self.tab_maintenance.refresh_stats()
 
     def refresh_legacy_collection(self) -> None:
@@ -269,8 +288,10 @@ class PlantCareApp:
         self.tab_calendar.update_profiles(DATABASE_BY_ID)
         self.tab_search.reload_catalogue(DATABASE_PLANTES, DATABASE_BY_ID)
         self.tab_ecosystem.profiles_by_id = DATABASE_BY_ID
+        self.tab_intelligence.profiles_by_id = DATABASE_BY_ID
         self.tab_adaptive.refresh()
         self.tab_ecosystem.refresh()
+        self.tab_intelligence.refresh()
         try:
             self.tab_catalogue.filtrer_catalogue()
         except AttributeError:
@@ -300,10 +321,31 @@ class PlantCareApp:
             self.tab_diagnostic.refresh_plants()
         elif selected is self.tab_ecosystem:
             self.tab_ecosystem.refresh()
+        elif selected is self.tab_intelligence:
+            self.tab_intelligence.refresh()
         elif selected is self.tab_maintenance:
             self.tab_maintenance.refresh_stats()
 
+    def show_due_items(self) -> None:
+        """Consultation manuelle : toujours répondre, indépendamment des rappels automatiques."""
+        try:
+            items = self.notifications.due_items(
+                self.database,
+                DATABASE_BY_ID,
+                include_snoozed=True,
+            )
+            title, body = self.notifications.digest(items, self.settings)
+        except Exception as exc:
+            LOGGER.exception("Impossible de calculer les contrôles du jour")
+            messagebox.showerror("Contrôles du jour", f"Impossible de calculer les contrôles :\n{exc}", parent=self.root)
+            return
+        if not body:
+            messagebox.showinfo("Contrôles du jour", "Aucun contrôle ni soin n'est arrivé à échéance aujourd'hui.", parent=self.root)
+            return
+        messagebox.showinfo(title, body, parent=self.root)
+
     def notify_due_items(self) -> None:
+        """Rappel automatique : respecte activation, heures silencieuses et reports."""
         if not self.settings.get("notifications", {}).get("enabled", True):
             return
         try:
