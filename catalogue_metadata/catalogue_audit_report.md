@@ -1,6 +1,6 @@
 # Audit exhaustif du catalogue botanique
 
-Généré le 2026-08-01T00:21:47+00:00.
+Généré le 2026-08-01T00:22:19+00:00.
 
 ## Portée et limites
 
