@@ -95,9 +95,14 @@ def test_full_taxonomy_audit_covers_every_profile_without_family_mismatch():
     source = source_profiles()
     payload = json.loads(Path("catalogue_metadata/taxonomy_audit.json").read_text(encoding="utf-8"))
     profiles = payload["profiles"]
+    expected_identifiers = set(identifiers(source))
+    audited_identifiers = set(profiles)
 
     assert len(source) >= 2204
-    assert set(profiles) == set(identifiers(source))
+    assert audited_identifiers == expected_identifiers, {
+        "missing_from_audit": sorted(expected_identifiers - audited_identifiers),
+        "stale_in_audit": sorted(audited_identifiers - expected_identifiers),
+    }
     assert all(item["structure"]["complete"] is True for item in profiles.values())
     assert all(item.get("scientific_name") for item in profiles.values())
     assert all(item.get("source_file") for item in profiles.values())
