@@ -54,7 +54,7 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -76,7 +76,6 @@ jobs:
             exit 0
           fi
           python tools/reclassify_and_expand_families_fast.py
-          python tools/catalogue_enrichment_parallel.py
       - name: Enregistrer les résultats
         shell: bash
         run: |
