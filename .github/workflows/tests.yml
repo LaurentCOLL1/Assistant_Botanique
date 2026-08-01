@@ -54,7 +54,7 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -64,7 +64,10 @@ jobs:
         with:
           python-version: "3.13"
       - name: Vérifier la syntaxe
-        run: python -m py_compile tools/reclassify_and_expand_families.py
+        run: >-
+          python -m py_compile
+          tools/reclassify_and_expand_families.py
+          tools/reclassify_and_expand_families_fast.py
       - name: Reclasser et enrichir
         shell: bash
         run: |
@@ -72,7 +75,7 @@ jobs:
             echo "Résultats déjà générés."
             exit 0
           fi
-          python tools/reclassify_and_expand_families.py
+          python tools/reclassify_and_expand_families_fast.py
           python tools/catalogue_enrichment_parallel.py
       - name: Enregistrer les résultats
         shell: bash
