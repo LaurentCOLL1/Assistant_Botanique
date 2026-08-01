@@ -35,6 +35,15 @@ DEFAULT_SETTINGS = {
         "port": 8765,
         "token": "",
     },
+    "accessibility": {
+        "text_scale": 1.0,
+        "high_contrast": False,
+        "reduce_motion": False,
+        "focus_highlight": True,
+    },
+    "sync": {
+        "folder": "",
+    },
     "update_checks": True,
 }
 
