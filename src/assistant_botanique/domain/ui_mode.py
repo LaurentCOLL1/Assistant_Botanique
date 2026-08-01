@@ -24,6 +24,7 @@ ADVANCED_TABS = (
     "substrate",
     "diagnostic",
     "ecosystem",
+    "intelligence",
     "maintenance",
 )
 
