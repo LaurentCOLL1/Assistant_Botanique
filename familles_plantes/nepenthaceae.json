@@ -50,18 +50,141 @@
       "sensibilite_minerale": "Extrêmement élevée (le calcaire et les sels minéraux tuent la plante)"
     },
     "substrat": {
-      "composition_ideale": "50% sphaigne du Chili, 30% perlite, 20% écorces de pin fines",
       "ph": "4.5 - 5.5",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
-        "Sphaigne fibreuse",
+        "Sphaigne sèche",
+        "Sphaigne du Chili",
+        "Écorces de pin",
         "Perlite",
-        "Pots suspendus"
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Engrais",
-        "Terreau classique",
-        "Eau du robinet",
-        "Calcaire"
+        "Terreau horticole",
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -81,7 +204,49 @@
       ],
       "proprietes_particulieres": "Sécrète un liquide enzymatique au fond de l'urne pour dissoudre les insectes attirés par le nectar."
     },
-    "conseil": "Brumisez très fréquemment le feuillage et le piège pour maintenir l'humidité nécessaire à la production de nouvelles urnes."
+    "conseil": "Brumisez très fréquemment le feuillage et le piège pour maintenir l'humidité nécessaire à la production de nouvelles urnes.",
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -135,21 +300,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -169,7 +454,49 @@
       ],
       "toxicite": "Non toxique pour les animaux domestiques",
       "proprietes_particulieres": "Piège passif par chute dans un liquide enzymatique digestif"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -222,21 +549,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -273,7 +720,49 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 0
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -326,21 +815,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -377,7 +986,49 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 0
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -430,21 +1081,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -481,7 +1252,49 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 0
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -534,21 +1347,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -585,7 +1518,49 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 1
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -638,21 +1613,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -689,7 +1784,49 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 643
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -742,21 +1879,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -793,7 +2050,49 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 0
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -846,21 +2145,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -897,7 +2316,49 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 0
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -950,21 +2411,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -1001,7 +2582,49 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 5
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -1054,21 +2677,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -1104,7 +2847,49 @@
       "ajoute_le": "2026-08-01",
       "priorite": "cultivee",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -1157,21 +2942,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -1208,7 +3113,49 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 2
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -1261,21 +3208,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -1312,7 +3379,49 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 1
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -1365,21 +3474,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -1416,7 +3645,49 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 0
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -1469,21 +3740,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -1519,7 +3910,49 @@
       "ajoute_le": "2026-08-01",
       "priorite": "cultivee",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -1572,21 +4005,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -1622,7 +4175,49 @@
       "ajoute_le": "2026-08-01",
       "priorite": "cultivee",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -1675,21 +4270,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -1725,7 +4440,49 @@
       "ajoute_le": "2026-08-01",
       "priorite": "cultivee",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -1778,21 +4535,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -1828,7 +4705,49 @@
       "ajoute_le": "2026-08-01",
       "priorite": "cultivee",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -1881,21 +4800,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -1931,7 +4970,49 @@
       "ajoute_le": "2026-08-01",
       "priorite": "cultivee",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -1984,21 +5065,141 @@
       "sensibilite_minerale": "Intolérante aux sels minéraux et au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne sèche (ou Mousse de sphaigne vivante), 30% Perlite / Pumice, 20% Écorces de pin / Chips de coco",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Nepenthes tropicale épiphyte",
+      "modele_recherche": "nepenthes_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Sphaigne et écorces",
+          "description": "Mélange très ouvert, humide mais non compact.",
+          "roles": [
+            {
+              "nom": "Rétention",
+              "ratio": 0.45,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et coco grossière",
+          "description": "Variante organique très aérée.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.55,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Structure coco",
+              "ratio": 0.25,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "45% Sphaigne sèche / 30% Écorces de pin / 15% Perlite / 10% Charbon actif",
       "ingredients_recommandes": [
         "Sphaigne sèche",
-        "Mousse de sphaigne vivante",
-        "Perlite",
+        "Sphaigne du Chili",
         "Écorces de pin",
-        "Pumice",
+        "Perlite",
         "Charbon actif",
-        "Chips de coco"
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Tourbe blonde",
         "Terreau horticole",
-        "Sable grossier"
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        }
       ]
     },
     "entretien": {
@@ -2034,6 +5235,48 @@
       "ajoute_le": "2026-08-01",
       "priorite": "cultivee",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Rétention",
+        "ratio": 0.45,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Structure",
+        "ratio": 0.3,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.15,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   }
 ]

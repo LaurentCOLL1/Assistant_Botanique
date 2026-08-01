@@ -1,4 +1,4 @@
-"""Générateur de substrat avec ratios validés et volumes explicites."""
+"""Générateur de substrat avec ratios validés, variantes et sources."""
 from __future__ import annotations
 
 import tkinter as tk
@@ -8,7 +8,7 @@ from typing import Any
 
 from app_data import DATABASE_BY_ID, DATABASE_BY_SCIENTIFIC_NAME, DATABASE_PLANTES, PROFILS_GENERIQUES
 from core import ValidationError, scientific_name, vernacular_names
-from recipe_engine import build_recipe, forbidden_ingredients
+from recipe_engine import build_recipe, forbidden_ingredients, substrate_variants
 
 
 INGREDIENT_CATEGORIES = {
@@ -93,12 +93,19 @@ class TabSubstrat(ttk.Frame):
         top = ttk.Frame(main)
         top.pack(fill="x", padx=8, pady=(3, 6))
         ttk.Label(top, text="Plante ou profil").pack(side="left", padx=(0, 5))
-        self.combo_profile = ttk.Combobox(top, state="readonly", width=68)
+        self.combo_profile = ttk.Combobox(top, state="readonly", width=54)
         self.combo_profile.pack(side="left", fill="x", expand=True, padx=5)
-        ttk.Label(top, text="Volume (L)").pack(side="left", padx=(10, 5))
-        self.entry_volume = ttk.Entry(top, width=10)
+        self.combo_profile.bind("<<ComboboxSelected>>", self._profile_selected)
+        ttk.Label(top, text="Variante").pack(side="left", padx=(10, 5))
+        self.combo_variant = ttk.Combobox(top, state="readonly", width=28)
+        self.combo_variant.pack(side="left", padx=(0, 6))
+        ttk.Label(top, text="Volume (L)").pack(side="left", padx=(6, 5))
+        self.entry_volume = ttk.Entry(top, width=9)
         self.entry_volume.insert(0, "2.0")
         self.entry_volume.pack(side="left")
+
+        self.variant_help = ttk.Label(main, text="", style="Muted.TLabel", wraplength=1050)
+        self.variant_help.pack(anchor="w", padx=8, pady=(0, 4))
 
         ttk.Label(
             main,
@@ -196,6 +203,42 @@ class TabSubstrat(ttk.Frame):
         self.entry_profile_search.focus_set()
         return "break"
 
+    def _profile_selected(self, _event=None) -> None:
+        self._refresh_variant_choices()
+
+    def _refresh_variant_choices(self) -> None:
+        profile = self.combo_mapping.get(self.combo_profile.get())
+        if not profile:
+            self.combo_variant["values"] = []
+            self.combo_variant.set("")
+            self.variant_help.configure(text="")
+            return
+        variants = substrate_variants(profile)
+        names = [str(variant.get("nom") or f"Variante {index + 1}") for index, variant in enumerate(variants)]
+        previous = self.combo_variant.get()
+        self.combo_variant["values"] = names
+        if previous in names:
+            self.combo_variant.set(previous)
+        elif names:
+            self.combo_variant.current(0)
+        else:
+            self.combo_variant.set("")
+        self._variant_selected()
+
+    def _variant_selected(self, _event=None) -> None:
+        profile = self.combo_mapping.get(self.combo_profile.get())
+        if not profile:
+            self.variant_help.configure(text="")
+            return
+        variants = substrate_variants(profile)
+        index = self.combo_variant.current()
+        if index < 0 or index >= len(variants):
+            index = 0
+        description = str(variants[index].get("description", "")) if variants else ""
+        source_count = len(variants[index].get("sources", [])) if variants else 0
+        suffix = f" — {source_count} source{'s' if source_count != 1 else ''}" if source_count else ""
+        self.variant_help.configure(text=description + suffix)
+
     def _apply_profile_filter(self) -> None:
         selected = self.combo_profile.get()
         visible_values = filter_profile_labels(self.profile_values, self.search_var.get())
@@ -209,6 +252,7 @@ class TabSubstrat(ttk.Frame):
             self.combo_profile.current(0)
         else:
             self.combo_profile.set("")
+        self._refresh_variant_choices()
 
     @staticmethod
     def _resolve_profile(identifier: str) -> dict | None:
@@ -242,6 +286,7 @@ class TabSubstrat(ttk.Frame):
         visible_values = list(self.combo_profile["values"])
         if selected in visible_values:
             self.combo_profile.set(selected)
+        self._refresh_variant_choices()
 
     def calculer_recette(self) -> None:
         try:
@@ -255,9 +300,10 @@ class TabSubstrat(ttk.Frame):
         if not profile:
             messagebox.showwarning("Recette", "Sélectionnez une plante ou un profil.")
             return
+        variant_index = max(0, self.combo_variant.current())
         stock = {name: variable.get() for name, variable in self.ing_vars.items()}
         try:
-            recipe = build_recipe(profile, volume, stock)
+            recipe = build_recipe(profile, volume, stock, variant_index=variant_index)
         except ValidationError as exc:
             messagebox.showerror("Recette", str(exc))
             return
@@ -265,9 +311,12 @@ class TabSubstrat(ttk.Frame):
         lines = [
             "=" * 72,
             f"RECETTE POUR {volume:.2f} L — {scientific_name(profile).upper()}",
+            f"VARIANTE — {recipe.variant_name}",
             "=" * 72,
             "",
         ]
+        if recipe.variant_description:
+            lines.extend((recipe.variant_description, ""))
         for line in recipe.lines:
             lines.append(f"• {line.role} — {line.ratio * 100:.1f}% = {line.liters:.3f} L")
             if line.ingredients:
@@ -280,10 +329,18 @@ class TabSubstrat(ttk.Frame):
             lines.append("")
 
         selected = [name for name, available in stock.items() if available]
-        forbidden = forbidden_ingredients(profile, selected)
+        forbidden = forbidden_ingredients(profile, selected, variant_index=variant_index)
         if forbidden:
-            lines.append("⚠️ INGRÉDIENTS À NE PAS UTILISER POUR CETTE FICHE")
+            lines.append("⚠️ INGRÉDIENTS À NE PAS UTILISER POUR CETTE VARIANTE")
             lines.extend(f"    - {item}" for item in forbidden)
+            lines.append("")
+
+        if recipe.sources:
+            lines.append("SOURCES HORTICOLES")
+            for title, url in recipe.sources:
+                lines.append(f"    - {title}")
+                if url:
+                    lines.append(f"      {url}")
             lines.append("")
 
         advice = profile.get("conseil")
@@ -291,7 +348,7 @@ class TabSubstrat(ttk.Frame):
             lines.append("CONSEIL")
             lines.append(str(advice))
             lines.append("")
-        lines.append("Contrôle: la somme des volumes de rôles correspond au volume demandé.")
+        lines.append("Contrôle: les ingrédients proviennent exclusivement de la liste de l'onglet Substrats.")
         if recipe.warnings:
             lines.append("Avertissements: " + " | ".join(recipe.warnings))
 

@@ -50,16 +50,121 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne hachée, 30% Perlite, 20% Tourbe blonde",
       "ph": "4.5 - 5.5",
+      "categorie_horticole": "Carnivore de tourbière pauvre",
+      "modele_recherche": "carnivorous_bog",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Tourbe et sable siliceux",
+          "description": "Mélange pauvre, acide et constamment humide.",
+          "roles": [
+            {
+              "nom": "Base acide pauvre",
+              "ratio": 0.5,
+              "ing": [
+                "Tourbe blonde"
+              ]
+            },
+            {
+              "nom": "Fraction minérale inerte",
+              "ratio": 0.5,
+              "ing": [
+                "Sable de quartz"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "NC State Extension — Dionaea muscipula",
+              "url": "https://plants.ces.ncsu.edu/plants/dionaea-muscipula/"
+            },
+            {
+              "titre": "Penn State Extension — Carnivorous plants",
+              "url": "https://extension.psu.edu/carnivorous-plants"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et écorces fines",
+          "description": "Alternative sans terreau riche, inspirée des essais sans tourbe.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.75,
+              "ing": [
+                "Sphaigne sèche",
+                "Mousse de sphaigne vivante"
+              ]
+            },
+            {
+              "nom": "Structure pauvre",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
       "ingredients_recommandes": [
-        "Sphaigne",
-        "Perlite",
-        "Tourbe blonde"
+        "Tourbe blonde",
+        "Sable de quartz"
       ],
       "elements_interdits": [
-        "Engrais chimiques",
-        "Calcaire"
+        "Terreau horticole",
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "NC State Extension — Dionaea muscipula",
+          "url": "https://plants.ces.ncsu.edu/plants/dionaea-muscipula/"
+        },
+        {
+          "titre": "Penn State Extension — Carnivorous plants",
+          "url": "https://extension.psu.edu/carnivorous-plants"
+        }
       ]
     },
     "entretien": {
@@ -78,7 +183,33 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Possède les crochets foliaires modifiés typiques de la famille permettant l'ascension des lianes dans la canopée."
     },
-    "conseil": "Réservée aux serres botaniques et collectionneurs experts de plantes carnivores ou tropicales rares."
+    "conseil": "Réservée aux serres botaniques et collectionneurs experts de plantes carnivores ou tropicales rares.",
+    "roles": [
+      {
+        "nom": "Base acide pauvre",
+        "ratio": 0.5,
+        "ing": [
+          "Tourbe blonde"
+        ]
+      },
+      {
+        "nom": "Fraction minérale inerte",
+        "ratio": 0.5,
+        "ing": [
+          "Sable de quartz"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -131,16 +262,121 @@
       "sensibilite_minerale": "Intolérante au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Sphaigne, 30% Perlite, 20% Tourbe blonde acide",
       "ph": "4.5 - 5.5",
+      "categorie_horticole": "Carnivore de tourbière pauvre",
+      "modele_recherche": "carnivorous_bog",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Tourbe et sable siliceux",
+          "description": "Mélange pauvre, acide et constamment humide.",
+          "roles": [
+            {
+              "nom": "Base acide pauvre",
+              "ratio": 0.5,
+              "ing": [
+                "Tourbe blonde"
+              ]
+            },
+            {
+              "nom": "Fraction minérale inerte",
+              "ratio": 0.5,
+              "ing": [
+                "Sable de quartz"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "NC State Extension — Dionaea muscipula",
+              "url": "https://plants.ces.ncsu.edu/plants/dionaea-muscipula/"
+            },
+            {
+              "titre": "Penn State Extension — Carnivorous plants",
+              "url": "https://extension.psu.edu/carnivorous-plants"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et écorces fines",
+          "description": "Alternative sans terreau riche, inspirée des essais sans tourbe.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.75,
+              "ing": [
+                "Sphaigne sèche",
+                "Mousse de sphaigne vivante"
+              ]
+            },
+            {
+              "nom": "Structure pauvre",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
       "ingredients_recommandes": [
-        "Sphaigne",
-        "Perlite",
-        "Tourbe blonde"
+        "Tourbe blonde",
+        "Sable de quartz"
       ],
       "elements_interdits": [
-        "Eau du robinet calcaire",
-        "Engrais minéraux lourds"
+        "Terreau horticole",
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "NC State Extension — Dionaea muscipula",
+          "url": "https://plants.ces.ncsu.edu/plants/dionaea-muscipula/"
+        },
+        {
+          "titre": "Penn State Extension — Carnivorous plants",
+          "url": "https://extension.psu.edu/carnivorous-plants"
+        }
       ]
     },
     "entretien": {
@@ -159,7 +395,33 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Genre monospécifique extrêmement rare de la famille des Dioncophyllaceae, endémique de zones forestières menacées d'Afrique de l'Ouest."
     },
-    "conseil": "Plante de collection ultra-botanique nécessitant un terrarium tropical de type lowland chauffé et très humide."
+    "conseil": "Plante de collection ultra-botanique nécessitant un terrarium tropical de type lowland chauffé et très humide.",
+    "roles": [
+      {
+        "nom": "Base acide pauvre",
+        "ratio": 0.5,
+        "ing": [
+          "Tourbe blonde"
+        ]
+      },
+      {
+        "nom": "Fraction minérale inerte",
+        "ratio": 0.5,
+        "ing": [
+          "Sable de quartz"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   },
   {
     "taxonomie": {
@@ -212,18 +474,121 @@
       "sensibilite_minerale": "Très sensible aux excès de calcaire et aux sels minéraux"
     },
     "substrat": {
-      "composition_ideale": "60% Sphaigne de haute qualité, 25% Perlite, 15% Écorces de pin très fines",
       "ph": "4.5 - 5.5 (Acide)",
+      "categorie_horticole": "Carnivore de tourbière pauvre",
+      "modele_recherche": "carnivorous_bog",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Tourbe et sable siliceux",
+          "description": "Mélange pauvre, acide et constamment humide.",
+          "roles": [
+            {
+              "nom": "Base acide pauvre",
+              "ratio": 0.5,
+              "ing": [
+                "Tourbe blonde"
+              ]
+            },
+            {
+              "nom": "Fraction minérale inerte",
+              "ratio": 0.5,
+              "ing": [
+                "Sable de quartz"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "NC State Extension — Dionaea muscipula",
+              "url": "https://plants.ces.ncsu.edu/plants/dionaea-muscipula/"
+            },
+            {
+              "titre": "Penn State Extension — Carnivorous plants",
+              "url": "https://extension.psu.edu/carnivorous-plants"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et écorces fines",
+          "description": "Alternative sans terreau riche, inspirée des essais sans tourbe.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.75,
+              "ing": [
+                "Sphaigne sèche",
+                "Mousse de sphaigne vivante"
+              ]
+            },
+            {
+              "nom": "Structure pauvre",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
       "ingredients_recommandes": [
-        "Sphaigne",
-        "Perlite",
-        "Écorces de pin",
-        "Pumice"
+        "Tourbe blonde",
+        "Sable de quartz"
       ],
       "elements_interdits": [
-        "Terreau horticole riche",
-        "Tourbe calcaire",
-        "Engrais chimiques"
+        "Terreau horticole",
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "NC State Extension — Dionaea muscipula",
+          "url": "https://plants.ces.ncsu.edu/plants/dionaea-muscipula/"
+        },
+        {
+          "titre": "Penn State Extension — Carnivorous plants",
+          "url": "https://extension.psu.edu/carnivorous-plants"
+        }
       ]
     },
     "entretien": {
@@ -243,6 +608,32 @@
       "toxicite": "Non toxique (plante extrêmement rare en culture et botaniquement unique)",
       "proprietes_particulieres": "Seule espèce connue à posséder des stades morphologiques aussi radicalement différents incluant des feuilles carnivores à glandes sessiles et stipitées."
     },
-    "conseil": "Espèce extrêmement rare et difficile à cultiver en dehors de serres botaniques spécialisées en raison de ses exigences de microclimat équatorial."
+    "conseil": "Espèce extrêmement rare et difficile à cultiver en dehors de serres botaniques spécialisées en raison de ses exigences de microclimat équatorial.",
+    "roles": [
+      {
+        "nom": "Base acide pauvre",
+        "ratio": 0.5,
+        "ing": [
+          "Tourbe blonde"
+        ]
+      },
+      {
+        "nom": "Fraction minérale inerte",
+        "ratio": 0.5,
+        "ing": [
+          "Sable de quartz"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   }
 ]

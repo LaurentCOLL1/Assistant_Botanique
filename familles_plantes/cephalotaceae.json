@@ -51,16 +51,121 @@
       "sensibilite_minerale": "Extrême"
     },
     "substrat": {
-      "composition_ideale": "50% sphaigne du Chili hachée, 30% perlite ou pumice, 20% tourbe blonde",
       "ph": "4.5 - 5.5",
+      "categorie_horticole": "Carnivore de tourbière pauvre",
+      "modele_recherche": "carnivorous_bog",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Tourbe et sable siliceux",
+          "description": "Mélange pauvre, acide et constamment humide.",
+          "roles": [
+            {
+              "nom": "Base acide pauvre",
+              "ratio": 0.5,
+              "ing": [
+                "Tourbe blonde"
+              ]
+            },
+            {
+              "nom": "Fraction minérale inerte",
+              "ratio": 0.5,
+              "ing": [
+                "Sable de quartz"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            },
+            {
+              "titre": "NC State Extension — Dionaea muscipula",
+              "url": "https://plants.ces.ncsu.edu/plants/dionaea-muscipula/"
+            },
+            {
+              "titre": "Penn State Extension — Carnivorous plants",
+              "url": "https://extension.psu.edu/carnivorous-plants"
+            }
+          ]
+        },
+        {
+          "nom": "Sphaigne et écorces fines",
+          "description": "Alternative sans terreau riche, inspirée des essais sans tourbe.",
+          "roles": [
+            {
+              "nom": "Sphaigne",
+              "ratio": 0.75,
+              "ing": [
+                "Sphaigne sèche",
+                "Mousse de sphaigne vivante"
+              ]
+            },
+            {
+              "nom": "Structure pauvre",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau horticole",
+            "Terreau plantes vertes",
+            "Terreau de feuilles",
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)",
+            "Humus de lombric",
+            "Compost mûr",
+            "Farine de basalte"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Carnivorous plants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
       "ingredients_recommandes": [
-        "Sphaigne",
-        "Pumice",
-        "Pots profonds en plastique blanc (pour isoler les racines de la chaleur)"
+        "Tourbe blonde",
+        "Sable de quartz"
       ],
       "elements_interdits": [
-        "Soucoupe pleine d'eau stagnante",
-        "Terreaux horticoles"
+        "Terreau horticole",
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Carnivorous plants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+        },
+        {
+          "titre": "NC State Extension — Dionaea muscipula",
+          "url": "https://plants.ces.ncsu.edu/plants/dionaea-muscipula/"
+        },
+        {
+          "titre": "Penn State Extension — Carnivorous plants",
+          "url": "https://extension.psu.edu/carnivorous-plants"
+        }
       ]
     },
     "entretien": {
@@ -79,6 +184,32 @@
       ],
       "proprietes_particulieres": "Ses pièges possèdent un péristome avec des dents recourbées vers l'intérieur et un opercule imperméable qui empêche l'eau de pluie de noyer le liquide digestif interne."
     },
-    "conseil": "C'est une plante réputée 'susceptible' : évitez absolument de la déplacer constamment ou de détremper ses pieds dans l'eau stagnante. La règle d'or est un substrat humide mais aéré."
+    "conseil": "C'est une plante réputée 'susceptible' : évitez absolument de la déplacer constamment ou de détremper ses pieds dans l'eau stagnante. La règle d'or est un substrat humide mais aéré.",
+    "roles": [
+      {
+        "nom": "Base acide pauvre",
+        "ratio": 0.5,
+        "ing": [
+          "Tourbe blonde"
+        ]
+      },
+      {
+        "nom": "Fraction minérale inerte",
+        "ratio": 0.5,
+        "ing": [
+          "Sable de quartz"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau horticole",
+      "Terreau plantes vertes",
+      "Terreau de feuilles",
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)",
+      "Humus de lombric",
+      "Compost mûr",
+      "Farine de basalte"
+    ]
   }
 ]
