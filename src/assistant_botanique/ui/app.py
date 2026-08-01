@@ -10,8 +10,10 @@ from app_paths import LOG_FILE
 from assistant_botanique.domain.ui_mode import normalized_ui_mode, visible_tab_keys
 from assistant_botanique.infrastructure.settings import SettingsRepository
 from assistant_botanique.services.accessibility import AccessibilityManager
+from assistant_botanique.services.device_pairing import DevicePairingService
 from assistant_botanique.services.notifications import NotificationService
 from assistant_botanique.ui.collection_editor_tab import CollectionEditorTab
+from assistant_botanique.ui.phone_pairing import show_paired_devices, show_pairing_qr
 from assistant_botanique.ui.v3_tabs import (
     AdaptiveCareTab,
     AdvancedEcosystemTab,
@@ -49,7 +51,7 @@ class PlantCareApp:
         self.database = CollectionRepository().database
         self.notifications = NotificationService()
 
-        self.root.title("Assistant Botanique 3.2 — Tableau de bord et soins")
+        self.root.title("Assistant Botanique 3.3 — Tableau de bord et soins")
         self._configure_window()
         apply_theme(self.root, self.theme)
         AccessibilityManager.apply(self.root, self.settings)
@@ -103,6 +105,10 @@ class PlantCareApp:
         tools = tk.Menu(menu, tearoff=False)
         tools.add_command(label="Recherche globale (Ctrl+K)", command=self.open_global_search)
         tools.add_command(label="Afficher les contrôles du jour", command=self.show_due_items)
+        tools.add_separator()
+        tools.add_command(label="Associer un téléphone par QR code", command=self.pair_phone)
+        tools.add_command(label="Gérer les téléphones associés", command=self.manage_paired_phones)
+        tools.add_separator()
         tools.add_command(label="Recharger les données botaniques", command=self.reload_catalogue_views)
         menu.add_cascade(label="Outils", menu=tools)
 
@@ -231,7 +237,7 @@ class PlantCareApp:
         else:
             self.notebook.select(self.tab_today)
         suffix = "Mode simple" if self.ui_mode == "simple" else "Mode avancé"
-        self.root.title(f"Assistant Botanique 3.2 — {suffix}")
+        self.root.title(f"Assistant Botanique 3.3 — {suffix}")
 
     def set_ui_mode(self, mode: str) -> None:
         self.ui_mode = normalized_ui_mode(mode)
@@ -280,6 +286,23 @@ class PlantCareApp:
     def open_calendar(self, plant_id: str | None = None) -> None:
         self.tab_calendar.select_plant(plant_id)
         self.notebook.select(self.tab_calendar)
+
+    def pair_phone(self) -> None:
+        companion = self.tab_ecosystem.companion
+        if not companion or not companion.running or companion.host != "0.0.0.0":
+            self.tab_ecosystem._start_companion(True)
+            companion = self.tab_ecosystem.companion
+        if not companion or not companion.running or companion.host != "0.0.0.0":
+            return
+        try:
+            show_pairing_qr(self.root, companion)
+        except (OSError, RuntimeError) as exc:
+            messagebox.showerror("Appairage du téléphone", str(exc), parent=self.root)
+
+    def manage_paired_phones(self) -> None:
+        companion = self.tab_ecosystem.companion
+        pairing = companion.pairing if companion else DevicePairingService(self.database)
+        show_paired_devices(self.root, pairing)
 
     def reload_catalogue_views(self) -> None:
         reload_catalogue()
