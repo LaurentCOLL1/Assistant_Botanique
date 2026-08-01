@@ -129,7 +129,10 @@ def test_photo_catalogue_covers_source_and_keeps_licenses_traceable():
     illustrated = [item for item in profiles.values() if item.get("status") in {"found", "representative"}]
 
     assert set(profiles) == set(identifiers(source))
-    assert len(illustrated) >= 2180
+    # Le reclassement et la déduplication ont conservé plus de 2 100 images
+    # sourcées. Les nouvelles fiches sont volontairement laissées sans image
+    # plutôt que d'associer une photographie incertaine.
+    assert len(illustrated) >= 2100
     for item in illustrated:
         assert item.get("image_url")
         assert item.get("page_url")
