@@ -49,16 +49,7 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 6.5",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
       "categorie_horticole": "Arbre, arbuste ou liane durable",
       "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
@@ -160,6 +151,15 @@
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Trees in containers",
@@ -279,18 +279,7 @@
       "sensibilite_minerale": "Extrêmement sensible au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "4.5 - 5.5",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Écorces de pin",
-        "Terreau de feuilles",
-        "Sable de quartz",
-        "Perlite"
-      ],
-      "elements_interdits": [
-        "Poudre de Calcaire / Dolomie"
-      ],
       "categorie_horticole": "Plante acidophile",
       "modele_recherche": "acid_ericaceous",
       "version_recherche": "2026.08",
@@ -390,6 +379,17 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Écorces de pin",
+        "Terreau de feuilles",
+        "Sable de quartz",
+        "Perlite"
+      ],
+      "elements_interdits": [
+        "Poudre de Calcaire / Dolomie"
       ],
       "sources": [
         {
@@ -507,110 +507,100 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "5.0 - 6.0",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Écorces de pin",
-        "Terreau de feuilles",
-        "Sable de quartz",
-        "Perlite"
-      ],
-      "elements_interdits": [
-        "Poudre de Calcaire / Dolomie"
-      ],
-      "categorie_horticole": "Plante acidophile",
-      "modele_recherche": "acid_ericaceous",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Acide organique drainé",
-          "description": "Mélange sans amendement calcaire.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base acide",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Tourbe blonde"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Structure acide",
+              "nom": "Terreau",
               "ratio": 0.25,
               "ing": [
-                "Écorces de pin"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Matière humifère",
-              "ratio": 0.15,
+              "nom": "Organique",
+              "ratio": 0.1,
               "ing": [
-                "Terreau de feuilles"
+                "Compost mûr"
               ]
             },
             {
               "nom": "Drainage",
               "ratio": 0.1,
               "ing": [
-                "Sable de quartz",
-                "Perlite"
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Poudre de Calcaire / Dolomie"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Blueberries growing guide",
-              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
             },
             {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Coco, kanuma et feuilles",
-          "description": "Variante sans tourbe, à surveiller avec un test de pH.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.45,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Fibre de coco"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Minéral acide",
-              "ratio": 0.25,
-              "ing": [
-                "Kanuma"
-              ]
-            },
-            {
-              "nom": "Humus de feuilles",
+              "nom": "Terre",
               "ratio": 0.2,
               "ing": [
-                "Terreau de feuilles"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
               "nom": "Écorces",
-              "ratio": 0.1,
+              "ratio": 0.15,
               "ing": [
                 "Écorces de pin"
               ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
             }
           ],
-          "interdits": [
-            "Poudre de Calcaire / Dolomie"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Blueberries growing guide",
-              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
             },
             {
               "titre": "RHS — Growing plants in containers",
@@ -619,14 +609,27 @@
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "RHS — Blueberries growing guide",
-          "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
         },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -649,38 +652,36 @@
     "conseil": "Assurez-lui une température chaude constante et une forte humidité atmosphérique pour éviter la chute des boutons.",
     "roles": [
       {
-        "nom": "Base acide",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Tourbe blonde"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Structure acide",
+        "nom": "Terreau",
         "ratio": 0.25,
         "ing": [
-          "Écorces de pin"
+          "Terreau horticole"
         ]
       },
       {
-        "nom": "Matière humifère",
-        "ratio": 0.15,
+        "nom": "Organique",
+        "ratio": 0.1,
         "ing": [
-          "Terreau de feuilles"
+          "Compost mûr"
         ]
       },
       {
         "nom": "Drainage",
         "ratio": 0.1,
         "ing": [
-          "Sable de quartz",
-          "Perlite"
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Poudre de Calcaire / Dolomie"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -733,113 +734,129 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau plantes vertes",
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.25,
+              "ing": [
                 "Terreau horticole"
               ]
             },
             {
-              "nom": "Rétention",
-              "ratio": 0.2,
+              "nom": "Organique",
+              "ratio": 0.1,
               "ing": [
-                "Fibre de coco"
+                "Compost mûr"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Drainage",
+              "ratio": 0.1,
               "ing": [
-                "Terreau de feuilles"
-              ]
-            },
-            {
-              "nom": "Aération",
-              "ratio": 0.15,
-              "ing": [
-                "Perlite",
-                "Pumice"
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
+          "roles": [
+            {
+              "nom": "Terreau",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.15,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
             },
             {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            }
-          ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "RHS — Houseplants growing guide",
-          "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
         },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -863,33 +880,32 @@
     "conseil": "Assurez-lui un emplacement baigné de lumière pour que ses bractées rouges atteignent une coloration optimale.",
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau plantes vertes",
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Terreau",
+        "ratio": 0.25,
+        "ing": [
           "Terreau horticole"
         ]
       },
       {
-        "nom": "Rétention",
-        "ratio": 0.2,
+        "nom": "Organique",
+        "ratio": 0.1,
         "ing": [
-          "Fibre de coco"
+          "Compost mûr"
         ]
       },
       {
-        "nom": "Humus",
-        "ratio": 0.15,
+        "nom": "Drainage",
+        "ratio": 0.1,
         "ing": [
-          "Terreau de feuilles"
-        ]
-      },
-      {
-        "nom": "Aération",
-        "ratio": 0.15,
-        "ing": [
-          "Perlite",
-          "Pumice"
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
@@ -946,242 +962,7 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "5.5 - 6.5",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Écorces de pin",
-        "Terreau de feuilles",
-        "Sable de quartz",
-        "Perlite"
-      ],
-      "elements_interdits": [
-        "Poudre de Calcaire / Dolomie"
-      ],
-      "categorie_horticole": "Plante acidophile",
-      "modele_recherche": "acid_ericaceous",
-      "version_recherche": "2026.08",
-      "variantes": [
-        {
-          "nom": "Acide organique drainé",
-          "description": "Mélange sans amendement calcaire.",
-          "roles": [
-            {
-              "nom": "Base acide",
-              "ratio": 0.5,
-              "ing": [
-                "Tourbe blonde"
-              ]
-            },
-            {
-              "nom": "Structure acide",
-              "ratio": 0.25,
-              "ing": [
-                "Écorces de pin"
-              ]
-            },
-            {
-              "nom": "Matière humifère",
-              "ratio": 0.15,
-              "ing": [
-                "Terreau de feuilles"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable de quartz",
-                "Perlite"
-              ]
-            }
-          ],
-          "interdits": [
-            "Poudre de Calcaire / Dolomie"
-          ],
-          "sources": [
-            {
-              "titre": "RHS — Blueberries growing guide",
-              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Coco, kanuma et feuilles",
-          "description": "Variante sans tourbe, à surveiller avec un test de pH.",
-          "roles": [
-            {
-              "nom": "Base",
-              "ratio": 0.45,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Minéral acide",
-              "ratio": 0.25,
-              "ing": [
-                "Kanuma"
-              ]
-            },
-            {
-              "nom": "Humus de feuilles",
-              "ratio": 0.2,
-              "ing": [
-                "Terreau de feuilles"
-              ]
-            },
-            {
-              "nom": "Écorces",
-              "ratio": 0.1,
-              "ing": [
-                "Écorces de pin"
-              ]
-            }
-          ],
-          "interdits": [
-            "Poudre de Calcaire / Dolomie"
-          ],
-          "sources": [
-            {
-              "titre": "RHS — Blueberries growing guide",
-              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "titre": "RHS — Blueberries growing guide",
-          "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
-        },
-        {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-        }
-      ]
-    },
-    "entretien": {
-      "rempotage": "Au printemps si la touffe dépasse du pot",
-      "fertilisation": "Engrais très dilué une fois par mois en saison de croissance",
-      "taille": "Inutile",
-      "multiplication": "Division des touffes au printemps"
-    },
-    "sante_securite": {
-      "toxicite": "Non toxique (les baies sont décoratives mais non comestibles)",
-      "maladies": [
-        "Pourriture du coussin en atmosphère trop confinée et chaude"
-      ],
-      "ravageurs": [
-        "Araignées rouges en air trop sec"
-      ],
-      "proprietes_particulieres": "Son tapis de perles orange vif en fait une plante miniature hautement originale."
-    },
-    "conseil": "Ne l'exposez jamais à des températures de salon trop élevées en hiver, sinon elle perdra rapidement ses baies colorées.",
-    "roles": [
-      {
-        "nom": "Base acide",
-        "ratio": 0.5,
-        "ing": [
-          "Tourbe blonde"
-        ]
-      },
-      {
-        "nom": "Structure acide",
-        "ratio": 0.25,
-        "ing": [
-          "Écorces de pin"
-        ]
-      },
-      {
-        "nom": "Matière humifère",
-        "ratio": 0.15,
-        "ing": [
-          "Terreau de feuilles"
-        ]
-      },
-      {
-        "nom": "Drainage",
-        "ratio": 0.1,
-        "ing": [
-          "Sable de quartz",
-          "Perlite"
-        ]
-      }
-    ],
-    "interdits": [
-      "Poudre de Calcaire / Dolomie"
-    ]
-  },
-  {
-    "taxonomie": {
-      "nom_scientifique": "Pentas lanceolata",
-      "noms_vernaculaires": [
-        "Pentas",
-        "Étoile d'Égypte"
-      ],
-      "famille": "Rubiaceae",
-      "origine_geographique": "Afrique de l'Est et Yémen"
-    },
-    "morphologie": {
-      "port": "Sous-arbrisseau dressé et ramifié",
-      "systeme_racinaire": "Fibreux",
-      "feuillage": {
-        "persistance": "Persistant",
-        "morphologie": "Feuilles lancéolées, légèrement velues, aux nervures marquées",
-        "coloris_motifs": "Vert moyen"
-      },
-      "fleurs": {
-        "description": "Ombelles denses de petites fleurs tubulaires en forme d'étoile (rouge, rose, mauve ou blanc)"
-      },
-      "floraison": "Du printemps jusqu'aux gelées",
-      "fruits_graines": "Capsules minuscules"
-    },
-    "exigences_climatiques": {
-      "exposition": "Plein soleil ou lumière très intense",
-      "rusticite": "10°C minimum",
-      "temperature_ideale": "18°C à 26°C",
-      "hygrometrie": "Moyenne"
-    },
-    "gestion_eau": {
-      "frequence_mode": "Laisser sécher légèrement la surface du terreau entre deux arrosages.",
-      "frequence_arrosage": {
-        "janvier": 12,
-        "fevrier": 12,
-        "mars": 9,
-        "avril": 7,
-        "mai": 5,
-        "juin": 4,
-        "juillet": 4,
-        "aout": 4,
-        "septembre": 6,
-        "octobre": 9,
-        "novembre": 12,
-        "decembre": 12
-      },
-      "variation_saisonniere": "Réduire les arrosages pendant la saison hivernale.",
-      "qualite_eau": "Eau du robinet standard",
-      "sensibilite_minerale": "Faible"
-    },
-    "substrat": {
-      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
-      "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terre franche / Terre de jardin",
-        "Compost mûr",
-        "Sable grossier",
-        "Perlite"
-      ],
-      "elements_interdits": [],
       "categorie_horticole": "Plante générale en contenant",
       "modele_recherche": "general_container",
       "version_recherche": "2026.08",
@@ -1273,6 +1054,228 @@
           ]
         }
       ],
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
+      ],
+      "elements_interdits": [],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
+      ]
+    },
+    "entretien": {
+      "rempotage": "Au printemps si la touffe dépasse du pot",
+      "fertilisation": "Engrais très dilué une fois par mois en saison de croissance",
+      "taille": "Inutile",
+      "multiplication": "Division des touffes au printemps"
+    },
+    "sante_securite": {
+      "toxicite": "Non toxique (les baies sont décoratives mais non comestibles)",
+      "maladies": [
+        "Pourriture du coussin en atmosphère trop confinée et chaude"
+      ],
+      "ravageurs": [
+        "Araignées rouges en air trop sec"
+      ],
+      "proprietes_particulieres": "Son tapis de perles orange vif en fait une plante miniature hautement originale."
+    },
+    "conseil": "Ne l'exposez jamais à des températures de salon trop élevées en hiver, sinon elle perdra rapidement ses baies colorées.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
+  },
+  {
+    "taxonomie": {
+      "nom_scientifique": "Pentas lanceolata",
+      "noms_vernaculaires": [
+        "Pentas",
+        "Étoile d'Égypte"
+      ],
+      "famille": "Rubiaceae",
+      "origine_geographique": "Afrique de l'Est et Yémen"
+    },
+    "morphologie": {
+      "port": "Sous-arbrisseau dressé et ramifié",
+      "systeme_racinaire": "Fibreux",
+      "feuillage": {
+        "persistance": "Persistant",
+        "morphologie": "Feuilles lancéolées, légèrement velues, aux nervures marquées",
+        "coloris_motifs": "Vert moyen"
+      },
+      "fleurs": {
+        "description": "Ombelles denses de petites fleurs tubulaires en forme d'étoile (rouge, rose, mauve ou blanc)"
+      },
+      "floraison": "Du printemps jusqu'aux gelées",
+      "fruits_graines": "Capsules minuscules"
+    },
+    "exigences_climatiques": {
+      "exposition": "Plein soleil ou lumière très intense",
+      "rusticite": "10°C minimum",
+      "temperature_ideale": "18°C à 26°C",
+      "hygrometrie": "Moyenne"
+    },
+    "gestion_eau": {
+      "frequence_mode": "Laisser sécher légèrement la surface du terreau entre deux arrosages.",
+      "frequence_arrosage": {
+        "janvier": 12,
+        "fevrier": 12,
+        "mars": 9,
+        "avril": 7,
+        "mai": 5,
+        "juin": 4,
+        "juillet": 4,
+        "aout": 4,
+        "septembre": 6,
+        "octobre": 9,
+        "novembre": 12,
+        "decembre": 12
+      },
+      "variation_saisonniere": "Réduire les arrosages pendant la saison hivernale.",
+      "qualite_eau": "Eau du robinet standard",
+      "sensibilite_minerale": "Faible"
+    },
+    "substrat": {
+      "ph": "6.0 - 7.0",
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Growing plants in containers",
@@ -1386,242 +1389,7 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "5.5 - 6.0",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Écorces de pin",
-        "Terreau de feuilles",
-        "Sable de quartz",
-        "Perlite"
-      ],
-      "elements_interdits": [
-        "Poudre de Calcaire / Dolomie"
-      ],
-      "categorie_horticole": "Plante acidophile",
-      "modele_recherche": "acid_ericaceous",
-      "version_recherche": "2026.08",
-      "variantes": [
-        {
-          "nom": "Acide organique drainé",
-          "description": "Mélange sans amendement calcaire.",
-          "roles": [
-            {
-              "nom": "Base acide",
-              "ratio": 0.5,
-              "ing": [
-                "Tourbe blonde"
-              ]
-            },
-            {
-              "nom": "Structure acide",
-              "ratio": 0.25,
-              "ing": [
-                "Écorces de pin"
-              ]
-            },
-            {
-              "nom": "Matière humifère",
-              "ratio": 0.15,
-              "ing": [
-                "Terreau de feuilles"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable de quartz",
-                "Perlite"
-              ]
-            }
-          ],
-          "interdits": [
-            "Poudre de Calcaire / Dolomie"
-          ],
-          "sources": [
-            {
-              "titre": "RHS — Blueberries growing guide",
-              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Coco, kanuma et feuilles",
-          "description": "Variante sans tourbe, à surveiller avec un test de pH.",
-          "roles": [
-            {
-              "nom": "Base",
-              "ratio": 0.45,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Minéral acide",
-              "ratio": 0.25,
-              "ing": [
-                "Kanuma"
-              ]
-            },
-            {
-              "nom": "Humus de feuilles",
-              "ratio": 0.2,
-              "ing": [
-                "Terreau de feuilles"
-              ]
-            },
-            {
-              "nom": "Écorces",
-              "ratio": 0.1,
-              "ing": [
-                "Écorces de pin"
-              ]
-            }
-          ],
-          "interdits": [
-            "Poudre de Calcaire / Dolomie"
-          ],
-          "sources": [
-            {
-              "titre": "RHS — Blueberries growing guide",
-              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "titre": "RHS — Blueberries growing guide",
-          "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
-        },
-        {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-        }
-      ]
-    },
-    "entretien": {
-      "rempotage": "Au printemps tous les ans",
-      "fertilisation": "Engrais liquide équilibré une fois par mois en saison chaude",
-      "taille": "Pincer pour forcer la ramification",
-      "multiplication": "Bouturage de tiges aoûtées en milieu chaud et humide"
-    },
-    "sante_securite": {
-      "toxicite": "Contient des substances alcaloïdes, manipuler avec précaution (non toxique pour autant en usage ornemental)",
-      "maladies": [
-        "Sensibilité aux ambiances trop sèches"
-      ],
-      "ravageurs": [
-        "Araignées rouges"
-      ],
-      "proprietes_particulieres": "Phénomène morphologique unique au monde avec ses bractées en forme de lèvres maquillées."
-    },
-    "conseil": "Idéal en serre chaude ou en grand terrarium tropical en raison de son besoin absolu d'humidité.",
-    "roles": [
-      {
-        "nom": "Base acide",
-        "ratio": 0.5,
-        "ing": [
-          "Tourbe blonde"
-        ]
-      },
-      {
-        "nom": "Structure acide",
-        "ratio": 0.25,
-        "ing": [
-          "Écorces de pin"
-        ]
-      },
-      {
-        "nom": "Matière humifère",
-        "ratio": 0.15,
-        "ing": [
-          "Terreau de feuilles"
-        ]
-      },
-      {
-        "nom": "Drainage",
-        "ratio": 0.1,
-        "ing": [
-          "Sable de quartz",
-          "Perlite"
-        ]
-      }
-    ],
-    "interdits": [
-      "Poudre de Calcaire / Dolomie"
-    ]
-  },
-  {
-    "taxonomie": {
-      "nom_scientifique": "Serissa foetida",
-      "noms_vernaculaires": [
-        "Sérissa du Japon",
-        "Arbre aux mille étoiles"
-      ],
-      "famille": "Rubiaceae",
-      "origine_geographique": "Chine et Asie du Sud-Est"
-    },
-    "morphologie": {
-      "port": "Arbuste nain ramifié, souvent cultivé en bonsaï",
-      "systeme_racinaire": "Fineux",
-      "feuillage": {
-        "persistance": "Persistant",
-        "morphologie": "Petites feuilles ovales, brillantes, dégageant une légère odeur herbacée froissée",
-        "coloris_motifs": "Vert moyen ou panaché de crème selon la variété"
-      },
-      "fleurs": {
-        "description": "Petites fleurs solitaires en forme d'étoile blanc pur"
-      },
-      "floraison": "De manière intermittente toute l'année, pic au printemps/été",
-      "fruits_graines": "Capsules sèches"
-    },
-    "exigences_climatiques": {
-      "exposition": "Lumière très vive, accepte un peu de soleil",
-      "rusticite": "10°C minimum",
-      "temperature_ideale": "15°C à 22°C",
-      "hygrometrie": "Moyenne à élevée"
-    },
-    "gestion_eau": {
-      "frequence_mode": "Arroser dès que la surface du substrat sèche légèrement.",
-      "frequence_arrosage": {
-        "janvier": 10,
-        "fevrier": 10,
-        "mars": 8,
-        "avril": 6,
-        "mai": 5,
-        "juin": 4,
-        "juillet": 4,
-        "aout": 4,
-        "septembre": 6,
-        "octobre": 8,
-        "novembre": 10,
-        "decembre": 10
-      },
-      "variation_saisonniere": "Maintenir des arrosages réguliers toute l'année.",
-      "qualite_eau": "Eau du robinet standard",
-      "sensibilite_minerale": "Faible"
-    },
-    "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
-      "ph": "6.0 - 6.5",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
       "categorie_horticole": "Arbre, arbuste ou liane durable",
       "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
@@ -1723,6 +1491,242 @@
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
+      "sources": [
+        {
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
+      ]
+    },
+    "entretien": {
+      "rempotage": "Au printemps tous les ans",
+      "fertilisation": "Engrais liquide équilibré une fois par mois en saison chaude",
+      "taille": "Pincer pour forcer la ramification",
+      "multiplication": "Bouturage de tiges aoûtées en milieu chaud et humide"
+    },
+    "sante_securite": {
+      "toxicite": "Contient des substances alcaloïdes, manipuler avec précaution (non toxique pour autant en usage ornemental)",
+      "maladies": [
+        "Sensibilité aux ambiances trop sèches"
+      ],
+      "ravageurs": [
+        "Araignées rouges"
+      ],
+      "proprietes_particulieres": "Phénomène morphologique unique au monde avec ses bractées en forme de lèvres maquillées."
+    },
+    "conseil": "Idéal en serre chaude ou en grand terrarium tropical en raison de son besoin absolu d'humidité.",
+    "roles": [
+      {
+        "nom": "Loam",
+        "ratio": 0.55,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Terreau",
+        "ratio": 0.25,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
+  },
+  {
+    "taxonomie": {
+      "nom_scientifique": "Serissa foetida",
+      "noms_vernaculaires": [
+        "Sérissa du Japon",
+        "Arbre aux mille étoiles"
+      ],
+      "famille": "Rubiaceae",
+      "origine_geographique": "Chine et Asie du Sud-Est"
+    },
+    "morphologie": {
+      "port": "Arbuste nain ramifié, souvent cultivé en bonsaï",
+      "systeme_racinaire": "Fineux",
+      "feuillage": {
+        "persistance": "Persistant",
+        "morphologie": "Petites feuilles ovales, brillantes, dégageant une légère odeur herbacée froissée",
+        "coloris_motifs": "Vert moyen ou panaché de crème selon la variété"
+      },
+      "fleurs": {
+        "description": "Petites fleurs solitaires en forme d'étoile blanc pur"
+      },
+      "floraison": "De manière intermittente toute l'année, pic au printemps/été",
+      "fruits_graines": "Capsules sèches"
+    },
+    "exigences_climatiques": {
+      "exposition": "Lumière très vive, accepte un peu de soleil",
+      "rusticite": "10°C minimum",
+      "temperature_ideale": "15°C à 22°C",
+      "hygrometrie": "Moyenne à élevée"
+    },
+    "gestion_eau": {
+      "frequence_mode": "Arroser dès que la surface du substrat sèche légèrement.",
+      "frequence_arrosage": {
+        "janvier": 10,
+        "fevrier": 10,
+        "mars": 8,
+        "avril": 6,
+        "mai": 5,
+        "juin": 4,
+        "juillet": 4,
+        "aout": 4,
+        "septembre": 6,
+        "octobre": 8,
+        "novembre": 10,
+        "decembre": 10
+      },
+      "variation_saisonniere": "Maintenir des arrosages réguliers toute l'année.",
+      "qualite_eau": "Eau du robinet standard",
+      "sensibilite_minerale": "Faible"
+    },
+    "substrat": {
+      "ph": "6.0 - 6.5",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "roles": [
+            {
+              "nom": "Loam",
+              "ratio": 0.55,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.25,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
+          "roles": [
+            {
+              "nom": "Terreau",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.15,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Trees in containers",
@@ -1839,16 +1843,7 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 6.5",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
       "categorie_horticole": "Arbre, arbuste ou liane durable",
       "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
@@ -1950,6 +1945,15 @@
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Trees in containers",
@@ -2084,16 +2088,7 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 6.5",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
       "categorie_horticole": "Arbre, arbuste ou liane durable",
       "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
@@ -2195,6 +2190,15 @@
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Trees in containers",
@@ -2335,16 +2339,7 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 6.5",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
       "categorie_horticole": "Arbre, arbuste ou liane durable",
       "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
@@ -2446,6 +2441,15 @@
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Trees in containers",
@@ -2586,16 +2590,7 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 6.5",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
       "categorie_horticole": "Arbre, arbuste ou liane durable",
       "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
@@ -2697,6 +2692,15 @@
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Trees in containers",
@@ -2837,16 +2841,7 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 6.5",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
       "categorie_horticole": "Arbre, arbuste ou liane durable",
       "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
@@ -2948,6 +2943,15 @@
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Trees in containers",
@@ -3081,16 +3085,7 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 6.5",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
       "categorie_horticole": "Arbre, arbuste ou liane durable",
       "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
@@ -3192,6 +3187,15 @@
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Trees in containers",
@@ -3325,16 +3329,7 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 6.5",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
       "categorie_horticole": "Arbre, arbuste ou liane durable",
       "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
@@ -3436,6 +3431,15 @@
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Trees in containers",
@@ -3569,18 +3573,7 @@
       "sensibilite_minerale": "Extrêmement sensible au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "4.5 - 5.5",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Écorces de pin",
-        "Terreau de feuilles",
-        "Sable de quartz",
-        "Perlite"
-      ],
-      "elements_interdits": [
-        "Poudre de Calcaire / Dolomie"
-      ],
       "categorie_horticole": "Plante acidophile",
       "modele_recherche": "acid_ericaceous",
       "version_recherche": "2026.08",
@@ -3680,6 +3673,17 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Écorces de pin",
+        "Terreau de feuilles",
+        "Sable de quartz",
+        "Perlite"
+      ],
+      "elements_interdits": [
+        "Poudre de Calcaire / Dolomie"
       ],
       "sources": [
         {
@@ -3811,16 +3815,7 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 6.5",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
       "categorie_horticole": "Arbre, arbuste ou liane durable",
       "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
@@ -3922,6 +3917,15 @@
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Trees in containers",
@@ -4055,256 +4059,7 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "5.0 - 6.0",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Écorces de pin",
-        "Terreau de feuilles",
-        "Sable de quartz",
-        "Perlite"
-      ],
-      "elements_interdits": [
-        "Poudre de Calcaire / Dolomie"
-      ],
-      "categorie_horticole": "Plante acidophile",
-      "modele_recherche": "acid_ericaceous",
-      "version_recherche": "2026.08",
-      "variantes": [
-        {
-          "nom": "Acide organique drainé",
-          "description": "Mélange sans amendement calcaire.",
-          "roles": [
-            {
-              "nom": "Base acide",
-              "ratio": 0.5,
-              "ing": [
-                "Tourbe blonde"
-              ]
-            },
-            {
-              "nom": "Structure acide",
-              "ratio": 0.25,
-              "ing": [
-                "Écorces de pin"
-              ]
-            },
-            {
-              "nom": "Matière humifère",
-              "ratio": 0.15,
-              "ing": [
-                "Terreau de feuilles"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable de quartz",
-                "Perlite"
-              ]
-            }
-          ],
-          "interdits": [
-            "Poudre de Calcaire / Dolomie"
-          ],
-          "sources": [
-            {
-              "titre": "RHS — Blueberries growing guide",
-              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Coco, kanuma et feuilles",
-          "description": "Variante sans tourbe, à surveiller avec un test de pH.",
-          "roles": [
-            {
-              "nom": "Base",
-              "ratio": 0.45,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Minéral acide",
-              "ratio": 0.25,
-              "ing": [
-                "Kanuma"
-              ]
-            },
-            {
-              "nom": "Humus de feuilles",
-              "ratio": 0.2,
-              "ing": [
-                "Terreau de feuilles"
-              ]
-            },
-            {
-              "nom": "Écorces",
-              "ratio": 0.1,
-              "ing": [
-                "Écorces de pin"
-              ]
-            }
-          ],
-          "interdits": [
-            "Poudre de Calcaire / Dolomie"
-          ],
-          "sources": [
-            {
-              "titre": "RHS — Blueberries growing guide",
-              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "titre": "RHS — Blueberries growing guide",
-          "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
-        },
-        {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-        }
-      ]
-    },
-    "entretien": {
-      "rempotage": "Tous les 2 ans au printemps",
-      "fertilisation": "Engrais riche en phosphore et potassium en été",
-      "taille": "Tailler légèrement après la floraison pour structurer le buisson",
-      "multiplication": "Boutures de tiges semi-aoûtées avec chaleur de fond"
-    },
-    "sante_securite": {
-      "toxicite": "À vérifier spécifiquement ; ne pas ingérer sans validation botanique et sanitaire.",
-      "maladies": [
-        "Jaunissement des feuilles par carence en fer (chlorose) ou calcaire"
-      ],
-      "ravageurs": [
-        "Cochenilles farineuses"
-      ],
-      "proprietes_particulieres": "Identité taxonomique vérifiée par GBIF ; données horticoles provisoires à réviser."
-    },
-    "conseil": "Profil horticole provisoire extrapolé d'une espèce apparentée. Vérifier ce taxon avant culture ou consommation.",
-    "sources": [
-      {
-        "titre": "GBIF Backbone Taxonomy",
-        "url": "https://www.gbif.org/species/2905600",
-        "type": "taxonomie",
-        "consulte_le": "2026-08-01"
-      }
-    ],
-    "validation_catalogue": {
-      "taxonomie": "GBIF",
-      "gbif_key": 2905600,
-      "ajoute_le": "2026-08-01",
-      "priorite": "cultivee",
-      "horticulture": "provisoire_a_reviser"
-    },
-    "roles": [
-      {
-        "nom": "Base acide",
-        "ratio": 0.5,
-        "ing": [
-          "Tourbe blonde"
-        ]
-      },
-      {
-        "nom": "Structure acide",
-        "ratio": 0.25,
-        "ing": [
-          "Écorces de pin"
-        ]
-      },
-      {
-        "nom": "Matière humifère",
-        "ratio": 0.15,
-        "ing": [
-          "Terreau de feuilles"
-        ]
-      },
-      {
-        "nom": "Drainage",
-        "ratio": 0.1,
-        "ing": [
-          "Sable de quartz",
-          "Perlite"
-        ]
-      }
-    ],
-    "interdits": [
-      "Poudre de Calcaire / Dolomie"
-    ]
-  },
-  {
-    "taxonomie": {
-      "nom_scientifique": "Luculia gratissima",
-      "noms_vernaculaires": [
-        "Nom vernaculaire non documenté"
-      ],
-      "famille": "Rubiaceae",
-      "origine_geographique": "À documenter — identité taxonomique vérifiée par GBIF"
-    },
-    "morphologie": {
-      "port": "Arbuste érigé au feuillage brillant",
-      "systeme_racinaire": "Pivotant et profond",
-      "feuillage": {
-        "persistance": "Persistant",
-        "morphologie": "Feuilles opposées, ovales, ondulées, très brillantes et coriaces",
-        "coloris_motifs": "Vert foncé lustré"
-      },
-      "fleurs": {
-        "description": "Petites fleurs blanches étoilées au parfum intense de jasmin"
-      },
-      "floraison": "Printemps",
-      "fruits_graines": "Baies ovales devenant rouges puis presque noires à maturité (contenant les grains de café)"
-    },
-    "exigences_climatiques": {
-      "exposition": "Lumière vive sans soleil direct trop brûlant",
-      "rusticite": "10°C minimum",
-      "temperature_ideale": "18°C à 24°C",
-      "hygrometrie": "Moyenne à élevée (50% - 65%)"
-    },
-    "gestion_eau": {
-      "frequence_mode": "Laisser sécher le premier tiers du substrat entre deux arrosages.",
-      "frequence_arrosage": {
-        "janvier": 12,
-        "fevrier": 12,
-        "mars": 9,
-        "avril": 7,
-        "mai": 5,
-        "juin": 4,
-        "juillet": 4,
-        "aout": 4,
-        "septembre": 6,
-        "octobre": 9,
-        "novembre": 12,
-        "decembre": 12
-      },
-      "variation_saisonniere": "Réduire modérément les apports d'eau en hiver.",
-      "qualite_eau": "Eau non calcaire de préférence",
-      "sensibilite_minerale": "Moyenne"
-    },
-    "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
-      "ph": "6.0 - 6.5",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
       "categorie_horticole": "Arbre, arbuste ou liane durable",
       "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
@@ -4406,6 +4161,256 @@
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
+      "sources": [
+        {
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
+      ]
+    },
+    "entretien": {
+      "rempotage": "Tous les 2 ans au printemps",
+      "fertilisation": "Engrais riche en phosphore et potassium en été",
+      "taille": "Tailler légèrement après la floraison pour structurer le buisson",
+      "multiplication": "Boutures de tiges semi-aoûtées avec chaleur de fond"
+    },
+    "sante_securite": {
+      "toxicite": "À vérifier spécifiquement ; ne pas ingérer sans validation botanique et sanitaire.",
+      "maladies": [
+        "Jaunissement des feuilles par carence en fer (chlorose) ou calcaire"
+      ],
+      "ravageurs": [
+        "Cochenilles farineuses"
+      ],
+      "proprietes_particulieres": "Identité taxonomique vérifiée par GBIF ; données horticoles provisoires à réviser."
+    },
+    "conseil": "Profil horticole provisoire extrapolé d'une espèce apparentée. Vérifier ce taxon avant culture ou consommation.",
+    "sources": [
+      {
+        "titre": "GBIF Backbone Taxonomy",
+        "url": "https://www.gbif.org/species/2905600",
+        "type": "taxonomie",
+        "consulte_le": "2026-08-01"
+      }
+    ],
+    "validation_catalogue": {
+      "taxonomie": "GBIF",
+      "gbif_key": 2905600,
+      "ajoute_le": "2026-08-01",
+      "priorite": "cultivee",
+      "horticulture": "provisoire_a_reviser"
+    },
+    "roles": [
+      {
+        "nom": "Loam",
+        "ratio": 0.55,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Terreau",
+        "ratio": 0.25,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
+  },
+  {
+    "taxonomie": {
+      "nom_scientifique": "Luculia gratissima",
+      "noms_vernaculaires": [
+        "Nom vernaculaire non documenté"
+      ],
+      "famille": "Rubiaceae",
+      "origine_geographique": "À documenter — identité taxonomique vérifiée par GBIF"
+    },
+    "morphologie": {
+      "port": "Arbuste érigé au feuillage brillant",
+      "systeme_racinaire": "Pivotant et profond",
+      "feuillage": {
+        "persistance": "Persistant",
+        "morphologie": "Feuilles opposées, ovales, ondulées, très brillantes et coriaces",
+        "coloris_motifs": "Vert foncé lustré"
+      },
+      "fleurs": {
+        "description": "Petites fleurs blanches étoilées au parfum intense de jasmin"
+      },
+      "floraison": "Printemps",
+      "fruits_graines": "Baies ovales devenant rouges puis presque noires à maturité (contenant les grains de café)"
+    },
+    "exigences_climatiques": {
+      "exposition": "Lumière vive sans soleil direct trop brûlant",
+      "rusticite": "10°C minimum",
+      "temperature_ideale": "18°C à 24°C",
+      "hygrometrie": "Moyenne à élevée (50% - 65%)"
+    },
+    "gestion_eau": {
+      "frequence_mode": "Laisser sécher le premier tiers du substrat entre deux arrosages.",
+      "frequence_arrosage": {
+        "janvier": 12,
+        "fevrier": 12,
+        "mars": 9,
+        "avril": 7,
+        "mai": 5,
+        "juin": 4,
+        "juillet": 4,
+        "aout": 4,
+        "septembre": 6,
+        "octobre": 9,
+        "novembre": 12,
+        "decembre": 12
+      },
+      "variation_saisonniere": "Réduire modérément les apports d'eau en hiver.",
+      "qualite_eau": "Eau non calcaire de préférence",
+      "sensibilite_minerale": "Moyenne"
+    },
+    "substrat": {
+      "ph": "6.0 - 6.5",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "roles": [
+            {
+              "nom": "Loam",
+              "ratio": 0.55,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.25,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
+          "roles": [
+            {
+              "nom": "Terreau",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.15,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Trees in containers",
@@ -4539,16 +4544,7 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 6.5",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
       "categorie_horticole": "Arbre, arbuste ou liane durable",
       "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
@@ -4650,6 +4646,15 @@
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Trees in containers",

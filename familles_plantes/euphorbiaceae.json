@@ -50,110 +50,100 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "5.5 - 6.5",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Écorces de pin",
-        "Terreau de feuilles",
-        "Sable de quartz",
-        "Perlite"
-      ],
-      "elements_interdits": [
-        "Poudre de Calcaire / Dolomie"
-      ],
-      "categorie_horticole": "Plante acidophile",
-      "modele_recherche": "acid_ericaceous",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Acide organique drainé",
-          "description": "Mélange sans amendement calcaire.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base acide",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Tourbe blonde"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Structure acide",
+              "nom": "Terreau",
               "ratio": 0.25,
               "ing": [
-                "Écorces de pin"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Matière humifère",
-              "ratio": 0.15,
+              "nom": "Organique",
+              "ratio": 0.1,
               "ing": [
-                "Terreau de feuilles"
+                "Compost mûr"
               ]
             },
             {
               "nom": "Drainage",
               "ratio": 0.1,
               "ing": [
-                "Sable de quartz",
-                "Perlite"
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Poudre de Calcaire / Dolomie"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Blueberries growing guide",
-              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
             },
             {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Coco, kanuma et feuilles",
-          "description": "Variante sans tourbe, à surveiller avec un test de pH.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.45,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Fibre de coco"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Minéral acide",
-              "ratio": 0.25,
-              "ing": [
-                "Kanuma"
-              ]
-            },
-            {
-              "nom": "Humus de feuilles",
+              "nom": "Terre",
               "ratio": 0.2,
               "ing": [
-                "Terreau de feuilles"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
               "nom": "Écorces",
-              "ratio": 0.1,
+              "ratio": 0.15,
               "ing": [
                 "Écorces de pin"
               ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
             }
           ],
-          "interdits": [
-            "Poudre de Calcaire / Dolomie"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Blueberries growing guide",
-              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
             },
             {
               "titre": "RHS — Growing plants in containers",
@@ -162,14 +152,27 @@
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "RHS — Blueberries growing guide",
-          "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
         },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -194,38 +197,36 @@
     "conseil": "Si votre Croton commence à perdre la vivacité de ses couleurs et devient majoritairement vert, rapprochez-le immédiatement d'une source de lumière vive.",
     "roles": [
       {
-        "nom": "Base acide",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Tourbe blonde"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Structure acide",
+        "nom": "Terreau",
         "ratio": 0.25,
         "ing": [
-          "Écorces de pin"
+          "Terreau horticole"
         ]
       },
       {
-        "nom": "Matière humifère",
-        "ratio": 0.15,
+        "nom": "Organique",
+        "ratio": 0.1,
         "ing": [
-          "Terreau de feuilles"
+          "Compost mûr"
         ]
       },
       {
         "nom": "Drainage",
         "ratio": 0.1,
         "ing": [
-          "Sable de quartz",
-          "Perlite"
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Poudre de Calcaire / Dolomie"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -278,100 +279,129 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
-      "categorie_horticole": "Cactée ou succulente",
-      "modele_recherche": "succulent_mineral",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Terreau et sable grossier",
-          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Fraction minérale",
-              "ratio": 0.5,
+              "nom": "Terreau",
+              "ratio": 0.25,
               "ing": [
-                "Sable grossier"
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Minéral renforcé",
-          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base organique",
-              "ratio": 0.35,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Pumice",
-              "ratio": 0.25,
+              "nom": "Terre",
+              "ratio": 0.2,
               "ing": [
-                "Pumice"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Pouzzolane",
-              "ratio": 0.25,
-              "ing": [
-                "Pouzzolane",
-                "Micro-pouzzolane"
-              ]
-            },
-            {
-              "nom": "Sable",
+              "nom": "Écorces",
               "ratio": 0.15,
               "ing": [
-                "Sable grossier"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "University of Minnesota Extension — Cacti and succulents",
-          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -395,24 +425,36 @@
     "conseil": "Placez-la au droit d'une fenêtre très ensoleillée : plus elle reçoit de lumière directe, plus ses bractées arborent des couleurs éclatantes !",
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau horticole",
-          "Terreau léger"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Fraction minérale",
-        "ratio": 0.5,
+        "nom": "Terreau",
+        "ratio": 0.25,
         "ing": [
-          "Sable grossier"
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Terreau argileux (Aquatique / Nénuphars)"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -465,100 +507,129 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "5.5 - 6.5",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
-      "categorie_horticole": "Cactée ou succulente",
-      "modele_recherche": "succulent_mineral",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Terreau et sable grossier",
-          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Fraction minérale",
-              "ratio": 0.5,
+              "nom": "Terreau",
+              "ratio": 0.25,
               "ing": [
-                "Sable grossier"
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Minéral renforcé",
-          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base organique",
-              "ratio": 0.35,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Pumice",
-              "ratio": 0.25,
+              "nom": "Terre",
+              "ratio": 0.2,
               "ing": [
-                "Pumice"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Pouzzolane",
-              "ratio": 0.25,
-              "ing": [
-                "Pouzzolane",
-                "Micro-pouzzolane"
-              ]
-            },
-            {
-              "nom": "Sable",
+              "nom": "Écorces",
               "ratio": 0.15,
               "ing": [
-                "Sable grossier"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "University of Minnesota Extension — Cacti and succulents",
-          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -584,24 +655,36 @@
     "conseil": "Évitez à tout prix les courants d'air froids et les chocs thermiques au moment de l'achat ou des déplacements, sous peine de voir toutes ses feuilles tomber.",
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau horticole",
-          "Terreau léger"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Fraction minérale",
-        "ratio": 0.5,
+        "nom": "Terreau",
+        "ratio": 0.25,
         "ing": [
-          "Sable grossier"
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Terreau argileux (Aquatique / Nénuphars)"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -655,16 +738,7 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
       "categorie_horticole": "Cactée ou succulente",
       "modele_recherche": "succulent_mineral",
       "version_recherche": "2026.08",
@@ -744,6 +818,15 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
+      ],
+      "elements_interdits": [
+        "Terreau argileux (Aquatique / Nénuphars)"
       ],
       "sources": [
         {
@@ -841,100 +924,129 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
-      "categorie_horticole": "Cactée ou succulente",
-      "modele_recherche": "succulent_mineral",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Terreau et sable grossier",
-          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Fraction minérale",
-              "ratio": 0.5,
+              "nom": "Terreau",
+              "ratio": 0.25,
               "ing": [
-                "Sable grossier"
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Minéral renforcé",
-          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base organique",
-              "ratio": 0.35,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Pumice",
-              "ratio": 0.25,
+              "nom": "Terre",
+              "ratio": 0.2,
               "ing": [
-                "Pumice"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Pouzzolane",
-              "ratio": 0.25,
-              "ing": [
-                "Pouzzolane",
-                "Micro-pouzzolane"
-              ]
-            },
-            {
-              "nom": "Sable",
+              "nom": "Écorces",
               "ratio": 0.15,
               "ing": [
-                "Sable grossier"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "University of Minnesota Extension — Cacti and succulents",
-          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -980,24 +1092,36 @@
     },
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau horticole",
-          "Terreau léger"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Fraction minérale",
-        "ratio": 0.5,
+        "nom": "Terreau",
+        "ratio": 0.25,
         "ing": [
-          "Sable grossier"
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Terreau argileux (Aquatique / Nénuphars)"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1049,100 +1173,129 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
-      "categorie_horticole": "Cactée ou succulente",
-      "modele_recherche": "succulent_mineral",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Terreau et sable grossier",
-          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Fraction minérale",
-              "ratio": 0.5,
+              "nom": "Terreau",
+              "ratio": 0.25,
               "ing": [
-                "Sable grossier"
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Minéral renforcé",
-          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base organique",
-              "ratio": 0.35,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Pumice",
-              "ratio": 0.25,
+              "nom": "Terre",
+              "ratio": 0.2,
               "ing": [
-                "Pumice"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Pouzzolane",
-              "ratio": 0.25,
-              "ing": [
-                "Pouzzolane",
-                "Micro-pouzzolane"
-              ]
-            },
-            {
-              "nom": "Sable",
+              "nom": "Écorces",
               "ratio": 0.15,
               "ing": [
-                "Sable grossier"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "University of Minnesota Extension — Cacti and succulents",
-          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -1188,24 +1341,36 @@
     },
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau horticole",
-          "Terreau léger"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Fraction minérale",
-        "ratio": 0.5,
+        "nom": "Terreau",
+        "ratio": 0.25,
         "ing": [
-          "Sable grossier"
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Terreau argileux (Aquatique / Nénuphars)"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1257,100 +1422,129 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
-      "categorie_horticole": "Cactée ou succulente",
-      "modele_recherche": "succulent_mineral",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Terreau et sable grossier",
-          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Fraction minérale",
-              "ratio": 0.5,
+              "nom": "Terreau",
+              "ratio": 0.25,
               "ing": [
-                "Sable grossier"
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Minéral renforcé",
-          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base organique",
-              "ratio": 0.35,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Pumice",
-              "ratio": 0.25,
+              "nom": "Terre",
+              "ratio": 0.2,
               "ing": [
-                "Pumice"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Pouzzolane",
-              "ratio": 0.25,
-              "ing": [
-                "Pouzzolane",
-                "Micro-pouzzolane"
-              ]
-            },
-            {
-              "nom": "Sable",
+              "nom": "Écorces",
               "ratio": 0.15,
               "ing": [
-                "Sable grossier"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "University of Minnesota Extension — Cacti and succulents",
-          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -1396,24 +1590,36 @@
     },
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau horticole",
-          "Terreau léger"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Fraction minérale",
-        "ratio": 0.5,
+        "nom": "Terreau",
+        "ratio": 0.25,
         "ing": [
-          "Sable grossier"
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Terreau argileux (Aquatique / Nénuphars)"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1465,100 +1671,129 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
-      "categorie_horticole": "Cactée ou succulente",
-      "modele_recherche": "succulent_mineral",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Terreau et sable grossier",
-          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Fraction minérale",
-              "ratio": 0.5,
+              "nom": "Terreau",
+              "ratio": 0.25,
               "ing": [
-                "Sable grossier"
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Minéral renforcé",
-          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base organique",
-              "ratio": 0.35,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Pumice",
-              "ratio": 0.25,
+              "nom": "Terre",
+              "ratio": 0.2,
               "ing": [
-                "Pumice"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Pouzzolane",
-              "ratio": 0.25,
-              "ing": [
-                "Pouzzolane",
-                "Micro-pouzzolane"
-              ]
-            },
-            {
-              "nom": "Sable",
+              "nom": "Écorces",
               "ratio": 0.15,
               "ing": [
-                "Sable grossier"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "University of Minnesota Extension — Cacti and succulents",
-          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -1604,24 +1839,36 @@
     },
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau horticole",
-          "Terreau léger"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Fraction minérale",
-        "ratio": 0.5,
+        "nom": "Terreau",
+        "ratio": 0.25,
         "ing": [
-          "Sable grossier"
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Terreau argileux (Aquatique / Nénuphars)"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1673,100 +1920,129 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
-      "categorie_horticole": "Cactée ou succulente",
-      "modele_recherche": "succulent_mineral",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Terreau et sable grossier",
-          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Fraction minérale",
-              "ratio": 0.5,
+              "nom": "Terreau",
+              "ratio": 0.25,
               "ing": [
-                "Sable grossier"
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Minéral renforcé",
-          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base organique",
-              "ratio": 0.35,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Pumice",
-              "ratio": 0.25,
+              "nom": "Terre",
+              "ratio": 0.2,
               "ing": [
-                "Pumice"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Pouzzolane",
-              "ratio": 0.25,
-              "ing": [
-                "Pouzzolane",
-                "Micro-pouzzolane"
-              ]
-            },
-            {
-              "nom": "Sable",
+              "nom": "Écorces",
               "ratio": 0.15,
               "ing": [
-                "Sable grossier"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "University of Minnesota Extension — Cacti and succulents",
-          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -1812,24 +2088,36 @@
     },
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau horticole",
-          "Terreau léger"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Fraction minérale",
-        "ratio": 0.5,
+        "nom": "Terreau",
+        "ratio": 0.25,
         "ing": [
-          "Sable grossier"
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Terreau argileux (Aquatique / Nénuphars)"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1881,100 +2169,129 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
-      "categorie_horticole": "Cactée ou succulente",
-      "modele_recherche": "succulent_mineral",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Terreau et sable grossier",
-          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Fraction minérale",
-              "ratio": 0.5,
+              "nom": "Terreau",
+              "ratio": 0.25,
               "ing": [
-                "Sable grossier"
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Minéral renforcé",
-          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base organique",
-              "ratio": 0.35,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Pumice",
-              "ratio": 0.25,
+              "nom": "Terre",
+              "ratio": 0.2,
               "ing": [
-                "Pumice"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Pouzzolane",
-              "ratio": 0.25,
-              "ing": [
-                "Pouzzolane",
-                "Micro-pouzzolane"
-              ]
-            },
-            {
-              "nom": "Sable",
+              "nom": "Écorces",
               "ratio": 0.15,
               "ing": [
-                "Sable grossier"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "University of Minnesota Extension — Cacti and succulents",
-          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -2020,24 +2337,36 @@
     },
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau horticole",
-          "Terreau léger"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Fraction minérale",
-        "ratio": 0.5,
+        "nom": "Terreau",
+        "ratio": 0.25,
         "ing": [
-          "Sable grossier"
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Terreau argileux (Aquatique / Nénuphars)"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -2089,100 +2418,129 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
-      "categorie_horticole": "Cactée ou succulente",
-      "modele_recherche": "succulent_mineral",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Terreau et sable grossier",
-          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Fraction minérale",
-              "ratio": 0.5,
+              "nom": "Terreau",
+              "ratio": 0.25,
               "ing": [
-                "Sable grossier"
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Minéral renforcé",
-          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base organique",
-              "ratio": 0.35,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Pumice",
-              "ratio": 0.25,
+              "nom": "Terre",
+              "ratio": 0.2,
               "ing": [
-                "Pumice"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Pouzzolane",
-              "ratio": 0.25,
-              "ing": [
-                "Pouzzolane",
-                "Micro-pouzzolane"
-              ]
-            },
-            {
-              "nom": "Sable",
+              "nom": "Écorces",
               "ratio": 0.15,
               "ing": [
-                "Sable grossier"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "University of Minnesota Extension — Cacti and succulents",
-          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -2228,24 +2586,36 @@
     },
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau horticole",
-          "Terreau léger"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Fraction minérale",
-        "ratio": 0.5,
+        "nom": "Terreau",
+        "ratio": 0.25,
         "ing": [
-          "Sable grossier"
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Terreau argileux (Aquatique / Nénuphars)"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -2297,100 +2667,129 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
-      "categorie_horticole": "Cactée ou succulente",
-      "modele_recherche": "succulent_mineral",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Terreau et sable grossier",
-          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Fraction minérale",
-              "ratio": 0.5,
+              "nom": "Terreau",
+              "ratio": 0.25,
               "ing": [
-                "Sable grossier"
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Minéral renforcé",
-          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base organique",
-              "ratio": 0.35,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Pumice",
-              "ratio": 0.25,
+              "nom": "Terre",
+              "ratio": 0.2,
               "ing": [
-                "Pumice"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Pouzzolane",
-              "ratio": 0.25,
-              "ing": [
-                "Pouzzolane",
-                "Micro-pouzzolane"
-              ]
-            },
-            {
-              "nom": "Sable",
+              "nom": "Écorces",
               "ratio": 0.15,
               "ing": [
-                "Sable grossier"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "University of Minnesota Extension — Cacti and succulents",
-          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -2436,24 +2835,36 @@
     },
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau horticole",
-          "Terreau léger"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Fraction minérale",
-        "ratio": 0.5,
+        "nom": "Terreau",
+        "ratio": 0.25,
         "ing": [
-          "Sable grossier"
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Terreau argileux (Aquatique / Nénuphars)"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -2505,100 +2916,129 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
-      "categorie_horticole": "Cactée ou succulente",
-      "modele_recherche": "succulent_mineral",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Terreau et sable grossier",
-          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Fraction minérale",
-              "ratio": 0.5,
+              "nom": "Terreau",
+              "ratio": 0.25,
               "ing": [
-                "Sable grossier"
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Minéral renforcé",
-          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base organique",
-              "ratio": 0.35,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Pumice",
-              "ratio": 0.25,
+              "nom": "Terre",
+              "ratio": 0.2,
               "ing": [
-                "Pumice"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Pouzzolane",
-              "ratio": 0.25,
-              "ing": [
-                "Pouzzolane",
-                "Micro-pouzzolane"
-              ]
-            },
-            {
-              "nom": "Sable",
+              "nom": "Écorces",
               "ratio": 0.15,
               "ing": [
-                "Sable grossier"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "University of Minnesota Extension — Cacti and succulents",
-          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -2644,24 +3084,36 @@
     },
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau horticole",
-          "Terreau léger"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Fraction minérale",
-        "ratio": 0.5,
+        "nom": "Terreau",
+        "ratio": 0.25,
         "ing": [
-          "Sable grossier"
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Terreau argileux (Aquatique / Nénuphars)"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -2713,100 +3165,129 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
-      "categorie_horticole": "Cactée ou succulente",
-      "modele_recherche": "succulent_mineral",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Terreau et sable grossier",
-          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Fraction minérale",
-              "ratio": 0.5,
+              "nom": "Terreau",
+              "ratio": 0.25,
               "ing": [
-                "Sable grossier"
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Minéral renforcé",
-          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base organique",
-              "ratio": 0.35,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Pumice",
-              "ratio": 0.25,
+              "nom": "Terre",
+              "ratio": 0.2,
               "ing": [
-                "Pumice"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Pouzzolane",
-              "ratio": 0.25,
-              "ing": [
-                "Pouzzolane",
-                "Micro-pouzzolane"
-              ]
-            },
-            {
-              "nom": "Sable",
+              "nom": "Écorces",
               "ratio": 0.15,
               "ing": [
-                "Sable grossier"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "University of Minnesota Extension — Cacti and succulents",
-          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -2845,24 +3326,36 @@
     },
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau horticole",
-          "Terreau léger"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Fraction minérale",
-        "ratio": 0.5,
+        "nom": "Terreau",
+        "ratio": 0.25,
         "ing": [
-          "Sable grossier"
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Terreau argileux (Aquatique / Nénuphars)"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -2914,100 +3407,129 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
-      "categorie_horticole": "Cactée ou succulente",
-      "modele_recherche": "succulent_mineral",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Terreau et sable grossier",
-          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Fraction minérale",
-              "ratio": 0.5,
+              "nom": "Terreau",
+              "ratio": 0.25,
               "ing": [
-                "Sable grossier"
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Minéral renforcé",
-          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base organique",
-              "ratio": 0.35,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Pumice",
-              "ratio": 0.25,
+              "nom": "Terre",
+              "ratio": 0.2,
               "ing": [
-                "Pumice"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Pouzzolane",
-              "ratio": 0.25,
-              "ing": [
-                "Pouzzolane",
-                "Micro-pouzzolane"
-              ]
-            },
-            {
-              "nom": "Sable",
+              "nom": "Écorces",
               "ratio": 0.15,
               "ing": [
-                "Sable grossier"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "University of Minnesota Extension — Cacti and succulents",
-          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -3046,24 +3568,36 @@
     },
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau horticole",
-          "Terreau léger"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Fraction minérale",
-        "ratio": 0.5,
+        "nom": "Terreau",
+        "ratio": 0.25,
         "ing": [
-          "Sable grossier"
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Terreau argileux (Aquatique / Nénuphars)"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -3115,100 +3649,129 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
-      "categorie_horticole": "Cactée ou succulente",
-      "modele_recherche": "succulent_mineral",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Terreau et sable grossier",
-          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Fraction minérale",
-              "ratio": 0.5,
+              "nom": "Terreau",
+              "ratio": 0.25,
               "ing": [
-                "Sable grossier"
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Minéral renforcé",
-          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base organique",
-              "ratio": 0.35,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Pumice",
-              "ratio": 0.25,
+              "nom": "Terre",
+              "ratio": 0.2,
               "ing": [
-                "Pumice"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Pouzzolane",
-              "ratio": 0.25,
-              "ing": [
-                "Pouzzolane",
-                "Micro-pouzzolane"
-              ]
-            },
-            {
-              "nom": "Sable",
+              "nom": "Écorces",
               "ratio": 0.15,
               "ing": [
-                "Sable grossier"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "University of Minnesota Extension — Cacti and succulents",
-          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -3247,24 +3810,36 @@
     },
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau horticole",
-          "Terreau léger"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Fraction minérale",
-        "ratio": 0.5,
+        "nom": "Terreau",
+        "ratio": 0.25,
         "ing": [
-          "Sable grossier"
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Terreau argileux (Aquatique / Nénuphars)"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -3316,100 +3891,129 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
-      "categorie_horticole": "Cactée ou succulente",
-      "modele_recherche": "succulent_mineral",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Terreau et sable grossier",
-          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Fraction minérale",
-              "ratio": 0.5,
+              "nom": "Terreau",
+              "ratio": 0.25,
               "ing": [
-                "Sable grossier"
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Minéral renforcé",
-          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base organique",
-              "ratio": 0.35,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Pumice",
-              "ratio": 0.25,
+              "nom": "Terre",
+              "ratio": 0.2,
               "ing": [
-                "Pumice"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Pouzzolane",
-              "ratio": 0.25,
-              "ing": [
-                "Pouzzolane",
-                "Micro-pouzzolane"
-              ]
-            },
-            {
-              "nom": "Sable",
+              "nom": "Écorces",
               "ratio": 0.15,
               "ing": [
-                "Sable grossier"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "University of Minnesota Extension — Cacti and succulents",
-          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -3448,24 +4052,36 @@
     },
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau horticole",
-          "Terreau léger"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Fraction minérale",
-        "ratio": 0.5,
+        "nom": "Terreau",
+        "ratio": 0.25,
         "ing": [
-          "Sable grossier"
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Terreau argileux (Aquatique / Nénuphars)"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -3517,100 +4133,129 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
-      "categorie_horticole": "Cactée ou succulente",
-      "modele_recherche": "succulent_mineral",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Terreau et sable grossier",
-          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Fraction minérale",
-              "ratio": 0.5,
+              "nom": "Terreau",
+              "ratio": 0.25,
               "ing": [
-                "Sable grossier"
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Minéral renforcé",
-          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base organique",
-              "ratio": 0.35,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Pumice",
-              "ratio": 0.25,
+              "nom": "Terre",
+              "ratio": 0.2,
               "ing": [
-                "Pumice"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Pouzzolane",
-              "ratio": 0.25,
-              "ing": [
-                "Pouzzolane",
-                "Micro-pouzzolane"
-              ]
-            },
-            {
-              "nom": "Sable",
+              "nom": "Écorces",
               "ratio": 0.15,
               "ing": [
-                "Sable grossier"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "University of Minnesota Extension — Cacti and succulents",
-          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -3649,24 +4294,36 @@
     },
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau horticole",
-          "Terreau léger"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Fraction minérale",
-        "ratio": 0.5,
+        "nom": "Terreau",
+        "ratio": 0.25,
         "ing": [
-          "Sable grossier"
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Terreau argileux (Aquatique / Nénuphars)"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -3718,100 +4375,129 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
-      "categorie_horticole": "Cactée ou succulente",
-      "modele_recherche": "succulent_mineral",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Terreau et sable grossier",
-          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Fraction minérale",
-              "ratio": 0.5,
+              "nom": "Terreau",
+              "ratio": 0.25,
               "ing": [
-                "Sable grossier"
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Minéral renforcé",
-          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base organique",
-              "ratio": 0.35,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Pumice",
-              "ratio": 0.25,
+              "nom": "Terre",
+              "ratio": 0.2,
               "ing": [
-                "Pumice"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Pouzzolane",
-              "ratio": 0.25,
-              "ing": [
-                "Pouzzolane",
-                "Micro-pouzzolane"
-              ]
-            },
-            {
-              "nom": "Sable",
+              "nom": "Écorces",
               "ratio": 0.15,
               "ing": [
-                "Sable grossier"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "University of Minnesota Extension — Cacti and succulents",
-          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -3850,24 +4536,36 @@
     },
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau horticole",
-          "Terreau léger"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Fraction minérale",
-        "ratio": 0.5,
+        "nom": "Terreau",
+        "ratio": 0.25,
         "ing": [
-          "Sable grossier"
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Terreau argileux (Aquatique / Nénuphars)"
-    ]
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -3919,100 +4617,129 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
-      "categorie_horticole": "Cactée ou succulente",
-      "modele_recherche": "succulent_mineral",
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Terreau et sable grossier",
-          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
           "roles": [
             {
-              "nom": "Base",
-              "ratio": 0.5,
+              "nom": "Loam",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Fraction minérale",
-              "ratio": 0.5,
+              "nom": "Terreau",
+              "ratio": 0.25,
               "ing": [
-                "Sable grossier"
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Minéral renforcé",
-          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
           "roles": [
             {
-              "nom": "Base organique",
-              "ratio": 0.35,
+              "nom": "Terreau",
+              "ratio": 0.55,
               "ing": [
-                "Terreau horticole",
-                "Terreau léger"
+                "Terreau horticole"
               ]
             },
             {
-              "nom": "Pumice",
-              "ratio": 0.25,
+              "nom": "Terre",
+              "ratio": 0.2,
               "ing": [
-                "Pumice"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Pouzzolane",
-              "ratio": 0.25,
-              "ing": [
-                "Pouzzolane",
-                "Micro-pouzzolane"
-              ]
-            },
-            {
-              "nom": "Sable",
+              "nom": "Écorces",
               "ratio": 0.15,
               "ing": [
-                "Sable grossier"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
-          "interdits": [
-            "Terreau argileux (Aquatique / Nénuphars)"
-          ],
+          "interdits": [],
           "sources": [
             {
-              "titre": "University of Minnesota Extension — Cacti and succulents",
-              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "University of Minnesota Extension — Cacti and succulents",
-          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -4051,23 +4778,35 @@
     },
     "roles": [
       {
-        "nom": "Base",
-        "ratio": 0.5,
+        "nom": "Loam",
+        "ratio": 0.55,
         "ing": [
-          "Terreau horticole",
-          "Terreau léger"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Fraction minérale",
-        "ratio": 0.5,
+        "nom": "Terreau",
+        "ratio": 0.25,
         "ing": [
-          "Sable grossier"
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
         ]
       }
     ],
-    "interdits": [
-      "Terreau argileux (Aquatique / Nénuphars)"
-    ]
+    "interdits": []
   }
 ]

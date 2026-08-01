@@ -49,45 +49,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -104,58 +148,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -181,32 +197,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -262,45 +286,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -317,58 +385,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -394,32 +434,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -475,45 +523,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -530,58 +622,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -607,32 +671,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -688,45 +760,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -743,58 +859,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -820,32 +908,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -901,45 +997,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -956,58 +1096,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -1033,32 +1145,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -1114,45 +1234,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -1169,58 +1333,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -1246,32 +1382,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -1327,45 +1471,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -1382,58 +1570,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -1459,32 +1619,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -1540,45 +1708,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -1595,58 +1807,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -1672,32 +1856,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -1753,45 +1945,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -1808,58 +2044,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -1885,32 +2093,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -1966,45 +2182,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -2021,58 +2281,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -2098,32 +2330,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -2179,45 +2419,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -2234,58 +2518,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -2311,32 +2567,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -2392,45 +2656,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -2447,58 +2755,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -2524,32 +2804,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -2605,45 +2893,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -2660,58 +2992,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -2737,32 +3041,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -2818,45 +3130,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -2873,58 +3229,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -2950,32 +3278,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -3031,45 +3367,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -3086,58 +3466,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -3163,32 +3515,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -3244,45 +3604,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -3299,58 +3703,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -3376,32 +3752,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -3457,45 +3841,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -3512,58 +3940,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -3589,32 +3989,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -3670,45 +4078,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -3725,58 +4177,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -3802,32 +4226,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -3883,45 +4315,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -3938,58 +4414,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -4015,32 +4463,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -4096,45 +4552,89 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 7.0 (Neutre à légèrement acide)",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.35,
               "ing": [
                 "Terreau plantes vertes",
-                "Terreau horticole"
+                "Terreau léger"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Écorces",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Aération minérale",
               "ratio": 0.2,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            },
+            {
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
               "ing": [
                 "Fibre de coco"
               ]
             },
             {
-              "nom": "Humus",
-              "ratio": 0.15,
+              "nom": "Écorces",
+              "ratio": 0.3,
               "ing": [
-                "Terreau de feuilles"
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
               ]
             },
             {
@@ -4151,58 +4651,30 @@
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
-          "roles": [
-            {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau léger",
-                "Terreau plantes vertes"
-              ]
-            },
-            {
-              "nom": "Coco",
-              "ratio": 0.25,
-              "ing": [
-                "Fibre de coco"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.2,
-              "ing": [
-                "Perlite",
-                "Pumice"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
           "titre": "RHS — Houseplants growing guide",
           "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -4228,32 +4700,40 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.35,
         "ing": [
           "Terreau plantes vertes",
-          "Terreau horticole"
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Écorces",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Aération minérale",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Coco grossière",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Chips de coco"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Charbon",
+        "ratio": 0.05,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],

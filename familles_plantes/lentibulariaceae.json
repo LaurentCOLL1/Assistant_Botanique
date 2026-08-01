@@ -49,120 +49,73 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable de quartz"
-      ],
-      "elements_interdits": [
-        "Terreau horticole",
-        "Terreau plantes vertes",
-        "Terreau de feuilles",
-        "Terre franche / Terre de jardin",
-        "Terreau argileux (Aquatique / Nénuphars)",
-        "Humus de lombric",
-        "Compost mûr",
-        "Farine de basalte"
-      ],
-      "categorie_horticole": "Carnivore de tourbière pauvre",
-      "modele_recherche": "carnivorous_bog",
+      "categorie_horticole": "Pinguicula mexicaine minérale",
+      "modele_recherche": "pinguicula_mineral",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Tourbe et sable siliceux",
-          "description": "Mélange pauvre, acide et constamment humide.",
+          "nom": "Minéral calcaire équilibré",
+          "description": "Mélange très aéré pour grassettes mexicaines.",
           "roles": [
             {
-              "nom": "Base acide pauvre",
-              "ratio": 0.5,
+              "nom": "Rétention pauvre",
+              "ratio": 0.25,
               "ing": [
                 "Tourbe blonde"
               ]
             },
             {
-              "nom": "Fraction minérale inerte",
-              "ratio": 0.5,
-              "ing": [
-                "Sable de quartz"
-              ]
-            }
-          ],
-          "interdits": [
-            "Terreau horticole",
-            "Terreau plantes vertes",
-            "Terreau de feuilles",
-            "Terre franche / Terre de jardin",
-            "Terreau argileux (Aquatique / Nénuphars)",
-            "Humus de lombric",
-            "Compost mûr",
-            "Farine de basalte"
-          ],
-          "sources": [
-            {
-              "titre": "RHS — Carnivorous plants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
-            },
-            {
-              "titre": "NC State Extension — Dionaea muscipula",
-              "url": "https://plants.ces.ncsu.edu/plants/dionaea-muscipula/"
-            },
-            {
-              "titre": "Penn State Extension — Carnivorous plants",
-              "url": "https://extension.psu.edu/carnivorous-plants"
-            }
-          ]
-        },
-        {
-          "nom": "Sphaigne et écorces fines",
-          "description": "Alternative sans terreau riche, inspirée des essais sans tourbe.",
-          "roles": [
-            {
-              "nom": "Sphaigne",
-              "ratio": 0.75,
-              "ing": [
-                "Sphaigne sèche",
-                "Mousse de sphaigne vivante"
-              ]
-            },
-            {
-              "nom": "Structure pauvre",
+              "nom": "Sable",
               "ratio": 0.25,
               "ing": [
-                "Écorces de pin"
+                "Sable grossier"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.25,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Fraction calcaire",
+              "ratio": 0.25,
+              "ing": [
+                "Poudre de Calcaire / Dolomie"
               ]
             }
           ],
           "interdits": [
-            "Terreau horticole",
-            "Terreau plantes vertes",
-            "Terreau de feuilles",
-            "Terre franche / Terre de jardin",
-            "Terreau argileux (Aquatique / Nénuphars)",
-            "Humus de lombric",
             "Compost mûr",
-            "Farine de basalte"
+            "Humus de lombric",
+            "Terreau plantes vertes"
           ],
           "sources": [
             {
-              "titre": "RHS — Carnivorous plants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+              "titre": "RHS — Pinguicula gigantea",
+              "url": "https://www.rhs.org.uk/plants/149227/pinguicula-gigantea/details"
             }
           ]
         }
       ],
+      "composition_ideale": "25% Tourbe blonde / 25% Sable grossier / 25% Perlite / 25% Poudre de Calcaire / Dolomie",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable grossier",
+        "Perlite",
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "elements_interdits": [
+        "Compost mûr",
+        "Humus de lombric",
+        "Terreau plantes vertes"
+      ],
       "sources": [
         {
-          "titre": "RHS — Carnivorous plants growing guide",
-          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
-        },
-        {
-          "titre": "NC State Extension — Dionaea muscipula",
-          "url": "https://plants.ces.ncsu.edu/plants/dionaea-muscipula/"
-        },
-        {
-          "titre": "Penn State Extension — Carnivorous plants",
-          "url": "https://extension.psu.edu/carnivorous-plants"
+          "titre": "RHS — Pinguicula gigantea",
+          "url": "https://www.rhs.org.uk/plants/149227/pinguicula-gigantea/details"
         }
       ]
     },
@@ -185,29 +138,38 @@
     "conseil": "Placez-la sur un rebord de fenêtre lumineux à l'intérieur : elle se cultive presque comme une plante succulente classique durant sa phase hivernale.",
     "roles": [
       {
-        "nom": "Base acide pauvre",
-        "ratio": 0.5,
+        "nom": "Rétention pauvre",
+        "ratio": 0.25,
         "ing": [
           "Tourbe blonde"
         ]
       },
       {
-        "nom": "Fraction minérale inerte",
-        "ratio": 0.5,
+        "nom": "Sable",
+        "ratio": 0.25,
         "ing": [
-          "Sable de quartz"
+          "Sable grossier"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.25,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Fraction calcaire",
+        "ratio": 0.25,
+        "ing": [
+          "Poudre de Calcaire / Dolomie"
         ]
       }
     ],
     "interdits": [
-      "Terreau horticole",
-      "Terreau plantes vertes",
-      "Terreau de feuilles",
-      "Terre franche / Terre de jardin",
-      "Terreau argileux (Aquatique / Nénuphars)",
-      "Humus de lombric",
       "Compost mûr",
-      "Farine de basalte"
+      "Humus de lombric",
+      "Terreau plantes vertes"
     ]
   },
   {
@@ -260,19 +222,7 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "25% Tourbe blonde / 25% Sable grossier / 25% Perlite / 25% Poudre de Calcaire / Dolomie",
       "ph": "6.0 - 6.5",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable grossier",
-        "Perlite",
-        "Poudre de Calcaire / Dolomie"
-      ],
-      "elements_interdits": [
-        "Compost mûr",
-        "Humus de lombric",
-        "Terreau plantes vertes"
-      ],
       "categorie_horticole": "Pinguicula mexicaine minérale",
       "modele_recherche": "pinguicula_mineral",
       "version_recherche": "2026.08",
@@ -322,6 +272,18 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "25% Tourbe blonde / 25% Sable grossier / 25% Perlite / 25% Poudre de Calcaire / Dolomie",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable grossier",
+        "Perlite",
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "elements_interdits": [
+        "Compost mûr",
+        "Humus de lombric",
+        "Terreau plantes vertes"
       ],
       "sources": [
         {
@@ -434,19 +396,7 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "25% Tourbe blonde / 25% Sable grossier / 25% Perlite / 25% Poudre de Calcaire / Dolomie",
       "ph": "4.0 - 5.0",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable grossier",
-        "Perlite",
-        "Poudre de Calcaire / Dolomie"
-      ],
-      "elements_interdits": [
-        "Compost mûr",
-        "Humus de lombric",
-        "Terreau plantes vertes"
-      ],
       "categorie_horticole": "Pinguicula mexicaine minérale",
       "modele_recherche": "pinguicula_mineral",
       "version_recherche": "2026.08",
@@ -496,6 +446,18 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "25% Tourbe blonde / 25% Sable grossier / 25% Perlite / 25% Poudre de Calcaire / Dolomie",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable grossier",
+        "Perlite",
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "elements_interdits": [
+        "Compost mûr",
+        "Humus de lombric",
+        "Terreau plantes vertes"
       ],
       "sources": [
         {
@@ -607,19 +569,7 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "25% Tourbe blonde / 25% Sable grossier / 25% Perlite / 25% Poudre de Calcaire / Dolomie",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable grossier",
-        "Perlite",
-        "Poudre de Calcaire / Dolomie"
-      ],
-      "elements_interdits": [
-        "Compost mûr",
-        "Humus de lombric",
-        "Terreau plantes vertes"
-      ],
       "categorie_horticole": "Pinguicula mexicaine minérale",
       "modele_recherche": "pinguicula_mineral",
       "version_recherche": "2026.08",
@@ -669,6 +619,18 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "25% Tourbe blonde / 25% Sable grossier / 25% Perlite / 25% Poudre de Calcaire / Dolomie",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable grossier",
+        "Perlite",
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "elements_interdits": [
+        "Compost mûr",
+        "Humus de lombric",
+        "Terreau plantes vertes"
       ],
       "sources": [
         {
@@ -781,19 +743,7 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "25% Tourbe blonde / 25% Sable grossier / 25% Perlite / 25% Poudre de Calcaire / Dolomie",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable grossier",
-        "Perlite",
-        "Poudre de Calcaire / Dolomie"
-      ],
-      "elements_interdits": [
-        "Compost mûr",
-        "Humus de lombric",
-        "Terreau plantes vertes"
-      ],
       "categorie_horticole": "Pinguicula mexicaine minérale",
       "modele_recherche": "pinguicula_mineral",
       "version_recherche": "2026.08",
@@ -843,6 +793,18 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "25% Tourbe blonde / 25% Sable grossier / 25% Perlite / 25% Poudre de Calcaire / Dolomie",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable grossier",
+        "Perlite",
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "elements_interdits": [
+        "Compost mûr",
+        "Humus de lombric",
+        "Terreau plantes vertes"
       ],
       "sources": [
         {
@@ -955,120 +917,73 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
       "ph": "4.5 - 5.5",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable de quartz"
-      ],
-      "elements_interdits": [
-        "Terreau horticole",
-        "Terreau plantes vertes",
-        "Terreau de feuilles",
-        "Terre franche / Terre de jardin",
-        "Terreau argileux (Aquatique / Nénuphars)",
-        "Humus de lombric",
-        "Compost mûr",
-        "Farine de basalte"
-      ],
-      "categorie_horticole": "Carnivore de tourbière pauvre",
-      "modele_recherche": "carnivorous_bog",
+      "categorie_horticole": "Pinguicula mexicaine minérale",
+      "modele_recherche": "pinguicula_mineral",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Tourbe et sable siliceux",
-          "description": "Mélange pauvre, acide et constamment humide.",
+          "nom": "Minéral calcaire équilibré",
+          "description": "Mélange très aéré pour grassettes mexicaines.",
           "roles": [
             {
-              "nom": "Base acide pauvre",
-              "ratio": 0.5,
+              "nom": "Rétention pauvre",
+              "ratio": 0.25,
               "ing": [
                 "Tourbe blonde"
               ]
             },
             {
-              "nom": "Fraction minérale inerte",
-              "ratio": 0.5,
-              "ing": [
-                "Sable de quartz"
-              ]
-            }
-          ],
-          "interdits": [
-            "Terreau horticole",
-            "Terreau plantes vertes",
-            "Terreau de feuilles",
-            "Terre franche / Terre de jardin",
-            "Terreau argileux (Aquatique / Nénuphars)",
-            "Humus de lombric",
-            "Compost mûr",
-            "Farine de basalte"
-          ],
-          "sources": [
-            {
-              "titre": "RHS — Carnivorous plants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
-            },
-            {
-              "titre": "NC State Extension — Dionaea muscipula",
-              "url": "https://plants.ces.ncsu.edu/plants/dionaea-muscipula/"
-            },
-            {
-              "titre": "Penn State Extension — Carnivorous plants",
-              "url": "https://extension.psu.edu/carnivorous-plants"
-            }
-          ]
-        },
-        {
-          "nom": "Sphaigne et écorces fines",
-          "description": "Alternative sans terreau riche, inspirée des essais sans tourbe.",
-          "roles": [
-            {
-              "nom": "Sphaigne",
-              "ratio": 0.75,
-              "ing": [
-                "Sphaigne sèche",
-                "Mousse de sphaigne vivante"
-              ]
-            },
-            {
-              "nom": "Structure pauvre",
+              "nom": "Sable",
               "ratio": 0.25,
               "ing": [
-                "Écorces de pin"
+                "Sable grossier"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.25,
+              "ing": [
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Fraction calcaire",
+              "ratio": 0.25,
+              "ing": [
+                "Poudre de Calcaire / Dolomie"
               ]
             }
           ],
           "interdits": [
-            "Terreau horticole",
-            "Terreau plantes vertes",
-            "Terreau de feuilles",
-            "Terre franche / Terre de jardin",
-            "Terreau argileux (Aquatique / Nénuphars)",
-            "Humus de lombric",
             "Compost mûr",
-            "Farine de basalte"
+            "Humus de lombric",
+            "Terreau plantes vertes"
           ],
           "sources": [
             {
-              "titre": "RHS — Carnivorous plants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
+              "titre": "RHS — Pinguicula gigantea",
+              "url": "https://www.rhs.org.uk/plants/149227/pinguicula-gigantea/details"
             }
           ]
         }
       ],
+      "composition_ideale": "25% Tourbe blonde / 25% Sable grossier / 25% Perlite / 25% Poudre de Calcaire / Dolomie",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable grossier",
+        "Perlite",
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "elements_interdits": [
+        "Compost mûr",
+        "Humus de lombric",
+        "Terreau plantes vertes"
+      ],
       "sources": [
         {
-          "titre": "RHS — Carnivorous plants growing guide",
-          "url": "https://www.rhs.org.uk/plants/types/carnivorous/growing-guide"
-        },
-        {
-          "titre": "NC State Extension — Dionaea muscipula",
-          "url": "https://plants.ces.ncsu.edu/plants/dionaea-muscipula/"
-        },
-        {
-          "titre": "Penn State Extension — Carnivorous plants",
-          "url": "https://extension.psu.edu/carnivorous-plants"
+          "titre": "RHS — Pinguicula gigantea",
+          "url": "https://www.rhs.org.uk/plants/149227/pinguicula-gigantea/details"
         }
       ]
     },
@@ -1091,29 +1006,38 @@
     "conseil": "Respectez impérativement son cycle de froid hivernal en extérieur, sans quoi elle s'épuisera d'année en année.",
     "roles": [
       {
-        "nom": "Base acide pauvre",
-        "ratio": 0.5,
+        "nom": "Rétention pauvre",
+        "ratio": 0.25,
         "ing": [
           "Tourbe blonde"
         ]
       },
       {
-        "nom": "Fraction minérale inerte",
-        "ratio": 0.5,
+        "nom": "Sable",
+        "ratio": 0.25,
         "ing": [
-          "Sable de quartz"
+          "Sable grossier"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.25,
+        "ing": [
+          "Perlite"
+        ]
+      },
+      {
+        "nom": "Fraction calcaire",
+        "ratio": 0.25,
+        "ing": [
+          "Poudre de Calcaire / Dolomie"
         ]
       }
     ],
     "interdits": [
-      "Terreau horticole",
-      "Terreau plantes vertes",
-      "Terreau de feuilles",
-      "Terre franche / Terre de jardin",
-      "Terreau argileux (Aquatique / Nénuphars)",
-      "Humus de lombric",
       "Compost mûr",
-      "Farine de basalte"
+      "Humus de lombric",
+      "Terreau plantes vertes"
     ]
   },
   {
@@ -1166,22 +1090,7 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
       "ph": "5.0 - 6.5",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable de quartz"
-      ],
-      "elements_interdits": [
-        "Terreau horticole",
-        "Terreau plantes vertes",
-        "Terreau de feuilles",
-        "Terre franche / Terre de jardin",
-        "Terreau argileux (Aquatique / Nénuphars)",
-        "Humus de lombric",
-        "Compost mûr",
-        "Farine de basalte"
-      ],
       "categorie_horticole": "Carnivore de tourbière pauvre",
       "modele_recherche": "carnivorous_bog",
       "version_recherche": "2026.08",
@@ -1267,6 +1176,21 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable de quartz"
+      ],
+      "elements_interdits": [
+        "Terreau horticole",
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
       ],
       "sources": [
         {
@@ -1378,22 +1302,7 @@
       "sensibilite_minerale": "Extrême (craint les algues et l'excès de nutriments dissous)"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
       "ph": "5.5 - 6.8",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable de quartz"
-      ],
-      "elements_interdits": [
-        "Terreau horticole",
-        "Terreau plantes vertes",
-        "Terreau de feuilles",
-        "Terre franche / Terre de jardin",
-        "Terreau argileux (Aquatique / Nénuphars)",
-        "Humus de lombric",
-        "Compost mûr",
-        "Farine de basalte"
-      ],
       "categorie_horticole": "Carnivore de tourbière pauvre",
       "modele_recherche": "carnivorous_bog",
       "version_recherche": "2026.08",
@@ -1479,6 +1388,21 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable de quartz"
+      ],
+      "elements_interdits": [
+        "Terreau horticole",
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
       ],
       "sources": [
         {
@@ -1589,22 +1513,7 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable de quartz"
-      ],
-      "elements_interdits": [
-        "Terreau horticole",
-        "Terreau plantes vertes",
-        "Terreau de feuilles",
-        "Terre franche / Terre de jardin",
-        "Terreau argileux (Aquatique / Nénuphars)",
-        "Humus de lombric",
-        "Compost mûr",
-        "Farine de basalte"
-      ],
       "categorie_horticole": "Carnivore de tourbière pauvre",
       "modele_recherche": "carnivorous_bog",
       "version_recherche": "2026.08",
@@ -1690,6 +1599,21 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable de quartz"
+      ],
+      "elements_interdits": [
+        "Terreau horticole",
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
       ],
       "sources": [
         {
@@ -1816,22 +1740,7 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable de quartz"
-      ],
-      "elements_interdits": [
-        "Terreau horticole",
-        "Terreau plantes vertes",
-        "Terreau de feuilles",
-        "Terre franche / Terre de jardin",
-        "Terreau argileux (Aquatique / Nénuphars)",
-        "Humus de lombric",
-        "Compost mûr",
-        "Farine de basalte"
-      ],
       "categorie_horticole": "Carnivore de tourbière pauvre",
       "modele_recherche": "carnivorous_bog",
       "version_recherche": "2026.08",
@@ -1917,6 +1826,21 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable de quartz"
+      ],
+      "elements_interdits": [
+        "Terreau horticole",
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
       ],
       "sources": [
         {
@@ -2049,22 +1973,7 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable de quartz"
-      ],
-      "elements_interdits": [
-        "Terreau horticole",
-        "Terreau plantes vertes",
-        "Terreau de feuilles",
-        "Terre franche / Terre de jardin",
-        "Terreau argileux (Aquatique / Nénuphars)",
-        "Humus de lombric",
-        "Compost mûr",
-        "Farine de basalte"
-      ],
       "categorie_horticole": "Carnivore de tourbière pauvre",
       "modele_recherche": "carnivorous_bog",
       "version_recherche": "2026.08",
@@ -2150,6 +2059,21 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable de quartz"
+      ],
+      "elements_interdits": [
+        "Terreau horticole",
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
       ],
       "sources": [
         {
@@ -2282,22 +2206,7 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable de quartz"
-      ],
-      "elements_interdits": [
-        "Terreau horticole",
-        "Terreau plantes vertes",
-        "Terreau de feuilles",
-        "Terre franche / Terre de jardin",
-        "Terreau argileux (Aquatique / Nénuphars)",
-        "Humus de lombric",
-        "Compost mûr",
-        "Farine de basalte"
-      ],
       "categorie_horticole": "Carnivore de tourbière pauvre",
       "modele_recherche": "carnivorous_bog",
       "version_recherche": "2026.08",
@@ -2383,6 +2292,21 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable de quartz"
+      ],
+      "elements_interdits": [
+        "Terreau horticole",
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
       ],
       "sources": [
         {
@@ -2515,22 +2439,7 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable de quartz"
-      ],
-      "elements_interdits": [
-        "Terreau horticole",
-        "Terreau plantes vertes",
-        "Terreau de feuilles",
-        "Terre franche / Terre de jardin",
-        "Terreau argileux (Aquatique / Nénuphars)",
-        "Humus de lombric",
-        "Compost mûr",
-        "Farine de basalte"
-      ],
       "categorie_horticole": "Carnivore de tourbière pauvre",
       "modele_recherche": "carnivorous_bog",
       "version_recherche": "2026.08",
@@ -2616,6 +2525,21 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable de quartz"
+      ],
+      "elements_interdits": [
+        "Terreau horticole",
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
       ],
       "sources": [
         {
@@ -2748,22 +2672,7 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable de quartz"
-      ],
-      "elements_interdits": [
-        "Terreau horticole",
-        "Terreau plantes vertes",
-        "Terreau de feuilles",
-        "Terre franche / Terre de jardin",
-        "Terreau argileux (Aquatique / Nénuphars)",
-        "Humus de lombric",
-        "Compost mûr",
-        "Farine de basalte"
-      ],
       "categorie_horticole": "Carnivore de tourbière pauvre",
       "modele_recherche": "carnivorous_bog",
       "version_recherche": "2026.08",
@@ -2849,6 +2758,21 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable de quartz"
+      ],
+      "elements_interdits": [
+        "Terreau horticole",
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
       ],
       "sources": [
         {
@@ -2981,22 +2905,7 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable de quartz"
-      ],
-      "elements_interdits": [
-        "Terreau horticole",
-        "Terreau plantes vertes",
-        "Terreau de feuilles",
-        "Terre franche / Terre de jardin",
-        "Terreau argileux (Aquatique / Nénuphars)",
-        "Humus de lombric",
-        "Compost mûr",
-        "Farine de basalte"
-      ],
       "categorie_horticole": "Carnivore de tourbière pauvre",
       "modele_recherche": "carnivorous_bog",
       "version_recherche": "2026.08",
@@ -3082,6 +2991,21 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable de quartz"
+      ],
+      "elements_interdits": [
+        "Terreau horticole",
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
       ],
       "sources": [
         {
@@ -3214,19 +3138,7 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "25% Tourbe blonde / 25% Sable grossier / 25% Perlite / 25% Poudre de Calcaire / Dolomie",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable grossier",
-        "Perlite",
-        "Poudre de Calcaire / Dolomie"
-      ],
-      "elements_interdits": [
-        "Compost mûr",
-        "Humus de lombric",
-        "Terreau plantes vertes"
-      ],
       "categorie_horticole": "Pinguicula mexicaine minérale",
       "modele_recherche": "pinguicula_mineral",
       "version_recherche": "2026.08",
@@ -3276,6 +3188,18 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "25% Tourbe blonde / 25% Sable grossier / 25% Perlite / 25% Poudre de Calcaire / Dolomie",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable grossier",
+        "Perlite",
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "elements_interdits": [
+        "Compost mûr",
+        "Humus de lombric",
+        "Terreau plantes vertes"
       ],
       "sources": [
         {
@@ -3402,19 +3326,7 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "25% Tourbe blonde / 25% Sable grossier / 25% Perlite / 25% Poudre de Calcaire / Dolomie",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable grossier",
-        "Perlite",
-        "Poudre de Calcaire / Dolomie"
-      ],
-      "elements_interdits": [
-        "Compost mûr",
-        "Humus de lombric",
-        "Terreau plantes vertes"
-      ],
       "categorie_horticole": "Pinguicula mexicaine minérale",
       "modele_recherche": "pinguicula_mineral",
       "version_recherche": "2026.08",
@@ -3464,6 +3376,18 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "25% Tourbe blonde / 25% Sable grossier / 25% Perlite / 25% Poudre de Calcaire / Dolomie",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable grossier",
+        "Perlite",
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "elements_interdits": [
+        "Compost mûr",
+        "Humus de lombric",
+        "Terreau plantes vertes"
       ],
       "sources": [
         {
@@ -3590,19 +3514,7 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "25% Tourbe blonde / 25% Sable grossier / 25% Perlite / 25% Poudre de Calcaire / Dolomie",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable grossier",
-        "Perlite",
-        "Poudre de Calcaire / Dolomie"
-      ],
-      "elements_interdits": [
-        "Compost mûr",
-        "Humus de lombric",
-        "Terreau plantes vertes"
-      ],
       "categorie_horticole": "Pinguicula mexicaine minérale",
       "modele_recherche": "pinguicula_mineral",
       "version_recherche": "2026.08",
@@ -3652,6 +3564,18 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "25% Tourbe blonde / 25% Sable grossier / 25% Perlite / 25% Poudre de Calcaire / Dolomie",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable grossier",
+        "Perlite",
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "elements_interdits": [
+        "Compost mûr",
+        "Humus de lombric",
+        "Terreau plantes vertes"
       ],
       "sources": [
         {
@@ -3778,22 +3702,7 @@
       "sensibilite_minerale": "Extrême (craint les algues et l'excès de nutriments dissous)"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
       "ph": "5.5 - 6.8",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable de quartz"
-      ],
-      "elements_interdits": [
-        "Terreau horticole",
-        "Terreau plantes vertes",
-        "Terreau de feuilles",
-        "Terre franche / Terre de jardin",
-        "Terreau argileux (Aquatique / Nénuphars)",
-        "Humus de lombric",
-        "Compost mûr",
-        "Farine de basalte"
-      ],
       "categorie_horticole": "Carnivore de tourbière pauvre",
       "modele_recherche": "carnivorous_bog",
       "version_recherche": "2026.08",
@@ -3879,6 +3788,21 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable de quartz"
+      ],
+      "elements_interdits": [
+        "Terreau horticole",
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
       ],
       "sources": [
         {
@@ -4004,22 +3928,7 @@
       "sensibilite_minerale": "Extrême (craint les algues et l'excès de nutriments dissous)"
     },
     "substrat": {
-      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
       "ph": "5.5 - 6.8",
-      "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Sable de quartz"
-      ],
-      "elements_interdits": [
-        "Terreau horticole",
-        "Terreau plantes vertes",
-        "Terreau de feuilles",
-        "Terre franche / Terre de jardin",
-        "Terreau argileux (Aquatique / Nénuphars)",
-        "Humus de lombric",
-        "Compost mûr",
-        "Farine de basalte"
-      ],
       "categorie_horticole": "Carnivore de tourbière pauvre",
       "modele_recherche": "carnivorous_bog",
       "version_recherche": "2026.08",
@@ -4105,6 +4014,21 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "50% Tourbe blonde / 50% Sable de quartz",
+      "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Sable de quartz"
+      ],
+      "elements_interdits": [
+        "Terreau horticole",
+        "Terreau plantes vertes",
+        "Terreau de feuilles",
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Humus de lombric",
+        "Compost mûr",
+        "Farine de basalte"
       ],
       "sources": [
         {

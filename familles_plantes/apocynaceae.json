@@ -51,16 +51,7 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
       "categorie_horticole": "Cactée ou succulente",
       "modele_recherche": "succulent_mineral",
       "version_recherche": "2026.08",
@@ -140,6 +131,15 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
+      ],
+      "elements_interdits": [
+        "Terreau argileux (Aquatique / Nénuphars)"
       ],
       "sources": [
         {
@@ -240,129 +240,129 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Arbre, arbuste ou liane durable",
-      "modele_recherche": "woody_loam",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Loam durable enrichi",
-          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
-              "nom": "Loam",
-              "ratio": 0.55,
+              "nom": "Base",
+              "ratio": 0.35,
               "ing": [
-                "Terre franche / Terre de jardin"
-              ]
-            },
-            {
-              "nom": "Terreau",
-              "ratio": 0.25,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Organique",
-              "ratio": 0.1,
-              "ing": [
-                "Compost mûr"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable grossier",
-                "Gravier de Quartz"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            },
-            {
-              "titre": "RHS — Low-carbon container growing",
-              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau horticole structuré",
-          "description": "Variante plus légère pour pots mobiles.",
-          "roles": [
-            {
-              "nom": "Terreau",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Terre",
-              "ratio": 0.2,
-              "ing": [
-                "Terre franche / Terre de jardin"
+                "Terreau plantes vertes",
+                "Terreau léger"
               ]
             },
             {
               "nom": "Écorces",
-              "ratio": 0.15,
+              "ratio": 0.25,
               "ing": [
                 "Écorces de pin"
               ]
             },
             {
-              "nom": "Drainage",
-              "ratio": 0.1,
+              "nom": "Aération minérale",
+              "ratio": 0.2,
               "ing": [
-                "Sable grossier",
+                "Pumice",
                 "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
               ]
             }
           ],
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             },
             {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "RHS — Trees in containers",
-          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+          "titre": "RHS — Houseplants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-        },
-        {
-          "titre": "RHS — Low-carbon container growing",
-          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -385,32 +385,41 @@
     "conseil": "Ne coupez surtout pas les petits pédoncules nues où les fleurs ont fané : c'est précisément là que réapparaîtront les floraisons des années suivantes !",
     "roles": [
       {
-        "nom": "Loam",
-        "ratio": 0.55,
+        "nom": "Base",
+        "ratio": 0.35,
         "ing": [
-          "Terre franche / Terre de jardin"
+          "Terreau plantes vertes",
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Terreau",
+        "nom": "Écorces",
         "ratio": 0.25,
         "ing": [
-          "Terreau horticole"
+          "Écorces de pin"
         ]
       },
       {
-        "nom": "Organique",
-        "ratio": 0.1,
+        "nom": "Aération minérale",
+        "ratio": 0.2,
         "ing": [
-          "Compost mûr"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Drainage",
-        "ratio": 0.1,
+        "nom": "Coco grossière",
+        "ratio": 0.15,
         "ing": [
-          "Sable grossier",
-          "Gravier de Quartz"
+          "Chips de coco"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.05,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -468,83 +477,72 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plantes vertes / 20% Fibre de coco / 15% Terreau de feuilles / 15% Perlite",
       "ph": "6.0 - 6.5",
-      "ingredients_recommandes": [
-        "Terreau plantes vertes",
-        "Terreau horticole",
-        "Fibre de coco",
-        "Terreau de feuilles",
-        "Perlite",
-        "Pumice"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Tropicale humifère",
-      "modele_recherche": "tropical_moist",
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Humifère et aéré",
-          "description": "Mélange retenant l'humidité sans rester saturé.",
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
           "roles": [
             {
               "nom": "Base",
-              "ratio": 0.5,
+              "ratio": 0.55,
               "ing": [
-                "Terreau plantes vertes",
                 "Terreau horticole"
               ]
             },
             {
-              "nom": "Rétention",
+              "nom": "Terre stable",
               "ratio": 0.2,
               "ing": [
-                "Fibre de coco"
+                "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Humus",
+              "nom": "Matière organique",
               "ratio": 0.15,
               "ing": [
-                "Terreau de feuilles"
+                "Compost mûr"
               ]
             },
             {
-              "nom": "Aération",
-              "ratio": 0.15,
+              "nom": "Drainage",
+              "ratio": 0.1,
               "ing": [
-                "Perlite",
-                "Pumice"
+                "Sable grossier",
+                "Perlite"
               ]
             }
           ],
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Houseplants growing guide",
-              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-            },
-            {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
             }
           ]
         },
         {
-          "nom": "Terreau léger et coco",
-          "description": "Variante simple pour intérieur.",
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
           "roles": [
             {
-              "nom": "Terreau léger",
-              "ratio": 0.55,
+              "nom": "Base légère",
+              "ratio": 0.6,
               "ing": [
                 "Terreau léger",
-                "Terreau plantes vertes"
+                "Terreau horticole"
               ]
             },
             {
               "nom": "Coco",
-              "ratio": 0.25,
+              "ratio": 0.2,
               "ing": [
                 "Fibre de coco"
               ]
@@ -554,12 +552,16 @@
               "ratio": 0.2,
               "ing": [
                 "Perlite",
-                "Pumice"
+                "Sable grossier"
               ]
             }
           ],
           "interdits": [],
           "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
             {
               "titre": "RHS — Houseplants growing guide",
               "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
@@ -567,14 +569,23 @@
           ]
         }
       ],
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
+      ],
+      "elements_interdits": [],
       "sources": [
-        {
-          "titre": "RHS — Houseplants growing guide",
-          "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
-        },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
         }
       ]
     },
@@ -599,32 +610,31 @@
     "roles": [
       {
         "nom": "Base",
-        "ratio": 0.5,
+        "ratio": 0.55,
         "ing": [
-          "Terreau plantes vertes",
           "Terreau horticole"
         ]
       },
       {
-        "nom": "Rétention",
+        "nom": "Terre stable",
         "ratio": 0.2,
         "ing": [
-          "Fibre de coco"
+          "Terre franche / Terre de jardin"
         ]
       },
       {
-        "nom": "Humus",
+        "nom": "Matière organique",
         "ratio": 0.15,
         "ing": [
-          "Terreau de feuilles"
+          "Compost mûr"
         ]
       },
       {
-        "nom": "Aération",
-        "ratio": 0.15,
+        "nom": "Drainage",
+        "ratio": 0.1,
         "ing": [
-          "Perlite",
-          "Pumice"
+          "Sable grossier",
+          "Perlite"
         ]
       }
     ],
@@ -681,16 +691,7 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.5",
-      "ingredients_recommandes": [
-        "Terreau horticole",
-        "Terreau léger",
-        "Sable grossier"
-      ],
-      "elements_interdits": [
-        "Terreau argileux (Aquatique / Nénuphars)"
-      ],
       "categorie_horticole": "Cactée ou succulente",
       "modele_recherche": "succulent_mineral",
       "version_recherche": "2026.08",
@@ -770,6 +771,15 @@
             }
           ]
         }
+      ],
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
+      ],
+      "elements_interdits": [
+        "Terreau argileux (Aquatique / Nénuphars)"
       ],
       "sources": [
         {
@@ -867,93 +877,34 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Arbre, arbuste ou liane durable",
-      "modele_recherche": "woody_loam",
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Loam durable enrichi",
-          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
           "roles": [
             {
-              "nom": "Loam",
-              "ratio": 0.55,
-              "ing": [
-                "Terre franche / Terre de jardin"
-              ]
-            },
-            {
-              "nom": "Terreau",
-              "ratio": 0.25,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Organique",
-              "ratio": 0.1,
-              "ing": [
-                "Compost mûr"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable grossier",
-                "Gravier de Quartz"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            },
-            {
-              "titre": "RHS — Low-carbon container growing",
-              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau horticole structuré",
-          "description": "Variante plus légère pour pots mobiles.",
-          "roles": [
-            {
-              "nom": "Terreau",
+              "nom": "Base",
               "ratio": 0.55,
               "ing": [
                 "Terreau horticole"
               ]
             },
             {
-              "nom": "Terre",
+              "nom": "Terre stable",
               "ratio": 0.2,
               "ing": [
                 "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Écorces",
+              "nom": "Matière organique",
               "ratio": 0.15,
               "ing": [
-                "Écorces de pin"
+                "Compost mûr"
               ]
             },
             {
@@ -968,21 +919,66 @@
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
             {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
+      ],
+      "elements_interdits": [],
       "sources": [
-        {
-          "titre": "RHS — Trees in containers",
-          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-        },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
@@ -1028,22 +1024,22 @@
     },
     "roles": [
       {
-        "nom": "Loam",
+        "nom": "Base",
         "ratio": 0.55,
-        "ing": [
-          "Terre franche / Terre de jardin"
-        ]
-      },
-      {
-        "nom": "Terreau",
-        "ratio": 0.25,
         "ing": [
           "Terreau horticole"
         ]
       },
       {
-        "nom": "Organique",
-        "ratio": 0.1,
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
         "ing": [
           "Compost mûr"
         ]
@@ -1053,7 +1049,7 @@
         "ratio": 0.1,
         "ing": [
           "Sable grossier",
-          "Gravier de Quartz"
+          "Perlite"
         ]
       }
     ],
@@ -1109,93 +1105,34 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Arbre, arbuste ou liane durable",
-      "modele_recherche": "woody_loam",
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Loam durable enrichi",
-          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
           "roles": [
             {
-              "nom": "Loam",
-              "ratio": 0.55,
-              "ing": [
-                "Terre franche / Terre de jardin"
-              ]
-            },
-            {
-              "nom": "Terreau",
-              "ratio": 0.25,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Organique",
-              "ratio": 0.1,
-              "ing": [
-                "Compost mûr"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable grossier",
-                "Gravier de Quartz"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            },
-            {
-              "titre": "RHS — Low-carbon container growing",
-              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau horticole structuré",
-          "description": "Variante plus légère pour pots mobiles.",
-          "roles": [
-            {
-              "nom": "Terreau",
+              "nom": "Base",
               "ratio": 0.55,
               "ing": [
                 "Terreau horticole"
               ]
             },
             {
-              "nom": "Terre",
+              "nom": "Terre stable",
               "ratio": 0.2,
               "ing": [
                 "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Écorces",
+              "nom": "Matière organique",
               "ratio": 0.15,
               "ing": [
-                "Écorces de pin"
+                "Compost mûr"
               ]
             },
             {
@@ -1210,21 +1147,66 @@
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
             {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
+      ],
+      "elements_interdits": [],
       "sources": [
-        {
-          "titre": "RHS — Trees in containers",
-          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-        },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
@@ -1276,22 +1258,22 @@
     },
     "roles": [
       {
-        "nom": "Loam",
+        "nom": "Base",
         "ratio": 0.55,
-        "ing": [
-          "Terre franche / Terre de jardin"
-        ]
-      },
-      {
-        "nom": "Terreau",
-        "ratio": 0.25,
         "ing": [
           "Terreau horticole"
         ]
       },
       {
-        "nom": "Organique",
-        "ratio": 0.1,
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
         "ing": [
           "Compost mûr"
         ]
@@ -1301,7 +1283,7 @@
         "ratio": 0.1,
         "ing": [
           "Sable grossier",
-          "Gravier de Quartz"
+          "Perlite"
         ]
       }
     ],
@@ -1357,93 +1339,34 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Arbre, arbuste ou liane durable",
-      "modele_recherche": "woody_loam",
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Loam durable enrichi",
-          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
           "roles": [
             {
-              "nom": "Loam",
-              "ratio": 0.55,
-              "ing": [
-                "Terre franche / Terre de jardin"
-              ]
-            },
-            {
-              "nom": "Terreau",
-              "ratio": 0.25,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Organique",
-              "ratio": 0.1,
-              "ing": [
-                "Compost mûr"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable grossier",
-                "Gravier de Quartz"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            },
-            {
-              "titre": "RHS — Low-carbon container growing",
-              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau horticole structuré",
-          "description": "Variante plus légère pour pots mobiles.",
-          "roles": [
-            {
-              "nom": "Terreau",
+              "nom": "Base",
               "ratio": 0.55,
               "ing": [
                 "Terreau horticole"
               ]
             },
             {
-              "nom": "Terre",
+              "nom": "Terre stable",
               "ratio": 0.2,
               "ing": [
                 "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Écorces",
+              "nom": "Matière organique",
               "ratio": 0.15,
               "ing": [
-                "Écorces de pin"
+                "Compost mûr"
               ]
             },
             {
@@ -1458,21 +1381,66 @@
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
             {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
+      ],
+      "elements_interdits": [],
       "sources": [
-        {
-          "titre": "RHS — Trees in containers",
-          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-        },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
@@ -1524,22 +1492,22 @@
     },
     "roles": [
       {
-        "nom": "Loam",
+        "nom": "Base",
         "ratio": 0.55,
-        "ing": [
-          "Terre franche / Terre de jardin"
-        ]
-      },
-      {
-        "nom": "Terreau",
-        "ratio": 0.25,
         "ing": [
           "Terreau horticole"
         ]
       },
       {
-        "nom": "Organique",
-        "ratio": 0.1,
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
         "ing": [
           "Compost mûr"
         ]
@@ -1549,7 +1517,7 @@
         "ratio": 0.1,
         "ing": [
           "Sable grossier",
-          "Gravier de Quartz"
+          "Perlite"
         ]
       }
     ],
@@ -1605,93 +1573,34 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Arbre, arbuste ou liane durable",
-      "modele_recherche": "woody_loam",
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Loam durable enrichi",
-          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
           "roles": [
             {
-              "nom": "Loam",
-              "ratio": 0.55,
-              "ing": [
-                "Terre franche / Terre de jardin"
-              ]
-            },
-            {
-              "nom": "Terreau",
-              "ratio": 0.25,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Organique",
-              "ratio": 0.1,
-              "ing": [
-                "Compost mûr"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable grossier",
-                "Gravier de Quartz"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            },
-            {
-              "titre": "RHS — Low-carbon container growing",
-              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau horticole structuré",
-          "description": "Variante plus légère pour pots mobiles.",
-          "roles": [
-            {
-              "nom": "Terreau",
+              "nom": "Base",
               "ratio": 0.55,
               "ing": [
                 "Terreau horticole"
               ]
             },
             {
-              "nom": "Terre",
+              "nom": "Terre stable",
               "ratio": 0.2,
               "ing": [
                 "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Écorces",
+              "nom": "Matière organique",
               "ratio": 0.15,
               "ing": [
-                "Écorces de pin"
+                "Compost mûr"
               ]
             },
             {
@@ -1706,21 +1615,66 @@
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
             {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
+      ],
+      "elements_interdits": [],
       "sources": [
-        {
-          "titre": "RHS — Trees in containers",
-          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-        },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
@@ -1766,22 +1720,22 @@
     },
     "roles": [
       {
-        "nom": "Loam",
+        "nom": "Base",
         "ratio": 0.55,
-        "ing": [
-          "Terre franche / Terre de jardin"
-        ]
-      },
-      {
-        "nom": "Terreau",
-        "ratio": 0.25,
         "ing": [
           "Terreau horticole"
         ]
       },
       {
-        "nom": "Organique",
-        "ratio": 0.1,
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
         "ing": [
           "Compost mûr"
         ]
@@ -1791,7 +1745,7 @@
         "ratio": 0.1,
         "ing": [
           "Sable grossier",
-          "Gravier de Quartz"
+          "Perlite"
         ]
       }
     ],
@@ -1847,93 +1801,34 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Arbre, arbuste ou liane durable",
-      "modele_recherche": "woody_loam",
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Loam durable enrichi",
-          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
           "roles": [
             {
-              "nom": "Loam",
-              "ratio": 0.55,
-              "ing": [
-                "Terre franche / Terre de jardin"
-              ]
-            },
-            {
-              "nom": "Terreau",
-              "ratio": 0.25,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Organique",
-              "ratio": 0.1,
-              "ing": [
-                "Compost mûr"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable grossier",
-                "Gravier de Quartz"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            },
-            {
-              "titre": "RHS — Low-carbon container growing",
-              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau horticole structuré",
-          "description": "Variante plus légère pour pots mobiles.",
-          "roles": [
-            {
-              "nom": "Terreau",
+              "nom": "Base",
               "ratio": 0.55,
               "ing": [
                 "Terreau horticole"
               ]
             },
             {
-              "nom": "Terre",
+              "nom": "Terre stable",
               "ratio": 0.2,
               "ing": [
                 "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Écorces",
+              "nom": "Matière organique",
               "ratio": 0.15,
               "ing": [
-                "Écorces de pin"
+                "Compost mûr"
               ]
             },
             {
@@ -1948,21 +1843,66 @@
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
             {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
+      ],
+      "elements_interdits": [],
       "sources": [
-        {
-          "titre": "RHS — Trees in containers",
-          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-        },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
@@ -2014,22 +1954,22 @@
     },
     "roles": [
       {
-        "nom": "Loam",
+        "nom": "Base",
         "ratio": 0.55,
-        "ing": [
-          "Terre franche / Terre de jardin"
-        ]
-      },
-      {
-        "nom": "Terreau",
-        "ratio": 0.25,
         "ing": [
           "Terreau horticole"
         ]
       },
       {
-        "nom": "Organique",
-        "ratio": 0.1,
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
         "ing": [
           "Compost mûr"
         ]
@@ -2039,7 +1979,7 @@
         "ratio": 0.1,
         "ing": [
           "Sable grossier",
-          "Gravier de Quartz"
+          "Perlite"
         ]
       }
     ],
@@ -2095,93 +2035,34 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Arbre, arbuste ou liane durable",
-      "modele_recherche": "woody_loam",
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Loam durable enrichi",
-          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
           "roles": [
             {
-              "nom": "Loam",
-              "ratio": 0.55,
-              "ing": [
-                "Terre franche / Terre de jardin"
-              ]
-            },
-            {
-              "nom": "Terreau",
-              "ratio": 0.25,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Organique",
-              "ratio": 0.1,
-              "ing": [
-                "Compost mûr"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable grossier",
-                "Gravier de Quartz"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            },
-            {
-              "titre": "RHS — Low-carbon container growing",
-              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau horticole structuré",
-          "description": "Variante plus légère pour pots mobiles.",
-          "roles": [
-            {
-              "nom": "Terreau",
+              "nom": "Base",
               "ratio": 0.55,
               "ing": [
                 "Terreau horticole"
               ]
             },
             {
-              "nom": "Terre",
+              "nom": "Terre stable",
               "ratio": 0.2,
               "ing": [
                 "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Écorces",
+              "nom": "Matière organique",
               "ratio": 0.15,
               "ing": [
-                "Écorces de pin"
+                "Compost mûr"
               ]
             },
             {
@@ -2196,21 +2077,66 @@
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
             {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
+      ],
+      "elements_interdits": [],
       "sources": [
-        {
-          "titre": "RHS — Trees in containers",
-          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-        },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
@@ -2262,22 +2188,22 @@
     },
     "roles": [
       {
-        "nom": "Loam",
+        "nom": "Base",
         "ratio": 0.55,
-        "ing": [
-          "Terre franche / Terre de jardin"
-        ]
-      },
-      {
-        "nom": "Terreau",
-        "ratio": 0.25,
         "ing": [
           "Terreau horticole"
         ]
       },
       {
-        "nom": "Organique",
-        "ratio": 0.1,
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
         "ing": [
           "Compost mûr"
         ]
@@ -2287,7 +2213,7 @@
         "ratio": 0.1,
         "ing": [
           "Sable grossier",
-          "Gravier de Quartz"
+          "Perlite"
         ]
       }
     ],
@@ -2343,93 +2269,34 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Arbre, arbuste ou liane durable",
-      "modele_recherche": "woody_loam",
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Loam durable enrichi",
-          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
           "roles": [
             {
-              "nom": "Loam",
-              "ratio": 0.55,
-              "ing": [
-                "Terre franche / Terre de jardin"
-              ]
-            },
-            {
-              "nom": "Terreau",
-              "ratio": 0.25,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Organique",
-              "ratio": 0.1,
-              "ing": [
-                "Compost mûr"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable grossier",
-                "Gravier de Quartz"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            },
-            {
-              "titre": "RHS — Low-carbon container growing",
-              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau horticole structuré",
-          "description": "Variante plus légère pour pots mobiles.",
-          "roles": [
-            {
-              "nom": "Terreau",
+              "nom": "Base",
               "ratio": 0.55,
               "ing": [
                 "Terreau horticole"
               ]
             },
             {
-              "nom": "Terre",
+              "nom": "Terre stable",
               "ratio": 0.2,
               "ing": [
                 "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Écorces",
+              "nom": "Matière organique",
               "ratio": 0.15,
               "ing": [
-                "Écorces de pin"
+                "Compost mûr"
               ]
             },
             {
@@ -2444,21 +2311,66 @@
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
             {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
+      ],
+      "elements_interdits": [],
       "sources": [
-        {
-          "titre": "RHS — Trees in containers",
-          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-        },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
@@ -2510,22 +2422,22 @@
     },
     "roles": [
       {
-        "nom": "Loam",
+        "nom": "Base",
         "ratio": 0.55,
-        "ing": [
-          "Terre franche / Terre de jardin"
-        ]
-      },
-      {
-        "nom": "Terreau",
-        "ratio": 0.25,
         "ing": [
           "Terreau horticole"
         ]
       },
       {
-        "nom": "Organique",
-        "ratio": 0.1,
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
         "ing": [
           "Compost mûr"
         ]
@@ -2535,7 +2447,7 @@
         "ratio": 0.1,
         "ing": [
           "Sable grossier",
-          "Gravier de Quartz"
+          "Perlite"
         ]
       }
     ],
@@ -2591,93 +2503,34 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Arbre, arbuste ou liane durable",
-      "modele_recherche": "woody_loam",
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Loam durable enrichi",
-          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
           "roles": [
             {
-              "nom": "Loam",
-              "ratio": 0.55,
-              "ing": [
-                "Terre franche / Terre de jardin"
-              ]
-            },
-            {
-              "nom": "Terreau",
-              "ratio": 0.25,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Organique",
-              "ratio": 0.1,
-              "ing": [
-                "Compost mûr"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable grossier",
-                "Gravier de Quartz"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            },
-            {
-              "titre": "RHS — Low-carbon container growing",
-              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau horticole structuré",
-          "description": "Variante plus légère pour pots mobiles.",
-          "roles": [
-            {
-              "nom": "Terreau",
+              "nom": "Base",
               "ratio": 0.55,
               "ing": [
                 "Terreau horticole"
               ]
             },
             {
-              "nom": "Terre",
+              "nom": "Terre stable",
               "ratio": 0.2,
               "ing": [
                 "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Écorces",
+              "nom": "Matière organique",
               "ratio": 0.15,
               "ing": [
-                "Écorces de pin"
+                "Compost mûr"
               ]
             },
             {
@@ -2692,21 +2545,66 @@
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
             {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
+      ],
+      "elements_interdits": [],
       "sources": [
-        {
-          "titre": "RHS — Trees in containers",
-          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-        },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
@@ -2758,22 +2656,22 @@
     },
     "roles": [
       {
-        "nom": "Loam",
+        "nom": "Base",
         "ratio": 0.55,
-        "ing": [
-          "Terre franche / Terre de jardin"
-        ]
-      },
-      {
-        "nom": "Terreau",
-        "ratio": 0.25,
         "ing": [
           "Terreau horticole"
         ]
       },
       {
-        "nom": "Organique",
-        "ratio": 0.1,
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
         "ing": [
           "Compost mûr"
         ]
@@ -2783,7 +2681,7 @@
         "ratio": 0.1,
         "ing": [
           "Sable grossier",
-          "Gravier de Quartz"
+          "Perlite"
         ]
       }
     ],
@@ -2839,93 +2737,34 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Arbre, arbuste ou liane durable",
-      "modele_recherche": "woody_loam",
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Loam durable enrichi",
-          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
           "roles": [
             {
-              "nom": "Loam",
-              "ratio": 0.55,
-              "ing": [
-                "Terre franche / Terre de jardin"
-              ]
-            },
-            {
-              "nom": "Terreau",
-              "ratio": 0.25,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Organique",
-              "ratio": 0.1,
-              "ing": [
-                "Compost mûr"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable grossier",
-                "Gravier de Quartz"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            },
-            {
-              "titre": "RHS — Low-carbon container growing",
-              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau horticole structuré",
-          "description": "Variante plus légère pour pots mobiles.",
-          "roles": [
-            {
-              "nom": "Terreau",
+              "nom": "Base",
               "ratio": 0.55,
               "ing": [
                 "Terreau horticole"
               ]
             },
             {
-              "nom": "Terre",
+              "nom": "Terre stable",
               "ratio": 0.2,
               "ing": [
                 "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Écorces",
+              "nom": "Matière organique",
               "ratio": 0.15,
               "ing": [
-                "Écorces de pin"
+                "Compost mûr"
               ]
             },
             {
@@ -2940,21 +2779,66 @@
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
             {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
+      ],
+      "elements_interdits": [],
       "sources": [
-        {
-          "titre": "RHS — Trees in containers",
-          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-        },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
@@ -3006,22 +2890,22 @@
     },
     "roles": [
       {
-        "nom": "Loam",
+        "nom": "Base",
         "ratio": 0.55,
-        "ing": [
-          "Terre franche / Terre de jardin"
-        ]
-      },
-      {
-        "nom": "Terreau",
-        "ratio": 0.25,
         "ing": [
           "Terreau horticole"
         ]
       },
       {
-        "nom": "Organique",
-        "ratio": 0.1,
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
         "ing": [
           "Compost mûr"
         ]
@@ -3031,7 +2915,7 @@
         "ratio": 0.1,
         "ing": [
           "Sable grossier",
-          "Gravier de Quartz"
+          "Perlite"
         ]
       }
     ],
@@ -3087,93 +2971,34 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Arbre, arbuste ou liane durable",
-      "modele_recherche": "woody_loam",
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Loam durable enrichi",
-          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
           "roles": [
             {
-              "nom": "Loam",
-              "ratio": 0.55,
-              "ing": [
-                "Terre franche / Terre de jardin"
-              ]
-            },
-            {
-              "nom": "Terreau",
-              "ratio": 0.25,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Organique",
-              "ratio": 0.1,
-              "ing": [
-                "Compost mûr"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable grossier",
-                "Gravier de Quartz"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            },
-            {
-              "titre": "RHS — Low-carbon container growing",
-              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau horticole structuré",
-          "description": "Variante plus légère pour pots mobiles.",
-          "roles": [
-            {
-              "nom": "Terreau",
+              "nom": "Base",
               "ratio": 0.55,
               "ing": [
                 "Terreau horticole"
               ]
             },
             {
-              "nom": "Terre",
+              "nom": "Terre stable",
               "ratio": 0.2,
               "ing": [
                 "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Écorces",
+              "nom": "Matière organique",
               "ratio": 0.15,
               "ing": [
-                "Écorces de pin"
+                "Compost mûr"
               ]
             },
             {
@@ -3188,21 +3013,66 @@
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
             {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
+      ],
+      "elements_interdits": [],
       "sources": [
-        {
-          "titre": "RHS — Trees in containers",
-          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-        },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
@@ -3247,22 +3117,22 @@
     },
     "roles": [
       {
-        "nom": "Loam",
+        "nom": "Base",
         "ratio": 0.55,
-        "ing": [
-          "Terre franche / Terre de jardin"
-        ]
-      },
-      {
-        "nom": "Terreau",
-        "ratio": 0.25,
         "ing": [
           "Terreau horticole"
         ]
       },
       {
-        "nom": "Organique",
-        "ratio": 0.1,
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
         "ing": [
           "Compost mûr"
         ]
@@ -3272,7 +3142,7 @@
         "ratio": 0.1,
         "ing": [
           "Sable grossier",
-          "Gravier de Quartz"
+          "Perlite"
         ]
       }
     ],
@@ -3328,93 +3198,34 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Arbre, arbuste ou liane durable",
-      "modele_recherche": "woody_loam",
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Loam durable enrichi",
-          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
           "roles": [
             {
-              "nom": "Loam",
-              "ratio": 0.55,
-              "ing": [
-                "Terre franche / Terre de jardin"
-              ]
-            },
-            {
-              "nom": "Terreau",
-              "ratio": 0.25,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Organique",
-              "ratio": 0.1,
-              "ing": [
-                "Compost mûr"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable grossier",
-                "Gravier de Quartz"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            },
-            {
-              "titre": "RHS — Low-carbon container growing",
-              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau horticole structuré",
-          "description": "Variante plus légère pour pots mobiles.",
-          "roles": [
-            {
-              "nom": "Terreau",
+              "nom": "Base",
               "ratio": 0.55,
               "ing": [
                 "Terreau horticole"
               ]
             },
             {
-              "nom": "Terre",
+              "nom": "Terre stable",
               "ratio": 0.2,
               "ing": [
                 "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Écorces",
+              "nom": "Matière organique",
               "ratio": 0.15,
               "ing": [
-                "Écorces de pin"
+                "Compost mûr"
               ]
             },
             {
@@ -3429,21 +3240,66 @@
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
             {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
+      ],
+      "elements_interdits": [],
       "sources": [
-        {
-          "titre": "RHS — Trees in containers",
-          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-        },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
@@ -3488,22 +3344,22 @@
     },
     "roles": [
       {
-        "nom": "Loam",
+        "nom": "Base",
         "ratio": 0.55,
-        "ing": [
-          "Terre franche / Terre de jardin"
-        ]
-      },
-      {
-        "nom": "Terreau",
-        "ratio": 0.25,
         "ing": [
           "Terreau horticole"
         ]
       },
       {
-        "nom": "Organique",
-        "ratio": 0.1,
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
         "ing": [
           "Compost mûr"
         ]
@@ -3513,7 +3369,7 @@
         "ratio": 0.1,
         "ing": [
           "Sable grossier",
-          "Gravier de Quartz"
+          "Perlite"
         ]
       }
     ],
@@ -3569,129 +3425,129 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Arbre, arbuste ou liane durable",
-      "modele_recherche": "woody_loam",
+      "categorie_horticole": "Aroïde et tropicale à racines aérées",
+      "modele_recherche": "aroid_chunky",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Loam durable enrichi",
-          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "nom": "Mélange tropical structuré",
+          "description": "Base organique aérée par des éléments grossiers.",
           "roles": [
             {
-              "nom": "Loam",
-              "ratio": 0.55,
+              "nom": "Base",
+              "ratio": 0.35,
               "ing": [
-                "Terre franche / Terre de jardin"
-              ]
-            },
-            {
-              "nom": "Terreau",
-              "ratio": 0.25,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Organique",
-              "ratio": 0.1,
-              "ing": [
-                "Compost mûr"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable grossier",
-                "Gravier de Quartz"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            },
-            {
-              "titre": "RHS — Low-carbon container growing",
-              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau horticole structuré",
-          "description": "Variante plus légère pour pots mobiles.",
-          "roles": [
-            {
-              "nom": "Terreau",
-              "ratio": 0.55,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Terre",
-              "ratio": 0.2,
-              "ing": [
-                "Terre franche / Terre de jardin"
+                "Terreau plantes vertes",
+                "Terreau léger"
               ]
             },
             {
               "nom": "Écorces",
-              "ratio": 0.15,
+              "ratio": 0.25,
               "ing": [
                 "Écorces de pin"
               ]
             },
             {
-              "nom": "Drainage",
-              "ratio": 0.1,
+              "nom": "Aération minérale",
+              "ratio": 0.2,
               "ing": [
-                "Sable grossier",
+                "Pumice",
                 "Perlite"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.15,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
               ]
             }
           ],
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             },
             {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+              "titre": "RHS — Epiphytic ferns",
+              "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
+            }
+          ]
+        },
+        {
+          "nom": "Coco et écorces",
+          "description": "Variante légère pour arrosages fréquents.",
+          "roles": [
+            {
+              "nom": "Coco",
+              "ratio": 0.35,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.3,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau plantes vertes"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.15,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "35% Terreau plantes vertes / 25% Écorces de pin / 20% Pumice / 15% Chips de coco / 5% Charbon actif",
+      "ingredients_recommandes": [
+        "Terreau plantes vertes",
+        "Terreau léger",
+        "Écorces de pin",
+        "Pumice",
+        "Perlite",
+        "Chips de coco",
+        "Charbon actif",
+        "Charbon de bambou"
+      ],
+      "elements_interdits": [],
       "sources": [
         {
-          "titre": "RHS — Trees in containers",
-          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+          "titre": "RHS — Houseplants growing guide",
+          "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
         },
         {
-          "titre": "RHS — Growing plants in containers",
-          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-        },
-        {
-          "titre": "RHS — Low-carbon container growing",
-          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+          "titre": "RHS — Epiphytic ferns",
+          "url": "https://www.rhs.org.uk/plants/epiphytic-ferns/how-to-grow-epiphytic-ferns"
         }
       ]
     },
@@ -3729,32 +3585,41 @@
     },
     "roles": [
       {
-        "nom": "Loam",
-        "ratio": 0.55,
+        "nom": "Base",
+        "ratio": 0.35,
         "ing": [
-          "Terre franche / Terre de jardin"
+          "Terreau plantes vertes",
+          "Terreau léger"
         ]
       },
       {
-        "nom": "Terreau",
+        "nom": "Écorces",
         "ratio": 0.25,
         "ing": [
-          "Terreau horticole"
+          "Écorces de pin"
         ]
       },
       {
-        "nom": "Organique",
-        "ratio": 0.1,
+        "nom": "Aération minérale",
+        "ratio": 0.2,
         "ing": [
-          "Compost mûr"
+          "Pumice",
+          "Perlite"
         ]
       },
       {
-        "nom": "Drainage",
-        "ratio": 0.1,
+        "nom": "Coco grossière",
+        "ratio": 0.15,
         "ing": [
-          "Sable grossier",
-          "Gravier de Quartz"
+          "Chips de coco"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.05,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
         ]
       }
     ],
@@ -3810,93 +3675,34 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Arbre, arbuste ou liane durable",
-      "modele_recherche": "woody_loam",
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Loam durable enrichi",
-          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
           "roles": [
             {
-              "nom": "Loam",
-              "ratio": 0.55,
-              "ing": [
-                "Terre franche / Terre de jardin"
-              ]
-            },
-            {
-              "nom": "Terreau",
-              "ratio": 0.25,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Organique",
-              "ratio": 0.1,
-              "ing": [
-                "Compost mûr"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable grossier",
-                "Gravier de Quartz"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            },
-            {
-              "titre": "RHS — Low-carbon container growing",
-              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau horticole structuré",
-          "description": "Variante plus légère pour pots mobiles.",
-          "roles": [
-            {
-              "nom": "Terreau",
+              "nom": "Base",
               "ratio": 0.55,
               "ing": [
                 "Terreau horticole"
               ]
             },
             {
-              "nom": "Terre",
+              "nom": "Terre stable",
               "ratio": 0.2,
               "ing": [
                 "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Écorces",
+              "nom": "Matière organique",
               "ratio": 0.15,
               "ing": [
-                "Écorces de pin"
+                "Compost mûr"
               ]
             },
             {
@@ -3911,21 +3717,66 @@
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
             {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
+      ],
+      "elements_interdits": [],
       "sources": [
-        {
-          "titre": "RHS — Trees in containers",
-          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-        },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
@@ -3970,22 +3821,22 @@
     },
     "roles": [
       {
-        "nom": "Loam",
+        "nom": "Base",
         "ratio": 0.55,
-        "ing": [
-          "Terre franche / Terre de jardin"
-        ]
-      },
-      {
-        "nom": "Terreau",
-        "ratio": 0.25,
         "ing": [
           "Terreau horticole"
         ]
       },
       {
-        "nom": "Organique",
-        "ratio": 0.1,
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
         "ing": [
           "Compost mûr"
         ]
@@ -3995,7 +3846,7 @@
         "ratio": 0.1,
         "ing": [
           "Sable grossier",
-          "Gravier de Quartz"
+          "Perlite"
         ]
       }
     ],
@@ -4051,93 +3902,34 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Arbre, arbuste ou liane durable",
-      "modele_recherche": "woody_loam",
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Loam durable enrichi",
-          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
           "roles": [
             {
-              "nom": "Loam",
-              "ratio": 0.55,
-              "ing": [
-                "Terre franche / Terre de jardin"
-              ]
-            },
-            {
-              "nom": "Terreau",
-              "ratio": 0.25,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Organique",
-              "ratio": 0.1,
-              "ing": [
-                "Compost mûr"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable grossier",
-                "Gravier de Quartz"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            },
-            {
-              "titre": "RHS — Low-carbon container growing",
-              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau horticole structuré",
-          "description": "Variante plus légère pour pots mobiles.",
-          "roles": [
-            {
-              "nom": "Terreau",
+              "nom": "Base",
               "ratio": 0.55,
               "ing": [
                 "Terreau horticole"
               ]
             },
             {
-              "nom": "Terre",
+              "nom": "Terre stable",
               "ratio": 0.2,
               "ing": [
                 "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Écorces",
+              "nom": "Matière organique",
               "ratio": 0.15,
               "ing": [
-                "Écorces de pin"
+                "Compost mûr"
               ]
             },
             {
@@ -4152,21 +3944,66 @@
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
             {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
+      ],
+      "elements_interdits": [],
       "sources": [
-        {
-          "titre": "RHS — Trees in containers",
-          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-        },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
@@ -4211,22 +4048,22 @@
     },
     "roles": [
       {
-        "nom": "Loam",
+        "nom": "Base",
         "ratio": 0.55,
-        "ing": [
-          "Terre franche / Terre de jardin"
-        ]
-      },
-      {
-        "nom": "Terreau",
-        "ratio": 0.25,
         "ing": [
           "Terreau horticole"
         ]
       },
       {
-        "nom": "Organique",
-        "ratio": 0.1,
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
         "ing": [
           "Compost mûr"
         ]
@@ -4236,7 +4073,7 @@
         "ratio": 0.1,
         "ing": [
           "Sable grossier",
-          "Gravier de Quartz"
+          "Perlite"
         ]
       }
     ],
@@ -4292,93 +4129,34 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Arbre, arbuste ou liane durable",
-      "modele_recherche": "woody_loam",
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Loam durable enrichi",
-          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
           "roles": [
             {
-              "nom": "Loam",
-              "ratio": 0.55,
-              "ing": [
-                "Terre franche / Terre de jardin"
-              ]
-            },
-            {
-              "nom": "Terreau",
-              "ratio": 0.25,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Organique",
-              "ratio": 0.1,
-              "ing": [
-                "Compost mûr"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable grossier",
-                "Gravier de Quartz"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            },
-            {
-              "titre": "RHS — Low-carbon container growing",
-              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau horticole structuré",
-          "description": "Variante plus légère pour pots mobiles.",
-          "roles": [
-            {
-              "nom": "Terreau",
+              "nom": "Base",
               "ratio": 0.55,
               "ing": [
                 "Terreau horticole"
               ]
             },
             {
-              "nom": "Terre",
+              "nom": "Terre stable",
               "ratio": 0.2,
               "ing": [
                 "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Écorces",
+              "nom": "Matière organique",
               "ratio": 0.15,
               "ing": [
-                "Écorces de pin"
+                "Compost mûr"
               ]
             },
             {
@@ -4393,21 +4171,66 @@
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
             {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
+      ],
+      "elements_interdits": [],
       "sources": [
-        {
-          "titre": "RHS — Trees in containers",
-          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-        },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
@@ -4452,22 +4275,22 @@
     },
     "roles": [
       {
-        "nom": "Loam",
+        "nom": "Base",
         "ratio": 0.55,
-        "ing": [
-          "Terre franche / Terre de jardin"
-        ]
-      },
-      {
-        "nom": "Terreau",
-        "ratio": 0.25,
         "ing": [
           "Terreau horticole"
         ]
       },
       {
-        "nom": "Organique",
-        "ratio": 0.1,
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
         "ing": [
           "Compost mûr"
         ]
@@ -4477,7 +4300,7 @@
         "ratio": 0.1,
         "ing": [
           "Sable grossier",
-          "Gravier de Quartz"
+          "Perlite"
         ]
       }
     ],
@@ -4533,93 +4356,34 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
-      "ingredients_recommandes": [
-        "Terre franche / Terre de jardin",
-        "Terreau horticole",
-        "Compost mûr",
-        "Sable grossier",
-        "Gravier de Quartz"
-      ],
-      "elements_interdits": [],
-      "categorie_horticole": "Arbre, arbuste ou liane durable",
-      "modele_recherche": "woody_loam",
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
       "version_recherche": "2026.08",
       "variantes": [
         {
-          "nom": "Loam durable enrichi",
-          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
           "roles": [
             {
-              "nom": "Loam",
-              "ratio": 0.55,
-              "ing": [
-                "Terre franche / Terre de jardin"
-              ]
-            },
-            {
-              "nom": "Terreau",
-              "ratio": 0.25,
-              "ing": [
-                "Terreau horticole"
-              ]
-            },
-            {
-              "nom": "Organique",
-              "ratio": 0.1,
-              "ing": [
-                "Compost mûr"
-              ]
-            },
-            {
-              "nom": "Drainage",
-              "ratio": 0.1,
-              "ing": [
-                "Sable grossier",
-                "Gravier de Quartz"
-              ]
-            }
-          ],
-          "interdits": [],
-          "sources": [
-            {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-            },
-            {
-              "titre": "RHS — Growing plants in containers",
-              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
-            },
-            {
-              "titre": "RHS — Low-carbon container growing",
-              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
-            }
-          ]
-        },
-        {
-          "nom": "Terreau horticole structuré",
-          "description": "Variante plus légère pour pots mobiles.",
-          "roles": [
-            {
-              "nom": "Terreau",
+              "nom": "Base",
               "ratio": 0.55,
               "ing": [
                 "Terreau horticole"
               ]
             },
             {
-              "nom": "Terre",
+              "nom": "Terre stable",
               "ratio": 0.2,
               "ing": [
                 "Terre franche / Terre de jardin"
               ]
             },
             {
-              "nom": "Écorces",
+              "nom": "Matière organique",
               "ratio": 0.15,
               "ing": [
-                "Écorces de pin"
+                "Compost mûr"
               ]
             },
             {
@@ -4634,21 +4398,66 @@
           "interdits": [],
           "sources": [
             {
-              "titre": "RHS — Trees in containers",
-              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
             },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
             {
               "titre": "RHS — Growing plants in containers",
               "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
             }
           ]
         }
       ],
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
+      "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
+      ],
+      "elements_interdits": [],
       "sources": [
-        {
-          "titre": "RHS — Trees in containers",
-          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
-        },
         {
           "titre": "RHS — Growing plants in containers",
           "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
@@ -4693,22 +4502,22 @@
     },
     "roles": [
       {
-        "nom": "Loam",
+        "nom": "Base",
         "ratio": 0.55,
-        "ing": [
-          "Terre franche / Terre de jardin"
-        ]
-      },
-      {
-        "nom": "Terreau",
-        "ratio": 0.25,
         "ing": [
           "Terreau horticole"
         ]
       },
       {
-        "nom": "Organique",
-        "ratio": 0.1,
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
         "ing": [
           "Compost mûr"
         ]
@@ -4718,7 +4527,7 @@
         "ratio": 0.1,
         "ing": [
           "Sable grossier",
-          "Gravier de Quartz"
+          "Perlite"
         ]
       }
     ],
