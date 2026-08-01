@@ -58,11 +58,12 @@ class NotificationService:
         profiles_by_id: Mapping[str, Mapping[str, Any]],
         *,
         now: datetime | None = None,
+        include_snoozed: bool = False,
     ) -> list[NotificationItem]:
         current = now or datetime.now()
         today = current.date()
         advanced = AdvancedRepository(database)
-        snoozed = advanced.active_snoozes(current)
+        snoozed = set() if include_snoozed else advanced.active_snoozes(current)
         items: list[NotificationItem] = []
         plants = {plant["id"]: plant for plant in database.load_plants()}
         for plant in plants.values():
@@ -123,7 +124,7 @@ class NotificationService:
         group = bool(config.get("group_by_location", True))
         selected = items[:max_items]
         if not selected:
-            return "Assistant Botanique", ""
+            return "Contrôles du jour", ""
         if group:
             groups: dict[str, list[str]] = {}
             for item in selected:
@@ -165,7 +166,7 @@ class NotificationService:
             end = _parse_clock(config.get("quiet_end", "07:00"), time(7, 0))
             if _in_quiet_hours(current, start, end):
                 return 0
-        items = self.due_items(database, profiles_by_id, now=current)
+        items = self.due_items(database, profiles_by_id, now=current, include_snoozed=force)
         title, body = self.digest(items, settings)
         if body:
             self.show(title, body)
