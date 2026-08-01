@@ -71,9 +71,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-      - name: Vérifier la syntaxe
+      - name: Vérifier la syntaxe du correcteur
         run: python -m py_compile tools/normalize_provisional_warnings.py
-      - name: Normaliser les avertissements provisoires
+      - name: Normaliser les avertissements et identifiants
         shell: bash
         run: |
           if git log -1 --pretty=%B | grep -q '\[family-final-bot\]'; then
@@ -81,6 +81,7 @@ jobs:
             exit 0
           fi
           python tools/normalize_provisional_warnings.py
+          python -m py_compile tools/catalogue_enrichment.py
       - name: Enregistrer les résultats
         shell: bash
         run: |
@@ -89,10 +90,10 @@ jobs:
           fi
           git config user.name "assistant-botanique-family-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add -A familles_plantes
+          git add -A familles_plantes catalogue_metadata tools/catalogue_enrichment.py
           if git diff --cached --quiet; then
             echo "Aucune modification."
             exit 0
           fi
-          git commit -m "data: normaliser les avertissements provisoires [family-final-bot]"
+          git commit -m "data: synchroniser les identifiants du catalogue [family-final-bot]"
           git push origin HEAD:${{ github.event.pull_request.head.ref }}
