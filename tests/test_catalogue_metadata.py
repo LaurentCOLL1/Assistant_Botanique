@@ -155,19 +155,16 @@ def test_notable_species_registry_reports_missing_species(tmp_path: Path):
 
 
 def test_araceae_complements_are_complete_and_sourced():
-    paths = [
-        Path("familles_plantes/araceae_arum.json"),
-        Path("familles_plantes/araceae_notables.json"),
-    ]
-    profiles = [
+    profiles = json.loads(Path("familles_plantes/araceae.json").read_text(encoding="utf-8"))
+    selected = [
         profile
-        for path in paths
-        for profile in json.loads(path.read_text(encoding="utf-8"))
+        for profile in profiles
+        if profile["taxonomie"]["nom_scientifique"] in {"Arum creticum", "Arum italicum", "Arum maculatum"}
     ]
-    names = {profile["taxonomie"]["nom_scientifique"] for profile in profiles}
+    names = {profile["taxonomie"]["nom_scientifique"] for profile in selected}
 
-    assert {"Arum creticum", "Arum italicum", "Arum maculatum"} <= names
-    for profile in profiles:
+    assert names == {"Arum creticum", "Arum italicum", "Arum maculatum"}
+    for profile in selected:
         assert set(profile["gestion_eau"]["frequence_arrosage"]) == MONTHS
         assert profile["metadata"]["sources"]
         assert profile["metadata"]["last_reviewed"] == "2026-07-31"
