@@ -54,7 +54,7 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -64,20 +64,15 @@ jobs:
         with:
           python-version: "3.13"
       - name: Vérifier la syntaxe
-        run: >-
-          python -m py_compile
-          tools/reclassify_and_expand_families.py
-          tools/reclassify_and_expand_families_fast.py
-          tools/finalize_family_reclassification.py
-          tools/finalize_family_reclassification_v2.py
-      - name: Finaliser le reclassement et les métadonnées
+        run: python -m py_compile tools/normalize_provisional_warnings.py
+      - name: Normaliser les avertissements provisoires
         shell: bash
         run: |
           if git log -1 --pretty=%B | grep -q '\[family-final-bot\]'; then
-            echo "Résultats finaux déjà générés."
+            echo "Données finales déjà normalisées."
             exit 0
           fi
-          python tools/finalize_family_reclassification_v2.py
+          python tools/normalize_provisional_warnings.py
       - name: Enregistrer les résultats
         shell: bash
         run: |
@@ -86,10 +81,10 @@ jobs:
           fi
           git config user.name "assistant-botanique-family-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add -A familles_plantes catalogue_metadata
+          git add -A familles_plantes
           if git diff --cached --quiet; then
             echo "Aucune modification."
             exit 0
           fi
-          git commit -m "data: finaliser le reclassement familial [family-final-bot]"
+          git commit -m "data: normaliser les avertissements provisoires [family-final-bot]"
           git push origin HEAD:${{ github.event.pull_request.head.ref }}
