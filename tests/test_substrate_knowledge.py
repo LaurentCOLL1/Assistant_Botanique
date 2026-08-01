@@ -78,9 +78,10 @@ def test_representative_special_groups_take_priority_over_generic_rules():
 
 
 def test_every_catalogue_profile_has_one_or_two_valid_sourced_variants():
-    catalogue = load_catalogue(ROOT / "familles_plantes")
-    assert catalogue.profiles
-    for item in catalogue.profiles:
+    catalogue, catalogue_errors = load_catalogue(ROOT / "familles_plantes")
+    assert not catalogue_errors, catalogue_errors
+    assert catalogue
+    for item in catalogue:
         errors = validate_resolved_profile(item)
         scientific = item.get("taxonomie", {}).get("nom_scientifique", "inconnu")
         assert not errors, f"{scientific}: {errors}"
