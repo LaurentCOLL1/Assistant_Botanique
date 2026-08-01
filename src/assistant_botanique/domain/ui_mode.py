@@ -23,6 +23,7 @@ ADVANCED_TABS = (
     "review",
     "substrate",
     "diagnostic",
+    "ecosystem",
     "maintenance",
 )
 
