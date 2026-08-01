@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import tkinter as tk
+import unicodedata
 from tkinter import messagebox, ttk
 from typing import Any
 
@@ -43,12 +44,32 @@ DEFAULT_AVAILABLE_INGREDIENTS = {
 }
 
 
+def normalize_profile_search(value: str) -> str:
+    """Normalise une recherche pour ignorer casse, accents et ponctuation décorative."""
+    decomposed = unicodedata.normalize("NFKD", str(value))
+    without_accents = "".join(character for character in decomposed if not unicodedata.combining(character))
+    return " ".join(without_accents.casefold().split())
+
+
+def filter_profile_labels(labels: list[str], query: str) -> list[str]:
+    """Retourne les libellés contenant chacun des termes de la recherche."""
+    terms = normalize_profile_search(query).split()
+    if not terms:
+        return list(labels)
+    return [
+        label
+        for label in labels
+        if all(term in normalize_profile_search(label) for term in terms)
+    ]
+
+
 class TabSubstrat(ttk.Frame):
     def __init__(self, parent, settings: dict[str, Any] | None = None, on_settings_changed=None):
         super().__init__(parent)
         self.settings = settings if settings is not None else {}
         self.on_settings_changed = on_settings_changed
         self.combo_mapping: dict[str, dict] = {}
+        self.profile_values: list[str] = []
         self.mes_plantes: list[dict] = []
         self.ing_vars: dict[str, tk.BooleanVar] = {}
         self._build_ui()
@@ -57,8 +78,20 @@ class TabSubstrat(ttk.Frame):
         main = ttk.LabelFrame(self, text=" Recette de substrat sur mesure ")
         main.pack(fill="both", expand=True, padx=10, pady=10)
 
+        search_row = ttk.Frame(main)
+        search_row.pack(fill="x", padx=8, pady=(8, 3))
+        ttk.Label(search_row, text="Rechercher une plante").pack(side="left", padx=(0, 5))
+        self.search_var = tk.StringVar()
+        self.search_var.trace_add("write", self._profile_search_changed)
+        self.entry_profile_search = ttk.Entry(search_row, textvariable=self.search_var, width=48)
+        self.entry_profile_search.pack(side="left", fill="x", expand=True, padx=5)
+        self.entry_profile_search.bind("<Escape>", lambda _event: self._clear_profile_search())
+        ttk.Button(search_row, text="Effacer", command=self._clear_profile_search).pack(side="left", padx=(4, 8))
+        self.search_result_label = ttk.Label(search_row, text="0 résultat", style="Muted.TLabel")
+        self.search_result_label.pack(side="right")
+
         top = ttk.Frame(main)
-        top.pack(fill="x", padx=8, pady=6)
+        top.pack(fill="x", padx=8, pady=(3, 6))
         ttk.Label(top, text="Plante ou profil").pack(side="left", padx=(0, 5))
         self.combo_profile = ttk.Combobox(top, state="readonly", width=68)
         self.combo_profile.pack(side="left", fill="x", expand=True, padx=5)
@@ -155,12 +188,35 @@ class TabSubstrat(ttk.Frame):
         for variable in self.ing_vars.values():
             variable.set(value)
 
+    def _profile_search_changed(self, *_args) -> None:
+        self._apply_profile_filter()
+
+    def _clear_profile_search(self) -> str:
+        self.search_var.set("")
+        self.entry_profile_search.focus_set()
+        return "break"
+
+    def _apply_profile_filter(self) -> None:
+        selected = self.combo_profile.get()
+        visible_values = filter_profile_labels(self.profile_values, self.search_var.get())
+        self.combo_profile["values"] = visible_values
+
+        count = len(visible_values)
+        self.search_result_label.configure(text=f"{count} résultat{'s' if count != 1 else ''}")
+        if selected in visible_values:
+            self.combo_profile.set(selected)
+        elif visible_values:
+            self.combo_profile.current(0)
+        else:
+            self.combo_profile.set("")
+
     @staticmethod
     def _resolve_profile(identifier: str) -> dict | None:
         return DATABASE_BY_ID.get(identifier) or DATABASE_BY_SCIENTIFIC_NAME.get(identifier)
 
     def actualiser_combo_substrat(self, plants: list[dict]) -> None:
         self.mes_plantes = plants
+        selected = self.combo_profile.get()
         self.combo_mapping.clear()
         values: list[str] = []
         for generic in PROFILS_GENERIQUES:
@@ -171,16 +227,21 @@ class TabSubstrat(ttk.Frame):
             profile = self._resolve_profile(str(plant.get("species_id", "")))
             if not profile:
                 continue
+            vernacular = ", ".join(vernacular_names(profile))
             label = f"🪴 {plant.get('surnom', 'Sans nom')} — {scientific_name(profile)}"
+            if vernacular:
+                label += f" — {vernacular}"
             values.append(label)
             self.combo_mapping[label] = profile
         for profile in DATABASE_PLANTES:
             label = f"📋 {scientific_name(profile)} — {', '.join(vernacular_names(profile))}"
             values.append(label)
             self.combo_mapping[label] = profile
-        self.combo_profile["values"] = values
-        if values and not self.combo_profile.get():
-            self.combo_profile.current(0)
+        self.profile_values = values
+        self._apply_profile_filter()
+        visible_values = list(self.combo_profile["values"])
+        if selected in visible_values:
+            self.combo_profile.set(selected)
 
     def calculer_recette(self) -> None:
         try:
