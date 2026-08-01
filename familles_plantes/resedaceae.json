@@ -51,14 +51,72 @@
       "sensibilite_minerale": "Aime les sols calcaires"
     },
     "substrat": {
-      "composition_ideale": "Terre légère, sablonneuse, pauvre et bien drainée",
+      "composition_ideale": "50% Terreau horticole / 25% Sable grossier / 25% Pouzzolane",
       "ph": "Neutre à calcaire (6.5 - 7.5)",
       "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
         "Sable grossier",
-        "Terre de jardin"
+        "Pouzzolane",
+        "Pumice",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Argile lourde"
+      "elements_interdits": [],
+      "categorie_horticole": "Méditerranéenne drainante",
+      "modele_recherche": "mediterranean_dry",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam et minéraux",
+          "description": "Mélange drainant pour plantes tolérant la sécheresse.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.25,
+              "ing": [
+                "Sable grossier"
+              ]
+            },
+            {
+              "nom": "Granulats",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Pumice",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -77,7 +135,34 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Appréciée pour ses épis blancs lumineux qui contrastent avec les autres espèces jaunes."
     },
-    "conseil": "Parfaite dans les jardins de style sec ou naturaliste, elle se resème facilement toute seule."
+    "conseil": "Parfaite dans les jardins de style sec ou naturaliste, elle se resème facilement toute seule.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Sable",
+        "ratio": 0.25,
+        "ing": [
+          "Sable grossier"
+        ]
+      },
+      {
+        "nom": "Granulats",
+        "ratio": 0.25,
+        "ing": [
+          "Pouzzolane",
+          "Pumice",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -130,14 +215,116 @@
       "sensibilite_minerale": "Aucune"
     },
     "substrat": {
-      "composition_ideale": "Sol désertique, sablonneux et très poreux",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "Neutre à basique",
       "ingredients_recommandes": [
-        "Sable fin",
-        "Graviers"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
       ],
-      "elements_interdits": [
-        "Terre compacte et humide"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -156,7 +343,39 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Espèce adaptée aux milieux hyper-arides."
     },
-    "conseil": "Réservée aux collections botaniques en zones arides ou en pot sous abri."
+    "conseil": "Réservée aux collections botaniques en zones arides ou en pot sous abri.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -209,14 +428,72 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sol sec, rocailleux ou sablonneux",
+      "composition_ideale": "50% Terreau horticole / 25% Sable grossier / 25% Pouzzolane",
       "ph": "Neutre à basique",
       "ingredients_recommandes": [
-        "Sable",
-        "Cailloux"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Pouzzolane",
+        "Pumice",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Terres lourdes"
+      "elements_interdits": [],
+      "categorie_horticole": "Méditerranéenne drainante",
+      "modele_recherche": "mediterranean_dry",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam et minéraux",
+          "description": "Mélange drainant pour plantes tolérant la sécheresse.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.25,
+              "ing": [
+                "Sable grossier"
+              ]
+            },
+            {
+              "nom": "Granulats",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Pumice",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -235,7 +512,34 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Se distingue par des teintes de fleurs tendant parfois vers le blanc rosé."
     },
-    "conseil": "Parfaite en massif sec ou prairie fleurie naturelle."
+    "conseil": "Parfaite en massif sec ou prairie fleurie naturelle.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Sable",
+        "ratio": 0.25,
+        "ing": [
+          "Sable grossier"
+        ]
+      },
+      {
+        "nom": "Granulats",
+        "ratio": 0.25,
+        "ing": [
+          "Pouzzolane",
+          "Pumice",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -288,14 +592,116 @@
       "sensibilite_minerale": "Préfère le calcaire"
     },
     "substrat": {
-      "composition_ideale": "Fissures de rochers, sols rocailleux calcaires",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "Basique",
       "ingredients_recommandes": [
-        "Graviers calcaires",
-        "Sable"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
       ],
-      "elements_interdits": [
-        "Humidité stagnante"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -314,7 +720,39 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Nommé ainsi en raison de la disposition repliée de ses feuilles."
     },
-    "conseil": "Réservé aux rocailles alpines ou sèches très drainées."
+    "conseil": "Réservé aux rocailles alpines ou sèches très drainées.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -367,14 +805,72 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sol sec, filtrant et calcaire",
+      "composition_ideale": "50% Terreau horticole / 25% Sable grossier / 25% Pouzzolane",
       "ph": "Basique",
       "ingredients_recommandes": [
-        "Sable",
-        "Graviers"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Pouzzolane",
+        "Pumice",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Humidité stagnante"
+      "elements_interdits": [],
+      "categorie_horticole": "Méditerranéenne drainante",
+      "modele_recherche": "mediterranean_dry",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam et minéraux",
+          "description": "Mélange drainant pour plantes tolérant la sécheresse.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.25,
+              "ing": [
+                "Sable grossier"
+              ]
+            },
+            {
+              "nom": "Granulats",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Pumice",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -393,7 +889,34 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Caractérisée par ses feuilles décurrentes distinctives."
     },
-    "conseil": "À cultiver en conditions similaires aux autres résédas méditerranéens."
+    "conseil": "À cultiver en conditions similaires aux autres résédas méditerranéens.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Sable",
+        "ratio": 0.25,
+        "ing": [
+          "Sable grossier"
+        ]
+      },
+      {
+        "nom": "Granulats",
+        "ratio": 0.25,
+        "ing": [
+          "Pouzzolane",
+          "Pumice",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -446,16 +969,116 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Substrat minéral, éboulis, mélange de graviers, de sable et de terre calcaire",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "Basique à neutre",
       "ingredients_recommandes": [
-        "Pouzzolane",
-        "Graviers calcaires",
-        "Sable"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
       ],
-      "elements_interdits": [
-        "Terreau organique riche",
-        "Humidité stagnante"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -474,7 +1097,39 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Port tapissant remarquable pour les rocailles alpines ou calcaires."
     },
-    "conseil": "À cultiver impérativement en rocaille drainée ou dans des auges en pierre."
+    "conseil": "À cultiver impérativement en rocaille drainée ou dans des auges en pierre.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -527,14 +1182,72 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sol calcaire, drainant et léger",
+      "composition_ideale": "50% Terreau horticole / 25% Sable grossier / 25% Pouzzolane",
       "ph": "Neutre à basique",
       "ingredients_recommandes": [
-        "Sable",
-        "Terreau léger"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Pouzzolane",
+        "Pumice",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Argile lourde"
+      "elements_interdits": [],
+      "categorie_horticole": "Méditerranéenne drainante",
+      "modele_recherche": "mediterranean_dry",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam et minéraux",
+          "description": "Mélange drainant pour plantes tolérant la sécheresse.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.25,
+              "ing": [
+                "Sable grossier"
+              ]
+            },
+            {
+              "nom": "Granulats",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Pumice",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -553,7 +1266,34 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Feuillage aux limbes étroits et effilés."
     },
-    "conseil": "Idéal pour les talus ensoleillés."
+    "conseil": "Idéal pour les talus ensoleillés.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Sable",
+        "ratio": 0.25,
+        "ing": [
+          "Sable grossier"
+        ]
+      },
+      {
+        "nom": "Granulats",
+        "ratio": 0.25,
+        "ing": [
+          "Pouzzolane",
+          "Pumice",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -607,14 +1347,116 @@
       "sensibilite_minerale": "Aucune"
     },
     "substrat": {
-      "composition_ideale": "Terre calcaire, sèche, caillouteuse ou sableuse",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "Alcalin (7.0 - 8.5)",
       "ingredients_recommandes": [
-        "Sable calcaire",
-        "Graviers"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
       ],
-      "elements_interdits": [
-        "Terres lourdes et acides"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -633,7 +1475,39 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Excellente plante mellifère attirant de nombreux insectes pollinisateurs."
     },
-    "conseil": "Idéale pour les talus secs, les rocailles calcaires et les jardins naturalistes."
+    "conseil": "Idéale pour les talus secs, les rocailles calcaires et les jardins naturalistes.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -688,16 +1562,116 @@
       "sensibilite_minerale": "Indifférente, apprécie les sols calcaires"
     },
     "substrat": {
-      "composition_ideale": "Sol pauvre, caillouteux, bien drainé et calcaire",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "Neutre à alcalin (pH 7.0 - 8.0)",
       "ingredients_recommandes": [
-        "Sable",
-        "Cailloux",
-        "Terre calcaire"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
       ],
-      "elements_interdits": [
-        "Sols acides",
-        "Excès d'humus ou d'azote"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -716,7 +1690,39 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Utilisée depuis l'Antiquité comme plante tinctoriale pour produire une teinture jaune éclatante (lutéoline)."
     },
-    "conseil": "Pousse naturellement dans les friches, les décombres et au bord des chemins calcaires ; donnez-lui un sol pauvre."
+    "conseil": "Pousse naturellement dans les friches, les décombres et au bord des chemins calcaires ; donnez-lui un sol pauvre.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -769,14 +1775,72 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sol drainant, perméable et calcaire",
+      "composition_ideale": "50% Terreau horticole / 25% Sable grossier / 25% Pouzzolane",
       "ph": "Neutre à basique",
       "ingredients_recommandes": [
-        "Sable",
-        "Terreau"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Pouzzolane",
+        "Pumice",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Excès d'humidité"
+      "elements_interdits": [],
+      "categorie_horticole": "Méditerranéenne drainante",
+      "modele_recherche": "mediterranean_dry",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam et minéraux",
+          "description": "Mélange drainant pour plantes tolérant la sécheresse.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.25,
+              "ing": [
+                "Sable grossier"
+              ]
+            },
+            {
+              "nom": "Granulats",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Pumice",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -795,7 +1859,34 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Espèce intermédiaire présentant des caractères proches de Reseda lutea et Reseda alba."
     },
-    "conseil": "À cultiver dans des conditions similaires aux autres résédas sauvages."
+    "conseil": "À cultiver dans des conditions similaires aux autres résédas sauvages.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Sable",
+        "ratio": 0.25,
+        "ing": [
+          "Sable grossier"
+        ]
+      },
+      {
+        "nom": "Granulats",
+        "ratio": 0.25,
+        "ing": [
+          "Pouzzolane",
+          "Pumice",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -850,17 +1941,72 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Terre de jardin drainante, un peu de compost et un apport de calcaire",
+      "composition_ideale": "50% Terreau horticole / 25% Sable grossier / 25% Pouzzolane",
       "ph": "Neutre à basique (pH 6.5 à 7.5)",
       "ingredients_recommandes": [
         "Terreau horticole",
-        "Compost mûr",
+        "Terre franche / Terre de jardin",
         "Sable grossier",
-        "Amendement calcaire"
+        "Pouzzolane",
+        "Pumice",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Substrat trop acide",
-        "Terre détrempée"
+      "elements_interdits": [],
+      "categorie_horticole": "Méditerranéenne drainante",
+      "modele_recherche": "mediterranean_dry",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam et minéraux",
+          "description": "Mélange drainant pour plantes tolérant la sécheresse.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.25,
+              "ing": [
+                "Sable grossier"
+              ]
+            },
+            {
+              "nom": "Granulats",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Pumice",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -881,7 +2027,34 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Historiquement très cultivée pour son parfum exceptionnel en parfumerie"
     },
-    "conseil": "Semez directement en place car son système racinaire pivotant supporte mal le repiquage."
+    "conseil": "Semez directement en place car son système racinaire pivotant supporte mal le repiquage.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Sable",
+        "ratio": 0.25,
+        "ing": [
+          "Sable grossier"
+        ]
+      },
+      {
+        "nom": "Granulats",
+        "ratio": 0.25,
+        "ing": [
+          "Pouzzolane",
+          "Pumice",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -934,14 +2107,116 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sol fertile, bien drainé et perméable",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "Neutre",
       "ingredients_recommandes": [
-        "Terreau",
-        "Sable"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
       ],
-      "elements_interdits": [
-        "Excès d'eau stagnante"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -960,7 +2235,39 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Espèce orientale robuste appréciée pour ses hampes florales généreuses."
     },
-    "conseil": "À cultiver en massifs de fleurs sauvages ou naturalistes."
+    "conseil": "À cultiver en massifs de fleurs sauvages ou naturalistes.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1013,14 +2320,116 @@
       "sensibilite_minerale": "Préfère le calcaire"
     },
     "substrat": {
-      "composition_ideale": "Rocaille calcaire et drainante",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "Basique",
       "ingredients_recommandes": [
-        "Gravier",
-        "Sable calcaire"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
       ],
-      "elements_interdits": [
-        "Humidité stagnante"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -1039,7 +2448,39 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Espèce rare endémique des rocailles calcaires espagnoles."
     },
-    "conseil": "À réserver aux amateurs de plantes alpines et de rocaille sèche."
+    "conseil": "À réserver aux amateurs de plantes alpines et de rocaille sèche.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1093,14 +2534,72 @@
       "sensibilite_minerale": "Préfère le calcaire"
     },
     "substrat": {
-      "composition_ideale": "Sol très drainant, sablonneux ou rocailleux",
+      "composition_ideale": "50% Terreau horticole / 25% Sable grossier / 25% Pouzzolane",
       "ph": "Neutre à basique",
       "ingredients_recommandes": [
-        "Sable",
-        "Gravier"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Pouzzolane",
+        "Pumice",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Humidité stagnante"
+      "elements_interdits": [],
+      "categorie_horticole": "Méditerranéenne drainante",
+      "modele_recherche": "mediterranean_dry",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam et minéraux",
+          "description": "Mélange drainant pour plantes tolérant la sécheresse.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.25,
+              "ing": [
+                "Sable grossier"
+              ]
+            },
+            {
+              "nom": "Granulats",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Pumice",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -1119,7 +2618,34 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Se distingue par ses capsules fructifères originales penchées vers le bas."
     },
-    "conseil": "À cultiver de préférence en bordure de muret ou dans une rocaille sèche bien exposée."
+    "conseil": "À cultiver de préférence en bordure de muret ou dans une rocaille sèche bien exposée.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Sable",
+        "ratio": 0.25,
+        "ing": [
+          "Sable grossier"
+        ]
+      },
+      {
+        "nom": "Granulats",
+        "ratio": 0.25,
+        "ing": [
+          "Pouzzolane",
+          "Pumice",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1172,14 +2698,116 @@
       "sensibilite_minerale": "Préfère le calcaire"
     },
     "substrat": {
-      "composition_ideale": "Sol sec et rocailleux",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "Basique",
       "ingredients_recommandes": [
-        "Graviers",
-        "Sable"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
       ],
-      "elements_interdits": [
-        "Terres lourdes"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -1198,7 +2826,39 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Variante robuste adaptée aux climats chauds."
     },
-    "conseil": "Parfaite en talus ou rocaille bien drainée."
+    "conseil": "Parfaite en talus ou rocaille bien drainée.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1251,14 +2911,116 @@
       "sensibilite_minerale": "Préfère le calcaire"
     },
     "substrat": {
-      "composition_ideale": "Sols arides, sablonneux ou calcaires",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "Basique",
       "ingredients_recommandes": [
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
         "Sable grossier",
-        "Graviers"
+        "Perlite"
       ],
-      "elements_interdits": [
-        "Humidité stagnante"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -1277,7 +3039,39 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Sous-espèce endémique adaptée aux climats arides ibériques."
     },
-    "conseil": "Réserver aux collections botaniques de plantes xérophytes."
+    "conseil": "Réserver aux collections botaniques de plantes xérophytes.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1330,15 +3124,116 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Substrat volcanique, sablonneux et très drainant",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "Neutre",
       "ingredients_recommandes": [
-        "Pouzzolane",
-        "Sable",
-        "Terreau léger"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
       ],
-      "elements_interdits": [
-        "Humidité stagnante"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -1357,7 +3252,39 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Endémique insulaire aux caractéristiques xérophytes prononcées."
     },
-    "conseil": "À cultiver en serre froide ou en véranda dans les régions aux hivers froids."
+    "conseil": "À cultiver en serre froide ou en véranda dans les régions aux hivers froids.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1410,14 +3337,116 @@
       "sensibilite_minerale": "Aucune"
     },
     "substrat": {
-      "composition_ideale": "Sol sablonneux et très drainé",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "Basique à neutre",
       "ingredients_recommandes": [
-        "Sable",
-        "Graviers"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
       ],
-      "elements_interdits": [
-        "Humidité stagnante"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -1436,7 +3465,39 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Adaptée aux environnements semi-désertiques."
     },
-    "conseil": "À cultiver en conditions arides."
+    "conseil": "À cultiver en conditions arides.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1489,14 +3550,72 @@
       "sensibilite_minerale": "Aime le calcaire"
     },
     "substrat": {
-      "composition_ideale": "Sol rocailleux, sec et pauvre",
+      "composition_ideale": "50% Terreau horticole / 25% Sable grossier / 25% Pouzzolane",
       "ph": "Basique",
       "ingredients_recommandes": [
-        "Cailloux",
-        "Sable"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Pouzzolane",
+        "Pumice",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Terre lourde et humide"
+      "elements_interdits": [],
+      "categorie_horticole": "Méditerranéenne drainante",
+      "modele_recherche": "mediterranean_dry",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam et minéraux",
+          "description": "Mélange drainant pour plantes tolérant la sécheresse.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.25,
+              "ing": [
+                "Sable grossier"
+              ]
+            },
+            {
+              "nom": "Granulats",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Pumice",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -1515,7 +3634,34 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Port pérenne et ligneux rare au sein du genre Reseda."
     },
-    "conseil": "Idéal pour les massifs méditerranéens sur sols pauvres et drainés."
+    "conseil": "Idéal pour les massifs méditerranéens sur sols pauvres et drainés.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Sable",
+        "ratio": 0.25,
+        "ing": [
+          "Sable grossier"
+        ]
+      },
+      {
+        "nom": "Granulats",
+        "ratio": 0.25,
+        "ing": [
+          "Pouzzolane",
+          "Pumice",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1568,14 +3714,72 @@
       "sensibilite_minerale": "Aucune"
     },
     "substrat": {
-      "composition_ideale": "Sol sec, rocailleux et filtrant",
+      "composition_ideale": "50% Terreau horticole / 25% Sable grossier / 25% Pouzzolane",
       "ph": "Neutre à calcaire",
       "ingredients_recommandes": [
-        "Sable",
-        "Cailloux calcaire"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Pouzzolane",
+        "Pumice",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Terres lourdes"
+      "elements_interdits": [],
+      "categorie_horticole": "Méditerranéenne drainante",
+      "modele_recherche": "mediterranean_dry",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam et minéraux",
+          "description": "Mélange drainant pour plantes tolérant la sécheresse.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.25,
+              "ing": [
+                "Sable grossier"
+              ]
+            },
+            {
+              "nom": "Granulats",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Pumice",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -1594,6 +3798,33 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Ses feuilles très ondulées offrent un bel intérêt esthétique texturé."
     },
-    "conseil": "Parfaite pour les jardins secs méditerranéens."
+    "conseil": "Parfaite pour les jardins secs méditerranéens.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Sable",
+        "ratio": 0.25,
+        "ing": [
+          "Sable grossier"
+        ]
+      },
+      {
+        "nom": "Granulats",
+        "ratio": 0.25,
+        "ing": [
+          "Pouzzolane",
+          "Pumice",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   }
 ]

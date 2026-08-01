@@ -50,15 +50,127 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sols acides, tourbeux ou limoneux gorgés d'eau",
+      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "4.5 - 6.5 (Acide à neutre)",
       "ingredients_recommandes": [
-        "Tourbe",
+        "Tourbe blonde",
+        "Écorces de pin",
         "Terreau de feuilles",
-        "Limon"
+        "Sable de quartz",
+        "Perlite"
       ],
       "elements_interdits": [
-        "Calcaires secs"
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "categorie_horticole": "Plante acidophile",
+      "modele_recherche": "acid_ericaceous",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Acide organique drainé",
+          "description": "Mélange sans amendement calcaire.",
+          "roles": [
+            {
+              "nom": "Base acide",
+              "ratio": 0.5,
+              "ing": [
+                "Tourbe blonde"
+              ]
+            },
+            {
+              "nom": "Structure acide",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Matière humifère",
+              "ratio": 0.15,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable de quartz",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        },
+        {
+          "nom": "Coco, kanuma et feuilles",
+          "description": "Variante sans tourbe, à surveiller avec un test de pH.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.45,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Minéral acide",
+              "ratio": 0.25,
+              "ing": [
+                "Kanuma"
+              ]
+            },
+            {
+              "nom": "Humus de feuilles",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.1,
+              "ing": [
+                "Écorces de pin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Blueberries growing guide",
+          "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        }
       ]
     },
     "entretien": {
@@ -77,7 +189,41 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Indicateur écologique de sols acides et gorgés d'eau."
     },
-    "conseil": "Parfait pour les zones de sources ou de suintements naturels dans un grand jardin d'eau."
+    "conseil": "Parfait pour les zones de sources ou de suintements naturels dans un grand jardin d'eau.",
+    "roles": [
+      {
+        "nom": "Base acide",
+        "ratio": 0.5,
+        "ing": [
+          "Tourbe blonde"
+        ]
+      },
+      {
+        "nom": "Structure acide",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Matière humifère",
+        "ratio": 0.15,
+        "ing": [
+          "Terreau de feuilles"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable de quartz",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": [
+      "Poudre de Calcaire / Dolomie"
+    ]
   },
   {
     "taxonomie": {
@@ -130,14 +276,127 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sols tourbeux et sableux froids",
+      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "5.0 - 6.5",
       "ingredients_recommandes": [
-        "Tourbe",
-        "Sable"
+        "Tourbe blonde",
+        "Écorces de pin",
+        "Terreau de feuilles",
+        "Sable de quartz",
+        "Perlite"
       ],
       "elements_interdits": [
-        "Chaleur excessive et sécheresse"
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "categorie_horticole": "Plante acidophile",
+      "modele_recherche": "acid_ericaceous",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Acide organique drainé",
+          "description": "Mélange sans amendement calcaire.",
+          "roles": [
+            {
+              "nom": "Base acide",
+              "ratio": 0.5,
+              "ing": [
+                "Tourbe blonde"
+              ]
+            },
+            {
+              "nom": "Structure acide",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Matière humifère",
+              "ratio": 0.15,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable de quartz",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        },
+        {
+          "nom": "Coco, kanuma et feuilles",
+          "description": "Variante sans tourbe, à surveiller avec un test de pH.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.45,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Minéral acide",
+              "ratio": 0.25,
+              "ing": [
+                "Kanuma"
+              ]
+            },
+            {
+              "nom": "Humus de feuilles",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.1,
+              "ing": [
+                "Écorces de pin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Blueberries growing guide",
+          "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        }
       ]
     },
     "entretien": {
@@ -156,7 +415,41 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Espèce typique des biotopes d'altitude fraîche."
     },
-    "conseil": "À cultiver dans les bassins de fraîcheur ou les zones ombragées et humides en altitude."
+    "conseil": "À cultiver dans les bassins de fraîcheur ou les zones ombragées et humides en altitude.",
+    "roles": [
+      {
+        "nom": "Base acide",
+        "ratio": 0.5,
+        "ing": [
+          "Tourbe blonde"
+        ]
+      },
+      {
+        "nom": "Structure acide",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Matière humifère",
+        "ratio": 0.15,
+        "ing": [
+          "Terreau de feuilles"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable de quartz",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": [
+      "Poudre de Calcaire / Dolomie"
+    ]
   },
   {
     "taxonomie": {
@@ -209,14 +502,127 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sols argileux ou tourbeux humides",
+      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "5.5 - 7.5",
       "ingredients_recommandes": [
-        "Terre argileuse",
-        "Humus"
+        "Tourbe blonde",
+        "Écorces de pin",
+        "Terreau de feuilles",
+        "Sable de quartz",
+        "Perlite"
       ],
       "elements_interdits": [
-        "Sécheresse"
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "categorie_horticole": "Plante acidophile",
+      "modele_recherche": "acid_ericaceous",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Acide organique drainé",
+          "description": "Mélange sans amendement calcaire.",
+          "roles": [
+            {
+              "nom": "Base acide",
+              "ratio": 0.5,
+              "ing": [
+                "Tourbe blonde"
+              ]
+            },
+            {
+              "nom": "Structure acide",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Matière humifère",
+              "ratio": 0.15,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable de quartz",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        },
+        {
+          "nom": "Coco, kanuma et feuilles",
+          "description": "Variante sans tourbe, à surveiller avec un test de pH.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.45,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Minéral acide",
+              "ratio": 0.25,
+              "ing": [
+                "Kanuma"
+              ]
+            },
+            {
+              "nom": "Humus de feuilles",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.1,
+              "ing": [
+                "Écorces de pin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Blueberries growing guide",
+          "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        }
       ]
     },
     "entretien": {
@@ -235,7 +641,41 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Reconnaissable au toucher par les cloisons internes de ses feuilles."
     },
-    "conseil": "Idéal pour naturaliser les berges de plans d'eau."
+    "conseil": "Idéal pour naturaliser les berges de plans d'eau.",
+    "roles": [
+      {
+        "nom": "Base acide",
+        "ratio": 0.5,
+        "ing": [
+          "Tourbe blonde"
+        ]
+      },
+      {
+        "nom": "Structure acide",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Matière humifère",
+        "ratio": 0.15,
+        "ing": [
+          "Terreau de feuilles"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable de quartz",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": [
+      "Poudre de Calcaire / Dolomie"
+    ]
   },
   {
     "taxonomie": {
@@ -289,14 +729,127 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Boue, limons ou terres piétinées humides",
+      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "5.5 - 7.0",
       "ingredients_recommandes": [
-        "Terre limoneuse",
-        "Argile"
+        "Tourbe blonde",
+        "Écorces de pin",
+        "Terreau de feuilles",
+        "Sable de quartz",
+        "Perlite"
       ],
       "elements_interdits": [
-        "Sols secs sablonneux permanents"
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "categorie_horticole": "Plante acidophile",
+      "modele_recherche": "acid_ericaceous",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Acide organique drainé",
+          "description": "Mélange sans amendement calcaire.",
+          "roles": [
+            {
+              "nom": "Base acide",
+              "ratio": 0.5,
+              "ing": [
+                "Tourbe blonde"
+              ]
+            },
+            {
+              "nom": "Structure acide",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Matière humifère",
+              "ratio": 0.15,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable de quartz",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        },
+        {
+          "nom": "Coco, kanuma et feuilles",
+          "description": "Variante sans tourbe, à surveiller avec un test de pH.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.45,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Minéral acide",
+              "ratio": 0.25,
+              "ing": [
+                "Kanuma"
+              ]
+            },
+            {
+              "nom": "Humus de feuilles",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.1,
+              "ing": [
+                "Écorces de pin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Blueberries growing guide",
+          "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        }
       ]
     },
     "entretien": {
@@ -315,7 +868,41 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Pionnière classique des sols nus et piétinés gorgés d'eau en hiver."
     },
-    "conseil": "Se ressème spontanément d'une année sur l'autre dans les zones boueuses du jardin."
+    "conseil": "Se ressème spontanément d'une année sur l'autre dans les zones boueuses du jardin.",
+    "roles": [
+      {
+        "nom": "Base acide",
+        "ratio": 0.5,
+        "ing": [
+          "Tourbe blonde"
+        ]
+      },
+      {
+        "nom": "Structure acide",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Matière humifère",
+        "ratio": 0.15,
+        "ing": [
+          "Terreau de feuilles"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable de quartz",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": [
+      "Poudre de Calcaire / Dolomie"
+    ]
   },
   {
     "taxonomie": {
@@ -368,14 +955,130 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sols tourbeux, sableux ou limoneux pauvres et acides",
+      "composition_ideale": "80% Terreau argileux (Aquatique / Nénuphars) / 20% Terre franche / Terre de jardin",
       "ph": "4.5 - 6.0 (Acide)",
       "ingredients_recommandes": [
-        "Tourbe",
-        "Sable fin"
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Terre franche / Terre de jardin"
       ],
       "elements_interdits": [
-        "Terrains calcaires lourds"
+        "Perlite",
+        "Pumice",
+        "Pouzzolane",
+        "Micro-pouzzolane",
+        "Vermiculite",
+        "Billes d'argile",
+        "Fibre de coco",
+        "Chips de coco",
+        "Sphaigne sèche",
+        "Mousse de sphaigne vivante"
+      ],
+      "categorie_horticole": "Aquatique ou plante de berge immergée",
+      "modele_recherche": "aquatic_heavy",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Compost aquatique lourd",
+          "description": "Substrat minéral lourd, stable sous l'eau.",
+          "roles": [
+            {
+              "nom": "Base aquatique",
+              "ratio": 0.8,
+              "ing": [
+                "Terreau argileux (Aquatique / Nénuphars)"
+              ]
+            },
+            {
+              "nom": "Ancrage minéral",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Perlite",
+            "Pumice",
+            "Pouzzolane",
+            "Micro-pouzzolane",
+            "Vermiculite",
+            "Billes d'argile",
+            "Fibre de coco",
+            "Chips de coco",
+            "Sphaigne sèche",
+            "Mousse de sphaigne vivante"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Zantedeschia en bassin",
+              "url": "https://www.rhs.org.uk/plants/zantedeschia/growing-guide"
+            },
+            {
+              "titre": "RHS — Nelumbo nucifera",
+              "url": "https://www.rhs.org.uk/plants/11438/nelumbo-nucifera/details"
+            },
+            {
+              "titre": "NC State Extension — Nelumbo nucifera",
+              "url": "https://plants.ces.ncsu.edu/plants/nelumbo-nucifera/"
+            }
+          ]
+        },
+        {
+          "nom": "Terre franche lourde",
+          "description": "Alternative sans terreau aquatique commercial.",
+          "roles": [
+            {
+              "nom": "Terre lourde",
+              "ratio": 0.9,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Organique modéré",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            }
+          ],
+          "interdits": [
+            "Perlite",
+            "Pumice",
+            "Pouzzolane",
+            "Micro-pouzzolane",
+            "Vermiculite",
+            "Billes d'argile",
+            "Fibre de coco",
+            "Chips de coco",
+            "Sphaigne sèche",
+            "Mousse de sphaigne vivante"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Zantedeschia en bassin",
+              "url": "https://www.rhs.org.uk/plants/zantedeschia/growing-guide"
+            },
+            {
+              "titre": "RHS — Nelumbo nucifera",
+              "url": "https://www.rhs.org.uk/plants/11438/nelumbo-nucifera/details"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Zantedeschia en bassin",
+          "url": "https://www.rhs.org.uk/plants/zantedeschia/growing-guide"
+        },
+        {
+          "titre": "RHS — Nelumbo nucifera",
+          "url": "https://www.rhs.org.uk/plants/11438/nelumbo-nucifera/details"
+        },
+        {
+          "titre": "NC State Extension — Nelumbo nucifera",
+          "url": "https://plants.ces.ncsu.edu/plants/nelumbo-nucifera/"
+        }
       ]
     },
     "entretien": {
@@ -394,7 +1097,35 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Capacité remarquable à modifier son port selon qu'il vit immergé ou sur sol exondé."
     },
-    "conseil": "Idéal pour les zones de mouille et les berges sableuses de bassins naturels."
+    "conseil": "Idéal pour les zones de mouille et les berges sableuses de bassins naturels.",
+    "roles": [
+      {
+        "nom": "Base aquatique",
+        "ratio": 0.8,
+        "ing": [
+          "Terreau argileux (Aquatique / Nénuphars)"
+        ]
+      },
+      {
+        "nom": "Ancrage minéral",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      }
+    ],
+    "interdits": [
+      "Perlite",
+      "Pumice",
+      "Pouzzolane",
+      "Micro-pouzzolane",
+      "Vermiculite",
+      "Billes d'argile",
+      "Fibre de coco",
+      "Chips de coco",
+      "Sphaigne sèche",
+      "Mousse de sphaigne vivante"
+    ]
   },
   {
     "taxonomie": {
@@ -447,14 +1178,116 @@
       "sensibilite_minerale": "Faible (tolère un peu de sel)"
     },
     "substrat": {
-      "composition_ideale": "Sols argilo-limoneux humides",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.5",
       "ingredients_recommandes": [
-        "Terre argileuse",
-        "Limon"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
       ],
-      "elements_interdits": [
-        "Sécheresse complète"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -473,7 +1306,39 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Se reconnait à ses tiges nettement aplaties."
     },
-    "conseil": "Adapté aux noues de rétention d'eau et sols lourds."
+    "conseil": "Adapté aux noues de rétention d'eau et sols lourds.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -527,14 +1392,127 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sols argileux ou tourbeux acides à neutres",
+      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "5.0 - 7.0",
       "ingredients_recommandes": [
-        "Terre argileuse",
-        "Tourbe"
+        "Tourbe blonde",
+        "Écorces de pin",
+        "Terreau de feuilles",
+        "Sable de quartz",
+        "Perlite"
       ],
       "elements_interdits": [
-        "Sécheresse"
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "categorie_horticole": "Plante acidophile",
+      "modele_recherche": "acid_ericaceous",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Acide organique drainé",
+          "description": "Mélange sans amendement calcaire.",
+          "roles": [
+            {
+              "nom": "Base acide",
+              "ratio": 0.5,
+              "ing": [
+                "Tourbe blonde"
+              ]
+            },
+            {
+              "nom": "Structure acide",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Matière humifère",
+              "ratio": 0.15,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable de quartz",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        },
+        {
+          "nom": "Coco, kanuma et feuilles",
+          "description": "Variante sans tourbe, à surveiller avec un test de pH.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.45,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Minéral acide",
+              "ratio": 0.25,
+              "ing": [
+                "Kanuma"
+              ]
+            },
+            {
+              "nom": "Humus de feuilles",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.1,
+              "ing": [
+                "Écorces de pin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Blueberries growing guide",
+          "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        }
       ]
     },
     "entretien": {
@@ -553,7 +1531,41 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Très proche de Juncus effusus mais s'en distingue par ses inflorescences très serrées en boule compacte."
     },
-    "conseil": "À cultiver dans les zones de décantation ou de noues paysagères."
+    "conseil": "À cultiver dans les zones de décantation ou de noues paysagères.",
+    "roles": [
+      {
+        "nom": "Base acide",
+        "ratio": 0.5,
+        "ing": [
+          "Tourbe blonde"
+        ]
+      },
+      {
+        "nom": "Structure acide",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Matière humifère",
+        "ratio": 0.15,
+        "ing": [
+          "Terreau de feuilles"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable de quartz",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": [
+      "Poudre de Calcaire / Dolomie"
+    ]
   },
   {
     "taxonomie": {
@@ -606,14 +1618,116 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sols riches, calcaires ou neutres humides",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.5",
       "ingredients_recommandes": [
-        "Terre argileuse",
-        "Compost"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
       ],
-      "elements_interdits": [
-        "Sécheresse"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -632,7 +1746,39 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Proche de Juncus interior mais inféodé aux sols plus humides."
     },
-    "conseil": "Parfait pour les jardins naturalistes et zones de biofiltration."
+    "conseil": "Parfait pour les jardins naturalistes et zones de biofiltration.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -687,16 +1833,130 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Terre argileuse, lourde, riche en matière organique et humide",
+      "composition_ideale": "80% Terreau argileux (Aquatique / Nénuphars) / 20% Terre franche / Terre de jardin",
       "ph": "5.5 - 7.0 (Acide à neutre)",
       "ingredients_recommandes": [
-        "Terre argileuse",
-        "Terre de jardin",
-        "Compost",
-        "Tourbe"
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Terre franche / Terre de jardin"
       ],
       "elements_interdits": [
-        "Sols secs et sableux drainants"
+        "Perlite",
+        "Pumice",
+        "Pouzzolane",
+        "Micro-pouzzolane",
+        "Vermiculite",
+        "Billes d'argile",
+        "Fibre de coco",
+        "Chips de coco",
+        "Sphaigne sèche",
+        "Mousse de sphaigne vivante"
+      ],
+      "categorie_horticole": "Aquatique ou plante de berge immergée",
+      "modele_recherche": "aquatic_heavy",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Compost aquatique lourd",
+          "description": "Substrat minéral lourd, stable sous l'eau.",
+          "roles": [
+            {
+              "nom": "Base aquatique",
+              "ratio": 0.8,
+              "ing": [
+                "Terreau argileux (Aquatique / Nénuphars)"
+              ]
+            },
+            {
+              "nom": "Ancrage minéral",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Perlite",
+            "Pumice",
+            "Pouzzolane",
+            "Micro-pouzzolane",
+            "Vermiculite",
+            "Billes d'argile",
+            "Fibre de coco",
+            "Chips de coco",
+            "Sphaigne sèche",
+            "Mousse de sphaigne vivante"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Zantedeschia en bassin",
+              "url": "https://www.rhs.org.uk/plants/zantedeschia/growing-guide"
+            },
+            {
+              "titre": "RHS — Nelumbo nucifera",
+              "url": "https://www.rhs.org.uk/plants/11438/nelumbo-nucifera/details"
+            },
+            {
+              "titre": "NC State Extension — Nelumbo nucifera",
+              "url": "https://plants.ces.ncsu.edu/plants/nelumbo-nucifera/"
+            }
+          ]
+        },
+        {
+          "nom": "Terre franche lourde",
+          "description": "Alternative sans terreau aquatique commercial.",
+          "roles": [
+            {
+              "nom": "Terre lourde",
+              "ratio": 0.9,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Organique modéré",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            }
+          ],
+          "interdits": [
+            "Perlite",
+            "Pumice",
+            "Pouzzolane",
+            "Micro-pouzzolane",
+            "Vermiculite",
+            "Billes d'argile",
+            "Fibre de coco",
+            "Chips de coco",
+            "Sphaigne sèche",
+            "Mousse de sphaigne vivante"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Zantedeschia en bassin",
+              "url": "https://www.rhs.org.uk/plants/zantedeschia/growing-guide"
+            },
+            {
+              "titre": "RHS — Nelumbo nucifera",
+              "url": "https://www.rhs.org.uk/plants/11438/nelumbo-nucifera/details"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Zantedeschia en bassin",
+          "url": "https://www.rhs.org.uk/plants/zantedeschia/growing-guide"
+        },
+        {
+          "titre": "RHS — Nelumbo nucifera",
+          "url": "https://www.rhs.org.uk/plants/11438/nelumbo-nucifera/details"
+        },
+        {
+          "titre": "NC State Extension — Nelumbo nucifera",
+          "url": "https://plants.ces.ncsu.edu/plants/nelumbo-nucifera/"
+        }
       ]
     },
     "entretien": {
@@ -715,7 +1975,35 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Excellente plante épuratrice pour les bassins et les zones de phytoépuration."
     },
-    "conseil": "Parfait pour les bordures de mares, les bassins ou les zones humides stagnantes du jardin."
+    "conseil": "Parfait pour les bordures de mares, les bassins ou les zones humides stagnantes du jardin.",
+    "roles": [
+      {
+        "nom": "Base aquatique",
+        "ratio": 0.8,
+        "ing": [
+          "Terreau argileux (Aquatique / Nénuphars)"
+        ]
+      },
+      {
+        "nom": "Ancrage minéral",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      }
+    ],
+    "interdits": [
+      "Perlite",
+      "Pumice",
+      "Pouzzolane",
+      "Micro-pouzzolane",
+      "Vermiculite",
+      "Billes d'argile",
+      "Fibre de coco",
+      "Chips de coco",
+      "Sphaigne sèche",
+      "Mousse de sphaigne vivante"
+    ]
   },
   {
     "taxonomie": {
@@ -769,15 +2057,130 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Terreau argileux ou mélange riche retenant l'eau",
+      "composition_ideale": "80% Terreau argileux (Aquatique / Nénuphars) / 20% Terre franche / Terre de jardin",
       "ph": "6.0 - 7.0",
       "ingredients_recommandes": [
-        "Terre de jardin",
-        "Terreau aquatique",
-        "Argile"
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Terre franche / Terre de jardin"
       ],
       "elements_interdits": [
-        "Substrat sableux sec"
+        "Perlite",
+        "Pumice",
+        "Pouzzolane",
+        "Micro-pouzzolane",
+        "Vermiculite",
+        "Billes d'argile",
+        "Fibre de coco",
+        "Chips de coco",
+        "Sphaigne sèche",
+        "Mousse de sphaigne vivante"
+      ],
+      "categorie_horticole": "Aquatique ou plante de berge immergée",
+      "modele_recherche": "aquatic_heavy",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Compost aquatique lourd",
+          "description": "Substrat minéral lourd, stable sous l'eau.",
+          "roles": [
+            {
+              "nom": "Base aquatique",
+              "ratio": 0.8,
+              "ing": [
+                "Terreau argileux (Aquatique / Nénuphars)"
+              ]
+            },
+            {
+              "nom": "Ancrage minéral",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Perlite",
+            "Pumice",
+            "Pouzzolane",
+            "Micro-pouzzolane",
+            "Vermiculite",
+            "Billes d'argile",
+            "Fibre de coco",
+            "Chips de coco",
+            "Sphaigne sèche",
+            "Mousse de sphaigne vivante"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Zantedeschia en bassin",
+              "url": "https://www.rhs.org.uk/plants/zantedeschia/growing-guide"
+            },
+            {
+              "titre": "RHS — Nelumbo nucifera",
+              "url": "https://www.rhs.org.uk/plants/11438/nelumbo-nucifera/details"
+            },
+            {
+              "titre": "NC State Extension — Nelumbo nucifera",
+              "url": "https://plants.ces.ncsu.edu/plants/nelumbo-nucifera/"
+            }
+          ]
+        },
+        {
+          "nom": "Terre franche lourde",
+          "description": "Alternative sans terreau aquatique commercial.",
+          "roles": [
+            {
+              "nom": "Terre lourde",
+              "ratio": 0.9,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Organique modéré",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            }
+          ],
+          "interdits": [
+            "Perlite",
+            "Pumice",
+            "Pouzzolane",
+            "Micro-pouzzolane",
+            "Vermiculite",
+            "Billes d'argile",
+            "Fibre de coco",
+            "Chips de coco",
+            "Sphaigne sèche",
+            "Mousse de sphaigne vivante"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Zantedeschia en bassin",
+              "url": "https://www.rhs.org.uk/plants/zantedeschia/growing-guide"
+            },
+            {
+              "titre": "RHS — Nelumbo nucifera",
+              "url": "https://www.rhs.org.uk/plants/11438/nelumbo-nucifera/details"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Zantedeschia en bassin",
+          "url": "https://www.rhs.org.uk/plants/zantedeschia/growing-guide"
+        },
+        {
+          "titre": "RHS — Nelumbo nucifera",
+          "url": "https://www.rhs.org.uk/plants/11438/nelumbo-nucifera/details"
+        },
+        {
+          "titre": "NC State Extension — Nelumbo nucifera",
+          "url": "https://plants.ces.ncsu.edu/plants/nelumbo-nucifera/"
+        }
       ]
     },
     "entretien": {
@@ -796,7 +2199,35 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Très prisé en art floral et en poterie pour son graphisme en tire-bouchon unique."
     },
-    "conseil": "Placez le pot dans une coupelle toujours remplie d'eau si vous le cultivez en intérieur."
+    "conseil": "Placez le pot dans une coupelle toujours remplie d'eau si vous le cultivez en intérieur.",
+    "roles": [
+      {
+        "nom": "Base aquatique",
+        "ratio": 0.8,
+        "ing": [
+          "Terreau argileux (Aquatique / Nénuphars)"
+        ]
+      },
+      {
+        "nom": "Ancrage minéral",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      }
+    ],
+    "interdits": [
+      "Perlite",
+      "Pumice",
+      "Pouzzolane",
+      "Micro-pouzzolane",
+      "Vermiculite",
+      "Billes d'argile",
+      "Fibre de coco",
+      "Chips de coco",
+      "Sphaigne sèche",
+      "Mousse de sphaigne vivante"
+    ]
   },
   {
     "taxonomie": {
@@ -850,14 +2281,116 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sol humifère, argileux et humide",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
       "ingredients_recommandes": [
-        "Terreau de feuilles",
-        "Terre argileuse"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
       ],
-      "elements_interdits": [
-        "Sécheresse estivale"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -876,7 +2409,39 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Ses inflorescences en têtes sombres contrastent joliment avec son feuillage plat."
     },
-    "conseil": "Superbe en bordure de bassin naturel ou de ruisseau paysager."
+    "conseil": "Superbe en bordure de bassin naturel ou de ruisseau paysager.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -929,14 +2494,130 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Terre argileuse ou terreau aquatique",
+      "composition_ideale": "80% Terreau argileux (Aquatique / Nénuphars) / 20% Terre franche / Terre de jardin",
       "ph": "6.0 - 7.0",
       "ingredients_recommandes": [
-        "Terreau aquatique",
-        "Argile"
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Terre franche / Terre de jardin"
       ],
       "elements_interdits": [
-        "Sécheresse"
+        "Perlite",
+        "Pumice",
+        "Pouzzolane",
+        "Micro-pouzzolane",
+        "Vermiculite",
+        "Billes d'argile",
+        "Fibre de coco",
+        "Chips de coco",
+        "Sphaigne sèche",
+        "Mousse de sphaigne vivante"
+      ],
+      "categorie_horticole": "Aquatique ou plante de berge immergée",
+      "modele_recherche": "aquatic_heavy",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Compost aquatique lourd",
+          "description": "Substrat minéral lourd, stable sous l'eau.",
+          "roles": [
+            {
+              "nom": "Base aquatique",
+              "ratio": 0.8,
+              "ing": [
+                "Terreau argileux (Aquatique / Nénuphars)"
+              ]
+            },
+            {
+              "nom": "Ancrage minéral",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Perlite",
+            "Pumice",
+            "Pouzzolane",
+            "Micro-pouzzolane",
+            "Vermiculite",
+            "Billes d'argile",
+            "Fibre de coco",
+            "Chips de coco",
+            "Sphaigne sèche",
+            "Mousse de sphaigne vivante"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Zantedeschia en bassin",
+              "url": "https://www.rhs.org.uk/plants/zantedeschia/growing-guide"
+            },
+            {
+              "titre": "RHS — Nelumbo nucifera",
+              "url": "https://www.rhs.org.uk/plants/11438/nelumbo-nucifera/details"
+            },
+            {
+              "titre": "NC State Extension — Nelumbo nucifera",
+              "url": "https://plants.ces.ncsu.edu/plants/nelumbo-nucifera/"
+            }
+          ]
+        },
+        {
+          "nom": "Terre franche lourde",
+          "description": "Alternative sans terreau aquatique commercial.",
+          "roles": [
+            {
+              "nom": "Terre lourde",
+              "ratio": 0.9,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Organique modéré",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            }
+          ],
+          "interdits": [
+            "Perlite",
+            "Pumice",
+            "Pouzzolane",
+            "Micro-pouzzolane",
+            "Vermiculite",
+            "Billes d'argile",
+            "Fibre de coco",
+            "Chips de coco",
+            "Sphaigne sèche",
+            "Mousse de sphaigne vivante"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Zantedeschia en bassin",
+              "url": "https://www.rhs.org.uk/plants/zantedeschia/growing-guide"
+            },
+            {
+              "titre": "RHS — Nelumbo nucifera",
+              "url": "https://www.rhs.org.uk/plants/11438/nelumbo-nucifera/details"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Zantedeschia en bassin",
+          "url": "https://www.rhs.org.uk/plants/zantedeschia/growing-guide"
+        },
+        {
+          "titre": "RHS — Nelumbo nucifera",
+          "url": "https://www.rhs.org.uk/plants/11438/nelumbo-nucifera/details"
+        },
+        {
+          "titre": "NC State Extension — Nelumbo nucifera",
+          "url": "https://plants.ces.ncsu.edu/plants/nelumbo-nucifera/"
+        }
       ]
     },
     "entretien": {
@@ -955,7 +2636,35 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Son format réduit le rend parfait pour la culture en pot ou en mini-bassin de terrasse."
     },
-    "conseil": "Parfait en premier plan de bassin ou en auge aquatique."
+    "conseil": "Parfait en premier plan de bassin ou en auge aquatique.",
+    "roles": [
+      {
+        "nom": "Base aquatique",
+        "ratio": 0.8,
+        "ing": [
+          "Terreau argileux (Aquatique / Nénuphars)"
+        ]
+      },
+      {
+        "nom": "Ancrage minéral",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      }
+    ],
+    "interdits": [
+      "Perlite",
+      "Pumice",
+      "Pouzzolane",
+      "Micro-pouzzolane",
+      "Vermiculite",
+      "Billes d'argile",
+      "Fibre de coco",
+      "Chips de coco",
+      "Sphaigne sèche",
+      "Mousse de sphaigne vivante"
+    ]
   },
   {
     "taxonomie": {
@@ -1008,14 +2717,130 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Terre argileuse et riche",
+      "composition_ideale": "80% Terreau argileux (Aquatique / Nénuphars) / 20% Terre franche / Terre de jardin",
       "ph": "6.0 - 7.0",
       "ingredients_recommandes": [
-        "Terreau aquatique",
-        "Argile"
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Terre franche / Terre de jardin"
       ],
       "elements_interdits": [
-        "Terrains secs"
+        "Perlite",
+        "Pumice",
+        "Pouzzolane",
+        "Micro-pouzzolane",
+        "Vermiculite",
+        "Billes d'argile",
+        "Fibre de coco",
+        "Chips de coco",
+        "Sphaigne sèche",
+        "Mousse de sphaigne vivante"
+      ],
+      "categorie_horticole": "Aquatique ou plante de berge immergée",
+      "modele_recherche": "aquatic_heavy",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Compost aquatique lourd",
+          "description": "Substrat minéral lourd, stable sous l'eau.",
+          "roles": [
+            {
+              "nom": "Base aquatique",
+              "ratio": 0.8,
+              "ing": [
+                "Terreau argileux (Aquatique / Nénuphars)"
+              ]
+            },
+            {
+              "nom": "Ancrage minéral",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Perlite",
+            "Pumice",
+            "Pouzzolane",
+            "Micro-pouzzolane",
+            "Vermiculite",
+            "Billes d'argile",
+            "Fibre de coco",
+            "Chips de coco",
+            "Sphaigne sèche",
+            "Mousse de sphaigne vivante"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Zantedeschia en bassin",
+              "url": "https://www.rhs.org.uk/plants/zantedeschia/growing-guide"
+            },
+            {
+              "titre": "RHS — Nelumbo nucifera",
+              "url": "https://www.rhs.org.uk/plants/11438/nelumbo-nucifera/details"
+            },
+            {
+              "titre": "NC State Extension — Nelumbo nucifera",
+              "url": "https://plants.ces.ncsu.edu/plants/nelumbo-nucifera/"
+            }
+          ]
+        },
+        {
+          "nom": "Terre franche lourde",
+          "description": "Alternative sans terreau aquatique commercial.",
+          "roles": [
+            {
+              "nom": "Terre lourde",
+              "ratio": 0.9,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Organique modéré",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            }
+          ],
+          "interdits": [
+            "Perlite",
+            "Pumice",
+            "Pouzzolane",
+            "Micro-pouzzolane",
+            "Vermiculite",
+            "Billes d'argile",
+            "Fibre de coco",
+            "Chips de coco",
+            "Sphaigne sèche",
+            "Mousse de sphaigne vivante"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Zantedeschia en bassin",
+              "url": "https://www.rhs.org.uk/plants/zantedeschia/growing-guide"
+            },
+            {
+              "titre": "RHS — Nelumbo nucifera",
+              "url": "https://www.rhs.org.uk/plants/11438/nelumbo-nucifera/details"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Zantedeschia en bassin",
+          "url": "https://www.rhs.org.uk/plants/zantedeschia/growing-guide"
+        },
+        {
+          "titre": "RHS — Nelumbo nucifera",
+          "url": "https://www.rhs.org.uk/plants/11438/nelumbo-nucifera/details"
+        },
+        {
+          "titre": "NC State Extension — Nelumbo nucifera",
+          "url": "https://plants.ces.ncsu.edu/plants/nelumbo-nucifera/"
+        }
       ]
     },
     "entretien": {
@@ -1034,7 +2859,35 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Format compact idéal pour les petits bassins ou vasques aquatiques."
     },
-    "conseil": "Idéal en premier plan de bassin ou en pot étanche."
+    "conseil": "Idéal en premier plan de bassin ou en pot étanche.",
+    "roles": [
+      {
+        "nom": "Base aquatique",
+        "ratio": 0.8,
+        "ing": [
+          "Terreau argileux (Aquatique / Nénuphars)"
+        ]
+      },
+      {
+        "nom": "Ancrage minéral",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      }
+    ],
+    "interdits": [
+      "Perlite",
+      "Pumice",
+      "Pouzzolane",
+      "Micro-pouzzolane",
+      "Vermiculite",
+      "Billes d'argile",
+      "Fibre de coco",
+      "Chips de coco",
+      "Sphaigne sèche",
+      "Mousse de sphaigne vivante"
+    ]
   },
   {
     "taxonomie": {
@@ -1087,14 +2940,127 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Tourbe ou sols organiques humides",
+      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "4.5 - 6.5",
       "ingredients_recommandes": [
-        "Tourbe",
-        "Terreau de feuilles"
+        "Tourbe blonde",
+        "Écorces de pin",
+        "Terreau de feuilles",
+        "Sable de quartz",
+        "Perlite"
       ],
       "elements_interdits": [
-        "Sécheresse"
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "categorie_horticole": "Plante acidophile",
+      "modele_recherche": "acid_ericaceous",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Acide organique drainé",
+          "description": "Mélange sans amendement calcaire.",
+          "roles": [
+            {
+              "nom": "Base acide",
+              "ratio": 0.5,
+              "ing": [
+                "Tourbe blonde"
+              ]
+            },
+            {
+              "nom": "Structure acide",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Matière humifère",
+              "ratio": 0.15,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable de quartz",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        },
+        {
+          "nom": "Coco, kanuma et feuilles",
+          "description": "Variante sans tourbe, à surveiller avec un test de pH.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.45,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Minéral acide",
+              "ratio": 0.25,
+              "ing": [
+                "Kanuma"
+              ]
+            },
+            {
+              "nom": "Humus de feuilles",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.1,
+              "ing": [
+                "Écorces de pin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Blueberries growing guide",
+          "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        }
       ]
     },
     "entretien": {
@@ -1113,7 +3079,41 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Ses tiges très grêles lui donnent un aspect de chevelure fine."
     },
-    "conseil": "Idéal en bordure de petit bassin naturaliste."
+    "conseil": "Idéal en bordure de petit bassin naturaliste.",
+    "roles": [
+      {
+        "nom": "Base acide",
+        "ratio": 0.5,
+        "ing": [
+          "Tourbe blonde"
+        ]
+      },
+      {
+        "nom": "Structure acide",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Matière humifère",
+        "ratio": 0.15,
+        "ing": [
+          "Terreau de feuilles"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable de quartz",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": [
+      "Poudre de Calcaire / Dolomie"
+    ]
   },
   {
     "taxonomie": {
@@ -1167,14 +3167,116 @@
       "sensibilite_minerale": "Très résistante au sel"
     },
     "substrat": {
-      "composition_ideale": "Sols sablo-argileux humides, tolérant la salinité",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "7.0 - 8.0 (Neutre à alcalin)",
       "ingredients_recommandes": [
-        "Sable",
-        "Terre argileuse"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
       ],
-      "elements_interdits": [
-        "Manque total d'humidité"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -1193,7 +3295,39 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Espèce halophyte capable de prospérer dans les prés salés littoraux."
     },
-    "conseil": "À utiliser dans les jardins côtiers soumis aux embruns ou dans les aménagements de sols salins."
+    "conseil": "À utiliser dans les jardins côtiers soumis aux embruns ou dans les aménagements de sols salins.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1247,14 +3381,116 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sols argileux, calcaires ou limoneux humides",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "6.5 - 8.0 (Neutre à calcaire)",
       "ingredients_recommandes": [
-        "Terre argileuse",
-        "Terre calcaire"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
       ],
-      "elements_interdits": [
-        "Substrats excessivement acides"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -1273,7 +3509,39 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Se distingue facilement de Juncus effusus par sa couleur glauque et ses tiges striées."
     },
-    "conseil": "Idéal pour les sols lourds et argileux qui retiennent l'eau de pluie."
+    "conseil": "Idéal pour les sols lourds et argileux qui retiennent l'eau de pluie.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1326,14 +3594,130 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Vase ou sédiments argileux de fond de bassin",
+      "composition_ideale": "80% Terreau argileux (Aquatique / Nénuphars) / 20% Terre franche / Terre de jardin",
       "ph": "5.5 - 7.0",
       "ingredients_recommandes": [
-        "Vase",
-        "Terre argileuse aquatique"
+        "Terreau argileux (Aquatique / Nénuphars)",
+        "Terre franche / Terre de jardin"
       ],
       "elements_interdits": [
-        "Sols secs"
+        "Perlite",
+        "Pumice",
+        "Pouzzolane",
+        "Micro-pouzzolane",
+        "Vermiculite",
+        "Billes d'argile",
+        "Fibre de coco",
+        "Chips de coco",
+        "Sphaigne sèche",
+        "Mousse de sphaigne vivante"
+      ],
+      "categorie_horticole": "Aquatique ou plante de berge immergée",
+      "modele_recherche": "aquatic_heavy",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Compost aquatique lourd",
+          "description": "Substrat minéral lourd, stable sous l'eau.",
+          "roles": [
+            {
+              "nom": "Base aquatique",
+              "ratio": 0.8,
+              "ing": [
+                "Terreau argileux (Aquatique / Nénuphars)"
+              ]
+            },
+            {
+              "nom": "Ancrage minéral",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Perlite",
+            "Pumice",
+            "Pouzzolane",
+            "Micro-pouzzolane",
+            "Vermiculite",
+            "Billes d'argile",
+            "Fibre de coco",
+            "Chips de coco",
+            "Sphaigne sèche",
+            "Mousse de sphaigne vivante"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Zantedeschia en bassin",
+              "url": "https://www.rhs.org.uk/plants/zantedeschia/growing-guide"
+            },
+            {
+              "titre": "RHS — Nelumbo nucifera",
+              "url": "https://www.rhs.org.uk/plants/11438/nelumbo-nucifera/details"
+            },
+            {
+              "titre": "NC State Extension — Nelumbo nucifera",
+              "url": "https://plants.ces.ncsu.edu/plants/nelumbo-nucifera/"
+            }
+          ]
+        },
+        {
+          "nom": "Terre franche lourde",
+          "description": "Alternative sans terreau aquatique commercial.",
+          "roles": [
+            {
+              "nom": "Terre lourde",
+              "ratio": 0.9,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Organique modéré",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            }
+          ],
+          "interdits": [
+            "Perlite",
+            "Pumice",
+            "Pouzzolane",
+            "Micro-pouzzolane",
+            "Vermiculite",
+            "Billes d'argile",
+            "Fibre de coco",
+            "Chips de coco",
+            "Sphaigne sèche",
+            "Mousse de sphaigne vivante"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Zantedeschia en bassin",
+              "url": "https://www.rhs.org.uk/plants/zantedeschia/growing-guide"
+            },
+            {
+              "titre": "RHS — Nelumbo nucifera",
+              "url": "https://www.rhs.org.uk/plants/11438/nelumbo-nucifera/details"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Zantedeschia en bassin",
+          "url": "https://www.rhs.org.uk/plants/zantedeschia/growing-guide"
+        },
+        {
+          "titre": "RHS — Nelumbo nucifera",
+          "url": "https://www.rhs.org.uk/plants/11438/nelumbo-nucifera/details"
+        },
+        {
+          "titre": "NC State Extension — Nelumbo nucifera",
+          "url": "https://plants.ces.ncsu.edu/plants/nelumbo-nucifera/"
+        }
       ]
     },
     "entretien": {
@@ -1352,7 +3736,35 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Excellente plante oxygénante et épuratrice de grande profondeur pour les étangs."
     },
-    "conseil": "À installer en zone profonde de bassin paysager."
+    "conseil": "À installer en zone profonde de bassin paysager.",
+    "roles": [
+      {
+        "nom": "Base aquatique",
+        "ratio": 0.8,
+        "ing": [
+          "Terreau argileux (Aquatique / Nénuphars)"
+        ]
+      },
+      {
+        "nom": "Ancrage minéral",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      }
+    ],
+    "interdits": [
+      "Perlite",
+      "Pumice",
+      "Pouzzolane",
+      "Micro-pouzzolane",
+      "Vermiculite",
+      "Billes d'argile",
+      "Fibre de coco",
+      "Chips de coco",
+      "Sphaigne sèche",
+      "Mousse de sphaigne vivante"
+    ]
   },
   {
     "taxonomie": {
@@ -1406,15 +3818,72 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sols limoneux, argileux ou sableux frais et bien drainés",
+      "composition_ideale": "50% Terreau horticole / 25% Sable grossier / 25% Pouzzolane",
       "ph": "6.0 - 7.5",
       "ingredients_recommandes": [
-        "Terre de jardin",
-        "Sable",
-        "Compost"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Pouzzolane",
+        "Pumice",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Marais stagnants permanents asphyxiants"
+      "elements_interdits": [],
+      "categorie_horticole": "Méditerranéenne drainante",
+      "modele_recherche": "mediterranean_dry",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam et minéraux",
+          "description": "Mélange drainant pour plantes tolérant la sécheresse.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.25,
+              "ing": [
+                "Sable grossier"
+              ]
+            },
+            {
+              "nom": "Granulats",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Pumice",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -1433,7 +3902,34 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Très apprécié en aménagement paysager contemporain pour sa couleur bleu glauque graphique."
     },
-    "conseil": "Variété idéale pour les massifs paysagers modernes nécessitant un graphisme bleuté sans excès d'eau stagnante."
+    "conseil": "Variété idéale pour les massifs paysagers modernes nécessitant un graphisme bleuté sans excès d'eau stagnante.",
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Sable",
+        "ratio": 0.25,
+        "ing": [
+          "Sable grossier"
+        ]
+      },
+      {
+        "nom": "Granulats",
+        "ratio": 0.25,
+        "ing": [
+          "Pouzzolane",
+          "Pumice",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1487,15 +3983,127 @@
       "sensibilite_minerale": "Intolérant au calcaire"
     },
     "substrat": {
-      "composition_ideale": "Sols pauvres, tourbeux, acides et siliceux",
+      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "4.0 - 5.5 (Fortement acide)",
       "ingredients_recommandes": [
         "Tourbe blonde",
-        "Sable siliceux"
+        "Écorces de pin",
+        "Terreau de feuilles",
+        "Sable de quartz",
+        "Perlite"
       ],
       "elements_interdits": [
-        "Terre calcaire",
-        "Engrais riches"
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "categorie_horticole": "Plante acidophile",
+      "modele_recherche": "acid_ericaceous",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Acide organique drainé",
+          "description": "Mélange sans amendement calcaire.",
+          "roles": [
+            {
+              "nom": "Base acide",
+              "ratio": 0.5,
+              "ing": [
+                "Tourbe blonde"
+              ]
+            },
+            {
+              "nom": "Structure acide",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Matière humifère",
+              "ratio": 0.15,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable de quartz",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        },
+        {
+          "nom": "Coco, kanuma et feuilles",
+          "description": "Variante sans tourbe, à surveiller avec un test de pH.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.45,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Minéral acide",
+              "ratio": 0.25,
+              "ing": [
+                "Kanuma"
+              ]
+            },
+            {
+              "nom": "Humus de feuilles",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.1,
+              "ing": [
+                "Écorces de pin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Blueberries growing guide",
+          "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        }
       ]
     },
     "entretien": {
@@ -1514,7 +4122,41 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Plante indicatrice typique des sols piétinés sur landes acides."
     },
-    "conseil": "À réserver aux jardins de tourbière acide ou aux bacs spécifiques sans calcaire."
+    "conseil": "À réserver aux jardins de tourbière acide ou aux bacs spécifiques sans calcaire.",
+    "roles": [
+      {
+        "nom": "Base acide",
+        "ratio": 0.5,
+        "ing": [
+          "Tourbe blonde"
+        ]
+      },
+      {
+        "nom": "Structure acide",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Matière humifère",
+        "ratio": 0.15,
+        "ing": [
+          "Terreau de feuilles"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable de quartz",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": [
+      "Poudre de Calcaire / Dolomie"
+    ]
   },
   {
     "taxonomie": {
@@ -1567,16 +4209,127 @@
       "sensibilite_minerale": "Extrêmement sensible au calcaire et engrais"
     },
     "substrat": {
-      "composition_ideale": "Sphaigne vivante et tourbe pure",
+      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "4.0 - 5.0",
       "ingredients_recommandes": [
-        "Sphaigne",
-        "Tourbe blonde"
+        "Tourbe blonde",
+        "Écorces de pin",
+        "Terreau de feuilles",
+        "Sable de quartz",
+        "Perlite"
       ],
       "elements_interdits": [
-        "Terreau horticole",
-        "Engrais",
-        "Calcaire"
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "categorie_horticole": "Plante acidophile",
+      "modele_recherche": "acid_ericaceous",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Acide organique drainé",
+          "description": "Mélange sans amendement calcaire.",
+          "roles": [
+            {
+              "nom": "Base acide",
+              "ratio": 0.5,
+              "ing": [
+                "Tourbe blonde"
+              ]
+            },
+            {
+              "nom": "Structure acide",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Matière humifère",
+              "ratio": 0.15,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable de quartz",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        },
+        {
+          "nom": "Coco, kanuma et feuilles",
+          "description": "Variante sans tourbe, à surveiller avec un test de pH.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.45,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Minéral acide",
+              "ratio": 0.25,
+              "ing": [
+                "Kanuma"
+              ]
+            },
+            {
+              "nom": "Humus de feuilles",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.1,
+              "ing": [
+                "Écorces de pin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Blueberries growing guide",
+          "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        }
       ]
     },
     "entretien": {
@@ -1595,7 +4348,41 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Espèce protégée relictaire des tourbières froides d'altitude."
     },
-    "conseil": "Réservé aux collectionneurs spécialisés en milieux tourbeux stricts."
+    "conseil": "Réservé aux collectionneurs spécialisés en milieux tourbeux stricts.",
+    "roles": [
+      {
+        "nom": "Base acide",
+        "ratio": 0.5,
+        "ing": [
+          "Tourbe blonde"
+        ]
+      },
+      {
+        "nom": "Structure acide",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Matière humifère",
+        "ratio": 0.15,
+        "ing": [
+          "Terreau de feuilles"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable de quartz",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": [
+      "Poudre de Calcaire / Dolomie"
+    ]
   },
   {
     "taxonomie": {
@@ -1649,14 +4436,127 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sols compacts, argileux ou limoneux",
+      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "5.5 - 7.0",
       "ingredients_recommandes": [
-        "Terre de jardin",
-        "Limon"
+        "Tourbe blonde",
+        "Écorces de pin",
+        "Terreau de feuilles",
+        "Sable de quartz",
+        "Perlite"
       ],
       "elements_interdits": [
-        "Excès de drainage extrême"
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "categorie_horticole": "Plante acidophile",
+      "modele_recherche": "acid_ericaceous",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Acide organique drainé",
+          "description": "Mélange sans amendement calcaire.",
+          "roles": [
+            {
+              "nom": "Base acide",
+              "ratio": 0.5,
+              "ing": [
+                "Tourbe blonde"
+              ]
+            },
+            {
+              "nom": "Structure acide",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Matière humifère",
+              "ratio": 0.15,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable de quartz",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        },
+        {
+          "nom": "Coco, kanuma et feuilles",
+          "description": "Variante sans tourbe, à surveiller avec un test de pH.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.45,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Minéral acide",
+              "ratio": 0.25,
+              "ing": [
+                "Kanuma"
+              ]
+            },
+            {
+              "nom": "Humus de feuilles",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.1,
+              "ing": [
+                "Écorces de pin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Blueberries growing guide",
+          "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        }
       ]
     },
     "entretien": {
@@ -1675,7 +4575,41 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Excellente résistance au piétinement humain et animal."
     },
-    "conseil": "Se ressème facilement dans les zones de passage mal drainées du jardin."
+    "conseil": "Se ressème facilement dans les zones de passage mal drainées du jardin.",
+    "roles": [
+      {
+        "nom": "Base acide",
+        "ratio": 0.5,
+        "ing": [
+          "Tourbe blonde"
+        ]
+      },
+      {
+        "nom": "Structure acide",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Matière humifère",
+        "ratio": 0.15,
+        "ing": [
+          "Terreau de feuilles"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable de quartz",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": [
+      "Poudre de Calcaire / Dolomie"
+    ]
   },
   {
     "taxonomie": {
@@ -1729,15 +4663,127 @@
       "sensibilite_minerale": "Intolérant aux sols calcaires lourds"
     },
     "substrat": {
-      "composition_ideale": "Sols acides, sableux, graveleux et drainants",
+      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "4.5 - 6.0",
       "ingredients_recommandes": [
-        "Sable grossier",
-        "Tourbe",
-        "Graviers"
+        "Tourbe blonde",
+        "Écorces de pin",
+        "Terreau de feuilles",
+        "Sable de quartz",
+        "Perlite"
       ],
       "elements_interdits": [
-        "Terrains lourds argileux et calcaires"
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "categorie_horticole": "Plante acidophile",
+      "modele_recherche": "acid_ericaceous",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Acide organique drainé",
+          "description": "Mélange sans amendement calcaire.",
+          "roles": [
+            {
+              "nom": "Base acide",
+              "ratio": 0.5,
+              "ing": [
+                "Tourbe blonde"
+              ]
+            },
+            {
+              "nom": "Structure acide",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Matière humifère",
+              "ratio": 0.15,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable de quartz",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        },
+        {
+          "nom": "Coco, kanuma et feuilles",
+          "description": "Variante sans tourbe, à surveiller avec un test de pH.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.45,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Minéral acide",
+              "ratio": 0.25,
+              "ing": [
+                "Kanuma"
+              ]
+            },
+            {
+              "nom": "Humus de feuilles",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.1,
+              "ing": [
+                "Écorces de pin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Blueberries growing guide",
+          "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        }
       ]
     },
     "entretien": {
@@ -1756,6 +4802,40 @@
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Espèce typique des crêtes alpines balafrées par le vent."
     },
-    "conseil": "À cultiver en rocaille alpine acide et fraîche."
+    "conseil": "À cultiver en rocaille alpine acide et fraîche.",
+    "roles": [
+      {
+        "nom": "Base acide",
+        "ratio": 0.5,
+        "ing": [
+          "Tourbe blonde"
+        ]
+      },
+      {
+        "nom": "Structure acide",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Matière humifère",
+        "ratio": 0.15,
+        "ing": [
+          "Terreau de feuilles"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable de quartz",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": [
+      "Poudre de Calcaire / Dolomie"
+    ]
   }
 ]

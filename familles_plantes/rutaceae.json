@@ -51,16 +51,127 @@
       "sensibilite_minerale": "Élevée (sensible aux engrais chimiques et au phosphore)"
     },
     "substrat": {
-      "composition_ideale": "Sol sableux, très pauvre, acide et ultra drainant",
+      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "5.0 - 6.0",
       "ingredients_recommandes": [
-        "Sable siliceux",
-        "Terre de bruyère",
-        "Pumice"
+        "Tourbe blonde",
+        "Écorces de pin",
+        "Terreau de feuilles",
+        "Sable de quartz",
+        "Perlite"
       ],
       "elements_interdits": [
-        "Engrais riches",
-        "Sol calcaire compact"
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "categorie_horticole": "Plante acidophile",
+      "modele_recherche": "acid_ericaceous",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Acide organique drainé",
+          "description": "Mélange sans amendement calcaire.",
+          "roles": [
+            {
+              "nom": "Base acide",
+              "ratio": 0.5,
+              "ing": [
+                "Tourbe blonde"
+              ]
+            },
+            {
+              "nom": "Structure acide",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Matière humifère",
+              "ratio": 0.15,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable de quartz",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        },
+        {
+          "nom": "Coco, kanuma et feuilles",
+          "description": "Variante sans tourbe, à surveiller avec un test de pH.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.45,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Minéral acide",
+              "ratio": 0.25,
+              "ing": [
+                "Kanuma"
+              ]
+            },
+            {
+              "nom": "Humus de feuilles",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.1,
+              "ing": [
+                "Écorces de pin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Blueberries growing guide",
+          "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        }
       ]
     },
     "entretien": {
@@ -78,7 +189,41 @@
       ],
       "toxicite": "Plante aromatique et médicinale (huile essentielle de Buchu utilisée en phytothérapie pour les voies urinaires)",
       "proprietes_particulieres": "Plante emblématique de la pharmacopée traditionnelle Khoisan d'Afrique du Sud"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base acide",
+        "ratio": 0.5,
+        "ing": [
+          "Tourbe blonde"
+        ]
+      },
+      {
+        "nom": "Structure acide",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Matière humifère",
+        "ratio": 0.15,
+        "ing": [
+          "Terreau de feuilles"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable de quartz",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": [
+      "Poudre de Calcaire / Dolomie"
+    ]
   },
   {
     "taxonomie": {
@@ -132,15 +277,130 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "S'adapte à presque tous les sols bien drainés",
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.5",
       "ingredients_recommandes": [
-        "Terre franche",
-        "Compost",
-        "Sable"
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sols mal drainés"
+      "elements_interdits": [],
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "roles": [
+            {
+              "nom": "Loam",
+              "ratio": 0.55,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.25,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
+          "roles": [
+            {
+              "nom": "Terreau",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.15,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -159,7 +419,39 @@
       ],
       "toxicite": "La pulpe est comestible et délicieuse; les graines contiennent des glucosides hypnotiques sédatifs (ne pas consommer les graines)",
       "proprietes_particulieres": "Fruit délicieux mais très fragile à la manipulation, difficilement commercialisable à grande échelle"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Loam",
+        "ratio": 0.55,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Terreau",
+        "ratio": 0.25,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -212,15 +504,130 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sol léger, fertile, frais mais bien drainé",
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.5",
       "ingredients_recommandes": [
+        "Terre franche / Terre de jardin",
         "Terreau horticole",
-        "Terre franche",
-        "Compost"
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol constamment gorgé d'eau"
+      "elements_interdits": [],
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "roles": [
+            {
+              "nom": "Loam",
+              "ratio": 0.55,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.25,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
+          "roles": [
+            {
+              "nom": "Terreau",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.15,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -239,7 +646,39 @@
       ],
       "toxicite": "Non comestible (purement ornemental)",
       "proprietes_particulieres": "Grand classique des jardins d'ornement pour son feuillage persistant et sa floraison parfumée"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Loam",
+        "ratio": 0.55,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Terreau",
+        "ratio": 0.25,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -293,17 +732,60 @@
       "sensibilite_minerale": "Très élevée (sensible aux excès de sels et de calcaire)"
     },
     "substrat": {
-      "composition_ideale": "Substrat léger, très aéré, humifère et drainant",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Terreau d'écorces",
-        "Pumice",
-        "Perlite",
-        "Terre de bruyère"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol calcaire",
-        "Argile compacte"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -323,7 +805,32 @@
       ],
       "toxicite": "Comestible haut de gamme (très recherché en haute gastronomie)",
       "proprietes_particulieres": "Les vésicules éclatent en bouche en libérant un jus très acidulé"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -376,15 +883,60 @@
       "sensibilite_minerale": "Sensible"
     },
     "substrat": {
-      "composition_ideale": "Mélange terreau, terre franche et matière drainante",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "6.0 - 6.8",
       "ingredients_recommandes": [
-        "Terreau potager",
-        "Compost mûr",
-        "Perlite"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol gorgé d'eau"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -405,7 +957,32 @@
       ],
       "toxicite": "Comestible",
       "proprietes_particulieres": "Fruit apyrène (sans pépins) sauf si pollinisé par d'autres agrumes voisins"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -459,15 +1036,60 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "Terreau agrumes enrichi en terre franche et sable",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "6.0 - 7.0",
       "ingredients_recommandes": [
         "Terreau horticole",
-        "Terre franche",
-        "Sable"
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol hydromorphe"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -486,7 +1108,32 @@
       ],
       "toxicite": "Comestible (considérée comme l'une des mandarines les plus savoureuses et parfumées)",
       "proprietes_particulieres": "Variété traditionnelle historique du bassin méditerranéen"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -540,16 +1187,60 @@
       "sensibilite_minerale": "Insensible (haute tolérance au sel)"
     },
     "substrat": {
-      "composition_ideale": "Sol très drainant, sablonneux ou caillouteux",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "6.0 - 8.0",
       "ingredients_recommandes": [
-        "Sable de rivière",
-        "Gravier",
-        "Terre franche",
-        "Pumice"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol argileux lourd rétenteur d'humidité"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -567,7 +1258,32 @@
       ],
       "toxicite": "Comestible (saveur acide très rafraîchissante)",
       "proprietes_particulieres": "Agrume ayant le cycle de développement du fruit le plus rapide du monde"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -622,15 +1338,60 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "Mélange léger, drainant et riche en humus",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Terreau agrumes",
-        "Pumice",
-        "Compost"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol lourd et calcaire"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -649,7 +1410,32 @@
       ],
       "toxicite": "Comestible (feuilles et zeste piliers de la cuisine thaïlandaise et réunionnaise)",
       "proprietes_particulieres": "Sa feuille ciselée est l'une des aromates les plus puissants du monde végétal"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -703,15 +1489,60 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole, 30% Terre franche, 20% Pumice ou gravier",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "6.0 - 6.8",
       "ingredients_recommandes": [
-        "Terreau agrumes",
-        "Pumice",
-        "Compost"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol argileux lourd"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -730,7 +1561,32 @@
       ],
       "toxicite": "Entièrement comestible (la peau sucrée compense la chair acide)",
       "proprietes_particulieres": "Très populaire en culture d'ornement en pot et pour la confection de confits"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -784,17 +1640,60 @@
       "sensibilite_minerale": "Trè sensible au calcaire (risque fort de chlorose)"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau horticole léger, 30% Terre franche, 20% Matière drainante (pumice/perlite)",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Terreau agrumes",
-        "Pumice",
-        "Compost d'écorces",
-        "Terre franche sans calcaire"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol calcaire",
-        "Argile lourde rétentrice d'eau"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -816,7 +1715,32 @@
       ],
       "toxicite": "Comestible; écorce riche en huiles essentielles photosensibilisantes",
       "proprietes_particulieres": "Capable de porter fleurs et fruits simultanément toute l'année"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -871,15 +1795,60 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "Sol fertile, profond et drainant",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "5.8 - 6.8",
       "ingredients_recommandes": [
-        "Terreau de feuilles",
-        "Compost",
-        "Sable"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol dur et calcaire"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -898,7 +1867,32 @@
       ],
       "toxicite": "Comestible",
       "proprietes_particulieres": "Parent ancestral du pomelo hybride et de l'oranger"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -952,15 +1946,60 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "60% Terreau riche, 20% Terre franche, 20% Drainant (Pumice)",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
         "Terreau horticole",
-        "Pumice",
-        "Compost mûr"
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol calcaire et lourd"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -981,7 +2020,32 @@
       ],
       "toxicite": "Comestible (utilisé principalement en fruits confits et confiserie)",
       "proprietes_particulieres": "L'un des trois agrumes ancêtres originels avec le pamplemoussier et le mandarinier"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1034,15 +2098,60 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "Sol meuble, fertile, bien drainé",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "6.0 - 7.0",
       "ingredients_recommandes": [
-        "Terreau de qualité",
-        "Compost mûr",
-        "Sable de rivière"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol hydromorphe et asphyxiant"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -1063,7 +2172,32 @@
       ],
       "toxicite": "Comestible",
       "proprietes_particulieres": "Espèce parente majeure de la plupart des agrumes hybrides modernes"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1117,17 +2251,60 @@
       "sensibilite_minerale": "Élevée (sensible à l'excès de calcaire et de chlore)"
     },
     "substrat": {
-      "composition_ideale": "40% Terreau spécial agrumes, 30% Terre franche, 20% Compost mûr, 10% Sand ou perlite",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "6.0 - 6.8 (Légèrement acide)",
       "ingredients_recommandes": [
         "Terreau horticole",
-        "Terre franche",
-        "Billes d'argile en drainant",
-        "Compost"
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Calcaire actif",
-        "Terres argileuses asphyxiantes"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -1150,7 +2327,32 @@
       ],
       "toxicite": "Comestible; les feuilles contiennent des huiles essentielles pouvant provoquer des phytophotodermatites chez les personnes sensibles",
       "proprietes_particulieres": "Incontournable en alimentation, parfumerie et phytothérapie"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1204,15 +2406,60 @@
       "sensibilite_minerale": "Tolérance moyenne"
     },
     "substrat": {
-      "composition_ideale": "Sol meuble, fertile et parfaitement drainé",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "6.0 - 7.0",
       "ingredients_recommandes": [
-        "Terreau potager",
-        "Terre franche",
-        "Gravier"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol détrempé en hiver"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -1232,7 +2479,32 @@
       ],
       "toxicite": "Comestible",
       "proprietes_particulieres": "Mûrit très tôt en automne avant les premières grosses gelées"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1288,15 +2560,60 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "Substrat léger, très drainant et humifère",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "5.8 - 6.5",
       "ingredients_recommandes": [
-        "Terreau de feuilles",
-        "Pumice",
-        "Compost mûr"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sols lourds, froids et calcaires"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -1317,7 +2634,32 @@
       ],
       "toxicite": "Comestible; l'huile de l'écorce est fortement phytophotodermatisante",
       "proprietes_particulieres": "Indispensable dans la confection de cocktails (Mojito) et la cuisine tropicale"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1372,15 +2714,60 @@
       "sensibilite_minerale": "Faible à moyenne"
     },
     "substrat": {
-      "composition_ideale": "S'adapte à presque tous les sols drainés",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "6.0 - 7.5",
       "ingredients_recommandes": [
-        "Terre franche",
-        "Compost",
-        "Graviers"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol détrempé permanent"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -1399,7 +2786,32 @@
       ],
       "toxicite": "Comestible cuit (marmelades de Séville, liqueurs type Cointreau/Grand Marnier)",
       "proprietes_particulieres": "Utilisé en parfumerie pour produire l'essence de Néroli (fleurs) et le Petit-Grain (feuilles)"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1452,15 +2864,60 @@
       "sensibilite_minerale": "Moyenne à élevée"
     },
     "substrat": {
-      "composition_ideale": "Terre franche bien drainée enrichie en terreau",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "6.0 - 6.8",
       "ingredients_recommandes": [
-        "Terreau agrumes",
-        "Terre franche",
-        "Sable"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol calcaire dur"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -1480,7 +2937,32 @@
       ],
       "toxicite": "Comestible; l'huile de bergamote est très employée dans le thé Earl Grey et en parfumerie",
       "proprietes_particulieres": "Culture quasi exclusive et historique dans la région de Calabre"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1535,15 +3017,60 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "Substrat meuble, ultra drainant et riche en humus",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "6.0 - 6.5",
       "ingredients_recommandes": [
-        "Terreau de qualité",
-        "Pumice",
-        "Compost"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol calcaire compact"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -1563,7 +3090,32 @@
       ],
       "toxicite": "Comestible",
       "proprietes_particulieres": "Le citron vert le plus vendu dans le commerce mondial"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1616,15 +3168,60 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "Substrat meuble, riche et bien drainé",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "6.0 - 6.8",
       "ingredients_recommandes": [
-        "Terreau agrumes",
-        "Compost",
-        "Perlite"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol lourd et compact"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -1643,7 +3240,32 @@
       ],
       "toxicite": "Comestible",
       "proprietes_particulieres": "Agrume star des jardins potagers en pot grâce à sa grande productivité"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1698,15 +3320,60 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "50% Terreau plante verte/agrumes, 30% Terreau de feuilles, 20% Perlite",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "6.0 - 6.5",
       "ingredients_recommandes": [
-        "Terreau universel",
-        "Perlite",
-        "Billes d'argile en fond"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Eau stagnante dans la soucoupe"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -1725,7 +3392,32 @@
       ],
       "toxicite": "Comestible (fruits très acides servant de condensé dans les sauces ou confitures)",
       "proprietes_particulieres": "L'un des rarissimes agrumes capables de fructifier durablement en appartement"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1779,15 +3471,60 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "Sol profond, fertile, bien drainé et riche en humus",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "6.0 - 7.0",
       "ingredients_recommandes": [
-        "Terre franche",
-        "Compost",
-        "Sable de rivière"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol asphyxiant et marécageux"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -1808,7 +3545,32 @@
       ],
       "toxicite": "Comestible; attention interactions médicamenteuses majeures avec le jus de pomelo",
       "proprietes_particulieres": "Inhibe l'enzyme CYP3A4, modifiant le métabolisme de nombreux médicaments"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -1862,17 +3624,127 @@
       "sensibilite_minerale": "Sensible au calcaire et au phosphore"
     },
     "substrat": {
-      "composition_ideale": "Substrat léger, sablonneux, très bien drainé",
+      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
+        "Tourbe blonde",
+        "Écorces de pin",
         "Terreau de feuilles",
-        "Sable de rivière",
-        "Pumice",
-        "Terre de bruyère"
+        "Sable de quartz",
+        "Perlite"
       ],
       "elements_interdits": [
-        "Engrais riches en phosphore",
-        "Sol calcaire compact"
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "categorie_horticole": "Plante acidophile",
+      "modele_recherche": "acid_ericaceous",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Acide organique drainé",
+          "description": "Mélange sans amendement calcaire.",
+          "roles": [
+            {
+              "nom": "Base acide",
+              "ratio": 0.5,
+              "ing": [
+                "Tourbe blonde"
+              ]
+            },
+            {
+              "nom": "Structure acide",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Matière humifère",
+              "ratio": 0.15,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable de quartz",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        },
+        {
+          "nom": "Coco, kanuma et feuilles",
+          "description": "Variante sans tourbe, à surveiller avec un test de pH.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.45,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Minéral acide",
+              "ratio": 0.25,
+              "ing": [
+                "Kanuma"
+              ]
+            },
+            {
+              "nom": "Humus de feuilles",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.1,
+              "ing": [
+                "Écorces de pin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Blueberries growing guide",
+          "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        }
       ]
     },
     "entretien": {
@@ -1890,7 +3762,41 @@
       ],
       "toxicite": "Non comestible",
       "proprietes_particulieres": "Remarquable pour sa floraison hivernale en climat doux ou en serre froide"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base acide",
+        "ratio": 0.5,
+        "ing": [
+          "Tourbe blonde"
+        ]
+      },
+      {
+        "nom": "Structure acide",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Matière humifère",
+        "ratio": 0.15,
+        "ing": [
+          "Terreau de feuilles"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable de quartz",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": [
+      "Poudre de Calcaire / Dolomie"
+    ]
   },
   {
     "taxonomie": {
@@ -1945,15 +3851,130 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "Sol meuble, riche en humus et bien drainé",
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
       "ingredients_recommandes": [
-        "Terreau universel",
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
         "Compost mûr",
-        "Sable"
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol constamment détrempé"
+      "elements_interdits": [],
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "roles": [
+            {
+              "nom": "Loam",
+              "ratio": 0.55,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.25,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
+          "roles": [
+            {
+              "nom": "Terreau",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.15,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -1972,7 +3993,39 @@
       ],
       "toxicite": "Feuilles comestibles (arôme fondamental du vrai curry indien); attention la graine contenue dans le fruit est toxique",
       "proprietes_particulieres": "À ne pas confondre avec l'Immortelle d'Italie (Helichrysum) parfois appelée plante curry"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Loam",
+        "ratio": 0.55,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Terreau",
+        "ratio": 0.25,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -2027,15 +4080,116 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "Substrat léger, riche et drainant",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.0",
       "ingredients_recommandes": [
         "Terreau horticole",
-        "Compost",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
         "Perlite"
       ],
-      "elements_interdits": [
-        "Sol lourd et argileux"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -2054,7 +4208,39 @@
       ],
       "toxicite": "Baies non comestibles",
       "proprietes_particulieres": "Plante hôte privilégiée du psylle vecteur de la maladie du Dragon Jaune (Greening) des agrumes"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -2108,15 +4294,60 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sol meuble, acide à neutre, bien drainé",
+      "composition_ideale": "55% Terreau horticole / 25% Terre franche / Terre de jardin / 20% Sable grossier",
       "ph": "5.5 - 6.8",
       "ingredients_recommandes": [
-        "Terre franche",
-        "Compost",
-        "Sable"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sols très calcaire alcalins (provoque des chloroses)"
+      "elements_interdits": [],
+      "categorie_horticole": "Agrume en contenant",
+      "modele_recherche": "citrus_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam riche et drainé",
+          "description": "Mélange durable avec environ vingt pour cent de sable ou gravier.",
+          "roles": [
+            {
+              "nom": "Compost de culture",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Loam",
+              "ratio": 0.25,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Citrus growing guide",
+              "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Citrus growing guide",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
       ]
     },
     "entretien": {
@@ -2134,7 +4365,32 @@
       ],
       "toxicite": "Fruit cru non toxique mais immangeable (très amer et résineux); utilisé en marmelades cuites ou médicinal",
       "proprietes_particulieres": "Le porte-greffe universel numéro 1 utilisé dans le monde pour conférer de la rusticité aux agrumes cultivés"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Compost de culture",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Loam",
+        "ratio": 0.25,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.2,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -2189,15 +4445,130 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Tolère tous types de sols bien drainés même secs ou calcaires",
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 8.0",
       "ingredients_recommandes": [
-        "Terre franche",
-        "Compost",
-        "Graviers"
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol détrempé permanent"
+      "elements_interdits": [],
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "roles": [
+            {
+              "nom": "Loam",
+              "ratio": 0.55,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.25,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
+          "roles": [
+            {
+              "nom": "Terreau",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.15,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -2215,7 +4586,39 @@
       ],
       "toxicite": "Les fruits amers étaient autrefois utilisés comme substitut du houblon dans la fabrication de la bière",
       "proprietes_particulieres": "Les samares sèches restent accrochées tout l'hiver, créant un bel effet décoratif"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Loam",
+        "ratio": 0.55,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Terreau",
+        "ratio": 0.25,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -2270,16 +4673,72 @@
       "sensibilite_minerale": "Insensible (aime les sols calcaires)"
     },
     "substrat": {
-      "composition_ideale": "Sol pauvre, sec, caillouteux et fortement calcaire",
+      "composition_ideale": "50% Terreau horticole / 25% Sable grossier / 25% Pouzzolane",
       "ph": "7.0 - 8.2",
       "ingredients_recommandes": [
-        "Terre de jardin calcaire",
-        "Sable",
-        "Gravier"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Sable grossier",
+        "Pouzzolane",
+        "Pumice",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Terreau lourd",
-        "Humidité stangante"
+      "elements_interdits": [],
+      "categorie_horticole": "Méditerranéenne drainante",
+      "modele_recherche": "mediterranean_dry",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam et minéraux",
+          "description": "Mélange drainant pour plantes tolérant la sécheresse.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.25,
+              "ing": [
+                "Sable grossier"
+              ]
+            },
+            {
+              "nom": "Granulats",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Pumice",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -2297,7 +4756,34 @@
       ],
       "toxicite": "TOXIQUE en quantité; plante fortement phytophotodermatisante (provoque de graves brûlures sur la peau au soleil par simple contact)",
       "proprietes_particulieres": "Utilisée historiquement comme répulsif contre les serpents et les puces, et en aromatisant dans certaines grappas italiennes"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Sable",
+        "ratio": 0.25,
+        "ing": [
+          "Sable grossier"
+        ]
+      },
+      {
+        "nom": "Granulats",
+        "ratio": 0.25,
+        "ing": [
+          "Pouzzolane",
+          "Pumice",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -2350,16 +4836,127 @@
       "sensibilite_minerale": "Extrêmement sensible au calcaire"
     },
     "substrat": {
-      "composition_ideale": "50% Terre de bruyère, 30% Terreau de feuilles, 20% Compost d'écorces",
+      "composition_ideale": "50% Tourbe blonde / 25% Écorces de pin / 15% Terreau de feuilles / 10% Sable de quartz",
       "ph": "4.5 - 5.5 (Acidophile stricte)",
       "ingredients_recommandes": [
-        "Terre de bruyère",
+        "Tourbe blonde",
+        "Écorces de pin",
         "Terreau de feuilles",
-        "Écorces de pin"
+        "Sable de quartz",
+        "Perlite"
       ],
       "elements_interdits": [
-        "Calcaire",
-        "Terre franche alcaline"
+        "Poudre de Calcaire / Dolomie"
+      ],
+      "categorie_horticole": "Plante acidophile",
+      "modele_recherche": "acid_ericaceous",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Acide organique drainé",
+          "description": "Mélange sans amendement calcaire.",
+          "roles": [
+            {
+              "nom": "Base acide",
+              "ratio": 0.5,
+              "ing": [
+                "Tourbe blonde"
+              ]
+            },
+            {
+              "nom": "Structure acide",
+              "ratio": 0.25,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Matière humifère",
+              "ratio": 0.15,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable de quartz",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        },
+        {
+          "nom": "Coco, kanuma et feuilles",
+          "description": "Variante sans tourbe, à surveiller avec un test de pH.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.45,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Minéral acide",
+              "ratio": 0.25,
+              "ing": [
+                "Kanuma"
+              ]
+            },
+            {
+              "nom": "Humus de feuilles",
+              "ratio": 0.2,
+              "ing": [
+                "Terreau de feuilles"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.1,
+              "ing": [
+                "Écorces de pin"
+              ]
+            }
+          ],
+          "interdits": [
+            "Poudre de Calcaire / Dolomie"
+          ],
+          "sources": [
+            {
+              "titre": "RHS — Blueberries growing guide",
+              "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Blueberries growing guide",
+          "url": "https://www.rhs.org.uk/fruit/blueberries/grow-your-own"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        }
       ]
     },
     "entretien": {
@@ -2378,7 +4975,41 @@
       ],
       "toxicite": "Toutes les parties de la plante (notamment les baies) sont TOXIQUES",
       "proprietes_particulieres": "Mise en valeur hivernale remarquable dans les bacs de balcon"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base acide",
+        "ratio": 0.5,
+        "ing": [
+          "Tourbe blonde"
+        ]
+      },
+      {
+        "nom": "Structure acide",
+        "ratio": 0.25,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Matière humifère",
+        "ratio": 0.15,
+        "ing": [
+          "Terreau de feuilles"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable de quartz",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": [
+      "Poudre de Calcaire / Dolomie"
+    ]
   },
   {
     "taxonomie": {
@@ -2433,14 +5064,130 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sol meuble, fertile et drainant",
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.5",
       "ingredients_recommandes": [
-        "Terre franche",
-        "Compost"
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sols gorgés d'eau"
+      "elements_interdits": [],
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "roles": [
+            {
+              "nom": "Loam",
+              "ratio": 0.55,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.25,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
+          "roles": [
+            {
+              "nom": "Terreau",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.15,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -2458,7 +5205,39 @@
       ],
       "toxicite": "Non comestible pour l'homme",
       "proprietes_particulieres": "L'une des plantes les plus mellifères du monde, fournissant un nectar abondant en fin d'été"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Loam",
+        "ratio": 0.55,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Terreau",
+        "ratio": 0.25,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -2513,15 +5292,130 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sol meuble et très bien drainé",
+      "composition_ideale": "55% Terre franche / Terre de jardin / 25% Terreau horticole / 10% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.5",
       "ingredients_recommandes": [
-        "Terreau universel",
-        "Terre franche",
-        "Graviers"
+        "Terre franche / Terre de jardin",
+        "Terreau horticole",
+        "Compost mûr",
+        "Sable grossier",
+        "Gravier de Quartz"
       ],
-      "elements_interdits": [
-        "Sol colmaté"
+      "elements_interdits": [],
+      "categorie_horticole": "Arbre, arbuste ou liane durable",
+      "modele_recherche": "woody_loam",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Loam durable enrichi",
+          "description": "Mélange lourd et stable pour culture longue en contenant.",
+          "roles": [
+            {
+              "nom": "Loam",
+              "ratio": 0.55,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Terreau",
+              "ratio": 0.25,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Organique",
+              "ratio": 0.1,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Gravier de Quartz"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau horticole structuré",
+          "description": "Variante plus légère pour pots mobiles.",
+          "roles": [
+            {
+              "nom": "Terreau",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Écorces",
+              "ratio": 0.15,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Trees in containers",
+              "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+            },
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Trees in containers",
+          "url": "https://www.rhs.org.uk/plants/types/trees/container-growing"
+        },
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -2539,7 +5433,39 @@
       ],
       "toxicite": "Comestible (Épice 'Baie Timur' dégageant un parfum incroyable de pamplemousse rose et de fruit de la passion)",
       "proprietes_particulieres": "Très tendance en pâtisserie et mixologie moderne"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Loam",
+        "ratio": 0.55,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Terreau",
+        "ratio": 0.25,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Organique",
+        "ratio": 0.1,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Gravier de Quartz"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -2593,15 +5519,116 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Sol ordinaire, même calcaire ou rocailleux",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "6.5 - 8.0",
       "ingredients_recommandes": [
-        "Terre franche",
-        "Calcaire",
-        "Sable"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
       ],
-      "elements_interdits": [
-        "Sol hydromorphe"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -2619,7 +5646,39 @@
       ],
       "toxicite": "Comestible (Épice majeure de la cuisine du Sichuan)",
       "proprietes_particulieres": "Donne un péricarpe au parfum plus puissant et plus boisé que l'espèce japonaise"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   },
   {
     "taxonomie": {
@@ -2674,15 +5733,116 @@
       "sensibilite_minerale": "Insensible"
     },
     "substrat": {
-      "composition_ideale": "Tout sol bien drainé même pauvre ou caillouteux",
+      "composition_ideale": "55% Terreau horticole / 20% Terre franche / Terre de jardin / 15% Compost mûr / 10% Sable grossier",
       "ph": "6.0 - 7.5",
       "ingredients_recommandes": [
-        "Terre franche",
-        "Compost",
-        "Graviers"
+        "Terreau horticole",
+        "Terre franche / Terre de jardin",
+        "Compost mûr",
+        "Sable grossier",
+        "Perlite"
       ],
-      "elements_interdits": [
-        "Zones détrempées permanentes"
+      "elements_interdits": [],
+      "categorie_horticole": "Plante générale en contenant",
+      "modele_recherche": "general_container",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau horticole équilibré",
+          "description": "Recette polyvalente fondée sur les recommandations générales de culture en bac.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.55,
+              "ing": [
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Terre stable",
+              "ratio": 0.2,
+              "ing": [
+                "Terre franche / Terre de jardin"
+              ]
+            },
+            {
+              "nom": "Matière organique",
+              "ratio": 0.15,
+              "ing": [
+                "Compost mûr"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.1,
+              "ing": [
+                "Sable grossier",
+                "Perlite"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Low-carbon container growing",
+              "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+            }
+          ]
+        },
+        {
+          "nom": "Terreau léger drainé",
+          "description": "Variante plus légère pour petites plantes et pots mobiles.",
+          "roles": [
+            {
+              "nom": "Base légère",
+              "ratio": 0.6,
+              "ing": [
+                "Terreau léger",
+                "Terreau horticole"
+              ]
+            },
+            {
+              "nom": "Coco",
+              "ratio": 0.2,
+              "ing": [
+                "Fibre de coco"
+              ]
+            },
+            {
+              "nom": "Drainage",
+              "ratio": 0.2,
+              "ing": [
+                "Perlite",
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [],
+          "sources": [
+            {
+              "titre": "RHS — Growing plants in containers",
+              "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+            },
+            {
+              "titre": "RHS — Houseplants growing guide",
+              "url": "https://www.rhs.org.uk/plants/types/houseplants/growing-guide"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "RHS — Growing plants in containers",
+          "url": "https://www.rhs.org.uk/container-gardening/growing-plants-in-containers"
+        },
+        {
+          "titre": "RHS — Low-carbon container growing",
+          "url": "https://www.rhs.org.uk/gardening-for-the-environment/low-carbon-gardening/low-carbon-container-growing"
+        }
       ]
     },
     "entretien": {
@@ -2700,6 +5860,38 @@
       ],
       "toxicite": "Le péricarpe sec du fruit constitue le vrai poivre de Sichuan (provoque une sensation d'engourdissement picotant sur la langue due au hydroxy-alpha-sanshool)",
       "proprietes_particulieres": "Ce ne sont pas les graines noires que l'on consomme mais l'enveloppe rouge du fruit"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.55,
+        "ing": [
+          "Terreau horticole"
+        ]
+      },
+      {
+        "nom": "Terre stable",
+        "ratio": 0.2,
+        "ing": [
+          "Terre franche / Terre de jardin"
+        ]
+      },
+      {
+        "nom": "Matière organique",
+        "ratio": 0.15,
+        "ing": [
+          "Compost mûr"
+        ]
+      },
+      {
+        "nom": "Drainage",
+        "ratio": 0.1,
+        "ing": [
+          "Sable grossier",
+          "Perlite"
+        ]
+      }
+    ],
+    "interdits": []
   }
 ]

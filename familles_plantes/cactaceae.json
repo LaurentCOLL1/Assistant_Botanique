@@ -52,17 +52,101 @@
       "sensibilite_minerale": "Très sensible à l'excès d'eau au collet"
     },
     "substrat": {
-      "composition_ideale": "Substrat minéral avec très peu de matière organique",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.5 - 7.5",
       "ingredients_recommandes": [
-        "Pumice",
-        "Sable",
-        "Gravier",
-        "Un peu de terreau"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Humus lourd",
-        "Rétention d'eau"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -80,7 +164,27 @@
       ],
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Forme géométrique en étoile très appréciée des collectionneurs"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -134,15 +238,101 @@
       "sensibilite_minerale": "Très sensible à l'excès d'eau"
     },
     "substrat": {
-      "composition_ideale": "Substrat ultra-minéral et poreux",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.5 - 7.5",
       "ingredients_recommandes": [
-        "Gravier",
-        "Sable",
-        "Pumice"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Terreau organique dense"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -160,7 +350,27 @@
       ],
       "toxicite": "Non toxique (épines très dures)",
       "proprietes_particulieres": "Le symbole emblématique des westerns et des grands déserts américains, pouvant vivre plus de 150 ans"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -214,15 +424,101 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Substrat sablonneux et très drainant",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
       "ingredients_recommandes": [
-        "Sable grossier",
-        "Pouzzolane",
-        "Terreau"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Humidité stagnante"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -240,7 +536,27 @@
       ],
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Ses longs poils blancs font office de protection thermique contre le soleil brûlant du désert"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -294,15 +610,101 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Terreau pour cactus drainant",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
       "ingredients_recommandes": [
-        "Sable grossier",
-        "Terreau",
-        "Pouzzolane"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Humidité stagnante"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -320,7 +722,27 @@
       ],
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Son allure argentée lumineuse est due à une abondante couverture d'épines blanches très serrées"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -374,16 +796,101 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Substrat très minéral et drainant",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
       "ingredients_recommandes": [
-        "Gravier",
-        "Sable grossier",
-        "Terreau",
-        "Pouzzolane"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Humidité stagnante"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -401,7 +908,27 @@
       ],
       "toxicite": "Non toxique (épines très piquantes)",
       "proprietes_particulieres": "Forme une sphère géométrique remarquable très recherchée en ornement"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -455,15 +982,101 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Substrat drainant et riche",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
       "ingredients_recommandes": [
-        "Terreau",
-        "Sable grossier",
-        "Pouzzolane"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Humidité stagnante"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -481,7 +1094,27 @@
       ],
       "toxicite": "Contient de la mescaline (alcaloïde psychoactif), non toxique par contact mais usage réglementé",
       "proprietes_particulieres": "Utilisé traditionnellement dans les rites chamaniques andins"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -535,15 +1168,101 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "Terreau pour cactus poreux",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 6.8",
       "ingredients_recommandes": [
-        "Terreau",
-        "Perlite",
-        "Sable"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Sol détrempé"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -561,7 +1280,27 @@
       ],
       "toxicite": "Non toxique",
       "proprietes_particulieres": "Souvent vendu sous forme de cultivars colorés greffés sur un porte-greffe vert"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -615,15 +1354,101 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "Substrat léger et acide pour épiphytes",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Tourbe",
-        "Écorces",
-        "Perlite"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Sol lourd et calcaire"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -641,7 +1466,27 @@
       ],
       "toxicite": "Non toxique pour les animaux domestiques",
       "proprietes_particulieres": "Proche du cactus de Noël mais fleurit au printemps"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -695,20 +1540,101 @@
       "sensibilite_minerale": "Faible sensibilité mais craint l'humidité stagnante"
     },
     "substrat": {
-      "composition_ideale": "70% Éléments minéraux drainants (Pumice, Pouzzolane, Sable grossier), 30% Fibre de coco ou Terreau horticole",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.5 (Neutre à légèrement basique)",
       "ingredients_recommandes": [
-        "Pumice",
-        "Pouzzolane",
-        "Sable grossier",
-        "Akadama",
-        "Micro-pouzzolane"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Humus de lombric",
-        "Tourbe blonde",
-        "Sphaigne sèche",
-        "Vermiculite"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -727,7 +1653,27 @@
       ],
       "toxicite": "Non toxique (attention toutefois aux épines acérées)",
       "proprietes_particulieres": "Métabolisme CAM adapté à la survie en milieu hyper-aride"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -781,15 +1727,101 @@
       "sensibilite_minerale": "Très faible"
     },
     "substrat": {
-      "composition_ideale": "Terre de jardin drainante, sable et terreau",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.5",
       "ingredients_recommandes": [
-        "Sable",
-        "Terreau",
-        "Gravier"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Excès d'eau prolongé"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -807,7 +1839,27 @@
       ],
       "toxicite": "Non toxique (attention aux minuscules glochides urticants)",
       "proprietes_particulieres": "Produit des fruits comestibles (figues de Barbarie) et des jeunes cladodes consommables (nopales)"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -861,15 +1913,101 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "Substrat léger, riche et acide (type terreau pour plantes épiphytes ou orchidées)",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Tourbe blonde",
-        "Écorces de pin",
-        "Perlite"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Sol calcaire et lourd"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -888,7 +2026,27 @@
       ],
       "toxicite": "Non toxique pour les animaux domestiques",
       "proprietes_particulieres": "Fleurit traditionnellement pendant la période des fêtes de fin d'année"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -943,16 +2101,101 @@
       "sensibilite_minerale": "Faible"
     },
     "substrat": {
-      "composition_ideale": "Terreau riche, humifère et bien drainé",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.0",
       "ingredients_recommandes": [
         "Terreau horticole",
-        "Compost",
-        "Sable grossier",
-        "Écorces"
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Sol lourd et compact gorgé d'eau"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -971,7 +2214,27 @@
       ],
       "toxicite": "Non toxique (le fruit est comestible et nutritif)",
       "proprietes_particulieres": "Produit le célèbre fruit du dragon (pitaya)"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -1024,20 +2287,101 @@
       "sensibilite_minerale": "Faible sensibilité mais craint l'humidité stagnante"
     },
     "substrat": {
-      "composition_ideale": "70% Éléments minéraux drainants (Pumice, Pouzzolane, Sable grossier), 30% Fibre de coco ou Terreau horticole",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.5 (Neutre à légèrement basique)",
       "ingredients_recommandes": [
-        "Pumice",
-        "Pouzzolane",
-        "Sable grossier",
-        "Akadama",
-        "Micro-pouzzolane"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Humus de lombric",
-        "Tourbe blonde",
-        "Sphaigne sèche",
-        "Vermiculite"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -1073,7 +2417,27 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 0
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -1126,17 +2490,101 @@
       "sensibilite_minerale": "Très sensible à l'excès d'eau au collet"
     },
     "substrat": {
-      "composition_ideale": "Substrat minéral avec très peu de matière organique",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.5 - 7.5",
       "ingredients_recommandes": [
-        "Pumice",
-        "Sable",
-        "Gravier",
-        "Un peu de terreau"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Humus lourd",
-        "Rétention d'eau"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -1170,7 +2618,27 @@
       "ajoute_le": "2026-08-01",
       "priorite": "cultivee",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -1223,20 +2691,101 @@
       "sensibilite_minerale": "Faible sensibilité mais craint l'humidité stagnante"
     },
     "substrat": {
-      "composition_ideale": "70% Éléments minéraux drainants (Pumice, Pouzzolane, Sable grossier), 30% Fibre de coco ou Terreau horticole",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.5 (Neutre à légèrement basique)",
       "ingredients_recommandes": [
-        "Pumice",
-        "Pouzzolane",
-        "Sable grossier",
-        "Akadama",
-        "Micro-pouzzolane"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Humus de lombric",
-        "Tourbe blonde",
-        "Sphaigne sèche",
-        "Vermiculite"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -1271,7 +2820,27 @@
       "ajoute_le": "2026-08-01",
       "priorite": "cultivee",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -1324,20 +2893,101 @@
       "sensibilite_minerale": "Faible sensibilité mais craint l'humidité stagnante"
     },
     "substrat": {
-      "composition_ideale": "70% Éléments minéraux drainants (Pumice, Pouzzolane, Sable grossier), 30% Fibre de coco ou Terreau horticole",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.5 (Neutre à légèrement basique)",
       "ingredients_recommandes": [
-        "Pumice",
-        "Pouzzolane",
-        "Sable grossier",
-        "Akadama",
-        "Micro-pouzzolane"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Humus de lombric",
-        "Tourbe blonde",
-        "Sphaigne sèche",
-        "Vermiculite"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -1372,7 +3022,27 @@
       "ajoute_le": "2026-08-01",
       "priorite": "cultivee",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -1425,20 +3095,101 @@
       "sensibilite_minerale": "Faible sensibilité mais craint l'humidité stagnante"
     },
     "substrat": {
-      "composition_ideale": "70% Éléments minéraux drainants (Pumice, Pouzzolane, Sable grossier), 30% Fibre de coco ou Terreau horticole",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.5 (Neutre à légèrement basique)",
       "ingredients_recommandes": [
-        "Pumice",
-        "Pouzzolane",
-        "Sable grossier",
-        "Akadama",
-        "Micro-pouzzolane"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Humus de lombric",
-        "Tourbe blonde",
-        "Sphaigne sèche",
-        "Vermiculite"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -1473,7 +3224,27 @@
       "ajoute_le": "2026-08-01",
       "priorite": "comestible",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -1526,20 +3297,101 @@
       "sensibilite_minerale": "Faible sensibilité mais craint l'humidité stagnante"
     },
     "substrat": {
-      "composition_ideale": "70% Éléments minéraux drainants (Pumice, Pouzzolane, Sable grossier), 30% Fibre de coco ou Terreau horticole",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.5 (Neutre à légèrement basique)",
       "ingredients_recommandes": [
-        "Pumice",
-        "Pouzzolane",
-        "Sable grossier",
-        "Akadama",
-        "Micro-pouzzolane"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Humus de lombric",
-        "Tourbe blonde",
-        "Sphaigne sèche",
-        "Vermiculite"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -1574,7 +3426,27 @@
       "ajoute_le": "2026-08-01",
       "priorite": "comestible",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -1627,20 +3499,101 @@
       "sensibilite_minerale": "Faible sensibilité mais craint l'humidité stagnante"
     },
     "substrat": {
-      "composition_ideale": "70% Éléments minéraux drainants (Pumice, Pouzzolane, Sable grossier), 30% Fibre de coco ou Terreau horticole",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.5 (Neutre à légèrement basique)",
       "ingredients_recommandes": [
-        "Pumice",
-        "Pouzzolane",
-        "Sable grossier",
-        "Akadama",
-        "Micro-pouzzolane"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Humus de lombric",
-        "Tourbe blonde",
-        "Sphaigne sèche",
-        "Vermiculite"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -1675,7 +3628,27 @@
       "ajoute_le": "2026-08-01",
       "priorite": "cultivee",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -1728,20 +3701,101 @@
       "sensibilite_minerale": "Faible sensibilité mais craint l'humidité stagnante"
     },
     "substrat": {
-      "composition_ideale": "70% Éléments minéraux drainants (Pumice, Pouzzolane, Sable grossier), 30% Fibre de coco ou Terreau horticole",
+      "composition_ideale": "50% Terreau horticole / 50% Sable grossier",
       "ph": "6.0 - 7.5 (Neutre à légèrement basique)",
       "ingredients_recommandes": [
-        "Pumice",
-        "Pouzzolane",
-        "Sable grossier",
-        "Akadama",
-        "Micro-pouzzolane"
+        "Terreau horticole",
+        "Terreau léger",
+        "Sable grossier"
       ],
       "elements_interdits": [
-        "Humus de lombric",
-        "Tourbe blonde",
-        "Sphaigne sèche",
-        "Vermiculite"
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Cactée ou succulente",
+      "modele_recherche": "succulent_mineral",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Terreau et sable grossier",
+          "description": "Mélange simple qui se désagrège facilement une fois humide.",
+          "roles": [
+            {
+              "nom": "Base",
+              "ratio": 0.5,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Fraction minérale",
+              "ratio": 0.5,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        },
+        {
+          "nom": "Minéral renforcé",
+          "description": "Variante plus minérale pour espèces sensibles à la pourriture.",
+          "roles": [
+            {
+              "nom": "Base organique",
+              "ratio": 0.35,
+              "ing": [
+                "Terreau horticole",
+                "Terreau léger"
+              ]
+            },
+            {
+              "nom": "Pumice",
+              "ratio": 0.25,
+              "ing": [
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Pouzzolane",
+              "ratio": 0.25,
+              "ing": [
+                "Pouzzolane",
+                "Micro-pouzzolane"
+              ]
+            },
+            {
+              "nom": "Sable",
+              "ratio": 0.15,
+              "ing": [
+                "Sable grossier"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "University of Minnesota Extension — Cacti and succulents",
+              "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "University of Minnesota Extension — Cacti and succulents",
+          "url": "https://extension.umn.edu/gardening-minnesota/cacti-and-succulents"
+        }
       ]
     },
     "entretien": {
@@ -1776,6 +3830,26 @@
       "ajoute_le": "2026-08-01",
       "priorite": "comestible",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Base",
+        "ratio": 0.5,
+        "ing": [
+          "Terreau horticole",
+          "Terreau léger"
+        ]
+      },
+      {
+        "nom": "Fraction minérale",
+        "ratio": 0.5,
+        "ing": [
+          "Sable grossier"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   }
 ]

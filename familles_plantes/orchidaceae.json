@@ -49,15 +49,143 @@
       "sensibilite_minerale": "Moyenne"
     },
     "substrat": {
-      "composition_ideale": "60% écorces de pin calibre moyen, 20% tourbe ou terreau de feuille, 20% picon ou pouzzolane",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
         "Écorces de pin",
-        "Compost d'écorce",
-        "Pouzzolane"
+        "Sphaigne sèche",
+        "Sphaigne du Chili",
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Maintien prolongé dans une pièce chauffée à plus de 20°C en hiver"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -77,7 +205,44 @@
       ],
       "proprietes_particulieres": "L'une des rares orchidées qui aime passer tout l'été au jardin ou sur le balcon."
     },
-    "conseil": "Laissez votre Cymbidium dehors de mai jusqu'aux premières gelées d'automne : les nuits fraîches sont la clé absolue pour faire réapparaître ses hampes florales."
+    "conseil": "Laissez votre Cymbidium dehors de mai jusqu'aux premières gelées d'automne : les nuits fraîches sont la clé absolue pour faire réapparaître ses hampes florales.",
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -130,14 +295,143 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "90% écorces de pin fines (8-12 mm), 10% sphaigne ou perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.0",
       "ingredients_recommandes": [
-        "Écorces de pin fines",
-        "Sphaigne"
+        "Écorces de pin",
+        "Sphaigne sèche",
+        "Sphaigne du Chili",
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Arrosage régulier durant le repos hivernal (transforme les fleurs en Keikis)"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -157,7 +451,44 @@
       ],
       "proprietes_particulieres": "Nécessite impérativement un choc thermique nocturne à l'automne pour produire des fleurs."
     },
-    "conseil": "Offrez-lui un séjour en extérieur à l'abri du soleil cuisant à la fin de l'été pour lui faire subir la baisse de température nocturne indispensable à la floraison."
+    "conseil": "Offrez-lui un séjour en extérieur à l'abri du soleil cuisant à la fin de l'été pour lui faire subir la baisse de température nocturne indispensable à la floraison.",
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -211,15 +542,143 @@
       "sensibilite_minerale": "Élevée"
     },
     "substrat": {
-      "composition_ideale": "70% écorces de pin de fin calibre (5-10 mm), 20% sphaigne hachée, 10% perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Écorces fines",
-        "Sphaigne",
-        "Perlite"
+        "Écorces de pin",
+        "Sphaigne sèche",
+        "Sphaigne du Chili",
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Rides profondes persistantes sur les pseudobulbes (manque d'eau grave)"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -239,7 +698,44 @@
       ],
       "proprietes_particulieres": "Certaines variétés comme *Oncidium 'Sharry Baby'* exhalent un puissant parfum sucré de chocolat ou de vanille."
     },
-    "conseil": "Surveillez les pseudobulbes : s'ils se flétrissent fortement, augmentez la fréquence d'arrosage ou l'hygrométrie de la pièce."
+    "conseil": "Surveillez les pseudobulbes : s'ils se flétrissent fortement, augmentez la fréquence d'arrosage ou l'hygrométrie de la pièce.",
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -292,16 +788,143 @@
       "sensibilite_minerale": "Extrêmement élevée (le calcaire asphyxie le vélamen des racines)"
     },
     "substrat": {
-      "composition_ideale": "80% écorces de pin de calibre moyen (10-15 mm), 20% sphaigne ou perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Écorces de pin de haute qualité",
+        "Écorces de pin",
+        "Sphaigne sèche",
         "Sphaigne du Chili",
-        "Billes d'argile en fond"
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Terreau horticole classique",
-        "Eau stagnante au cœur des feuilles"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -322,7 +945,44 @@
       ],
       "proprietes_particulieres": "Ses racines vertes réalisent la photosynthèse, d'où l'importance d'un pot transparent."
     },
-    "conseil": "Fiez-vous au coloris des racines dans le pot transparent : si elles sont vert vif, la plante a assez d'eau ; si elles deviennent gris argenté, c'est le moment de bassiner."
+    "conseil": "Fiez-vous au coloris des racines dans le pot transparent : si elles sont vert vif, la plante a assez d'eau ; si elles deviennent gris argenté, c'est le moment de bassiner.",
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -374,16 +1034,143 @@
       "sensibilite_minerale": "Extrêmement élevée (le calcaire asphyxie le vélamen des racines)"
     },
     "substrat": {
-      "composition_ideale": "80% écorces de pin de calibre moyen (10-15 mm), 20% sphaigne ou perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Écorces de pin de haute qualité",
+        "Écorces de pin",
+        "Sphaigne sèche",
         "Sphaigne du Chili",
-        "Billes d'argile en fond"
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Terreau horticole classique",
-        "Eau stagnante au cœur des feuilles"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -420,7 +1207,44 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 0
-    }
+    },
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -472,16 +1296,143 @@
       "sensibilite_minerale": "Extrêmement élevée (le calcaire asphyxie le vélamen des racines)"
     },
     "substrat": {
-      "composition_ideale": "80% écorces de pin de calibre moyen (10-15 mm), 20% sphaigne ou perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Écorces de pin de haute qualité",
+        "Écorces de pin",
+        "Sphaigne sèche",
         "Sphaigne du Chili",
-        "Billes d'argile en fond"
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Terreau horticole classique",
-        "Eau stagnante au cœur des feuilles"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -524,7 +1475,44 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 0
-    }
+    },
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -576,16 +1564,143 @@
       "sensibilite_minerale": "Extrêmement élevée (le calcaire asphyxie le vélamen des racines)"
     },
     "substrat": {
-      "composition_ideale": "80% écorces de pin de calibre moyen (10-15 mm), 20% sphaigne ou perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Écorces de pin de haute qualité",
+        "Écorces de pin",
+        "Sphaigne sèche",
         "Sphaigne du Chili",
-        "Billes d'argile en fond"
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Terreau horticole classique",
-        "Eau stagnante au cœur des feuilles"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -628,7 +1743,44 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 0
-    }
+    },
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -680,16 +1832,143 @@
       "sensibilite_minerale": "Extrêmement élevée (le calcaire asphyxie le vélamen des racines)"
     },
     "substrat": {
-      "composition_ideale": "80% écorces de pin de calibre moyen (10-15 mm), 20% sphaigne ou perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Écorces de pin de haute qualité",
+        "Écorces de pin",
+        "Sphaigne sèche",
         "Sphaigne du Chili",
-        "Billes d'argile en fond"
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Terreau horticole classique",
-        "Eau stagnante au cœur des feuilles"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -732,7 +2011,44 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 0
-    }
+    },
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -784,16 +2100,143 @@
       "sensibilite_minerale": "Extrêmement élevée (le calcaire asphyxie le vélamen des racines)"
     },
     "substrat": {
-      "composition_ideale": "80% écorces de pin de calibre moyen (10-15 mm), 20% sphaigne ou perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Écorces de pin de haute qualité",
+        "Écorces de pin",
+        "Sphaigne sèche",
         "Sphaigne du Chili",
-        "Billes d'argile en fond"
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Terreau horticole classique",
-        "Eau stagnante au cœur des feuilles"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -836,7 +2279,44 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 656
-    }
+    },
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -888,16 +2368,143 @@
       "sensibilite_minerale": "Extrêmement élevée (le calcaire asphyxie le vélamen des racines)"
     },
     "substrat": {
-      "composition_ideale": "80% écorces de pin de calibre moyen (10-15 mm), 20% sphaigne ou perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Écorces de pin de haute qualité",
+        "Écorces de pin",
+        "Sphaigne sèche",
         "Sphaigne du Chili",
-        "Billes d'argile en fond"
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Terreau horticole classique",
-        "Eau stagnante au cœur des feuilles"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -940,7 +2547,44 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 775
-    }
+    },
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -992,16 +2636,143 @@
       "sensibilite_minerale": "Extrêmement élevée (le calcaire asphyxie le vélamen des racines)"
     },
     "substrat": {
-      "composition_ideale": "80% écorces de pin de calibre moyen (10-15 mm), 20% sphaigne ou perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Écorces de pin de haute qualité",
+        "Écorces de pin",
+        "Sphaigne sèche",
         "Sphaigne du Chili",
-        "Billes d'argile en fond"
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Terreau horticole classique",
-        "Eau stagnante au cœur des feuilles"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -1038,7 +2809,44 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 0
-    }
+    },
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -1090,16 +2898,143 @@
       "sensibilite_minerale": "Extrêmement élevée (le calcaire asphyxie le vélamen des racines)"
     },
     "substrat": {
-      "composition_ideale": "80% écorces de pin de calibre moyen (10-15 mm), 20% sphaigne ou perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Écorces de pin de haute qualité",
+        "Écorces de pin",
+        "Sphaigne sèche",
         "Sphaigne du Chili",
-        "Billes d'argile en fond"
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Terreau horticole classique",
-        "Eau stagnante au cœur des feuilles"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -1142,7 +3077,44 @@
       "priorite": "gbif_occurrence_frequente",
       "horticulture": "provisoire_a_reviser",
       "occurrences_gbif": 0
-    }
+    },
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -1194,16 +3166,143 @@
       "sensibilite_minerale": "Extrêmement élevée (le calcaire asphyxie le vélamen des racines)"
     },
     "substrat": {
-      "composition_ideale": "80% écorces de pin de calibre moyen (10-15 mm), 20% sphaigne ou perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Écorces de pin de haute qualité",
+        "Écorces de pin",
+        "Sphaigne sèche",
         "Sphaigne du Chili",
-        "Billes d'argile en fond"
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Terreau horticole classique",
-        "Eau stagnante au cœur des feuilles"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -1239,7 +3338,44 @@
       "ajoute_le": "2026-08-01",
       "priorite": "cultivee",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -1291,16 +3427,143 @@
       "sensibilite_minerale": "Extrêmement élevée (le calcaire asphyxie le vélamen des racines)"
     },
     "substrat": {
-      "composition_ideale": "80% écorces de pin de calibre moyen (10-15 mm), 20% sphaigne ou perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Écorces de pin de haute qualité",
+        "Écorces de pin",
+        "Sphaigne sèche",
         "Sphaigne du Chili",
-        "Billes d'argile en fond"
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Terreau horticole classique",
-        "Eau stagnante au cœur des feuilles"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -1336,7 +3599,44 @@
       "ajoute_le": "2026-08-01",
       "priorite": "cultivee",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -1388,16 +3688,143 @@
       "sensibilite_minerale": "Extrêmement élevée (le calcaire asphyxie le vélamen des racines)"
     },
     "substrat": {
-      "composition_ideale": "80% écorces de pin de calibre moyen (10-15 mm), 20% sphaigne ou perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Écorces de pin de haute qualité",
+        "Écorces de pin",
+        "Sphaigne sèche",
         "Sphaigne du Chili",
-        "Billes d'argile en fond"
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Terreau horticole classique",
-        "Eau stagnante au cœur des feuilles"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -1433,7 +3860,44 @@
       "ajoute_le": "2026-08-01",
       "priorite": "cultivee",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -1485,16 +3949,143 @@
       "sensibilite_minerale": "Extrêmement élevée (le calcaire asphyxie le vélamen des racines)"
     },
     "substrat": {
-      "composition_ideale": "80% écorces de pin de calibre moyen (10-15 mm), 20% sphaigne ou perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Écorces de pin de haute qualité",
+        "Écorces de pin",
+        "Sphaigne sèche",
         "Sphaigne du Chili",
-        "Billes d'argile en fond"
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Terreau horticole classique",
-        "Eau stagnante au cœur des feuilles"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -1530,7 +4121,44 @@
       "ajoute_le": "2026-08-01",
       "priorite": "cultivee",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -1582,16 +4210,143 @@
       "sensibilite_minerale": "Extrêmement élevée (le calcaire asphyxie le vélamen des racines)"
     },
     "substrat": {
-      "composition_ideale": "80% écorces de pin de calibre moyen (10-15 mm), 20% sphaigne ou perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Écorces de pin de haute qualité",
+        "Écorces de pin",
+        "Sphaigne sèche",
         "Sphaigne du Chili",
-        "Billes d'argile en fond"
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Terreau horticole classique",
-        "Eau stagnante au cœur des feuilles"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -1627,7 +4382,44 @@
       "ajoute_le": "2026-08-01",
       "priorite": "cultivee",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -1679,16 +4471,143 @@
       "sensibilite_minerale": "Extrêmement élevée (le calcaire asphyxie le vélamen des racines)"
     },
     "substrat": {
-      "composition_ideale": "80% écorces de pin de calibre moyen (10-15 mm), 20% sphaigne ou perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Écorces de pin de haute qualité",
+        "Écorces de pin",
+        "Sphaigne sèche",
         "Sphaigne du Chili",
-        "Billes d'argile en fond"
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Terreau horticole classique",
-        "Eau stagnante au cœur des feuilles"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -1724,7 +4643,44 @@
       "ajoute_le": "2026-08-01",
       "priorite": "cultivee",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -1776,16 +4732,143 @@
       "sensibilite_minerale": "Extrêmement élevée (le calcaire asphyxie le vélamen des racines)"
     },
     "substrat": {
-      "composition_ideale": "80% écorces de pin de calibre moyen (10-15 mm), 20% sphaigne ou perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Écorces de pin de haute qualité",
+        "Écorces de pin",
+        "Sphaigne sèche",
         "Sphaigne du Chili",
-        "Billes d'argile en fond"
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Terreau horticole classique",
-        "Eau stagnante au cœur des feuilles"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -1821,7 +4904,44 @@
       "ajoute_le": "2026-08-01",
       "priorite": "comestible",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   },
   {
     "taxonomie": {
@@ -1873,16 +4993,143 @@
       "sensibilite_minerale": "Extrêmement élevée (le calcaire asphyxie le vélamen des racines)"
     },
     "substrat": {
-      "composition_ideale": "80% écorces de pin de calibre moyen (10-15 mm), 20% sphaigne ou perlite",
+      "composition_ideale": "60% Écorces de pin / 20% Sphaigne sèche / 10% Perlite / 10% Charbon actif",
       "ph": "5.5 - 6.5",
       "ingredients_recommandes": [
-        "Écorces de pin de haute qualité",
+        "Écorces de pin",
+        "Sphaigne sèche",
         "Sphaigne du Chili",
-        "Billes d'argile en fond"
+        "Perlite",
+        "Pumice",
+        "Charbon actif",
+        "Charbon de bambou"
       ],
       "elements_interdits": [
-        "Terreau horticole classique",
-        "Eau stagnante au cœur des feuilles"
+        "Terre franche / Terre de jardin",
+        "Terreau argileux (Aquatique / Nénuphars)"
+      ],
+      "categorie_horticole": "Orchidée épiphyte",
+      "modele_recherche": "orchid_epiphyte",
+      "version_recherche": "2026.08",
+      "variantes": [
+        {
+          "nom": "Écorces aérées",
+          "description": "Mélange grossier à drainage rapide.",
+          "roles": [
+            {
+              "nom": "Structure principale",
+              "ratio": 0.6,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Rétention",
+              "ratio": 0.2,
+              "ing": [
+                "Sphaigne sèche",
+                "Sphaigne du Chili"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Perlite",
+                "Pumice"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.1,
+              "ing": [
+                "Charbon actif",
+                "Charbon de bambou"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Repotting",
+              "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        },
+        {
+          "nom": "Écorces et coco",
+          "description": "Alternative sans sphaigne pour les orchidées aimant sécher davantage.",
+          "roles": [
+            {
+              "nom": "Écorces",
+              "ratio": 0.65,
+              "ing": [
+                "Écorces de pin"
+              ]
+            },
+            {
+              "nom": "Coco grossière",
+              "ratio": 0.2,
+              "ing": [
+                "Chips de coco"
+              ]
+            },
+            {
+              "nom": "Aération",
+              "ratio": 0.1,
+              "ing": [
+                "Pumice",
+                "Perlite"
+              ]
+            },
+            {
+              "nom": "Charbon",
+              "ratio": 0.05,
+              "ing": [
+                "Charbon actif"
+              ]
+            }
+          ],
+          "interdits": [
+            "Terre franche / Terre de jardin",
+            "Terreau argileux (Aquatique / Nénuphars)"
+          ],
+          "sources": [
+            {
+              "titre": "American Orchid Society — Potting media",
+              "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+            },
+            {
+              "titre": "American Orchid Society — Vanda culture",
+              "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "titre": "American Orchid Society — Potting media",
+          "url": "https://www.aos.org/orchid-care/what-is-the-best-potting-media"
+        },
+        {
+          "titre": "American Orchid Society — Repotting",
+          "url": "https://www.aos.org/orchid-care-and-culture-sheets/repotting"
+        },
+        {
+          "titre": "American Orchid Society — Vanda culture",
+          "url": "https://www.aos.org/orchid-care/care-sheets/vanda-culture-sheet"
+        }
       ]
     },
     "entretien": {
@@ -1924,6 +5171,43 @@
       "ajoute_le": "2026-08-01",
       "priorite": "comestible",
       "horticulture": "provisoire_a_reviser"
-    }
+    },
+    "roles": [
+      {
+        "nom": "Structure principale",
+        "ratio": 0.6,
+        "ing": [
+          "Écorces de pin"
+        ]
+      },
+      {
+        "nom": "Rétention",
+        "ratio": 0.2,
+        "ing": [
+          "Sphaigne sèche",
+          "Sphaigne du Chili"
+        ]
+      },
+      {
+        "nom": "Aération",
+        "ratio": 0.1,
+        "ing": [
+          "Perlite",
+          "Pumice"
+        ]
+      },
+      {
+        "nom": "Charbon",
+        "ratio": 0.1,
+        "ing": [
+          "Charbon actif",
+          "Charbon de bambou"
+        ]
+      }
+    ],
+    "interdits": [
+      "Terre franche / Terre de jardin",
+      "Terreau argileux (Aquatique / Nénuphars)"
+    ]
   }
 ]
