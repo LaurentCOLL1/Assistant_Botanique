@@ -9,8 +9,15 @@ from typing import Any, Iterable, Mapping
 from core import ValidationError
 import substrate_classifier
 import substrate_knowledge as substrate_knowledge_module
+import substrate_research_2026
 
 substrate_classifier.install()
+substrate_research_2026.install(
+    substrate_knowledge_module,
+    substrate_classifier.FAMILY_TEMPLATE,
+    substrate_classifier.GENUS_TEMPLATE,
+    substrate_classifier.classify_profile,
+)
 canonicalize_ingredient = substrate_knowledge_module.canonicalize_ingredient
 normalize_text = substrate_knowledge_module.normalize_text
 resolved_substrate = substrate_knowledge_module.resolved_substrate
@@ -42,7 +49,9 @@ class RecipeResult:
 
 
 def _canonical_ingredient(value: Any) -> str | None:
-    return canonicalize_ingredient(value) or LEGACY_INGREDIENT_ALIASES.get(normalize_text(value))
+    return canonicalize_ingredient(value) or LEGACY_INGREDIENT_ALIASES.get(
+        normalize_text(value)
+    )
 
 
 def _structured_roles(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
@@ -56,22 +65,39 @@ def _structured_roles(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
 
 def _has_persisted_variants(profile: Mapping[str, Any]) -> bool:
     substrate = profile.get("substrat", {})
-    return isinstance(substrate, Mapping) and isinstance(substrate.get("variantes"), list) and bool(substrate["variantes"])
+    return (
+        isinstance(substrate, Mapping)
+        and isinstance(substrate.get("variantes"), list)
+        and bool(substrate["variantes"])
+    )
+
+
+def _is_catalogue_profile(profile: Mapping[str, Any]) -> bool:
+    metadata = profile.get("metadata", {})
+    return isinstance(metadata, Mapping) and bool(metadata.get("source_file"))
 
 
 def _explicit_variant(profile: Mapping[str, Any]) -> dict[str, Any] | None:
-    """Conserve la priorité des recettes structurées historiques.
+    """Préserve les recettes explicites des profils manuels et génériques.
 
-    Les profils génériques et certains tests métiers possèdent déjà des rôles
-    explicites. Ils ne doivent pas être remplacés par un modèle horticole
-    général tant qu'aucune variante documentée n'a été persistée.
+    Les fiches du catalogue passent toujours par la classification horticole
+    sourcée, même lorsqu'elles contiennent encore des rôles hérités.
     """
     roles = _structured_roles(profile)
-    if not roles or _has_persisted_variants(profile):
+    if (
+        not roles
+        or _has_persisted_variants(profile)
+        or _is_catalogue_profile(profile)
+    ):
         return None
     substrate = profile.get("substrat", {})
     substrate = substrate if isinstance(substrate, Mapping) else {}
-    forbidden = profile.get("interdits") or substrate.get("ingredients_interdits") or substrate.get("elements_interdits") or []
+    forbidden = (
+        profile.get("interdits")
+        or substrate.get("ingredients_interdits")
+        or substrate.get("elements_interdits")
+        or []
+    )
     if not isinstance(forbidden, list):
         forbidden = []
     return {
@@ -84,7 +110,7 @@ def _explicit_variant(profile: Mapping[str, Any]) -> dict[str, Any] | None:
 
 
 def substrate_variants(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
-    """Retourne une ou deux variantes validées pour n'importe quelle fiche."""
+    """Retourne la recette principale et une ou deux alternatives."""
     explicit = _explicit_variant(profile)
     if explicit:
         return [explicit]
@@ -92,19 +118,18 @@ def substrate_variants(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
 
 
 def _legacy_roles(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
-    """Compatibilité avec les profils génériques historiques.
-
-    Les fiches du catalogue passent normalement par ``resolved_substrate`` avant
-    cette fonction. Cette lecture de secours canonise les anciens synonymes et
-    n'invente plus automatiquement une forte proportion de perlite.
-    """
     substrate = profile.get("substrat", {})
     substrate = substrate if isinstance(substrate, Mapping) else {}
     composition = str(substrate.get("composition_ideale") or "")
     recommended_raw = substrate.get("ingredients_recommandes", [])
-    recommended_raw = [str(item) for item in recommended_raw] if isinstance(recommended_raw, list) else []
+    recommended_raw = (
+        [str(item) for item in recommended_raw]
+        if isinstance(recommended_raw, list)
+        else []
+    )
     recommended = [
-        canonical for item in recommended_raw
+        canonical
+        for item in recommended_raw
         if (canonical := _canonical_ingredient(item))
     ]
     matches = re.findall(r"(\d+(?:[.,]\d+)?)\s*%\s*([^,;\n]+)", composition)
@@ -114,10 +139,20 @@ def _legacy_roles(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
         canonical = _canonical_ingredient(label)
         ingredients = [canonical] if canonical else []
         if not ingredients:
-            words = [word for word in re.split(r"[/&()\s]+", label.lower()) if len(word) >= 4]
-            ingredients = [item for item in recommended if any(word in item.lower() for word in words)]
+            words = [
+                word
+                for word in re.split(r"[/&()\s]+", label.lower())
+                if len(word) >= 4
+            ]
+            ingredients = [
+                item
+                for item in recommended
+                if any(word in item.lower() for word in words)
+            ]
         if ingredients:
-            roles.append({"nom": label.strip(), "ratio": ratio, "ing": ingredients})
+            roles.append(
+                {"nom": label.strip(), "ratio": ratio, "ing": ingredients}
+            )
     if roles:
         return roles
     if recommended:
@@ -150,13 +185,18 @@ def normalize_roles(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
             if item and item not in canonical:
                 canonical.append(item)
         if not canonical:
-            raise ValidationError(f"Le rôle {name!r} ne contient aucun ingrédient reconnu.")
+            raise ValidationError(
+                f"Le rôle {name!r} ne contient aucun ingrédient reconnu."
+            )
         normalized.append({"nom": name, "ratio": ratio, "ing": canonical})
     total = sum(role["ratio"] for role in normalized)
     if total <= 0:
         raise ValidationError("La recette ne contient aucun ratio positif.")
     if abs(total - 1.0) > 0.001:
-        normalized = [{**role, "ratio": role["ratio"] / total} for role in normalized]
+        normalized = [
+            {**role, "ratio": role["ratio"] / total}
+            for role in normalized
+        ]
     return normalized
 
 
@@ -192,14 +232,19 @@ def build_recipe(
     warnings: list[str] = []
     roles = normalize_roles(selected_profile)
     forbidden = {
-        canonical for item in variant.get("interdits", [])
+        canonical
+        for item in variant.get("interdits", [])
         if (canonical := _canonical_ingredient(item))
     }
     canonical_stock = _canonical_stock(stock)
     for role in roles:
         target = volume_l * role["ratio"]
-        possible = tuple(item for item in role["ing"] if item not in forbidden)
-        available = tuple(item for item in possible if canonical_stock.get(item, False))
+        possible = tuple(
+            item for item in role["ing"] if item not in forbidden
+        )
+        available = tuple(
+            item for item in possible if canonical_stock.get(item, False)
+        )
         if available:
             per_item = target / len(available)
             allocations = tuple((item, per_item) for item in available)
@@ -207,7 +252,9 @@ def build_recipe(
         else:
             allocations = ()
             missing = possible
-            warnings.append(f"Aucun ingrédient disponible pour {role['nom']}.")
+            warnings.append(
+                f"Aucun ingrédient disponible pour {role['nom']}."
+            )
         lines.append(
             RecipeLine(
                 role=role["nom"],
@@ -246,14 +293,21 @@ def forbidden_ingredients(
         except (TypeError, ValueError):
             substrate = profile.get("substrat", {})
             substrate = substrate if isinstance(substrate, Mapping) else {}
-            raw = profile.get("interdits") or substrate.get("ingredients_interdits") or substrate.get("elements_interdits") or []
+            raw = (
+                profile.get("interdits")
+                or substrate.get("ingredients_interdits")
+                or substrate.get("elements_interdits")
+                or []
+            )
             variant = {"interdits": raw if isinstance(raw, list) else []}
     forbidden = {
-        canonical for item in variant.get("interdits", [])
+        canonical
+        for item in variant.get("interdits", [])
         if (canonical := _canonical_ingredient(item))
     }
     found = {
-        canonical for item in selected
+        canonical
+        for item in selected
         if (canonical := _canonical_ingredient(item)) in forbidden
     }
     return sorted(found)
