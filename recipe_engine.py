@@ -7,13 +7,10 @@ from dataclasses import dataclass
 from typing import Any, Iterable, Mapping
 
 from core import ValidationError
+import substrate_classifier
 import substrate_knowledge as substrate_knowledge_module
 
-# Une ancienne fiche peut mentionner « éviter l'eau stagnante ». Cette phrase
-# décrit un interdit et ne constitue jamais, à elle seule, un habitat aquatique.
-substrate_knowledge_module.AQUATIC_WORDS = tuple(
-    word for word in substrate_knowledge_module.AQUATIC_WORDS if word != "eau stagnante"
-)
+substrate_classifier.install()
 canonicalize_ingredient = substrate_knowledge_module.canonicalize_ingredient
 normalize_text = substrate_knowledge_module.normalize_text
 resolved_substrate = substrate_knowledge_module.resolved_substrate
