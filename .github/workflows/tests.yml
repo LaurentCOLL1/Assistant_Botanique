@@ -69,6 +69,7 @@ jobs:
           tools/reclassify_and_expand_families.py
           tools/reclassify_and_expand_families_fast.py
           tools/finalize_family_reclassification.py
+          tools/finalize_family_reclassification_v2.py
       - name: Finaliser le reclassement et les métadonnées
         shell: bash
         run: |
@@ -76,7 +77,7 @@ jobs:
             echo "Résultats finaux déjà générés."
             exit 0
           fi
-          python tools/finalize_family_reclassification.py
+          python tools/finalize_family_reclassification_v2.py
       - name: Enregistrer les résultats
         shell: bash
         run: |
