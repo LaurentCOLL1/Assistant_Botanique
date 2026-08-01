@@ -3,7 +3,7 @@ import pytest
 from recipe_engine import build_recipe, normalize_roles
 
 
-def test_recipe_volume_is_exact():
+def test_recipe_volume_is_exact_and_legacy_names_are_canonicalized():
     profile = {
         "nom_sci": "Test",
         "roles": [
@@ -14,7 +14,7 @@ def test_recipe_volume_is_exact():
     result = build_recipe(profile, 10, {"Coco": True, "Tourbe": True, "Perlite": True})
     allocated = sum(amount for line in result.lines for _, amount in line.ingredients)
     assert allocated == pytest.approx(10)
-    assert result.lines[0].ingredients == (("Coco", 3.0), ("Tourbe", 3.0))
+    assert result.lines[0].ingredients == (("Fibre de coco", 3.0), ("Tourbe blonde", 3.0))
 
 
 def test_legacy_ratios_are_normalized_to_100_percent():
