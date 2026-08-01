@@ -57,6 +57,46 @@ jobs:
       - if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
         run: python validate_data.py --strict --baseline data_quality_baseline.json
 
+  substrate-enrichment:
+    if: github.event_name == 'pull_request' && github.head_ref == 'catalogue/research-backed-substrates'
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Vérifier le générateur de substrats
+        run: python -m py_compile substrate_knowledge.py tools/enrich_substrates.py recipe_engine.py
+      - name: Enrichir toutes les fiches
+        shell: bash
+        run: |
+          if git log -1 --pretty=%B | grep -q '\[substrate-research-bot\]'; then
+            echo "Catalogue de substrats déjà enrichi."
+            exit 0
+          fi
+          python tools/enrich_substrates.py
+      - name: Enregistrer les recettes et l'audit
+        shell: bash
+        run: |
+          if git log -1 --pretty=%B | grep -q '\[substrate-research-bot\]'; then
+            exit 0
+          fi
+          git config user.name "assistant-botanique-substrate-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A familles_plantes catalogue_metadata/substrate_audit.json
+          if git diff --cached --quiet; then
+            echo "Aucune modification."
+            exit 0
+          fi
+          git commit -m "data: attribuer les substrats documentés [substrate-research-bot]"
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
+
   family-reclassification:
     if: github.event_name == 'pull_request' && github.head_ref == 'catalogue/gbif-family-reclassification'
     permissions:
