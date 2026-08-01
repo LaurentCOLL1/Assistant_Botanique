@@ -28,6 +28,20 @@ INGREDIENT_CATEGORIES = {
     ],
 }
 
+PRIMARY_INGREDIENT_CATEGORIES = (
+    "Bases organiques et terres",
+    "Minéraux et drainants",
+)
+SPECIALTY_INGREDIENT_CATEGORY = "Additifs et spécialités"
+DEFAULT_AVAILABLE_INGREDIENTS = {
+    "Tourbe blonde",
+    "Fibre de coco",
+    "Perlite",
+    "Pouzzolane",
+    "Charbon actif",
+    "Écorces de pin",
+}
+
 
 class TabSubstrat(ttk.Frame):
     def __init__(self, parent, settings: dict[str, Any] | None = None, on_settings_changed=None):
@@ -60,30 +74,68 @@ class TabSubstrat(ttk.Frame):
             wraplength=1000,
         ).pack(anchor="w", padx=8, pady=(0, 5))
 
-        canvas_frame = ttk.Frame(main)
-        canvas_frame.pack(fill="x", padx=8, pady=4)
-        canvas = tk.Canvas(canvas_frame, height=300, highlightthickness=0)
-        scrollbar = ttk.Scrollbar(canvas_frame, orient="vertical", command=canvas.yview)
-        inside = ttk.Frame(canvas)
-        window_id = canvas.create_window((0, 0), window=inside, anchor="nw")
-        inside.bind("<Configure>", lambda _event: canvas.configure(scrollregion=canvas.bbox("all")))
-        canvas.bind("<Configure>", lambda event: canvas.itemconfigure(window_id, width=event.width))
-        canvas.configure(yscrollcommand=scrollbar.set)
-        canvas.pack(side="left", fill="both", expand=True)
-        scrollbar.pack(side="right", fill="y")
+        ingredient_area = ttk.Frame(main)
+        ingredient_area.pack(fill="x", padx=8, pady=4)
+        ingredient_area.columnconfigure(0, weight=3)
+        ingredient_area.columnconfigure(2, weight=1)
+
+        primary_panel = ttk.Frame(ingredient_area)
+        primary_panel.grid(row=0, column=0, sticky="nsew")
+        for column in range(4):
+            primary_panel.columnconfigure(column, weight=1)
+
+        ttk.Separator(ingredient_area, orient="vertical").grid(
+            row=0,
+            column=1,
+            sticky="ns",
+            padx=(12, 16),
+            pady=4,
+        )
+
+        specialty_panel = ttk.Frame(ingredient_area)
+        specialty_panel.grid(row=0, column=2, sticky="nsew")
+        specialty_panel.columnconfigure(0, weight=1)
+        specialty_panel.columnconfigure(1, weight=1)
 
         saved_stock = self.settings.get("ingredient_stock", {}) if isinstance(self.settings.get("ingredient_stock"), dict) else {}
+
+        def add_ingredient(parent: ttk.Frame, ingredient: str, row: int, column: int) -> None:
+            default = bool(saved_stock.get(ingredient, ingredient in DEFAULT_AVAILABLE_INGREDIENTS))
+            variable = tk.BooleanVar(value=default)
+            variable.trace_add("write", self._stock_changed)
+            self.ing_vars[ingredient] = variable
+            ttk.Checkbutton(parent, text=ingredient, variable=variable).grid(
+                row=row,
+                column=column,
+                sticky="w",
+                padx=6,
+                pady=2,
+            )
+
         row = 0
-        for category, ingredients in INGREDIENT_CATEGORIES.items():
-            ttk.Label(inside, text=category, font=("Segoe UI", 9, "bold")).grid(row=row, column=0, columnspan=4, sticky="w", padx=4, pady=(8, 3))
+        for category in PRIMARY_INGREDIENT_CATEGORIES:
+            ingredients = INGREDIENT_CATEGORIES[category]
+            ttk.Label(primary_panel, text=category, font=("Segoe UI", 9, "bold")).grid(
+                row=row,
+                column=0,
+                columnspan=4,
+                sticky="w",
+                padx=4,
+                pady=(8, 3),
+            )
             row += 1
             for index, ingredient in enumerate(ingredients):
-                default = bool(saved_stock.get(ingredient, ingredient in {"Tourbe blonde", "Fibre de coco", "Perlite", "Pouzzolane", "Charbon actif", "Écorces de pin"}))
-                variable = tk.BooleanVar(value=default)
-                variable.trace_add("write", self._stock_changed)
-                self.ing_vars[ingredient] = variable
-                ttk.Checkbutton(inside, text=ingredient, variable=variable).grid(row=row + index // 4, column=index % 4, sticky="w", padx=6, pady=2)
+                add_ingredient(primary_panel, ingredient, row + index // 4, index % 4)
             row += (len(ingredients) + 3) // 4
+
+        specialty_ingredients = INGREDIENT_CATEGORIES[SPECIALTY_INGREDIENT_CATEGORY]
+        ttk.Label(
+            specialty_panel,
+            text=SPECIALTY_INGREDIENT_CATEGORY,
+            font=("Segoe UI", 9, "bold"),
+        ).grid(row=0, column=0, columnspan=2, sticky="w", padx=4, pady=(8, 3))
+        for index, ingredient in enumerate(specialty_ingredients):
+            add_ingredient(specialty_panel, ingredient, 1 + index // 2, index % 2)
 
         action_bar = ttk.Frame(main)
         action_bar.pack(fill="x", padx=8, pady=5)
