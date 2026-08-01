@@ -54,7 +54,7 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -68,18 +68,19 @@ jobs:
           python -m py_compile
           tools/reclassify_and_expand_families.py
           tools/reclassify_and_expand_families_fast.py
-      - name: Reclasser et enrichir
+          tools/finalize_family_reclassification.py
+      - name: Finaliser le reclassement et les métadonnées
         shell: bash
         run: |
-          if git log -1 --pretty=%B | grep -q '\[family-bot\]'; then
-            echo "Résultats déjà générés."
+          if git log -1 --pretty=%B | grep -q '\[family-final-bot\]'; then
+            echo "Résultats finaux déjà générés."
             exit 0
           fi
-          python tools/reclassify_and_expand_families_fast.py
+          python tools/finalize_family_reclassification.py
       - name: Enregistrer les résultats
         shell: bash
         run: |
-          if git log -1 --pretty=%B | grep -q '\[family-bot\]'; then
+          if git log -1 --pretty=%B | grep -q '\[family-final-bot\]'; then
             exit 0
           fi
           git config user.name "assistant-botanique-family-bot"
@@ -89,5 +90,5 @@ jobs:
             echo "Aucune modification."
             exit 0
           fi
-          git commit -m "data: reclasser et enrichir les familles [family-bot]"
+          git commit -m "data: finaliser le reclassement familial [family-final-bot]"
           git push origin HEAD:${{ github.event.pull_request.head.ref }}
