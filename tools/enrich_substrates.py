@@ -1,6 +1,7 @@
 """Enrichit toutes les fiches du catalogue avec des recettes de substrat sourcées."""
 from __future__ import annotations
 
+import copy
 import json
 import sys
 from collections import Counter
@@ -17,6 +18,33 @@ substrate_classifier.install()
 
 FAMILY_DIR = ROOT / "familles_plantes"
 REPORT_PATH = ROOT / "catalogue_metadata" / "substrate_audit.json"
+GENERATED_SUBSTRATE_KEYS = {
+    "categorie_horticole",
+    "modele_recherche",
+    "version_recherche",
+    "variantes",
+    "sources",
+}
+
+
+def _without_previous_generation(profile: dict) -> dict:
+    """Retire uniquement les champs ajoutés par une génération précédente."""
+    cleaned = copy.deepcopy(profile)
+    substrate = cleaned.get("substrat", {})
+    if not isinstance(substrate, dict) or not substrate.get("version_recherche"):
+        return cleaned
+
+    for key in GENERATED_SUBSTRATE_KEYS:
+        substrate.pop(key, None)
+    # Ces champs de compatibilité ont été écrits par le générateur avec la
+    # première variante. Ils doivent être recalculés avec la classification.
+    substrate.pop("composition_ideale", None)
+    substrate.pop("ingredients_recommandes", None)
+    substrate.pop("elements_interdits", None)
+    cleaned["substrat"] = substrate
+    cleaned.pop("roles", None)
+    cleaned.pop("interdits", None)
+    return cleaned
 
 
 def main() -> int:
@@ -36,7 +64,7 @@ def main() -> int:
             if not isinstance(profile, dict):
                 errors.append(f"{path.name}[{index}]: fiche invalide")
                 continue
-            enriched = enrich_profile(profile)
+            enriched = enrich_profile(_without_previous_generation(profile))
             validation = validate_resolved_profile(enriched)
             scientific = enriched.get("taxonomie", {}).get("nom_scientifique", f"index {index}")
             errors.extend(f"{path.name} — {scientific}: {message}" for message in validation)
