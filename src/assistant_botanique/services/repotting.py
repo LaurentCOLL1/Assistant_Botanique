@@ -8,6 +8,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Mapping
 
+from core import normalize_text
+
 
 @dataclass(frozen=True, slots=True)
 class RepottingRecommendation:
@@ -21,14 +23,14 @@ class RepottingRecommendation:
 
 def _substrate_components(profile: Mapping[str, Any]) -> tuple[tuple[str, float], ...]:
     substrate = profile.get("substrat") or profile.get("substrat_recommande")
-    text = str(substrate or "").casefold()
-    if any(marker in text for marker in ("orchid", "ecorce", "épiphy")):
+    text = normalize_text(substrate)
+    if any(marker in text for marker in ("orchid", "ecorce", "epiphy")):
         return (("écorces calibrées", 0.55), ("fibre ou sphaigne", 0.20), ("élément minéral drainant", 0.25))
-    if any(marker in text for marker in ("cactus", "succulent", "mineral", "minéral")):
+    if any(marker in text for marker in ("cactus", "succulent", "mineral")):
         return (("substrat organique tamisé", 0.30), ("pouzzolane ou pumice", 0.45), ("sable grossier ou gravier", 0.25))
     if any(marker in text for marker in ("carnivore", "tourbe", "sphaigne")):
         return (("tourbe blonde ou sphaigne adaptée", 0.70), ("perlite ou sable non calcaire", 0.30))
-    if any(marker in text for marker in ("aroid", "aracée", "araceae")):
+    if any(marker in text for marker in ("aroid", "aracee", "araceae")):
         return (("terreau fibreux", 0.45), ("écorces", 0.25), ("perlite ou pumice", 0.20), ("fibre de coco", 0.10))
     return (("terreau adapté", 0.60), ("composant drainant", 0.25), ("matière structurante", 0.15))
 
