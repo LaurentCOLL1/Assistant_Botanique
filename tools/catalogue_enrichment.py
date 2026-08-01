@@ -16,6 +16,7 @@ import json
 import re
 import sys
 import time
+import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -64,7 +65,7 @@ def clean_text(value: Any) -> str:
 
 
 def normalize(value: str) -> str:
-    value = value.casefold()
+    value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode().casefold()
     value = re.sub(r"[^a-z0-9]+", "-", value)
     return value.strip("-")
 
