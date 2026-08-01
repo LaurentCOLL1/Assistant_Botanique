@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "assistant-botanique"
-version = "3.1.0"
+version = "3.2.0"
 description = "Application de bureau pour gérer une collection de plantes, apprendre leur rythme de soins et documenter leur évolution."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -14,6 +14,7 @@ dependencies = [
   "Pillow>=10.4",
   "plyer>=2.1",
   "qrcode>=8.2",
+  "cryptography>=43.0",
 ]
 
 [project.optional-dependencies]
@@ -45,7 +46,6 @@ py-modules = [
   "ui_theme",
   "validate_data",
 ]
-
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
