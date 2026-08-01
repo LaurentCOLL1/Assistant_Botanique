@@ -1,12 +1,28 @@
 """Moteur de recettes de substrat, indépendant de l'interface."""
 from __future__ import annotations
 
+import copy
 import re
 from dataclasses import dataclass
 from typing import Any, Iterable, Mapping
 
 from core import ValidationError
-from substrate_knowledge import canonicalize_ingredient, resolved_substrate, select_variant
+import substrate_knowledge as substrate_knowledge_module
+
+# Une ancienne fiche peut mentionner « éviter l'eau stagnante ». Cette phrase
+# décrit un interdit et ne constitue jamais, à elle seule, un habitat aquatique.
+substrate_knowledge_module.AQUATIC_WORDS = tuple(
+    word for word in substrate_knowledge_module.AQUATIC_WORDS if word != "eau stagnante"
+)
+canonicalize_ingredient = substrate_knowledge_module.canonicalize_ingredient
+normalize_text = substrate_knowledge_module.normalize_text
+resolved_substrate = substrate_knowledge_module.resolved_substrate
+select_variant = substrate_knowledge_module.select_variant
+
+LEGACY_INGREDIENT_ALIASES = {
+    "coco": "Fibre de coco",
+    "tourbe": "Tourbe blonde",
+}
 
 
 @dataclass(frozen=True)
@@ -28,9 +44,8 @@ class RecipeResult:
     sources: tuple[tuple[str, str], ...] = ()
 
 
-def substrate_variants(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
-    """Retourne une ou deux variantes validées pour n'importe quelle fiche."""
-    return list(resolved_substrate(profile)["variantes"])
+def _canonical_ingredient(value: Any) -> str | None:
+    return canonicalize_ingredient(value) or LEGACY_INGREDIENT_ALIASES.get(normalize_text(value))
 
 
 def _structured_roles(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
@@ -40,6 +55,43 @@ def _structured_roles(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
     if isinstance(substrate, Mapping) and isinstance(substrate.get("roles"), list):
         return list(substrate["roles"])
     return []
+
+
+def _has_persisted_variants(profile: Mapping[str, Any]) -> bool:
+    substrate = profile.get("substrat", {})
+    return isinstance(substrate, Mapping) and isinstance(substrate.get("variantes"), list) and bool(substrate["variantes"])
+
+
+def _explicit_variant(profile: Mapping[str, Any]) -> dict[str, Any] | None:
+    """Conserve la priorité des recettes structurées historiques.
+
+    Les profils génériques et certains tests métiers possèdent déjà des rôles
+    explicites. Ils ne doivent pas être remplacés par un modèle horticole
+    général tant qu'aucune variante documentée n'a été persistée.
+    """
+    roles = _structured_roles(profile)
+    if not roles or _has_persisted_variants(profile):
+        return None
+    substrate = profile.get("substrat", {})
+    substrate = substrate if isinstance(substrate, Mapping) else {}
+    forbidden = profile.get("interdits") or substrate.get("ingredients_interdits") or substrate.get("elements_interdits") or []
+    if not isinstance(forbidden, list):
+        forbidden = []
+    return {
+        "nom": "Recette structurée",
+        "description": "Recette définie explicitement par le profil.",
+        "roles": copy.deepcopy(roles),
+        "interdits": list(forbidden),
+        "sources": [],
+    }
+
+
+def substrate_variants(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
+    """Retourne une ou deux variantes validées pour n'importe quelle fiche."""
+    explicit = _explicit_variant(profile)
+    if explicit:
+        return [explicit]
+    return list(resolved_substrate(profile)["variantes"])
 
 
 def _legacy_roles(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
@@ -56,13 +108,13 @@ def _legacy_roles(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
     recommended_raw = [str(item) for item in recommended_raw] if isinstance(recommended_raw, list) else []
     recommended = [
         canonical for item in recommended_raw
-        if (canonical := canonicalize_ingredient(item))
+        if (canonical := _canonical_ingredient(item))
     ]
     matches = re.findall(r"(\d+(?:[.,]\d+)?)\s*%\s*([^,;\n]+)", composition)
     roles: list[dict[str, Any]] = []
     for percentage, label in matches:
         ratio = float(percentage.replace(",", ".")) / 100
-        canonical = canonicalize_ingredient(label)
+        canonical = _canonical_ingredient(label)
         ingredients = [canonical] if canonical else []
         if not ingredients:
             words = [word for word in re.split(r"[/&()\s]+", label.lower()) if len(word) >= 4]
@@ -97,7 +149,7 @@ def normalize_roles(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
             ingredients = [ingredients]
         canonical: list[str] = []
         for ingredient in ingredients:
-            item = canonicalize_ingredient(ingredient)
+            item = _canonical_ingredient(ingredient)
             if item and item not in canonical:
                 canonical.append(item)
         if not canonical:
@@ -111,6 +163,15 @@ def normalize_roles(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
     return normalized
 
 
+def _canonical_stock(stock: Mapping[str, bool]) -> dict[str, bool]:
+    result: dict[str, bool] = {}
+    for name, available in stock.items():
+        canonical = _canonical_ingredient(name)
+        if canonical:
+            result[canonical] = result.get(canonical, False) or bool(available)
+    return result
+
+
 def build_recipe(
     profile: Mapping[str, Any],
     volume_l: float,
@@ -119,19 +180,29 @@ def build_recipe(
 ) -> RecipeResult:
     if volume_l <= 0:
         raise ValidationError("Le volume doit être strictement positif.")
-    try:
-        selected_profile, variant = select_variant(profile, variant_index)
-    except (TypeError, ValueError) as exc:
-        raise ValidationError(str(exc)) from exc
+    explicit = _explicit_variant(profile)
+    if explicit:
+        selected_profile = copy.deepcopy(dict(profile))
+        selected_profile["roles"] = copy.deepcopy(explicit["roles"])
+        variant = explicit
+    else:
+        try:
+            selected_profile, variant = select_variant(profile, variant_index)
+        except (TypeError, ValueError) as exc:
+            raise ValidationError(str(exc)) from exc
 
     lines: list[RecipeLine] = []
     warnings: list[str] = []
     roles = normalize_roles(selected_profile)
-    forbidden = set(variant.get("interdits", []))
+    forbidden = {
+        canonical for item in variant.get("interdits", [])
+        if (canonical := _canonical_ingredient(item))
+    }
+    canonical_stock = _canonical_stock(stock)
     for role in roles:
         target = volume_l * role["ratio"]
         possible = tuple(item for item in role["ing"] if item not in forbidden)
-        available = tuple(item for item in possible if stock.get(item, False))
+        available = tuple(item for item in possible if canonical_stock.get(item, False))
         if available:
             per_item = target / len(available)
             allocations = tuple((item, per_item) for item in available)
@@ -169,19 +240,23 @@ def forbidden_ingredients(
     selected: Iterable[str],
     variant_index: int = 0,
 ) -> list[str]:
-    try:
-        _selected_profile, variant = select_variant(profile, variant_index)
-    except (TypeError, ValueError):
-        substrate = profile.get("substrat", {})
-        substrate = substrate if isinstance(substrate, Mapping) else {}
-        raw = profile.get("interdits") or substrate.get("ingredients_interdits") or substrate.get("elements_interdits") or []
-        variant = {"interdits": raw if isinstance(raw, list) else []}
+    explicit = _explicit_variant(profile)
+    if explicit:
+        variant = explicit
+    else:
+        try:
+            _selected_profile, variant = select_variant(profile, variant_index)
+        except (TypeError, ValueError):
+            substrate = profile.get("substrat", {})
+            substrate = substrate if isinstance(substrate, Mapping) else {}
+            raw = profile.get("interdits") or substrate.get("ingredients_interdits") or substrate.get("elements_interdits") or []
+            variant = {"interdits": raw if isinstance(raw, list) else []}
     forbidden = {
         canonical for item in variant.get("interdits", [])
-        if (canonical := canonicalize_ingredient(item))
+        if (canonical := _canonical_ingredient(item))
     }
     found = {
         canonical for item in selected
-        if (canonical := canonicalize_ingredient(item)) in forbidden
+        if (canonical := _canonical_ingredient(item)) in forbidden
     }
     return sorted(found)
