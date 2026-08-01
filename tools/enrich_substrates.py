@@ -10,14 +10,10 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-import substrate_knowledge  # noqa: E402
+import substrate_classifier  # noqa: E402
 from substrate_knowledge import enrich_profile, validate_resolved_profile  # noqa: E402
 
-# Les anciennes fiches mentionnent souvent « éviter l'eau stagnante » : cette
-# phrase décrit un interdit et ne doit pas déclencher le modèle aquatique.
-substrate_knowledge.AQUATIC_WORDS = tuple(
-    word for word in substrate_knowledge.AQUATIC_WORDS if word != "eau stagnante"
-)
+substrate_classifier.install()
 
 FAMILY_DIR = ROOT / "familles_plantes"
 REPORT_PATH = ROOT / "catalogue_metadata" / "substrate_audit.json"
