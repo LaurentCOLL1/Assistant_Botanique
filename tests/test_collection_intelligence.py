@@ -121,7 +121,7 @@ def test_mobile_photo_is_verified_and_registered(tmp_path):
     assert result["path"].endswith(".jpg")
     assert len(database.list_photos("p1")) == 1
     server = LocalCompanionServer(database, {"epipremnum-aureum": sample_profile()}, token="secret-token")
-    page = server._plant_page("p1")
+    page = server._plant_page("p1", "?token=secret-token")
     assert 'capture="environment"' in page
     assert "/api/photo" in page
 
