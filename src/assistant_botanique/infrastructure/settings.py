@@ -12,6 +12,7 @@ from assistant_botanique.paths import SETTINGS_FILE
 DEFAULT_SETTINGS = {
     "theme": "light",
     "geometry": "1200x800",
+    "ui_mode": "advanced",
     "ingredient_stock": {},
     "notifications": {"enabled": True, "time": "09:00"},
     "update_checks": True,
