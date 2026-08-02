@@ -1,5 +1,6 @@
 """Fonctions additionnelles de productivité et d'usage mobile."""
 
+from .collection_photo_viewer import install_collection_photo_viewer
 from .followup_fixes import install_followup_fixes
 from .integration import install_productivity_features as _install_productivity_features
 from .runtime_fixes import install_runtime_fixes
@@ -15,6 +16,7 @@ def install_productivity_features() -> None:
     install_runtime_fixes()
     install_usability_fixes()
     install_followup_fixes()
+    install_collection_photo_viewer()
     install_watering_workflow()
     install_watering_initialization_guard()
     install_watering_deferral()
