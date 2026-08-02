@@ -6,12 +6,14 @@ import argparse
 from app_data import DATABASE_BY_ID
 from storage import CollectionRepository
 
+from assistant_botanique import __version__
 from assistant_botanique.infrastructure.settings import SettingsRepository
 from assistant_botanique.services.notifications import NotificationService
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(prog="assistant-botanique")
+    parser.add_argument("--version", action="version", version=__version__)
     parser.add_argument("--notify", action="store_true", help="Afficher les contrôles de plantes arrivés à échéance")
     parser.add_argument("--install-notifications", metavar="HH:MM", help="Installer la tâche planifiée Windows")
     args = parser.parse_args()
