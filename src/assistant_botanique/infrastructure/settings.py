@@ -23,6 +23,18 @@ DEFAULT_SETTINGS = {
         "group_by_location": True,
         "max_items": 8,
     },
+    "automatic_backups": {
+        "enabled": True,
+        "cadence": "daily",
+        "retention": 14,
+        "last_run": "",
+        "last_path": "",
+        "last_error": "",
+    },
+    "onboarding": {
+        "completed": False,
+        "dismissed": False,
+    },
     "weather": {
         "enabled": False,
         "location_name": "",
@@ -34,6 +46,7 @@ DEFAULT_SETTINGS = {
         "lan": False,
         "port": 8765,
         "token": "",
+        "pwa_enabled": True,
     },
     "accessibility": {
         "text_scale": 1.0,
