@@ -28,7 +28,7 @@ jobs:
             const fs = require('fs');
             const owner = context.repo.owner;
             const repo = context.repo.repo;
-            const tag = 'v3.5.1-beta.4';
+            const tag = 'v3.5.1-beta.5';
             try {
               await github.rest.repos.getReleaseByTag({ owner, repo, tag });
               core.info(`La release ${tag} existe déjà.`);
@@ -36,13 +36,13 @@ jobs:
             } catch (error) {
               if (error.status !== 404) throw error;
             }
-            const body = fs.readFileSync('docs/releases/v3.5.1-beta.4.md', 'utf8');
+            const body = fs.readFileSync('docs/releases/v3.5.1-beta.5.md', 'utf8');
             await github.rest.repos.createRelease({
               owner,
               repo,
               tag_name: tag,
               target_commitish: process.env.RELEASE_SHA,
-              name: 'Assistant Botanique 3.5.1 Beta 4',
+              name: 'Assistant Botanique 3.5.1 Beta 5',
               body,
               prerelease: true,
               draft: false,
