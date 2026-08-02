@@ -1,4 +1,4 @@
-"""Compagnon web local avec appairage QR, photos et écriture limitée."""
+"""Compagnon web local, PWA, photos et stock par code-barres."""
 from __future__ import annotations
 
 import html
@@ -15,6 +15,9 @@ from http.cookies import SimpleCookie
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any, Mapping
 
+from assistant_botanique.features.inventory import INVENTORY_CATEGORIES, INVENTORY_SUBCATEGORIES, INVENTORY_UNITS
+from assistant_botanique.features.photo_diagnostic import MAX_DIAGNOSTIC_BYTES, analyze_photo
+from assistant_botanique.features.repository import FeatureRepository
 from assistant_botanique.infrastructure.advanced_repository import AdvancedRepository
 from assistant_botanique.infrastructure.database import Database
 from assistant_botanique.services.device_pairing import DevicePairingService, PairingSession
@@ -22,14 +25,8 @@ from assistant_botanique.services.photos import MAX_UPLOAD_BYTES, PhotoService
 from assistant_botanique.services.planner import CarePlanner
 
 ALLOWED_QUICK_ACTIONS = {
-    "substrat_sec",
-    "encore_humide",
-    "arrosage",
-    "fertilisation",
-    "rempotage",
-    "taille",
-    "traitement",
-    "observation",
+    "substrat_sec", "encore_humide", "arrosage", "fertilisation", "rempotage",
+    "taille", "traitement", "observation",
 }
 DEVICE_COOKIE = "ab_device"
 
@@ -93,6 +90,7 @@ class LocalCompanionServer:
         self.database = database
         self.profiles_by_id = profiles_by_id
         self.advanced = AdvancedRepository(database)
+        self.features = FeatureRepository(database)
         self.photos = PhotoService(database)
         self.pairing = DevicePairingService(database)
         self.token = token or secrets.token_urlsafe(24)
@@ -134,7 +132,7 @@ class LocalCompanionServer:
         service = self
 
         class Handler(BaseHTTPRequestHandler):
-            server_version = "AssistantBotaniqueLocal/1.2"
+            server_version = "AssistantBotaniqueLocal/2.0"
 
             def log_message(self, _format: str, *_args) -> None:
                 return
@@ -152,7 +150,7 @@ class LocalCompanionServer:
                 cookie = SimpleCookie()
                 try:
                     cookie.load(self.headers.get("Cookie", ""))
-                except Exception:  # noqa: BLE001
+                except Exception:
                     return ""
                 morsel = cookie.get(DEVICE_COOKIE)
                 return urllib.parse.unquote(morsel.value) if morsel else ""
@@ -187,23 +185,25 @@ class LocalCompanionServer:
                 *,
                 status: int = HTTPStatus.OK,
                 content_type: str = "text/html; charset=utf-8",
+                cache_control: str = "no-store",
             ) -> None:
                 raw = content.encode("utf-8") if isinstance(content, str) else content
                 self.send_response(status)
                 self.send_header("Content-Type", content_type)
                 self.send_header("Content-Length", str(len(raw)))
-                self.send_header("Cache-Control", "no-store")
+                self.send_header("Cache-Control", cache_control)
                 self.send_header("X-Content-Type-Options", "nosniff")
                 self.send_header("Referrer-Policy", "no-referrer")
+                self.send_header(
+                    "Content-Security-Policy",
+                    "default-src 'self'; img-src 'self' data: blob:; media-src 'self' blob:; "
+                    "script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'",
+                )
                 self.end_headers()
                 self.wfile.write(raw)
 
             def _json(self, payload: Any, status: int = HTTPStatus.OK) -> None:
-                self._send(
-                    json.dumps(payload, ensure_ascii=False),
-                    status=status,
-                    content_type="application/json; charset=utf-8",
-                )
+                self._send(json.dumps(payload, ensure_ascii=False), status=status, content_type="application/json; charset=utf-8")
 
             def _redirect(self, path: str, *, cookie: str | None = None) -> None:
                 self.send_response(HTTPStatus.SEE_OTHER)
@@ -215,23 +215,30 @@ class LocalCompanionServer:
 
             def _forbidden(self) -> None:
                 self._send(
-                    service._message_page(
-                        "Accès refusé",
-                        "Ce téléphone n'est pas associé ou son accès a été révoqué.",
-                    ),
+                    service._message_page("Accès refusé", "Ce téléphone n'est pas associé ou son accès a été révoqué."),
                     status=HTTPStatus.FORBIDDEN,
                 )
 
             def _pair_code(self, path: str) -> str:
                 return urllib.parse.unquote(path.removeprefix("/pair/")).strip()
 
-            def do_GET(self) -> None:  # noqa: N802
-                parsed = urllib.parse.urlsplit(self.path)
-                path = parsed.path
+            def do_GET(self) -> None:
+                path = urllib.parse.urlsplit(self.path).path
+                if path == "/manifest.webmanifest":
+                    self._send(service._manifest(), content_type="application/manifest+json; charset=utf-8", cache_control="public, max-age=3600")
+                    return
+                if path == "/service-worker.js":
+                    self._send(service._service_worker(), content_type="application/javascript; charset=utf-8", cache_control="no-cache")
+                    return
+                if path == "/icon.svg":
+                    self._send(service._icon_svg(), content_type="image/svg+xml; charset=utf-8", cache_control="public, max-age=86400")
+                    return
+                if path == "/offline":
+                    self._send(service._offline_page(), cache_control="public, max-age=3600")
+                    return
                 if path.startswith("/pair/"):
                     code = self._pair_code(path)
-                    valid = service.pairing.session_is_valid(code)
-                    self._send(service._pairing_page(code, valid=valid))
+                    self._send(service._pairing_page(code, valid=service.pairing.session_is_valid(code)))
                     return
                 if not self._authorized():
                     self._forbidden()
@@ -242,6 +249,9 @@ class LocalCompanionServer:
                     return
                 if path == "/api/sensors":
                     self._json(service.advanced.latest_sensor_readings())
+                    return
+                if path == "/api/inventory":
+                    self._json(service.features.list_inventory_enriched())
                     return
                 if path == "/api/photos":
                     plant_id = (self._params().get("plant_id") or [""])[0]
@@ -255,8 +265,13 @@ class LocalCompanionServer:
                             "plants": len(service.database.load_plants()),
                             "due_tasks": len(tasks),
                             "photos": len(service.database.list_photos()),
+                            "inventory": len(service.features.list_inventory_enriched()),
                         }
                     )
+                    return
+                if path == "/stock":
+                    saved = (self._params().get("saved") or [""])[0] == "1"
+                    self._send(service._stock_page(suffix, saved=saved))
                     return
                 if path.startswith("/plant/"):
                     plant_id = urllib.parse.unquote(path.removeprefix("/plant/"))
@@ -274,9 +289,8 @@ class LocalCompanionServer:
                     return
                 self._send("<h1>Page introuvable</h1>", status=HTTPStatus.NOT_FOUND)
 
-            def do_POST(self) -> None:  # noqa: N802
-                parsed = urllib.parse.urlsplit(self.path)
-                path = parsed.path
+            def do_POST(self) -> None:
+                path = urllib.parse.urlsplit(self.path).path
                 if path.startswith("/pair/"):
                     length = min(int(self.headers.get("Content-Length", "0") or 0), 16_384)
                     payload = urllib.parse.parse_qs(self.rfile.read(length).decode("utf-8", "replace"))
@@ -307,7 +321,7 @@ class LocalCompanionServer:
                             metadata=payload.get("metadata") if isinstance(payload.get("metadata"), dict) else None,
                             ingest_token=str(payload.get("token") or ""),
                         )
-                    except Exception as exc:  # noqa: BLE001
+                    except Exception as exc:
                         self._json({"ok": False, "error": str(exc)}, HTTPStatus.BAD_REQUEST)
                         return
                     self._json({"ok": True}, HTTPStatus.CREATED)
@@ -316,9 +330,10 @@ class LocalCompanionServer:
                     self._forbidden()
                     return
                 suffix = self._auth_suffix()
-                if path == "/api/photo":
+                if path in {"/api/photo", "/api/diagnostic"}:
                     declared = int(self.headers.get("Content-Length", "0") or 0)
-                    if declared <= 0 or declared > MAX_UPLOAD_BYTES + 1_000_000:
+                    limit = (MAX_UPLOAD_BYTES if path == "/api/photo" else MAX_DIAGNOSTIC_BYTES) + 1_000_000
+                    if declared <= 0 or declared > limit:
                         self._json(
                             {"ok": False, "error": "Taille de formulaire invalide."},
                             HTTPStatus.REQUEST_ENTITY_TOO_LARGE,
@@ -332,16 +347,25 @@ class LocalCompanionServer:
                         )
                         filename, photo = files["photo"]
                         plant_id = str(fields.get("plant_id") or "")
-                        service.photos.add_photo_bytes(
-                            plant_id,
-                            photo,
-                            filename=filename,
-                            caption=str(fields.get("caption") or ""),
-                        )
-                    except Exception as exc:  # noqa: BLE001
+                        if path == "/api/photo":
+                            service.photos.add_photo_bytes(
+                                plant_id,
+                                photo,
+                                filename=filename,
+                                caption=str(fields.get("caption") or ""),
+                            )
+                        else:
+                            report = analyze_photo(photo)
+                            service.features.save_photo_diagnostic(
+                                plant_id=plant_id or None,
+                                image_name=filename,
+                                summary=report.summary,
+                                report=report.as_dict(),
+                            )
+                    except Exception as exc:
                         self._send(
                             service._message_page(
-                                "Photo refusée",
+                                "Image refusée",
                                 str(exc),
                                 plant_id=fields.get("plant_id", ""),
                                 auth_suffix=suffix,
@@ -349,12 +373,16 @@ class LocalCompanionServer:
                             status=HTTPStatus.BAD_REQUEST,
                         )
                         return
-                    target = _path_with_query(
-                        f"/plant/{urllib.parse.quote(plant_id)}",
-                        suffix,
-                        photo="added",
-                    )
-                    self._redirect(target)
+                    if path == "/api/diagnostic":
+                        self._send(service._diagnostic_page(report, plant_id, suffix))
+                    else:
+                        self._redirect(
+                            _path_with_query(
+                                f"/plant/{urllib.parse.quote(plant_id)}",
+                                suffix,
+                                photo="added",
+                            )
+                        )
                     return
 
                 length = min(int(self.headers.get("Content-Length", "0") or 0), 1_000_000)
@@ -374,14 +402,30 @@ class LocalCompanionServer:
                         return
                     try:
                         service.database.add_care_event(plant_id, action, note=note or action)
-                    except Exception as exc:  # noqa: BLE001
+                    except Exception as exc:
                         self._json({"ok": False, "error": str(exc)}, HTTPStatus.BAD_REQUEST)
                         return
-                    target = f"/plant/{urllib.parse.quote(plant_id)}{suffix}"
                     if "application/json" in content_type:
                         self._json({"ok": True}, HTTPStatus.CREATED)
                     else:
-                        self._redirect(target)
+                        self._redirect(f"/plant/{urllib.parse.quote(plant_id)}{suffix}")
+                    return
+                if path == "/api/inventory":
+                    try:
+                        item = service.features.save_mobile_inventory_item(payload)
+                    except Exception as exc:
+                        if "application/json" in content_type:
+                            self._json({"ok": False, "error": str(exc)}, HTTPStatus.BAD_REQUEST)
+                        else:
+                            self._send(
+                                service._message_page("Produit refusé", str(exc), auth_suffix=suffix),
+                                status=HTTPStatus.BAD_REQUEST,
+                            )
+                        return
+                    if "application/json" in content_type:
+                        self._json({"ok": True, "item": item}, HTTPStatus.CREATED)
+                    else:
+                        self._redirect(_path_with_query("/stock", suffix, saved="1"))
                     return
                 self._json({"ok": False, "error": "Route inconnue."}, HTTPStatus.NOT_FOUND)
 
@@ -405,12 +449,11 @@ class LocalCompanionServer:
         self.thread = None
 
     def _home_page(self, auth_suffix: str, *, device_name: str = "") -> str:
-        cards = []
-        for plant in self.database.load_plants():
-            plant_id = html.escape(str(plant["id"]))
-            cards.append(
-                f'<li><a href="/plant/{plant_id}{auth_suffix}">{html.escape(str(plant["surnom"]))}</a></li>'
-            )
+        cards = [
+            f'<li><a href="/plant/{html.escape(str(plant["id"]))}{auth_suffix}">'
+            f'{html.escape(str(plant["surnom"]))}</a></li>'
+            for plant in self.database.load_plants()
+        ]
         sensors = self.advanced.latest_sensor_readings()
         sensor_html = "".join(
             f"<li>{html.escape(str(item['name']))}: "
@@ -424,17 +467,15 @@ class LocalCompanionServer:
             for item in tasks[:12]
         )
         paired = (
-            f"<p class='success'>Téléphone associé : {html.escape(device_name)}. "
-            "Les changements sont synchronisés en direct avec l'ordinateur.</p>"
+            f"<p class='success'>Téléphone associé : {html.escape(device_name)}. Synchronisation locale active.</p>"
             if device_name else ""
         )
         return self._page(
             "Assistant Botanique",
             f"""
-            <h1>Assistant Botanique</h1>
-            {paired}
-            <p>Compagnon local. Les données et photos restent sur cet ordinateur.</p>
-            <p>Ouvrez une plante pour ajouter un soin ou prendre une photo.</p>
+            <h1>Assistant Botanique</h1>{paired}
+            <p>Compagnon local installable. Les données et photos restent sur cet ordinateur.</p>
+            <nav><a class="button" href="/stock{auth_suffix}">📦 Scanner ou ajouter un produit</a></nav>
             <p><strong>Dernière synchronisation :</strong> {datetime.now():%d/%m/%Y %H:%M:%S}</p>
             <h2>Contrôles et soins du jour</h2><ul>{task_html or '<li>Aucun soin planifié aujourd’hui</li>'}</ul>
             <h2>Collection</h2><ul>{''.join(cards) or '<li>Aucune plante</li>'}</ul>
@@ -461,28 +502,134 @@ class LocalCompanionServer:
             "<p class='success'>Photo ajoutée et intégrée au journal de l'ordinateur.</p>"
             if photo_added else ""
         )
+        safe_id = html.escape(plant_id)
         return self._page(
             str(plant["surnom"]),
             f"""
             <h1>{html.escape(str(plant["surnom"]))}</h1>
             <p>{html.escape(str(plant["species_id"]))}</p>
-            <p>Dernier arrosage : {html.escape(str(plant["date_arrosage"]))} · {photo_count} photo(s)</p>
-            {notice}
+            <p>Dernier arrosage : {html.escape(str(plant["date_arrosage"]))} · {photo_count} photo(s)</p>{notice}
             <section><h2>Prendre une photo</h2>
             <form method="post" action="/api/photo{auth_suffix}" enctype="multipart/form-data">
-              <input type="hidden" name="plant_id" value="{html.escape(plant_id)}">
+              <input type="hidden" name="plant_id" value="{safe_id}">
               <label>Photo <input type="file" name="photo" accept="image/jpeg,image/png,image/webp" capture="environment" required></label>
               <label>Légende <input type="text" name="caption" placeholder="Nouvelle pousse, symptôme…"></label>
               <button type="submit">Envoyer vers l'ordinateur</button>
             </form></section>
+            <section><h2>Diagnostic assisté par photo</h2>
+            <p>L'analyse est locale et indicative.</p>
+            <form method="post" action="/api/diagnostic{auth_suffix}" enctype="multipart/form-data">
+              <input type="hidden" name="plant_id" value="{safe_id}">
+              <label>Photo du symptôme <input type="file" name="photo" accept="image/jpeg,image/png,image/webp" capture="environment" required></label>
+              <button type="submit">Analyser la photo</button>
+            </form></section>
             <section><h2>Action rapide</h2>
             <form method="post" action="/api/care{auth_suffix}">
-              <input type="hidden" name="plant_id" value="{html.escape(plant_id)}">
-              <input type="text" name="note" placeholder="Note facultative">
-              <div class="actions">{buttons}</div>
+              <input type="hidden" name="plant_id" value="{safe_id}">
+              <input type="text" name="note" placeholder="Note facultative"><div class="actions">{buttons}</div>
             </form></section>
             <p><a href="/{auth_suffix}">Retour</a></p>
             """,
+        )
+
+    def _stock_page(self, auth_suffix: str, *, saved: bool = False) -> str:
+        categories = "".join(
+            f'<option value="{html.escape(value)}">{html.escape(value)}</option>'
+            for value in INVENTORY_CATEGORIES
+        )
+        units = "".join(
+            f'<option value="{html.escape(value)}">{html.escape(value)}</option>'
+            for value in INVENTORY_UNITS
+        )
+        subcategories_json = html.escape(json.dumps(INVENTORY_SUBCATEGORIES, ensure_ascii=False), quote=True)
+        items = self.features.list_inventory_enriched()
+        item_rows = "".join(
+            f"<li><strong>{html.escape(str(item['name']))}</strong> — "
+            f"{html.escape(str(item.get('subcategory') or item['category']))} — "
+            f"{item['quantity']:g} {html.escape(str(item['unit']))}</li>"
+            for item in items[:80]
+        )
+        notice = "<p class='success'>Produit enregistré dans le stock de l'ordinateur.</p>" if saved else ""
+        return self._page(
+            "Stock mobile",
+            f"""
+            <h1>Ajouter un produit</h1>{notice}
+            <p>Scannez le code-barres avec l'appareil photo ou saisissez-le manuellement.</p>
+            <section>
+              <video id="barcode-video" playsinline hidden></video>
+              <button type="button" id="scan-barcode">📷 Scanner le code-barres</button>
+              <p id="scan-status" class="muted"></p>
+              <form method="post" action="/api/inventory{auth_suffix}" id="inventory-form">
+                <label>Code-barres <input id="barcode" name="barcode" inputmode="numeric" autocomplete="off"></label>
+                <label>Nom du produit <input name="name" required maxlength="160"></label>
+                <label>Marque <input name="brand" maxlength="120"></label>
+                <label>Catégorie <select id="category" name="category">{categories}</select></label>
+                <label>Sous-catégorie <select id="subcategory" name="subcategory"></select></label>
+                <label>Unité <select name="unit">{units}</select></label>
+                <label>Quantité <input name="quantity" type="number" min="0" step="0.1" value="1" required></label>
+                <label>Seuil d'alerte <input name="threshold" type="number" min="0" step="0.1" value="0"></label>
+                <label>Expiration <input name="expires_on" type="date"></label>
+                <label>Notes <textarea name="notes" rows="3"></textarea></label>
+                <button type="submit">Enregistrer le produit</button>
+              </form>
+            </section>
+            <h2>Stock actuel</h2><ul>{item_rows or '<li>Aucun produit</li>'}</ul>
+            <p><a href="/{auth_suffix}">Retour</a></p>
+            <script>
+            const subcategories = JSON.parse("{subcategories_json}");
+            const category = document.getElementById('category');
+            const subcategory = document.getElementById('subcategory');
+            function refreshSubcategories() {{
+              subcategory.innerHTML = '';
+              (subcategories[category.value] || subcategories['Autre'] || []).forEach(value => {{
+                const option = document.createElement('option');
+                option.value = value; option.textContent = value; subcategory.appendChild(option);
+              }});
+            }}
+            category.addEventListener('change', refreshSubcategories); refreshSubcategories();
+            const scanButton = document.getElementById('scan-barcode');
+            const status = document.getElementById('scan-status');
+            const video = document.getElementById('barcode-video');
+            scanButton.addEventListener('click', async () => {{
+              if (!('BarcodeDetector' in window) || !navigator.mediaDevices?.getUserMedia) {{
+                status.textContent = 'Lecture automatique indisponible sur ce navigateur. Saisissez le numéro manuellement.'; return;
+              }}
+              let stream;
+              try {{
+                const detector = new BarcodeDetector({{formats:['ean_13','ean_8','upc_a','upc_e','code_128','code_39','itf']}});
+                stream = await navigator.mediaDevices.getUserMedia({{video:{{facingMode:'environment'}}}});
+                video.srcObject = stream; video.hidden = false; await video.play();
+                status.textContent = 'Cadrez le code-barres…';
+                const deadline = Date.now() + 20000;
+                while (Date.now() < deadline) {{
+                  const results = await detector.detect(video);
+                  if (results.length) {{
+                    document.getElementById('barcode').value = results[0].rawValue;
+                    status.textContent = 'Code détecté.'; break;
+                  }}
+                  await new Promise(resolve => setTimeout(resolve, 350));
+                }}
+              }} catch (error) {{ status.textContent = 'Scanner indisponible : ' + error.message; }}
+              finally {{ if (stream) stream.getTracks().forEach(track => track.stop()); video.hidden = true; }}
+            }});
+            </script>
+            """,
+        )
+
+    def _diagnostic_page(self, report, plant_id: str, auth_suffix: str) -> str:
+        findings = "".join(
+            "<section><h2>" + html.escape(item.title) + "</h2>"
+            + f"<p><strong>Confiance :</strong> {html.escape(item.confidence)}</p>"
+            + f"<p>{html.escape(item.explanation)}</p><ul>"
+            + "".join(f"<li>{html.escape(check)}</li>" for check in item.checks)
+            + "</ul></section>"
+            for item in report.findings
+        )
+        back = f"/plant/{urllib.parse.quote(plant_id)}{auth_suffix}" if plant_id else f"/{auth_suffix}"
+        return self._page(
+            "Diagnostic photo",
+            f"<h1>{html.escape(report.summary)}</h1>{findings}"
+            f"<p class='warning'>{html.escape(report.disclaimer)}</p><p><a href='{back}'>Retour</a></p>",
         )
 
     def _pairing_page(self, code: str, *, valid: bool) -> str:
@@ -496,14 +643,11 @@ class LocalCompanionServer:
             "Associer ce téléphone",
             f"""
             <h1>Associer ce téléphone</h1>
-            <p>Cette association donne accès à la collection, aux soins et à l’envoi de photos sur ce réseau local.</p>
+            <p>Cette association donne accès à la collection, aux soins, au stock et aux photos sur ce réseau local.</p>
             <form method="post" action="/pair/{safe_code}">
-              <label>Nom de l’appareil
-                <input name="device_name" maxlength="80" value="Mon téléphone" required>
-              </label>
+              <label>Nom de l’appareil <input name="device_name" maxlength="80" value="Mon téléphone" required></label>
               <button type="submit">Associer et synchroniser</button>
-            </form>
-            <p>Le QR code est à usage unique et expire après cinq minutes.</p>
+            </form><p>Le QR code est à usage unique et expire après cinq minutes.</p>
             """,
         )
 
@@ -522,14 +666,67 @@ class LocalCompanionServer:
         )
 
     @staticmethod
+    def _manifest() -> str:
+        return json.dumps(
+            {
+                "name": "Assistant Botanique",
+                "short_name": "Botanique",
+                "start_url": "/",
+                "scope": "/",
+                "display": "standalone",
+                "background_color": "#f4f8f1",
+                "theme_color": "#2f6f3e",
+                "description": "Compagnon local de gestion des plantes et du stock.",
+                "icons": [
+                    {
+                        "src": "/icon.svg",
+                        "sizes": "any",
+                        "type": "image/svg+xml",
+                        "purpose": "any maskable",
+                    }
+                ],
+            },
+            ensure_ascii=False,
+        )
+
+    @staticmethod
+    def _service_worker() -> str:
+        return """
+const CACHE='assistant-botanique-shell-v2';
+const SHELL=['/offline','/manifest.webmanifest','/icon.svg'];
+self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL))));
+self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))));
+self.addEventListener('fetch',event=>{
+  if(event.request.method!=='GET') return;
+  const url=new URL(event.request.url);
+  if(url.pathname==='/manifest.webmanifest'||url.pathname==='/icon.svg'||url.pathname==='/offline'){
+    event.respondWith(caches.match(event.request).then(hit=>hit||fetch(event.request))); return;
+  }
+  if(event.request.mode==='navigate') event.respondWith(fetch(event.request).catch(()=>caches.match('/offline')));
+});
+"""
+
+    @staticmethod
+    def _icon_svg() -> str:
+        return """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="96" fill="#2f6f3e"/><path d="M256 420V224" stroke="#fff" stroke-width="34" stroke-linecap="round"/><path d="M254 264C116 250 82 142 92 78c91 4 177 49 185 166" fill="#9bd18b" stroke="#fff" stroke-width="18"/><path d="M258 314c125-11 177-91 170-164-86 2-159 44-174 142" fill="#c6e8ad" stroke="#fff" stroke-width="18"/></svg>"""
+
+    @classmethod
+    def _offline_page(cls) -> str:
+        return cls._page(
+            "Hors connexion",
+            "<h1>Hors connexion</h1><p>Reconnectez le téléphone au réseau local de l'ordinateur pour accéder aux données.</p>",
+        )
+
+    @staticmethod
     def _page(title: str, body: str) -> str:
-        return f"""<!doctype html>
-<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{html.escape(title)}</title>
+        return f"""<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>{html.escape(title)}</title><meta name="theme-color" content="#2f6f3e"><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg">
 <style>
-body {{ font-family:system-ui,sans-serif; max-width:760px; margin:auto; padding:20px; line-height:1.45; }}
-li {{ margin:10px 0; }} section {{ border:1px solid #aaa; border-radius:10px; padding:14px; margin:18px 0; }}
-button {{ padding:12px; margin:8px 4px; min-height:44px; }}
-input {{ display:block; box-sizing:border-box; padding:10px; margin:8px 0 14px; width:min(100%,520px); }}
+:root {{ color-scheme:light dark; }} body {{ font-family:system-ui,sans-serif; max-width:760px; margin:auto; padding:20px; line-height:1.45; }}
+li {{ margin:10px 0; }} section {{ border:1px solid #8888; border-radius:12px; padding:14px; margin:18px 0; }}
+button,.button {{ display:inline-block; padding:12px; margin:8px 4px; min-height:44px; border-radius:8px; }}
+input,select,textarea {{ display:block; box-sizing:border-box; padding:10px; margin:8px 0 14px; width:min(100%,520px); }}
+video {{ width:100%; max-height:320px; background:#111; border-radius:10px; }}
 .actions {{ margin-top:10px; }} .success {{ padding:10px; background:#d9f8df; color:#123d1d; border-radius:8px; }}
-</style></head><body>{body}</body></html>"""
+.warning {{ padding:10px; background:#fff0c7; color:#4a3500; border-radius:8px; }} .muted {{ opacity:.75; }}
+</style></head><body>{body}<script>if('serviceWorker' in navigator) navigator.serviceWorker.register('/service-worker.js').catch(()=>{{}});</script></body></html>"""
