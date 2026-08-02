@@ -8,9 +8,11 @@ from typing import Any, Iterable, Mapping
 
 from core import ValidationError
 import substrate_classifier
+import substrate_consensus
 import substrate_knowledge as substrate_knowledge_module
 
 substrate_classifier.install()
+substrate_consensus.install()
 canonicalize_ingredient = substrate_knowledge_module.canonicalize_ingredient
 normalize_text = substrate_knowledge_module.normalize_text
 resolved_substrate = substrate_knowledge_module.resolved_substrate
@@ -60,12 +62,13 @@ def _has_persisted_variants(profile: Mapping[str, Any]) -> bool:
 
 
 def _explicit_variant(profile: Mapping[str, Any]) -> dict[str, Any] | None:
-    """Conserve la priorité des recettes structurées historiques.
+    """Conserve les recettes structurées ponctuelles hors catalogue.
 
-    Les profils génériques et certains tests métiers possèdent déjà des rôles
-    explicites. Ils ne doivent pas être remplacés par un modèle horticole
-    général tant qu'aucune variante documentée n'a été persistée.
+    Les fiches du catalogue possèdent un identifiant stable et passent toujours
+    par le consensus horticole afin de recevoir trois variantes homogènes.
     """
+    if profile.get("id"):
+        return None
     roles = _structured_roles(profile)
     if not roles or _has_persisted_variants(profile):
         return None
@@ -84,7 +87,7 @@ def _explicit_variant(profile: Mapping[str, Any]) -> dict[str, Any] | None:
 
 
 def substrate_variants(profile: Mapping[str, Any]) -> list[dict[str, Any]]:
-    """Retourne une ou deux variantes validées pour n'importe quelle fiche."""
+    """Retourne trois variantes validées pour chaque fiche du catalogue."""
     explicit = _explicit_variant(profile)
     if explicit:
         return [explicit]
