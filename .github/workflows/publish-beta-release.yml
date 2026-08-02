@@ -18,14 +18,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
-      - name: Créer la première préversion si nécessaire
+      - name: Créer la préversion si nécessaire
         env:
           GH_TOKEN: ${{ github.token }}
           RELEASE_SHA: ${{ github.event.workflow_run.head_sha }}
         shell: bash
         run: |
           set -euo pipefail
-          tag="v3.5.1-beta.1"
+          tag="v3.5.1-beta.2"
           if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
             echo "La release $tag existe déjà."
             exit 0
@@ -33,6 +33,6 @@ jobs:
           gh release create "$tag" \
             --repo "$GITHUB_REPOSITORY" \
             --target "$RELEASE_SHA" \
-            --title "Assistant Botanique 3.5.1 Beta 1" \
-            --notes-file docs/releases/v3.5.1-beta.1.md \
+            --title "Assistant Botanique 3.5.1 Beta 2" \
+            --notes-file docs/releases/v3.5.1-beta.2.md \
             --prerelease
