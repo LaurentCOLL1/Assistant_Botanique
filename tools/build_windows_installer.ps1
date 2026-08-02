@@ -50,6 +50,7 @@ try {
         --clean `
         --windowed `
         --name AssistantBotanique `
+        --paths src `
         --collect-all plyer `
         --collect-all PIL `
         --collect-all zxingcpp `
