@@ -4,6 +4,7 @@ from .collection_photo_viewer import install_collection_photo_viewer
 from .followup_fixes import install_followup_fixes
 from .integration import install_productivity_features as _install_productivity_features
 from .runtime_fixes import install_runtime_fixes
+from .today_scientific_column import install_today_scientific_column
 from .treeview_headers import install_treeview_header_fixes
 from .usability_fixes import install_usability_fixes
 from .watering_deferral import install_watering_deferral
@@ -20,6 +21,7 @@ def install_productivity_features() -> None:
     install_watering_workflow()
     install_watering_initialization_guard()
     install_watering_deferral()
+    install_today_scientific_column()
     install_treeview_header_fixes()
 
 
