@@ -7,6 +7,40 @@ param(
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 
+function Invoke-ProcessWithTimeout {
+    param(
+        [Parameter(Mandatory = $true)][string]$FilePath,
+        [string[]]$ArgumentList = @(),
+        [Parameter(Mandatory = $true)][int]$TimeoutSeconds,
+        [Parameter(Mandatory = $true)][string]$Description
+    )
+
+    $StartInfo = [System.Diagnostics.ProcessStartInfo]::new()
+    $StartInfo.FileName = $FilePath
+    $StartInfo.UseShellExecute = $false
+    foreach ($Argument in $ArgumentList) {
+        $StartInfo.ArgumentList.Add($Argument)
+    }
+
+    $Process = [System.Diagnostics.Process]::new()
+    $Process.StartInfo = $StartInfo
+    try {
+        if (-not $Process.Start()) {
+            throw "$Description n'a pas démarré."
+        }
+        if (-not $Process.WaitForExit($TimeoutSeconds * 1000)) {
+            $Process.Kill($true)
+            throw "$Description a dépassé le délai de $TimeoutSeconds secondes."
+        }
+        if ($Process.ExitCode -ne 0) {
+            throw "$Description a échoué avec le code $($Process.ExitCode)."
+        }
+    }
+    finally {
+        $Process.Dispose()
+    }
+}
+
 $RepositoryRoot = Split-Path -Parent $PSScriptRoot
 Push-Location $RepositoryRoot
 
@@ -65,40 +99,38 @@ try {
             [System.IO.Directory]::Delete($InstallDirectory, $true)
         }
 
-        $SetupArguments = @(
-            "/VERYSILENT",
-            "/SUPPRESSMSGBOXES",
-            "/NORESTART",
-            "/DIR=$InstallDirectory",
-            "/MERGETASKS=!desktopicon,!notifications"
-        )
-        $SetupProcess = Start-Process -FilePath $Installer -ArgumentList $SetupArguments -Wait -PassThru
-        if ($SetupProcess.ExitCode -ne 0) {
-            throw "L'installation silencieuse a échoué avec le code $($SetupProcess.ExitCode)."
-        }
+        Invoke-ProcessWithTimeout `
+            -FilePath $Installer `
+            -ArgumentList @(
+                "/VERYSILENT",
+                "/SUPPRESSMSGBOXES",
+                "/NORESTART",
+                "/DIR=$InstallDirectory",
+                "/MERGETASKS=!desktopicon,!notifications"
+            ) `
+            -TimeoutSeconds 180 `
+            -Description "L'installation silencieuse"
 
         $Application = Join-Path $InstallDirectory "AssistantBotanique.exe"
         if (-not [System.IO.File]::Exists($Application)) {
             throw "L'exécutable installé est introuvable : $Application"
         }
 
-        $VersionProcess = Start-Process -FilePath $Application -ArgumentList "--version" -Wait -PassThru
-        if ($VersionProcess.ExitCode -ne 0) {
-            throw "L'exécutable installé n'a pas validé --version (code $($VersionProcess.ExitCode))."
-        }
+        Invoke-ProcessWithTimeout `
+            -FilePath $Application `
+            -ArgumentList @("--version") `
+            -TimeoutSeconds 60 `
+            -Description "La vérification de l'exécutable installé"
 
         $Uninstaller = Join-Path $InstallDirectory "unins000.exe"
         if (-not [System.IO.File]::Exists($Uninstaller)) {
             throw "Le désinstalleur de test est introuvable."
         }
-        $UninstallProcess = Start-Process `
+        Invoke-ProcessWithTimeout `
             -FilePath $Uninstaller `
             -ArgumentList @("/VERYSILENT", "/SUPPRESSMSGBOXES", "/NORESTART") `
-            -Wait `
-            -PassThru
-        if ($UninstallProcess.ExitCode -ne 0) {
-            throw "La désinstallation de test a échoué avec le code $($UninstallProcess.ExitCode)."
-        }
+            -TimeoutSeconds 120 `
+            -Description "La désinstallation de test"
     }
 
     Write-Output $Installer
