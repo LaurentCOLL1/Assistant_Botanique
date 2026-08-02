@@ -15,11 +15,12 @@ class ColumnSpec:
 
 TODAY_COLUMNS: tuple[ColumnSpec, ...] = (
     ColumnSpec("date", "Date", 100),
-    ColumnSpec("plant", "Plante", 180),
-    ColumnSpec("care", "Soin / contrôle", 180),
+    ColumnSpec("plant", "Plante", 170),
+    ColumnSpec("scientific", "Nom scientifique", 190),
+    ColumnSpec("care", "Soin / contrôle", 175),
     ColumnSpec("status", "État", 130),
     ColumnSpec("moisture", "Humidité du substrat", 145, "center"),
-    ColumnSpec("details", "Détails", 380),
+    ColumnSpec("details", "Détails", 320),
 )
 
 COLLECTION_COLUMNS: tuple[ColumnSpec, ...] = (
