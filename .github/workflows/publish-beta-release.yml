@@ -19,20 +19,31 @@ jobs:
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
       - name: Créer la préversion si nécessaire
+        uses: actions/github-script@v7
         env:
-          GH_TOKEN: ${{ github.token }}
           RELEASE_SHA: ${{ github.event.workflow_run.head_sha }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          tag="v3.5.1-beta.3"
-          if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-            echo "La release $tag existe déjà."
-            exit 0
-          fi
-          gh release create "$tag" \
-            --repo "$GITHUB_REPOSITORY" \
-            --target "$RELEASE_SHA" \
-            --title "Assistant Botanique 3.5.1 Beta 3" \
-            --notes-file docs/releases/v3.5.1-beta.3.md \
-            --prerelease
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const tag = 'v3.5.1-beta.4';
+            try {
+              await github.rest.repos.getReleaseByTag({ owner, repo, tag });
+              core.info(`La release ${tag} existe déjà.`);
+              return;
+            } catch (error) {
+              if (error.status !== 404) throw error;
+            }
+            const body = fs.readFileSync('docs/releases/v3.5.1-beta.4.md', 'utf8');
+            await github.rest.repos.createRelease({
+              owner,
+              repo,
+              tag_name: tag,
+              target_commitish: process.env.RELEASE_SHA,
+              name: 'Assistant Botanique 3.5.1 Beta 4',
+              body,
+              prerelease: true,
+              draft: false,
+            });
