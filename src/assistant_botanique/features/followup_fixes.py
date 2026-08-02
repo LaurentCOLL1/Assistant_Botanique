@@ -7,7 +7,6 @@ import re
 import urllib.parse
 from typing import Any
 
-import tkinter as tk
 from tkinter import ttk
 
 from assistant_botanique.features.inventory import INVENTORY_SUBCATEGORIES
