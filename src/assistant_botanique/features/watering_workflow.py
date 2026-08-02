@@ -10,7 +10,6 @@ from core import ValidationError
 from assistant_botanique.domain.soil_moisture import (
     SOIL_DRY,
     SOIL_MOIST,
-    SOIL_STATES,
     SOIL_WET,
     watering_decision,
 )
