@@ -18,12 +18,28 @@ on:
 permissions:
   contents: read
 
+env:
+  RELEASE_TAG: v3.5.1-beta.6
+  INSTALLER_BASE_NAME: AssistantBotanique-Setup-3.5.1-beta.6
+
 jobs:
   installer-smoke:
     runs-on: windows-latest
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+      - name: Vérifier les assets déjà publiés
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: pwsh
+        run: |
+          $Assets = gh release view $env:RELEASE_TAG --repo $env:GITHUB_REPOSITORY --json assets --jq '.assets[].name'
+          if ($Assets -notcontains "$env:INSTALLER_BASE_NAME.exe") {
+            throw "L'installateur publié est absent de la Release $env:RELEASE_TAG."
+          }
+          if ($Assets -notcontains "$env:INSTALLER_BASE_NAME.exe.sha256") {
+            throw "Le contrôle SHA-256 publié est absent de la Release $env:RELEASE_TAG."
+          }
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -37,11 +53,11 @@ jobs:
         run: >-
           ./tools/build_windows_installer.ps1
           -DisplayVersion "3.5.1-beta.6"
-          -OutputBaseFilename "AssistantBotanique-Setup-3.5.1-beta.6"
+          -OutputBaseFilename "${{ env.INSTALLER_BASE_NAME }}"
           -SmokeTest
       - uses: actions/upload-artifact@v4
         with:
-          name: AssistantBotanique-Setup-3.5.1-beta.6
-          path: installer/output/AssistantBotanique-Setup-3.5.1-beta.6.exe
+          name: ${{ env.INSTALLER_BASE_NAME }}
+          path: installer/output/${{ env.INSTALLER_BASE_NAME }}.exe
           if-no-files-found: error
           retention-days: 7
