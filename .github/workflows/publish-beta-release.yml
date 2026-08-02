@@ -25,7 +25,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          tag="v3.5.1-beta.2"
+          tag="v3.5.1-beta.3"
           if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
             echo "La release $tag existe déjà."
             exit 0
@@ -33,6 +33,6 @@ jobs:
           gh release create "$tag" \
             --repo "$GITHUB_REPOSITORY" \
             --target "$RELEASE_SHA" \
-            --title "Assistant Botanique 3.5.1 Beta 2" \
-            --notes-file docs/releases/v3.5.1-beta.2.md \
+            --title "Assistant Botanique 3.5.1 Beta 3" \
+            --notes-file docs/releases/v3.5.1-beta.3.md \
             --prerelease
