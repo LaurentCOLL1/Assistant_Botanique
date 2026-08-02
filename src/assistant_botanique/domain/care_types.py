@@ -29,6 +29,8 @@ CARE_TYPE_LABELS = {item.key: item.label for item in CARE_TYPES}
 SCHEDULABLE_CARE_TYPES = tuple(item for item in CARE_TYPES if item.key != "arrosage")
 QUICK_ACTION_TYPES = (
     "substrat_sec",
+    "substrat_humide",
+    "substrat_trempe",
     "encore_humide",
     "arrosage",
     "fertilisation",
@@ -40,6 +42,8 @@ QUICK_ACTION_TYPES = (
 
 QUICK_ACTION_LABELS = {
     "substrat_sec": "Substrat sec",
+    "substrat_humide": "Substrat humide",
+    "substrat_trempe": "Substrat trempé",
     "encore_humide": "Encore humide",
     "arrosage": "Arrosé",
     "fertilisation": "Fertilisé",
@@ -51,6 +55,8 @@ QUICK_ACTION_LABELS = {
 
 QUICK_ACTION_NOTES = {
     "substrat_sec": "Substrat sec au contrôle",
+    "substrat_humide": "Substrat humide au contrôle",
+    "substrat_trempe": "Substrat trempé au contrôle",
     "encore_humide": "Substrat encore humide au contrôle",
     "arrosage": "Arrosage validé après contrôle",
     "fertilisation": "Fertilisation enregistrée",

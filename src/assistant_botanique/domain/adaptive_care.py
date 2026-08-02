@@ -50,15 +50,21 @@ def _actual_watering_intervals(history: Iterable[Mapping[str, Any]]) -> list[int
 
 def _observation_adjustment(history: Iterable[Mapping[str, Any]]) -> tuple[float, int, list[str]]:
     recent = list(history)[-20:]
-    dry = sum(1 for event in recent if event.get("type") in {"substrat_sec", "controle_sec"})
-    wet = sum(1 for event in recent if event.get("type") in {"encore_humide", "controle_humide"})
-    factor = max(0.65, min(1.45, 1.0 + wet * 0.05 - dry * 0.05))
+    dry_types = {"substrat_sec", "controle_sec"}
+    moist_types = {"substrat_humide", "encore_humide", "controle_humide"}
+    wet_types = {"substrat_trempe", "controle_trempe"}
+    dry = sum(1 for event in recent if event.get("type") in dry_types)
+    moist = sum(1 for event in recent if event.get("type") in moist_types)
+    wet = sum(1 for event in recent if event.get("type") in wet_types)
+    factor = max(0.65, min(1.55, 1.0 + moist * 0.04 + wet * 0.08 - dry * 0.05))
     reasons = []
     if dry:
         reasons.append(f"{dry} contrôle(s) récent(s) indiquaient un substrat déjà sec")
+    if moist:
+        reasons.append(f"{moist} contrôle(s) récent(s) indiquaient un substrat encore humide")
     if wet:
-        reasons.append(f"{wet} contrôle(s) récent(s) indiquaient un substrat encore humide")
-    return factor, dry + wet, reasons
+        reasons.append(f"{wet} contrôle(s) récent(s) indiquaient un substrat trempé")
+    return factor, dry + moist + wet, reasons
 
 
 def recommend_care(
