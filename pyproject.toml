@@ -65,3 +65,6 @@ ignore = ["E501"]
 "tools/catalogue_enrichment.py" = ["F401"]
 "tools/photo_batch_enrichment.py" = ["F401"]
 "src/assistant_botanique/ui/collection_intelligence_tab.py" = ["F401"]
+# Ces deux callbacks historiques sont immédiatement remplacés par runtime_fixes,
+# qui capture correctement les messages d'erreur avant leur passage à Tkinter.
+"src/assistant_botanique/features/integration.py" = ["F821", "F841"]
