@@ -9,6 +9,7 @@ from assistant_botanique.domain.adaptive_care import recommend_care
 from assistant_botanique.domain.care_types import care_label
 from assistant_botanique.infrastructure.database import Database
 from assistant_botanique.services.planner import CarePlanner
+from assistant_botanique.services.watering_deferral import latest_deferred_watering_check
 
 
 @dataclass(frozen=True, slots=True)
@@ -56,18 +57,32 @@ def build_dashboard_snapshot(
         if not profile:
             continue
         recommendation = recommend_care(profile, plant, today=current)
-        if recommendation.next_check is None or recommendation.next_check > horizon:
+        due_date = recommendation.next_check
+        deferred = latest_deferred_watering_check(database, str(plant["id"]))
+        if deferred is not None and (due_date is None or deferred.due_date > due_date):
+            due_date = deferred.due_date
+        if due_date is None or due_date > horizon:
             continue
+
+        details = (
+            f"Intervalle estimé : {recommendation.interval_days} j · "
+            f"confiance {recommendation.confidence_label}"
+        )
+        if deferred is not None and due_date == deferred.due_date:
+            details = (
+                f"Contrôle reporté après observation « {deferred.soil_state} » · "
+                f"nouvelle échéance dans {deferred.delay_days} j"
+            )
         items.append(
             DashboardItem(
                 identifier=f"check:{plant['id']}",
                 kind="check",
                 plant_id=str(plant["id"]),
                 plant_name=str(plant.get("surnom") or "Sans nom"),
-                due_date=recommendation.next_check,
+                due_date=due_date,
                 label="Contrôle d'humidité",
-                status=_status(recommendation.next_check, current),
-                details=f"Intervalle estimé : {recommendation.interval_days} j · confiance {recommendation.confidence_label}",
+                status=_status(due_date, current),
+                details=details,
             )
         )
 
