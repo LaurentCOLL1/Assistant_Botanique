@@ -1,5 +1,11 @@
+#ifndef MyAppVersion
+  #define MyAppVersion "0.0.0-dev"
+#endif
+#ifndef MyAppOutputBaseFilename
+  #define MyAppOutputBaseFilename "AssistantBotanique-Setup"
+#endif
+
 #define MyAppName "Assistant Botanique"
-#define MyAppVersion "3.0.0"
 #define MyAppPublisher "Laurent COLL1"
 #define MyAppExeName "AssistantBotanique.exe"
 
@@ -7,18 +13,25 @@
 AppId={{A92C0C99-B80B-4DF8-AB41-E8A45C58BA61}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
+AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
-DefaultDirName={autopf}\Assistant Botanique
+DefaultDirName={localappdata}\Programs\AssistantBotanique
 DefaultGroupName={#MyAppName}
+DisableProgramGroupPage=yes
 OutputDir=output
-OutputBaseFilename=AssistantBotanique-Setup
-Compression=lzma
+OutputBaseFilename={#MyAppOutputBaseFilename}
+Compression=lzma2
 SolidCompression=yes
 WizardStyle=modern
 PrivilegesRequired=lowest
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
+UninstallDisplayName={#MyAppName} {#MyAppVersion}
 UninstallDisplayIcon={app}\{#MyAppExeName}
+UsePreviousAppDir=yes
+CloseApplications=force
+RestartApplications=no
+SetupLogging=yes
 
 [Files]
 Source: "..\dist\AssistantBotanique\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs

@@ -1,0 +1,47 @@
+name: Windows installer smoke test
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/installer-smoke.yml"
+      - ".github/workflows/publish-beta-release.yml"
+      - "installer/**"
+      - "tools/build_windows_installer.ps1"
+      - "pyproject.toml"
+      - "main.py"
+      - "data.py"
+      - "src/**"
+      - "catalogue_metadata/**"
+      - "familles_plantes/**"
+      - "schemas/**"
+
+permissions:
+  contents: read
+
+jobs:
+  installer-smoke:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e ".[dev]"
+      - name: Installer Inno Setup
+        run: choco install innosetup --no-progress -y
+      - name: Construire, installer, vérifier et désinstaller
+        shell: pwsh
+        run: >-
+          ./tools/build_windows_installer.ps1
+          -DisplayVersion "3.5.1-beta.6"
+          -OutputBaseFilename "AssistantBotanique-Setup-3.5.1-beta.6"
+          -SmokeTest
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AssistantBotanique-Setup-3.5.1-beta.6
+          path: installer/output/AssistantBotanique-Setup-3.5.1-beta.6.exe
+          if-no-files-found: error
+          retention-days: 7

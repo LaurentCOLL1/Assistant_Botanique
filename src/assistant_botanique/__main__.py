@@ -12,9 +12,12 @@ from assistant_botanique.services.notifications import NotificationService
 
 def main() -> None:
     parser = argparse.ArgumentParser(prog="assistant-botanique")
+    parser.add_argument("--version", action="store_true", help="Vérifier silencieusement l'exécutable installé")
     parser.add_argument("--notify", action="store_true", help="Afficher les contrôles de plantes arrivés à échéance")
     parser.add_argument("--install-notifications", metavar="HH:MM", help="Installer la tâche planifiée Windows")
     args = parser.parse_args()
+    if args.version:
+        return
     if args.notify:
         NotificationService().notify_due(
             CollectionRepository().database,
