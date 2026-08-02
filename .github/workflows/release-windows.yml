@@ -25,7 +25,7 @@ jobs:
         shell: pwsh
         run: >-
           pyinstaller --noconfirm --clean --windowed --name AssistantBotanique
-          --collect-all plyer --collect-all PIL
+          --collect-all plyer --collect-all PIL --collect-all zxingcpp
           --add-data "familles_plantes;familles_plantes"
           --add-data "catalogue_metadata;catalogue_metadata"
           --add-data "data.py;."
