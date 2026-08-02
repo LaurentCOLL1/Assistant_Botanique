@@ -30,6 +30,10 @@ def main() -> None:
 
     install_ui_enhancements()
 
+    from assistant_botanique.features import install_productivity_features
+
+    install_productivity_features()
+
     from assistant_botanique.ui.app import run_gui
 
     run_gui()
