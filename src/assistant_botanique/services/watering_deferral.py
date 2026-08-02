@@ -10,7 +10,6 @@ from core import ValidationError, format_date_fr
 
 from assistant_botanique.domain.adaptive_care import recommend_care
 from assistant_botanique.domain.soil_moisture import (
-    SOIL_DRY,
     SOIL_EVENT_TYPES,
     SOIL_LABELS,
     SOIL_MOIST,
