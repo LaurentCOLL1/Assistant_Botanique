@@ -9,10 +9,12 @@ from typing import Any, Iterable, Mapping
 from core import ValidationError
 import substrate_classifier
 import substrate_consensus
+import substrate_consensus_stability
 import substrate_knowledge as substrate_knowledge_module
 
 substrate_classifier.install()
 substrate_consensus.install()
+substrate_consensus_stability.install()
 canonicalize_ingredient = substrate_knowledge_module.canonicalize_ingredient
 normalize_text = substrate_knowledge_module.normalize_text
 resolved_substrate = substrate_knowledge_module.resolved_substrate
