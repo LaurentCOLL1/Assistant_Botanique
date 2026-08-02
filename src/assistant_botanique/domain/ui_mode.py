@@ -8,6 +8,7 @@ SIMPLE_TABS = (
     "calendar",
     "photos",
     "catalogue",
+    "substrate",
     "maintenance",
 )
 
