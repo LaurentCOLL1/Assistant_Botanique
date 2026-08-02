@@ -19,8 +19,9 @@ permissions:
   contents: read
 
 env:
-  RELEASE_TAG: v3.5.1-beta.6
-  INSTALLER_BASE_NAME: AssistantBotanique-Setup-3.5.1-beta.6
+  PUBLISHED_RELEASE_TAG: v3.5.1-beta.6
+  PUBLISHED_INSTALLER_BASE_NAME: AssistantBotanique-Setup-3.5.1-beta.6
+  INSTALLER_BASE_NAME: AssistantBotanique-Setup-3.5.1-beta.7
 
 jobs:
   installer-smoke:
@@ -28,17 +29,17 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-      - name: Vérifier les assets déjà publiés
+      - name: Vérifier le dernier installateur publié
         env:
           GH_TOKEN: ${{ github.token }}
         shell: pwsh
         run: |
-          $Assets = gh release view $env:RELEASE_TAG --repo $env:GITHUB_REPOSITORY --json assets --jq '.assets[].name'
-          if ($Assets -notcontains "$env:INSTALLER_BASE_NAME.exe") {
-            throw "L'installateur publié est absent de la Release $env:RELEASE_TAG."
+          $Assets = gh release view $env:PUBLISHED_RELEASE_TAG --repo $env:GITHUB_REPOSITORY --json assets --jq '.assets[].name'
+          if ($Assets -notcontains "$env:PUBLISHED_INSTALLER_BASE_NAME.exe") {
+            throw "L'installateur publié est absent de la Release $env:PUBLISHED_RELEASE_TAG."
           }
-          if ($Assets -notcontains "$env:INSTALLER_BASE_NAME.exe.sha256") {
-            throw "Le contrôle SHA-256 publié est absent de la Release $env:RELEASE_TAG."
+          if ($Assets -notcontains "$env:PUBLISHED_INSTALLER_BASE_NAME.exe.sha256") {
+            throw "Le contrôle SHA-256 publié est absent de la Release $env:PUBLISHED_RELEASE_TAG."
           }
       - uses: actions/setup-python@v5
         with:
@@ -52,7 +53,7 @@ jobs:
         shell: pwsh
         run: >-
           ./tools/build_windows_installer.ps1
-          -DisplayVersion "3.5.1-beta.6"
+          -DisplayVersion "3.5.1-beta.7"
           -OutputBaseFilename "${{ env.INSTALLER_BASE_NAME }}"
           -SmokeTest
       - uses: actions/upload-artifact@v4
