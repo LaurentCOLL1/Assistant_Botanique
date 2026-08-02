@@ -28,24 +28,25 @@ try {
         throw "PyInstaller a échoué avec le code $LASTEXITCODE."
     }
 
-    $Iscc = Get-Command iscc.exe -ErrorAction SilentlyContinue
-    if ($null -eq $Iscc) {
+    $IsccCommand = Get-Command iscc.exe -ErrorAction SilentlyContinue
+    $IsccPath = if ($null -ne $IsccCommand) { $IsccCommand.Source } else { $null }
+    if ([string]::IsNullOrWhiteSpace($IsccPath)) {
         $Candidates = @(
             (Join-Path ${env:ProgramFiles(x86)} "Inno Setup 6\ISCC.exe"),
             (Join-Path $env:ProgramFiles "Inno Setup 6\ISCC.exe")
         )
         foreach ($Candidate in $Candidates) {
             if ([System.IO.File]::Exists($Candidate)) {
-                $Iscc = Get-Item $Candidate
+                $IsccPath = $Candidate
                 break
             }
         }
     }
-    if ($null -eq $Iscc) {
+    if ([string]::IsNullOrWhiteSpace($IsccPath)) {
         throw "ISCC.exe est introuvable. Installez Inno Setup 6."
     }
 
-    & $Iscc.Source `
+    & $IsccPath `
         "/DMyAppVersion=$DisplayVersion" `
         "/DMyAppOutputBaseFilename=$OutputBaseFilename" `
         "installer/AssistantBotanique.iss"
