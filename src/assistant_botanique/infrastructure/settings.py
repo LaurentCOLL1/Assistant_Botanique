@@ -14,6 +14,9 @@ DEFAULT_SETTINGS = {
     "geometry": "1200x800",
     "ui_mode": "advanced",
     "ingredient_stock": {},
+    "collection": {
+        "photo_preview_count": 2,
+    },
     "notifications": {
         "enabled": True,
         "time": "09:00",

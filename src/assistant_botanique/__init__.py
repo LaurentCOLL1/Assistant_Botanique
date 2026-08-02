@@ -1,3 +1,3 @@
-"""Assistant Botanique, version 3.4."""
+"""Assistant Botanique, version 3.4.1."""
 
-__version__ = "3.4.0"
+__version__ = "3.4.1"
