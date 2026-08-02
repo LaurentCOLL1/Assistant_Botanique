@@ -1,4 +1,8 @@
-"""Stabilité du consensus quand les trois variantes sont déjà persistées."""
+"""Stabilité du consensus quand des variantes sont déjà persistées.
+
+Cette couche conserve la compatibilité avec les anciennes fiches à trois choix,
+puis installe la recherche approfondie à cinq choix.
+"""
 from __future__ import annotations
 
 import copy
@@ -6,6 +10,7 @@ from collections.abc import Mapping
 from typing import Any
 
 import substrate_consensus as consensus
+import substrate_consensus_v2
 import substrate_knowledge as knowledge
 
 
@@ -15,6 +20,7 @@ def _source_key(source: Mapping[str, Any]) -> str:
 
 def install() -> None:
     if getattr(knowledge, "_consensus_stability_installed", False):
+        substrate_consensus_v2.install()
         return
     previous_resolved = knowledge.resolved_substrate
 
@@ -40,7 +46,7 @@ def install() -> None:
         resolved = resolved_substrate(profile)
         variants = resolved.get("variantes", [])
         if len(variants) != 3:
-            errors.append("Chaque fiche doit proposer exactement trois variantes.")
+            errors.append("Chaque ancienne fiche doit proposer exactement trois variantes.")
         if variants and str(variants[0].get("nom")) != "Synthèse des variantes":
             errors.append("La synthèse des variantes doit être placée en premier.")
         for variant in variants:
@@ -70,6 +76,7 @@ def install() -> None:
     knowledge.resolved_substrate = resolved_substrate
     knowledge.validate_resolved_profile = validate_resolved_profile
     knowledge._consensus_stability_installed = True
+    substrate_consensus_v2.install()
 
 
 __all__ = ["install"]
