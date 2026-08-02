@@ -51,5 +51,5 @@ def test_pull_requests_execute_a_real_installer_smoke_test():
     assert "-SmokeTest" in workflow
     assert "/VERYSILENT" in builder
     assert "AssistantBotanique.exe" in builder
-    assert 'ArgumentList "--version"' in builder
+    assert '-ArgumentList @("--version")' in builder
     assert "unins000.exe" in builder
