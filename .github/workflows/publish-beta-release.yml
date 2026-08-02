@@ -79,3 +79,7 @@ jobs:
             "release-assets/${INSTALLER_BASE_NAME}.exe.sha256" \
             --repo "$GITHUB_REPOSITORY" \
             --clobber
+
+          published_assets="$(gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name')"
+          grep -Fxq "${INSTALLER_BASE_NAME}.exe" <<<"$published_assets"
+          grep -Fxq "${INSTALLER_BASE_NAME}.exe.sha256" <<<"$published_assets"
