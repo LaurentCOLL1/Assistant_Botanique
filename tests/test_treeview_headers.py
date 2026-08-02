@@ -34,9 +34,11 @@ def test_today_headers_are_all_restored_after_columns_change():
     configure_today_columns(tree)
 
     assert tree.columns == tuple(spec.key for spec in TODAY_COLUMNS)
+    assert tree.columns[:4] == ("date", "plant", "scientific", "care")
     assert {key: value["text"] for key, value in tree.headings.items()} == {
         spec.key: spec.label for spec in TODAY_COLUMNS
     }
+    assert tree.headings["scientific"]["text"] == "Nom scientifique"
     assert all(tree.headings[spec.key]["text"] for spec in TODAY_COLUMNS)
 
 
