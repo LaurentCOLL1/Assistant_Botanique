@@ -25,6 +25,11 @@ def main() -> None:
     if args.install_notifications:
         NotificationService().install_windows_task(args.install_notifications)
         return
+
+    from assistant_botanique.ui.inventory_form_enhancements import install_ui_enhancements
+
+    install_ui_enhancements()
+
     from assistant_botanique.ui.app import run_gui
 
     run_gui()
