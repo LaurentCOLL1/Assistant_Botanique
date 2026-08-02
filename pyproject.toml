@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "assistant-botanique"
-version = "3.3.0"
+version = "3.4.0"
 description = "Application de bureau pour gérer une collection de plantes, apprendre leur rythme de soins et documenter leur évolution."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -30,7 +30,7 @@ assistant-botanique = "assistant_botanique.__main__:main"
 
 [tool.setuptools]
 package-dir = {assistant_botanique = "src/assistant_botanique"}
-packages = ["assistant_botanique", "assistant_botanique.domain", "assistant_botanique.infrastructure", "assistant_botanique.services", "assistant_botanique.ui"]
+packages = ["assistant_botanique", "assistant_botanique.domain", "assistant_botanique.features", "assistant_botanique.infrastructure", "assistant_botanique.services", "assistant_botanique.ui"]
 py-modules = [
   "app_data",
   "app_paths",
