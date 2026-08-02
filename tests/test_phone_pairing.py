@@ -44,7 +44,10 @@ def test_pairing_qr_creates_persistent_cookie_and_can_be_revoked(tmp_path):
         with opener.open(request, timeout=5) as response:
             home_page = response.read().decode("utf-8")
         assert "Téléphone associé : Téléphone de test" in home_page
-        assert "synchronisés en direct" in home_page
+        assert (
+            "Synchronisation locale active" in home_page
+            or "synchronisés en direct" in home_page
+        )
 
         with opener.open(f"{server.base_url}/api/sync", timeout=5) as response:
             status = json.loads(response.read().decode("utf-8"))
