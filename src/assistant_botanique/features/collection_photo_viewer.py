@@ -4,7 +4,6 @@ from __future__ import annotations
 import tkinter as tk
 from pathlib import Path
 from tkinter import messagebox, ttk
-from typing import Any
 
 from PIL import Image, ImageOps, ImageTk, UnidentifiedImageError
 
