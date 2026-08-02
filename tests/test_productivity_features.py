@@ -110,8 +110,17 @@ def test_guided_diagnosis_prioritizes_pests_when_seen():
     assert hypotheses[0].score >= 10
 
 
-def test_simple_mode_keeps_daily_workflows_visible():
+def test_simple_mode_keeps_daily_workflows_and_substrates_visible():
     simple = visible_tab_keys("simple")
-    assert simple == ("today", "collection", "search", "calendar", "photos", "catalogue", "maintenance")
+    assert simple == (
+        "today",
+        "collection",
+        "search",
+        "calendar",
+        "photos",
+        "catalogue",
+        "substrate",
+        "maintenance",
+    )
     assert "diagnostic" not in simple
     assert "diagnostic" in visible_tab_keys("advanced")

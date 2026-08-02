@@ -14,9 +14,11 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable
 
+from packaging.version import InvalidVersion, Version
+
 from assistant_botanique import __version__
 
-API_URL = "https://api.github.com/repos/LaurentCOLL1/Assistant_Botanique/releases/latest"
+API_URL = "https://api.github.com/repos/LaurentCOLL1/Assistant_Botanique/releases?per_page=30"
 RELEASES_URL = "https://github.com/LaurentCOLL1/Assistant_Botanique/releases"
 USER_AGENT = "AssistantBotanique-Updater"
 
@@ -33,15 +35,31 @@ class UpdateInfo:
     asset_url: str = ""
     asset_digest: str = ""
     asset_size: int = 0
+    prerelease: bool = False
 
     @property
     def directly_installable(self) -> bool:
         return bool(self.asset_url and self.asset_name.casefold().endswith(".exe"))
 
 
-def _version_tuple(value: str) -> tuple[int, ...]:
-    parts = re.findall(r"\d+", value)
-    return tuple(int(part) for part in parts[:4]) or (0,)
+def _normalized_version_text(value: str) -> str:
+    text = str(value or "").strip().lstrip("vV")
+    substitutions = (
+        (r"(?i)[._-]?alpha[._-]?(\d+)", r"a\1"),
+        (r"(?i)[._-]?beta[._-]?(\d+)", r"b\1"),
+        (r"(?i)[._-]?preview[._-]?(\d+)", r"b\1"),
+        (r"(?i)[._-]?rc[._-]?(\d+)", r"rc\1"),
+    )
+    for pattern, replacement in substitutions:
+        text = re.sub(pattern, replacement, text)
+    return text
+
+
+def _version(value: str) -> Version:
+    try:
+        return Version(_normalized_version_text(value))
+    except InvalidVersion:
+        return Version("0")
 
 
 def _choose_windows_asset(assets: list[dict[str, Any]]) -> dict[str, Any] | None:
@@ -58,13 +76,28 @@ def _choose_windows_asset(assets: list[dict[str, Any]]) -> dict[str, Any] | None
     return max(executable, key=score)
 
 
-def _request_json(url: str, timeout: float) -> dict[str, Any]:
+def _request_json(url: str, timeout: float) -> Any:
     request = urllib.request.Request(
         url,
         headers={"Accept": "application/vnd.github+json", "User-Agent": USER_AGENT},
     )
     with urllib.request.urlopen(request, timeout=timeout) as response:
         return json.load(response)
+
+
+def _select_release(payload: Any) -> dict[str, Any] | None:
+    releases = payload if isinstance(payload, list) else [payload]
+    candidates: list[dict[str, Any]] = []
+    for item in releases:
+        if not isinstance(item, dict) or bool(item.get("draft")):
+            continue
+        tag = str(item.get("tag_name") or "").strip()
+        if not tag or _version(tag) == Version("0"):
+            continue
+        candidates.append(item)
+    if not candidates:
+        return None
+    return max(candidates, key=lambda item: _version(str(item.get("tag_name") or "0")))
 
 
 def check_for_update(timeout: float = 5.0) -> UpdateInfo:
@@ -85,20 +118,32 @@ def check_for_update(timeout: float = 5.0) -> UpdateInfo:
         reason = getattr(exc, "reason", exc)
         raise RuntimeError(f"Connexion à GitHub impossible : {reason}") from exc
 
-    latest = str(payload.get("tag_name") or "0.0.0").lstrip("v")
-    assets = payload.get("assets") if isinstance(payload.get("assets"), list) else []
+    release = _select_release(payload)
+    if release is None:
+        return UpdateInfo(
+            current=__version__,
+            latest=__version__,
+            available=False,
+            release_url=RELEASES_URL,
+            notes="Aucune version publiée utilisable n'a été trouvée.",
+            published=False,
+        )
+
+    latest = str(release.get("tag_name") or "0.0.0").lstrip("vV")
+    assets = release.get("assets") if isinstance(release.get("assets"), list) else []
     asset = _choose_windows_asset(assets) or {}
     return UpdateInfo(
         current=__version__,
         latest=latest,
-        available=_version_tuple(latest) > _version_tuple(__version__),
-        release_url=str(payload.get("html_url") or RELEASES_URL),
-        notes=str(payload.get("body") or ""),
+        available=_version(latest) > _version(__version__),
+        release_url=str(release.get("html_url") or RELEASES_URL),
+        notes=str(release.get("body") or ""),
         published=True,
         asset_name=str(asset.get("name") or ""),
         asset_url=str(asset.get("browser_download_url") or ""),
         asset_digest=str(asset.get("digest") or ""),
         asset_size=int(asset.get("size") or 0),
+        prerelease=bool(release.get("prerelease")),
     )
 
 
