@@ -1,5 +1,6 @@
 """Fonctions additionnelles de productivité et d'usage mobile."""
 
+from .application_icon import install_application_icon
 from .collection_photo_viewer import install_collection_photo_viewer
 from .collection_watering_consistency import install_collection_watering_consistency
 from .followup_fixes import install_followup_fixes
@@ -25,6 +26,7 @@ def install_productivity_features() -> None:
     install_collection_watering_consistency()
     install_today_scientific_column()
     install_treeview_header_fixes()
+    install_application_icon()
 
 
 __all__ = ["install_productivity_features"]
