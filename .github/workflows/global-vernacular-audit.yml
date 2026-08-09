@@ -25,7 +25,7 @@ jobs:
       - name: Rechercher les noms vernaculaires manquants
         run: |
           python -m py_compile tools/enrich_catalogue_vernaculars.py
-          python tools/enrich_catalogue_vernaculars.py
+          PYTHONPATH=. python tools/enrich_catalogue_vernaculars.py
           PYTHONPATH=src:. python validate_data.py --strict --baseline data_quality_baseline.json
       - name: Enregistrer l'audit
         shell: bash
