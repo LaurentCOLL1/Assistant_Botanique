@@ -1,8 +1,6 @@
 import json
 from pathlib import Path
 
-import pytest
-
 from tools.enrich_selenicereus_and_vernaculars import (
     ACCEPTED_SELENICEREUS,
     EMBRAPA_CULTIVARS,
@@ -64,23 +62,30 @@ def test_generated_profiles_use_cactus_substrate_and_do_not_invent_species_commo
     assert abs(sum(role["ratio"] for role in roles) - 1.0) < 0.001
 
 
-def test_bot_output_covers_all_accepted_species_when_present():
-    generated_path = ROOT / "familles_plantes" / "cactaceae_selenicereus.json"
+def test_catalogue_contains_selenicereus_in_the_single_cactaceae_file():
+    canonical_path = ROOT / "familles_plantes" / "cactaceae.json"
+    staging_path = ROOT / "familles_plantes" / "cactaceae_selenicereus.json"
     report_path = ROOT / "catalogue_metadata" / "vernacular_name_audit.json"
-    if not generated_path.exists() or not report_path.exists():
-        pytest.skip("Les fichiers de données sont produits par le job d'enrichissement de la PR.")
 
-    all_species = set()
-    for path in (ROOT / "familles_plantes").glob("*.json"):
-        payload = json.loads(path.read_text(encoding="utf-8"))
-        for profile in payload:
-            name = str(profile.get("taxonomie", {}).get("nom_scientifique") or "")
-            if name and "'" not in name:
-                all_species.add(name)
-    assert set(ACCEPTED_SELENICEREUS) <= all_species
+    assert canonical_path.exists()
+    assert not staging_path.exists()
+    assert report_path.exists()
+
+    profiles = json.loads(canonical_path.read_text(encoding="utf-8"))
+    scientific = {
+        str(profile.get("taxonomie", {}).get("nom_scientifique") or "")
+        for profile in profiles
+    }
+    base_species = {name for name in scientific if name and "'" not in name}
+    cultivars = {name for name in scientific if "'" in name and name.startswith("Selenicereus")}
+
+    assert set(ACCEPTED_SELENICEREUS) <= base_species
+    assert len(cultivars) >= 52
+    assert "Selenicereus megalanthus 'Palora'" in cultivars
 
     report = json.loads(report_path.read_text(encoding="utf-8"))
     assert report["selenicereus_accepted_species_target"] == 33
     assert report["pitaya_cultivars_added"] == 52
-    assert report["missing_before"] >= report["resolved"]
-    assert isinstance(report["remaining_without_attested_name"], list)
+    assert report["missing_before"] == 32
+    assert report["resolved"] == 23
+    assert len(report["remaining_without_attested_name"]) == 9
