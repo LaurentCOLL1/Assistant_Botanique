@@ -21,9 +21,9 @@ permissions:
   contents: read
 
 env:
-  PUBLISHED_RELEASE_TAG: v3.5.1-beta.11
-  PUBLISHED_INSTALLER_BASE_NAME: AssistantBotanique-Setup-3.5.1-beta.11
-  INSTALLER_BASE_NAME: AssistantBotanique-Setup-3.5.1-beta.12
+  PUBLISHED_RELEASE_TAG: v3.5.1-beta.12
+  PUBLISHED_INSTALLER_BASE_NAME: AssistantBotanique-Setup-3.5.1-beta.12
+  INSTALLER_BASE_NAME: AssistantBotanique-Setup-3.5.1-beta.13
 
 jobs:
   installer-smoke:
@@ -55,7 +55,7 @@ jobs:
         shell: pwsh
         run: >-
           ./tools/build_windows_installer.ps1
-          -DisplayVersion "3.5.1-beta.12"
+          -DisplayVersion "3.5.1-beta.13"
           -OutputBaseFilename "${{ env.INSTALLER_BASE_NAME }}"
           -SmokeTest
       - uses: actions/upload-artifact@v4
