@@ -45,11 +45,22 @@ $RepositoryRoot = Split-Path -Parent $PSScriptRoot
 Push-Location $RepositoryRoot
 
 try {
+    $GeneratedIconDirectory = Join-Path $RepositoryRoot "installer\generated"
+    & python tools/generate_app_icon.py --output-dir $GeneratedIconDirectory
+    if ($LASTEXITCODE -ne 0) {
+        throw "La génération de l'icône a échoué avec le code $LASTEXITCODE."
+    }
+    $GeneratedIcon = Join-Path $GeneratedIconDirectory "assistant_botanique.ico"
+    if (-not [System.IO.File]::Exists($GeneratedIcon)) {
+        throw "L'icône générée est introuvable : $GeneratedIcon"
+    }
+
     & pyinstaller `
         --noconfirm `
         --clean `
         --windowed `
         --name AssistantBotanique `
+        --icon $GeneratedIcon `
         --paths src `
         --collect-all plyer `
         --collect-all PIL `
@@ -58,6 +69,7 @@ try {
         --add-data "catalogue_metadata;catalogue_metadata" `
         --add-data "data.py;." `
         --add-data "schemas;schemas" `
+        --add-data "assets;assets" `
         main.py
     if ($LASTEXITCODE -ne 0) {
         throw "PyInstaller a échoué avec le code $LASTEXITCODE."
