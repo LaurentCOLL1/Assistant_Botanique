@@ -20,6 +20,7 @@ DefaultGroupName={#MyAppName}
 DisableProgramGroupPage=yes
 OutputDir=output
 OutputBaseFilename={#MyAppOutputBaseFilename}
+SetupIconFile=generated\assistant_botanique.ico
 Compression=lzma2
 SolidCompression=yes
 WizardStyle=modern
