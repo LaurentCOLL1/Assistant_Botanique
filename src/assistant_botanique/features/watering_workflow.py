@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import tkinter as tk
+from datetime import date
 from tkinter import messagebox, ttk
 from typing import Any, Mapping
 
@@ -19,6 +20,7 @@ from assistant_botanique.services.soil_moisture import (
     record_validated_watering,
     soil_moisture_by_plant,
 )
+from assistant_botanique.services.watering_deferral import record_deferred_watering_check
 
 _BUTTON_GRAY = "#3f3f46"
 _BUTTON_BLUE = "#1565c0"
@@ -44,6 +46,49 @@ def _profile_for_plant(
     if not plant:
         return None
     return profiles_by_id.get(str(plant.get("species_id") or ""))
+
+
+def _record_check_moisture(
+    database,
+    plant_id: str,
+    profile: Mapping[str, Any],
+    plant: Mapping[str, Any],
+    state: object,
+    *,
+    today: date | None = None,
+):
+    """Enregistre le contrôle et reporte immédiatement l'échéance si aucun arrosage n'est requis."""
+    snapshot = record_soil_moisture(database, plant_id, state, profile)
+    decision = watering_decision(profile, snapshot.state, today=today)
+    if decision.can_water:
+        return snapshot, None
+    deferred = record_deferred_watering_check(
+        database,
+        plant_id,
+        profile,
+        plant,
+        snapshot.state,
+        today=today,
+    )
+    return snapshot, deferred
+
+
+def _next_check_identifier(
+    items: Mapping[str, Any],
+    ordered_identifiers,
+    completed_plant_id: str,
+) -> str | None:
+    """Retourne le prochain contrôle d'une autre plante dans l'ordre déjà affiché."""
+    for identifier in ordered_identifiers:
+        item = items.get(identifier)
+        if item is None:
+            continue
+        if getattr(item, "kind", None) != "check":
+            continue
+        if str(getattr(item, "plant_id", "")) == completed_plant_id:
+            continue
+        return str(identifier)
+    return None
 
 
 def _set_water_button(button: tk.Button, mode: str) -> None:
@@ -219,20 +264,52 @@ def _patch_today_dashboard() -> None:
         _set_water_button(self.water_button, "ready" if decision.can_water else "disabled")
         self.watering_hint_var.set(decision.reason)
 
+    def advance_after_check(self, completed_plant_id: str) -> None:
+        next_identifier = _next_check_identifier(
+            self.items,
+            self.tree.get_children(""),
+            completed_plant_id,
+        )
+        selected = self.tree.selection()
+        if selected:
+            self.tree.selection_remove(*selected)
+        if next_identifier and self.tree.exists(next_identifier):
+            self.tree.selection_set(next_identifier)
+            self.tree.focus(next_identifier)
+            self.tree.see(next_identifier)
+            self.update_watering_controls()
+            return
+        self.update_watering_controls()
+        self.watering_hint_var.set(
+            "Aucun autre contrôle d'humidité de plante n'est à traiter dans les 7 prochains jours."
+        )
+
     def record_moisture(self) -> None:
+        item = self._selected_item()
         plant_id = self.selected_plant_id()
         if not plant_id:
             return
+        plant = getattr(self, "_watering_plants_by_id", {}).get(plant_id)
         profile = _profile_for_plant(
             self.profiles_by_id,
             getattr(self, "_watering_plants_by_id", {}),
             plant_id,
         )
-        if profile is None:
-            messagebox.showerror("Humidité du substrat", "Fiche botanique introuvable.", parent=self)
+        if profile is None or plant is None:
+            messagebox.showerror("Humidité du substrat", "Fiche botanique ou plante introuvable.", parent=self)
             return
+        deferred = None
         try:
-            record_soil_moisture(self.database, plant_id, self.soil_moisture_var.get(), profile)
+            if item is not None and item.kind == "check":
+                _snapshot, deferred = _record_check_moisture(
+                    self.database,
+                    plant_id,
+                    profile,
+                    plant,
+                    self.soil_moisture_var.get(),
+                )
+            else:
+                record_soil_moisture(self.database, plant_id, self.soil_moisture_var.get(), profile)
         except (ValidationError, OSError) as exc:
             messagebox.showerror("Humidité du substrat", str(exc), parent=self)
             return
@@ -240,8 +317,11 @@ def _patch_today_dashboard() -> None:
             self.on_collection_refresh()
         else:
             self.refresh()
+        if deferred is not None:
+            self.advance_after_watering_check(plant_id)
 
     def record_watering(self) -> None:
+        item = self._selected_item()
         plant_id = self.selected_plant_id()
         if not plant_id:
             return
@@ -263,10 +343,13 @@ def _patch_today_dashboard() -> None:
             self.on_collection_refresh()
         else:
             self.refresh()
+        if item is not None and item.kind == "check":
+            self.advance_after_watering_check(plant_id)
 
     TodayDashboardTab._build_ui = build_ui
     TodayDashboardTab.refresh = refresh
     TodayDashboardTab.update_watering_controls = update_controls
+    TodayDashboardTab.advance_after_watering_check = advance_after_check
     TodayDashboardTab.record_soil_moisture = record_moisture
     TodayDashboardTab.record_validated_watering = record_watering
     TodayDashboardTab._soil_moisture_workflow_installed = True
