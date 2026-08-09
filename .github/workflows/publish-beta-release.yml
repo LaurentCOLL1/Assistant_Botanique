@@ -9,9 +9,9 @@ permissions:
   contents: write
 
 env:
-  RELEASE_TAG: v3.5.1-beta.10
-  RELEASE_NAME: Assistant Botanique 3.5.1 Beta 10
-  INSTALLER_BASE_NAME: AssistantBotanique-Setup-3.5.1-beta.10
+  RELEASE_TAG: v3.5.1-beta.11
+  RELEASE_NAME: Assistant Botanique 3.5.1 Beta 11
+  INSTALLER_BASE_NAME: AssistantBotanique-Setup-3.5.1-beta.11
 
 jobs:
   build-installer:
@@ -35,7 +35,7 @@ jobs:
         shell: pwsh
         run: >-
           ./tools/build_windows_installer.ps1
-          -DisplayVersion "3.5.1-beta.10"
+          -DisplayVersion "3.5.1-beta.11"
           -OutputBaseFilename "${{ env.INSTALLER_BASE_NAME }}"
           -SmokeTest
       - uses: actions/upload-artifact@v4
@@ -71,7 +71,7 @@ jobs:
               --repo "$GITHUB_REPOSITORY" \
               --target "$RELEASE_SHA" \
               --title "$RELEASE_NAME" \
-              --notes-file docs/releases/v3.5.1-beta.10.md \
+              --notes-file docs/releases/v3.5.1-beta.11.md \
               --prerelease
           fi
           gh release upload "$RELEASE_TAG" \
