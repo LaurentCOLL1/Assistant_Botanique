@@ -70,4 +70,6 @@ def test_branding_matches_the_maintenance_mockup_and_help_menu():
     assert "load_brand_photo(window, size=240)" in branding
     assert 'text="Assistant Botanique"' in branding
     assert "Version {_display_version()}" in branding
+    assert 'text="Développé par Laurent COLLIN"' in branding
+    assert "Développé par Laurent COLL1" not in branding
     assert "load_brand_photo" in icon_helpers
