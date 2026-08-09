@@ -12,6 +12,7 @@ from tools.enrich_selenicereus_and_vernaculars import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
+CULTIVAR_MARKER = "Cultivar de pitaya documenté par une source horticole ou scientifique"
 
 
 def test_kew_backbone_contains_33_unique_selenicereus_species():
@@ -39,14 +40,18 @@ def test_generator_adds_missing_species_and_all_documented_cultivars():
     generated = generate_selenicereus({"Selenicereus undatus"})
     scientific = [profile["taxonomie"]["nom_scientifique"] for profile in generated]
     species = [name for name in scientific if "'" not in name]
-    cultivars = [name for name in scientific if "'" in name]
+    cultivar_profiles = [
+        profile
+        for profile in generated
+        if profile.get("sante_securite", {}).get("proprietes_particulieres") == CULTIVAR_MARKER
+    ]
 
     assert len(species) == 32
-    assert len(cultivars) == 52
+    assert len(cultivar_profiles) == 52
     assert len(scientific) == len(set(scientific))
-    assert "Selenicereus megalanthus 'Palora'" in cultivars
-    assert "Selenicereus monacanthus 'Tesoro'" in cultivars
-    assert "Selenicereus undatus 'BRS Lua do Cerrado'" in cultivars
+    assert "Selenicereus megalanthus 'Palora'" in scientific
+    assert "Selenicereus monacanthus 'Tesoro'" in scientific
+    assert "Selenicereus undatus 'BRS Lua do Cerrado'" in scientific
 
 
 def test_generated_profiles_use_cactus_substrate_and_do_not_invent_species_common_names():
@@ -77,11 +82,15 @@ def test_catalogue_contains_selenicereus_in_the_single_cactaceae_file():
         for profile in profiles
     }
     base_species = {name for name in scientific if name and "'" not in name}
-    cultivars = {name for name in scientific if "'" in name and name.startswith("Selenicereus")}
+    cultivar_profiles = [
+        profile
+        for profile in profiles
+        if profile.get("sante_securite", {}).get("proprietes_particulieres") == CULTIVAR_MARKER
+    ]
 
     assert set(ACCEPTED_SELENICEREUS) <= base_species
-    assert len(cultivars) >= 52
-    assert "Selenicereus megalanthus 'Palora'" in cultivars
+    assert len(cultivar_profiles) == 52
+    assert any(profile.get("taxonomie", {}).get("nom_scientifique") == "Selenicereus megalanthus 'Palora'" for profile in cultivar_profiles)
 
     report = json.loads(report_path.read_text(encoding="utf-8"))
     assert report["selenicereus_accepted_species_target"] == 33
