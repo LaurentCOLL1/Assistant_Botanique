@@ -1,9 +1,13 @@
-"""Icône officielle de l'application, chargée depuis les ressources embarquées."""
+"""Icône et visuel officiels de l'application, chargés depuis les ressources embarquées."""
 from __future__ import annotations
 
+import base64
+import io
 import logging
 import tkinter as tk
 from pathlib import Path
+
+from PIL import Image, ImageTk
 
 from assistant_botanique.paths import resource_dir
 
@@ -21,6 +25,16 @@ def load_icon_base64() -> str:
     return "".join(icon_source_path().read_text(encoding="ascii").split())
 
 
+def load_brand_photo(master: tk.Misc, size: int = 180) -> ImageTk.PhotoImage:
+    """Crée une image Tk redimensionnée à partir de l'identité visuelle officielle."""
+    raw = base64.b64decode(load_icon_base64(), validate=True)
+    with Image.open(io.BytesIO(raw)) as source:
+        image = source.convert("RGBA")
+        image.thumbnail((size, size), Image.Resampling.LANCZOS)
+        rendered = image.copy()
+    return ImageTk.PhotoImage(rendered, master=master)
+
+
 def apply_app_icon(root: tk.Tk) -> bool:
     """Applique l'icône à la fenêtre et conserve sa référence Tkinter."""
     try:
@@ -33,4 +47,10 @@ def apply_app_icon(root: tk.Tk) -> bool:
     return True
 
 
-__all__ = ["ICON_RESOURCE", "apply_app_icon", "icon_source_path", "load_icon_base64"]
+__all__ = [
+    "ICON_RESOURCE",
+    "apply_app_icon",
+    "icon_source_path",
+    "load_brand_photo",
+    "load_icon_base64",
+]

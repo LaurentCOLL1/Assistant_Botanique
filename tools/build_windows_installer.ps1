@@ -112,6 +112,12 @@ try {
             [System.IO.Directory]::Delete($InstallDirectory, $true)
         }
 
+        $DesktopDirectory = [Environment]::GetFolderPath([Environment+SpecialFolder]::DesktopDirectory)
+        $DesktopShortcut = Join-Path $DesktopDirectory "Assistant Botanique.lnk"
+        if ([System.IO.File]::Exists($DesktopShortcut)) {
+            [System.IO.File]::Delete($DesktopShortcut)
+        }
+
         Invoke-ProcessWithTimeout `
             -FilePath $Installer `
             -ArgumentList @(
@@ -119,7 +125,7 @@ try {
                 "/SUPPRESSMSGBOXES",
                 "/NORESTART",
                 "/DIR=$InstallDirectory",
-                "/MERGETASKS=!desktopicon,!notifications"
+                "/MERGETASKS=desktopicon,!notifications"
             ) `
             -TimeoutSeconds 180 `
             -Description "L'installation silencieuse"
@@ -127,6 +133,24 @@ try {
         $Application = Join-Path $InstallDirectory "AssistantBotanique.exe"
         if (-not [System.IO.File]::Exists($Application)) {
             throw "L'exécutable installé est introuvable : $Application"
+        }
+
+        $InstalledIcon = Join-Path $InstallDirectory "AssistantBotanique-$DisplayVersion.ico"
+        if (-not [System.IO.File]::Exists($InstalledIcon)) {
+            throw "L'icône versionnée installée est introuvable : $InstalledIcon"
+        }
+        if (-not [System.IO.File]::Exists($DesktopShortcut)) {
+            throw "Le raccourci Bureau attendu est introuvable : $DesktopShortcut"
+        }
+
+        $Shell = New-Object -ComObject WScript.Shell
+        $Shortcut = $Shell.CreateShortcut($DesktopShortcut)
+        if (-not [string]::Equals($Shortcut.TargetPath, $Application, [StringComparison]::OrdinalIgnoreCase)) {
+            throw "Le raccourci Bureau cible '$($Shortcut.TargetPath)' au lieu de '$Application'."
+        }
+        $ShortcutIconPath = ([string]$Shortcut.IconLocation -split ',')[0].Trim('"')
+        if (-not [string]::Equals($ShortcutIconPath, $InstalledIcon, [StringComparison]::OrdinalIgnoreCase)) {
+            throw "Le raccourci Bureau utilise l'icône '$($Shortcut.IconLocation)' au lieu de '$InstalledIcon'."
         }
 
         Invoke-ProcessWithTimeout `
@@ -144,6 +168,10 @@ try {
             -ArgumentList @("/VERYSILENT", "/SUPPRESSMSGBOXES", "/NORESTART") `
             -TimeoutSeconds 120 `
             -Description "La désinstallation de test"
+
+        if ([System.IO.File]::Exists($DesktopShortcut)) {
+            throw "Le raccourci Bureau n'a pas été supprimé pendant la désinstallation : $DesktopShortcut"
+        }
     }
 
     Write-Output $Installer

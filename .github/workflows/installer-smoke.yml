@@ -21,9 +21,9 @@ permissions:
   contents: read
 
 env:
-  PUBLISHED_RELEASE_TAG: v3.5.1-beta.10
-  PUBLISHED_INSTALLER_BASE_NAME: AssistantBotanique-Setup-3.5.1-beta.10
-  INSTALLER_BASE_NAME: AssistantBotanique-Setup-3.5.1-beta.11
+  PUBLISHED_RELEASE_TAG: v3.5.1-beta.11
+  PUBLISHED_INSTALLER_BASE_NAME: AssistantBotanique-Setup-3.5.1-beta.11
+  INSTALLER_BASE_NAME: AssistantBotanique-Setup-3.5.1-beta.12
 
 jobs:
   installer-smoke:
@@ -51,11 +51,11 @@ jobs:
       - run: python -m pip install -e ".[dev]"
       - name: Installer Inno Setup
         run: choco install innosetup --no-progress -y
-      - name: Construire, installer, vérifier et désinstaller
+      - name: Construire, installer, vérifier le raccourci et désinstaller
         shell: pwsh
         run: >-
           ./tools/build_windows_installer.ps1
-          -DisplayVersion "3.5.1-beta.11"
+          -DisplayVersion "3.5.1-beta.12"
           -OutputBaseFilename "${{ env.INSTALLER_BASE_NAME }}"
           -SmokeTest
       - uses: actions/upload-artifact@v4
