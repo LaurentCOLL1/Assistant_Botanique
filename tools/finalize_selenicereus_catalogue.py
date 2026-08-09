@@ -30,15 +30,14 @@ def _scientific(profile: dict) -> str:
     return str(taxonomy.get("nom_scientifique") or "").strip()
 
 
-def merge_staging() -> tuple[int, int]:
+def merge_staging() -> int:
+    """Fusionne le staging et retourne le nombre total de fiches traitées."""
     if not STAGING_FILE.exists():
-        return 0, len(_load(CANONICAL_FILE))
+        return 0
 
     canonical = _load(CANONICAL_FILE)
     staged = _load(STAGING_FILE)
     by_name = {_scientific(profile): index for index, profile in enumerate(canonical) if _scientific(profile)}
-    added = 0
-    replaced = 0
 
     for profile in staged:
         name = _scientific(profile)
@@ -48,22 +47,20 @@ def merge_staging() -> tuple[int, int]:
         if existing is None:
             by_name[name] = len(canonical)
             canonical.append(profile)
-            added += 1
         else:
             # Les fiches générées peuvent être régénérées avec une provenance
             # plus récente ; le staging devient alors la source de vérité.
             canonical[existing] = profile
-            replaced += 1
 
     canonical.sort(key=lambda profile: _scientific(profile).casefold())
     CANONICAL_FILE.write_text(json.dumps(canonical, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     STAGING_FILE.unlink()
-    return added, replaced
+    return len(staged)
 
 
 def main() -> int:
-    added, replaced = merge_staging()
-    print(f"Cactaceae fusionné : {added} fiches ajoutées, {replaced} remplacées.")
+    merged = merge_staging()
+    print(f"Cactaceae fusionné : {merged} fiches de staging traitées.")
     return 0
 
 
