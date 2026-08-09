@@ -113,7 +113,6 @@ def _research(scientific: str, family: str, gbif_key: int | None) -> dict[str, A
     else:
         rows, key = gbif_names(scientific, family)
 
-    # iNaturalist complète GBIF lorsque celui-ci fournit peu ou pas de noms.
     if len(rows) < 4:
         rows.extend(inat_names(scientific))
 
@@ -154,6 +153,7 @@ def main() -> int:
     files = _load_files()
     by_path = {path: profiles for path, profiles in files}
     targets: list[tuple[Path, int, str, str, int | None]] = []
+    cleaned_paths: set[Path] = set()
     cleaned_existing = 0
     total = 0
 
@@ -168,11 +168,14 @@ def main() -> int:
                 if real != raw_list:
                     taxonomy["noms_vernaculaires"] = real
                     cleaned_existing += 1
+                    cleaned_paths.add(path)
                 continue
 
             scientific = _scientific(profile)
             if not scientific or scientific.casefold() == "inconnu" or "'" in scientific or scientific.endswith(" sp."):
-                taxonomy["noms_vernaculaires"] = []
+                if raw_list:
+                    taxonomy["noms_vernaculaires"] = []
+                    cleaned_paths.add(path)
                 continue
             family = str(taxonomy.get("famille") or "").strip()
             targets.append((path, index, scientific, family, _known_gbif_key(profile)))
@@ -196,7 +199,7 @@ def main() -> int:
                     "error": str(exc),
                 }
 
-    changed_files: set[Path] = set()
+    changed_files: set[Path] = set(cleaned_paths)
     resolved_records: list[dict[str, Any]] = []
     unresolved: list[str] = []
     resolved = 0
@@ -211,11 +214,6 @@ def main() -> int:
             resolved_records.append(result)
         else:
             unresolved.append(scientific)
-
-    # Enregistre aussi le nettoyage des placeholders mélangés à de vrais noms.
-    if cleaned_existing:
-        for path, _profiles in files:
-            changed_files.add(path)
 
     for path, profiles in files:
         if path in changed_files:
