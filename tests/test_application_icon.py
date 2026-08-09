@@ -52,14 +52,20 @@ def test_application_icon_is_installed_at_startup():
     assert "PlantCareApp.__init__ = enhanced_init" in patch
 
 
-def test_branding_is_installed_in_maintenance_and_help_menu():
+def test_branding_matches_the_maintenance_mockup_and_help_menu():
     feature_init = (ROOT / "src" / "assistant_botanique" / "features" / "__init__.py").read_text(encoding="utf-8")
     branding = (ROOT / "src" / "assistant_botanique" / "features" / "branding_surfaces.py").read_text(encoding="utf-8")
     icon_helpers = (ROOT / "src" / "assistant_botanique" / "ui" / "app_icon.py").read_text(encoding="utf-8")
 
     assert "install_branding_surfaces()" in feature_init
     assert 'text="Données & système"' in branding
-    assert "load_brand_photo(self, size=180)" in branding
+    assert '_find_section(sections, "Sauvegarde et restauration")' in branding
+    assert '_find_section(sections, "Export modifiable et réimportation")' in branding
+    assert 'backup.grid(row=1, column=0' in branding
+    assert 'exchange.grid(row=2, column=0' in branding
+    assert 'brand_host.grid(row=1, column=1, rowspan=2' in branding
+    assert "load_brand_photo(self, size=230)" in branding
+    assert 'columnspan=2, sticky="ew"' in branding
     assert 'label="À propos d’Assistant Botanique"' in branding
     assert "load_brand_photo(window, size=240)" in branding
     assert 'text="Assistant Botanique"' in branding

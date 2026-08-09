@@ -93,6 +93,17 @@ def _install_about_menu() -> None:
     PlantCareApp._about_menu_installed = True
 
 
+def _section_title(widget) -> str:
+    try:
+        return str(widget.cget("text")).strip()
+    except tk.TclError:
+        return ""
+
+
+def _find_section(children, prefix: str):
+    return next((widget for widget in children if _section_title(widget).startswith(prefix)), None)
+
+
 def _install_maintenance_branding() -> None:
     from assistant_botanique.ui.maintenance_tab import MaintenanceTab
 
@@ -102,32 +113,84 @@ def _install_maintenance_branding() -> None:
     previous_build_ui = MaintenanceTab._build_ui
 
     def enhanced_build_ui(self) -> None:
-        header = ttk.Frame(self)
-        header.pack(fill="x", padx=12, pady=(10, 0))
+        # Toutes les extensions (sauvegardes automatiques, mise à jour directe, etc.)
+        # construisent d'abord leurs cadres normalement. On ne change ici que leur
+        # disposition finale pour reproduire la maquette de Données & système.
+        previous_build_ui(self)
+        sections = list(self.winfo_children())
 
-        text = ttk.Frame(header)
-        text.pack(side="left", fill="both", expand=True, anchor="nw", padx=(4, 20), pady=(10, 0))
-        ttk.Label(text, text="Données & système", font=("TkDefaultFont", 17, "bold")).pack(anchor="w")
+        backup = _find_section(sections, "Sauvegarde et restauration")
+        exchange = _find_section(sections, "Export modifiable et réimportation")
+        notifications = _find_section(sections, "Notifications natives")
+        versions = _find_section(sections, "Versions et maintenance")
+        automatic = _find_section(sections, "Sauvegardes automatiques")
+        privacy = _find_section(sections, "Données et confidentialité")
+        ordered = [backup, exchange, notifications, versions, automatic, privacy]
+
+        for child in sections:
+            try:
+                child.pack_forget()
+            except tk.TclError:
+                pass
+
+        header = ttk.Frame(self)
+        header.grid(row=0, column=0, columnspan=2, sticky="ew", padx=16, pady=(16, 6))
+        ttk.Label(header, text="Données & système", font=("TkDefaultFont", 17, "bold")).pack(anchor="w")
         ttk.Label(
-            text,
+            header,
             text=(
                 "Sauvegardes, échanges de données, notifications, mises à jour et maintenance "
                 "de votre installation Assistant Botanique."
             ),
             justify="left",
-            wraplength=760,
-        ).pack(anchor="w", pady=(7, 0))
+            wraplength=1000,
+        ).pack(anchor="w", pady=(6, 0))
 
+        if backup is not None:
+            backup.grid(row=1, column=0, sticky="new", padx=(12, 8), pady=(5, 5))
+        if exchange is not None:
+            exchange.grid(row=2, column=0, sticky="new", padx=(12, 8), pady=5)
+
+        brand_host = ttk.Frame(self, width=245, height=245)
+        brand_host.grid(row=1, column=1, rowspan=2, sticky="ne", padx=(8, 18), pady=(2, 0))
+        brand_host.grid_propagate(False)
         try:
-            photo = load_brand_photo(self, size=180)
-            brand = ttk.Label(header, image=photo)
+            photo = load_brand_photo(self, size=230)
+            brand = ttk.Label(brand_host, image=photo)
             brand.image = photo
-            brand.pack(side="right", anchor="ne", padx=(8, 4))
+            brand.place(relx=1.0, rely=0.0, anchor="ne")
             self._assistant_botanique_maintenance_image = photo
         except (OSError, ValueError, tk.TclError):
             LOGGER.exception("Impossible d'afficher le visuel dans Données & système")
 
-        previous_build_ui(self)
+        next_row = 3
+        for section in (notifications, versions, automatic):
+            if section is None:
+                continue
+            section.grid(row=next_row, column=0, columnspan=2, sticky="ew", padx=12, pady=5)
+            next_row += 1
+
+        if privacy is not None:
+            privacy.grid(
+                row=next_row,
+                column=0,
+                columnspan=2,
+                sticky="nsew",
+                padx=12,
+                pady=(5, 12),
+            )
+            self.rowconfigure(next_row, weight=1)
+            next_row += 1
+
+        # Toute extension future non reconnue reste visible en pleine largeur.
+        for child in sections:
+            if child in ordered:
+                continue
+            child.grid(row=next_row, column=0, columnspan=2, sticky="ew", padx=12, pady=5)
+            next_row += 1
+
+        self.columnconfigure(0, weight=1)
+        self.columnconfigure(1, weight=0, minsize=255)
 
     MaintenanceTab._build_ui = enhanced_build_ui
     MaintenanceTab._branding_header_installed = True

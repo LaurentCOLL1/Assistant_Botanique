@@ -9,13 +9,13 @@ def test_updater_selects_the_versioned_setup_executable():
     selected = _choose_windows_asset(
         [
             {"name": "AssistantBotanique-portable.exe", "size": 90_000_000},
-            {"name": "AssistantBotanique-Setup-3.5.1-beta.12.exe", "size": 40_000_000},
+            {"name": "AssistantBotanique-Setup-3.5.1-beta.13.exe", "size": 40_000_000},
             {"name": "AssistantBotanique-symbols.exe", "size": 120_000_000},
         ]
     )
 
     assert selected is not None
-    assert selected["name"] == "AssistantBotanique-Setup-3.5.1-beta.12.exe"
+    assert selected["name"] == "AssistantBotanique-Setup-3.5.1-beta.13.exe"
 
 
 def test_inno_setup_targets_the_existing_per_user_installation():
@@ -51,7 +51,7 @@ def test_beta_release_builds_and_uploads_the_windows_installer():
     assert "actions/download-artifact@v4" in workflow
     assert "gh release upload" in workflow
     assert "--clobber" in workflow
-    assert "AssistantBotanique-Setup-3.5.1-beta.12" in workflow
+    assert "AssistantBotanique-Setup-3.5.1-beta.13" in workflow
 
 
 def test_pull_requests_execute_a_real_installer_and_desktop_shortcut_smoke_test():
@@ -60,8 +60,8 @@ def test_pull_requests_execute_a_real_installer_and_desktop_shortcut_smoke_test(
 
     assert "windows-latest" in workflow
     assert "-SmokeTest" in workflow
-    assert "PUBLISHED_RELEASE_TAG: v3.5.1-beta.11" in workflow
-    assert "AssistantBotanique-Setup-3.5.1-beta.12" in workflow
+    assert "PUBLISHED_RELEASE_TAG: v3.5.1-beta.12" in workflow
+    assert "AssistantBotanique-Setup-3.5.1-beta.13" in workflow
     assert "tools/generate_app_icon.py" in workflow
     assert "assets/**" in workflow
     assert "/VERYSILENT" in builder
