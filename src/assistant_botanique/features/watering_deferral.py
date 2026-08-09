@@ -100,14 +100,18 @@ def install_watering_deferral() -> None:
         messagebox.showinfo(
             "Contrôle reporté",
             (
-                f"Aucun arrosage n'a été enregistré.\n\n"
+                "Aucun arrosage n'a été enregistré.\n\n"
                 f"Le prochain contrôle de cette plante est prévu le {format_date_fr(deferred.due_date)}."
             ),
             parent=self,
         )
         if self.on_collection_refresh:
             self.on_collection_refresh()
-        self.refresh()
+        else:
+            self.refresh()
+        advance = getattr(self, "advance_after_watering_check", None)
+        if callable(advance):
+            advance(plant_id)
 
     TodayDashboardTab._build_ui = build_ui
     TodayDashboardTab.update_watering_controls = update_controls
