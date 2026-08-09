@@ -162,7 +162,7 @@ jobs:
             exit 0
           fi
           python tools/enrich_selenicereus_and_vernaculars.py
-          python validate_data.py --strict --baseline data_quality_baseline.json
+          PYTHONPATH=src:. python validate_data.py --strict --baseline data_quality_baseline.json
       - name: Enregistrer les données et la provenance
         shell: bash
         run: |
