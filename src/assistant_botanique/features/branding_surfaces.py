@@ -50,7 +50,7 @@ def _show_about(app) -> None:
         justify="center",
         wraplength=430,
     ).pack(pady=(0, 6))
-    ttk.Label(content, text="Développé par Laurent COLL1", justify="center").pack(pady=(0, 14))
+    ttk.Label(content, text="Développé par Laurent COLLIN", justify="center").pack(pady=(0, 14))
     ttk.Button(content, text="Fermer", command=window.destroy).pack()
 
     window.update_idletasks()
