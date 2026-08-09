@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import tkinter as tk
-from datetime import date
 from tkinter import messagebox, ttk
 from typing import Any
 
