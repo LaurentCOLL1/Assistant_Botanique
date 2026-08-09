@@ -16,10 +16,10 @@ from typing import Any
 
 from tools.enrich_selenicereus_and_vernaculars import (
     GBIF_VERNACULAR,
+    INAT_TAXA,
     LANGUAGE_ORDER,
     clean_candidate,
     gbif_names,
-    inat_names,
     request_json,
 )
 
@@ -106,6 +106,34 @@ def _gbif_names_from_key(scientific: str, key: int) -> list[dict[str, str]]:
     return result
 
 
+def _inat_fallback(scientific: str) -> list[dict[str, str]]:
+    """Cherche au plus un nom français et un nom anglais lorsque GBIF est vide."""
+    result: list[dict[str, str]] = []
+    for locale in ("fr", "en"):
+        payload = request_json(INAT_TAXA, {"q": scientific, "rank": "species", "locale": locale, "per_page": 5})
+        rows = payload.get("results", []) if isinstance(payload, dict) else []
+        for row in rows if isinstance(rows, list) else []:
+            if not isinstance(row, dict):
+                continue
+            row_name = str(row.get("name") or "").strip()
+            matched = str(row.get("matched_term") or "").strip()
+            if row_name.casefold() != scientific.casefold() and matched.casefold() != scientific.casefold():
+                continue
+            name = clean_candidate(row.get("preferred_common_name"), scientific)
+            if name and not _is_placeholder(name):
+                result.append(
+                    {
+                        "name": name,
+                        "language": locale,
+                        "provider": "iNaturalist",
+                        "source": "iNaturalist taxon names",
+                        "url": f"https://www.inaturalist.org/taxa/{row.get('id')}",
+                    }
+                )
+            break
+    return result
+
+
 def _research(scientific: str, family: str, gbif_key: int | None) -> dict[str, Any]:
     if gbif_key is not None:
         rows = _gbif_names_from_key(scientific, gbif_key)
@@ -113,8 +141,8 @@ def _research(scientific: str, family: str, gbif_key: int | None) -> dict[str, A
     else:
         rows, key = gbif_names(scientific, family)
 
-    if len(rows) < 4:
-        rows.extend(inat_names(scientific))
+    if not rows:
+        rows.extend(_inat_fallback(scientific))
 
     rows.sort(key=lambda row: (LANGUAGE_ORDER.get(row.get("language", ""), 5), row["name"].casefold()))
     names: list[str] = []
@@ -182,7 +210,7 @@ def main() -> int:
 
     unique_queries: dict[tuple[str, str, int | None], dict[str, Any]] = {}
     keys = {(scientific, family, gbif_key) for _, _, scientific, family, gbif_key in targets}
-    with ThreadPoolExecutor(max_workers=8) as executor:
+    with ThreadPoolExecutor(max_workers=12) as executor:
         futures = {
             executor.submit(_research, scientific, family, gbif_key): (scientific, family, gbif_key)
             for scientific, family, gbif_key in keys
@@ -229,7 +257,7 @@ def main() -> int:
         "cleaned_placeholder_entries_with_existing_real_names": cleaned_existing,
         "changed_files": sorted(path.name for path in changed_files),
         "resolved_records": sorted(resolved_records, key=lambda row: str(row.get("scientific_name") or "").casefold()),
-        "method": "GBIF vernacularNames, complété par iNaturalist ; aucun nom généré par traduction",
+        "method": "GBIF vernacularNames ; iNaturalist seulement lorsque GBIF est vide ; aucun nom généré par traduction",
     }
     REPORT_FILE.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(
