@@ -1,20 +1,19 @@
-"""Ajoute Selenicereus/pitayas et complète les noms vernaculaires manquants.
+"""Enrichit le catalogue en Selenicereus/pitayas et noms vernaculaires.
 
-Le script est volontairement conservateur : il n'invente jamais un nom commun.
-Pour les fiches historiques sans nom vernaculaire, il interroge GBIF puis
-iNaturalist et ne conserve que des noms explicitement publiés par ces sources.
-Il produit un rapport de provenance dans ``catalogue_metadata``.
-
-Les ajouts Selenicereus suivent le backbone taxonomique Kew/POWO 2026. Les
-cultivars de pitaya proviennent de collections/programmes institutionnels UC ANR,
-USDA-ARS et Embrapa.
+Principes :
+- les 33 espèces acceptées de Selenicereus suivent Kew/POWO 2026 ;
+- les cultivars de pitaya proviennent de sources institutionnelles ou d'une
+  synthèse scientifique évaluée par les pairs ;
+- pour les fiches historiques sans nom vernaculaire, aucun nom n'est inventé :
+  seules les appellations explicitement renvoyées par GBIF ou iNaturalist sont
+  ajoutées, avec leur provenance dans un rapport d'audit.
 """
 from __future__ import annotations
 
-import copy
 import json
 import re
 import time
+import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -28,7 +27,7 @@ FAMILIES_DIR = ROOT / "familles_plantes"
 OUTPUT_FILE = FAMILIES_DIR / "cactaceae_selenicereus.json"
 REPORT_FILE = ROOT / "catalogue_metadata" / "vernacular_name_audit.json"
 
-USER_AGENT = "AssistantBotaniqueVernacularAudit/1.0 (https://github.com/LaurentCOLL1/Assistant_Botanique)"
+USER_AGENT = "AssistantBotaniqueVernacularAudit/1.1 (https://github.com/LaurentCOLL1/Assistant_Botanique)"
 GBIF_MATCH = "https://api.gbif.org/v1/species/match"
 GBIF_VERNACULAR = "https://api.gbif.org/v1/species/{key}/vernacularNames"
 INAT_TAXA = "https://api.inaturalist.org/v1/taxa"
@@ -36,8 +35,9 @@ INAT_TAXA = "https://api.inaturalist.org/v1/taxa"
 POWO_GENUS = "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:30011812-2"
 USDA_DRAGON_FRUIT = "https://content.govdelivery.com/accounts/USDAAPHIS/bulletins/31b6635"
 UCANR_SCI_NAMES = "https://ucanr.edu/site/san-diego-county-small-farms/pitahaya-scientific-names"
-USDA_ARS_TRIAL = "https://www.ars.usda.gov/research/publications/publication/?seqNo115=376606"
-EMBRAPA_PITAYA = "https://www.embrapa.br/en/busca-de-solucoes-tecnologicas/-/produto-servico/busca/Pitaya"
+USDA_ARS_TRIAL = "https://www.ars.usda.gov/research/publications/publication/?seqNo115=326654"
+EMBRAPA_PITAYA = "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1153838"
+PITAYA_REVIEW = "https://doi.org/10.3390/plants12183212"
 
 ACCEPTED_SELENICEREUS = (
     "Selenicereus alliodorus",
@@ -84,9 +84,8 @@ COMMERCIAL_PITAYA_SPECIES = {
     "Selenicereus undatus",
 }
 
-# Le nom historique Hylocereus polyrhizus est aujourd'hui un synonyme de
-# Selenicereus monacanthus dans POWO. Les libellés ci-dessous conservent les
-# noms de cultivars publiés par UC ANR tout en utilisant la taxonomie actuelle.
+# UC ANR publie ces 19 sélections sous l'ancienne combinaison Hylocereus.
+# H. polyrhizus est converti en S. monacanthus conformément à POWO.
 UCANR_CULTIVARS = (
     ("Cebra", "Selenicereus monacanthus"),
     ("Rosa", "Selenicereus monacanthus"),
@@ -109,8 +108,7 @@ UCANR_CULTIVARS = (
     ("El Grullo", "Selenicereus ocamponis"),
 )
 
-# Cultivars/lignées explicitement nommés dans la publication USDA-ARS et dans
-# la synthèse de l'étude. Les doublons avec UC ANR sont éliminés plus bas.
+# Noms explicitement présents dans l'étude USDA-ARS menée à Isabela, Porto Rico.
 USDA_ARS_CULTIVARS = (
     "NOI-13",
     "NOI-14",
@@ -121,27 +119,39 @@ USDA_ARS_CULTIVARS = (
     "N97-20",
     "N97-22",
     "Cosmic Charlie",
-    "Purple Haze",
 )
 
 EMBRAPA_CULTIVARS = (
     ("BRS Lua do Cerrado", "Selenicereus undatus"),
     ("BRS Luz do Cerrado", "Selenicereus undatus"),
     ("BRS Âmbar do Cerrado", "Selenicereus megalanthus"),
-    ("BRS Cerrado Mini Pitaya", "Selenicereus setaceus"),
+    ("BRS Minipitaya do Cerrado", "Selenicereus setaceus"),
     ("BRS Granada do Cerrado", "Selenicereus undatus × Selenicereus costaricensis"),
 )
 
-STATIC_COMMON_NAMES: dict[str, list[str]] = {
-    "Selenicereus anthonyanus": ["Cactus arête de poisson", "Fishbone cactus", "Ric-rac cactus"],
-    "Selenicereus grandiflorus": ["Reine de la nuit", "Cierge à grandes fleurs", "Queen of the night"],
-    "Selenicereus megalanthus": ["Pitaya jaune", "Fruit du dragon jaune", "Yellow dragon fruit"],
-    "Selenicereus monacanthus": ["Pitaya rouge", "Fruit du dragon à chair rouge", "Red pitaya"],
-    "Selenicereus costaricensis": ["Pitaya du Costa Rica", "Fruit du dragon rouge", "Costa Rican pitaya"],
-    "Selenicereus ocamponis": ["Pitaya d'Ocampo", "Ocampo pitaya"],
-    "Selenicereus setaceus": ["Pitaya du Cerrado", "Saborosa"],
-    "Selenicereus undatus": ["Fruit du dragon", "Pitaya rouge", "Pitahaya"],
-}
+# Cultivars supplémentaires documentés par la revue Plants 2023 consacrée à la
+# culture de la pitaya dans la péninsule Ibérique. Les doublons sont éliminés.
+LITERATURE_CULTIVARS = (
+    ("Common White", "Selenicereus undatus"),
+    ("Vietnamese White", "Selenicereus undatus"),
+    ("Golden", "Selenicereus undatus"),
+    ("Golden of Israel", "Selenicereus undatus"),
+    ("Golden Isis", "Selenicereus undatus"),
+    ("Tesoro", "Selenicereus monacanthus"),
+    ("Costa Rica", "Selenicereus costaricensis"),
+    ("Palora", "Selenicereus megalanthus"),
+    ("Colombian yellow", "Selenicereus megalanthus"),
+    ("Churuja", "Selenicereus megalanthus"),
+    ("Golden Ball", "Selenicereus megalanthus"),
+    ("Boliviana", "Selenicereus megalanthus"),
+    ("Amazonas", "Selenicereus megalanthus"),
+    ("Hybridum", "Selenicereus monacanthus × Selenicereus undatus"),
+    ("Boreal Red", "Selenicereus sp."),
+    ("Taiwan Red", "Selenicereus sp."),
+    ("DF 14", "Selenicereus sp."),
+    ("DF 16", "Selenicereus sp."),
+    ("Purple Haze", "Selenicereus sp."),
+)
 
 
 def request_json(url: str, params: dict[str, Any] | None = None, retries: int = 3) -> Any:
@@ -167,9 +177,9 @@ def request_json(url: str, params: dict[str, Any] | None = None, retries: int = 
 
 
 def slug(value: str) -> str:
-    value = value.casefold().replace("×", " x ")
-    value = re.sub(r"[^a-z0-9]+", "-", value)
-    return value.strip("-")
+    value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode().casefold()
+    value = value.replace("×", " x ")
+    return re.sub(r"[^a-z0-9]+", "-", value).strip("-")
 
 
 def taxonomy(profile: dict[str, Any]) -> dict[str, Any]:
@@ -196,21 +206,13 @@ def load_family_files() -> list[tuple[Path, list[dict[str, Any]]]]:
         except (OSError, json.JSONDecodeError):
             continue
         if isinstance(payload, list):
-            profiles = [item for item in payload if isinstance(item, dict)]
-            result.append((path, profiles))
+            result.append((path, [item for item in payload if isinstance(item, dict)]))
     return result
 
 
 def base_profile(name: str, *, cultivar: str | None = None, source: str = POWO_GENUS) -> dict[str, Any]:
     fruiting = name in COMMERCIAL_PITAYA_SPECIES or cultivar is not None
-    common = list(STATIC_COMMON_NAMES.get(name, []))
-    if cultivar:
-        common = [cultivar, f"Pitaya {cultivar}", f"Fruit du dragon {cultivar}"]
-    display_scientific = f"{name} '{cultivar}'" if cultivar and not name.endswith("sp.") and "×" not in name else (
-        f"{name} '{cultivar}'" if cultivar else name
-    )
-    if cultivar and (name.endswith("sp.") or "×" in name):
-        display_scientific = f"{name} '{cultivar}'"
+    display_scientific = f"{name} '{cultivar}'" if cultivar else name
     sources = [POWO_GENUS, source]
     if fruiting:
         sources.append(USDA_DRAGON_FRUIT)
@@ -218,9 +220,11 @@ def base_profile(name: str, *, cultivar: str | None = None, source: str = POWO_G
         "id": slug(display_scientific),
         "taxonomie": {
             "nom_scientifique": display_scientific,
-            "noms_vernaculaires": common,
+            # Un cultivar a un nom horticole attesté ; pour une espèce, les noms
+            # communs seront recherchés plus bas dans GBIF/iNaturalist.
+            "noms_vernaculaires": [cultivar] if cultivar else [],
             "famille": "Cactaceae",
-            "origine_geographique": "Mexique, Amérique centrale, Caraïbes ou Amérique tropicale selon le taxon",
+            "origine_geographique": "Mexique à Amérique tropicale ; aire exacte variable selon le taxon",
         },
         "morphologie": {
             "port": "Cactus grimpant ou retombant, épiphyte à hémiépiphyte, à longues tiges côtelées",
@@ -236,9 +240,8 @@ def base_profile(name: str, *, cultivar: str | None = None, source: str = POWO_G
             },
             "floraison": "Principalement de la fin du printemps à l'été, selon le climat",
             "fruits_graines": (
-                "Baies charnues comestibles de type pitaya, couleur et chair variables selon espèce ou cultivar"
-                if fruiting else
-                "Baies charnues ; intérêt fruitier variable selon l'espèce"
+                "Baies charnues comestibles de type pitaya, couleur et chair variables selon le cultivar"
+                if fruiting else "Baies charnues ; intérêt fruitier variable selon l'espèce"
             ),
         },
         "exigences_climatiques": {
@@ -248,20 +251,20 @@ def base_profile(name: str, *, cultivar: str | None = None, source: str = POWO_G
             "hygrometrie": "Moyenne à élevée avec bonne circulation d'air",
         },
         "gestion_eau": {
-            "frequence_mode": "Arroser régulièrement en croissance puis laisser la couche superficielle sécher ; réduire en hiver",
+            "frequence_mode": "Arroser en croissance puis laisser la couche superficielle sécher ; réduire en hiver",
             "frequence_arrosage": {
                 "janvier": 12, "fevrier": 12, "mars": 9, "avril": 7,
                 "mai": 6, "juin": 5, "juillet": 5, "aout": 5,
                 "septembre": 6, "octobre": 8, "novembre": 10, "decembre": 12,
             },
-            "variation_saisonniere": "Plus d'eau pendant croissance, floraison et fructification ; nettement moins en période fraîche",
+            "variation_saisonniere": "Plus d'eau en croissance et fructification ; nettement moins en période fraîche",
             "qualite_eau": "Eau peu calcaire de préférence",
             "sensibilite_minerale": "Sensible à l'asphyxie racinaire et à l'eau stagnante",
         },
         "substrat": {
             "ph": "5.5 - 7.0",
             "categorie_horticole": "Cactus épiphyte / pitaya",
-            "modele_recherche": "aroid_chunky",
+            "modele_recherche": "succulent_mineral",
             "version_recherche": "2026.08-selenicereus",
             "roles": [
                 {"nom": "Base organique", "ratio": 0.45, "ing": ["Terreau horticole", "Terreau léger"]},
@@ -272,23 +275,22 @@ def base_profile(name: str, *, cultivar: str | None = None, source: str = POWO_G
             "interdits": ["Terreau argileux (Aquatique / Nénuphars)"],
             "sources": [
                 {"titre": "Kew POWO — Selenicereus", "url": POWO_GENUS},
-                {"titre": "USDA APHIS — Dragon fruit taxonomy", "url": USDA_DRAGON_FRUIT},
+                {"titre": "USDA APHIS — Dragon fruit", "url": USDA_DRAGON_FRUIT},
             ],
         },
         "entretien": {
-            "rempotage": "Tous les 2 à 3 ans ou lorsque le support et le système racinaire deviennent trop à l'étroit",
+            "rempotage": "Tous les 2 à 3 ans ou lorsque le système racinaire devient trop à l'étroit",
             "taille": "Tailler les tiges âgées ou encombrantes et palisser les pousses vigoureuses",
             "fertilisation": "Engrais équilibré modéré en croissance ; éviter les excès d'azote avant floraison",
-            "multiplication": "Boutures de tiges très faciles ; semis pour la diversité génétique",
+            "multiplication": "Boutures de tiges ; semis pour la diversité génétique",
         },
         "sante_securite": {
             "ravageurs": ["Cochenilles", "Cochenilles farineuses", "Acariens"],
             "maladies": ["Pourriture racinaire", "Anthracnose", "Taches et chancres des tiges"],
             "toxicite": "Non toxique ; fruits des pitayas cultivés comestibles",
             "proprietes_particulieres": (
-                "Cultivar de pitaya documenté par un programme horticole institutionnel"
-                if cultivar else
-                "Espèce du genre Selenicereus, anciennement élargi par intégration d'Hylocereus"
+                "Cultivar de pitaya documenté par une source horticole ou scientifique"
+                if cultivar else "Espèce du genre Selenicereus ; Hylocereus est traité comme synonyme par POWO"
             ),
         },
         "metadata": {
@@ -302,27 +304,21 @@ def base_profile(name: str, *, cultivar: str | None = None, source: str = POWO_G
 
 
 def generate_selenicereus(existing_names: set[str]) -> list[dict[str, Any]]:
-    generated: list[dict[str, Any]] = []
-    for name in ACCEPTED_SELENICEREUS:
-        if name not in existing_names:
-            generated.append(base_profile(name))
+    generated = [base_profile(name) for name in ACCEPTED_SELENICEREUS if name not in existing_names]
+    seen: set[str] = set()
 
-    seen_cultivars: set[str] = set()
-    for cultivar, parent in UCANR_CULTIVARS:
-        generated.append(base_profile(parent, cultivar=cultivar, source=UCANR_SCI_NAMES))
-        seen_cultivars.add(cultivar.casefold())
+    def add_cultivars(values: tuple[tuple[str, str], ...], source: str) -> None:
+        for cultivar, parent in values:
+            marker = cultivar.casefold()
+            if marker in seen:
+                continue
+            seen.add(marker)
+            generated.append(base_profile(parent, cultivar=cultivar, source=source))
 
-    for cultivar in USDA_ARS_CULTIVARS:
-        if cultivar.casefold() in seen_cultivars:
-            continue
-        generated.append(base_profile("Selenicereus sp.", cultivar=cultivar, source=USDA_ARS_TRIAL))
-        seen_cultivars.add(cultivar.casefold())
-
-    for cultivar, parent in EMBRAPA_CULTIVARS:
-        if cultivar.casefold() in seen_cultivars:
-            continue
-        generated.append(base_profile(parent, cultivar=cultivar, source=EMBRAPA_PITAYA))
-        seen_cultivars.add(cultivar.casefold())
+    add_cultivars(UCANR_CULTIVARS, UCANR_SCI_NAMES)
+    add_cultivars(tuple((name, "Selenicereus sp.") for name in USDA_ARS_CULTIVARS), USDA_ARS_TRIAL)
+    add_cultivars(EMBRAPA_CULTIVARS, EMBRAPA_PITAYA)
+    add_cultivars(LITERATURE_CULTIVARS, PITAYA_REVIEW)
     return generated
 
 
@@ -330,15 +326,17 @@ def clean_candidate(value: Any, scientific: str) -> str:
     text = re.sub(r"\s+", " ", str(value or "")).strip(" ,;\t\n")
     if not text or len(text) < 2 or len(text) > 100:
         return ""
-    if text.casefold() == scientific.casefold() or "http://" in text.casefold() or "https://" in text.casefold():
-        return ""
-    if re.fullmatch(r"[A-Z][a-z-]+\s+[a-z-]+(?:\s+.+)?", text) and scientific.casefold().startswith(text.casefold()):
+    lowered = text.casefold()
+    if lowered == scientific.casefold() or "http://" in lowered or "https://" in lowered:
         return ""
     return text
 
 
 def gbif_names(scientific: str, family: str) -> tuple[list[dict[str, str]], str | None]:
-    match = request_json(GBIF_MATCH, {"name": scientific, "family": family, "kingdom": "Plantae"})
+    params = {"name": scientific, "kingdom": "Plantae"}
+    if family:
+        params["family"] = family
+    match = request_json(GBIF_MATCH, params)
     if not isinstance(match, dict) or not match.get("usageKey"):
         return [], None
     key = match.get("acceptedUsageKey") or match.get("usageKey")
@@ -351,13 +349,11 @@ def gbif_names(scientific: str, family: str) -> tuple[list[dict[str, str]], str 
         value = clean_candidate(row.get("vernacularName"), scientific)
         if not value:
             continue
-        language = str(row.get("language") or "").casefold()
-        source = str(row.get("source") or "GBIF").strip()
         candidates.append({
             "name": value,
-            "language": language,
+            "language": str(row.get("language") or "").casefold(),
             "provider": "GBIF",
-            "source": source,
+            "source": str(row.get("source") or "GBIF").strip(),
             "url": f"https://www.gbif.org/species/{key}",
         })
     return candidates, str(key)
@@ -368,26 +364,23 @@ def inat_names(scientific: str) -> list[dict[str, str]]:
     for locale in ("fr", "en", "es", "pt"):
         payload = request_json(INAT_TAXA, {"q": scientific, "rank": "species", "locale": locale, "per_page": 10})
         results = payload.get("results", []) if isinstance(payload, dict) else []
-        chosen = None
         for row in results if isinstance(results, list) else []:
             if not isinstance(row, dict):
                 continue
             row_name = str(row.get("name") or "").strip()
             matched = str(row.get("matched_term") or "").strip()
-            if row_name.casefold() == scientific.casefold() or matched.casefold() == scientific.casefold():
-                chosen = row
-                break
-        if not chosen:
-            continue
-        value = clean_candidate(chosen.get("preferred_common_name"), scientific)
-        if value:
-            output.append({
-                "name": value,
-                "language": locale,
-                "provider": "iNaturalist",
-                "source": "iNaturalist taxon names",
-                "url": f"https://www.inaturalist.org/taxa/{chosen.get('id')}",
-            })
+            if row_name.casefold() != scientific.casefold() and matched.casefold() != scientific.casefold():
+                continue
+            value = clean_candidate(row.get("preferred_common_name"), scientific)
+            if value:
+                output.append({
+                    "name": value,
+                    "language": locale,
+                    "provider": "iNaturalist",
+                    "source": "iNaturalist taxon names",
+                    "url": f"https://www.inaturalist.org/taxa/{row.get('id')}",
+                })
+            break
     return output
 
 
@@ -396,8 +389,7 @@ LANGUAGE_ORDER = {"fr": 0, "fra": 0, "fre": 0, "en": 1, "eng": 1, "es": 2, "spa"
 
 def research_names(scientific: str, family: str) -> dict[str, Any]:
     gbif, key = gbif_names(scientific, family)
-    inat = inat_names(scientific)
-    rows = gbif + inat
+    rows = gbif + inat_names(scientific)
     rows.sort(key=lambda row: (LANGUAGE_ORDER.get(row.get("language", ""), 5), row["name"].casefold()))
     names: list[str] = []
     provenance: list[dict[str, str]] = []
@@ -415,32 +407,33 @@ def research_names(scientific: str, family: str) -> dict[str, Any]:
 
 
 def enrich_missing_names(files: list[tuple[Path, list[dict[str, Any]]]]) -> dict[str, Any]:
+    profiles_by_path = {path: profiles for path, profiles in files}
     targets: list[tuple[Path, int, str, str]] = []
-    before = 0
     total = 0
+    missing_before = 0
+    skipped_non_species: list[str] = []
+
     for path, profiles in files:
         for index, profile in enumerate(profiles):
             total += 1
             if vernacular_names(profile):
                 continue
-            before += 1
+            missing_before += 1
             name = scientific_name(profile)
             if not name or name == "Inconnu" or "'" in name or "×" in name or name.endswith(" sp."):
+                skipped_non_species.append(name or "Inconnu")
                 continue
             family = str(taxonomy(profile).get("famille") or "").strip()
             targets.append((path, index, name, family))
 
     researched: dict[str, dict[str, Any]] = {}
     with ThreadPoolExecutor(max_workers=8) as executor:
-        future_map = {
-            executor.submit(research_names, name, family): name
-            for _, _, name, family in targets
-        }
+        future_map = {executor.submit(research_names, name, family): name for _, _, name, family in targets}
         for future in as_completed(future_map):
             name = future_map[future]
             try:
                 researched[name] = future.result()
-            except Exception as exc:  # noqa: BLE001 - one taxon must not abort the audit
+            except Exception as exc:  # noqa: BLE001 - une API ne doit pas interrompre l'audit global
                 researched[name] = {"scientific_name": name, "names": [], "sources": [], "error": str(exc)}
 
     changed_files: set[str] = set()
@@ -452,11 +445,8 @@ def enrich_missing_names(files: list[tuple[Path, list[dict[str, Any]]]]) -> dict
         if not names:
             unresolved.append(name)
             continue
-        tax = taxonomy(dict(files[[p for p, _ in files].index(path)][1][index]))
-        # Modifie l'objet original contenu dans ``files``.
-        profile = next(profiles[index] for p, profiles in files if p == path)
-        profile_tax = profile.setdefault("taxonomie", {})
-        profile_tax["noms_vernaculaires"] = names
+        profile = profiles_by_path[path][index]
+        profile.setdefault("taxonomie", {})["noms_vernaculaires"] = names
         changed_files.add(path.name)
         resolved.append(result)
 
@@ -466,44 +456,47 @@ def enrich_missing_names(files: list[tuple[Path, list[dict[str, Any]]]]) -> dict
 
     return {
         "catalogue_profiles": total,
-        "missing_before": before,
-        "researched": len(targets),
+        "missing_before": missing_before,
+        "researched_species": len(targets),
         "resolved": len(resolved),
         "remaining_without_attested_name": sorted(set(unresolved)),
+        "non_species_without_name": sorted(set(skipped_non_species)),
         "changed_files": sorted(changed_files),
         "resolved_records": sorted(resolved, key=lambda item: item.get("scientific_name", "").casefold()),
     }
 
 
 def main() -> int:
-    files = load_family_files()
-    existing_names = {scientific_name(profile).split(" '", 1)[0] for _path, profiles in files for profile in profiles}
+    source_files = [(path, profiles) for path, profiles in load_family_files() if path != OUTPUT_FILE]
+    existing_names = {scientific_name(profile).split(" '", 1)[0] for _path, profiles in source_files for profile in profiles}
     generated = generate_selenicereus(existing_names)
     OUTPUT_FILE.write_text(json.dumps(generated, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    # Recharge pour inclure les nouvelles espèces dans l'audit vernaculaire.
     files = load_family_files()
     audit = enrich_missing_names(files)
+    cultivar_count = sum(1 for profile in generated if "'" in scientific_name(profile))
     audit.update({
         "generated_at": date.today().isoformat(),
         "selenicereus_accepted_species_target": len(ACCEPTED_SELENICEREUS),
-        "selenicereus_generated_species": sum(1 for profile in generated if "'" not in scientific_name(profile)),
-        "pitaya_cultivars_generated": sum(1 for profile in generated if "'" in scientific_name(profile)),
-        "sources": [POWO_GENUS, USDA_DRAGON_FRUIT, UCANR_SCI_NAMES, USDA_ARS_TRIAL, EMBRAPA_PITAYA],
+        "selenicereus_species_added": sum(1 for profile in generated if "'" not in scientific_name(profile)),
+        "pitaya_cultivars_added": cultivar_count,
+        "pitaya_source_sets": {
+            "UC_ANR": len(UCANR_CULTIVARS),
+            "USDA_ARS_named_in_study": len(USDA_ARS_CULTIVARS),
+            "Embrapa": len(EMBRAPA_CULTIVARS),
+            "peer_reviewed_review": len(LITERATURE_CULTIVARS),
+        },
+        "sources": [POWO_GENUS, USDA_DRAGON_FRUIT, UCANR_SCI_NAMES, USDA_ARS_TRIAL, EMBRAPA_PITAYA, PITAYA_REVIEW],
     })
     REPORT_FILE.write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     print(
-        "Enrichissement terminé : "
-        f"{audit['selenicereus_generated_species']} espèces Selenicereus ajoutées, "
-        f"{audit['pitaya_cultivars_generated']} cultivars ajoutés, "
-        f"{audit['resolved']}/{audit['missing_before']} fiches sans nom vernaculaire complétées."
+        f"Selenicereus: {audit['selenicereus_species_added']} espèces ajoutées; "
+        f"pitayas: {cultivar_count} cultivars/sélections ajoutés; "
+        f"noms vernaculaires: {audit['resolved']}/{audit['missing_before']} fiches vides complétées."
     )
-    remaining = audit["remaining_without_attested_name"]
-    if remaining:
-        print(f"Noms vernaculaires non attestés après recherche : {len(remaining)}")
-        for name in remaining[:50]:
-            print(f" - {name}")
+    if audit["remaining_without_attested_name"]:
+        print(f"Espèces encore sans nom vernaculaire attesté: {len(audit['remaining_without_attested_name'])}")
     return 0
 
 
